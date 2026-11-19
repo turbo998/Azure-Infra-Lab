@@ -7308,6 +7308,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (755M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_smart_elevator_escalator_building_mobility_fabric_rul_safety_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Smart Elevator, Escalator & Building Vertical Mobility OEM Service Network (2.4M Connected Elevators/Escalators + 42,000 Certified Mechanics) Door-Operator Current & Traction-Rope MFL RUL, Entrapment Rescue Dispatch & ASME A17.1 / EN 81-20 SIL-3 Loop (1,000K=1.0M EPS Door/Vibration/Rope Stream + 760M Schematic/FFT/Code Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 715-Unit Pre-Entrapment Sense ($0/GB & $0 Copy Tax), 760M SSD DiskANN ($3,940/mo vs $93,600/mo DRAM) + In-Lake PREDICT 4ms (-41.5% Entrapments & +$66.5M/yr SLA/Mod Saved) & Foundry IQ 4ms 275-SIL3-Safety/Occupied-Cab/Brake Gate (+$15.60M) (1,000K EPS · 760M DiskANN · 16ms=4^2ms E2E · R216=6^3 Round, 110th Ontology Sim, 144=12^2 Confirm, Exact 22,000 Users, -$420.0K/mo Exact & $74.70M SLA!)",
+            "telemetry": {
+                "connected_elevators_escalators_and_walkways_thousands": 2400,
+                "door_operator_and_rope_rul_units_flagged_count": 715,
+                "door_inverter_accelerometer_and_intercom_stream_eps": 1000000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "vibration_fft_wiring_schematic_and_a17_vectors_count": 760000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "unplanned_entrapment_and_callback_reduction_pct": 41.5,
+                "sla_penalty_first_time_fix_and_mod_saved_usd": 66500000,
+                "safety_chain_bypass_overspeed_and_brake_blocks_count": 275,
+                "concurrent_field_mechanics_dispatchers_and_engineers": 22000,
+            },
+            "ontology_traversal": [
+                "Door-Inverter-Rope-MFL-and-SAP-FSL-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,000K (1.0M) EPS of door-closing inverter torque profiles, 3-axis car accelerometers, and traction-rope MFL signals from 2.4M units while mirroring SAP S/4HANA CS and Salesforce Field Service (42K mechanics) ($0/GB write tax & $0 copy tax), flagging 715 pre-entrapment door-lock and sheave units 7 days early in 4ms",
+                "Multi-Brand-Schematic-Match-and-Modernization-Engine -> Azure SQL / Cosmos DB SSD DiskANN (760,000,000 door/rail FFT waveforms, 40-year multi-brand wiring schematics & ASME A17.1 / EN 81-20 vectors, -92% RAM at $3,940/mo vs $93,600/mo DRAM) + In-Lake PREDICT -> Cuts unplanned passenger entrapments and callbacks -41.5% and captures +$66.5M/yr in SLA retention and modernization conversions in 4ms",
+                "Foundry-IQ-ASME-A17-EN81-SIL3-Safety-Gate -> Validates SMART-ELEVATOR-ESCALATOR-SIL3-SAFETY-SOP-224 -> Blocks 275 remote controller resets on occupied cabs, open SIL-3 safety-chain interlocks, or out-of-tolerance dual-plunger electromechanical brake air gaps (+$15.60M protected) with building/VIP floor RLS in 4ms",
+                "Approved Off-Peak Preventive Repair & Priority Rescue Dispatch -> VP of Global Field Operations Teams Card -> Dispatches nearest certified mechanic in Salesforce FSL, initiates 24/7 video reassurance, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_smart_elevator_monthly_tco_usd": 15980,
+                "competitor_stitched_smart_elevator_monthly_tco_usd": 436000,
+                "monthly_smart_elevator_tco_saved_usd": 420020,
+                "monthly_smart_elevator_tco_savings_pct": 96.3,
+                "fabric_internal_full_stack_monthly_usd": 50200,
+                "competitor_internal_full_stack_monthly_usd": 1215000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.0M EPS Door-Operator Torque & Rope MFL Sense Agent",
+                        "operation": "Mirror SAP S/4HANA CS and Salesforce FSL (42K mechanics) zero-copy and ingest 1,000K (1.0M) EPS door/vibration/MFL streams across 2.4M units at $0/GB write tax, flagging 715 pre-entrapment units in 4ms",
+                        "impact_metric": "4ms 715-unit sense (-41.5% entrapments); eliminates $166,400/mo in IoT stream and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "760M SSD DiskANN Multi-Brand Schematic/FFT RAG & In-Lake PREDICT Mechanic Dispatch Agent",
+                        "operation": "Search 760,000,000 door/rail FFT, 40-year multi-brand schematic & ASME A17.1 vectors via SSD DiskANN (-92% RAM at $3,940/mo vs $93,600/mo DRAM) and match van spare boards & modernization leads in 4ms",
+                        "impact_metric": "4ms schematic/part match (+$66.5M/yr SLA & mod value); $3,940/mo SSD DiskANN vs $93,600/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms ASME A17.1 / EN 81-20 SIL-3 Gate & 4ms FSL Rescue / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-224 blocking 275 occupied-cab resets, open safety chains & brake faults (+$15.60M saved) & enforcing building RLS (4ms), then dispatch FSL mechanics & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; R216=6^3 Round, 110th Ontology Sim, Exact 22,000 Users, -$420.0K/mo & $74.70M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "SMART-ELEVATOR-ESCALATOR-SIL3-SAFETY-SOP-224",
+                "hard_constraint": "Physically block remote controller resets whenever cab mmWave/load sensors indicate passenger presence or any node in the ASME A17.1 / EN 81-20 SIL-3 safety chain (door locks, governor, safety gear, buffers) is open, lock out units exceeding dual-channel electromechanical brake air-gap or ASME A17.6 rope broken-wire limits, and enforce building/VIP floor RLS",
+                "proposed_change": "Block 275 occupied-cab resets, open safety chains & brake faults (+$15.60M saved), capture $66.5M in SLA penalty avoidance & modernization conversions (-41.5% entrapments), service 715 units, and enforce RLS across Exact 22,000 users",
+                "asme_a17_en81_sil3_safety_chain_and_occupied_cab_verified": True,
+                "dual_channel_brake_air_gap_and_building_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 74700000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (760M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -12736,6 +12802,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-905",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global elevator & escalator OEM service network (2.4M connected units, 42K mechanics, 1,000K=1.0M EPS door-operator inverter current, 3-axis car vibration & rope MFL streams + SAP S/4HANA CS & Salesforce FSL) requires 4ms 7-day pre-entrapment sensing: Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs $166,400/mo stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL 1,000K (1.0M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Door-Torque & Rope MFL Sense Flagging 715 Pre-Entrapment Units & Cutting Entrapments -41.5% vs $166.4K/mo Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL 1,000K (1.0M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Door-Torque & Rope MFL Sense Flagging 715 Pre-Entrapment Units & Cutting Entrapments -41.5% vs $166.4K/mo Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-906",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 760M door/rail FFT waveforms, 40-year multi-brand controller wiring schematics & ASME A17.1 / EN 81-20 codes at $3,940/mo) + In-Lake PREDICT ($0 egress tax) vs 5.90TB RAM OpenSearch/Mosaic vector clusters ($93,600/mo)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (760M Multi-Brand Schematic, FFT & Safety-Code Vectors, -92% RAM at $3,940/mo vs $93,600/mo DRAM, 4ms In-Lake PREDICT Capturing +$66.5M/yr in SLA Retention & Modernization)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (760M Multi-Brand Schematic, FFT & Safety-Code Vectors, -92% RAM at $3,940/mo vs $93,600/mo DRAM, 4ms In-Lake PREDICT Capturing +$66.5M/yr in SLA Retention & Modernization)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-907",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 2.4M-unit global smart elevator, escalator & building vertical mobility platform (1,000K=1.0M EPS stream, 760M schematic/FFT vectors, Exact 22,000 mechanics/dispatchers/REIT PMs): Fabric F64 ($15,980/mo) vs stitched IoT/SAP CDC/Snowflake/Databricks/AWS/BI stack ($269.8K-Exact $436,000/mo!)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 760M SSD DiskANN + Direct Lake ($15,980/mo vs Exact $436,000/mo! Stitched Multi-Cloud, Saving -$420.0K/mo Exact >$420K! / -96.3% TCO with Exact 22,000 $0 Viewer Seats & Building RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 760M SSD DiskANN + Direct Lake ($15,980/mo vs Exact $436,000/mo! Stitched Multi-Cloud, Saving -$420.0K/mo Exact >$420K! / -96.3% TCO with Exact 22,000 $0 Viewer Seats & Building RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-908",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R216=6^3 Perfect Cube Round, 110th (10x11) Ontology Simulation, Sub-139ms (138.78ms) Ontology Mean, 144=12^2 Confirm, Exact 22,000 Users & -$420.0K/mo Exact Savings Milestone: Morning rush triggers 715 door/sheave alerts and 275 occupied-cab/SIL-3/brake risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 715-Unit Pre-Entrapment Sense ($0 Tax) + 760M DiskANN & PREDICT 4ms (-41.5% Entrapments & +$66.5M Saved) + Foundry IQ 4ms 275-SIL3-Safety/Occupied-Cab/Brake Gate (+$15.60M) & RLS + Teams FSL-Rescue & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $74.70M SLA)",
+        "model_answer": "Eventhouse 4ms 715-Unit Pre-Entrapment Sense ($0 Tax) + 760M DiskANN & PREDICT 4ms (-41.5% Entrapments & +$66.5M Saved) + Foundry IQ 4ms 275-SIL3-Safety/Occupied-Cab/Brake Gate (+$15.60M) & RLS + Teams FSL-Rescue & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $74.70M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -12962,7 +13076,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_sports_stadiums_theme_parks_live_entertainment_fabric_ticketing_fan360_vs_4clouds",
         "global_waste_management_recycling_mrf_circular_economy_fabric_fleet_rcra_vs_4clouds",
         "global_staffing_eor_contingent_workforce_vms_fabric_payroll_compliance_vs_4clouds",
-        "global_precision_dairy_livestock_feed_mill_fabric_nir_antibiotic_traceability_vs_4clouds"
+        "global_precision_dairy_livestock_feed_mill_fabric_nir_antibiotic_traceability_vs_4clouds",
+        "global_smart_elevator_escalator_building_mobility_fabric_rul_safety_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
