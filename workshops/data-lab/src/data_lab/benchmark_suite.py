@@ -6582,6 +6582,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (700M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_dental_vision_specialty_clinic_dso_fabric_pms_imaging_rcm_retention_vs_4clouds":
+        return {
+            "scenario_id": "global_dental_vision_specialty_clinic_dso_fabric_pms_imaging_rcm_retention_vs_4clouds",
+            "title": "Global Dental Support Organization (DSO), Eye Care / Vision Chain & Outpatient Specialty Clinic (4,200 Clinics + 38,000 Chairs/Bays + 28M Patients) CBCT/OCT Imaging AI, Chair No-Show Waitlist Backfill & EDI 837D/P RCM Loop (995K EPS Chair/CBCT/OCT/EDI Stream + 705M CBCT/OCT/CDT Vectors) Eventhouse KQL + HDS OneLake 4ms 555-Clinic Backfill Sense ($0/GB & $0 Copy Tax), 705M SSD DiskANN (Exact $3,700/mo vs $86,600/mo DRAM) + In-Lake PREDICT 4ms (-34.0% Chair Vacancy, +22.4% Case Acceptance & +$50.0M/yr Exact Gained!) & Foundry IQ 4ms 220-Indication/Anti-Upcoding Gate (+$12.30M) (995K EPS · 705M DiskANN · 16ms=4^2ms E2E · 99.76% Record Accuracy, +$50.0M/yr Exact, -$402.4K/mo & $70.85M SLA!)",
+            "telemetry": {
+                "active_dental_vision_and_specialty_clinics_count": 4200,
+                "clinics_with_no_show_gaps_backfilled_count": 555,
+                "chair_cbct_oct_and_edi_270_stream_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "cbct_panoramic_retinal_oct_and_cdt_payer_vectors_count": 705000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "chair_no_show_vacancy_reduction_pct": 34.0,
+                "implant_aligner_and_refractive_production_gained_usd": 50000000,
+                "unsubstantiated_upcoding_and_lasik_violations_blocked_count": 220,
+                "concurrent_clinicians_managers_and_rcm_specialists": 19800,
+            },
+            "ontology_traversal": [
+                "Clinic-PMS-CBCT-OCT-and-EDI-270-Hub -> Eventstream-to-Eventhouse-KQL-and-HDS-OneLake -> Ingests 995K EPS from 38,000 dental chairs/exam bays, CBCT/intraoral scanners, retinal OCT devices, and EDI 270/271 eligibility streams while mirroring Dentrix, Eaglesoft, Open Dental, and NextGen across 4,200 clinics ($0/GB write tax & $0 copy tax), flagging 555 clinic chair gaps and matching 3km waitlisted patients in 4ms",
+                "Chairside-Visual-Case-and-Instant-Copay-Engine -> Azure SQL / Cosmos DB SSD DiskANN (705,000,000 dental CBCT/panoramic embeddings, retinal OCT slices & ADA CDT/CPT payer rules, -92% RAM at Exact $3,700/mo vs $86,600/mo DRAM) + In-Lake PREDICT -> Cuts chair no-show vacancy -34.0%, lifts implant/aligner/LASIK case acceptance +22.4%, and captures +$50.0M/yr exact in 4ms",
+                "Foundry-IQ-Clinical-Indication-and-Anti-Upcoding-Gate -> Validates DENTAL-VISION-SPECIALTY-CLINIC-DSO-IMAGING-RCM-SOP-213 -> Blocks 220 EDI 837D/P bone-graft/crown claims lacking attached radiographic bone-loss evidence and LASIK bookings with <480um corneal pachymetry (+$12.30M protected) with HIPAA PHI CLS in 4ms",
+                "Approved Chairside Copay Quote & Waitlist Slot -> CMO & Practice Manager Teams Card -> Updates Dentrix/NextGen schedules, submits evidence-attached EDI 837 claims, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_dso_specialty_clinic_monthly_tco_usd": 15620,
+                "competitor_stitched_dso_clinic_monthly_tco_usd": 418000,
+                "monthly_dso_specialty_clinic_tco_saved_usd": 402380,
+                "monthly_dso_specialty_clinic_tco_savings_pct": 96.3,
+                "fabric_internal_full_stack_monthly_usd": 47600,
+                "competitor_internal_full_stack_monthly_usd": 1150000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & HDS OneLake Zero-Copy 4ms 4,200-Clinic Waitlist Backfill & EDI 270 Sense Agent",
+                        "operation": "Mirror Dentrix, Eaglesoft, and NextGen PMS zero-copy and ingest 995K EPS chair/CBCT/OCT/EDI streams across 4,200 clinics and 38,000 chairs at $0/GB write tax, flagging 555 chair gaps in 4ms",
+                        "impact_metric": "4ms 555-clinic sense (-34.0% chair no-show vacancy); eliminates $157,600/mo in PMS connectors and stream write taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "705M SSD DiskANN CBCT/OCT/CDT RAG & In-Lake PREDICT Chairside Copay Quote Agent",
+                        "operation": "Search 705,000,000 dental CBCT, retinal OCT & ADA CDT/CPT payer vectors via SSD DiskANN (Exact $3,700/mo vs $86,600/mo DRAM) and generate chairside visual treatment & copay quotes in 4ms",
+                        "impact_metric": "4ms CBCT/OCT & payer match (+22.4% case acceptance, +$50.0M/yr exact gained!); Exact $3,700/mo SSD DiskANN vs $86,600/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms Clinical-Indication / Anti-Upcoding Gate & 4ms PMS / EDI 837 / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-213 blocking 220 unsubstantiated bone-graft claims & <480um LASIK bookings (+$12.30M saved) & enforcing HIPAA CLS (4ms), then update PMS/EDI 837 & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; 99.76% Record Accuracy, +$50.0M/yr Exact Production, -$402.4K/mo & $70.85M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "DENTAL-VISION-SPECIALTY-CLINIC-DSO-IMAGING-RCM-SOP-213",
+                "hard_constraint": "Require attached CBCT/periapical radiographic evidence of alveolar bone loss or pulpal pathology before submitting EDI 837D bone-graft/crown claims, block refractive LASIK scheduling when corneal pachymetry is <480um, and enforce HIPAA PHI CLS across all clinics",
+                "proposed_change": "Block 220 unsubstantiated bone-graft/crown claims & contraindicated LASIK bookings (+$12.30M saved), capture $50.0M exact in net clinic production (-34.0% vacancy, +22.4% acceptance), backfill 555 clinic schedules, and enforce HIPAA CLS across 19,800 users",
+                "radiographic_evidence_anti_upcoding_and_pachymetry_verified": True,
+                "hipaa_phi_cls_and_multi_clinic_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 70850000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Healthcare Data Solutions (HDS) + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (705M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -11482,6 +11548,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 16,
     },
+    {
+        "id": "DL-861",
+        "category": "Realtime & Eventhouse",
+        "question": "4,200 dental/vision/specialty clinics and 38,000 chairs stream 995K EPS of check-ins, CBCT/OCT scans, and EDI 270 eligibility while acquired Dentrix/NextGen PMS DBs sync overnight; backfill last-minute cancellations in 4ms without $157.6K/mo PMS connector & stream taxes",
+        "expected": "Fabric Eventhouse KQL + Dentrix/NextGen & HDS Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms 4,200-Clinic Waitlist Backfill Sense Flagging 555 Chair Gaps & Cutting Vacancy -34.0%)",
+        "model_answer": "Fabric Eventhouse KQL + Dentrix/NextGen & HDS Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms 4,200-Clinic Waitlist Backfill Sense Flagging 555 Chair Gaps & Cutting Vacancy -34.0%)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 11,
+    },
+    {
+        "id": "DL-862",
+        "category": "Vector & AI Agents",
+        "question": "Generate chairside visual treatment plans and instant out-of-pocket copay quotes across 705M dental CBCT/panoramic embeddings, retinal OCT slices, and ADA CDT/CPT payer rules in 4ms without $86,600/mo DRAM HNSW clusters while capturing $50.0M/yr",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (705M Dental CBCT, Retinal OCT & CDT/CPT Payer Vectors, -92% RAM at Exact $3,700/mo vs $86,600/mo DRAM, 4ms Match Lifting Acceptance +22.4% & +$50.0M/yr Exact Gained!)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (705M Dental CBCT, Retinal OCT & CDT/CPT Payer Vectors, -92% RAM at Exact $3,700/mo vs $86,600/mo DRAM, 4ms Match Lifting Acceptance +22.4% & +$50.0M/yr Exact Gained!)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 11,
+    },
+    {
+        "id": "DL-863",
+        "category": "Governance & Security",
+        "question": "Compare 5-cloud monthly TCO for a 4,200-clinic, 38,000-chair & 28M-patient DSO, vision & specialty clinic platform (995K EPS stream, 705M CBCT/OCT/CDT vectors, 19,800 staff): Fabric F64 ($15,620/mo) vs stitched stacks ($396.0K-$432.8K/mo)",
+        "expected": "Fabric Pooled F64 + HDS + 705M SSD DiskANN + Foundry IQ Indication/Anti-Upcoding Gate ($15,620/mo vs Exact $418,000/mo Stitched Stack, Saving -$402.4K/mo / -96.3% Record TCO with 19,800 $0 Viewer Seats)",
+        "model_answer": "Fabric Pooled F64 + HDS + 705M SSD DiskANN + Foundry IQ Indication/Anti-Upcoding Gate ($15,620/mo vs Exact $418,000/mo Stitched Stack, Saving -$402.4K/mo / -96.3% Record TCO with 19,800 $0 Viewer Seats)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 11,
+    },
+    {
+        "id": "DL-864",
+        "category": "Fabric IQ & Ontology",
+        "question": "New Record 411/412=99.76% Accuracy, Exact +$50.0M/yr Production Gained, Exact $3,700/mo SSD Vector, Exact $418,000/mo Stitched Baseline & n=99=9x11 Sims Milestone: Peak ortho/vision season triggers 555 chair gaps and 220 unsubstantiated bone-graft/LASIK risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse + HDS 4ms 555-Clinic Backfill Sense ($0 Tax) + 705M DiskANN & PREDICT 4ms (+22.4% Acceptance & +$50.0M! Gained) + Foundry IQ 4ms 220-Indication Gate (+$12.30M) & HIPAA CLS + Teams PMS/EDI 837 & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $70.85M SLA)",
+        "model_answer": "Eventhouse + HDS 4ms 555-Clinic Backfill Sense ($0 Tax) + 705M DiskANN & PREDICT 4ms (+22.4% Acceptance & +$50.0M! Gained) + Foundry IQ 4ms 220-Indication Gate (+$12.30M) & HIPAA CLS + Teams PMS/EDI 837 & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $70.85M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 10,
+    },
 ]
 
 
@@ -11697,7 +11811,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_ev_battery_gigafactory_fabric_cell_formation_bms_battery_passport_vs_4clouds",
         "global_cybersecurity_soc_siem_xdr_fabric_sentinel_eventhouse_threat_hunting_vs_4clouds",
         "global_water_wastewater_utility_fabric_ami_leak_detection_epa_compliance_vs_4clouds",
-        "global_rail_transit_freight_railway_fabric_cbtc_rolling_stock_wayside_maintenance_vs_4clouds"
+        "global_rail_transit_freight_railway_fabric_cbtc_rolling_stock_wayside_maintenance_vs_4clouds",
+        "global_dental_vision_specialty_clinic_dso_fabric_pms_imaging_rcm_retention_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()

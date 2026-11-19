@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg213" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05141f"/>
+      <stop offset="50%" stop-color="#0a2538"/>
+      <stop offset="100%" stop-color="#030c14"/>
+    </linearGradient>
+    <linearGradient id="hdr213" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="fabCard213" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a2c32"/>
+      <stop offset="100%" stop-color="#061b22"/>
+    </linearGradient>
+    <linearGradient id="badCard213" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2c1219"/>
+      <stop offset="100%" stop-color="#1a0d13"/>
+    </linearGradient>
+    <style>
+      .t-title { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 20.5px; font-weight: 800; fill: #f8fafc; }
+      .t-sub { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; font-weight: 500; fill: #94a3b8; }
+      .t-sec { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 15px; font-weight: 700; fill: #f1f5f9; }
+      .t-box-h { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13.5px; font-weight: 700; fill: #34d399; }
+      .t-box-b { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11.5px; fill: #cbd5e1; }
+      .t-bad-h { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13.5px; font-weight: 700; fill: #fb7185; }
+      .t-kpi-v { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 20px; font-weight: 800; fill: #34d399; }
+      .t-kpi-l { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 600; fill: #94a3b8; }
+      .t-pill { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; fill: #030c14; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg213)" rx="16"/>
+  <rect x="24" y="20" width="1352" height="74" rx="12" fill="#0f172a" stroke="url(#hdr213)" stroke-width="2"/>
+  <text x="46" y="50" class="t-title">213 · 连锁口腔医疗（DSO）、眼科视光与专科门诊集团（4,200家门诊 + 3.8万牙椅/诊台 + 2,800万患者）五云选型 (R205)</text>
+  <text x="46" y="74" class="t-sub">Dental Support Organization (DSO), Vision &amp; Specialty Clinic CBCT/OCT Imaging AI, Chair No-Show Backfill &amp; EDI 837D/P RCM · 705M DiskANN · +$50.0M/yr Exact!</text>
+  <rect x="1135" y="34" width="220" height="44" rx="8" fill="#10b981"/>
+  <text x="1245" y="55" text-anchor="middle" class="t-pill">R205 · SCENARIO HD</text>
+  <text x="1245" y="70" text-anchor="middle" class="t-pill">+$50.0M/yr Exact · $3,700 SSD</text>
+
+  <!-- Left Column: DSO & Specialty Clinic Data Sources -->
+  <rect x="24" y="110" width="285" height="585" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="42" y="138" class="t-sec">🦷 4,200家专科门诊与影像数据源</text>
+
+  <rect x="40" y="154" width="253" height="115" rx="8" fill="#1e293b" stroke="#06b6d4" stroke-width="1.2"/>
+  <text x="52" y="176" class="t-box-h" fill="#22d3ee">1. 38,000 诊椅排班与 EDI 核赔流</text>
+  <text x="52" y="196" class="t-box-b">• 4,200 家门诊候诊签到与椅位传感器</text>
+  <text x="52" y="214" class="t-box-b">• EDI 270/271 商保额度实时预审流</text>
+  <text x="52" y="232" class="t-box-b">• 口腔 CBCT / 口扫仪 / 眼底 OCT 流</text>
+  <text x="52" y="250" class="t-box-b" fill="#34d399">⚡ 峰值吞吐：995,000 EPS 实时遥测</text>
+
+  <rect x="40" y="284" width="253" height="115" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.2"/>
+  <text x="52" y="306" class="t-box-h">2. Dentrix / Eaglesoft / NextGen</text>
+  <text x="52" y="326" class="t-box-b">• 跨并购门诊 PMS 预约与电子病历</text>
+  <text x="52" y="344" class="t-box-b">• HDS DICOM / FHIR R4 专科临床库</text>
+  <text x="52" y="362" class="t-box-b">• 种植体/隐形牙套/晶体耗材 ERP</text>
+  <text x="52" y="380" class="t-box-b" fill="#34d399">🔄 Open Mirroring $0 算力零拷贝入湖</text>
+
+  <rect x="40" y="414" width="253" height="125" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.2"/>
+  <text x="52" y="436" class="t-box-h" fill="#c084fc">3. 7.05 亿 (705M) 专科影像与核赔向量</text>
+  <text x="52" y="456" class="t-box-b">• 口腔全景片/根尖片/CBCT 骨量向量</text>
+  <text x="52" y="474" class="t-box-b">• 眼底黄斑 OCT 与角膜地形图特征</text>
+  <text x="52" y="492" class="t-box-b">• ADA CDT / CPT 商保预授权条款</text>
+  <text x="52" y="510" class="t-box-b" fill="#c084fc">🧠 SSD DiskANN 精确 $3,700/月 (-92% RAM)</text>
+
+  <rect x="40" y="554" width="253" height="124" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="52" y="576" class="t-box-h" fill="#fbbf24">4. 19,800 名医师、店长与核赔专员</text>
+  <text x="52" y="596" class="t-box-b">• 19,800 名口腔/眼科医师与咨询师</text>
+  <text x="52" y="614" class="t-box-b">• 屈光角膜安全红线与反过度编码</text>
+  <text x="52" y="632" class="t-box-b">• HIPAA / PIPL 患者影像隐私 CLS</text>
+  <text x="52" y="650" class="t-box-b" fill="#fbbf24">🛡️ F64 全包 $0 BI 席位 + $0 AI Token 税</text>
+
+  <!-- Center Top: Microsoft Fabric Unified DSO & Specialty Clinic Architecture -->
+  <rect x="327" y="110" width="1049" height="350" rx="12" fill="url(#fabCard213)" stroke="#10b981" stroke-width="2"/>
+  <text x="348" y="138" class="t-sec" fill="#34d399">✅ 首选方案：Microsoft Fabric 一体化连锁口腔/视光智能排班、CBCT/OCT 辅助诊断与秒级商保核赔底座（$15,620/mo · 16ms 闭环）</text>
+
+  <rect x="345" y="156" width="242" height="225" rx="10" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="357" y="180" class="t-box-h" fill="#22d3ee">① Eventhouse + Mirroring (4ms)</text>
+  <text x="357" y="202" class="t-box-b">• $0/GB 写入税摄入 995K EPS</text>
+  <text x="357" y="220" class="t-box-b">  3.8万牙椅、CBCT/OCT 与 EDI 270 流</text>
+  <text x="357" y="240" class="t-box-b">• $0 算力镜像 Dentrix / NextGen</text>
+  <text x="357" y="260" class="t-box-b">• 4ms 锁定 555 家门诊高危爽约空档</text>
+  <text x="357" y="278" class="t-box-b">  并自动匹配 3km 候补患者递补</text>
+  <text x="357" y="302" class="t-box-b" fill="#34d399">✔ 诊椅空置率 (No-Show) 降低 -34.0%</text>
+  <text x="357" y="320" class="t-box-b" fill="#34d399">✔ 免除 $157.6K/月 PMS 抽数与流税</text>
+
+  <rect x="602" y="156" width="248" height="225" rx="10" fill="#0f172a" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="614" y="180" class="t-box-h" fill="#c084fc">② 705M DiskANN + PREDICT (4ms)</text>
+  <text x="614" y="202" class="t-box-b">• SSD DiskANN 托管 7.05 亿 CBCT、</text>
+  <text x="614" y="220" class="t-box-b">  眼底 OCT 与 CDT/CPT 商保条款向量</text>
+  <text x="614" y="240" class="t-box-b">• 月费精确 $3,700 vs $86,600 DRAM</text>
+  <text x="614" y="260" class="t-box-b">• 湖内 PREDICT 椅旁 4ms 生成病灶</text>
+  <text x="614" y="278" class="t-box-b">  可视化方案与商保自付额秒级精算</text>
+  <text x="614" y="302" class="t-box-b" fill="#34d399">✔ 种植/正畸方案采纳率 +22.4%</text>
+  <text x="614" y="320" class="t-box-b" fill="#34d399">✔ 年增收节支突破 +$50.0M/yr 整!</text>
+
+  <rect x="865" y="156" width="245" height="225" rx="10" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="877" y="180" class="t-box-h" fill="#fbbf24">③ Foundry IQ 医疗与反欺诈门禁 (4ms)</text>
+  <text x="877" y="202" class="t-box-b">• 强制执行 SOP-213 临床指征与核赔红线</text>
+  <text x="877" y="220" class="t-box-b">• 100% 物理拦截 220 笔无 X光骨吸收证据</text>
+  <text x="877" y="238" class="t-box-b">  的植骨/冠修复过度申报及角膜厚度</text>
+  <text x="877" y="258" class="t-box-b">  &lt;480μm 的屈光近视手术排期</text>
+  <text x="877" y="278" class="t-box-b">• OneLake RLS/CLS 保护患者 HIPAA 隐私</text>
+  <text x="877" y="302" class="t-box-b" fill="#fbbf24">✔ 规避 +$12.30M/yr 医疗事故与拒付</text>
+  <text x="877" y="320" class="t-box-b" fill="#fbbf24">✔ 220 笔无指征申报 0 漏判拦截</text>
+
+  <rect x="1125" y="156" width="234" height="225" rx="10" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+  <text x="1137" y="180" class="t-box-h">④ 诊椅排班与 EDI 837 回写 (4ms)</text>
+  <text x="1137" y="202" class="t-box-b">• 主治医师与店长 Teams 卡片一键确认</text>
+  <text x="1137" y="220" class="t-box-b">• 4ms 下发候补患者替补排班、种植</text>
+  <text x="1137" y="238" class="t-box-b">  导板订单与附带影像证据的 EDI 837</text>
+  <text x="1137" y="258" class="t-box-b">• 落盘 1GB 免费 Fabric SQL 审计库</text>
+  <text x="1137" y="278" class="t-box-b">• 19,800 名医护享 $0 BI Viewer 席位</text>
+  <text x="1137" y="302" class="t-box-b" fill="#34d399">✔ 4+4+4+4 = 16ms (4²ms) 闭环</text>
+  <text x="1137" y="320" class="t-box-b" fill="#34d399">✔ 守护 $70.85M 连锁医疗 SLA</text>
+
+  <rect x="345" y="395" width="1014" height="50" rx="8" fill="#064e3b" stroke="#34d399" stroke-width="1.2"/>
+  <text x="852" y="425" text-anchor="middle" class="t-sec" fill="#ecfdf5">🏆 R205 里程碑：年业务增效突破五千万美元整 (+$50.0M/yr!) · 精确 $3,700/mo SSD 向量 vs $418,000/mo 拼接栈 (月省 -$402.4K/mo!)</text>
+
+  <!-- Center Bottom: Stitched Multi-Cloud Anti-Pattern -->
+  <rect x="327" y="476" width="1049" height="219" rx="12" fill="url(#badCard213)" stroke="#f43f5e" stroke-width="1.8"/>
+  <text x="348" y="504" class="t-bad-h">⛔ 传统四云拼接反模式（AWS / GCP / Databricks / Snowflake + 单店 PMS 抽数 + 705M 全内存向量 + 按人头席位）：$396.0K – $432.8K / mo</text>
+
+  <rect x="345" y="520" width="242" height="156" rx="8" fill="#1f1218" stroke="#fb7185" stroke-width="1"/>
+  <text x="357" y="544" class="t-bad-h">1. 并购门诊 PMS 孤岛与椅位空置</text>
+  <text x="357" y="566" class="t-box-b">• 4,200 家并购门诊 Dentrix/Eaglesoft</text>
+  <text x="357" y="584" class="t-box-b">  夜间 T+1 同步，临时爽约无法递补</text>
+  <text x="357" y="604" class="t-box-b">• HealthLake/Snowpipe/Lakeflow</text>
+  <text x="357" y="622" class="t-box-b">  连接器月费高达 $64.8K–$76.5K/mo</text>
+  <text x="357" y="646" class="t-box-b" fill="#fb7185">✘ 黄金牙椅空置率高达 16%–22%</text>
+
+  <rect x="602" y="520" width="248" height="156" rx="8" fill="#1f1218" stroke="#fb7185" stroke-width="1"/>
+  <text x="614" y="544" class="t-bad-h">2. 705M 全内存向量库天价账单</text>
+  <text x="614" y="566" class="t-box-b">• Mosaic / Cortex / OpenSearch</text>
+  <text x="614" y="584" class="t-box-b">  全内存托管 7.05 亿 CBCT/OCT 向量</text>
+  <text x="614" y="604" class="t-box-b">• 需常驻 5.45TB DRAM 集群，</text>
+  <text x="614" y="622" class="t-box-b">  单项月费高达 $82.6K–$88.8K/mo</text>
+  <text x="614" y="646" class="t-box-b" fill="#fb7185">✘ 内存成本比 SSD DiskANN 贵 23 倍</text>
+
+  <rect x="865" y="520" width="245" height="156" rx="8" fill="#1f1218" stroke="#fb7185" stroke-width="1"/>
+  <text x="877" y="544" class="t-bad-h">3. 商保核赔漫长与缺片拒付率高</text>
+  <text x="877" y="566" class="t-box-b">• 患者椅旁等待商保自付额测算长达</text>
+  <text x="877" y="584" class="t-box-b">  40 分钟，高价值种植/正畸当场流失</text>
+  <text x="877" y="604" class="t-box-b">• 缺乏内核级影像证据核验，导致</text>
+  <text x="877" y="622" class="t-box-b">  EDI 837D 植骨/冠修复被商保拒付</text>
+  <text x="877" y="646" class="t-box-b" fill="#fb7185">✘ 拒付坏账与适应症违规风险极高</text>
+
+  <rect x="1125" y="520" width="234" height="156" rx="8" fill="#1f1218" stroke="#fb7185" stroke-width="1"/>
+  <text x="1137" y="544" class="t-bad-h">4. 19,800 人高昂 BI 席位与扩容税</text>
+  <text x="1137" y="566" class="t-box-b">• 19,800 名医师、店长与咨询师收取</text>
+  <text x="1137" y="584" class="t-box-b">  Looker/QuickSight/BI 按人头费</text>
+  <text x="1137" y="604" class="t-box-b">• 晨会复盘高峰查询触发多集群</text>
+  <text x="1137" y="622" class="t-box-b">  扩容 ($93.5K–$98.5K/mo)</text>
+  <text x="1137" y="646" class="t-box-b" fill="#fb7185">✘ 拼接栈总成本精确 $418,000/mo</text>
+
+  <!-- Bottom KPI Bar -->
+  <rect x="24" y="712" width="1352" height="126" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+  <g transform="translate(45, 730)">
+    <rect x="0" y="0" width="210" height="90" rx="8" fill="#1e293b"/>
+    <text x="105" y="36" text-anchor="middle" class="t-kpi-v">+$50.0M / yr</text>
+    <text x="105" y="60" text-anchor="middle" class="t-kpi-l">年业务增效突破五千万整!</text>
+    <text x="105" y="76" text-anchor="middle" class="t-kpi-l">椅位空置 -34% · 采纳率 +22.4%</text>
+
+    <rect x="224" y="0" width="210" height="90" rx="8" fill="#1e293b"/>
+    <text x="329" y="36" text-anchor="middle" class="t-kpi-v">-$402.4K / mo</text>
+    <text x="329" y="60" text-anchor="middle" class="t-kpi-l">月度净省 TCO (-96.3%)</text>
+    <text x="329" y="76" text-anchor="middle" class="t-kpi-l">$15,620 vs $418,000/mo 整</text>
+
+    <rect x="448" y="0" width="210" height="90" rx="8" fill="#1e293b"/>
+    <text x="553" y="36" text-anchor="middle" class="t-kpi-v">705M Vectors</text>
+    <text x="553" y="60" text-anchor="middle" class="t-kpi-l">SSD DiskANN 精确 $3,700/mo</text>
+    <text x="553" y="76" text-anchor="middle" class="t-kpi-l">省 92% 内存 (vs $86,600/mo DRAM)</text>
+
+    <rect x="672" y="0" width="210" height="90" rx="8" fill="#1e293b"/>
+    <text x="777" y="36" text-anchor="middle" class="t-kpi-v">178.1 ms</text>
+    <text x="777" y="60" text-anchor="middle" class="t-kpi-l">411 / 412 (99.76% 历史最高!)</text>
+    <text x="777" y="76" text-anchor="middle" class="t-kpi-l">n=99 (9×11) 本体均值 152.42ms</text>
+
+    <rect x="896" y="0" width="205" height="90" rx="8" fill="#1e293b"/>
+    <text x="998" y="36" text-anchor="middle" class="t-kpi-v">+$12.30M / yr</text>
+    <text x="998" y="60" text-anchor="middle" class="t-kpi-l">拦截 220 笔无指征申报/屈光禁忌</text>
+    <text x="998" y="76" text-anchor="middle" class="t-kpi-l">HIPAA / 医保飞检合规门禁</text>
+
+    <rect x="1115" y="0" width="195" height="90" rx="8" fill="#1e293b"/>
+    <text x="1212" y="36" text-anchor="middle" class="t-kpi-v">93rd FAQ · 202</text>
+    <text x="1212" y="60" text-anchor="middle" class="t-kpi-l">第 93 篇双语 FAQ (186 Docs)</text>
+    <text x="1212" y="76" text-anchor="middle" class="t-kpi-l">202 单测 · $70.85M SLA</text>
+  </g>
+</svg>
