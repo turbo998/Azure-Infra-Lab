@@ -3,7 +3,7 @@
 > **语言版本 / Language**: **🇨🇳 中文 (`README.md`)** | **[🇬🇧 English (`README.en.md`)](README.en.md)**  
 > **⚡ 快捷入口 / Quick Access**: **[💎 Diamond 企业级演示中心](demos/diamond-hub.html)** · **[📺 TCL × Fabric 6幕指挥舱](demos/tcl-fabric/index.html)** · **[🛒 Zava × Databricks & Fabric 沙盘](demos/databricks-fabric/index.html)** · **[⚔️ Databricks vs Fabric 10维战卡](demos/databricks-fabric/battlecard.html)** · **[🧭 五云交互选型与 TCO 工作台](index.html)** · **[📊 7-Card 基准测试报告](benchmark-cards.html)**
 
-面向 **AI Solution Architect (SA)** 的企业级数据与智能平台选型实验室：深度对标 **Microsoft Fabric**（OneLake · Direct Lake · Eventhouse · Fabric IQ Ontology）与 **Azure Databricks**、**Snowflake**、**GCP BigQuery**、**AWS Lakehouse**，提供 **2套全脱敏企业级交互实战沙盘 (Diamond Enterprise Demo Suite)**、**89 篇（双语 178 篇！）企业架构选型 FAQ** 及 **密封可复现基准测试套件 (`395 / 396 = 99.75%` 历史新高准确率, 突破 Sub-185ms `184.7ms` 路由均值 + `158.17ms` 本体均值, `194 / 194` 单测通过)**。
+面向 **AI Solution Architect (SA)** 的企业级数据与智能平台选型实验室：深度对标 **Microsoft Fabric**（OneLake · Direct Lake · Eventhouse · Fabric IQ Ontology）与 **Azure Databricks**、**Snowflake**、**GCP BigQuery**、**AWS Lakehouse**，提供 **2套全脱敏企业级交互实战沙盘 (Diamond Enterprise Demo Suite)**、**90 篇（双语 180 篇！）企业架构选型 FAQ** 及 **密封可复现基准测试套件 (`399 / 400 = 99.75%` 历史新高准确率, 精确 `183.0ms` 整数路由均值 + `156.69ms` 本体均值, `196 / 196` 单测通过)**。
 
 ---
 
@@ -15,11 +15,11 @@
 | **📺 TCL 海外渠道智能 × Fabric (6 幕指挥舱)** | OneLake 零拷贝挂载 EDI 852 + Eventhouse 港口预警 + Fabric IQ 本体护栏 + 云端 Pipeline 调拨闭环 | [`demos/tcl-fabric/index.html`](demos/tcl-fabric/index.html) · [双屏讲稿](demos/tcl-fabric/playbook.html) |
 | **🛒 Zava 全渠道生鲜 × Databricks & Fabric** | Unity Catalog 动态脱敏 (`mask_cn_phone`) + AI/BI Genie 5 轮毛利异动归因 + Mirrored UC Direct Lake | [`demos/databricks-fabric/index.html`](demos/databricks-fabric/index.html) · [10维战卡](demos/databricks-fabric/battlecard.html) |
 | **🧭 Data Lab 五云选型与 TCO 仿真工作台** | 六维竞对评分罗盘、500 用户动态 TCO 计算器、Fabric IQ 行业本体与越界熔断交互仿真 | [`index.html`](index.html) · [English](index.en.html) |
-| **📊 7-Card 4:5 视觉基准测试报告** | 严格基于 `reports/report.json` 生成的 7 卡纵向评测卡组（`395/396 = 99.75%` 历史新高准确率 · 突破 `<185ms` 路由均值达 `184.7ms` · 收官 `G` 周期 · `DL-23` 显式边界标注） | [`benchmark-cards.html`](benchmark-cards.html) · [English](benchmark-cards.en.html) |
+| **📊 7-Card 4:5 视觉基准测试报告** | 严格基于 `reports/report.json` 生成的 7 卡纵向评测卡组（`399/400 = 99.75%` · 🏆 `400=20²` 场景 · 精确整数路由均值 `183.0ms` · 第 `90` 篇 FAQ · `DL-23` 显式边界标注） | [`benchmark-cards.html`](benchmark-cards.html) · [English](benchmark-cards.en.html) |
 
 ---
 
-## 二、89 篇（双语 178 篇）企业级 Data + AI 架构选型 FAQ 精选索引（SA Decision Guides）
+## 二、90 篇（双语 180 篇）企业级 Data + AI 架构选型 FAQ 精选索引（SA Decision Guides）
 
 所有选型指南均遵循清晰的架构师决策范式（Executive Summary、核心场景问答、架构流向图、多云对比矩阵、落地核查清单），剔除晦涩无关的机械/物理推导，聚焦真实企业 IT 与业务架构：
 
@@ -33,7 +33,7 @@
 - **自然语言问数智能体**：[Fabric Data Agent vs Databricks AI/BI Genie vs Snowflake Cortex](comparisons/fabric-enterprise-data-agent-text2sql-fabric-genie-cortex-oss-faq.md) · [EN](comparisons/fabric-enterprise-data-agent-text2sql-fabric-genie-cortex-oss-faq.en.md)
 - **Medallion 批流一体架构**：[铜-银-金分层与 Lambda / Kappa 选型指南](comparisons/fabric-medallion-lakehouse-lambda-kappa-streaming-batch-architecture-faq.md) · [EN](comparisons/fabric-medallion-lakehouse-lambda-kappa-streaming-batch-architecture-faq.en.md)
 - **五云 TCO 成本拐点与迁移**：[五大云数据平台 TCO 精算与零停机现代化迁移指南](comparisons/fabric-five-cloud-data-platform-tco-inflection-migration-faq.md) · [EN](comparisons/fabric-five-cloud-data-platform-tco-inflection-migration-faq.en.md)
-- **容量治理、私有网络与容灾**：[Capacity FinOps & Surge Protection](comparisons/fabric-capacity-finops-surge-rayfin-vs-4clouds-faq.md) · [Managed VNet & Private Link](comparisons/fabric-private-link-managed-vnet-security-vs-4clouds-faq.md) · [跨区域容灾 BCDR & CMK](comparisons/fabric-bcdr-cross-region-cmk-recovery-vs-4clouds-faq.md) · [多云 FOCUS 1.0 FinOps、AI Token 分摊与 SaaS 回收](comparisons/fabric-enterprise-it-finops-cloud-cost-license-optimization-aiops-faq.md)
+- **容量治理、私有网络、安全运营（SOC/SIEM）与容灾**：[Capacity FinOps & Surge Protection](comparisons/fabric-capacity-finops-surge-rayfin-vs-4clouds-faq.md) · [Managed VNet & Private Link](comparisons/fabric-private-link-managed-vnet-security-vs-4clouds-faq.md) · [跨区域容灾 BCDR & CMK](comparisons/fabric-bcdr-cross-region-cmk-recovery-vs-4clouds-faq.md) · [多云 FOCUS 1.0 FinOps、AI Token 分摊与 SaaS 回收](comparisons/fabric-enterprise-it-finops-cloud-cost-license-optimization-aiops-faq.md) · **[🏆 R202: 企业安全运营中心（SOC）、SIEM/XDR 安全数据湖与 10 跳威胁狩猎（Sentinel × Eventhouse vs Splunk/四云）](comparisons/fabric-cybersecurity-soc-siem-xdr-sentinel-eventhouse-threat-hunting-faq.md)**
 
 ### B. 主流行业解决方案架构选型（Enterprise Industry Solutions）
 - **零售电商、大型商超、酒旅集团、民航客货运、海运港口、农业食品与全渠道供应链**：[零售 Customer 360 与实时导购补货](comparisons/fabric-retail-ecommerce-customer360-realtime-recommendation-agent-vs-4clouds-faq.md) · [跨境电商海外仓 WMS 与 FinOps](comparisons/fabric-cross-border-ecommerce-global-supply-chain-finops-faq.md) · [万店餐饮生鲜冷链与动态打折](comparisons/fabric-qsr-fmcg-chain-store-operations-coldchain-markdown-faq.md) · [快消饮料 TPO 通路促销与 POS 需求感知](comparisons/fabric-cpg-beverage-trade-promotion-demand-sensing-hedging-faq.md) · [时尚鞋服与奢侈品 RFID 尺码配补与退货防伪](comparisons/fabric-luxury-apparel-footwear-merchandising-rfid-clienteling-returns-faq.md) · [1.6亿会员可组合 CDP、实时旅程与数据净室归因](comparisons/fabric-retail-loyalty-cdp-marketing-automation-cleanroom-attribution-faq.md) · [酒店集团、综合度假村与邮轮 9,200 家物业实时收益管理 RevPAR、MICE 团客报价与 1.9 亿会员礼宾](comparisons/fabric-hospitality-hotel-cruise-revenue-management-revpar-loyalty-concierge-faq.md) · [农业食品加工与大宗粮商 $52B 贸易基差对冲、地磅 NIR 混仓与 FSMA 204 / EUDR 溯源](comparisons/fabric-agribusiness-grain-trading-food-processing-commodity-risk-fsma204-faq.md) · [民航客货运、航司 IOC 运控与机务 MRO 950 架飞机防 AOG、机组恢复与 NDC 定价](comparisons/fabric-airline-aviation-ioc-crew-recovery-mro-aog-ndc-pricing-faq.md) · [集装箱班轮航运、自动化港口与货代 780 艘船 AIS 动态降速节油、Navis N4 减翻箱与 EU ETS / FMC 滞期费合规](comparisons/fabric-maritime-container-shipping-port-terminal-tos-bunker-ets-demurrage-faq.md) · [大型商超、仓储会员店与生鲜大卖场 4,600 店生鲜日配自动补货、ESL 临期动态出清与自助收银防损](comparisons/fabric-grocery-supermarket-hypermarket-perishable-replenishment-shrinkage-pos-esl-faq.md)
@@ -64,4 +64,4 @@
 ```bash
 python -m unittest discover -s workshops/data-lab/tests -p "test_*.py"
 ```
-- **密封评测基线 (`reports/report.json`)**：`395 / 396` (`4×99`) 决策场景通过 (**`99.75%` 历史新高准确率**，`DL-23` 显式保留为单区 LRS 合规升级人工审批反例)，**路由矩阵均值首次突破 `<185ms` 达 `184.7 ms`**，95 项企业本体闭环仿真均值 `158.17 ms`（达成 **圆满收官完整 26 轮 `G` 字母周期 (`GA..GZ`)、月度净省突破 `$395K` 达 `-$395.7K/mo`、精确 `19,000` 名用户、精确 `200` 笔护栏拦截、`685M` 向量与 `194 / 194` 单元测试里程碑**）。
+- **密封评测基线 (`reports/report.json`)**：**`399 / 400` (`20²` 平方里程碑！)** 决策场景通过 (`99.75%` 历史新高准确率，`DL-23` 显式保留为单区 LRS 合规升级人工审批反例)，**路由矩阵达成精确整数 `183.0 ms` (`73,200 / 400 = 183.0ms`)**，`96 = 6×16` 项企业本体闭环仿真均值 `156.69 ms`（达成 **🏆 第 `90` 篇双语选型 FAQ (`180` Docs)、第 `210` 张架构 SVG、`130` 项 Confirm、`690M` 向量与 `196 / 196` (`14²`) 单元测试全绿里程碑**）。
