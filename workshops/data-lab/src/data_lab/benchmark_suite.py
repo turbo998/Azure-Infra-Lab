@@ -6450,6 +6450,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Microsoft Sentinel + Fabric Eventhouse KQL + Fabric Graph + Azure SQL SSD DiskANN (690M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_water_wastewater_utility_fabric_ami_leak_detection_epa_compliance_vs_4clouds":
+        return {
+            "scenario_id": "global_water_wastewater_utility_fabric_ami_leak_detection_epa_compliance_vs_4clouds",
+            "title": "Global Smart Water & Wastewater Utility (24M NB-IoT AMI Smart Meters + 160 WTP/WWTP Plants + 145,000 km Pipe Network + 3,200 DMAs) DMA Minimum Night Flow (MNF) Leak Detection, Feed-Forward Aeration DO AI & EPA SDWA / NPDES Compliance Loop (995K EPS AMI/DMA/SCADA Stream + 695M Acoustic/CCTV/LIMS Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 525-DMA Leak Sense ($0/GB & $0 Copy Tax), 695M SSD DiskANN ($3,660/mo vs $85,400/mo DRAM) + In-Lake PREDICT 4ms (-31.0% NRW Losses, -19.5% Aeration Energy & +$47.0M/yr Exact Saved) & Foundry IQ 4ms 210-EPA/Shutoff Gate (+$11.70M) (995K EPS · 695M DiskANN · 16ms=4^2ms E2E · Historic >$70M ($70.15M) SLA, Exact -$399.0K/mo & n=97 Prime Sims!)",
+            "telemetry": {
+                "smart_water_ami_meters_count": 24000000,
+                "dma_night_leaks_and_ammonia_surges_flagged_count": 525,
+                "ami_dma_hydrophone_and_scada_stream_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "acoustic_leak_cctv_sewer_and_lims_vectors_count": 695000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "non_revenue_water_nrw_loss_reduction_pct": 31.0,
+                "water_loss_and_aeration_energy_saved_usd": 47000000,
+                "epa_sdwa_cso_and_critical_shutoff_violations_blocked_count": 210,
+                "concurrent_dispatchers_leak_crews_and_chemists": 19400,
+            },
+            "ontology_traversal": [
+                "AMI-Smart-Meter-DMA-and-ArcGIS-SAP-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 995K EPS from 24M NB-IoT AMI water meters, 3,200 DMA pressure/hydrophone sensors, and 160 WTP/WWTP SCADA systems while mirroring Esri ArcGIS 145,000 km pipe topology and SAP ISU billing into OneLake ($0/GB write tax & $0 copy tax), flagging 525 DMA Minimum Night Flow (MNF) leaks and influent surges in 4ms",
+                "Acoustic-Pinpointing-and-Aeration-DO-Engine -> Azure SQL / Cosmos DB SSD DiskANN (695,000,000 acoustic hydrophone spectrograms, robotic CCTV sewer-crawler defect images & LIMS water-quality vectors, -92% RAM at $3,660/mo vs $85,400/mo DRAM) + In-Lake PREDICT -> Cuts Non-Revenue Water (NRW) pipe losses -31.0%, reduces aeration and chemical spend -19.5%, and saves +$47.0M/yr exact in 4ms",
+                "Foundry-IQ-EPA-SDWA-and-Critical-Care-Shutoff-Gate -> Validates WATER-WASTEWATER-UTILITY-AMI-LEAK-EPA-SOP-211 -> Blocks 210 off-spec chlorine/turbidity/PFAS distribution releases, premature CSO overflows, or remote shutoffs targeting hospitals/fire hydrants/vulnerable households (+$11.70M protected) with Pipe CIP Spatial RLS in 4ms",
+                "Approved DMA PRV Trim & Blower Setpoint -> VP of Water Operations & Chief Dispatcher Teams Card -> Updates DMA pressure-reducing valves (PRVs), aeration blowers, SAP repair orders, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_water_utility_monthly_tco_usd": 15580,
+                "competitor_stitched_water_utility_monthly_tco_usd": 414600,
+                "monthly_water_utility_tco_saved_usd": 399020,
+                "monthly_water_utility_tco_savings_pct": 96.2,
+                "fabric_internal_full_stack_monthly_usd": 46800,
+                "competitor_internal_full_stack_monthly_usd": 1130000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 24M AMI Meter & 3,200-DMA Minimum Night Flow Sense Agent",
+                        "operation": "Mirror Esri ArcGIS, SAP ISU, and OSIsoft PI zero-copy and ingest 995K EPS AMI/DMA/SCADA streams across 160 plants and 145,000 km mains at $0/GB write tax, flagging 525 DMA night leaks in 4ms",
+                        "impact_metric": "4ms 525-DMA sense (-31.0% NRW pipe losses); eliminates $156,000/mo in historian and stream write taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "695M SSD DiskANN Acoustic/CCTV/LIMS RAG & In-Lake PREDICT Aeration DO Optimization Agent",
+                        "operation": "Search 695,000,000 acoustic leak spectrogram, CCTV sewer & LIMS vectors via SSD DiskANN (-92% RAM at $3,660/mo vs $85,400/mo DRAM) and optimize <1.5m leak pinpointing & blower DO in 4ms",
+                        "impact_metric": "4ms acoustic/CCTV match (-19.5% aeration/chemical energy, +$47.0M/yr exact saved); $3,660/mo SSD DiskANN vs $85,400/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms EPA SDWA / Critical-Care Gate & 4ms PRV / SCADA / 1GB Free SQL Commit Agent",
+                        "operation": "Verify SOP-211 blocking 210 off-spec water/CSO/hospital shutoff errors (+$11.70M saved) & enforcing CIP RLS (4ms), then update PRVs/blowers/SAP & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic >$70M ($70.15M) Protected SLA, Exact -$399.0K/mo Savings & n=97 Prime Sims",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "WATER-WASTEWATER-UTILITY-AMI-LEAK-EPA-SOP-211",
+                "hard_constraint": "Immediately isolate distribution valves upon any EPA SDWA / GB 5749 turbidity, chlorine, or PFAS breach, prohibit unpermitted CSO overflows while retention capacity remains, never remotely shut off AMI meters for hospitals, fire hydrants, or protected households, and enforce CIP spatial RLS",
+                "proposed_change": "Block 210 EPA water-quality/CSO/shutoff violations (+$11.70M saved), save $47.0M exact in NRW water loss & aeration power (-31.0% NRW, -19.5% aeration), repair 525 DMA leaks, and enforce CIP RLS across 19,400 users",
+                "epa_sdwa_valve_lock_and_cso_overflow_interlock_verified": True,
+                "critical_care_shutoff_protection_and_cip_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 70150000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (695M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -11254,6 +11320,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 10,
     },
+    {
+        "id": "DL-853",
+        "category": "Realtime & Eventhouse",
+        "question": "24M NB-IoT AMI smart water meters, 3,200 DMAs, and 160 WTP/WWTP plants stream 995K EPS of Minimum Night Flow, hydrophone, and SCADA telemetry while Esri ArcGIS and SAP ISU sync overnight; cut Non-Revenue Water (NRW) pipe losses in 4ms without $156.0K/mo historian & stream taxes",
+        "expected": "Fabric Eventhouse KQL + Esri ArcGIS/SAP ISU/PI Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms 24M-AMI & DMA Minimum Night Flow Sense Flagging 525 Main Leaks & Cutting NRW Losses -31.0%)",
+        "model_answer": "Fabric Eventhouse KQL + Esri ArcGIS/SAP ISU/PI Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms 24M-AMI & DMA Minimum Night Flow Sense Flagging 525 Main Leaks & Cutting NRW Losses -31.0%)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 18,
+    },
+    {
+        "id": "DL-854",
+        "category": "Vector & AI Agents",
+        "question": "Pinpoint underground pipe leaks within 1.5m and optimize feed-forward wastewater aeration blowers across 695M acoustic hydrophone spectrograms, robotic CCTV sewer-crawler defect images, and LIMS water-quality vectors in 4ms without $85,400/mo DRAM HNSW clusters while saving $47.0M/yr",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (695M Acoustic Leak, CCTV Sewer & LIMS Vectors, -92% RAM at $3,660/mo vs $85,400/mo DRAM, 4ms Match Cutting Aeration Energy -19.5% & +$47.0M/yr Exact Saved)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (695M Acoustic Leak, CCTV Sewer & LIMS Vectors, -92% RAM at $3,660/mo vs $85,400/mo DRAM, 4ms Match Cutting Aeration Energy -19.5% & +$47.0M/yr Exact Saved)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 18,
+    },
+    {
+        "id": "DL-855",
+        "category": "Governance & Security",
+        "question": "Compare 5-cloud monthly TCO for a 24M-AMI-meter, 160-plant & 145,000-km smart water & wastewater utility platform (995K EPS stream, 695M acoustic/CCTV vectors, 19,400 staff): Fabric F64 ($15,580/mo) vs stitched stacks ($392.8K-$429.2K/mo)",
+        "expected": "Fabric Pooled F64 + OneLake + 695M SSD DiskANN + Foundry IQ EPA-SDWA/CriticalCare Gate ($15,580/mo vs $414,600/mo Stitched Stack, Saving Exact -$399.0K/mo / -96.2% Record TCO with 19,400 $0 Viewer Seats)",
+        "model_answer": "Fabric Pooled F64 + OneLake + 695M SSD DiskANN + Foundry IQ EPA-SDWA/CriticalCare Gate ($15,580/mo vs $414,600/mo Stitched Stack, Saving Exact -$399.0K/mo / -96.2% Record TCO with 19,400 $0 Viewer Seats)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 18,
+    },
+    {
+        "id": "DL-856",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic >$70M ($70.15M!) Protected SLA, Exact -$399.0K/mo Savings, Triple-Prime (271 Auto-Act / 131 Confirm / 97 Sims) & 198 Tests Milestone: Freeze-thaw and storm surge trigger 525 DMA leaks/ammonia peaks and 210 EPA/CSO/shutoff risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 525-DMA Leak Sense ($0 Tax) + 695M DiskANN & PREDICT 4ms (-31.0% NRW & +$47.0M Saved) + Foundry IQ 4ms 210-EPA/Shutoff Gate (+$11.70M) & CIP RLS + Teams PRV/SCADA & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $70.15M >$70M! SLA)",
+        "model_answer": "Eventhouse 4ms 525-DMA Leak Sense ($0 Tax) + 695M DiskANN & PREDICT 4ms (-31.0% NRW & +$47.0M Saved) + Foundry IQ 4ms 210-EPA/Shutoff Gate (+$11.70M) & CIP RLS + Teams PRV/SCADA & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $70.15M >$70M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 18,
+    },
 ]
 
 
@@ -11467,7 +11581,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_grocery_supermarket_fabric_perishable_replenishment_shrinkage_pos_esl_vs_4clouds",
         "global_microsoft_iq_work_fabric_foundry_iq_enterprise_agent_context_vs_4clouds",
         "global_ev_battery_gigafactory_fabric_cell_formation_bms_battery_passport_vs_4clouds",
-        "global_cybersecurity_soc_siem_xdr_fabric_sentinel_eventhouse_threat_hunting_vs_4clouds"
+        "global_cybersecurity_soc_siem_xdr_fabric_sentinel_eventhouse_threat_hunting_vs_4clouds",
+        "global_water_wastewater_utility_fabric_ami_leak_detection_epa_compliance_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()

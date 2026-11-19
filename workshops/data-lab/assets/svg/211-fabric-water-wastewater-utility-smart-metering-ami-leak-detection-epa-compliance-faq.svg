@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg211" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#041524"/>
+      <stop offset="50%" stop-color="#08263d"/>
+      <stop offset="100%" stop-color="#030d17"/>
+    </linearGradient>
+    <linearGradient id="hdr211" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="fabCard211" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#092c3a"/>
+      <stop offset="100%" stop-color="#061b26"/>
+    </linearGradient>
+    <linearGradient id="badCard211" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2c1219"/>
+      <stop offset="100%" stop-color="#1a0d13"/>
+    </linearGradient>
+    <style>
+      .t-title { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 20.5px; font-weight: 800; fill: #f8fafc; }
+      .t-sub { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; font-weight: 500; fill: #94a3b8; }
+      .t-sec { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 15px; font-weight: 700; fill: #f1f5f9; }
+      .t-box-h { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13.5px; font-weight: 700; fill: #22d3ee; }
+      .t-box-b { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11.5px; fill: #cbd5e1; }
+      .t-bad-h { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13.5px; font-weight: 700; fill: #fb7185; }
+      .t-kpi-v { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 20px; font-weight: 800; fill: #22d3ee; }
+      .t-kpi-l { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 600; fill: #94a3b8; }
+      .t-pill { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; fill: #030d17; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg211)" rx="16"/>
+  <rect x="24" y="20" width="1352" height="74" rx="12" fill="#0f172a" stroke="url(#hdr211)" stroke-width="2"/>
+  <text x="46" y="50" class="t-title">211 · 智慧水务、供排水管网与水处理集团（2,400万智能水表 + 160座水厂 + 14.5万公里管网）五云选型对比 (R203)</text>
+  <text x="46" y="74" class="t-sub">Smart Water &amp; Wastewater Utility AMI Leak Detection (DMA MNF), Aeration DO AI &amp; EPA SDWA / NPDES Compliance · 995K EPS · 695M DiskANN · &gt;$70M SLA ($70.15M!)</text>
+  <rect x="1140" y="34" width="215" height="44" rx="8" fill="#06b6d4"/>
+  <text x="1247" y="55" text-anchor="middle" class="t-pill">R203 · SCENARIO HB</text>
+  <text x="1247" y="70" text-anchor="middle" class="t-pill">&gt;$70M SLA! · -$399.0K/mo</text>
+
+  <!-- Left Column: Water Utility Data Sources -->
+  <rect x="24" y="110" width="285" height="585" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="42" y="138" class="t-sec">💧 2,400万水表与 160座水厂数据源</text>
+
+  <rect x="40" y="154" width="253" height="115" rx="8" fill="#1e293b" stroke="#06b6d4" stroke-width="1.2"/>
+  <text x="52" y="176" class="t-box-h" fill="#22d3ee">1. 2,400万 AMI 水表与 DMA 传感流</text>
+  <text x="52" y="196" class="t-box-b">• 2,400 万块 NB-IoT 智能远传水表</text>
+  <text x="52" y="214" class="t-box-b">• 3,200 个 DMA 分区压力与声学探头</text>
+  <text x="52" y="232" class="t-box-b">• 160 座水厂余氯/浊度/溶解氧 SCADA</text>
+  <text x="52" y="250" class="t-box-b" fill="#34d399">⚡ 峰值吞吐：995,000 EPS 实时遥测</text>
+
+  <rect x="40" y="284" width="253" height="115" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.2"/>
+  <text x="52" y="306" class="t-box-h" fill="#34d399">2. Esri ArcGIS / SAP ISU / LIMS</text>
+  <text x="52" y="326" class="t-box-b">• Esri ArcGIS 14.5万公里地下管网拓扑</text>
+  <text x="52" y="344" class="t-box-b">• SAP ISU 水费营收与工商业大户台账</text>
+  <text x="52" y="362" class="t-box-b">• LIMS 水质实验室 PFAS/重金属报告</text>
+  <text x="52" y="380" class="t-box-b" fill="#34d399">🔄 Open Mirroring $0 算力零拷贝入湖</text>
+
+  <rect x="40" y="414" width="253" height="125" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.2"/>
+  <text x="52" y="436" class="t-box-h" fill="#c084fc">3. 6.95 亿 (695M) 管网声学与内窥向量</text>
+  <text x="52" y="456" class="t-box-b">• 地下管网声学相关仪漏水频谱向量</text>
+  <text x="52" y="474" class="t-box-b">• 排水管网 CCTV 机器人裂缝/树根图像</text>
+  <text x="52" y="492" class="t-box-b">• 水厂工艺规程与 EPA/GB5749 标准</text>
+  <text x="52" y="510" class="t-box-b" fill="#c084fc">🧠 SSD DiskANN 仅 $3,660/月 (-92% RAM)</text>
+
+  <rect x="40" y="554" width="253" height="124" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="52" y="576" class="t-box-h" fill="#fbbf24">4. 19,400 名水力调度与抢修工程师</text>
+  <text x="52" y="596" class="t-box-b">• 19,400 名中心调度、听漏队与化验师</text>
+  <text x="52" y="614" class="t-box-b">• EPA SDWA / GB 5749 饮用水安全红线</text>
+  <text x="52" y="632" class="t-box-b">• 关键管网坐标 CIP RLS 与居民隐私</text>
+  <text x="52" y="650" class="t-box-b" fill="#fbbf24">🛡️ F64 全包 $0 BI 席位 + $0 AI Token 税</text>
+
+  <!-- Center Top: Microsoft Fabric Unified Smart Water Architecture -->
+  <rect x="327" y="110" width="1049" height="350" rx="12" fill="url(#fabCard211)" stroke="#06b6d4" stroke-width="2"/>
+  <text x="348" y="138" class="t-sec" fill="#22d3ee">✅ 首选方案：Microsoft Fabric 一体化智慧水务、DMA 产销差控漏与精确曝气底座（F64 预留容量 · $15,580/mo · 16ms = 4²ms 闭环）</text>
+
+  <rect x="345" y="156" width="242" height="225" rx="10" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="357" y="180" class="t-box-h" fill="#22d3ee">① Eventhouse + Mirroring (4ms)</text>
+  <text x="357" y="202" class="t-box-b">• $0/GB 写入税摄入 995K EPS</text>
+  <text x="357" y="220" class="t-box-b">  2,400万水表、DMA 压力与水厂 SCADA</text>
+  <text x="357" y="240" class="t-box-b">• $0 算力镜像 ArcGIS / SAP ISU</text>
+  <text x="357" y="260" class="t-box-b">• 4ms 锁定 525 处夜间最小流量 (MNF)</text>
+  <text x="357" y="278" class="t-box-b">  暗漏点、水锤瞬变与进水氨氮冲击</text>
+  <text x="357" y="302" class="t-box-b" fill="#34d399">✔ 管网漏损率 (NRW) 降低 -31.0%</text>
+  <text x="357" y="320" class="t-box-b" fill="#34d399">✔ 免除 $156.0K/月 历史库与流税</text>
+
+  <rect x="602" y="156" width="248" height="225" rx="10" fill="#0f172a" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="614" y="180" class="t-box-h" fill="#c084fc">② 695M DiskANN + PREDICT (4ms)</text>
+  <text x="614" y="202" class="t-box-b">• Azure SQL / Cosmos SSD DiskANN</text>
+  <text x="614" y="220" class="t-box-b">  托管 6.95 亿声学频谱、CCTV 与水质向量</text>
+  <text x="614" y="240" class="t-box-b">• 月费仅 $3,660 vs $85,400 DRAM</text>
+  <text x="614" y="260" class="t-box-b">• 湖内 PREDICT 精准定位爆管前兆</text>
+  <text x="614" y="278" class="t-box-b">  并动态寻优污水厂鼓风曝气 (DO)</text>
+  <text x="614" y="302" class="t-box-b" fill="#34d399">✔ 曝气与加药能耗降低 -19.5%</text>
+  <text x="614" y="320" class="t-box-b" fill="#34d399">✔ 年省漏损水费与电费 +$47.0M/yr!</text>
+
+  <rect x="865" y="156" width="245" height="225" rx="10" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="877" y="180" class="t-box-h" fill="#fbbf24">③ Foundry IQ 水质与环保门禁 (4ms)</text>
+  <text x="877" y="202" class="t-box-b">• 强制执行 SOP-211 饮用水与环保红线</text>
+  <text x="877" y="220" class="t-box-b">• 100% 物理拦截 210 笔余氯/PFAS 超标</text>
+  <text x="877" y="238" class="t-box-b">  供水并网、违规污水溢流 (CSO) 及</text>
+  <text x="877" y="258" class="t-box-b">  误关医院/消防/弱势群体水表指令</text>
+  <text x="877" y="278" class="t-box-b">• OneLake RLS/CLS 保护地下管网坐标</text>
+  <text x="877" y="302" class="t-box-b" fill="#fbbf24">✔ 规避 +$11.70M/yr 水质与环保罚金</text>
+  <text x="877" y="320" class="t-box-b" fill="#fbbf24">✔ 210 笔高危操作 0 漏判物理锁死</text>
+
+  <rect x="1125" y="156" width="234" height="225" rx="10" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+  <text x="1137" y="180" class="t-box-h" fill="#34d399">④ 减压阀/SCADA 回写与派单 (4ms)</text>
+  <text x="1137" y="202" class="t-box-b">• 水务运营 VP 与总调度长 Teams 确认</text>
+  <text x="1137" y="220" class="t-box-b">• 4ms 下发 DMA 减压阀 (PRV) 调压、</text>
+  <text x="1137" y="238" class="t-box-b">  曝气风机变频与 SAP 抢修工单</text>
+  <text x="1137" y="258" class="t-box-b">• 落盘 1GB 免费 Fabric SQL 审计库</text>
+  <text x="1137" y="278" class="t-box-b">• 19,400 名员工享 $0 BI Viewer 席位</text>
+  <text x="1137" y="302" class="t-box-b" fill="#34d399">✔ 4+4+4+4 = 16ms (4²ms) 闭环</text>
+  <text x="1137" y="320" class="t-box-b" fill="#34d399">✔ 历史性突破 &gt;$70M ($70.15M) SLA!</text>
+
+  <rect x="345" y="395" width="1014" height="50" rx="8" fill="#064e3b" stroke="#34d399" stroke-width="1.2"/>
+  <text x="852" y="425" text-anchor="middle" class="t-sec" fill="#ecfdf5">🏆 R203 里程碑：守护 SLA 突破七千万美元大关 ($70.15M &gt; $70M!) · 月省 -$399.0K/mo 整 (-96.2%) · 198 项单测全绿!</text>
+
+  <!-- Center Bottom: Stitched Multi-Cloud Anti-Pattern -->
+  <rect x="327" y="476" width="1049" height="219" rx="12" fill="url(#badCard211)" stroke="#f43f5e" stroke-width="1.8"/>
+  <text x="348" y="504" class="t-bad-h">⛔ 传统四云拼接反模式（AWS / GCP / Databricks / Snowflake + 独立 MDMS/历史库 + 695M 全内存向量 + 按人头席位）：$392.8K – $429.2K / mo</text>
+
+  <rect x="345" y="520" width="242" height="156" rx="8" fill="#1f1218" stroke="#fb7185" stroke-width="1"/>
+  <text x="357" y="544" class="t-bad-h">1. T+1 抄表汇总与暗漏变爆管</text>
+  <text x="357" y="566" class="t-box-b">• 2,400万 AMI 水表与 SCADA 割裂，</text>
+  <text x="357" y="584" class="t-box-b">  夜间暗漏持续数月直至冲塌道路</text>
+  <text x="357" y="604" class="t-box-b">• SiteWise/Snowpipe/Lakeflow 流与</text>
+  <text x="357" y="622" class="t-box-b">  连接器月费高达 $64.0K–$75.5K/mo</text>
+  <text x="357" y="646" class="t-box-b" fill="#fb7185">✘ 产销差漏损率高达 18%–26%</text>
+
+  <rect x="602" y="520" width="248" height="156" rx="8" fill="#1f1218" stroke="#fb7185" stroke-width="1"/>
+  <text x="614" y="544" class="t-bad-h">2. 695M 全内存向量库天价账单</text>
+  <text x="614" y="566" class="t-box-b">• Mosaic / Cortex / OpenSearch</text>
+  <text x="614" y="584" class="t-box-b">  全内存托管 6.95 亿声学与 CCTV 向量</text>
+  <text x="614" y="604" class="t-box-b">• 需常驻 5.35TB DRAM 集群，</text>
+  <text x="614" y="622" class="t-box-b">  单项月费高达 $81.4K–$87.6K/mo</text>
+  <text x="614" y="646" class="t-box-b" fill="#fb7185">✘ 内存成本比 SSD DiskANN 贵 23 倍</text>
+
+  <rect x="865" y="520" width="245" height="156" rx="8" fill="#1f1218" stroke="#fb7185" stroke-width="1"/>
+  <text x="877" y="544" class="t-bad-h">3. 粗放恒定曝气与水质合规滞后</text>
+  <text x="877" y="566" class="t-box-b">• 独立 GPU 推理端点空转计费</text>
+  <text x="877" y="584" class="t-box-b">  高达 $73.8K–$80.8K/mo</text>
+  <text x="877" y="604" class="t-box-b">• 缺乏内核级 EPA 饮用水超标锁阀</text>
+  <text x="877" y="622" class="t-box-b">  与医院/弱势群体免停水硬护栏</text>
+  <text x="877" y="646" class="t-box-b" fill="#fb7185">✘ 过量曝气耗电占污水厂 60% 电费</text>
+
+  <rect x="1125" y="520" width="234" height="156" rx="8" fill="#1f1218" stroke="#fb7185" stroke-width="1"/>
+  <text x="1137" y="544" class="t-bad-h">4. 19,400 人高昂 BI 席位与扩容税</text>
+  <text x="1137" y="566" class="t-box-b">• 19,400 名水厂、管网与客服人员</text>
+  <text x="1137" y="584" class="t-box-b">  按人头收取 Looker/QuickSight 费</text>
+  <text x="1137" y="604" class="t-box-b">• 暴雨防汛高峰查询触发多集群</text>
+  <text x="1137" y="622" class="t-box-b">  扩容 ($92.5K–$97.5K/mo)</text>
+  <text x="1137" y="646" class="t-box-b" fill="#fb7185">✘ 拼接栈总成本 $414,600/mo</text>
+
+  <!-- Bottom KPI Bar -->
+  <rect x="24" y="712" width="1352" height="126" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+  <g transform="translate(45, 730)">
+    <rect x="0" y="0" width="210" height="90" rx="8" fill="#1e293b"/>
+    <text x="105" y="36" text-anchor="middle" class="t-kpi-v">16 ms (4² ms)</text>
+    <text x="105" y="60" text-anchor="middle" class="t-kpi-l">端到端 DMA 控漏与精确曝气闭环</text>
+    <text x="105" y="76" text-anchor="middle" class="t-kpi-l">vs 传统架构 810ms – 3.5s</text>
+
+    <rect x="224" y="0" width="210" height="90" rx="8" fill="#1e293b"/>
+    <text x="329" y="36" text-anchor="middle" class="t-kpi-v">-$399.0K / mo</text>
+    <text x="329" y="60" text-anchor="middle" class="t-kpi-l">月度净省精确整千 (-96.2%)</text>
+    <text x="329" y="76" text-anchor="middle" class="t-kpi-l">$15,580 vs $414,600/mo</text>
+
+    <rect x="448" y="0" width="210" height="90" rx="8" fill="#1e293b"/>
+    <text x="553" y="36" text-anchor="middle" class="t-kpi-v">-31.0% / -19.5%</text>
+    <text x="553" y="60" text-anchor="middle" class="t-kpi-l">管网漏损降幅 / 水厂曝气药耗降幅</text>
+    <text x="553" y="76" text-anchor="middle" class="t-kpi-l">年省净水与电费 +$47.0M/yr!</text>
+
+    <rect x="672" y="0" width="210" height="90" rx="8" fill="#1e293b"/>
+    <text x="777" y="36" text-anchor="middle" class="t-kpi-v">695M Vectors</text>
+    <text x="777" y="60" text-anchor="middle" class="t-kpi-l">SSD DiskANN 仅 $3,660/mo</text>
+    <text x="777" y="76" text-anchor="middle" class="t-kpi-l">省 92% 内存 (vs $85,400/mo DRAM)</text>
+
+    <rect x="896" y="0" width="205" height="90" rx="8" fill="#1e293b"/>
+    <text x="998" y="36" text-anchor="middle" class="t-kpi-v">$70.15M SLA</text>
+    <text x="998" y="60" text-anchor="middle" class="t-kpi-l">历史性突破 &gt;$70M 守护 SLA!</text>
+    <text x="998" y="76" text-anchor="middle" class="t-kpi-l">拦截 210 笔超标并网 (保护+$11.7M)</text>
+
+    <rect x="1115" y="0" width="195" height="90" rx="8" fill="#1e293b"/>
+    <text x="1212" y="36" text-anchor="middle" class="t-kpi-v">181.4 ms</text>
+    <text x="1212" y="60" text-anchor="middle" class="t-kpi-l">403 / 404 (99.75%) · n=97 素数</text>
+    <text x="1212" y="76" text-anchor="middle" class="t-kpi-l">91 篇双语 FAQ · 198 单测</text>
+  </g>
+</svg>
