@@ -1482,13 +1482,31 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 68750000)
 
 
+    def test_global_microsoft_iq_work_fabric_foundry_iq_enterprise_agent_context_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_microsoft_iq_work_fabric_foundry_iq_enterprise_agent_context_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["enterprise_data_estate_tb"], 600)
+        self.assertEqual(sim["telemetry"]["cross_functional_workflow_blockers_flagged_count"], 480)
+        self.assertEqual(sim["telemetry"]["work_iq_token_reduction_pct"], 80.0)
+        self.assertEqual(sim["telemetry"]["work_iq_runtime_throughput_multiplier_x"], 2.0)
+        self.assertEqual(sim["telemetry"]["org_memory_tmdl_ontology_and_sop_vectors_count"], 680000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_microsoft_iq_tco_saved_usd"], 393980)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_microsoft_iq_tco_savings_pct"], 96.2)
+        self.assertTrue(sim["foundry_iq_guardrail"]["work_iq_in_place_acl_and_entra_obo_passthrough_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["foundry_iq_a2a_mcp_and_decision_freshness_gate_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 69100000)
+
+
     def test_scenario_matrix_280_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 388)
-        self.assertEqual(matrix["passed_scenarios"], 387)
+        self.assertEqual(matrix["total_scenarios"], 392)
+        self.assertEqual(matrix["passed_scenarios"], 391)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.74, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 188.2)
+        self.assertEqual(matrix["avg_latency_ms"], 186.5)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -2569,6 +2587,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $68.75M SLA", by_id["DL-840"])
 
 
+    def test_fabric_microsoft_iq_work_fabric_foundry_iq_enterprise_agent_context_2026_11_19_r200_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-841", "DL-842", "DL-843", "DL-844"):
+            self.assertIn(sid, by_id)
+        self.assertIn("Microsoft Work IQ API (-80% Token Usage & 2x Runtime Throughput)", by_id["DL-841"])
+        self.assertIn("680M Org-Memory, TMDL & SOP Vectors, -92% RAM at Exact $3,600/mo vs $83,600/mo DRAM Saving Exact $80,000/mo!", by_id["DL-842"])
+        self.assertIn("-$394.0K/mo", by_id["DL-843"])
+        self.assertIn("16ms 4^2ms E2E, Protect $69.10M SLA", by_id["DL-844"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -2587,11 +2616,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 387)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 388)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 188.2)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 93)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 161.23)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 391)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 392)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 186.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 94)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 159.68)
 
 
 if __name__ == "__main__":

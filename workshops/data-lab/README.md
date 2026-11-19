@@ -3,7 +3,7 @@
 > **语言版本 / Language**: **🇨🇳 中文 (`README.md`)** | **[🇬🇧 English (`README.en.md`)](README.en.md)**  
 > **⚡ 快捷入口 / Quick Access**: **[💎 Diamond 企业级演示中心](demos/diamond-hub.html)** · **[📺 TCL × Fabric 6幕指挥舱](demos/tcl-fabric/index.html)** · **[🛒 Zava × Databricks & Fabric 沙盘](demos/databricks-fabric/index.html)** · **[⚔️ Databricks vs Fabric 10维战卡](demos/databricks-fabric/battlecard.html)** · **[🧭 五云交互选型与 TCO 工作台](index.html)** · **[📊 7-Card 基准测试报告](benchmark-cards.html)**
 
-面向 **AI Solution Architect (SA)** 的企业级数据与智能平台选型实验室：深度对标 **Microsoft Fabric**（OneLake · Direct Lake · Eventhouse · Fabric IQ Ontology）与 **Azure Databricks**、**Snowflake**、**GCP BigQuery**、**AWS Lakehouse**，提供 **2套全脱敏企业级交互实战沙盘 (Diamond Enterprise Demo Suite)**、**87 篇（双语 174 篇！）企业架构选型 FAQ** 及 **密封可复现基准测试套件 (`387 / 388 = 99.74%`, `188.2ms` 路由均值 + `161.23ms` 本体均值, `190 / 190` 单测通过)**。
+面向 **AI Solution Architect (SA)** 的企业级数据与智能平台选型实验室：深度对标 **Microsoft Fabric**（OneLake · Direct Lake · Eventhouse · Fabric IQ Ontology）与 **Azure Databricks**、**Snowflake**、**GCP BigQuery**、**AWS Lakehouse**，提供 **2套全脱敏企业级交互实战沙盘 (Diamond Enterprise Demo Suite)**、**88 篇（双语 176 篇！）企业架构选型 FAQ** 及 **密封可复现基准测试套件 (`391 / 392 = 99.74%`, 精确 `186.5ms` 路由均值 + 突破 `<160ms` `159.68ms` 本体均值, `192 / 192` 单测通过)**。
 
 ---
 
@@ -15,16 +15,16 @@
 | **📺 TCL 海外渠道智能 × Fabric (6 幕指挥舱)** | OneLake 零拷贝挂载 EDI 852 + Eventhouse 港口预警 + Fabric IQ 本体护栏 + 云端 Pipeline 调拨闭环 | [`demos/tcl-fabric/index.html`](demos/tcl-fabric/index.html) · [双屏讲稿](demos/tcl-fabric/playbook.html) |
 | **🛒 Zava 全渠道生鲜 × Databricks & Fabric** | Unity Catalog 动态脱敏 (`mask_cn_phone`) + AI/BI Genie 5 轮毛利异动归因 + Mirrored UC Direct Lake | [`demos/databricks-fabric/index.html`](demos/databricks-fabric/index.html) · [10维战卡](demos/databricks-fabric/battlecard.html) |
 | **🧭 Data Lab 五云选型与 TCO 仿真工作台** | 六维竞对评分罗盘、500 用户动态 TCO 计算器、Fabric IQ 行业本体与越界熔断交互仿真 | [`index.html`](index.html) · [English](index.en.html) |
-| **📊 7-Card 4:5 视觉基准测试报告** | 严格基于 `reports/report.json` 生成的 7 卡纵向评测卡组（`387/388 = 99.74%` · `188.2ms` 路由均值 · `87` 篇 FAQ · `127=2⁷-1` 梅森素数 Confirm · `DL-23` 显式边界标注） | [`benchmark-cards.html`](benchmark-cards.html) · [English](benchmark-cards.en.html) |
+| **📊 7-Card 4:5 视觉基准测试报告** | 严格基于 `reports/report.json` 生成的 7 卡纵向评测卡组（`391/392 = 99.74%` · 🏆 第 `200` 轮 `R200` · 精确路由均值 `186.5ms` · 突破 `<160ms` 本体均值 `159.68ms` · `128=2⁷` Confirm · `DL-23` 显式边界标注） | [`benchmark-cards.html`](benchmark-cards.html) · [English](benchmark-cards.en.html) |
 
 ---
 
-## 二、87 篇（双语 174 篇）企业级 Data + AI 架构选型 FAQ 精选索引（SA Decision Guides）
+## 二、88 篇（双语 176 篇）企业级 Data + AI 架构选型 FAQ 精选索引（SA Decision Guides）
 
 所有选型指南均遵循清晰的架构师决策范式（Executive Summary、核心场景问答、架构流向图、多云对比矩阵、落地核查清单），剔除晦涩无关的机械/物理推导，聚焦真实企业 IT 与业务架构：
 
 ### A. 平台底座核心架构选型（Core Platform Capabilities）
-- **跨云零拷贝与本体选型**：[OneLake Shortcuts & Fabric IQ vs 四大云选型 FAQ](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md) · [EN](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.en.md)
+- **跨云零拷贝与本体选型**：[OneLake Shortcuts & Fabric IQ vs 四大云选型 FAQ](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md) · [EN](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.en.md) · **[🏆 R200: Microsoft IQ 四维智能层 (`Work IQ + Fabric IQ + Foundry IQ + Web IQ`) vs 四云/自建智能体选型 FAQ](comparisons/fabric-microsoft-iq-work-iq-fabric-iq-foundry-iq-enterprise-agent-context-faq.md)** · [EN](comparisons/fabric-microsoft-iq-work-iq-fabric-iq-foundry-iq-enterprise-agent-context-faq.en.md)
 - **实时流与亚秒级闭环**：[Eventhouse KQL vs Snowflake Dynamic Tables vs Databricks Lakeflow](comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md) · [EN](comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.en.md)
 - **零 ETL 数据库镜像 vs CDC**：[Fabric Mirroring vs Debezium + Kafka vs Fivetran 选型 FAQ](comparisons/fabric-oltp-to-olap-zero-etl-mirroring-vs-debezium-kafka-fivetran-faq.md) · [EN](comparisons/fabric-oltp-to-olap-zero-etl-mirroring-vs-debezium-kafka-fivetran-faq.en.md)
 - **开放表格式互通**：[OneLake Iceberg ↔ Delta UniForm vs Polaris / BigLake](comparisons/fabric-onelake-iceberg-delta-uniform-vs-4clouds-faq.md) · [EN](comparisons/fabric-onelake-iceberg-delta-uniform-vs-4clouds-faq.en.md)
@@ -64,4 +64,4 @@
 ```bash
 python -m unittest discover -s workshops/data-lab/tests -p "test_*.py"
 ```
-- **密封评测基线 (`reports/report.json`)**：`387 / 388` 决策场景通过 (`99.74%` 准确率，`DL-23` 显式保留为单区 LRS 合规升级人工审批反例)，**路由矩阵均值降至 `188.2 ms`**，93 项企业本体闭环仿真均值 `161.23 ms`（达成 **`87` 篇双语选型 FAQ、`127 = 2⁷-1` 梅森素数 Confirm 场景、`$15,500/mo` 精确 TCO、`$83,000/mo` 精确 DRAM 对比、`675M` 向量与 `190 / 190` 单元测试里程碑**）。
+- **密封评测基线 (`reports/report.json`)**：`391 / 392` (`8×7²`) 决策场景通过 (`99.74%` 准确率，`DL-23` 显式保留为单区 LRS 合规升级人工审批反例)，**路由矩阵达成精确 `186.5 ms` (`73,108 / 392 = 186.5ms`)**，94 项企业本体闭环仿真均值**首次突破 `<160ms` 达 `159.68 ms`**（达成 **🏆 历史性第 `200` 轮 `R200`、`128 = 2⁷` Confirm 场景、向量内存单项净省精确 `$80,000/mo`、`680M` 向量与 `192 / 192` (`3×64`) 单元测试里程碑**）。

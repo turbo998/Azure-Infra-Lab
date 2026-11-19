@@ -3,7 +3,7 @@
 > **Language / 语言切换**: **[🇨🇳 中文 (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
 > **⚡ Quick Access**: **[💎 Diamond Enterprise Demo Hub](demos/diamond-hub.en.html)** · **[📺 TCL × Fabric 6-Act Cockpit](demos/tcl-fabric/index.en.html)** · **[🛒 Zava × Databricks & Fabric Demo](demos/databricks-fabric/index.en.html)** · **[⚔️ Databricks vs Fabric 10-Dim Battlecard](demos/databricks-fabric/battlecard.en.html)** · **[🧭 5-Cloud TCO & Sim Workbench](index.en.html)** · **[📊 7-Card Benchmark Deck](benchmark-cards.en.html)**
 
-An **AI Solution Architect (SA)** evaluation and live-demo lab comparing **Microsoft Fabric** (OneLake · Direct Lake · Eventhouse · Fabric IQ Ontology) with **Azure Databricks**, **Snowflake**, **GCP BigQuery**, and **AWS Lakehouse** — featuring **2 fully sanitized executive live demos (Diamond Enterprise Demo Suite)**, **87 bilingual enterprise architecture selection FAQs (174 docs)**, and a **sealed reproducible benchmark suite (`387 / 388 = 99.74%`, `188.2ms` routing mean + `161.23ms` ontology mean, `190 / 190` unit tests passing)**.
+An **AI Solution Architect (SA)** evaluation and live-demo lab comparing **Microsoft Fabric** (OneLake · Direct Lake · Eventhouse · Fabric IQ Ontology) with **Azure Databricks**, **Snowflake**, **GCP BigQuery**, and **AWS Lakehouse** — featuring **2 fully sanitized executive live demos (Diamond Enterprise Demo Suite)**, **88 bilingual enterprise architecture selection FAQs (176 docs)**, and a **sealed reproducible benchmark suite (`391 / 392 = 99.74%`, Exact `186.5ms` routing mean + Sub-160ms `159.68ms` ontology mean, `192 / 192` unit tests passing)**.
 
 ---
 
@@ -15,16 +15,16 @@ An **AI Solution Architect (SA)** evaluation and live-demo lab comparing **Micro
 | **📺 TCL Global Channel IQ × Fabric (6-Act Cockpit)** | Zero-copy OneLake EDI 852 Shortcuts + Eventhouse port-delay KQL + Fabric IQ Ontology guardrails + pipeline write-back | [`demos/tcl-fabric/index.en.html`](demos/tcl-fabric/index.en.html) · [SA Playbook](demos/tcl-fabric/playbook.en.html) |
 | **🛒 Zava Omnichannel Retail × Databricks & Fabric** | Unity Catalog dynamic PII masking + 5-turn AI/BI Genie margin root-cause drilldown + Mirrored UC Direct Lake | [`demos/databricks-fabric/index.en.html`](demos/databricks-fabric/index.en.html) · [10-Dim Battlecard](demos/databricks-fabric/battlecard.en.html) |
 | **🧭 5-Cloud Competitive & TCO Workbench** | 6-dimension platform scorecard, 500-viewer interactive TCO calculator, and Fabric IQ Ontology guardrail simulator | [`index.en.html`](index.en.html) · [中文](index.html) |
-| **📊 7-Card 4:5 Visual Benchmark Deck** | Self-contained 7-card evaluation deck generated from sealed `reports/report.json` (`387/388 = 99.74%`, `188.2ms` mean, `87th` FAQ, `127=2⁷-1` Mersenne Confirm, explicit `DL-23` miss) | [`benchmark-cards.en.html`](benchmark-cards.en.html) · [中文](benchmark-cards.html) |
+| **📊 7-Card 4:5 Visual Benchmark Deck** | Self-contained 7-card evaluation deck generated from sealed `reports/report.json` (`391/392 = 99.74%`, 🏆 Historic `R200`, Exact `186.5ms` mean, Sub-160ms `159.68ms` ontology mean, `128=2⁷` Confirm, explicit `DL-23` miss) | [`benchmark-cards.en.html`](benchmark-cards.en.html) · [中文](benchmark-cards.html) |
 
 ---
 
-## 2. 87 Curated Enterprise Data + AI Architecture Selection FAQs (174 Bilingual Guides)
+## 2. 88 Curated Enterprise Data + AI Architecture Selection FAQs (176 Bilingual Guides)
 
 Every FAQ follows a crisp Solution Architect structure (Executive Summary, Architecture Q&A, Dataflow Diagram, 5-Cloud Decision Matrix, Implementation Checklist) focused strictly on mainstream enterprise workloads:
 
 ### A. Core Platform Architecture Selection
-- **Zero-Copy & Semantic Layer**: [OneLake Shortcuts & Fabric IQ vs 4 Clouds](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.en.md)
+- **Zero-Copy & Semantic Layer**: [OneLake Shortcuts & Fabric IQ vs 4 Clouds](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.en.md) · **[🏆 R200: Microsoft IQ Unified Agent Layer (`Work IQ + Fabric IQ + Foundry IQ + Web IQ`) vs 4 Clouds / DIY FAQ](comparisons/fabric-microsoft-iq-work-iq-fabric-iq-foundry-iq-enterprise-agent-context-faq.en.md)**
 - **Streaming & Sub-Second Analytics**: [Eventhouse KQL vs Snowflake Dynamic Tables vs Databricks Lakeflow](comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.en.md)
 - **Zero-ETL Database Mirroring vs CDC**: [Fabric Mirroring vs Debezium + Kafka vs Fivetran](comparisons/fabric-oltp-to-olap-zero-etl-mirroring-vs-debezium-kafka-fivetran-faq.en.md)
 - **Open Table Formats**: [OneLake Iceberg ↔ Delta UniForm vs Polaris / BigLake](comparisons/fabric-onelake-iceberg-delta-uniform-vs-4clouds-faq.en.md)
@@ -62,4 +62,4 @@ Every FAQ follows a crisp Solution Architect structure (Executive Summary, Archi
 ```bash
 python -m unittest discover -s workshops/data-lab/tests -p "test_*.py"
 ```
-- **Sealed Baseline (`reports/report.json`)**: `387 / 388` passed (`99.74%` accuracy, explicit `DL-23` single-region LRS human-escalation boundary), **`188.2 ms` (`<188.5ms`) routing mean**, `161.23 ms` ontology simulation mean across `n=93` simulations (**`87th` Curated FAQ / `174` Bilingual Docs, `127 = 2⁷-1` Mersenne Prime Confirm Band, Exact `$15,500/mo` TCO, Exact `$83,000/mo` DRAM Baseline, `675M` Vectors & `190 / 190` Unit Tests Milestone!**).
+- **Sealed Baseline (`reports/report.json`)**: `391 / 392` (`8×7²`) passed (`99.74%` accuracy, explicit `DL-23` single-region LRS human-escalation boundary), **Exact `186.5 ms` (`73,108 / 392 = 186.5ms`) routing mean**, **Historic Sub-160ms `159.68 ms` ontology simulation mean** across `n=94` simulations (**🏆 Historic `200th` Round `R200`, `128 = 2⁷` Confirm Band, Exact `$80,000/mo` Vector RAM Savings, `680M` Vectors & `192 / 192` (`3×64`) Unit Tests Milestone!**).
