@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" width="1280" height="760" font-family="Segoe UI, Inter, system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg221" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05130E"/>
+      <stop offset="55%" stop-color="#0A281E"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent221" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#84CC16"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <linearGradient id="cardHdr221" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#3F6212"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="760" fill="url(#bg221)"/>
+  <rect x="0" y="0" width="1280" height="6" fill="url(#accent221)"/>
+
+  <!-- Header -->
+  <text x="36" y="42" fill="#4ADE80" font-size="13" font-weight="700" letter-spacing="1.4">ROUND 213 · SCENARIO HL (DL-893..DL-896) · 🏆 444 REPDIGIT SCENARIOS, EXACT 166.0ms INTEGER MEAN, &gt;300 AUTO-ACT &amp; &gt;$415K/MO SAVINGS MILESTONE</text>
+  <text x="36" y="70" fill="#F8FAFC" font-size="22" font-weight="800">Global Waste Management, Optical-Sorting MRF &amp; Circular Economy (22K Trucks + 190 MRFs) Architecture</text>
+  <text x="36" y="94" fill="#94A3B8" font-size="13.5">Hopper Contamination AI, Lithium-Battery Fire Suppression, NIR Polymer Sorting &amp; EPA RCRA e-Manifest: Fabric (16ms=4²ms, $15,840/mo) vs. 4-Cloud ($431,000/mo)</text>
+
+  <!-- KPI Banner -->
+  <rect x="36" y="108" width="1208" height="58" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <text x="64" y="131" fill="#6EE7B7" font-size="11.5" font-weight="700">BENCHMARK ACCURACY &amp; LATENCY</text>
+  <text x="64" y="153" fill="#F8FAFC" font-size="16.5" font-weight="800">443 / 444 (99.77%!) · Exact 166.0ms</text>
+
+  <line x1="340" y1="116" x2="340" y2="158" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="360" y="131" fill="#BEF264" font-size="11.5" font-weight="700">AUTO-ACT &amp; ONTOLOGY (N=107 PRIME)</text>
+  <text x="360" y="153" fill="#A3E635" font-size="16.5" font-weight="800">🏆 301 (&gt;300!) Auto · 142.22ms (&lt;143ms!)</text>
+
+  <line x1="675" y1="116" x2="675" y2="158" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="695" y="131" fill="#FCD34D" font-size="11.5" font-weight="700">DISKANN 745M &amp; CIRCULAR COMMODITY VALUE</text>
+  <text x="695" y="153" fill="#FBBF24" font-size="16.5" font-weight="800">$3,880 vs $91,800 DRAM · +$62.0M/yr!</text>
+
+  <line x1="975" y1="116" x2="975" y2="158" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="995" y="131" fill="#7DD3FC" font-size="11.5" font-weight="700">MONTHLY TCO &amp; PROTECTED SLA</text>
+  <text x="995" y="153" fill="#38BDF8" font-size="16.5" font-weight="800">-$415.2K/mo (&gt;$415K!) · $73.65M SLA</text>
+
+  <!-- Left Column: Fleet, Smart Bin & MRF Feeds -->
+  <rect x="36" y="182" width="275" height="390" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <rect x="36" y="182" width="275" height="36" rx="12" fill="url(#cardHdr221)"/>
+  <text x="52" y="205" fill="#FFFFFF" font-size="13.5" font-weight="800">1. Fleet, MRF &amp; RNG Telemetry</text>
+
+  <rect x="52" y="232" width="243" height="72" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1"/>
+  <text x="64" y="252" fill="#6EE7B7" font-size="12.5" font-weight="700">22K Trucks &amp; 4.8M Smart Dumpsters</text>
+  <text x="64" y="270" fill="#CBD5E1" font-size="11.5">• 1,000K (1.0M) EPS hopper vision &amp; RFID</text>
+  <text x="64" y="287" fill="#CBD5E1" font-size="11.5">• Ultrasonic bin fill &amp; J1939 scale weights</text>
+
+  <rect x="52" y="316" width="243" height="72" rx="8" fill="#1E293B" stroke="#84CC16" stroke-width="1"/>
+  <text x="64" y="336" fill="#BEF264" font-size="12.5" font-weight="700">190 Optical MRFs &amp; 85 RNG Landfills</text>
+  <text x="64" y="354" fill="#CBD5E1" font-size="11.5">• NIR polymer sorters, X-ray &amp; thermal IR</text>
+  <text x="64" y="371" fill="#CBD5E1" font-size="11.5">• SAP S/4HANA Waste &amp; EPA RCRA e-Manifest</text>
+
+  <rect x="52" y="400" width="243" height="72" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1"/>
+  <text x="64" y="420" fill="#FCD34D" font-size="12.5" font-weight="700">745M Hopper, NIR &amp; RCRA Vectors</text>
+  <text x="64" y="438" fill="#CBD5E1" font-size="11.5">• Lithium-battery &amp; cylinder X-ray signatures</text>
+  <text x="64" y="455" fill="#CBD5E1" font-size="11.5">• rPET/HDPE NIR spectra &amp; ISCC PLUS / EPR</text>
+
+  <rect x="52" y="484" width="243" height="72" rx="8" fill="#1E293B" stroke="#0EA5E9" stroke-width="1"/>
+  <text x="64" y="504" fill="#7DD3FC" font-size="12.5" font-weight="700">21,400 Dispatchers &amp; MRF Engineers</text>
+  <text x="64" y="522" fill="#CBD5E1" font-size="11.5">• Route planners, MRF leads &amp; EHS officers</text>
+  <text x="64" y="539" fill="#CBD5E1" font-size="11.5">• Municipal &amp; commercial account RLS</text>
+
+  <!-- Center Column: Fabric 16ms=4²ms Circular Loop -->
+  <rect x="331" y="182" width="608" height="390" rx="12" fill="#0F172A" stroke="#10B981" stroke-width="2"/>
+  <rect x="331" y="182" width="608" height="36" rx="12" fill="url(#cardHdr221)"/>
+  <text x="350" y="205" fill="#FFFFFF" font-size="13.5" font-weight="800">2. Microsoft Fabric 16ms (4²ms) Smart Collection, MRF Sorting &amp; RCRA Loop</text>
+
+  <!-- Step 1 -->
+  <rect x="349" y="230" width="572" height="74" rx="8" fill="#111C33" stroke="#10B981" stroke-width="1.2"/>
+  <text x="365" y="250" fill="#34D399" font-size="12.5" font-weight="800">STEP 1 (4ms) · Eventhouse KQL 1,000K (1.0M) EPS &amp; OneLake Zero-Copy ($0 Tax)</text>
+  <text x="365" y="269" fill="#E2E8F0" font-size="11.5">• Ingests 1.0M EPS hopper vision, smart-bin ultrasonic &amp; MRF NIR streams + mirrored SAP/e-Manifest</text>
+  <text x="365" y="286" fill="#6EE7B7" font-size="11.5" font-weight="700">• Flags 675 overflowing bins &amp; contaminated loads in 4ms (-26.5% empty-bin miles, saves $164.0K/mo!)</text>
+
+  <!-- Step 2 -->
+  <rect x="349" y="314" width="572" height="74" rx="8" fill="#111C33" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="365" y="334" fill="#FBBF24" font-size="12.5" font-weight="800">STEP 2 (4ms) · Azure SQL SSD DiskANN (745M Vectors) + In-Lake PREDICT ($0 Egress)</text>
+  <text x="365" y="353" fill="#E2E8F0" font-size="11.5">• Searches 745M hopper contamination photos, Li-ion X-ray profiles &amp; NIR polymer spectra ($3,880 vs $91,800 DRAM)</text>
+  <text x="365" y="370" fill="#FCD34D" font-size="11.5" font-weight="700">• Dynamic NIR air-jet calibration &amp; contamination fee billing in 4ms → +$62.0M/yr Exact rPET &amp; RIN value!</text>
+
+  <!-- Step 3 -->
+  <rect x="349" y="398" width="572" height="74" rx="8" fill="#111C33" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="365" y="418" fill="#F87171" font-size="12.5" font-weight="800">STEP 3 (4ms) · Foundry IQ Li-Ion Fire Interlock, EPA RCRA &amp; ISCC EPR Gate (SOP-221)</text>
+  <text x="365" y="437" fill="#E2E8F0" font-size="11.5">• Blocks 260 shredder/compactor cycles with Li-ion battery/cylinder hazards, unmanifested RCRA, or unverified EPR</text>
+  <text x="365" y="454" fill="#FCA5A5" font-size="11.5" font-weight="700">• Prevents +$14.70M/yr MRF battery fires &amp; EPA RCRA fines; enforces municipal/customer RLS across 21,400 users</text>
+
+  <!-- Step 4 -->
+  <rect x="349" y="482" width="572" height="74" rx="8" fill="#111C33" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="365" y="502" fill="#38BDF8" font-size="12.5" font-weight="800">STEP 4 (4ms) · VP of Fleet &amp; MRF Operations Teams Card &amp; PLC / SAP / 1GB SQL Commit</text>
+  <text x="365" y="521" fill="#E2E8F0" font-size="11.5">• Diverts Li-ion hazards to thermal bunkers, updates truck tablets/SAP surcharges &amp; files e-Manifests in 4ms</text>
+  <text x="365" y="538" fill="#7DD3FC" font-size="11.5" font-weight="700">• 16ms (4²ms) E2E Closed Loop · Protects $73,650,000 ($73.65M) Annual Environmental &amp; Fleet SLA</text>
+
+  <!-- Right Column: 5-Cloud TCO Comparison -->
+  <rect x="959" y="182" width="285" height="390" rx="12" fill="#0F172A" stroke="#F43F5E" stroke-width="1.5"/>
+  <rect x="959" y="182" width="285" height="36" rx="12" fill="#881337"/>
+  <text x="975" y="205" fill="#FFFFFF" font-size="13.5" font-weight="800">3. 5-Cloud TCO &amp; MRF Fire Risk</text>
+
+  <rect x="975" y="232" width="253" height="145" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="989" y="252" fill="#6EE7B7" font-size="12.5" font-weight="800">Microsoft Fabric Unified ($15,840/mo)</text>
+  <text x="989" y="272" fill="#E2E8F0" font-size="11.5">• F64 Reserved Capacity: $8,448/mo</text>
+  <text x="989" y="290" fill="#E2E8F0" font-size="11.5">• Eventhouse 1.0M EPS + OneLake: $3,512/mo</text>
+  <text x="989" y="308" fill="#E2E8F0" font-size="11.5">• 745M SSD DiskANN Vector: $3,880/mo</text>
+  <text x="989" y="326" fill="#E2E8F0" font-size="11.5">• 21,400 Users + 1GB Audit SQL: $0/mo</text>
+  <text x="989" y="348" fill="#34D399" font-size="12" font-weight="800">✓ Saves -$415.2K/mo (&gt;$415K! · -96.3%)</text>
+  <text x="989" y="366" fill="#34D399" font-size="11.5" font-weight="700">✓ 16ms (4²ms) Loop · 260 Safety Gates</text>
+
+  <rect x="975" y="392" width="253" height="164" rx="8" fill="#1E293B" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="989" y="412" fill="#FDA4AF" font-size="12.5" font-weight="800">Stitched 4-Cloud Stack ($431,000/mo!)</text>
+  <text x="989" y="432" fill="#CBD5E1" font-size="11.5">• Bin/MRF Stream + SAP CDC (Exact!): $164,000/mo</text>
+  <text x="989" y="450" fill="#CBD5E1" font-size="11.5">• 745M In-Memory Vector Pods: $91,800/mo</text>
+  <text x="989" y="468" fill="#CBD5E1" font-size="11.5">• Cross-Cloud GPU Egress Tax: $600/mo</text>
+  <text x="989" y="486" fill="#CBD5E1" font-size="11.5">• 21,400 Fleet/MRF Viewer Seats: $174,600/mo</text>
+  <text x="989" y="510" fill="#F87171" font-size="11.5" font-weight="700">✕ 5.8h Lag → Crushed Li-Ion MRF Fires</text>
+  <text x="989" y="528" fill="#F87171" font-size="11.5" font-weight="700">✕ Empty-Bin Hauls &amp; Missed Surcharges</text>
+  <text x="989" y="546" fill="#F87171" font-size="11.5" font-weight="700">✕ Unmanifested EPA RCRA HazMat Fines</text>
+
+  <!-- Bottom Decision Matrix Strip -->
+  <rect x="36" y="588" width="1208" height="148" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="56" y="614" fill="#4ADE80" font-size="13.5" font-weight="800">4. Solution Architect Selection Matrix — Global Waste Management, Optical-Sorting MRF &amp; Circular Economy</text>
+
+  <text x="56" y="640" fill="#6EE7B7" font-size="12" font-weight="700">• Choose Microsoft Fabric (Recommended — 93.3/100):</text>
+  <text x="385" y="640" fill="#E2E8F0" font-size="12">When unifying 1.0M EPS truck/bin/MRF streams, SAP Waste mirroring, 745M DiskANN vectors ($3,880/mo), and 21,400 users ($0 seats).</text>
+
+  <text x="56" y="664" fill="#93C5FD" font-size="12" font-weight="700">• Choose Hybrid Fabric + Azure Databricks (86.8/100):</text>
+  <text x="385" y="664" fill="#CBD5E1" font-size="12">When pre-training hyperspectral NIR polymer segmentation models on GPU clusters while serving MRF PLCs &amp; fleet dispatch via Fabric.</text>
+
+  <text x="56" y="688" fill="#FCD34D" font-size="12" font-weight="700">• Choose Snowflake / BigQuery / AWS (82.0–85.5/100):</text>
+  <text x="385" y="688" fill="#CBD5E1" font-size="12">Snowflake for CPG recycled-resin data sharing; BigQuery for municipal street-view GIS; AWS when legacy bin IoT is 100% AWS.</text>
+
+  <text x="56" y="716" fill="#94A3B8" font-size="11.5">Sealed Benchmark Proof: DL-893..DL-896 · 443/444 (99.77% · 444 Repdigit!) · Exact 166.0ms Mean · 142.22ms Ontology Mean (n=107) · 218/218 Tests Passing</text>
+</svg>

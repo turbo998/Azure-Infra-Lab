@@ -1697,13 +1697,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 73300000)
 
 
+    def test_global_waste_management_recycling_mrf_circular_economy_fabric_fleet_rcra_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_waste_management_recycling_mrf_circular_economy_fabric_fleet_rcra_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["active_refuse_trucks_and_optical_mrfs_count"], 22190)
+        self.assertEqual(sim["telemetry"]["overflow_bins_and_contaminated_loads_flagged_count"], 675)
+        self.assertEqual(sim["telemetry"]["hopper_vision_smart_bin_and_mrf_nir_stream_eps"], 1000000)
+        self.assertEqual(sim["telemetry"]["hopper_audit_dexa_battery_and_nir_polymer_vectors_count"], 745000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_waste_mrf_tco_saved_usd"], 415160)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_waste_mrf_tco_savings_pct"], 96.3)
+        self.assertTrue(sim["foundry_iq_guardrail"]["li_ion_battery_dexa_thermal_bunker_interlock_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["epa_rcra_emanifest_and_iscc_epr_rls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 73650000)
+
+
     def test_scenario_matrix_280_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 440)
-        self.assertEqual(matrix["passed_scenarios"], 439)
+        self.assertEqual(matrix["total_scenarios"], 444)
+        self.assertEqual(matrix["passed_scenarios"], 443)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.77, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 167.5)
+        self.assertEqual(matrix["avg_latency_ms"], 166.0)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -2927,6 +2944,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $73.30M SLA", by_id["DL-892"])
 
 
+    def test_fabric_waste_management_recycling_mrf_circular_economy_2026_11_20_r213_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-893", "DL-894", "DL-895", "DL-896"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Smart-Bin & MRF NIR Sense Flagging 675 Waves & Cutting Empty-Bin Miles -26.5%", by_id["DL-893"])
+        self.assertIn("745M Hopper Contamination, DEXA Battery & NIR Polymer Vectors, -92% RAM at $3,880/mo vs $91,800/mo DRAM", by_id["DL-894"])
+        self.assertIn("-$415.2K/mo >$415K! / -96.3% TCO", by_id["DL-895"])
+        self.assertIn("16ms 4^2ms E2E, Protect $73.65M SLA", by_id["DL-896"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -2945,11 +2973,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 439)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 440)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 167.5)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 106)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 143.42)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 443)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 444)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 166.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 107)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 142.22)
 
 
 if __name__ == "__main__":
