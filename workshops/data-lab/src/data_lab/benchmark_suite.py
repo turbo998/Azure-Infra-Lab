@@ -6648,6 +6648,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Healthcare Data Solutions (HDS) + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (705M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_pension_sovereign_wealth_endowment_fabric_alm_private_markets_esg_vs_4clouds":
+        return {
+            "scenario_id": "global_pension_sovereign_wealth_endowment_fabric_alm_private_markets_esg_vs_4clouds",
+            "title": "Global Sovereign Wealth Fund (SWF), Public Pension Plan & University Endowment ($2.4T AUM + 4,800 Private GP Funds + 20M Beneficiaries) LDI ALM Duration Immunization, Private-Markets LPA Carry Audit & ESG Stewardship Loop (995K EPS Yield/LDI/Capital-Call Stream + 710M LPA/Look-Through/Proxy Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 570-Portfolio LDI/Denominator Sense ($0/GB & $0 Copy Tax), 710M SSD DiskANN ($3,720/mo vs $87,200/mo DRAM) + In-Lake PREDICT 4ms (+84.0% Stress-Test Speed & +$51.5M/yr Carry/Slippage Recovered) & Foundry IQ 4ms 225=15^2 Ethical/LDI Gate (+$12.60M) (995K EPS · 710M DiskANN · 16ms=4^2ms E2E · 100th=10^2 Ontology Sim, Exact 176.5ms / 151.06ms Means, 20,000 Users, -$404.1K/mo & $71.20M SLA!)",
+            "telemetry": {
+                "monitored_private_gp_funds_count": 4800,
+                "sub_portfolios_with_ldi_or_denominator_drift_count": 570,
+                "yield_curve_ldi_and_capital_call_stream_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "lpa_waterfall_look_through_and_proxy_vectors_count": 710000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "total_portfolio_alm_stress_test_speedup_pct": 84.0,
+                "gp_carry_clawback_and_ldi_slippage_saved_usd": 51500000,
+                "sovereign_ethical_and_ldi_floor_violations_blocked_count": 225,
+                "concurrent_pms_actuaries_and_pension_trustees": 20000,
+            },
+            "ontology_traversal": [
+                "Aladdin-SimCorp-eFront-and-LDI-Swap-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 995K EPS sovereign yield-curve, LDI variation-margin, and GP capital-call streams while mirroring BlackRock Aladdin, SimCorp Dimension, and eFront/Burgiss across $2.4T AUM and 4,800 private GP funds ($0/GB write tax & $0 copy tax), flagging 570 duration-gap and denominator-effect drifts in 4ms",
+                "Private-NAV-Nowcasting-and-LPA-Carry-Engine -> Azure SQL / Cosmos DB SSD DiskANN (710,000,000 private LPA waterfall/side-letter clauses, ILPA PCAP statements & look-through holdings vectors, -92% RAM at $3,720/mo vs $87,200/mo DRAM) + In-Lake PREDICT -> Accelerates ALM stress testing +84.0% and recovers +$51.5M/yr in GP carry clawbacks and LDI slippage in 4ms",
+                "Foundry-IQ-Sovereign-Ethical-and-LDI-Floor-Gate -> Validates PENSION-SOVEREIGN-WEALTH-ENDOWMENT-ALM-LPA-SOP-214 -> Blocks 225 (15^2!) capital calls and trades that look-through to parliamentary ethical-exclusion/OFAC lists or breach Tier-1 LDI cash collateral floors (+$12.60M protected) with Co-Invest MNPI RLS in 4ms",
+                "Approved LDI Duration Swap & Capital-Call Wire -> CIO & CRO Teams Card -> Executes Aladdin duration hedges, eFront wire approvals, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_pension_swf_monthly_tco_usd": 15640,
+                "competitor_stitched_pension_swf_monthly_tco_usd": 419700,
+                "monthly_pension_swf_tco_saved_usd": 404060,
+                "monthly_pension_swf_tco_savings_pct": 96.3,
+                "fabric_internal_full_stack_monthly_usd": 48000,
+                "competitor_internal_full_stack_monthly_usd": 1160000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms $2.4T LDI Buffer & 4,800-GP Denominator-Effect Sense Agent",
+                        "operation": "Mirror Aladdin, SimCorp, and eFront zero-copy and ingest 995K EPS yield/LDI/capital-call streams across $2.4T AUM at $0/GB write tax, flagging 570 sub-portfolio drifts in 4ms",
+                        "impact_metric": "4ms 570-portfolio sense (+84.0% ALM stress-test speed); eliminates $158,400/mo in market-stream and connector taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "710M SSD DiskANN LPA Waterfall/Look-Through RAG & In-Lake PREDICT Private-NAV Nowcasting Agent",
+                        "operation": "Search 710,000,000 LPA waterfall, ILPA PCAP & look-through vectors via SSD DiskANN (-92% RAM at $3,720/mo vs $87,200/mo DRAM) and audit GP carried-interest & nowcast private NAVs in 4ms",
+                        "impact_metric": "4ms LPA/look-through match (+$51.5M/yr carry & slippage recovered); $3,720/mo SSD DiskANN vs $87,200/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms Sovereign Ethical / LDI Floor Gate & 4ms Aladdin / eFront / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-214 blocking 225=15^2 ethical-exclusion/OFAC & LDI floor violations (+$12.60M saved) & enforcing Co-Invest MNPI RLS (4ms), then update Aladdin/eFront & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; 100th=10^2 Ontology Sim, Exact 176.5ms / 151.06ms Means, 20,000 Users, -$404.1K/mo & $71.20M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "PENSION-SOVEREIGN-WEALTH-ENDOWMENT-ALM-LPA-SOP-214",
+                "hard_constraint": "Block any GP capital call or public trade that looks through to parliamentary sovereign ethical-exclusion or OFAC sanctions lists, maintain mandatory Tier-1 LDI cash collateral buffers, and isolate Co-Investment deal-team MNPI via RLS/CLS",
+                "proposed_change": "Block 225=15^2 ethical-exclusion & LDI floor violations (+$12.60M saved), recover $51.5M in GP carry clawbacks & avoided LDI slippage (+84.0% ALM speed), rebalance 570 sub-portfolios, and enforce MNPI RLS across Exact 20,000 users",
+                "sovereign_ethical_exclusion_and_ldi_collateral_floor_verified": True,
+                "co_investment_mnpi_wall_and_trustee_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 71200000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (710M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -11596,6 +11662,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 10,
     },
+    {
+        "id": "DL-865",
+        "category": "Realtime & Eventhouse",
+        "question": "$2.4T sovereign wealth & pension fund streams 995K EPS of public yield-curve and LDI swap telemetry on Aladdin/SimCorp while 4,800 private GP funds on eFront lag 90 days; detect LDI collateral strain and denominator-effect drift in 4ms without $158.4K/mo stream & connector taxes",
+        "expected": "Fabric Eventhouse KQL + Aladdin/SimCorp/eFront Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms $2.4T LDI & 4,800-GP Sense Flagging 570 Portfolio Drifts & Accelerating ALM Stress Testing +84.0%)",
+        "model_answer": "Fabric Eventhouse KQL + Aladdin/SimCorp/eFront Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms $2.4T LDI & 4,800-GP Sense Flagging 570 Portfolio Drifts & Accelerating ALM Stress Testing +84.0%)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 11,
+    },
+    {
+        "id": "DL-866",
+        "category": "Vector & AI Agents",
+        "question": "Audit GP carried-interest waterfalls and nowcast intraday private-market NAVs across 710M LPA side-letter clauses, ILPA PCAP statements, and look-through holding vectors in 4ms without $87,200/mo DRAM HNSW clusters while recovering $51.5M/yr",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (710M Private LPA Waterfall, ILPA & Look-Through Vectors, -92% RAM at $3,720/mo vs $87,200/mo DRAM, 4ms Audit & +$51.5M/yr Carry/Slippage Recovered)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (710M Private LPA Waterfall, ILPA & Look-Through Vectors, -92% RAM at $3,720/mo vs $87,200/mo DRAM, 4ms Audit & +$51.5M/yr Carry/Slippage Recovered)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 11,
+    },
+    {
+        "id": "DL-867",
+        "category": "Governance & Security",
+        "question": "Compare 5-cloud monthly TCO for a $2.4T AUM, 4,800-GP-fund sovereign wealth & pension platform (995K EPS stream, 710M LPA/look-through vectors, Exact 20,000 PMs/actuaries/trustees): Fabric F64 ($15,640/mo) vs stitched stacks ($397.6K-$434.5K/mo)",
+        "expected": "Fabric Pooled F64 + OneLake + 710M SSD DiskANN + Foundry IQ Ethical-Exclusion/LDI Gate ($15,640/mo vs $419,700/mo Stitched Stack, Saving -$404.1K/mo / -96.3% Record TCO with Exact 20,000 $0 Viewer Seats)",
+        "model_answer": "Fabric Pooled F64 + OneLake + 710M SSD DiskANN + Foundry IQ Ethical-Exclusion/LDI Gate ($15,640/mo vs $419,700/mo Stitched Stack, Saving -$404.1K/mo / -96.3% Record TCO with Exact 20,000 $0 Viewer Seats)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 11,
+    },
+    {
+        "id": "DL-868",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic 100th (10^2!) Enterprise Ontology Simulation, Exact 176.5ms Routing Mean (416=16x26 Cases), Exact 151.06ms Ontology Mean, Exact 20,000 Users, 280 Auto-Act & 225=15^2 Gate Milestone: Sovereign yield spike triggers 570 LDI/denominator alerts and 225 ethical/liquidity risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 570-Portfolio LDI Sense ($0 Tax) + 710M DiskANN & PREDICT 4ms (+84.0% Speed & +$51.5M Recovered) + Foundry IQ 4ms 225=15^2 Ethical/LDI Gate (+$12.60M) & MNPI RLS + Teams Aladdin/eFront & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $71.20M SLA)",
+        "model_answer": "Eventhouse 4ms 570-Portfolio LDI Sense ($0 Tax) + 710M DiskANN & PREDICT 4ms (+84.0% Speed & +$51.5M Recovered) + Foundry IQ 4ms 225=15^2 Ethical/LDI Gate (+$12.60M) & MNPI RLS + Teams Aladdin/eFront & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $71.20M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 10,
+    },
 ]
 
 
@@ -11812,7 +11926,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_cybersecurity_soc_siem_xdr_fabric_sentinel_eventhouse_threat_hunting_vs_4clouds",
         "global_water_wastewater_utility_fabric_ami_leak_detection_epa_compliance_vs_4clouds",
         "global_rail_transit_freight_railway_fabric_cbtc_rolling_stock_wayside_maintenance_vs_4clouds",
-        "global_dental_vision_specialty_clinic_dso_fabric_pms_imaging_rcm_retention_vs_4clouds"
+        "global_dental_vision_specialty_clinic_dso_fabric_pms_imaging_rcm_retention_vs_4clouds",
+        "global_pension_sovereign_wealth_endowment_fabric_alm_private_markets_esg_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
