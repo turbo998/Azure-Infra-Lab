@@ -1663,13 +1663,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 72600000)
 
 
+    def test_global_veterinary_hospital_pet_retail_fabric_diagnostics_autoship_insurance_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_veterinary_hospital_pet_retail_fabric_diagnostics_autoship_insurance_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["active_veterinary_hospitals_and_pet_stores_count"], 5500)
+        self.assertEqual(sim["telemetry"]["clinical_triage_and_autoship_refill_waves_flagged_count"], 645)
+        self.assertEqual(sim["telemetry"]["in_clinic_lab_collar_and_pos_stream_eps"], 1000000)
+        self.assertEqual(sim["telemetry"]["vet_dicom_cytology_and_insurance_policy_vectors_count"], 735000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_veterinary_pet_tco_saved_usd"], 411960)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_veterinary_pet_tco_savings_pct"], 96.3)
+        self.assertTrue(sim["foundry_iq_guardrail"]["species_breed_mdr1_toxicity_and_vcpr_365d_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["dea_controlled_rx_and_pet_owner_cls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 72950000)
+
+
     def test_scenario_matrix_280_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 432)
-        self.assertEqual(matrix["passed_scenarios"], 431)
+        self.assertEqual(matrix["total_scenarios"], 436)
+        self.assertEqual(matrix["passed_scenarios"], 435)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.77, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 170.5)
+        self.assertEqual(matrix["avg_latency_ms"], 169.0)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -2871,6 +2888,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $72.60M SLA", by_id["DL-884"])
 
 
+    def test_fabric_veterinary_hospital_pet_retail_diagnostics_autoship_2026_11_20_r211_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-885", "DL-886", "DL-887", "DL-888"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Vet Lab & Collar Sense Flagging 645 Waves & Lifting Rx Autoship Retention +39.0%", by_id["DL-885"])
+        self.assertIn("735M Vet DICOM, Cytology & Policy Vectors, -92% RAM at $3,840/mo vs $90,600/mo DRAM", by_id["DL-886"])
+        self.assertIn("-$412.0K/mo Exact / -96.3% TCO with Exact 21,000 $0 Viewer Seats", by_id["DL-887"])
+        self.assertIn("16ms 4^2ms E2E, Protect $72.95M SLA", by_id["DL-888"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -2889,11 +2917,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 431)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 432)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 170.5)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 104)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 145.87)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 435)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 436)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 169.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 105)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 144.63)
 
 
 if __name__ == "__main__":

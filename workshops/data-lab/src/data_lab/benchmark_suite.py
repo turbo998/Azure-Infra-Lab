@@ -6978,6 +6978,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (730M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_veterinary_hospital_pet_retail_fabric_diagnostics_autoship_insurance_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Veterinary Hospital Network, Companion Animal Diagnostics, Pet Specialty Retail & Pet Health Insurance (3,400 Vet Hospitals + 2,100 Pet Stores + 42M Pets) Veterinary DICOM/Cytology AI, Rx Autoship Retention, Instant Direct-Pay Claims & DEA/FDA CVM Loop (1,000K=1.0M EPS Lab/Collar/POS Stream + 735M Vet DICOM/Cytology/Rx Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 645-Wave Triage/Autoship Sense ($0/GB & $0 Copy Tax), 735M SSD DiskANN ($3,840/mo vs $90,600/mo DRAM) + In-Lake PREDICT 4ms (+39.0% Autoship Retention & +$59.0M/yr Exact Saved!) & Foundry IQ 4ms 250=2x5^3-Species/VCPR/DEA Gate (+$14.10M) (1,000K EPS · 735M DiskANN · 16ms=4^2ms E2E · Sub-170ms Exact 169.0ms=13^2ms Mean, Sub-145ms Ontology, Exact 21,000 Users, -$412.0K/mo & $72.95M SLA!)",
+            "telemetry": {
+                "active_veterinary_hospitals_and_pet_stores_count": 5500,
+                "clinical_triage_and_autoship_refill_waves_flagged_count": 645,
+                "in_clinic_lab_collar_and_pos_stream_eps": 1000000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "vet_dicom_cytology_and_insurance_policy_vectors_count": 735000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "rx_autoship_retention_and_clinic_utilization_lift_pct": 39.0,
+                "diagnostics_autoship_and_instant_claims_saved_usd": 59000000,
+                "species_toxicity_vcpr_and_dea_violations_blocked_count": 250,
+                "concurrent_veterinarians_pharmacists_and_adjusters": 21000,
+            },
+            "ontology_traversal": [
+                "In-Clinic-IDEXX-Collar-and-ezyVet-PIMS-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,000K (1.0M) EPS from in-clinic hematology/chemistry analyzers, ICU multiparameter monitors, smart GPS/activity collars, and retail POS while mirroring ezyVet / Cornerstone PIMS (42M EMRs) and SAP e-pharmacy across 5,500 locations ($0/GB write tax & $0 copy tax), flagging 645 early CKD/MMVD triage and Autoship refill waves in 4ms",
+                "Veterinary-DICOM-Staging-Autoship-and-DirectPay-Engine -> Azure SQL / Cosmos DB SSD DiskANN (735,000,000 thoracic/dental DICOM radiographs, digital cytology slides, SNOMED-CT Vet notes & policy vectors, -92% RAM at $3,840/mo vs $90,600/mo DRAM) + In-Lake PREDICT -> Lifts Rx Autoship retention +39.0%, adjudicates chairside direct-pay pet insurance claims, and captures +$59.0M/yr exact in 4ms",
+                "Foundry-IQ-Species-Toxicity-VCPR-and-DEA-Gate -> Validates VETERINARY-HOSPITAL-PET-RETAIL-DEA-CVM-SOP-219 -> Blocks 250=2x5^3 prescriptions, refills, and claims violating feline permethrin/acetaminophen or MDR1 herding-breed toxicity, expired 365-day VCPR exams, or DEA Schedule II-V rules (+$14.10M protected) with pet-owner CLS in 4ms",
+                "Approved DVM Care Plan, Rx Autoship & Direct-Pay Claim -> Chief Veterinary Medical Officer Teams Card -> Updates ezyVet/Cornerstone EMRs, triggers SAP e-pharmacy Autoship, settles direct-pay insurer claims, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_veterinary_pet_monthly_tco_usd": 15640,
+                "competitor_stitched_veterinary_pet_monthly_tco_usd": 427600,
+                "monthly_veterinary_pet_tco_saved_usd": 411960,
+                "monthly_veterinary_pet_tco_savings_pct": 96.3,
+                "fabric_internal_full_stack_monthly_usd": 49200,
+                "competitor_internal_full_stack_monthly_usd": 1190000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.0M EPS Lab Analyzer, Collar & Autoship Sense Agent",
+                        "operation": "Mirror ezyVet/Cornerstone PIMS (42M EMRs) and SAP e-pharmacy zero-copy and ingest 1,000K (1.0M) EPS lab/collar/POS streams across 5,500 locations at $0/GB write tax, flagging 645 triage/Autoship waves in 4ms",
+                        "impact_metric": "4ms 645-wave sense (+39.0% Autoship retention); eliminates $162,400/mo in lab stream and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "735M SSD DiskANN Vet DICOM/Cytology/Policy RAG & In-Lake PREDICT Direct-Pay Claims Agent",
+                        "operation": "Search 735,000,000 veterinary DICOM, cytology, SNOMED-Vet & policy vectors via SSD DiskANN (-92% RAM at $3,840/mo vs $90,600/mo DRAM) and score IRIS CKD staging, Autoship bundles & instant direct-pay claims in 4ms",
+                        "impact_metric": "4ms DICOM/claim match (+$59.0M/yr Exact saved!); $3,840/mo SSD DiskANN vs $90,600/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms Species Toxicity / VCPR / DEA Gate & 4ms ezyVet / Autoship / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-219 blocking 250=2x5^3 feline permethrin/MDR1, expired VCPR & DEA violations (+$14.10M saved) & enforcing pet-owner CLS (4ms), then update ezyVet/SAP & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Sub-170ms Exact 169.0ms=13^2ms Mean, Sub-145ms Ontology, Exact 21,000 Users & $72.95M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "VETERINARY-HOSPITAL-PET-RETAIL-DEA-CVM-SOP-219",
+                "hard_constraint": "Block species-contraindicated compounds (e.g., canine permethrin or acetaminophen for felines) and MDR1-conflicting macrocyclic lactones for herding breeds, require an active in-person VCPR physical exam within 365 days per FDA CVM, enforce DEA registration and state PMP checks for Schedule II-V veterinary controlled substances, block pre-existing condition upcoding, and enforce pet-owner CLS",
+                "proposed_change": "Block 250=2x5^3 species toxicity, expired VCPR & DEA violations (+$14.10M saved), capture $59.0M exact in diagnostics, Autoship & instant claims (+39.0% retention), stage 645 waves, and enforce pet-owner CLS across Exact 21,000 users",
+                "species_breed_mdr1_toxicity_and_vcpr_365d_verified": True,
+                "dea_controlled_rx_and_pet_owner_cls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 72950000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (735M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -12166,6 +12232,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 10,
     },
+    {
+        "id": "DL-885",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global veterinary hospital & pet specialty retail network (3,400 vet clinics + 2,100 pet stores, 42M pets, 1,000K=1.0M EPS IDEXX/Antech hematology, ICU vitals, smart collar & POS streams + ezyVet/Cornerstone PIMS & SAP) requires 4ms early CKD/MMVD triage and Autoship refill sensing: Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs $162,400/mo stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL 1,000K (1.0M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Vet Lab & Collar Sense Flagging 645 Waves & Lifting Rx Autoship Retention +39.0% vs $162.4K/mo Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL 1,000K (1.0M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Vet Lab & Collar Sense Flagging 645 Waves & Lifting Rx Autoship Retention +39.0% vs $162.4K/mo Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 7,
+    },
+    {
+        "id": "DL-886",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 735M canine/feline thoracic & dental DICOMs, digital cytology slides, SNOMED-Vet notes & pet insurance policy vectors at $3,840/mo) + In-Lake PREDICT ($0 egress tax) vs 5.65TB RAM OpenSearch/Mosaic vector clusters ($90,600/mo) and cross-cloud GPU egress ($100/mo)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (735M Vet DICOM, Cytology & Policy Vectors, -92% RAM at $3,840/mo vs $90,600/mo DRAM, 4ms In-Lake PREDICT Staging IRIS CKD & Direct-Pay Claims Worth +$59.0M/yr Exact!)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (735M Vet DICOM, Cytology & Policy Vectors, -92% RAM at $3,840/mo vs $90,600/mo DRAM, 4ms In-Lake PREDICT Staging IRIS CKD & Direct-Pay Claims Worth +$59.0M/yr Exact!)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 7,
+    },
+    {
+        "id": "DL-887",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 5,500-site global veterinary hospital, pet retail & pet insurance platform (1,000K=1.0M EPS stream, 735M DICOM/cytology/policy vectors, Exact 21,000 DVMs/pharmacists/adjusters): Fabric F64 ($15,640/mo) vs stitched PIMS CDC/Snowflake/Databricks/AWS/BI stack ($262.4K-$427,600/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 735M SSD DiskANN + Direct Lake ($15,640/mo vs $427,600/mo Stitched Multi-Cloud, Saving -$412.0K/mo Exact / -96.3% TCO with Exact 21,000 $0 Viewer Seats & Pet-Owner CLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 735M SSD DiskANN + Direct Lake ($15,640/mo vs $427,600/mo Stitched Multi-Cloud, Saving -$412.0K/mo Exact / -96.3% TCO with Exact 21,000 $0 Viewer Seats & Pet-Owner CLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 7,
+    },
+    {
+        "id": "DL-888",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic Sub-170ms & Exact Square Integer 169.0ms=13^2ms Routing Mean (435/436=99.77%), Sub-145ms (144.63ms) Ontology Mean (n=105), Exact 21,000 Users, 250=2x5^3 Blocks & 99th FAQ Milestone: Clinic surge triggers 645 CKD/Autoship waves and 250 feline permethrin/MDR1/DEA risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 645-Wave Vet/Autoship Sense ($0 Tax) + 735M DiskANN & PREDICT 4ms (+39.0% Retention & +$59.0M! Saved) + Foundry IQ 4ms 250=2x5^3-Species/VCPR/DEA Gate (+$14.10M) & CLS + Teams ezyVet & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $72.95M SLA)",
+        "model_answer": "Eventhouse 4ms 645-Wave Vet/Autoship Sense ($0 Tax) + 735M DiskANN & PREDICT 4ms (+39.0% Retention & +$59.0M! Saved) + Foundry IQ 4ms 250=2x5^3-Species/VCPR/DEA Gate (+$14.10M) & CLS + Teams ezyVet & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $72.95M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 7,
+    },
 ]
 
 
@@ -12387,7 +12501,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_renewable_wind_solar_bess_fabric_scada_wake_steering_ppa_curtailment_vs_4clouds",
         "global_freight_forwarding_customs_brokerage_fabric_hs_tariff_sanctions_cbam_vs_4clouds",
         "global_beauty_cosmetics_skincare_omnichannel_fabric_clienteling_inci_mocra_vs_4clouds",
-        "global_smart_home_connected_appliances_hvac_fabric_matter_rul_field_service_vs_4clouds"
+        "global_smart_home_connected_appliances_hvac_fabric_matter_rul_field_service_vs_4clouds",
+        "global_veterinary_hospital_pet_retail_fabric_diagnostics_autoship_insurance_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
