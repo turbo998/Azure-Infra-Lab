@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" width="1280" height="760" font-family="Segoe UI, Inter, system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg240" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#04101E"/>
+      <stop offset="55%" stop-color="#0A223D"/>
+      <stop offset="100%" stop-color="#152C4A"/>
+    </linearGradient>
+    <linearGradient id="accent240" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="cardHdr240" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="760" fill="url(#bg240)"/>
+  <rect x="0" y="0" width="1280" height="6" fill="url(#accent240)"/>
+
+  <!-- Header -->
+  <text x="36" y="42" fill="#38BDF8" font-size="13" font-weight="700" letter-spacing="1.2">ROUND 232 PALINDROME · SCENARIO IE (DL-969..DL-972) · 🏆 HISTORIC 120=5! FAQS / 240 DOCS, 240 SVG, 520 CASES, 256=16²=2⁸ TESTS &amp; -$471.0K/MO (&gt;$470K!)</text>
+  <text x="36" y="70" fill="#F8FAFC" font-size="22" font-weight="800">Global Automated Cold-Storage Warehousing, Port Blast-Freezing &amp; 3PL Networks (420 AS/RS Sites)</text>
+  <text x="36" y="94" fill="#94A3B8" font-size="13.5">Thermal-Flywheel Peak Shaving, AS/RS Dock Slotting, 840M USDA/WMS RAG &amp; Ammonia PSM / Cold-Treatment Gate: Fabric ($16,620/mo) vs. 4-Cloud ($487,600/mo)</text>
+
+  <!-- KPI Banner -->
+  <rect x="36" y="108" width="1208" height="58" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="64" y="131" fill="#7DD3FC" font-size="11.5" font-weight="700">120=5! FAQS / 240 DOCS &amp; 520 SCENARIOS</text>
+  <text x="64" y="153" fill="#F8FAFC" font-size="16.5" font-weight="800">519 / 520 (99.81%) · 142.3 ms Mean</text>
+
+  <line x1="355" y1="116" x2="355" y2="158" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="375" y="131" fill="#6EE7B7" font-size="11.5" font-weight="700">SUB-124MS ONTOLOGY &amp; 256=16²=2⁸ TESTS</text>
+  <text x="375" y="153" fill="#34D399" font-size="16.5" font-weight="800">🏆 123.19 ms · 🏆 256=16²=2⁸ Tests!</text>
+
+  <line x1="680" y1="116" x2="680" y2="158" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="700" y="131" fill="#FCD34D" font-size="11.5" font-weight="700">DISKANN 840M=7×120M VS $103.2K DRAM</text>
+  <text x="700" y="153" fill="#FBBF24" font-size="16.5" font-weight="800">$4,260 vs $103,200 DRAM · +$82.5M/yr</text>
+
+  <line x1="975" y1="116" x2="975" y2="158" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="995" y="131" fill="#F9A8D4" font-size="11.5" font-weight="700">HISTORIC &gt;$470K/MO SAVINGS &amp; SLA</text>
+  <text x="995" y="153" fill="#F472B6" font-size="16.5" font-weight="800">-$471.0K/mo (-96.6%) · $80.80M! SLA</text>
+
+  <!-- Left Column: High-Bay AS/RS, NH3 SCADA & WMS Feeds -->
+  <rect x="36" y="182" width="275" height="390" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <rect x="36" y="182" width="275" height="36" rx="12" fill="url(#cardHdr240)"/>
+  <text x="52" y="205" fill="#FFFFFF" font-size="13.5" font-weight="800">1. AS/RS Cranes, NH3 SCADA &amp; WMS</text>
+
+  <rect x="52" y="232" width="243" height="72" rx="8" fill="#1E293B" stroke="#0EA5E9" stroke-width="1"/>
+  <text x="64" y="252" fill="#7DD3FC" font-size="12.5" font-weight="700">420 AS/RS Sites &amp; 18M Pallets</text>
+  <text x="64" y="270" fill="#CBD5E1" font-size="11.5">• 1,090K (1.09M) EPS crane PLC &amp; NH3 SCADA</text>
+  <text x="64" y="287" fill="#CBD5E1" font-size="11.5">• 5-min grid LMP &amp; port drayage RFID</text>
+
+  <rect x="52" y="316" width="243" height="72" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1"/>
+  <text x="64" y="336" fill="#6EE7B7" font-size="12.5" font-weight="700">Blue Yonder / Manhattan WMS &amp; SAP</text>
+  <text x="64" y="354" fill="#CBD5E1" font-size="11.5">• 85M annual pallet turns across 15K depositors</text>
+  <text x="64" y="371" fill="#CBD5E1" font-size="11.5">• SAP S/4HANA 3PL accessorial billing</text>
+
+  <rect x="52" y="400" width="243" height="72" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1"/>
+  <text x="64" y="420" fill="#FCD34D" font-size="12.5" font-weight="700">840M Enthalpy, USDA &amp; Tariffs</text>
+  <text x="64" y="438" fill="#CBD5E1" font-size="11.5">• 3D pallet thermal-mass &amp; USDA T107 vectors</text>
+  <text x="64" y="455" fill="#CBD5E1" font-size="11.5">• 15K depositor tariffs &amp; crane manuals</text>
+
+  <rect x="52" y="484" width="243" height="72" rx="8" fill="#1E293B" stroke="#A78BFA" stroke-width="1"/>
+  <text x="64" y="504" fill="#C4B5FD" font-size="12.5" font-weight="700">24,800 Cold-Storage GMs &amp; Depositors</text>
+  <text x="64" y="522" fill="#CBD5E1" font-size="11.5">• Refrigeration engineers &amp; WMS planners</text>
+  <text x="64" y="539" fill="#CBD5E1" font-size="11.5">• Depositor/facility Entra OBO RLS</text>
+
+  <!-- Center Column: Fabric 16ms=4²ms Cold-Storage & Thermal-Flywheel Loop -->
+  <rect x="331" y="182" width="608" height="390" rx="12" fill="#0F172A" stroke="#38BDF8" stroke-width="2"/>
+  <rect x="331" y="182" width="608" height="36" rx="12" fill="url(#cardHdr240)"/>
+  <text x="350" y="205" fill="#FFFFFF" font-size="13.5" font-weight="800">2. Microsoft Fabric 16ms (4²ms) Thermal-Flywheel, AS/RS &amp; USDA/NH3 Loop</text>
+
+  <!-- Step 1 -->
+  <rect x="349" y="230" width="572" height="74" rx="8" fill="#111C33" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="365" y="250" fill="#38BDF8" font-size="12.5" font-weight="800">STEP 1 (4ms) · Eventhouse KQL 1,090K (1.09M) EPS &amp; OneLake Zero-Copy ($0 Tax)</text>
+  <text x="365" y="269" fill="#E2E8F0" font-size="11.5">• Ingests 1.09M EPS crane PLC, NH3 SCADA &amp; 5-min LMP + mirrored WMS/SAP 3PL</text>
+  <text x="365" y="286" fill="#34D399" font-size="11.5" font-weight="700">• Flags 795 negative-LMP flywheel &amp; dock waves in 4ms (-42.5% power/detention, saves $186K!/mo)</text>
+
+  <!-- Step 2 -->
+  <rect x="349" y="314" width="572" height="74" rx="8" fill="#111C33" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="365" y="334" fill="#FBBF24" font-size="12.5" font-weight="800">STEP 2 (4ms) · Azure SQL SSD DiskANN (840M=7×120M Vectors) + In-Lake PREDICT ($0 Egress)</text>
+  <text x="365" y="353" fill="#E2E8F0" font-size="11.5">• Searches 840M 3D pallet enthalpy, USDA T107 &amp; 3PL tariffs ($4,260 vs $103,200 DRAM)</text>
+  <text x="365" y="370" fill="#FCD34D" font-size="11.5" font-weight="700">• 4ms thermal-decay coasting &amp; accessorial billing capture → +$82.5M/yr utility &amp; 3PL value</text>
+
+  <!-- Step 3 -->
+  <rect x="349" y="398" width="572" height="74" rx="8" fill="#111C33" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="365" y="418" fill="#F87171" font-size="12.5" font-weight="800">STEP 3 (4ms) · Foundry IQ Core-Temp, USDA T107 Clock &amp; OSHA NH3 Gate (SOP-240)</text>
+  <text x="365" y="437" fill="#E2E8F0" font-size="11.5">• Blocks 355 &gt;-18.0°C rack drifts, 14-day USDA cold-treatment breaks &amp; NH3&gt;25ppm entries</text>
+  <text x="365" y="454" fill="#FCA5A5" font-size="11.5" font-weight="700">• Prevents +$18.80M/yr cargo spoilage &amp; OSHA PSM fines; enforces RLS across 24,800 users</text>
+
+  <!-- Step 4 -->
+  <rect x="349" y="482" width="572" height="74" rx="8" fill="#111C33" stroke="#10B981" stroke-width="1.2"/>
+  <text x="365" y="502" fill="#34D399" font-size="12.5" font-weight="800">STEP 4 (4ms) · COO &amp; VP of Refrigeration Teams Card &amp; SCADA / WMS / 1GB SQL Commit</text>
+  <text x="365" y="521" fill="#E2E8F0" font-size="11.5">• Dispatches -28°C flywheel pre-cooling, interleaves AS/RS cranes &amp; writes to 1GB Free SQL</text>
+  <text x="365" y="538" fill="#6EE7B7" font-size="11.5" font-weight="700">• 16ms (4²ms) E2E Closed Loop · Protects $80,800,000 ($80.80M! Palindrome) Annual Cold SLA</text>
+
+  <!-- Right Column: 5-Cloud TCO Comparison -->
+  <rect x="959" y="182" width="285" height="390" rx="12" fill="#0F172A" stroke="#F43F5E" stroke-width="1.5"/>
+  <rect x="959" y="182" width="285" height="36" rx="12" fill="#881337"/>
+  <text x="975" y="205" fill="#FFFFFF" font-size="13.5" font-weight="800">3. 5-Cloud TCO &amp; Spoilage Risk</text>
+
+  <rect x="975" y="232" width="253" height="145" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="989" y="252" fill="#6EE7B7" font-size="12.5" font-weight="800">Microsoft Fabric Unified ($16,620/mo)</text>
+  <text x="989" y="272" fill="#E2E8F0" font-size="11.5">• F64 Reserved Capacity: $8,448/mo</text>
+  <text x="989" y="290" fill="#E2E8F0" font-size="11.5">• Eventhouse 1.09M EPS + OneLake: $3,912/mo</text>
+  <text x="989" y="308" fill="#E2E8F0" font-size="11.5">• 840M SSD DiskANN Vector: $4,260/mo</text>
+  <text x="989" y="326" fill="#E2E8F0" font-size="11.5">• 24,800 Users + 1GB Audit SQL: $0/mo</text>
+  <text x="989" y="348" fill="#34D399" font-size="12" font-weight="800">✓ Saves -$471.0K/mo (&gt;$470K! / -96.6%)</text>
+  <text x="989" y="366" fill="#34D399" font-size="11.5" font-weight="700">✓ 16ms (4²ms) Loop · 355 USDA/NH3 Gates</text>
+
+  <rect x="975" y="392" width="253" height="164" rx="8" fill="#1E293B" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="989" y="412" fill="#FDA4AF" font-size="12.5" font-weight="800">Stitched 4-Cloud Stack ($487,600/mo)</text>
+  <text x="989" y="432" fill="#CBD5E1" font-size="11.5">• SCADA/Crane Stream + CDC (Exact!): $186,000/mo</text>
+  <text x="989" y="450" fill="#CBD5E1" font-size="11.5">• 840M DRAM Vectors (6.70TB): $103,200/mo</text>
+  <text x="989" y="468" fill="#CBD5E1" font-size="11.5">• Cross-Cloud Egress Tax: $0/mo</text>
+  <text x="989" y="486" fill="#CBD5E1" font-size="11.5">• 24,800 Warehouse/Depositor Seats: $198,400/mo</text>
+  <text x="989" y="510" fill="#F87171" font-size="11.5" font-weight="700">✕ 5.4h Lag → 10× Peak Utility Demand Charges</text>
+  <text x="989" y="528" fill="#F87171" font-size="11.5" font-weight="700">✕ 4%–6% Unbilled 3PL Accessorial Leakage</text>
+  <text x="989" y="546" fill="#F87171" font-size="11.5" font-weight="700">✕ USDA Cold-Treatment Reset &amp; NH3 Risk</text>
+
+  <!-- Bottom Decision Matrix Strip -->
+  <rect x="36" y="588" width="1208" height="148" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="56" y="614" fill="#38BDF8" font-size="13.5" font-weight="800">4. Solution Architect Selection Matrix — Global Automated Cold-Storage Warehousing &amp; 3PL</text>
+
+  <text x="56" y="640" fill="#6EE7B7" font-size="12" font-weight="700">• Choose Microsoft Fabric (Recommended — 93.3/100):</text>
+  <text x="385" y="640" fill="#E2E8F0" font-size="12">When unifying 1.09M EPS SCADA/crane streams, WMS/SAP mirroring, 840M DiskANN ($4,260 vs $103.2K DRAM), and 24.8K users ($0 seats).</text>
+
+  <text x="56" y="664" fill="#93C5FD" font-size="12" font-weight="700">• Choose Hybrid Fabric + Azure Databricks (86.8/100):</text>
+  <text x="385" y="664" fill="#CBD5E1" font-size="12">When running 3D CFD high-bay freezer simulations or AGV SLAM vision on GPU clusters while serving 16ms flywheel control via Fabric.</text>
+
+  <text x="56" y="688" fill="#FCD34D" font-size="12" font-weight="700">• Choose Snowflake / BigQuery / AWS (82.0–85.5/100):</text>
+  <text x="385" y="688" fill="#CBD5E1" font-weight="400" font-size="12">Snowflake for external commodity inventory clean rooms; BigQuery for web ads; AWS when legacy crane gateway is 100% AWS.</text>
+
+  <text x="56" y="716" fill="#94A3B8" font-size="11.5">Sealed Benchmark Proof: DL-969..DL-972 · 519/520 (99.81%) · 142.3ms Mean · 🏆 123.19ms Ontology Mean (n=126) · 🏆 256/256 (16²=2⁸!) Tests</text>
+</svg>

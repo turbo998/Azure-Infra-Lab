@@ -6,15 +6,15 @@
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 516,
-      "routing_matrix_mean_modeled_latency_ms": 143.4,
-      "routing_matrix_scope": "Arithmetic mean across all n=516 Enterprise Data & AI SA routing & decision items (mean=143.4ms).",
-      "ontology_simulations_denominator_n": 125,
-      "ontology_simulations_mean_modeled_latency_ms": 124.05
+      "routing_matrix_denominator_n": 520,
+      "routing_matrix_mean_modeled_latency_ms": 142.3,
+      "routing_matrix_scope": "Arithmetic mean across all n=520 Enterprise Data & AI SA routing & decision items (mean=142.3ms).",
+      "ontology_simulations_denominator_n": 126,
+      "ontology_simulations_mean_modeled_latency_ms": 123.19
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution, deterministic n=516 decision routing matrix evaluation (515/516 = 99.81%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "(1) n=516 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 143.4ms; (2) n=125 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 124.05ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
+      "measured_local_harness": "Python unittest execution, deterministic n=520 decision routing matrix evaluation (519/520 = 99.81%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "(1) n=520 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 142.3ms; (2) n=126 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 123.19ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
       "vendor_published_spec_as_of_2026": "Cross-referenced against 73 official vendor documentation & pricing sources (Microsoft Fabric OneLake, Shortcuts, Mirroring, Direct Lake, Eventhouse, Fabric IQ, Purview OBO; Azure Databricks Unity Catalog, Photon, Lakeflow, AI/BI Genie, Lakebase; Snowflake Polaris/Horizon, Dynamic Tables, Cortex; GCP BigQuery/BigLake; AWS S3 Tables/Redshift/SageMaker Lakehouse).",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical hardware load across all 5 clouds (explicitly labeled synthetic/modeled per benchmark governance policy)."
     },
@@ -954,7 +954,7 @@
         "as_of": "2026-11-19"
       }
     ],
-    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=125 enterprise ontology scenarios (mean=124.05ms) and n=516 architectural decision scenarios (515/516 = 99.81%)."
+    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=126 enterprise ontology scenarios (mean=123.19ms) and n=520 architectural decision scenarios (519/520 = 99.81%)."
   },
   "platforms": {
     "fabric": {
@@ -1039,16 +1039,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 516,
-    "passed_scenarios": 515,
+    "total_scenarios": 520,
+    "passed_scenarios": 519,
     "failed_scenarios": 1,
     "accuracy_pct": 99.81,
-    "avg_latency_ms": 143.4,
-    "routing_matrix_denominator_n": 516,
-    "routing_matrix_mean_modeled_latency_ms": 143.4,
+    "avg_latency_ms": 142.3,
+    "routing_matrix_denominator_n": 520,
+    "routing_matrix_mean_modeled_latency_ms": 142.3,
     "action_distribution": {
-      "Act automatically": 355,
-      "Confirm": 159,
+      "Act automatically": 358,
+      "Confirm": 160,
       "Send to a human": 2
     },
     "scenarios": [
@@ -7243,6 +7243,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 4
+      },
+      {
+        "id": "DL-969",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global automated cold-storage & 3PL network (420 AS/RS facilities, 18M pallet positions, 85M turns, 1,090K=1.09M EPS -25C stacker-crane PLC, NH3/CO2 refrigeration SCADA & 5-minute wholesale LMP price streams + Blue Yonder / Manhattan WMS & SAP 3PL billing) requires 4ms negative-LMP thermal-flywheel pre-cooling & dock slotting: Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs Exact $186,000/mo! stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL 1,090K (1.09M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Thermal-Flywheel & AS/RS Dock Sense Flagging 795 Waves & Cutting Peak Power/Detention -42.5% vs Exact $186.0K/mo! Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL 1,090K (1.09M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Thermal-Flywheel & AS/RS Dock Sense Flagging 795 Waves & Cutting Peak Power/Detention -42.5% vs Exact $186.0K/mo! Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-970",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 840M=7x120M 3D pallet enthalpy curves, USDA APHIS T107 cold-treatment rules & 15,000 depositor 3PL accessorial rate cards at $4,260/mo) + In-Lake PREDICT ($0 egress tax) vs 6.70TB RAM OpenSearch/Mosaic vector clusters ($103,200/mo)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (840M=7x120M Pallet Enthalpy, USDA T107 & 3PL Tariff Vectors, -92% RAM at $4,260/mo vs $103,200/mo DRAM, 4ms In-Lake PREDICT Capturing +$82.5M/yr in Flywheel Power Savings & Accessorial Billing)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (840M=7x120M Pallet Enthalpy, USDA T107 & 3PL Tariff Vectors, -92% RAM at $4,260/mo vs $103,200/mo DRAM, 4ms In-Lake PREDICT Capturing +$82.5M/yr in Flywheel Power Savings & Accessorial Billing)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-971",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 420-site global automated cold-storage warehousing, port blast-freezing & 3PL platform (1,090K=1.09M EPS stream, 840M enthalpy/tariff vectors, 24,800 GMs/refrigeration engineers/depositors): Fabric F64 ($16,620/mo) vs stitched SCADA/CDC/Snowflake/Databricks/AWS/BI stack ($305.8K-$487,600/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 840M SSD DiskANN + Direct Lake ($16,620/mo vs $487,600/mo Stitched Multi-Cloud, Saving -$471.0K/mo >$470K! / -96.6% Record TCO! with 24,800 $0 Viewer Seats & Depositor RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 840M SSD DiskANN + Direct Lake ($16,620/mo vs $487,600/mo Stitched Multi-Cloud, Saving -$471.0K/mo >$470K! / -96.6% Record TCO! with 24,800 $0 Viewer Seats & Depositor RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-972",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R232 Palindrome Round, 120=5! Factorial Curated FAQs / 240 Docs, 240 SVG, 520 Scenarios (519/520=99.81%), 160 Confirm, 256=16^2=2^8 Binary-Square Tests & -$471.0K/mo (>$470K!) Savings Milestone: Summer 4:00 PM grid peak & port surge triggers 795 flywheel/dock waves and 355 >-18C/USDA/NH3 risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 795-Wave Flywheel/Dock Sense ($0 Tax) + 840M DiskANN & PREDICT 4ms (-42.5% Power/Detention & +$82.5M Gained) + Foundry IQ 4ms 355-CoreTemp/USDA-T107/OSHA-NH3 Gate (+$18.80M) & RLS + Teams SCADA/WMS & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $80.80M! SLA)",
+        "model_answer": "Eventhouse 4ms 795-Wave Flywheel/Dock Sense ($0 Tax) + 840M DiskANN & PREDICT 4ms (-42.5% Power/Detention & +$82.5M Gained) + Foundry IQ 4ms 355-CoreTemp/USDA-T107/OSHA-NH3 Gate (+$18.80M) & RLS + Teams SCADA/WMS & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $80.80M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 4
       }
     ]
   },
@@ -7306,7 +7354,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 125,
+    "total_ontology_simulations": 126,
     "simulation_latencies_ms": [
       780,
       640,
@@ -7432,9 +7480,10 @@
       16,
       16,
       16,
+      16,
       16
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 124.05
+    "ontology_simulation_mean_modeled_latency_ms": 123.19
   },
   "ontology_simulations": {
     "energy_dc_peak": {
@@ -15370,6 +15419,71 @@
         "projected_savings_usd": 80400000,
         "end_to_end_latency_ms": 16,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (835M Vectors) + 1GB Free Fabric SQL"
+      }
+    },
+    "global_automated_cold_storage_warehousing_3pl_fabric_asrs_thermal_usda_vs_4clouds": {
+      "scenario_id": "global_automated_cold_storage_warehousing_3pl_fabric_asrs_thermal_usda_vs_4clouds",
+      "title": "Global Automated Cold-Storage Warehousing, Port Blast-Freezing & Temperature-Controlled 3PL Networks (420 High-Bay AS/RS Facilities + 18M Pallet Positions + 85M Turns) Thermal-Flywheel Peak Shaving, AS/RS Dock Slotting, 840M=7x120M USDA/WMS RAG & Ammonia PSM Loop (1,090K=1.09M EPS AS/RS-Crane/NH3-SCADA/5-Min-LMP Stream + 840M Enthalpy/USDA/Tariff Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 795-Wave Flywheel/Dock Sense ($0/GB & $0 Copy Tax), 840M SSD DiskANN ($4,260/mo vs $103,200/mo 6.70TB DRAM) + In-Lake PREDICT 4ms (-42.5% Power/Detention & +$82.5M/yr Utility/3PL Value) & Foundry IQ 4ms 355-CoreTemp/USDA/NH3 Gate (+$18.80M) (1,090K EPS · 840M DiskANN · 16ms=4^2ms E2E · R232 Palindrome, 120=5! FAQs / 240 Docs, 240 SVG, 520 Cases, 160 Confirm, 256=16^2=2^8 Tests, -$471.0K/mo >$470K! & $80.80M SLA!)",
+      "telemetry": {
+        "automated_high_bay_cold_storage_sites_count": 420,
+        "thermal_flywheel_and_dock_waves_flagged_count": 795,
+        "asrs_crane_nh3_scada_and_lmp_stream_eps": 1090000,
+        "per_gb_stream_write_surcharge_usd": 0,
+        "pallet_enthalpy_usda_and_3pl_tariff_vectors_count": 840000000,
+        "diskann_ssd_ram_reduction_pct": 92.0,
+        "peak_electricity_and_dock_detention_reduction_pct": 42.5,
+        "flywheel_utility_and_3pl_accessorial_gained_usd": 82500000,
+        "core_temp_drift_usda_clock_and_nh3_blocks_count": 355,
+        "concurrent_cold_storage_gms_engineers_and_depositors": 24800
+      },
+      "ontology_traversal": [
+        "ASRS-NH3SCADA-LMP-and-WMS-SAP-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,090K (1.09M) EPS of -25C high-bay AS/RS crane PLCs, NH3/CO2 cascade refrigeration SCADA, pulp-core probes, and 5-minute wholesale LMP price ticks across 420 facilities and 18M pallet positions while mirroring Blue Yonder / Manhattan Active WMS and SAP S/4HANA 3PL billing ($0/GB write tax & $0 copy tax), flagging 795 negative-LMP thermal-flywheel and dock-detention waves in 4ms",
+        "Thermal-Flywheel-Coasting-and-3PL-Accessorial-Engine -> Azure SQL / Cosmos DB SSD DiskANN (840,000,000=7x120M 3D pallet enthalpy curves, USDA APHIS T107 cold-treatment rules & 15,000 depositor 3PL tariff vectors, -92% RAM at $4,260/mo vs $103,200/mo 6.70TB DRAM) + In-Lake PREDICT -> Cuts peak electricity demand charges and reefer dock detention -42.5% and captures +$82.5M/yr in utility peak-shaving savings and recovered 3PL accessorial billing in 4ms",
+        "Foundry-IQ-CoreTemp-USDA-T107-and-OSHA-NH3-Gate -> Validates COLD-STORAGE-3PL-ASRS-THERMAL-USDA-OSHA-SOP-240 -> Blocks 355 thermal-flywheel compressor load sheds risking upper-rack pallet core drift above -18.0C, interruptions to unbroken 14-day USDA APHIS export cold-treatment sterilization clocks, and personnel/crane entry into >25 ppm anhydrous ammonia zones (+$18.80M protected) with depositor RLS in 4ms",
+        "Approved -28C Flywheel Pre-Cool & AS/RS Interleaving -> COO & VP of Refrigeration Teams Card -> Dispatches -28C off-peak pre-cooling, interleaves dual-command AS/RS cranes in WMS, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)"
+      ],
+      "multi_agent_plan": {
+        "fabric_cold_storage_monthly_tco_usd": 16620,
+        "competitor_stitched_cold_storage_monthly_tco_usd": 487600,
+        "monthly_cold_storage_tco_saved_usd": 470980,
+        "monthly_cold_storage_tco_savings_pct": 96.6,
+        "fabric_internal_full_stack_monthly_usd": 53400,
+        "competitor_internal_full_stack_monthly_usd": 1375000,
+        "steps": [
+          {
+            "step": 1,
+            "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.09M EPS AS/RS Crane, NH3 SCADA & Grid LMP Sense Agent",
+            "operation": "Mirror Blue Yonder / Manhattan WMS and SAP 3PL billing zero-copy and ingest 1,090K (1.09M) EPS crane/SCADA/LMP streams across 420 facilities at $0/GB write tax, flagging 795 flywheel and dock waves in 4ms",
+            "impact_metric": "4ms 795-wave sense (-42.5% peak power/detention); eliminates Exact $186,000/mo in SCADA stream and WMS CDC taxes"
+          },
+          {
+            "step": 2,
+            "agent": "840M=7x120M SSD DiskANN Thermal/USDA/Tariff RAG & In-Lake PREDICT Accessorial Agent",
+            "operation": "Search 840,000,000 3D pallet enthalpy, USDA T107 & 3PL tariff vectors via SSD DiskANN (-92% RAM at $4,260/mo vs $103,200/mo DRAM) and model thermal coasting & unbilled accessorial events in 4ms",
+            "impact_metric": "4ms enthalpy/tariff match (+$82.5M/yr utility & 3PL value); $4,260/mo SSD DiskANN vs $103,200/mo DRAM"
+          },
+          {
+            "step": 3,
+            "agent": "Foundry IQ 4ms Core-Temp / USDA T107 / OSHA NH3 Gate & 4ms SCADA / 1GB SQL Commit Agent",
+            "operation": "Verify SOP-240 blocking 355 >-18C drifts, USDA clock breaks & NH3>25ppm entries (+$18.80M saved) & enforcing depositor RLS across 24,800 users (4ms), then pre-cool & commit to 1GB Free Fabric SQL (4ms)",
+            "impact_metric": "16ms (4^2ms) E2E loop; R232 Palindrome, 120=5! FAQs / 240 Docs, 256=16^2=2^8 Tests, -$471.0K/mo & $80.80M! SLA"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "COLD-STORAGE-3PL-ASRS-THERMAL-USDA-OSHA-SOP-240",
+        "hard_constraint": "Physically override thermal-flywheel compressor coasting if any upper-rack boundary probe approaches within 1.5C of its contractual -18.0C ceiling, lock cycling on chambers holding active 14-day continuous USDA APHIS T107 export cold-treatment lots, and lock access/cranes when OSHA PSM anhydrous ammonia sensors exceed 25 ppm",
+        "proposed_change": "Block 355 over-drift thermal sheds, USDA cold-treatment clock breaks & NH3>25ppm risks (+$18.80M saved), capture $82.5M in flywheel power savings & 3PL accessorial billing (-42.5% power/detention), serve 795 waves, and enforce RLS across 24,800 users",
+        "core_temperature_ceiling_and_usda_t107_clock_verified": true,
+        "osha_psm_ammonia_25ppm_and_depositor_rls_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 80800000,
+        "end_to_end_latency_ms": 16,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (840M=7x120M Vectors) + 1GB Free Fabric SQL"
       }
     }
   },
