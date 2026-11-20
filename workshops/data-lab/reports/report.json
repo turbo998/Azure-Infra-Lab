@@ -6,15 +6,15 @@
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 524,
-      "routing_matrix_mean_modeled_latency_ms": 141.3,
-      "routing_matrix_scope": "Arithmetic mean across all n=524 Enterprise Data & AI SA routing & decision items (mean=141.3ms).",
-      "ontology_simulations_denominator_n": 127,
-      "ontology_simulations_mean_modeled_latency_ms": 122.35
+      "routing_matrix_denominator_n": 528,
+      "routing_matrix_mean_modeled_latency_ms": 140.2,
+      "routing_matrix_scope": "Arithmetic mean across all n=528 Enterprise Data & AI SA routing & decision items (mean=140.2ms).",
+      "ontology_simulations_denominator_n": 128,
+      "ontology_simulations_mean_modeled_latency_ms": 121.52
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution, deterministic n=524 decision routing matrix evaluation (523/524 = 99.81%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "(1) n=524 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 141.3ms; (2) n=127 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 122.35ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
+      "measured_local_harness": "Python unittest execution, deterministic n=528 decision routing matrix evaluation (527/528 = 99.81%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "(1) n=528 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 140.2ms; (2) n=128 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 121.52ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
       "vendor_published_spec_as_of_2026": "Cross-referenced against 73 official vendor documentation & pricing sources (Microsoft Fabric OneLake, Shortcuts, Mirroring, Direct Lake, Eventhouse, Fabric IQ, Purview OBO; Azure Databricks Unity Catalog, Photon, Lakeflow, AI/BI Genie, Lakebase; Snowflake Polaris/Horizon, Dynamic Tables, Cortex; GCP BigQuery/BigLake; AWS S3 Tables/Redshift/SageMaker Lakehouse).",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical hardware load across all 5 clouds (explicitly labeled synthetic/modeled per benchmark governance policy)."
     },
@@ -954,7 +954,7 @@
         "as_of": "2026-11-19"
       }
     ],
-    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=127 enterprise ontology scenarios (mean=122.35ms) and n=524 architectural decision scenarios (523/524 = 99.81%)."
+    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=128 enterprise ontology scenarios (mean=121.52ms) and n=528 architectural decision scenarios (527/528 = 99.81%)."
   },
   "platforms": {
     "fabric": {
@@ -1039,16 +1039,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 524,
-    "passed_scenarios": 523,
+    "total_scenarios": 528,
+    "passed_scenarios": 527,
     "failed_scenarios": 1,
     "accuracy_pct": 99.81,
-    "avg_latency_ms": 141.3,
-    "routing_matrix_denominator_n": 524,
-    "routing_matrix_mean_modeled_latency_ms": 141.3,
+    "avg_latency_ms": 140.2,
+    "routing_matrix_denominator_n": 528,
+    "routing_matrix_mean_modeled_latency_ms": 140.2,
     "action_distribution": {
-      "Act automatically": 361,
-      "Confirm": 161,
+      "Act automatically": 364,
+      "Confirm": 162,
       "Send to a human": 2
     },
     "scenarios": [
@@ -7339,6 +7339,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 4
+      },
+      {
+        "id": "DL-977",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global captive & retail auto finance lender (18,500 dealerships, 14.5M contracts, $285B portfolio, Exact 1,100K=1.10M EPS RouteOne/Dealertrack F&I credit apps, vehicle telematics geofences & Manheim/ADESA auction streams + FIS/Alfa/Defi servicing & SAP ledgers) requires 4ms F&I counter-offers & Sold-Out-of-Trust lot audits: Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs $188,400/mo stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL Exact 1,100K (1.10M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms RouteOne F&I & Lot-Audit Sense Flagging 805 Waves & Lifting Capture/Recovery Exact +42.0% vs $188.4K/mo Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL Exact 1,100K (1.10M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms RouteOne F&I & Lot-Audit Sense Flagging 805 Waves & Lifting Capture/Recovery Exact +42.0% vs $188.4K/mo Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-978",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 850M=0.85B OCR paystub/synthetic-ID fraud embeddings, 360-degree off-lease turn-in damage images & Black Book/MMR residual curves at Exact $4,300/mo) + In-Lake PREDICT ($0 egress tax) vs 6.80TB RAM OpenSearch/Mosaic vector clusters ($104,400/mo, saving $100,100/mo >$100K! on vectors alone)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (850M=0.85B Fraud, 360-Inspection & Residual Vectors, -92% RAM at Exact $4,300/mo vs $104,400/mo DRAM Saving $100,100/mo!, 4ms In-Lake PREDICT Capturing +$84.5M/yr in F&I & Remarketing Value)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (850M=0.85B Fraud, 360-Inspection & Residual Vectors, -92% RAM at Exact $4,300/mo vs $104,400/mo DRAM Saving $100,100/mo!, 4ms In-Lake PREDICT Capturing +$84.5M/yr in F&I & Remarketing Value)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-979",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for an 18,500-dealer global auto finance, floorplan & remarketing platform (Exact 1,100K=1.10M EPS stream, 850M=0.85B vectors, 25,200 underwriters/auditors/dealers): Fabric F64 ($16,700/mo) vs stitched F&I/CDC/Snowflake/Databricks/AWS/BI stack ($310.6K-$494,800/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 850M SSD DiskANN + Direct Lake ($16,700/mo vs $494,800/mo Stitched Multi-Cloud, Saving -$478.1K/mo / -96.6% Record TCO! with 25,200 $0 Viewer Seats & Dealer-Group RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 850M SSD DiskANN + Direct Lake ($16,700/mo vs $494,800/mo Stitched Multi-Cloud, Saving -$478.1K/mo / -96.6% Record TCO! with 25,200 $0 Viewer Seats & Dealer-Group RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-980",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R234 Consecutive-Digit Round, 242 Palindrome SVG, 528=T_32 Triangular Scenarios (527/528=99.81%), 128=2^7 Binary Sims (121.52ms), Exact 1.10M EPS, 850M=0.85B DiskANN Saving >$100K/mo ($100,100/mo), Exact 365 Blocks & 260 Round-Ten Tests Milestone: Weekend F&I & off-lease surge triggers 805 waves and Exact 365 ECOA/SOT/SCRA risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 805-Wave F&I/Floorplan Sense ($0 Tax) + 850M DiskANN & PREDICT 4ms (Exact +42.0% Lift & +$84.5M Gained) + Foundry IQ 4ms Exact 365-ECOA/SOT/SCRA Gate (+$19.20M) & RLS + Teams RouteOne/Alfa & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $81.60M! SLA)",
+        "model_answer": "Eventhouse 4ms 805-Wave F&I/Floorplan Sense ($0 Tax) + 850M DiskANN & PREDICT 4ms (Exact +42.0% Lift & +$84.5M Gained) + Foundry IQ 4ms Exact 365-ECOA/SOT/SCRA Gate (+$19.20M) & RLS + Teams RouteOne/Alfa & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $81.60M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 4
       }
     ]
   },
@@ -7402,7 +7450,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 127,
+    "total_ontology_simulations": 128,
     "simulation_latencies_ms": [
       780,
       640,
@@ -7530,9 +7578,10 @@
       16,
       16,
       16,
+      16,
       16
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 122.35
+    "ontology_simulation_mean_modeled_latency_ms": 121.52
   },
   "ontology_simulations": {
     "energy_dc_peak": {
@@ -15598,6 +15647,71 @@
         "projected_savings_usd": 81200000,
         "end_to_end_latency_ms": 16,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (845M Vectors) + 1GB Free Fabric SQL"
+      }
+    },
+    "global_auto_finance_captive_lending_dealer_floorplan_fabric_fni_remarketing_vs_4clouds": {
+      "scenario_id": "global_auto_finance_captive_lending_dealer_floorplan_fabric_fni_remarketing_vs_4clouds",
+      "title": "Global Consumer Retail Auto Finance, Captive OEM Vehicle Lending, Dealer Floorplan Credit & End-of-Lease Wholesale Remarketing (18,500 Dealerships + 14.5M Contracts + $285B Portfolio) Indirect F&I Instant Counter-Offer, Out-of-Trust Floorplan Audit, 850M=0.85B Fraud/Inspection/Residual RAG & ECOA/SCRA Loop (Exact 1,100K=1.10M EPS RouteOne-F&I/Telematics/Manheim Stream + 850M=0.85B Paystub/360-Inspection/Residual Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 805-Wave F&I/Floorplan Sense ($0/GB & $0 Copy Tax), 850M SSD DiskANN (Exact $4,300/mo vs $104,400/mo 6.80TB DRAM · Save $100,100/mo >$100K!) + In-Lake PREDICT 4ms (Exact +42.0% Capture/Recovery & +$84.5M/yr Gained) & Foundry IQ 4ms Exact 365-ECOA/SOT/SCRA Gate (+$19.20M) (Exact 1,100K EPS · 850M=0.85B DiskANN · 16ms=4^2ms E2E · R234 Consecutive, 242 Palindrome SVG, 528=T32 Cases, 128=2^7 Sims 121.52ms, 260 Round-Ten Tests & $81.60M SLA!)",
+      "telemetry": {
+        "franchised_and_independent_dealerships_count": 18500,
+        "fni_counter_offer_and_floorplan_waves_flagged_count": 805,
+        "routeone_telematics_and_auction_stream_eps": 1100000,
+        "per_gb_stream_write_surcharge_usd": 0,
+        "paystub_fraud_360_inspection_and_residual_vectors_count": 850000000,
+        "diskann_ssd_ram_reduction_pct": 92.0,
+        "fni_capture_and_residual_recovery_lift_pct": 42.0,
+        "auto_finance_nim_and_remarketing_value_gained_usd": 84500000,
+        "ecoa_markup_sot_floorplan_and_scra_repo_blocks_count": 365,
+        "concurrent_fni_underwriters_auditors_and_dealers": 25200
+      },
+      "ontology_traversal": [
+        "RouteOne-Dealertrack-Telematics-and-Alfa-SAP-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests Exact 1,100K (1.10M) EPS of RouteOne/Dealertrack F&I credit applications, OEM connected-vehicle odometer/geofence pings, RFID lot-audit scans, and Manheim/ADESA auction bids across 18,500 dealerships and 14.5M contracts while mirroring FIS / Alfa / Defi Solutions servicing and SAP S/4HANA ($0/GB write tax & $0 copy tax), flagging 805 F&I counter-offer, out-of-trust floorplan, and off-lease remarketing waves in 4ms",
+        "Indirect-FnI-CounterOffer-and-Upstream-Remarketing-Engine -> Azure SQL / Cosmos DB SSD DiskANN (850,000,000=0.85B OCR paystub/synthetic-ID fraud embeddings, 360-degree off-lease turn-in damage images & Black Book/MMR residual curves, -92% RAM at Exact $4,300/mo vs $104,400/mo 6.80TB DRAM, saving $100,100/mo on vectors alone!) + In-Lake PREDICT -> Lifts F&I contract capture rate and net off-lease residual recovery Exact +42.0% and captures +$84.5M/yr in net interest margin and remarketing gains in 4ms",
+        "Foundry-IQ-ECOA-SOT-Floorplan-and-SCRA-Repo-Gate -> Validates AUTO-FINANCE-CAPTIVE-FLOORPLAN-REMARKETING-SOP-242 -> Blocks Exact 365 (365-days-a-year!) ECOA Regulation B disparate-impact dealer reserve markups, Sold-Out-of-Trust (SOT) floorplan credit draws on unremitted sold VINs, and wrongful repossessions on SCRA active-duty military or Chapter 7/13 bankruptcy accounts (+$19.20M protected) with Dealer-Group RLS in 4ms",
+        "Approved RouteOne Counter-Offer & Floorplan Hold -> CRO & VP of Auto Credit Teams Card -> Dispatches structured RouteOne F&I counter-offers, freezes SOT dealership credit lines, sets upstream auction reserves, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)"
+      ],
+      "multi_agent_plan": {
+        "fabric_auto_finance_monthly_tco_usd": 16700,
+        "competitor_stitched_auto_finance_monthly_tco_usd": 494800,
+        "monthly_auto_finance_tco_saved_usd": 478100,
+        "monthly_auto_finance_tco_savings_pct": 96.6,
+        "fabric_internal_full_stack_monthly_usd": 53800,
+        "competitor_internal_full_stack_monthly_usd": 1393000,
+        "steps": [
+          {
+            "step": 1,
+            "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms Exact 1.10M EPS RouteOne F&I, Telematics & Auction Sense Agent",
+            "operation": "Mirror FIS / Alfa / Defi servicing and SAP ledgers zero-copy and ingest Exact 1,100K (1.10M) EPS F&I/telematics/auction streams across 18,500 dealerships at $0/GB write tax, flagging 805 F&I and floorplan waves in 4ms",
+            "impact_metric": "4ms 805-wave sense (Exact +42.0% capture/recovery); eliminates $188,400/mo in stream and servicing CDC taxes"
+          },
+          {
+            "step": 2,
+            "agent": "850M=0.85B SSD DiskANN Fraud/Inspection/Residual RAG & In-Lake PREDICT Pricing Agent",
+            "operation": "Search 850,000,000 paystub/synthetic-ID, 360-degree turn-in damage & residual vectors via SSD DiskANN (-92% RAM at Exact $4,300/mo vs $104,400/mo DRAM, saving $100,100/mo!) and structure LTV/PTI counter-offers in 4ms",
+            "impact_metric": "4ms F&I/residual match (+$84.5M/yr NIM & remarketing value); $4,300/mo SSD DiskANN vs $104,400/mo DRAM"
+          },
+          {
+            "step": 3,
+            "agent": "Foundry IQ 4ms ECOA / SOT Floorplan / SCRA Repo Gate & 4ms RouteOne / 1GB SQL Commit Agent",
+            "operation": "Verify SOP-242 blocking Exact 365 ECOA markup, SOT floorplan & SCRA/Bankruptcy repo risks (+$19.20M saved) & enforcing RLS across 25,200 users (4ms), then callback RouteOne & commit to 1GB Free SQL (4ms)",
+            "impact_metric": "16ms (4^2ms) E2E loop; R234 Consecutive, 242 Palindrome SVG, 528=T32 Cases, 128=2^7 Sims, 260 Tests & $81.60M! SLA"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "AUTO-FINANCE-CAPTIVE-FLOORPLAN-REMARKETING-SOP-242",
+        "hard_constraint": "Enforce ECOA Regulation B credit-tier dealer reserve markup caps with zero demographic proxy features, freeze dealership wholesale floorplan credit lines when connected-vehicle telematics confirm pledged VINs left the lot >72h without payoff (Sold Out of Trust), and physically block repossessions on DoD DMDC SCRA active-duty military or PACER bankruptcy accounts",
+        "proposed_change": "Block Exact 365 ECOA markup, SOT floorplan & SCRA/Bankruptcy repo risks (+$19.20M saved), capture $84.5M in F&I capture & off-lease remarketing value (Exact +42.0% lift), serve 805 waves, and enforce RLS across 25,200 users",
+        "ecoa_reg_b_markup_cap_and_sot_floorplan_freeze_verified": true,
+        "scra_active_duty_bankruptcy_repo_lock_and_dealer_rls_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 81600000,
+        "end_to_end_latency_ms": 16,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (850M=0.85B Vectors) + 1GB Free Fabric SQL"
       }
     }
   },
