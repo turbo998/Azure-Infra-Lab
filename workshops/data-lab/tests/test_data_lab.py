@@ -1867,13 +1867,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 76900000)
 
 
+    def test_global_home_improvement_diy_pro_contractor_fabric_blueprint_cpq_lumber_delivery_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_home_improvement_diy_pro_contractor_fabric_blueprint_cpq_lumber_delivery_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["home_improvement_stores_and_flatbed_trucks_count"], 14800)
+        self.assertEqual(sim["telemetry"]["pro_job_lot_and_storm_waves_flagged_count"], 750)
+        self.assertEqual(sim["telemetry"]["bay_vision_lumber_ticker_and_flatbed_stream_eps"], 1045000)
+        self.assertEqual(sim["telemetry"]["blueprint_takeoff_irc_nec_and_diy_vectors_count"], 795000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_home_improvement_tco_saved_usd"], 442340)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_home_improvement_tco_savings_pct"], 96.5)
+        self.assertTrue(sim["foundry_iq_guardrail"]["irc_structural_span_and_nec_wire_ampacity_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["dot_hazmat_segregation_and_pro_credit_lien_rls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 77300000)
+
+
     def test_scenario_matrix_280_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 480)
-        self.assertEqual(matrix["passed_scenarios"], 479)
+        self.assertEqual(matrix["total_scenarios"], 484)
+        self.assertEqual(matrix["passed_scenarios"], 483)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.79, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 153.8)
+        self.assertEqual(matrix["avg_latency_ms"], 152.6)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -3207,6 +3224,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $76.90M SLA", by_id["DL-932"])
 
 
+    def test_fabric_home_improvement_diy_pro_contractor_blueprint_2026_11_21_r223_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-933", "DL-934", "DL-935", "DL-936"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Bay-Vision & Lumber Sense Flagging Exact 750 Waves & Cutting Delays/Stockouts Exact -40.0%", by_id["DL-933"])
+        self.assertIn("795M Blueprint BOM, IRC/NEC & DIY Vectors, -92% RAM at $4,080/mo vs $97,800/mo 6.25TB DRAM", by_id["DL-934"])
+        self.assertIn("-$442.3K/mo / -96.5% Record TCO! with 23,200 $0 Viewer Seats", by_id["DL-935"])
+        self.assertIn("16ms 4^2ms E2E, Protect $77.30M SLA", by_id["DL-936"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -3225,11 +3253,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 479)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 480)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 153.8)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 116)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 132.43)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 483)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 484)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 152.6)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 117)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 131.44)
 
 
 if __name__ == "__main__":

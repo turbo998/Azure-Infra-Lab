@@ -7770,6 +7770,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (790M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_home_improvement_diy_pro_contractor_fabric_blueprint_cpq_lumber_delivery_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Home Improvement, DIY Hardware & Pro-Contractor Building Materials Omnichannel Retail (2,800 Big-Box Stores + 4.8M Pro Accounts + 1.8M SKUs) Real-Time Lumber/Copper Commodity CPQ, Flatbed Jobsite Dispatch, 795M Blueprint BOM Take-Off RAG & IRC/NEC Building Code Loop (1,045K=1.045M EPS Bay-Vision/Lumber/Flatbed Stream + 795M Blueprint/IRC/NEC Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms Exact 750-Wave Pro/Storm Sense ($0/GB & $0 Copy Tax), 795M SSD DiskANN ($4,080/mo vs $97,800/mo 6.25TB DRAM) + In-Lake PREDICT 4ms (Exact -40.0% Delays & +$73.5M/yr Pro-Bid/Margin Value) & Foundry IQ 4ms Exact 310-IRC/NEC/HazMat Gate (+$17.00M Exact!) (1,045K EPS · 795M DiskANN · 16ms=4^2ms E2E · R223 Prime Round, 111th FAQ / 222 Docs, 484=22^2 Cases, All-Prime Actions 331/151/2, -$442.3K/mo -96.5% Record & $77.30M SLA!)",
+            "telemetry": {
+                "home_improvement_stores_and_flatbed_trucks_count": 14800,
+                "pro_job_lot_and_storm_waves_flagged_count": 750,
+                "bay_vision_lumber_ticker_and_flatbed_stream_eps": 1045000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "blueprint_takeoff_irc_nec_and_diy_vectors_count": 795000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "jobsite_delivery_delay_and_stockout_reduction_pct": 40.0,
+                "pro_bid_conversion_and_lumber_margin_gained_usd": 73500000,
+                "irc_nec_code_hazmat_and_pro_credit_blocks_count": 310,
+                "concurrent_pro_specialists_associates_and_buyers": 23200,
+            },
+            "ontology_traversal": [
+                "BayVision-LumberTicker-Flatbed-and-SAP-SFDC-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,045K (1.045M) EPS of overhead aisle bay-vision scans, CME lumber/copper ticks, and 12,000 flatbed truck GPS streams across 2,800 stores while mirroring SAP S/4HANA yard inventory and Salesforce Pro-Desk CRM ($0/GB write tax & $0 copy tax), flagging Exact 750 Pro job-lot shortage and storm demand waves in 4ms",
+                "Blueprint-BOM-TakeOff-and-Flatbed-Consolidation-Engine -> Azure SQL / Cosmos DB SSD DiskANN (795,000,000 architectural PDF blueprint take-offs, IRC structural span tables & NEC electrical code vectors, -92% RAM at $4,080/mo vs $97,800/mo 6.25TB DRAM) + In-Lake PREDICT -> Cuts jobsite delivery delays and stockouts Exact -40.0% and captures +$73.5M/yr in Pro bid conversion and commodity margin in 4ms",
+                "Foundry-IQ-IRC-NEC-Code-HazMat-and-Pro-Credit-Gate -> Validates HOME-IMPROVEMENT-PRO-IRC-NEC-HAZMAT-SOP-231 -> Blocks Exact 310 untreated ground-contact lumber or NEC wire-ampacity mismatches, incompatible DOT Class 5.1/8 HazMat co-loads, and uncollateralized Pro credit overrides (Exact +$17.00M protected) with store/district RLS in 4ms",
+                "Approved Pro Bid-Room CPQ Quote & Moffett Flatbed Dispatch -> EVP of Pro & Supply Chain VP Teams Card -> Issues binding Pro quote in Salesforce, dispatches single-drop regional yard flatbed, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_home_improvement_monthly_tco_usd": 16260,
+                "competitor_stitched_home_improvement_monthly_tco_usd": 458600,
+                "monthly_home_improvement_tco_saved_usd": 442340,
+                "monthly_home_improvement_tco_savings_pct": 96.5,
+                "fabric_internal_full_stack_monthly_usd": 51600,
+                "competitor_internal_full_stack_monthly_usd": 1285000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.045M EPS Bay-Vision, Lumber Ticker & Storm Sense Agent",
+                        "operation": "Mirror SAP S/4HANA yard inventory and Salesforce Pro-Desk zero-copy and ingest 1,045K (1.045M) EPS bay-vision/lumber/flatbed streams across 2,800 stores at $0/GB write tax, flagging Exact 750 Pro-lot and storm waves in 4ms",
+                        "impact_metric": "4ms Exact 750-wave sense (Exact -40.0% delays/stockouts); eliminates $175,200/mo in stream and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "795M SSD DiskANN Blueprint/IRC/NEC RAG & In-Lake PREDICT Pro CPQ Take-Off Agent",
+                        "operation": "Search 795,000,000 PDF blueprint take-off, IRC span & NEC code vectors via SSD DiskANN (-92% RAM at $4,080/mo vs $97,800/mo DRAM) and generate phase-sequenced BOM quotes & single-drop routes in 4ms",
+                        "impact_metric": "4ms blueprint BOM match (+$73.5M/yr Pro bid & margin value); $4,080/mo SSD DiskANN vs $97,800/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms IRC/NEC Code / DOT HazMat / Pro Credit Gate & 4ms Flatbed / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-231 blocking Exact 310 IRC/NEC code violations, HazMat co-loads & Pro credit overruns (+$17.00M Exact saved) & enforcing store RLS (4ms), then dispatch flatbed & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; R223 Prime Round, 111th FAQ / 222 Docs, 484=22^2 Cases, -$442.3K/mo (-96.5%!) & $77.30M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "HOME-IMPROVEMENT-PRO-IRC-NEC-HAZMAT-SOP-231",
+                "hard_constraint": "Physically block blueprint BOM substitutions violating municipal IRC structural span or AWPA UC4 ground-contact treated-lumber codes or NEC 240.4(D) wire-gauge ampacity rules, block flatbed staging co-mingling incompatible DOT Class 5.1 oxidizers and Class 8 acids, and lock uncollateralized Pro credit overrides while enforcing store RLS",
+                "proposed_change": "Block Exact 310 IRC/NEC code violations, HazMat pallet co-loads & Pro credit overruns (Exact +$17.00M saved), capture $73.5M in Pro bid conversion & lumber margin (Exact -40.0% delays), serve Exact 750 waves, and enforce RLS across 23,200 users",
+                "irc_structural_span_and_nec_wire_ampacity_verified": True,
+                "dot_hazmat_segregation_and_pro_credit_lien_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 77300000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (795M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -13534,6 +13600,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-933",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global home improvement & Pro-contractor retailer (2,800 stores, 4.8M Pro accounts, 1,045K=1.045M EPS overhead bay-vision, CME lumber/copper ticks & 12K flatbed GPS streams + SAP S/4HANA & Salesforce Pro-Desk) requires 4ms lumber CPQ price sync & single-drop yard routing: Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs $175,200/mo stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL 1,045K (1.045M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Bay-Vision & Lumber Sense Flagging Exact 750 Waves & Cutting Delays/Stockouts Exact -40.0% vs $175.2K/mo Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL 1,045K (1.045M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Bay-Vision & Lumber Sense Flagging Exact 750 Waves & Cutting Delays/Stockouts Exact -40.0% vs $175.2K/mo Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-934",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 795M architectural PDF blueprint material take-offs, IRC/IBC structural span tables & NEC electrical codes at $4,080/mo) + In-Lake PREDICT ($0 egress tax) vs 6.25TB RAM OpenSearch/Mosaic vector clusters ($97,800/mo)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (795M Blueprint BOM, IRC/NEC & DIY Vectors, -92% RAM at $4,080/mo vs $97,800/mo 6.25TB DRAM, 4ms In-Lake PREDICT Capturing +$73.5M/yr in Pro-Desk Bid Conversion & Lumber Margin)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (795M Blueprint BOM, IRC/NEC & DIY Vectors, -92% RAM at $4,080/mo vs $97,800/mo 6.25TB DRAM, 4ms In-Lake PREDICT Capturing +$73.5M/yr in Pro-Desk Bid Conversion & Lumber Margin)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-935",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 2,800-store global home improvement, DIY & Pro-contractor supply chain platform (1,045K=1.045M EPS stream, 795M blueprint/IRC vectors, 23,200 Pro reps/associates/buyers): Fabric F64 ($16,260/mo) vs stitched Kafka/CDC/Snowflake/Databricks/AWS/BI stack ($285.8K-$458,600/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 795M SSD DiskANN + Direct Lake ($16,260/mo vs $458,600/mo Stitched Multi-Cloud, Saving -$442.3K/mo / -96.5% Record TCO! with 23,200 $0 Viewer Seats & Store/District RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 795M SSD DiskANN + Direct Lake ($16,260/mo vs $458,600/mo Stitched Multi-Cloud, Saving -$442.3K/mo / -96.5% Record TCO! with 23,200 $0 Viewer Seats & Store/District RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-936",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R223 Prime Round, Double-Repdigit 111th FAQ / 222 Bilingual Docs, 484=22^2 Palindrome Square Cases, All-Prime Actions (331/151/2) & -96.5% Record TCO Savings Milestone: Spring build & storm surge triggers Exact 750 Pro/storm waves and Exact 310 IRC/NEC/HazMat risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms Exact 750-Wave Bay-Vision/Lumber Sense ($0 Tax) + 795M DiskANN & PREDICT 4ms (Exact -40.0% Delays & +$73.5M Gained) + Foundry IQ 4ms Exact 310-IRC/NEC/HazMat Gate (+$17.00M Exact!) & RLS + Teams Flatbed/CPQ & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $77.30M SLA)",
+        "model_answer": "Eventhouse 4ms Exact 750-Wave Bay-Vision/Lumber Sense ($0 Tax) + 795M DiskANN & PREDICT 4ms (Exact -40.0% Delays & +$73.5M Gained) + Foundry IQ 4ms Exact 310-IRC/NEC/HazMat Gate (+$17.00M Exact!) & RLS + Teams Flatbed/CPQ & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $77.30M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -13767,7 +13881,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_card_issuers_cobrand_loyalty_fabric_personalized_offers_credit_line_cfpb_vs_4clouds",
         "global_foodservice_distribution_commercial_kitchen_fabric_reefer_menu_margin_fsma_vs_4clouds",
         "global_b2b_enterprise_saas_plg_fabric_usage_billing_nrr_churn_multitenant_rag_vs_4clouds",
-        "global_automotive_aftermarket_tire_service_chain_fabric_aces_pies_tpms_bay_dispatch_vs_4clouds"
+        "global_automotive_aftermarket_tire_service_chain_fabric_aces_pies_tpms_bay_dispatch_vs_4clouds",
+        "global_home_improvement_diy_pro_contractor_fabric_blueprint_cpq_lumber_delivery_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
