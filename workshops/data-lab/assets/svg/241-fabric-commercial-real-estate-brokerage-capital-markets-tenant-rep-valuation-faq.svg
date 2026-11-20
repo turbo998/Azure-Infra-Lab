@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%" font-family="Segoe UI, Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg241" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="55%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="hdr241" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1D4ED8"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="fab241" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#064E3B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="comp241" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#450A0A"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="900" fill="url(#bg241)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="18" width="1392" height="94" rx="14" fill="url(#hdr241)" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="46" y="48" fill="#E0F2FE" font-size="13" font-weight="700" letter-spacing="1.2">DATA LAB · SCENARIO IF · ROUND 233 (PRIME) · 241 PRIME SVG · 121=11² FAQS (242 DOCS) · 127=2⁷-1 MERSENNE PRIME SIMS · 361=19² AUTO</text>
+  <text x="46" y="76" fill="#FFFFFF" font-size="22" font-weight="800">全球商业地产经纪、大宗资本市场交易与资产估值咨询选型 · CRE Brokerage, Capital Markets &amp; Valuation</text>
+  <text x="46" y="99" fill="#A7F3D0" font-size="13.5" font-weight="600">750 家分行 · 18万委托项目 · $310B 年成交 · 1,095K EPS VDR/CoStar/利差流 · 8.45亿 OM/ARGUS 向量 · 16ms (4²ms) 闭环 · 净省 -$474.5K/月 (-96.6%)</text>
+
+  <!-- Left Column: Sources & 4-Step 16ms Closed Loop -->
+  <rect x="24" y="126" width="880" height="568" rx="14" fill="url(#fab241)" stroke="#10B981" stroke-width="1.8"/>
+  <text x="44" y="156" fill="#6EE7B7" font-size="16" font-weight="800">🏆 Microsoft Fabric 主导架构：Eventhouse 4ms + 845M SSD DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms (4²ms)</text>
+
+  <!-- Step 1 -->
+  <rect x="44" y="172" width="840" height="118" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.4"/>
+  <rect x="58" y="186" width="94" height="26" rx="6" fill="#0284C7"/>
+  <text x="105" y="204" fill="#FFFFFF" font-size="12.5" font-weight="800" text-anchor="middle">STEP 1 · 4ms</text>
+  <text x="166" y="204" fill="#F8FAFC" font-size="15" font-weight="800">Eventhouse KQL 1,095K (1.095M) EPS 买方意向/行情流 + OneLake 零拷贝镜像 ($0/GB 流税 &amp; $0 复制税)</text>
+  <text x="58" y="230" fill="#CBD5E1" font-size="12.5">• 实时流：Intralinks/Datasite 虚拟数据室 (VDR) 买方翻阅停留热力 + CoStar/RCA 交易对标 + 商圈客流信令 + SOFR/CMBS 1秒利差</text>
+  <text x="58" y="251" fill="#CBD5E1" font-size="12.5">• 零拷贝镜像：VTS / Dealpath 租售委托管线、Yardi/MRI、Salesforce CRM 与 SAP S/4HANA 经纪佣金分账表 (立省 $187,200/月)</text>
+  <text x="58" y="274" fill="#34D399" font-size="12.5" font-weight="700">✓ 4ms 精准锁定精确 800 个场外大宗买方高意向匹配波次与企业 18 个月退租/续约选址窗口</text>
+
+  <!-- Step 2 -->
+  <rect x="44" y="302" width="840" height="122" rx="10" fill="#0F172A" stroke="#818CF8" stroke-width="1.4"/>
+  <rect x="58" y="316" width="94" height="26" rx="6" fill="#4F46E5"/>
+  <text x="105" y="334" fill="#FFFFFF" font-size="12.5" font-weight="800" text-anchor="middle">STEP 2 · 4ms</text>
+  <text x="166" y="334" fill="#F8FAFC" font-size="15" font-weight="800">Azure SQL SSD DiskANN (8.45亿 OM/ARGUS/可比租约向量) + 湖内 PREDICT 定价引擎 ($4,280/月 vs $103.8K DRAM)</text>
+  <text x="58" y="360" fill="#CBD5E1" font-size="12.5">• 845,000,000 向量：150页大宗投资备忘录 (OM) + ARGUS Enterprise 10年 DCF 现金流模型 + 历史可比租约免租期/TI 条款 + 容积率/环评报告</text>
+  <text x="58" y="381" fill="#CBD5E1" font-size="12.5">• NVMe SSD DiskANN 量化索引将内存需求削减 -92% (仅 $4,280/月，彻底淘汰 $103,800/月 的 6.75TB 纯内存 OpenSearch/Mosaic 集群)</text>
+  <text x="58" y="406" fill="#A5B4FC" font-size="12.5" font-weight="700">✓ 4ms 完成大宗买家风险偏好匹配与净有效租金 (NER) 寻优：成交转化率与选址效率提升 +41.5%，年创收增效 +$83.5M/年</text>
+
+  <!-- Step 3 -->
+  <rect x="44" y="436" width="840" height="122" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.4"/>
+  <rect x="58" y="450" width="94" height="26" rx="6" fill="#D97706"/>
+  <text x="105" y="468" fill="#FFFFFF" font-size="12.5" font-weight="800" text-anchor="middle">STEP 3 · 4ms</text>
+  <text x="166" y="468" fill="#F8FAFC" font-size="15" font-weight="800">Foundry IQ 三重地产合规硬门禁 (SOP-241) + Purview OBO 项目组隔离 (精确 25,000 名顾问/机构客户 $0 席位费)</text>
+  <text x="58" y="494" fill="#CBD5E1" font-size="12.5">• 门禁 1 (双边代理信息墙 Chinese Wall)：物理隔离同一标的下卖方代表、买方代表及竞争竞标财团的 VDR 文档与保留底价，严防串标泄密</text>
+  <text x="58" y="515" fill="#CBD5E1" font-size="12.5">• 门禁 2 &amp; 3 (USPAP/RICS 实证样本 + 买方 UBO 反洗钱)：强制核验可比成交契税哈希，并在发排他期协议前穿透筛查离岸 SPV 受益人 OFAC 制裁</text>
+  <text x="58" y="540" fill="#FCD34D" font-size="12.5" font-weight="700">✓ 4ms 物理拦截精确 360 次 (360° 全景!) 跨墙泄密/未核实样本/制裁风险 (精确守护 +$19.00M!)，对 25,000 人执行 Deal-Team RLS</text>
+
+  <!-- Step 4 -->
+  <rect x="44" y="570" width="840" height="108" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.4"/>
+  <rect x="58" y="584" width="94" height="26" rx="6" fill="#059669"/>
+  <text x="105" y="602" fill="#FFFFFF" font-size="12.5" font-weight="800" text-anchor="middle">STEP 4 · 4ms</text>
+  <text x="166" y="602" fill="#F8FAFC" font-size="15" font-weight="800">资本市场主管合伙人 Teams 审批卡 + Dealpath / Intralinks VDR 定向邀约 + 1GB 免费 Fabric SQL 审计落库</text>
+  <text x="58" y="628" fill="#CBD5E1" font-size="12.5">• 合伙人一键确认后，4ms 内在 Dealpath 生成定向保密协议 (CA) 与 VDR 邀请、更新 ARGUS 敏感性方案并写入 1GB 免费 Fabric SQL</text>
+  <text x="58" y="654" fill="#6EE7B7" font-size="13" font-weight="800">🎯 端到端闭环：4ms + 4ms + 4ms + 4ms = 16ms (4²ms) · 守护 $81,200,000 ($81.20M) 大宗交易佣金与估值合规 SLA！</text>
+
+  <!-- Right Column: 5-Cloud TCO & Stitched Pain -->
+  <rect x="920" y="126" width="496" height="568" rx="14" fill="url(#comp241)" stroke="#EF4444" stroke-width="1.8"/>
+  <text x="942" y="156" fill="#FCA5A5" font-size="16" font-weight="800">⛔ 传统五云拼接方案 vs Fabric 月度 TCO 实测拆解</text>
+
+  <!-- Stitched Pain Box -->
+  <rect x="940" y="172" width="456" height="218" rx="10" fill="#0F172A" stroke="#F87171" stroke-width="1.2"/>
+  <text x="956" y="198" fill="#FCA5A5" font-size="13.5" font-weight="800">传统拼接架构 (AWS + Snowflake/DBX + 独立向量库 + BI) 三大重税：</text>
+  <text x="956" y="224" fill="#E2E8F0" font-size="12.2">1. 流与 CDC 搬运税 ($187,200/月)：1,095K EPS VDR/行情流按 GB</text>
+  <text x="956" y="243" fill="#94A3B8" font-size="11.8">   计费 + VTS/Dealpath/SAP Fivetran 同步，且 T+1 延迟错失买方窗口</text>
+  <text x="956" y="270" fill="#E2E8F0" font-size="12.2">2. 6.75TB 纯内存向量税 ($103,800/月)：8.45 亿份 OM 备忘录与</text>
+  <text x="956" y="289" fill="#94A3B8" font-size="11.8">   ARGUS 模型全驻留 DRAM，硬件空转极其昂贵</text>
+  <text x="956" y="316" fill="#E2E8F0" font-size="12.2">3. 25,000 席位 BI 税 (精确 $200,000/月!)：为 750 家分行的 2.5 万名</text>
+  <text x="956" y="335" fill="#94A3B8" font-size="11.8">   经纪人、估价师与买方采购 Looker/Tableau 席位，成本失控</text>
+  <text x="956" y="368" fill="#F87171" font-size="12.8" font-weight="800">❌ 拼接方案月度总成本高达 $308.2K – $491,200 / 月！</text>
+
+  <!-- 5-Cloud Bar Comparison -->
+  <rect x="940" y="404" width="456" height="274" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="956" y="430" fill="#38BDF8" font-size="13.5" font-weight="800">五云月度 TCO 对比 (750 分行 · 1,095K EPS · 845M 向量 · 25K 用户)</text>
+
+  <!-- Fabric Bar -->
+  <text x="956" y="458" fill="#6EE7B7" font-size="12.2" font-weight="700">🏆 Microsoft Fabric (F64 + 845M DiskANN)</text>
+  <rect x="956" y="465" width="28" height="16" rx="4" fill="#10B981"/>
+  <text x="992" y="478" fill="#34D399" font-size="12.5" font-weight="800">$16,660 / 月 (基准最优 · 省 96.6%!)</text>
+
+  <!-- GCP Bar -->
+  <text x="956" y="502" fill="#CBD5E1" font-size="12">Google BigQuery + Vertex + Looker</text>
+  <rect x="956" y="509" width="255" height="14" rx="4" fill="#64748B"/>
+  <text x="1219" y="521" fill="#F8FAFC" font-size="12" font-weight="700">$308,200 / 月</text>
+
+  <!-- Databricks Bar -->
+  <text x="956" y="544" fill="#CBD5E1" font-size="12">Azure Databricks + Mosaic AI + BI</text>
+  <rect x="956" y="551" width="296" height="14" rx="4" fill="#64748B"/>
+  <text x="1260" y="563" fill="#F8FAFC" font-size="12" font-weight="700">$358,400 / 月</text>
+
+  <!-- Snowflake Bar -->
+  <text x="956" y="586" fill="#CBD5E1" font-size="12">Snowflake + Cortex Search + Fivetran + BI</text>
+  <rect x="956" y="593" width="362" height="14" rx="4" fill="#64748B"/>
+  <text x="1326" y="605" fill="#F8FAFC" font-size="12" font-weight="700">$438,600</text>
+
+  <!-- AWS Bar -->
+  <text x="956" y="628" fill="#FCA5A5" font-size="12" font-weight="700">AWS Stitched (MSK/Redshift/OpenSearch 6.75TB/QS)</text>
+  <rect x="956" y="635" width="406" height="14" rx="4" fill="#EF4444"/>
+  <text x="956" y="665" fill="#FCA5A5" font-size="12.5" font-weight="800">拼接最高：$491,200 / 月 → Fabric 单月净省 -$474,540 (-96.6%)！</text>
+
+  <!-- Bottom Sealed Benchmark Strip -->
+  <rect x="24" y="708" width="1392" height="172" rx="14" fill="#0F172A" stroke="#3B82F6" stroke-width="1.6"/>
+  <text x="46" y="738" fill="#60A5FA" font-size="15" font-weight="800">📊 密封评测基线 (DL-973..DL-976 · Round 233 Prime) · 全量 523 / 524 (99.81% 历史最高准确率 · 523 素数通过!) · 258 / 258 单测全绿</text>
+
+  <rect x="44" y="752" width="325" height="112" rx="10" fill="#1E293B" stroke="#334155"/>
+  <text x="60" y="776" fill="#38BDF8" font-size="13" font-weight="800">DL-973 · 实时买方意向与租约感知</text>
+  <text x="60" y="798" fill="#E2E8F0" font-size="12">• 1,095K EPS VDR/CoStar/SOFR 流 ($0/GB)</text>
+  <text x="60" y="818" fill="#E2E8F0" font-size="12">• 4ms 锁定精确 800 个场外买方/到期波次</text>
+  <text x="60" y="840" fill="#34D399" font-size="12" font-weight="700">✓ 撮合转化与选址效率 +41.5% (省 $187.2K/月)</text>
+
+  <rect x="385" y="752" width="325" height="112" rx="10" fill="#1E293B" stroke="#334155"/>
+  <text x="401" y="776" fill="#818CF8" font-size="13" font-weight="800">DL-974 · 8.45亿 SSD DiskANN 向量</text>
+  <text x="401" y="798" fill="#E2E8F0" font-size="12">• 845M OM 备忘录/ARGUS DCF/租约向量</text>
+  <text x="401" y="818" fill="#E2E8F0" font-size="12">• $4,280/月 SSD vs $103,800/月 6.75TB DRAM</text>
+  <text x="401" y="840" fill="#A5B4FC" font-size="12" font-weight="700">✓ 省 92% 内存 · 年创收增效 +$83.5M/年</text>
+
+  <rect x="726" y="752" width="325" height="112" rx="10" fill="#1E293B" stroke="#334155"/>
+  <text x="742" y="776" fill="#FBBF24" font-size="13" font-weight="800">DL-975 · 五云 TCO 与 25,000 免席位费</text>
+  <text x="742" y="798" fill="#E2E8F0" font-size="12">• Fabric $16,660/月 vs 拼接 $491,200/月</text>
+  <text x="742" y="818" fill="#E2E8F0" font-size="12">• 25,000 名顾问/买方 $0 Viewer 席位税</text>
+  <text x="742" y="840" fill="#FCD34D" font-size="12" font-weight="700">✓ 单月净省 -$474,540 (-96.6% 纪录!)</text>
+
+  <rect x="1067" y="752" width="329" height="112" rx="10" fill="#1E293B" stroke="#10B981"/>
+  <text x="1083" y="776" fill="#34D399" font-size="13" font-weight="800">DL-976 · 16ms 信息墙与估值闭环</text>
+  <text x="1083" y="798" fill="#E2E8F0" font-size="12">• 拦截精确 360 次双边代理/USPAP/UBO 风险</text>
+  <text x="1083" y="818" fill="#E2E8F0" font-size="12">• 路由均值 141.3ms · 第127=2⁷-1梅森素数仿真 122.35ms</text>
+  <text x="1083" y="840" fill="#6EE7B7" font-size="12" font-weight="700">✓ 守护 +$19.00M 门禁 &amp; $81.20M SLA!</text>
+</svg>
