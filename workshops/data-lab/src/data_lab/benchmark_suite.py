@@ -7968,6 +7968,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (805M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_clinical_reference_labs_pathology_diagnostics_fabric_hl7_wsi_clia_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Clinical Reference Laboratories, Anatomic Pathology & Molecular Diagnostics (2,400 Patient Service Centers + 48 Core Labs + 190M Annual Accessions) Real-Time HL7/Analyzer Track QC Triage, 810M=9^2x10M Digital Pathology WSI/LOINC RAG & CLIA/CAP Panic-Value Loop (1,060K=1.06M EPS HL7/Track-Analyzer/Cold-Tote Stream + 810M WSI/LOINC/Medicare-LCD Vectors) Eventhouse + HDS KQL + OneLake Zero-Copy 4ms 765-Wave Westgard/Temp Sense ($0/GB & $0 Copy Tax), 810M SSD DiskANN ($4,140/mo vs $99,600/mo 6.40TB DRAM) + In-Lake PREDICT 4ms (-41.5% Redraws/TAT & +$76.5M/yr Reflex/RCM Value) & Foundry IQ 4ms 325-CLIA/Westgard/Panic Gate (+$17.60M) (1,060K EPS · 810M DiskANN · 16ms=4^2ms E2E · Historic 496 Perfect-Number Cases, Sub-150ms Exact 149.0ms Prime Mean, 120=5! Ontology Sims (128.55ms), -$452.4K/mo >$450K! & $78.50M SLA!)",
+            "telemetry": {
+                "patient_service_centers_and_core_labs_count": 2448,
+                "westgard_qc_drift_and_cold_tote_waves_flagged_count": 765,
+                "hl7_analyzer_track_and_courier_stream_eps": 1060000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "wsi_pathology_loinc_and_medicare_lcd_vectors_count": 810000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "specimen_redraw_and_stat_tat_breach_reduction_pct": 41.5,
+                "reflex_test_and_lcd_rcm_yield_gained_usd": 76500000,
+                "clia_westgard_hemolysis_and_panic_value_blocks_count": 325,
+                "concurrent_pathologists_mls_and_outreach_directors": 23800,
+            },
+            "ontology_traversal": [
+                "HL7-TrackAnalyzer-ColdTote-and-LIS-SAP-Hub -> Eventstream-to-Eventhouse-HDS-KQL-and-OneLake -> Ingests 1,060K (1.06M) EPS of HL7 OML/ORU feeds, 18,000-tube/hr robotic track analyzer telemetry, Westgard QC runs, and courier cold-tote BLE logs across 48 core labs and 2,400 PSCs while mirroring Epic Beaker / Sunquest LIS and SAP S/4HANA reagent lots ($0/GB write tax & $0 copy tax), flagging 765 Westgard QC drift and cold-tote excursion waves in 4ms",
+                "WSI-Histopathology-Reflex-and-Medicare-LCD-Engine -> Azure SQL / Cosmos DB SSD DiskANN (810,000,000=9^2x10M gigapixel digital pathology WSI tile embeddings, LOINC/SNOMED mappings & Medicare LCD/NCD medical-necessity vectors, -92% RAM at $4,140/mo vs $99,600/mo 6.40TB DRAM) + In-Lake PREDICT -> Cuts specimen redraws and STAT TAT breaches -41.5% and captures +$76.5M/yr in IHC/NGS reflex testing and avoided LCD claim denials in 4ms",
+                "Foundry-IQ-CLIA-CAP-Westgard-Panic-and-GINA-Gate -> Validates CLINICAL-LAB-PATHOLOGY-CLIA-CAP-WESTGARD-SOP-234 -> Blocks 325 patient result auto-releases from analyzer channels failing Westgard 1_3s/2_2s rules or exhibiting severe hemolysis interference, unacknowledged critical panic-value closures lacking physician read-back, and unredacted GINA genetic exports (+$17.60M protected) with provider RLS in 4ms",
+                "Approved Track Reroute, Reflex Order & Panic Read-Back -> Chief Medical Officer Teams Card -> Diverts STAT rack to calibrated backup line, logs physician panic read-back in LIS, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_clinical_lab_monthly_tco_usd": 16380,
+                "competitor_stitched_clinical_lab_monthly_tco_usd": 468800,
+                "monthly_clinical_lab_tco_saved_usd": 452420,
+                "monthly_clinical_lab_tco_savings_pct": 96.5,
+                "fabric_internal_full_stack_monthly_usd": 52200,
+                "competitor_internal_full_stack_monthly_usd": 1315000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse + HDS KQL & OneLake Zero-Copy 4ms 1.06M EPS Analyzer Track QC & Cold-Tote Sense Agent",
+                        "operation": "Mirror Epic Beaker / Sunquest LIS and SAP reagent lots zero-copy and ingest 1,060K (1.06M) EPS HL7/track-analyzer/courier streams across 48 core labs at $0/GB write tax, flagging 765 Westgard and cold-tote waves in 4ms",
+                        "impact_metric": "4ms 765-wave sense (-41.5% redraws/TAT); eliminates $178,800/mo in HL7 stream and LIS CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "810M=9^2x10M SSD DiskANN Digital Pathology WSI/LCD RAG & In-Lake PREDICT Reflex Agent",
+                        "operation": "Search 810,000,000 WSI tile, LOINC & Medicare LCD/NCD vectors via SSD DiskANN (-92% RAM at $4,140/mo vs $99,600/mo DRAM) and recommend IHC/NGS reflex panels & ICD-10 medical necessity codes in 4ms",
+                        "impact_metric": "4ms WSI/LCD match (+$76.5M/yr reflex & RCM yield); $4,140/mo SSD DiskANN vs $99,600/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms CLIA Westgard / Panic-Value / GINA Gate & 4ms LIS / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-234 blocking 325 Westgard/hemolysis releases & unverified panic closures (+$17.60M saved) & enforcing provider RLS (4ms), then reroute rack & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic 496 Perfect-Number Cases, Exact 149.0ms Prime Mean, 120=5! Sims, -$452.4K/mo & $78.50M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "CLINICAL-LAB-PATHOLOGY-CLIA-CAP-WESTGARD-SOP-234",
+                "hard_constraint": "Physically lock LIS auto-verification when an analyzer channel violates CLIA/CAP Westgard 1_3s/2_2s/R_4s QC rules or specimen spectrophotometry detects severe hemolysis H-index interference, block critical panic-value ticket closure until a timestamped clinician read-back confirmation is logged, and scrub HIPAA/GINA germline identifiers",
+                "proposed_change": "Block 325 out-of-control Westgard/hemolyzed releases & unverified panic closures (+$17.60M saved), capture $76.5M in reflex diagnostic & LCD RCM yield (-41.5% redraws/TAT), serve 765 waves, and enforce RLS across 23,800 users",
+                "clia_cap_westgard_qc_and_hemolysis_lock_verified": True,
+                "critical_panic_readback_and_hipaa_gina_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 78500000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse + HDS KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (810M=9^2x10M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -13876,6 +13942,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-945",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global clinical reference laboratory & pathology network (2,400 PSCs, 48 core labs, 190M annual accessions, 1,060K=1.06M EPS HL7 OML/ORU, 18K-tube/hr robotic track analyzer Westgard QC & courier cold-tote streams + Epic Beaker / Sunquest LIS & SAP S/4HANA reagent ERP) requires 4ms Westgard drift & cold-tote excursion sensing: Fabric Eventhouse + HDS KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs $178,800/mo stream & CDC taxes",
+        "expected": "Fabric Eventhouse + HDS KQL 1,060K (1.06M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Track QC & Cold-Tote Sense Flagging 765 Waves & Cutting Redraws/TAT -41.5% vs $178.8K/mo Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse + HDS KQL 1,060K (1.06M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Track QC & Cold-Tote Sense Flagging 765 Waves & Cutting Redraws/TAT -41.5% vs $178.8K/mo Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-946",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 810M=9^2x10M digital pathology Whole-Slide Image WSI tile embeddings, LOINC/SNOMED mappings & Medicare LCD/NCD medical-necessity policies at $4,140/mo) + In-Lake PREDICT ($0 egress tax) vs 6.40TB RAM OpenSearch/Mosaic vector clusters ($99,600/mo)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (810M=9^2x10M Digital Pathology WSI, LOINC & Medicare LCD Vectors, -92% RAM at $4,140/mo vs $99,600/mo DRAM, 4ms In-Lake PREDICT Capturing +$76.5M/yr in Reflex Diagnostic & RCM Yield)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (810M=9^2x10M Digital Pathology WSI, LOINC & Medicare LCD Vectors, -92% RAM at $4,140/mo vs $99,600/mo DRAM, 4ms In-Lake PREDICT Capturing +$76.5M/yr in Reflex Diagnostic & RCM Yield)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-947",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 48-core-lab global clinical reference laboratory, anatomic pathology & molecular diagnostics platform (1,060K=1.06M EPS stream, 810M WSI/LCD vectors, 23,800 pathologists/MLS/outreach directors): Fabric F64 ($16,380/mo) vs stitched HL7/CDC/Snowflake/Databricks/AWS/BI stack ($292.6K-$468,800/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 810M SSD DiskANN + Direct Lake ($16,380/mo vs $468,800/mo Stitched Multi-Cloud, Saving -$452.4K/mo >$450K! / -96.5% TCO with 23,800 $0 Viewer Seats & HIPAA/GINA RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 810M SSD DiskANN + Direct Lake ($16,380/mo vs $468,800/mo Stitched Multi-Cloud, Saving -$452.4K/mo >$450K! / -96.5% TCO with 23,800 $0 Viewer Seats & HIPAA/GINA RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-948",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic 496 3rd Perfect-Number Scenarios (495/496=99.80%), Sub-150ms Exact Integer Prime 149.0ms Routing Mean, 120=5! Ontology Simulations (128.55ms), 340 Auto-Act & -$452.4K/mo (>$450K!) Savings Milestone: Midnight core-lab surge triggers 765 Westgard/cold-tote waves and 325 CLIA/hemolysis/panic risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse + HDS 4ms 765-Wave Track QC/Cold-Tote Sense ($0 Tax) + 810M DiskANN & PREDICT 4ms (-41.5% Redraws/TAT & +$76.5M Gained) + Foundry IQ 4ms 325-CLIA-Westgard/Hemolysis/Panic Gate (+$17.60M) & RLS + Teams LIS-Reroute & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $78.50M SLA)",
+        "model_answer": "Eventhouse + HDS 4ms 765-Wave Track QC/Cold-Tote Sense ($0 Tax) + 810M DiskANN & PREDICT 4ms (-41.5% Redraws/TAT & +$76.5M Gained) + Foundry IQ 4ms 325-CLIA-Westgard/Hemolysis/Panic Gate (+$17.60M) & RLS + Teams LIS-Reroute & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $78.50M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -14112,7 +14226,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_automotive_aftermarket_tire_service_chain_fabric_aces_pies_tpms_bay_dispatch_vs_4clouds",
         "global_home_improvement_diy_pro_contractor_fabric_blueprint_cpq_lumber_delivery_vs_4clouds",
         "global_retirement_401k_recordkeeping_workplace_wealth_fabric_rollover_erisa_vs_4clouds",
-        "global_luxury_watches_fine_jewelry_cpo_fabric_clienteling_kimberley_aml_vs_4clouds"
+        "global_luxury_watches_fine_jewelry_cpo_fabric_clienteling_kimberley_aml_vs_4clouds",
+        "global_clinical_reference_labs_pathology_diagnostics_fabric_hl7_wsi_clia_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()

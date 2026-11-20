@@ -1918,13 +1918,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 78100000)
 
 
+    def test_global_clinical_reference_labs_pathology_diagnostics_fabric_hl7_wsi_clia_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_clinical_reference_labs_pathology_diagnostics_fabric_hl7_wsi_clia_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["patient_service_centers_and_core_labs_count"], 2448)
+        self.assertEqual(sim["telemetry"]["westgard_qc_drift_and_cold_tote_waves_flagged_count"], 765)
+        self.assertEqual(sim["telemetry"]["hl7_analyzer_track_and_courier_stream_eps"], 1060000)
+        self.assertEqual(sim["telemetry"]["wsi_pathology_loinc_and_medicare_lcd_vectors_count"], 810000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_clinical_lab_tco_saved_usd"], 452420)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_clinical_lab_tco_savings_pct"], 96.5)
+        self.assertTrue(sim["foundry_iq_guardrail"]["clia_cap_westgard_qc_and_hemolysis_lock_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["critical_panic_readback_and_hipaa_gina_rls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 78500000)
+
+
     def test_scenario_matrix_280_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 492)
-        self.assertEqual(matrix["passed_scenarios"], 491)
+        self.assertEqual(matrix["total_scenarios"], 496)
+        self.assertEqual(matrix["passed_scenarios"], 495)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.80, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 150.2)
+        self.assertEqual(matrix["avg_latency_ms"], 149.0)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -3291,6 +3308,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $78.10M SLA", by_id["DL-944"])
 
 
+    def test_fabric_clinical_reference_labs_pathology_diagnostics_2026_11_21_r226_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-945", "DL-946", "DL-947", "DL-948"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Track QC & Cold-Tote Sense Flagging 765 Waves & Cutting Redraws/TAT -41.5%", by_id["DL-945"])
+        self.assertIn("810M=9^2x10M Digital Pathology WSI, LOINC & Medicare LCD Vectors, -92% RAM at $4,140/mo vs $99,600/mo DRAM", by_id["DL-946"])
+        self.assertIn("-$452.4K/mo >$450K! / -96.5% TCO with 23,800 $0 Viewer Seats", by_id["DL-947"])
+        self.assertIn("16ms 4^2ms E2E, Protect $78.50M SLA", by_id["DL-948"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -3309,11 +3337,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 491)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 492)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 150.2)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 119)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 129.50)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 495)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 496)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 149.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 120)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 128.55)
 
 
 if __name__ == "__main__":
