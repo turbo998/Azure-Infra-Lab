@@ -1901,13 +1901,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 77700000)
 
 
+    def test_global_luxury_watches_fine_jewelry_cpo_fabric_clienteling_kimberley_aml_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_luxury_watches_fine_jewelry_cpo_fabric_clienteling_kimberley_aml_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["flagship_salons_and_authorized_boutiques_count"], 1950)
+        self.assertEqual(sim["telemetry"]["true_collector_and_flipper_waves_flagged_count"], 760)
+        self.assertEqual(sim["telemetry"]["salon_nfc_tray_timegrapher_and_vault_stream_eps"], 1055000)
+        self.assertEqual(sim["telemetry"]["gia_inclusion_kimberley_and_caliber_vectors_count"], 805000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_luxury_watch_jewelry_tco_saved_usd"], 449060)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_luxury_watch_jewelry_tco_savings_pct"], 96.5)
+        self.assertTrue(sim["foundry_iq_guardrail"]["kimberley_g7_diamond_and_stolen_watch_registry_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["fincen_amld6_kyc_and_cites_exotic_strap_rls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 78100000)
+
+
     def test_scenario_matrix_280_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 488)
-        self.assertEqual(matrix["passed_scenarios"], 487)
+        self.assertEqual(matrix["total_scenarios"], 492)
+        self.assertEqual(matrix["passed_scenarios"], 491)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.80, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 151.4)
+        self.assertEqual(matrix["avg_latency_ms"], 150.2)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -3263,6 +3280,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $77.70M! SLA", by_id["DL-940"])
 
 
+    def test_fabric_luxury_watches_fine_jewelry_cpo_clienteling_2026_11_21_r225_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-941", "DL-942", "DL-943", "DL-944"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Salon NFC & Vault Sense Flagging 760 Waves & Lifting Conversion Exact +38.0%", by_id["DL-941"])
+        self.assertIn("805M GIA Inclusion, Kimberley & Caliber Vectors, -92% RAM at $4,120/mo vs Exact $99,000/mo! DRAM", by_id["DL-942"])
+        self.assertIn("-$449.1K/mo / -96.5% TCO with 23,600 $0 Viewer Seats", by_id["DL-943"])
+        self.assertIn("16ms 4^2ms E2E, Protect $78.10M SLA", by_id["DL-944"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -3281,11 +3309,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 487)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 488)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 151.4)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 118)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 130.46)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 491)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 492)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 150.2)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 119)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 129.50)
 
 
 if __name__ == "__main__":
