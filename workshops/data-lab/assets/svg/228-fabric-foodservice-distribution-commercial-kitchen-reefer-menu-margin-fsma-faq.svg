@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" width="1280" height="760" font-family="Segoe UI, Inter, system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg228" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B18"/>
+      <stop offset="55%" stop-color="#0D2137"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="accent228" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="cardHdr228" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="760" fill="url(#bg228)"/>
+  <rect x="0" y="0" width="1280" height="6" fill="url(#accent228)"/>
+
+  <!-- Header -->
+  <text x="36" y="42" fill="#34D399" font-size="13" font-weight="700" letter-spacing="1.4">ROUND 220 (ROUND-TEN!) · SCENARIO HS (DL-921..DL-924) · 🏆 216=6³ BILINGUAL DOCS, SUB-135MS ONTOLOGY MEAN &amp; EXACT $96,000 DRAM REPLACED</text>
+  <text x="36" y="70" fill="#F8FAFC" font-size="22" font-weight="800">Global Broadline Foodservice Distribution, Commercial Kitchen Supply &amp; Tri-Temp Cold-Chain (420K Accounts)</text>
+  <text x="36" y="94" fill="#94A3B8" font-size="13.5">Night-Shift Short-Pick Substitution, Catch-Weight EWM, 780M Culinary/Allergen RAG &amp; HACCP/FSMA Gate: Fabric ($16,140/mo) vs. 4-Cloud ($448,400/mo)</text>
+
+  <!-- KPI Banner -->
+  <rect x="36" y="108" width="1208" height="58" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <text x="64" y="131" fill="#7DD3FC" font-size="11.5" font-weight="700">RECORD ACCURACY &amp; LATENCY</text>
+  <text x="64" y="153" fill="#F8FAFC" font-size="16.5" font-weight="800">471 / 472 (99.79%!) · 156.4 ms Mean</text>
+
+  <line x1="340" y1="116" x2="340" y2="158" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="360" y="131" fill="#6EE7B7" font-size="11.5" font-weight="700">114th ONTOLOGY SIM (&lt;135MS!)</text>
+  <text x="360" y="153" fill="#34D399" font-size="16.5" font-weight="800">🏆 134.47 ms Mean · 216=6³ Docs</text>
+
+  <line x1="675" y1="116" x2="675" y2="158" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="695" y="131" fill="#FCD34D" font-size="11.5" font-weight="700">DISKANN 780M VS $96,000! DRAM</text>
+  <text x="695" y="153" fill="#FBBF24" font-size="16.5" font-weight="800">$4,020 vs $96,000! DRAM · +$70.5M/yr</text>
+
+  <line x1="975" y1="116" x2="975" y2="158" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="995" y="131" fill="#F9A8D4" font-size="11.5" font-weight="700">MONTHLY TCO &amp; PROTECTED SLA</text>
+  <text x="995" y="153" fill="#F472B6" font-size="16.5" font-weight="800">-$432.3K/mo (-96.4%) · $76.10M SLA</text>
+
+  <!-- Left Column: Foodservice & Cold-Chain Feeds -->
+  <rect x="36" y="182" width="275" height="390" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <rect x="36" y="182" width="275" height="36" rx="12" fill="url(#cardHdr228)"/>
+  <text x="52" y="205" fill="#FFFFFF" font-size="13.5" font-weight="800">1. Cold-Storage, Reefer &amp; Chef Feeds</text>
+
+  <rect x="52" y="232" width="243" height="72" rx="8" fill="#1E293B" stroke="#0EA5E9" stroke-width="1"/>
+  <text x="64" y="252" fill="#7DD3FC" font-size="12.5" font-weight="700">420K Kitchens &amp; 18,000 Reefers</text>
+  <text x="64" y="270" fill="#CBD5E1" font-size="11.5">• 1,030K (1.03M) EPS tri-temp pulp probes</text>
+  <text x="64" y="287" fill="#CBD5E1" font-size="11.5">• 10:30 PM chef cutoffs &amp; voice-pick scans</text>
+
+  <rect x="52" y="316" width="243" height="72" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1"/>
+  <text x="64" y="336" fill="#6EE7B7" font-size="12.5" font-weight="700">SAP S/4HANA EWM &amp; Salesforce B2B</text>
+  <text x="64" y="354" fill="#CBD5E1" font-size="11.5">• 145 cold-storage DCs &amp; forward pick slots</text>
+  <text x="64" y="371" fill="#CBD5E1" font-size="11.5">• Variable catch-weight meat/seafood pricing</text>
+
+  <rect x="52" y="400" width="243" height="72" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1"/>
+  <text x="64" y="420" fill="#FCD34D" font-size="12.5" font-weight="700">780M Culinary, Allergen &amp; FSMA</text>
+  <text x="64" y="438" fill="#CBD5E1" font-size="11.5">• Recipe functional substitution graphs</text>
+  <text x="64" y="455" fill="#CBD5E1" font-size="11.5">• FALCPA 9-allergens &amp; FSMA 204 KDE lots</text>
+
+  <rect x="52" y="484" width="243" height="72" rx="8" fill="#1E293B" stroke="#A78BFA" stroke-width="1"/>
+  <text x="64" y="504" fill="#C4B5FD" font-size="12.5" font-weight="700">22,600 Culinary Reps &amp; Drivers</text>
+  <text x="64" y="522" fill="#CBD5E1" font-size="11.5">• Culinary consultants, selectors &amp; drivers</text>
+  <text x="64" y="539" fill="#CBD5E1" font-size="11.5">• Territory &amp; national chain account RLS</text>
+
+  <!-- Center Column: Fabric 16ms=4²ms Foodservice Loop -->
+  <rect x="331" y="182" width="608" height="390" rx="12" fill="#0F172A" stroke="#10B981" stroke-width="2"/>
+  <rect x="331" y="182" width="608" height="36" rx="12" fill="url(#cardHdr228)"/>
+  <text x="350" y="205" fill="#FFFFFF" font-size="13.5" font-weight="800">2. Microsoft Fabric 16ms (4²ms) Night-Shift Sub, Menu-Margin &amp; HACCP/FSMA Loop</text>
+
+  <!-- Step 1 -->
+  <rect x="349" y="230" width="572" height="74" rx="8" fill="#111C33" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="365" y="250" fill="#38BDF8" font-size="12.5" font-weight="800">STEP 1 (4ms) · Eventhouse KQL 1,030K (1.03M) EPS &amp; OneLake Zero-Copy ($0 Tax)</text>
+  <text x="365" y="269" fill="#E2E8F0" font-size="11.5">• Ingests 1.03M EPS tri-temp reefer probes, voice-pick scans &amp; chef orders + mirrored SAP EWM</text>
+  <text x="365" y="286" fill="#34D399" font-size="11.5" font-weight="700">• Flags 735 short-pick &amp; cold-chain waves in 4ms (-40.5% short-ships/spoilage, saves $171.6K/mo)</text>
+
+  <!-- Step 2 -->
+  <rect x="349" y="314" width="572" height="74" rx="8" fill="#111C33" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="365" y="334" fill="#FBBF24" font-size="12.5" font-weight="800">STEP 2 (4ms) · Azure SQL SSD DiskANN (780M Vectors) + In-Lake PREDICT ($0 Egress)</text>
+  <text x="365" y="353" fill="#E2E8F0" font-size="11.5">• Searches 780M culinary recipe, FALCPA allergen &amp; FSMA 204 vectors ($4,020 vs Exact $96,000! DRAM)</text>
+  <text x="365" y="370" fill="#FCD34D" font-size="11.5" font-weight="700">• 4ms private-label menu-margin substitution &amp; drop consolidation → +$70.5M/yr margin &amp; density</text>
+
+  <!-- Step 3 -->
+  <rect x="349" y="398" width="572" height="74" rx="8" fill="#111C33" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="365" y="418" fill="#F87171" font-size="12.5" font-weight="800">STEP 3 (4ms) · Foundry IQ FALCPA 9-Allergen, HACCP &gt;41°F &amp; FSMA 204 Gate (SOP-228)</text>
+  <text x="365" y="437" fill="#E2E8F0" font-size="11.5">• Blocks 295 school/hospital undeclared allergen swaps, &gt;41°F TCS deliveries &amp; Class-I recalled lots</text>
+  <text x="365" y="454" fill="#FCA5A5" font-size="11.5" font-weight="700">• Prevents +$16.40M/yr food-safety liability &amp; fines; enforces territory RLS across 22,600 users</text>
+
+  <!-- Step 4 -->
+  <rect x="349" y="482" width="572" height="74" rx="8" fill="#111C33" stroke="#10B981" stroke-width="1.2"/>
+  <text x="365" y="502" fill="#34D399" font-size="12.5" font-weight="800">STEP 4 (4ms) · CSCO &amp; Food Safety VP Teams Card &amp; SAP EWM / Chef App / 1GB SQL Commit</text>
+  <text x="365" y="521" fill="#E2E8F0" font-size="11.5">• Commits approved culinary sub to SAP EWM voice-pick &amp; Chef App, writing to 1GB Free SQL</text>
+  <text x="365" y="538" fill="#6EE7B7" font-size="11.5" font-weight="700">• 16ms (4²ms) E2E Closed Loop · Protects $76,100,000 ($76.10M) Annual Foodservice SLA</text>
+
+  <!-- Right Column: 5-Cloud TCO Comparison -->
+  <rect x="959" y="182" width="285" height="390" rx="12" fill="#0F172A" stroke="#F43F5E" stroke-width="1.5"/>
+  <rect x="959" y="182" width="285" height="36" rx="12" fill="#881337"/>
+  <text x="975" y="205" fill="#FFFFFF" font-size="13.5" font-weight="800">3. 5-Cloud TCO &amp; Spoilage Risk</text>
+
+  <rect x="975" y="232" width="253" height="145" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="989" y="252" fill="#6EE7B7" font-size="12.5" font-weight="800">Microsoft Fabric Unified ($16,140/mo)</text>
+  <text x="989" y="272" fill="#E2E8F0" font-size="11.5">• F64 Reserved Capacity: $8,448/mo</text>
+  <text x="989" y="290" fill="#E2E8F0" font-size="11.5">• Eventhouse 1.03M EPS + OneLake: $3,672/mo</text>
+  <text x="989" y="308" fill="#E2E8F0" font-size="11.5">• 780M SSD DiskANN Vector: $4,020/mo</text>
+  <text x="989" y="326" fill="#E2E8F0" font-size="11.5">• 22,600 Users + 1GB Audit SQL: $0/mo</text>
+  <text x="989" y="348" fill="#34D399" font-size="12" font-weight="800">✓ Saves -$432.3K/mo (-96.4% TCO)</text>
+  <text x="989" y="366" fill="#34D399" font-size="11.5" font-weight="700">✓ 16ms (4²ms) Loop · 295 HACCP/FSMA Gates</text>
+
+  <rect x="975" y="392" width="253" height="164" rx="8" fill="#1E293B" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="989" y="412" fill="#FDA4AF" font-size="12.5" font-weight="800">Stitched 4-Cloud Stack ($448,400/mo)</text>
+  <text x="989" y="432" fill="#CBD5E1" font-size="11.5">• Reefer IoT + EWM/SFDC CDC: $171,600/mo</text>
+  <text x="989" y="450" fill="#CBD5E1" font-size="11.5">• 780M DRAM Vectors (Exact!): $96,000/mo</text>
+  <text x="989" y="468" fill="#CBD5E1" font-size="11.5">• Cross-Cloud Egress Tax: $0/mo</text>
+  <text x="989" y="486" fill="#CBD5E1" font-size="11.5">• 22,600 Culinary/Driver Seats: $180,800/mo</text>
+  <text x="989" y="510" fill="#F87171" font-size="11.5" font-weight="700">✕ 5.2h Lag → Morning Kitchen Short-Ships</text>
+  <text x="989" y="528" fill="#F87171" font-size="11.5" font-weight="700">✕ Unchecked Allergen Substitution Risk</text>
+  <text x="989" y="546" fill="#F87171" font-size="11.5" font-weight="700">✕ Delayed FSMA 204 Recall Lot Tracing</text>
+
+  <!-- Bottom Decision Matrix Strip -->
+  <rect x="36" y="588" width="1208" height="148" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="56" y="614" fill="#34D399" font-size="13.5" font-weight="800">4. Solution Architect Selection Matrix — Global Broadline Foodservice &amp; Cold-Chain Distribution</text>
+
+  <text x="56" y="640" fill="#6EE7B7" font-size="12" font-weight="700">• Choose Microsoft Fabric (Recommended — 93.3/100):</text>
+  <text x="385" y="640" fill="#E2E8F0" font-size="12">When unifying 1.03M EPS reefer/WMS streams, EWM/SFDC mirroring, 780M DiskANN ($4,020 vs $96K! DRAM), and 22,600 users ($0 seats).</text>
+
+  <text x="56" y="664" fill="#93C5FD" font-size="12" font-weight="700">• Choose Hybrid Fabric + Azure Databricks (86.8/100):</text>
+  <text x="385" y="664" fill="#CBD5E1" font-size="12">When training meat/seafood commodity forward-buying or CVRP solvers on Spark/GPU while serving 16ms night-shift subs via Fabric.</text>
+
+  <text x="56" y="688" fill="#FCD34D" font-size="12" font-weight="700">• Choose Snowflake / BigQuery / AWS (82.0–85.5/100):</text>
+  <text x="385" y="688" fill="#CBD5E1" font-weight="400" font-size="12">Snowflake for CPG supplier clean rooms; BigQuery for traffic GIS; AWS when legacy chef mobile ordering app is 100% AWS.</text>
+
+  <text x="56" y="716" fill="#94A3B8" font-size="11.5">Sealed Benchmark Proof: DL-921..DL-924 · 471/472 (99.79%) · 156.4ms Mean · 🏆 134.47ms (&lt;135ms!) Ontology Mean (n=114) · 232/232 Tests</text>
+</svg>

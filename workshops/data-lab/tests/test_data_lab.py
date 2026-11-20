@@ -1816,13 +1816,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 75750000)
 
 
+    def test_global_foodservice_distribution_commercial_kitchen_fabric_reefer_menu_margin_fsma_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_foodservice_distribution_commercial_kitchen_fabric_reefer_menu_margin_fsma_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["commercial_kitchen_accounts_thousands"], 420)
+        self.assertEqual(sim["telemetry"]["short_pick_and_reefer_drift_waves_flagged_count"], 735)
+        self.assertEqual(sim["telemetry"]["tri_temp_reefer_voice_pick_and_catch_weight_stream_eps"], 1030000)
+        self.assertEqual(sim["telemetry"]["culinary_recipe_allergen_and_fsma204_vectors_count"], 780000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_foodservice_tco_saved_usd"], 432260)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_foodservice_tco_savings_pct"], 96.4)
+        self.assertTrue(sim["foundry_iq_guardrail"]["falcpa_9allergen_school_hospital_sub_lock_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["haccp_41f_pulp_temp_and_fsma204_recall_rls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 76100000)
+
+
     def test_scenario_matrix_280_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 468)
-        self.assertEqual(matrix["passed_scenarios"], 467)
+        self.assertEqual(matrix["total_scenarios"], 472)
+        self.assertEqual(matrix["passed_scenarios"], 471)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.79, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 157.7)
+        self.assertEqual(matrix["avg_latency_ms"], 156.4)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -3123,6 +3140,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $75.75M SLA!", by_id["DL-920"])
 
 
+    def test_fabric_foodservice_distribution_commercial_kitchen_reefer_2026_11_21_r220_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-921", "DL-922", "DL-923", "DL-924"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Night-Shift WMS & Tri-Temp Reefer Sense Flagging 735 Waves & Cutting Short-Ships/Spoilage -40.5%", by_id["DL-921"])
+        self.assertIn("780M Culinary, Allergen & FSMA 204 Vectors, -92% RAM at $4,020/mo vs Exact $96,000/mo! DRAM", by_id["DL-922"])
+        self.assertIn("-$432.3K/mo / -96.4% TCO with 22,600 $0 Viewer Seats", by_id["DL-923"])
+        self.assertIn("16ms 4^2ms E2E, Protect $76.10M SLA", by_id["DL-924"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -3141,11 +3169,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 467)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 468)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 157.7)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 113)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 135.52)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 471)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 472)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 156.4)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 114)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 134.47)
 
 
 if __name__ == "__main__":

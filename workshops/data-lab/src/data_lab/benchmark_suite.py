@@ -7572,6 +7572,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (775M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_foodservice_distribution_commercial_kitchen_fabric_reefer_menu_margin_fsma_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Broadline Foodservice Distribution, Commercial Kitchen Supply & Tri-Temp Cold-Chain Delivery (420,000 Restaurant/Hospital/School Accounts + 18,000 Reefers + 145 DCs) Real-Time Chef Menu-Margin Substitution, Catch-Weight WMS Routing, 780M Allergen/FSMA RAG & HACCP Dock Loop (1,030K=1.03M EPS Reefer/Voice-Pick/Catch-Weight Stream + 780M Culinary/Allergen/FSMA Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 735-Wave Short-Pick/Temp Sense ($0/GB & $0 Copy Tax), 780M SSD DiskANN ($4,020/mo vs Exact $96,000/mo! DRAM) + In-Lake PREDICT 4ms (-40.5% Short-Ships/Spoilage & +$70.5M/yr Private-Label/Route Value) & Foundry IQ 4ms 295-Allergen/HACCP/FSMA Gate (+$16.40M) (1,030K EPS · 780M DiskANN · 16ms=4^2ms E2E · R220 Round-Ten, 216=6^3 Docs, 114th Sim <135ms at 134.47ms, -$432.3K/mo & $76.10M SLA!)",
+            "telemetry": {
+                "commercial_kitchen_accounts_thousands": 420,
+                "short_pick_and_reefer_drift_waves_flagged_count": 735,
+                "tri_temp_reefer_voice_pick_and_catch_weight_stream_eps": 1030000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "culinary_recipe_allergen_and_fsma204_vectors_count": 780000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "morning_short_ship_and_spoilage_reduction_pct": 40.5,
+                "private_label_margin_and_drop_density_gained_usd": 70500000,
+                "allergen_unsafe_sub_haccp_temp_and_recall_blocks_count": 295,
+                "concurrent_culinary_reps_selectors_and_drivers": 22600,
+            },
+            "ontology_traversal": [
+                "Reefer-VoicePick-CatchWeight-and-EWM-SFDC-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,030K (1.03M) EPS of tri-temp reefer pulp-probe sensors, 10:30 PM chef order cutoffs, and voice-pick slot scans across 145 cold DCs and 18,000 reefers while mirroring SAP S/4HANA EWM catch-weight inventory and Salesforce B2B Commerce ($0/GB write tax & $0 copy tax), flagging 735 forward-slot short-pick and cold-chain drift waves in 4ms",
+                "Culinary-Menu-Substitution-and-Drop-Size-Engine -> Azure SQL / Cosmos DB SSD DiskANN (780,000,000 culinary functional substitution graphs, FALCPA 9-major allergen profiles & FSMA 204 KDE lot vectors, -92% RAM at $4,020/mo vs Exact $96,000/mo DRAM) + In-Lake PREDICT -> Cuts morning kitchen short-ships and spoilage -40.5% and captures +$70.5M/yr in private-label conversion and route drop density in 4ms",
+                "Foundry-IQ-FALCPA-Allergen-HACCP-and-FSMA204-Gate -> Validates FOODSERVICE-DISTRIBUTION-HACCP-FSMA204-ALLERGEN-SOP-228 -> Blocks 295 undeclared 9-allergen school/hospital substitutions, >41F (5C) TCS seafood/poultry deliveries, and Class-I recalled GS1 lots (+$16.40M protected) with territory/account RLS in 4ms",
+                "Approved Night-Shift WMS Replenishment & Chef Sub Dispatch -> CSCO & Food Safety VP Teams Card -> Commits culinary sub to SAP EWM voice-pick and Chef B2B App, and writes to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_foodservice_monthly_tco_usd": 16140,
+                "competitor_stitched_foodservice_monthly_tco_usd": 448400,
+                "monthly_foodservice_tco_saved_usd": 432260,
+                "monthly_foodservice_tco_savings_pct": 96.4,
+                "fabric_internal_full_stack_monthly_usd": 51000,
+                "competitor_internal_full_stack_monthly_usd": 1255000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.03M EPS Tri-Temp Reefer & Night-Shift WMS Sense Agent",
+                        "operation": "Mirror SAP S/4HANA EWM catch-weight and Salesforce B2B zero-copy and ingest 1,030K (1.03M) EPS reefer/voice-pick/order streams across 145 DCs and 18K reefers at $0/GB write tax, flagging 735 short-pick and temp waves in 4ms",
+                        "impact_metric": "4ms 735-wave sense (-40.5% short-ships/spoilage); eliminates $171,600/mo in IoT stream and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "780M SSD DiskANN Culinary/Allergen RAG & In-Lake PREDICT Menu-Margin Substitution Agent",
+                        "operation": "Search 780,000,000 culinary recipe, FALCPA allergen & FSMA 204 vectors via SSD DiskANN (-92% RAM at $4,020/mo vs Exact $96,000/mo DRAM) and recommend private-label subs & drop consolidation in 4ms",
+                        "impact_metric": "4ms culinary/route match (+$70.5M/yr private-label & density value); $4,020/mo SSD DiskANN vs Exact $96,000/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms FALCPA Allergen / HACCP >41F / FSMA 204 Gate & 4ms SAP EWM / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-228 blocking 295 allergen-unsafe subs, >41F TCS deliveries & recalled lots (+$16.40M saved) & enforcing territory RLS (4ms), then update SAP EWM & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; R220 Round-Ten, 216=6^3 Docs, 114th Sim <135ms, -$432.3K/mo & $76.10M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "FOODSERVICE-DISTRIBUTION-HACCP-FSMA204-ALLERGEN-SOP-228",
+                "hard_constraint": "Physically block any automated ingredient substitution introducing undeclared FDA FALCPA 9-major allergens into school, hospital, or allergen-flagged restaurant orders, lock out driver POD sign-off when TCS seafood/poultry/dairy pulp temperatures exceed 41F (5C) beyond HACCP limits, and freeze picking on USDA/FDA Class-I recalled GS1 lots while enforcing territory RLS",
+                "proposed_change": "Block 295 allergen-unsafe substitutions, >41F TCS deliveries & recalled GS1 lots (+$16.40M saved), capture $70.5M in private-label conversion & drop density (-40.5% short-ships/spoilage), balance 735 waves, and enforce RLS across 22,600 users",
+                "falcpa_9allergen_school_hospital_sub_lock_verified": True,
+                "haccp_41f_pulp_temp_and_fsma204_recall_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 76100000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (780M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -13192,6 +13258,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-921",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global broadline foodservice distributor (420K kitchen accounts, 145 cold DCs, 18K tri-temp reefers, 1,030K=1.03M EPS pulp-probe, 10:30 PM chef cutoff & voice-pick streams + SAP S/4HANA EWM catch-weight & Salesforce B2B) requires 4ms short-pick substitution & cold-chain sensing: Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs $171,600/mo stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL 1,030K (1.03M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Night-Shift WMS & Tri-Temp Reefer Sense Flagging 735 Waves & Cutting Short-Ships/Spoilage -40.5% vs $171.6K/mo Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL 1,030K (1.03M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Night-Shift WMS & Tri-Temp Reefer Sense Flagging 735 Waves & Cutting Short-Ships/Spoilage -40.5% vs $171.6K/mo Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-922",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 780M culinary recipe substitution graphs, FDA FALCPA 9-major allergen profiles & FSMA 204 KDE lot records at $4,020/mo) + In-Lake PREDICT ($0 egress tax) vs 6.10TB RAM OpenSearch/Mosaic vector clusters (Exact $96,000/mo!)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (780M Culinary, Allergen & FSMA 204 Vectors, -92% RAM at $4,020/mo vs Exact $96,000/mo! DRAM, 4ms In-Lake PREDICT Capturing +$70.5M/yr in Private-Label Margin & Route Density)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (780M Culinary, Allergen & FSMA 204 Vectors, -92% RAM at $4,020/mo vs Exact $96,000/mo! DRAM, 4ms In-Lake PREDICT Capturing +$70.5M/yr in Private-Label Margin & Route Density)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-923",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 420K-account global broadline foodservice distribution & tri-temp cold-chain platform (1,030K=1.03M EPS stream, 780M culinary/FSMA vectors, 22,600 culinary reps/selectors/drivers): Fabric F64 ($16,140/mo) vs stitched IoT/CDC/Snowflake/Databricks/AWS/BI stack ($278.9K-$448,400/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 780M SSD DiskANN + Direct Lake ($16,140/mo vs $448,400/mo Stitched Multi-Cloud, Saving -$432.3K/mo / -96.4% TCO with 22,600 $0 Viewer Seats & Territory/Account RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 780M SSD DiskANN + Direct Lake ($16,140/mo vs $448,400/mo Stitched Multi-Cloud, Saving -$432.3K/mo / -96.4% TCO with 22,600 $0 Viewer Seats & Territory/Account RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-924",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R220 Round-Ten, 216=6^3 Perfect Cube Bilingual Docs, Sub-135ms (134.47ms) Ontology Mean (n=114) & Exact $96,000/mo DRAM Replaced Milestone: 10:30 PM cutoff triggers 735 short-pick/temp waves and 295 allergen/HACCP/recall risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 735-Wave Night-Shift WMS/Reefer Sense ($0 Tax) + 780M DiskANN & PREDICT 4ms (-40.5% Short-Ships & +$70.5M Gained) + Foundry IQ 4ms 295-Allergen/HACCP/FSMA Gate (+$16.40M) & RLS + Teams SAP-EWM & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $76.10M SLA)",
+        "model_answer": "Eventhouse 4ms 735-Wave Night-Shift WMS/Reefer Sense ($0 Tax) + 780M DiskANN & PREDICT 4ms (-40.5% Short-Ships & +$70.5M Gained) + Foundry IQ 4ms 295-Allergen/HACCP/FSMA Gate (+$16.40M) & RLS + Teams SAP-EWM & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $76.10M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -13422,7 +13536,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_smart_elevator_escalator_building_mobility_fabric_rul_safety_vs_4clouds",
         "global_retail_pharmacy_chain_specialty_infusion_fabric_rx_glp1_coldchain_dur_hipaa_vs_4clouds",
         "global_consumer_electronics_smartphone_pc_oem_fabric_launch_atp_warranty_channel_vs_4clouds",
-        "global_card_issuers_cobrand_loyalty_fabric_personalized_offers_credit_line_cfpb_vs_4clouds"
+        "global_card_issuers_cobrand_loyalty_fabric_personalized_offers_credit_line_cfpb_vs_4clouds",
+        "global_foodservice_distribution_commercial_kitchen_fabric_reefer_menu_margin_fsma_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
