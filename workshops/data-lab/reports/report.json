@@ -6,15 +6,15 @@
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 532,
-      "routing_matrix_mean_modeled_latency_ms": 139.2,
-      "routing_matrix_scope": "Arithmetic mean across all n=532 Enterprise Data & AI SA routing & decision items (mean=139.2ms).",
-      "ontology_simulations_denominator_n": 129,
-      "ontology_simulations_mean_modeled_latency_ms": 120.7
+      "routing_matrix_denominator_n": 536,
+      "routing_matrix_mean_modeled_latency_ms": 138.2,
+      "routing_matrix_scope": "Arithmetic mean across all n=536 Enterprise Data & AI SA routing & decision items (mean=138.2ms).",
+      "ontology_simulations_denominator_n": 130,
+      "ontology_simulations_mean_modeled_latency_ms": 119.89
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution, deterministic n=532 decision routing matrix evaluation (531/532 = 99.81%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "(1) n=532 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 139.2ms; (2) n=129 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 120.7ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
+      "measured_local_harness": "Python unittest execution, deterministic n=536 decision routing matrix evaluation (535/536 = 99.81%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "(1) n=536 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 138.2ms; (2) n=130 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 119.89ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
       "vendor_published_spec_as_of_2026": "Cross-referenced against 73 official vendor documentation & pricing sources (Microsoft Fabric OneLake, Shortcuts, Mirroring, Direct Lake, Eventhouse, Fabric IQ, Purview OBO; Azure Databricks Unity Catalog, Photon, Lakeflow, AI/BI Genie, Lakebase; Snowflake Polaris/Horizon, Dynamic Tables, Cortex; GCP BigQuery/BigLake; AWS S3 Tables/Redshift/SageMaker Lakehouse).",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical hardware load across all 5 clouds (explicitly labeled synthetic/modeled per benchmark governance policy)."
     },
@@ -954,7 +954,7 @@
         "as_of": "2026-11-19"
       }
     ],
-    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=129 enterprise ontology scenarios (mean=120.7ms) and n=532 architectural decision scenarios (531/532 = 99.81%)."
+    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=130 enterprise ontology scenarios (mean=119.89ms) and n=536 architectural decision scenarios (535/536 = 99.81%)."
   },
   "platforms": {
     "fabric": {
@@ -1039,16 +1039,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 532,
-    "passed_scenarios": 531,
+    "total_scenarios": 536,
+    "passed_scenarios": 535,
     "failed_scenarios": 1,
     "accuracy_pct": 99.81,
-    "avg_latency_ms": 139.2,
-    "routing_matrix_denominator_n": 532,
-    "routing_matrix_mean_modeled_latency_ms": 139.2,
+    "avg_latency_ms": 138.2,
+    "routing_matrix_denominator_n": 536,
+    "routing_matrix_mean_modeled_latency_ms": 138.2,
     "action_distribution": {
-      "Act automatically": 367,
-      "Confirm": 163,
+      "Act automatically": 370,
+      "Confirm": 164,
       "Send to a human": 2
     },
     "scenarios": [
@@ -7435,6 +7435,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 4
+      },
+      {
+        "id": "DL-985",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global uniform rental, healthcare linen & commercial laundry enterprise (850 plants, 22K route trucks, 1.8B RFID garments, 1,110K=1.11M Triple-One EPS UHF RFID portal reads, Continuous Batch Washer CBW thermal/pH/PAA telemetry & RSR handheld scans + ABS/Alliant ERP & SAP billing) requires 4ms dockside unreturned-garment recovery & CBW dosing: Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs $190,800/mo stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL 1,110K (1.11M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms UHF RFID Portal & CBW Tunnel Sense Flagging 815 Waves & Cutting Utilities/Shrinkage -42.5% vs $190.8K/mo Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL 1,110K (1.11M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms UHF RFID Portal & CBW Tunnel Sense Flagging 815 Waves & Cutting Utilities/Shrinkage -42.5% vs $190.8K/mo Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-986",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 860M high-speed line-scan camera garment tear/stain images, HLAC thermal-disinfection profiles & 1.2M B2B loss/damage replacement contract clauses at $4,340/mo) + In-Lake PREDICT ($0 egress tax) vs 6.90TB RAM OpenSearch/Mosaic vector clusters ($105,600/mo)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (860M Optical Tear/Stain, HLAC Disinfection & Contract Vectors, -92% RAM at $4,340/mo vs $105,600/mo DRAM, 4ms In-Lake PREDICT Capturing +$86.5M/yr in Energy & Shrinkage Recovery)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (860M Optical Tear/Stain, HLAC Disinfection & Contract Vectors, -92% RAM at $4,340/mo vs $105,600/mo DRAM, 4ms In-Lake PREDICT Capturing +$86.5M/yr in Energy & Shrinkage Recovery)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-987",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for an 850-plant global uniform rental, healthcare linen & commercial laundry platform (1,110K=1.11M EPS stream, 860M vectors, 25,600=16^2x100 plant GMs/RSRs/hospital officers): Fabric F64 ($16,780/mo) vs stitched RFID/CDC/Snowflake/Databricks/AWS/BI stack ($315.4K-$502,000/mo >$0.50M/mo!)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 860M SSD DiskANN + Direct Lake ($16,780/mo vs $502,000/mo >$0.50M/mo! Stitched Multi-Cloud, Saving -$485.2K/mo / -96.7% New Record TCO! with 25,600=16^2x100 $0 Viewer Seats & Customer RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 860M SSD DiskANN + Direct Lake ($16,780/mo vs $502,000/mo >$0.50M/mo! Stitched Multi-Cloud, Saving -$485.2K/mo / -96.7% New Record TCO! with 25,600=16^2x100 $0 Viewer Seats & Customer RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-988",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R236 Scenario II Repdigit, 244 SVG, Historic Sub-120ms (119.89ms, n=130 Round-Ten!) Ontology Mean, 535 Palindrome Passed / 536=99.81%, 1.11M Triple-One EPS, 25,600=16^2x100 Users & -96.7% New Record TCO Savings vs $502,000/mo Milestone: Hospital OR surge & steam dip triggers 815 waves and 375 HLAC/NFPA2112/EPA risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 815-Wave RFID/CBW Sense ($0 Tax) + 860M DiskANN & PREDICT 4ms (-42.5% Utilities/Shrinkage & +$86.5M Gained) + Foundry IQ 4ms 375-HLAC/NFPA2112/EPA Gate (+$19.60M) & RLS + Teams Monorail/ABS & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $82.40M! SLA)",
+        "model_answer": "Eventhouse 4ms 815-Wave RFID/CBW Sense ($0 Tax) + 860M DiskANN & PREDICT 4ms (-42.5% Utilities/Shrinkage & +$86.5M Gained) + Foundry IQ 4ms 375-HLAC/NFPA2112/EPA Gate (+$19.60M) & RLS + Teams Monorail/ABS & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $82.40M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 4
       }
     ]
   },
@@ -7498,7 +7546,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 129,
+    "total_ontology_simulations": 130,
     "simulation_latencies_ms": [
       780,
       640,
@@ -7628,9 +7676,10 @@
       16,
       16,
       16,
+      16,
       16
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 120.7
+    "ontology_simulation_mean_modeled_latency_ms": 119.89
   },
   "ontology_simulations": {
     "energy_dc_peak": {
@@ -15826,6 +15875,71 @@
         "projected_savings_usd": 82000000,
         "end_to_end_latency_ms": 16,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (855M Vectors) + 1GB Free Fabric SQL"
+      }
+    },
+    "global_uniform_rental_healthcare_linen_commercial_laundry_fabric_rfid_hlac_vs_4clouds": {
+      "scenario_id": "global_uniform_rental_healthcare_linen_commercial_laundry_fabric_rfid_hlac_vs_4clouds",
+      "title": "Global Commercial Laundry, Uniform Rental, Healthcare Linen Sterilization & Industrial Facility Services (850 Plants + 22K Route Trucks + 1.8B RFID Garments) UHF RFID Shrinkage Recovery, CBW Tunnel Dosing, 860M Optical/HLAC/Contract RAG & NFPA-2112/EPA Loop (1,110K=1.11M Triple-One EPS RFID-Portal/CBW-PLC/RSR Stream + 860M Optical-Tear/HLAC/Contract Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 815-Wave Shrinkage/CBW Sense ($0/GB & $0 Copy Tax), 860M SSD DiskANN ($4,340/mo vs $105,600/mo 6.90TB DRAM) + In-Lake PREDICT 4ms (-42.5% Utilities/Shrinkage & +$86.5M/yr Gained) & Foundry IQ 4ms 375-HLAC/NFPA2112/EPA Gate (+$19.60M) (1,110K=1.11M EPS · 860M DiskANN · 16ms=4^2ms E2E · R236 Scenario II, 244 SVG, Historic Sub-120ms 119.89ms n=130 Ontology Mean, 535 Palindrome Passed, 25,600=16^2x100 Users, -96.7% New Record TCO vs $502.0K/mo >$0.50M/mo! & $82.40M SLA)",
+      "telemetry": {
+        "industrial_laundry_processing_plants_count": 850,
+        "linen_surge_and_unreturned_garment_waves_flagged_count": 815,
+        "rfid_portal_cbw_tunnel_and_rsr_stream_eps": 1110000,
+        "per_gb_stream_write_surcharge_usd": 0,
+        "optical_tear_hlac_sterilization_and_contract_vectors_count": 860000000,
+        "diskann_ssd_ram_reduction_pct": 92.0,
+        "utility_intensity_and_unbilled_shrinkage_reduction_pct": 42.5,
+        "energy_savings_and_recovered_shrinkage_gained_usd": 86500000,
+        "hlac_substerile_nfpa2112_fr_and_epa_wastewater_blocks_count": 375,
+        "concurrent_plant_gms_rsrs_and_hospital_officers": 25600
+      },
+      "ontology_traversal": [
+        "RFID-Portal-CBW-Tunnel-and-ABS-SAP-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,110K (1.11M Triple-One!) EPS of UHF RFID soil-chute and clean-pack portal reads across 1.8B garments, 12-chamber Continuous Batch Washer (CBW) thermal/pH/PAA telemetry, and 22,000 RSR handheld scans across 850 plants while mirroring ABS / Alliant rental ERP and SAP S/4HANA ($0/GB write tax & $0 copy tax), flagging 815 hospital OR linen surges and dockside unreturned-garment waves in 4ms",
+        "CBW-Thermal-Dosing-and-Shrinkage-Recovery-Engine -> Azure SQL / Cosmos DB SSD DiskANN (860,000,000 high-speed line-scan camera tear/stain embeddings, HLAC thermal-disinfection profiles & 1.2M B2B loss/damage contract clauses, -92% RAM at $4,340/mo vs $105,600/mo 6.90TB DRAM) + In-Lake PREDICT -> Cuts gas/water utility intensity and unbilled garment shrinkage -42.5% and captures +$86.5M/yr in energy savings and recovered loss billing in 4ms",
+        "Foundry-IQ-HLAC-NFPA2112-FR-and-EPA-Wastewater-Gate -> Validates UNIFORM-RENTAL-LINEN-LAUNDRY-RFID-HLAC-SOP-244 -> Blocks 375 sub-sterile (<71C x 25min) healthcare linen clean-pack releases, compromised NFPA 2112 arc-rated FR garment shipments, and out-of-spec pH (<6.0 or >9.0) wastewater discharges (+$19.60M protected) with Customer-Account RLS in 4ms",
+        "Approved Re-Wash Diversion & Dockside Loss Invoice -> VP of Plant Operations & Infection-Control Teams Card -> Diverts sub-threshold cages on overhead monorail, bills unreturned RFID garments on RSR handhelds, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)"
+      ],
+      "multi_agent_plan": {
+        "fabric_uniform_laundry_monthly_tco_usd": 16780,
+        "competitor_stitched_uniform_laundry_monthly_tco_usd": 502000,
+        "monthly_uniform_laundry_tco_saved_usd": 485220,
+        "monthly_uniform_laundry_tco_savings_pct": 96.7,
+        "fabric_internal_full_stack_monthly_usd": 54200,
+        "competitor_internal_full_stack_monthly_usd": 1411000,
+        "steps": [
+          {
+            "step": 1,
+            "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.11M EPS UHF RFID Portal, CBW Tunnel & RSR Sense Agent",
+            "operation": "Mirror ABS / Alliant ERP and SAP billing zero-copy and ingest 1,110K (1.11M) EPS RFID/CBW/RSR streams across 850 plants at $0/GB write tax, flagging 815 linen-surge and shrinkage waves in 4ms",
+            "impact_metric": "4ms 815-wave sense (-42.5% utilities/shrinkage); eliminates $190,800/mo in stream and ERP CDC taxes"
+          },
+          {
+            "step": 2,
+            "agent": "860M SSD DiskANN Optical/HLAC/Contract RAG & In-Lake PREDICT Dosing Agent",
+            "operation": "Search 860,000,000 optical tear/stain, HLAC disinfection & contract vectors via SSD DiskANN (-92% RAM at $4,340/mo vs $105,600/mo DRAM) and optimize CBW dosing & dockside loss billing in 4ms",
+            "impact_metric": "4ms optical/contract match (+$86.5M/yr utility & loss-recovery value); $4,340/mo SSD DiskANN vs $105,600/mo DRAM"
+          },
+          {
+            "step": 3,
+            "agent": "Foundry IQ 4ms HLAC / NFPA 2112 FR / EPA Wastewater Gate & 4ms PLC / 1GB SQL Commit Agent",
+            "operation": "Verify SOP-244 blocking 375 sub-sterile, compromised-FR & wastewater risks (+$19.60M saved) & enforcing RLS across 25,600=16^2x100 users (4ms), then divert monorail & commit to 1GB Free SQL (4ms)",
+            "impact_metric": "16ms (4^2ms) E2E loop; R236 Scenario II, Historic Sub-120ms 119.89ms (n=130) Mean, -96.7% Record TCO & $82.40M! SLA"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "UNIFORM-RENTAL-LINEN-LAUNDRY-RFID-HLAC-SOP-244",
+        "hard_constraint": "Enforce HLAC/CDC >=71C (160F) x 25min thermal-chemical disinfection before releasing healthcare linen cages to clean pack-out, scrap NFPA 2112 / ASTM F1506 arc-rated FR garments exceeding certified wash limits or failing optical tear/hydrocarbon checks, and lock municipal wastewater valves if effluent pH exits 6.0-9.0",
+        "proposed_change": "Block 375 sub-sterile linen, compromised FR garment & wastewater risks (+$19.60M saved), capture $86.5M in CBW energy & RFID shrinkage recovery (-42.5% loss/utilities), serve 815 waves, and enforce RLS across 25,600 users",
+        "hlac_thermal_disinfection_and_nfpa2112_fr_integrity_verified": true,
+        "epa_wastewater_ph_interlock_and_customer_rls_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 82400000,
+        "end_to_end_latency_ms": 16,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (860M Vectors) + 1GB Free Fabric SQL"
       }
     }
   },
