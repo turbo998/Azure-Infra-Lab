@@ -1799,13 +1799,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 75350000)
 
 
+    def test_global_card_issuers_cobrand_loyalty_fabric_personalized_offers_credit_line_cfpb_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_card_issuers_cobrand_loyalty_fabric_personalized_offers_credit_line_cfpb_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["active_credit_and_cobrand_cardholders_millions"], 95)
+        self.assertEqual(sim["telemetry"]["post_swipe_offer_and_bnpl_waves_flagged_count"], 730)
+        self.assertEqual(sim["telemetry"]["iso8583_wallet_and_bnpl_stream_eps"], 1025000)
+        self.assertEqual(sim["telemetry"]["merchant_affinity_regz_and_cli_vectors_count"], 775000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_card_issuer_tco_saved_usd"], 429700)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_card_issuer_tco_savings_pct"], 96.4)
+        self.assertTrue(sim["foundry_iq_guardrail"]["ecoa_regb_disparate_impact_and_adverse_action_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["tila_regz_ability_to_pay_and_pci_pan_rls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 75750000)
+
+
     def test_scenario_matrix_280_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 464)
-        self.assertEqual(matrix["passed_scenarios"], 463)
+        self.assertEqual(matrix["total_scenarios"], 468)
+        self.assertEqual(matrix["passed_scenarios"], 467)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 99.78, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 159.0)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 99.79, places=2)
+        self.assertEqual(matrix["avg_latency_ms"], 157.7)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -3095,6 +3112,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $75.35M SLA", by_id["DL-916"])
 
 
+    def test_fabric_card_issuers_cobrand_loyalty_personalized_offers_2026_11_20_r219_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-917", "DL-918", "DL-919", "DL-920"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Post-Swipe ISO 8583 & Wallet Sense Flagging 730 Waves & Lifting Redemption/Spend +36.5%", by_id["DL-917"])
+        self.assertIn("775M Merchant Affinity, Reg Z & CLI Vectors, -92% RAM at Exact $4,000/mo! vs $95,400/mo DRAM", by_id["DL-918"])
+        self.assertIn("-$429.7K/mo / -96.4% TCO with Exact 22,500 $0 Viewer Seats Saving Exact $180,000/mo!", by_id["DL-919"])
+        self.assertIn("16ms 4^2ms E2E, Protect $75.75M SLA!", by_id["DL-920"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -3113,11 +3141,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 463)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 464)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 159.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 112)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 136.59)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 467)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 468)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 157.7)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 113)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 135.52)
 
 
 if __name__ == "__main__":
