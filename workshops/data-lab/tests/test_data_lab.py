@@ -1935,13 +1935,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 78500000)
 
 
+    def test_global_corporate_travel_tmc_expense_audit_fabric_ndc_receipt_fcpa_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_corporate_travel_tmc_expense_audit_fabric_ndc_receipt_fcpa_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["enterprise_corporate_travel_clients_count"], 92000)
+        self.assertEqual(sim["telemetry"]["fare_drop_reshop_and_irops_waves_flagged_count"], 770)
+        self.assertEqual(sim["telemetry"]["gds_ndc_irops_and_virtual_card_stream_eps"], 1065000)
+        self.assertEqual(sim["telemetry"]["receipt_folio_policy_and_contract_vectors_count"], 815000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_corporate_travel_tco_saved_usd"], 455780)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_corporate_travel_tco_savings_pct"], 96.5)
+        self.assertTrue(sim["foundry_iq_guardrail"]["fcpa_sunshine_hospitality_and_synthetic_receipt_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["iso31030_duty_of_care_and_tenant_cost_center_rls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 78900000)
+
+
     def test_scenario_matrix_280_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 496)
-        self.assertEqual(matrix["passed_scenarios"], 495)
+        self.assertEqual(matrix["total_scenarios"], 500)
+        self.assertEqual(matrix["passed_scenarios"], 499)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.80, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 149.0)
+        self.assertEqual(matrix["avg_latency_ms"], 147.9)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -3319,6 +3336,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $78.50M SLA", by_id["DL-948"])
 
 
+    def test_fabric_corporate_travel_tmc_expense_audit_2026_11_21_r227_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-949", "DL-950", "DL-951", "DL-952"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms NDC Re-Shop & IROPS Sense Flagging 770 Waves & Cutting Leakage Exact -42.0%", by_id["DL-949"])
+        self.assertIn("815M 65-Lang Receipt Folio, Travel Policy & Contract Vectors, -92% RAM at $4,160/mo vs $100,200/mo >$100K! DRAM", by_id["DL-950"])
+        self.assertIn("-$455.8K/mo / -96.5% TCO with Exact 24,000 $0 Viewer Seats Saving Exact $192,000/mo!", by_id["DL-951"])
+        self.assertIn("16ms 4^2ms E2E, Protect $78.90M SLA", by_id["DL-952"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -3337,11 +3365,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 495)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 496)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 149.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 120)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 128.55)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 499)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 500)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 147.9)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 121)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 127.62)
 
 
 if __name__ == "__main__":

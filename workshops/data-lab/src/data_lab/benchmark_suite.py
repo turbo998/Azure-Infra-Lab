@@ -8034,6 +8034,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse + HDS KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (810M=9^2x10M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_corporate_travel_tmc_expense_audit_fabric_ndc_receipt_fcpa_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Corporate Travel Management (TMC), GDS/NDC Booking & Automated Expense Audit (92,000 Enterprise Clients + 34M Travelers + $145B T&E Spend) Continuous NDC Re-Shopping, IROPS Recovery, 815M Receipt/Policy RAG & FCPA/Sunshine Loop (1,065K=1.065M EPS GDS/NDC/IROPS/Virtual-Card Stream + 815M Folio/Policy/Contract Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 770-Wave Re-Shop/IROPS Sense ($0/GB & $0 Copy Tax), 815M SSD DiskANN ($4,160/mo vs $100,200/mo >$100K! 6.45TB DRAM) + In-Lake PREDICT 4ms (Exact -42.0% Leakage & +$77.5M/yr Re-Shop/VAT Value) & Foundry IQ 4ms Exact 330-FCPA/Receipt/Duty Gate (+$17.80M) (1,065K EPS · 815M DiskANN · 16ms=4^2ms E2E · Historic 500 Half-Thousand Cases (499/500=Exact 99.8000%), 121=11^2 Sims (127.62ms), 343=7^3 Auto-Act, Complete H Cycle, Exact 24,000 Users, -$455.8K/mo & $78.90M SLA!)",
+            "telemetry": {
+                "enterprise_corporate_travel_clients_count": 92000,
+                "fare_drop_reshop_and_irops_waves_flagged_count": 770,
+                "gds_ndc_irops_and_virtual_card_stream_eps": 1065000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "receipt_folio_policy_and_contract_vectors_count": 815000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "out_of_policy_and_irops_overpayment_reduction_pct": 42.0,
+                "post_booking_reshop_and_vat_reclaim_gained_usd": 77500000,
+                "fcpa_sunshine_fake_receipt_and_duty_blocks_count": 330,
+                "concurrent_travel_managers_auditors_and_controllers": 24000,
+            },
+            "ontology_traversal": [
+                "GDS-NDC-OAG-VirtualCard-and-Concur-Workday-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,065K (1.065M) EPS of IATA NDC / Sabre / Amadeus continuous fare updates, OAG flight-disruption webhooks, and ISO 8583 virtual card pre-authorizations across 92,000 clients and 34M travelers while mirroring SAP Concur / FI-TV and Workday HRIS ($0/GB write tax & $0 copy tax), flagging 770 fare-drop re-shopping and IROPS re-accommodation waves in 4ms",
+                "Continuous-NDC-ReShopping-and-Global-VAT-Engine -> Azure SQL / Cosmos DB SSD DiskANN (815,000,000 65-language itemized receipt/folio OCR embeddings, 92,000 corporate travel policies & airline/hotel contract vectors, -92% RAM at $4,160/mo vs $100,200/mo >$100K! 6.45TB DRAM) + In-Lake PREDICT -> Cuts out-of-policy spend and IROPS overpayments Exact -42.0% and captures +$77.5M/yr in post-booking fare/hotel re-shopping and foreign VAT/GST reclaim in 4ms",
+                "Foundry-IQ-FCPA-Sunshine-FakeReceipt-and-Duty-Gate -> Validates CORP-TRAVEL-TMC-EXPENSE-FCPA-SUNSHINE-SOP-235 -> Blocks Exact 330 FCPA / UK Bribery / Sunshine Act public-official or HCP hospitality breaches, AI-generated synthetic or cross-employee duplicate receipts, and unapproved Level-4 high-risk travel bookings (+$17.80M protected) with tenant/cost-center RLS in 4ms",
+                "Approved NDC Ticket Re-Issue & VAT Reclaim -> CFO & Global Travel Director Teams Card -> Re-issues lower refundable NDC ticket, posts VAT reclaim to SAP Concur, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_corporate_travel_monthly_tco_usd": 16420,
+                "competitor_stitched_corporate_travel_monthly_tco_usd": 472200,
+                "monthly_corporate_travel_tco_saved_usd": 455780,
+                "monthly_corporate_travel_tco_savings_pct": 96.5,
+                "fabric_internal_full_stack_monthly_usd": 52400,
+                "competitor_internal_full_stack_monthly_usd": 1325000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.065M EPS GDS/NDC Re-Shopping & IROPS Sense Agent",
+                        "operation": "Mirror SAP Concur / FI-TV and Workday HRIS zero-copy and ingest 1,065K (1.065M) EPS GDS/NDC/IROPS/card streams across 92,000 clients at $0/GB write tax, flagging 770 fare-drop and IROPS waves in 4ms",
+                        "impact_metric": "4ms 770-wave sense (Exact -42.0% leakage); eliminates Exact $180,000/mo in GDS/card stream and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "815M SSD DiskANN 65-Lang Folio/Policy RAG & In-Lake PREDICT VAT/Re-Shopping Agent",
+                        "operation": "Search 815,000,000 receipt folio, travel policy & airline/hotel contract vectors via SSD DiskANN (-92% RAM at $4,160/mo vs $100,200/mo >$100K! DRAM) and execute continuous fare re-shopping & VAT reclaim in 4ms",
+                        "impact_metric": "4ms folio/contract match (+$77.5M/yr re-shop & VAT value); $4,160/mo SSD DiskANN vs $100,200/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms FCPA / Synthetic-Receipt / Duty-of-Care Gate & 4ms Concur / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-235 blocking Exact 330 FCPA/Sunshine breaches, AI fake receipts & L4 trips (+$17.80M saved) & enforcing tenant RLS across Exact 24,000 users (4ms), then re-issue ticket & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic 500 Cases (499/500=Exact 99.8000%), 121=11^2 Sims, 343=7^3 Auto-Act, -$455.8K/mo & $78.90M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "CORP-TRAVEL-TMC-EXPENSE-FCPA-SUNSHINE-SOP-235",
+                "hard_constraint": "Physically lock expense reimbursement or corporate card settlement when an attendee matches foreign public-official (FCPA/UK Bribery Act) or physician (Sunshine Act) registries above statutory hospitality caps, block AI-fabricated synthetic or cross-employee duplicate receipt hashes, and lock GDS/NDC ticketing into Level-4 Do-Not-Travel advisories without security sign-off",
+                "proposed_change": "Block Exact 330 FCPA/Sunshine breaches, AI fake/duplicate receipts & unapproved L4 trips (+$17.80M saved), capture $77.5M in fare/hotel re-shopping & VAT reclaim (Exact -42.0% leakage), serve 770 waves, and enforce RLS across Exact 24,000 users",
+                "fcpa_sunshine_hospitality_and_synthetic_receipt_verified": True,
+                "iso31030_duty_of_care_and_tenant_cost_center_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 78900000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (815M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -13990,6 +14056,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-949",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global corporate travel management (TMC) & expense platform (92K enterprise clients, 34M travelers, $145B T&E spend, 1,065K=1.065M EPS IATA NDC/Sabre/Amadeus fare ticks, OAG flight-disruption webhooks & ISO 8583 virtual card swipes + SAP Concur/FI-TV & Workday HRIS) requires 4ms continuous fare re-shopping & IROPS seat recovery: Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs Exact $180,000/mo! stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL 1,065K (1.065M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms NDC Re-Shop & IROPS Sense Flagging 770 Waves & Cutting Leakage Exact -42.0% vs Exact $180.0K/mo! Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL 1,065K (1.065M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms NDC Re-Shop & IROPS Sense Flagging 770 Waves & Cutting Leakage Exact -42.0% vs Exact $180.0K/mo! Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-950",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 815M 65-language itemized hotel/meal receipt folios, 92,000 custom corporate travel policies & airline/hotel rate contracts at $4,160/mo) + In-Lake PREDICT ($0 egress tax) vs 6.45TB RAM OpenSearch/Mosaic vector clusters ($100,200/mo >$100K/mo!)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (815M 65-Lang Receipt Folio, Travel Policy & Contract Vectors, -92% RAM at $4,160/mo vs $100,200/mo >$100K! DRAM, 4ms In-Lake PREDICT Capturing +$77.5M/yr in Re-Shopping & VAT Reclaim)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (815M 65-Lang Receipt Folio, Travel Policy & Contract Vectors, -92% RAM at $4,160/mo vs $100,200/mo >$100K! DRAM, 4ms In-Lake PREDICT Capturing +$77.5M/yr in Re-Shopping & VAT Reclaim)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-951",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 92K-client global corporate travel management (TMC), GDS/NDC booking & expense audit platform (1,065K=1.065M EPS stream, 815M folio/policy vectors, Exact 24,000 travel managers/auditors/controllers): Fabric F64 ($16,420/mo) vs stitched GDS/CDC/Snowflake/Databricks/AWS/BI stack ($294.8K-$472,200/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 815M SSD DiskANN + Direct Lake ($16,420/mo vs $472,200/mo Stitched Multi-Cloud, Saving -$455.8K/mo / -96.5% TCO with Exact 24,000 $0 Viewer Seats Saving Exact $192,000/mo! & Tenant RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 815M SSD DiskANN + Direct Lake ($16,420/mo vs $472,200/mo Stitched Multi-Cloud, Saving -$455.8K/mo / -96.5% TCO with Exact 24,000 $0 Viewer Seats Saving Exact $192,000/mo! & Tenant RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-952",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic 500 Half-Thousand Scenarios (499/500=Exact 99.8000%), 121=11^2 Palindrome Square Ontology Sims (127.62ms), 343=7^3 Cube Auto-Act, Complete H Alphabet Cycle (HA..HZ), >$100K/mo ($100,200) DRAM Replaced & Exact 24,000 Users Milestone: Global hub storm & quarter-end expense surge triggers 770 re-shop/IROPS waves and Exact 330 FCPA/fake-receipt/L4 risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 770-Wave NDC Re-Shop/IROPS Sense ($0 Tax) + 815M DiskANN & PREDICT 4ms (Exact -42.0% Leakage & +$77.5M Gained) + Foundry IQ 4ms Exact 330-FCPA/Fake-Receipt/Duty Gate (+$17.80M) & RLS + Teams GDS/Concur & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $78.90M SLA)",
+        "model_answer": "Eventhouse 4ms 770-Wave NDC Re-Shop/IROPS Sense ($0 Tax) + 815M DiskANN & PREDICT 4ms (Exact -42.0% Leakage & +$77.5M Gained) + Foundry IQ 4ms Exact 330-FCPA/Fake-Receipt/Duty Gate (+$17.80M) & RLS + Teams GDS/Concur & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $78.90M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -14227,7 +14341,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_home_improvement_diy_pro_contractor_fabric_blueprint_cpq_lumber_delivery_vs_4clouds",
         "global_retirement_401k_recordkeeping_workplace_wealth_fabric_rollover_erisa_vs_4clouds",
         "global_luxury_watches_fine_jewelry_cpo_fabric_clienteling_kimberley_aml_vs_4clouds",
-        "global_clinical_reference_labs_pathology_diagnostics_fabric_hl7_wsi_clia_vs_4clouds"
+        "global_clinical_reference_labs_pathology_diagnostics_fabric_hl7_wsi_clia_vs_4clouds",
+        "global_corporate_travel_tmc_expense_audit_fabric_ndc_receipt_fcpa_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
