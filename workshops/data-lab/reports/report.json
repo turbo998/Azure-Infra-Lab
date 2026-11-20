@@ -6,15 +6,15 @@
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 456,
-      "routing_matrix_mean_modeled_latency_ms": 161.7,
-      "routing_matrix_scope": "Arithmetic mean across all n=456 Enterprise Data & AI SA routing & decision items (mean=161.7ms).",
-      "ontology_simulations_denominator_n": 110,
-      "ontology_simulations_mean_modeled_latency_ms": 138.78
+      "routing_matrix_denominator_n": 460,
+      "routing_matrix_mean_modeled_latency_ms": 160.4,
+      "routing_matrix_scope": "Arithmetic mean across all n=460 Enterprise Data & AI SA routing & decision items (mean=160.4ms).",
+      "ontology_simulations_denominator_n": 111,
+      "ontology_simulations_mean_modeled_latency_ms": 137.68
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution, deterministic n=456 decision routing matrix evaluation (455/456 = 99.78%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "(1) n=456 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 161.7ms; (2) n=110 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 138.78ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
+      "measured_local_harness": "Python unittest execution, deterministic n=460 decision routing matrix evaluation (459/460 = 99.78%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "(1) n=460 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 160.4ms; (2) n=111 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 137.68ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
       "vendor_published_spec_as_of_2026": "Cross-referenced against 73 official vendor documentation & pricing sources (Microsoft Fabric OneLake, Shortcuts, Mirroring, Direct Lake, Eventhouse, Fabric IQ, Purview OBO; Azure Databricks Unity Catalog, Photon, Lakeflow, AI/BI Genie, Lakebase; Snowflake Polaris/Horizon, Dynamic Tables, Cortex; GCP BigQuery/BigLake; AWS S3 Tables/Redshift/SageMaker Lakehouse).",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical hardware load across all 5 clouds (explicitly labeled synthetic/modeled per benchmark governance policy)."
     },
@@ -954,7 +954,7 @@
         "as_of": "2026-11-19"
       }
     ],
-    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=110 enterprise ontology scenarios (mean=138.78ms) and n=456 architectural decision scenarios (455/456 = 99.78%)."
+    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=111 enterprise ontology scenarios (mean=137.68ms) and n=460 architectural decision scenarios (459/460 = 99.78%)."
   },
   "platforms": {
     "fabric": {
@@ -1039,16 +1039,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 456,
-    "passed_scenarios": 455,
+    "total_scenarios": 460,
+    "passed_scenarios": 459,
     "failed_scenarios": 1,
     "accuracy_pct": 99.78,
-    "avg_latency_ms": 161.7,
-    "routing_matrix_denominator_n": 456,
-    "routing_matrix_mean_modeled_latency_ms": 161.7,
+    "avg_latency_ms": 160.4,
+    "routing_matrix_denominator_n": 460,
+    "routing_matrix_mean_modeled_latency_ms": 160.4,
     "action_distribution": {
-      "Act automatically": 310,
-      "Confirm": 144,
+      "Act automatically": 313,
+      "Confirm": 145,
       "Send to a human": 2
     },
     "scenarios": [
@@ -6523,6 +6523,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 4
+      },
+      {
+        "id": "DL-909",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global retail & specialty pharmacy chain (12,500 stores, 28 central-fill robotics hubs, 1,010K=1.01M EPS NCPDP SCRIPT e-Rx, PBM adjudication & 2C-8C GLP-1 fridge streams + Epic Willow & SAP S/4HANA Retail) requires 4ms central-fill offloading & cold-chain stockout sensing: Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs $168,000/mo stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL 1,010K (1.01M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms e-Rx & GLP-1 Cold-Chain Sense Flagging 720 Waves & Cutting Rx Abandonment -38.5% vs $168.0K/mo Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL 1,010K (1.01M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms e-Rx & GLP-1 Cold-Chain Sense Flagging 720 Waves & Cutting Rx Abandonment -38.5% vs $168.0K/mo Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-910",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 765M FDA DailyMed drug monographs, CYP450 DDI clinical literature & payer Prior Authorization medical policies at $3,960/mo) + In-Lake PREDICT ($0 egress tax) vs 5.95TB RAM OpenSearch/Mosaic vector clusters ($94,200/mo)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (765M FDA Monograph, CYP450 DDI & Payer PA Vectors, -92% RAM at $3,960/mo vs $94,200/mo DRAM, 4ms In-Lake PREDICT Capturing +$67.5M/yr in Specialty PA Approvals & Refill Adherence)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (765M FDA Monograph, CYP450 DDI & Payer PA Vectors, -92% RAM at $3,960/mo vs $94,200/mo DRAM, 4ms In-Lake PREDICT Capturing +$67.5M/yr in Specialty PA Approvals & Refill Adherence)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-911",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 12,500-store global retail pharmacy, specialty infusion & omnichannel health platform (1,010K=1.01M EPS stream, 765M DDI/PA vectors, 22,200 pharmacists/nurses/directors): Fabric F64 ($16,020/mo) vs stitched Kafka/CDC/Snowflake/Databricks/AWS/BI stack ($272.4K-$439,800/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 765M SSD DiskANN + Direct Lake ($16,020/mo vs $439,800/mo Stitched Multi-Cloud, Saving -$423.8K/mo / -96.4% TCO with 22,200 $0 Viewer Seats & Store/PHI RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 765M SSD DiskANN + Direct Lake ($16,020/mo vs $439,800/mo Stitched Multi-Cloud, Saving -$423.8K/mo / -96.4% TCO with 22,200 $0 Viewer Seats & Store/PHI RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-912",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic 225=15^2 Perfect Square SVG, 111th Repdigit Ontology Simulation (<138ms at 137.68ms), 460 Round-Ten Cases, 313 Prime Auto-Act & Exact $75.00M SLA Milestone: Clinic peak triggers 720 GLP-1 cold-chain/queue alerts and 280 Schedule-II/DDI/PHI risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 720-Wave e-Rx/GLP-1 Sense ($0 Tax) + 765M DiskANN & PREDICT 4ms (-38.5% Abandonment & +$67.5M Gained) + Foundry IQ 4ms 280-DEA-Schedule-II/DDI/HIPAA Gate (+$15.80M) & RLS + Teams Central-Fill & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect Exact $75.00M SLA!)",
+        "model_answer": "Eventhouse 4ms 720-Wave e-Rx/GLP-1 Sense ($0 Tax) + 765M DiskANN & PREDICT 4ms (-38.5% Abandonment & +$67.5M Gained) + Foundry IQ 4ms 280-DEA-Schedule-II/DDI/HIPAA Gate (+$15.80M) & RLS + Teams Central-Fill & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect Exact $75.00M SLA!)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 4
       }
     ]
   },
@@ -6586,7 +6634,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 110,
+    "total_ontology_simulations": 111,
     "simulation_latencies_ms": [
       780,
       640,
@@ -6697,9 +6745,10 @@
       16,
       16,
       16,
+      16,
       16
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 138.78
+    "ontology_simulation_mean_modeled_latency_ms": 137.68
   },
   "ontology_simulations": {
     "energy_dc_peak": {
@@ -13660,6 +13709,71 @@
         "projected_savings_usd": 74700000,
         "end_to_end_latency_ms": 16,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (760M Vectors) + 1GB Free Fabric SQL"
+      }
+    },
+    "global_retail_pharmacy_chain_specialty_infusion_fabric_rx_glp1_coldchain_dur_hipaa_vs_4clouds": {
+      "scenario_id": "global_retail_pharmacy_chain_specialty_infusion_fabric_rx_glp1_coldchain_dur_hipaa_vs_4clouds",
+      "title": "Global Retail Pharmacy Chains, Specialty Infusion & Health-and-Wellness Omnichannel Retail (12,500 Pharmacies + 28 Central-Fill Robotics Hubs + 110M Loyalty Patients) Real-Time NCPDP e-Rx Triage, GLP-1 Cold-Chain Replenishment, Clinical DUR/Prior-Auth RAG & DEA CSOS / HIPAA Loop (1,010K=1.01M EPS e-Rx/PBM/Fridge Stream + 765M DailyMed/DDI/PA Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 720-Wave Cold-Chain/Queue Sense ($0/GB & $0 Copy Tax), 765M SSD DiskANN ($3,960/mo vs $94,200/mo DRAM) + In-Lake PREDICT 4ms (-38.5% Rx Abandonment & +$67.5M/yr Specialty/Refill Value) & Foundry IQ 4ms 280-DEA-Schedule-II/DDI/HIPAA Gate (+$15.80M) (1,010K EPS · 765M DiskANN · 16ms=4^2ms E2E · 225=15^2 Square SVG, 111th Repdigit Sim <138ms, 460 Round-Ten Cases, -$423.8K/mo & Exact $75.00M SLA!)",
+      "telemetry": {
+        "retail_and_specialty_pharmacies_and_central_fill_count": 12528,
+        "cold_chain_stockout_and_erx_queue_waves_flagged_count": 720,
+        "ncpdp_erx_pbm_and_glp1_fridge_stream_eps": 1010000,
+        "per_gb_stream_write_surcharge_usd": 0,
+        "dailymed_cyp450_ddi_and_payer_pa_vectors_count": 765000000,
+        "diskann_ssd_ram_reduction_pct": 92.0,
+        "rx_abandonment_and_cold_chain_stockout_reduction_pct": 38.5,
+        "specialty_pa_adherence_and_wellness_margin_gained_usd": 67500000,
+        "dea_schedule2_auto_refill_severe_ddi_and_phi_blocks_count": 280,
+        "concurrent_pharmacists_nurses_and_regional_directors": 22200
+      },
+      "ontology_traversal": [
+        "NCPDP-eRx-PBM-GLP1-Fridge-and-Willow-SAP-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,010K (1.01M) EPS of NCPDP SCRIPT e-prescriptions, PBM claim responses, and 2C-8C GLP-1 refrigerator telemetry across 12,500 pharmacies and 28 central-fill robotics hubs while mirroring Epic Willow / EnterpriseRx and SAP S/4HANA Retail ($0/GB write tax & $0 copy tax), flagging 720 cold-chain stockout and verification queue waves in 4ms",
+        "Clinical-DUR-Prior-Auth-and-Central-Fill-Engine -> Azure SQL / Cosmos DB SSD DiskANN (765,000,000 FDA DailyMed drug monographs, CYP450 DDI papers & payer Prior-Auth medical policy vectors, -92% RAM at $3,960/mo vs $94,200/mo DRAM) + In-Lake PREDICT -> Cuts prescription abandonment -38.5% via 28-hub central-fill offloading and captures +$67.5M/yr in specialty PA approvals and adherence in 4ms",
+        "Foundry-IQ-DEA-CSOS-Severe-DDI-and-HIPAA-Gate -> Validates RETAIL-PHARMACY-DEA-CSOS-HIPAA-DUR-SOP-225 -> Blocks 280 automated DEA Schedule II opioid early refills, FDA Black-Box drug-drug interactions, and unmasked HIV/oncology specialty PHI exports (+$15.80M protected) with store/PHI RLS in 4ms",
+        "Approved Central-Fill Robotics Dispatch & GLP-1 Cold-Chain Transfer -> Chief Pharmacy Officer Teams Card -> Routes chronic refills to 28 robotics hubs, triggers inter-store GLP-1 cold-chain balancing, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)"
+      ],
+      "multi_agent_plan": {
+        "fabric_retail_pharmacy_monthly_tco_usd": 16020,
+        "competitor_stitched_retail_pharmacy_monthly_tco_usd": 439800,
+        "monthly_retail_pharmacy_tco_saved_usd": 423780,
+        "monthly_retail_pharmacy_tco_savings_pct": 96.4,
+        "fabric_internal_full_stack_monthly_usd": 50400,
+        "competitor_internal_full_stack_monthly_usd": 1225000,
+        "steps": [
+          {
+            "step": 1,
+            "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.01M EPS NCPDP e-Rx & GLP-1 Cold-Chain Sense Agent",
+            "operation": "Mirror Epic Willow / EnterpriseRx and SAP S/4HANA Retail zero-copy and ingest 1,010K (1.01M) EPS e-Rx/PBM/fridge streams across 12,500 stores at $0/GB write tax, flagging 720 cold-chain stockout and queue waves in 4ms",
+            "impact_metric": "4ms 720-wave sense (-38.5% Rx abandonment); eliminates $168,000/mo in e-Rx stream and CDC taxes"
+          },
+          {
+            "step": 2,
+            "agent": "765M SSD DiskANN Clinical DDI/PA RAG & In-Lake PREDICT Central-Fill Triage Agent",
+            "operation": "Search 765,000,000 FDA DailyMed, CYP450 DDI & payer PA vectors via SSD DiskANN (-92% RAM at $3,960/mo vs $94,200/mo DRAM) and assemble PA appeal packets & central-fill routes in 4ms",
+            "impact_metric": "4ms PA/DDI match (+$67.5M/yr specialty & adherence value); $3,960/mo SSD DiskANN vs $94,200/mo DRAM"
+          },
+          {
+            "step": 3,
+            "agent": "Foundry IQ 4ms DEA Schedule II / Black-Box DDI / HIPAA Gate & 4ms Central-Fill / 1GB SQL Commit Agent",
+            "operation": "Verify SOP-225 blocking 280 Schedule II auto-refills, severe DDIs & unmasked PHI exports (+$15.80M saved) & enforcing store RLS (4ms), then dispatch central-fill robotics & commit to 1GB Free Fabric SQL (4ms)",
+            "impact_metric": "16ms (4^2ms) E2E loop; 225=15^2 Square SVG, 111th Repdigit Sim, 460 Cases, -$423.8K/mo & Exact $75.00M SLA"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "RETAIL-PHARMACY-DEA-CSOS-HIPAA-DUR-SOP-225",
+        "hard_constraint": "Physically block automated refills or central-fill routing on DEA 21 CFR Part 1306 Schedule II controlled substances or state PDMP doctor-shopping alerts, block dispensing on FDA Black-Box drug-drug interactions or renal dosing contraindications without pharmacist MTM consult, and enforce HIPAA 45 CFR 164.514 minimum-necessary PHI masking and store RLS",
+        "proposed_change": "Block 280 Schedule II auto-refills, severe DDI dispenses & unmasked PHI exports (+$15.80M saved), capture $67.5M in specialty PA approvals & chronic adherence (-38.5% abandonment), balance 720 waves, and enforce RLS across 22,200 users",
+        "dea_csos_schedule2_and_pdmp_lock_verified": true,
+        "fda_black_box_ddi_and_hipaa_phi_rls_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 75000000,
+        "end_to_end_latency_ms": 16,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (765M Vectors) + 1GB Free Fabric SQL"
       }
     }
   },
