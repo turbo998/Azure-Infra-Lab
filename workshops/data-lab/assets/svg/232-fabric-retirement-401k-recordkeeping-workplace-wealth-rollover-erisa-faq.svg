@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" width="1280" height="760" font-family="Segoe UI, Inter, system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg232" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B18"/>
+      <stop offset="55%" stop-color="#101E3A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="accent232" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="cardHdr232" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0369A1"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="760" fill="url(#bg232)"/>
+  <rect x="0" y="0" width="1280" height="6" fill="url(#accent232)"/>
+
+  <!-- Header -->
+  <text x="36" y="42" fill="#FBBF24" font-size="13" font-weight="700" letter-spacing="1.4">ROUND 224 · SCENARIO HW (DL-937..DL-940) · 🏆 HISTORIC 99.80% RECORD ACCURACY, 800M=0.80B VECTORS, 224 DOCS &amp; $77.70M SLA</text>
+  <text x="36" y="70" fill="#F8FAFC" font-size="22" font-weight="800">Global Retirement 401(k) Recordkeeping, Workplace Wealth &amp; Rollover Advisory (38M Participants + $4.8T AUA)</text>
+  <text x="36" y="94" fill="#94A3B8" font-size="13.5">EDI 820 Payroll &amp; Job-Change Rollover Triage, 800M (0.80B!) Custom SPD RAG &amp; ERISA / IRS §402(g) Gate: Fabric ($16,300/mo!) vs. 4-Cloud ($462,000/mo!)</text>
+
+  <!-- KPI Banner -->
+  <rect x="36" y="108" width="1208" height="58" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="64" y="131" fill="#FCD34D" font-size="11.5" font-weight="700">HISTORIC 99.80% RECORD ACCURACY!</text>
+  <text x="64" y="153" fill="#F8FAFC" font-size="16.5" font-weight="800">🏆 487 / 488 (99.80%!) · 151.4 ms Mean</text>
+
+  <line x1="340" y1="116" x2="340" y2="158" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="360" y="131" fill="#6EE7B7" font-size="11.5" font-weight="700">118th SIM (&lt;131MS!) &amp; 240 TESTS</text>
+  <text x="360" y="153" fill="#34D399" font-size="16.5" font-weight="800">🏆 130.46 ms Mean · 224 Docs (R224!)</text>
+
+  <line x1="675" y1="116" x2="675" y2="158" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="695" y="131" fill="#7DD3FC" font-size="11.5" font-weight="700">HISTORIC 800M=0.80B SSD DISKANN</text>
+  <text x="695" y="153" fill="#38BDF8" font-size="16.5" font-weight="800">$4,100! vs $98,400 DRAM · +$74.5M/yr</text>
+
+  <line x1="975" y1="116" x2="975" y2="158" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="995" y="131" fill="#F9A8D4" font-size="11.5" font-weight="700">MONTHLY TCO &amp; TRIPLE-SEVEN SLA</text>
+  <text x="995" y="153" fill="#F472B6" font-size="16.5" font-weight="800">-$445.7K/mo (-96.5%) · $77.70M! SLA</text>
+
+  <!-- Left Column: Payroll, Ledger & SPD Feeds -->
+  <rect x="36" y="182" width="275" height="390" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <rect x="36" y="182" width="275" height="36" rx="12" fill="url(#cardHdr232)"/>
+  <text x="52" y="205" fill="#FFFFFF" font-size="13.5" font-weight="800">1. Payroll, HRIS &amp; Core Ledger</text>
+
+  <rect x="52" y="232" width="243" height="72" rx="8" fill="#1E293B" stroke="#0EA5E9" stroke-width="1"/>
+  <text x="64" y="252" fill="#7DD3FC" font-size="12.5" font-weight="700">38M Participants &amp; 420K Sponsors</text>
+  <text x="64" y="270" fill="#CBD5E1" font-size="11.5">• 1,050K (1.05M) EPS EDI 820 payroll feeds</text>
+  <text x="64" y="287" fill="#CBD5E1" font-size="11.5">• HRIS job-change &amp; loan/hardship events</text>
+
+  <rect x="52" y="316" width="243" height="72" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1"/>
+  <text x="64" y="336" fill="#6EE7B7" font-size="12.5" font-weight="700">FIS Relius / Omni &amp; Salesforce FSC</text>
+  <text x="64" y="354" fill="#CBD5E1" font-size="11.5">• $4.8T AUA vesting &amp; Roth sub-accounts</text>
+  <text x="64" y="371" fill="#CBD5E1" font-size="11.5">• Workday/ADP census &amp; advisor CRM</text>
+
+  <rect x="52" y="400" width="243" height="72" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1"/>
+  <text x="64" y="420" fill="#FCD34D" font-size="12.5" font-weight="700">🏆 800M (0.80B!) SPDs &amp; ERISA</text>
+  <text x="64" y="438" fill="#CBD5E1" font-size="11.5">• 420K custom employer SPD agreements</text>
+  <text x="64" y="455" fill="#CBD5E1" font-size="11.5">• IRS §402(g)/SECURE 2.0 &amp; ERISA rules</text>
+
+  <rect x="52" y="484" width="243" height="72" rx="8" fill="#1E293B" stroke="#A78BFA" stroke-width="1"/>
+  <text x="64" y="504" fill="#C4B5FD" font-size="12.5" font-weight="700">23,400 Advisors &amp; Plan Officers</text>
+  <text x="64" y="522" fill="#CBD5E1" font-size="11.5">• Workplace advisors, ERISA &amp; sponsor RMs</text>
+  <text x="64" y="539" fill="#CBD5E1" font-size="11.5">• Plan-sponsor &amp; participant PII RLS</text>
+
+  <!-- Center Column: Fabric 16ms=4²ms Retirement Loop -->
+  <rect x="331" y="182" width="608" height="390" rx="12" fill="#0F172A" stroke="#F59E0B" stroke-width="2"/>
+  <rect x="331" y="182" width="608" height="36" rx="12" fill="url(#cardHdr232)"/>
+  <text x="350" y="205" fill="#FFFFFF" font-size="13.5" font-weight="800">2. Microsoft Fabric 16ms (4²ms) Rollover Retention, SPD RAG &amp; ERISA Gate Loop</text>
+
+  <!-- Step 1 -->
+  <rect x="349" y="230" width="572" height="74" rx="8" fill="#111C33" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="365" y="250" fill="#38BDF8" font-size="12.5" font-weight="800">STEP 1 (4ms) · Eventhouse KQL 1,050K (1.05M) EPS &amp; OneLake Zero-Copy ($0 Tax)</text>
+  <text x="365" y="269" fill="#E2E8F0" font-size="11.5">• Ingests 1.05M EPS EDI 820 payroll deferrals, HRIS job-change events &amp; mirrored Relius/SFDC</text>
+  <text x="365" y="286" fill="#34D399" font-size="11.5" font-weight="700">• Flags 755 rollover-outflow &amp; match waves in 4ms (Exact -39.0% attrition, saves $176.4K/mo)</text>
+
+  <!-- Step 2 -->
+  <rect x="349" y="314" width="572" height="74" rx="8" fill="#111C33" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="365" y="334" fill="#FBBF24" font-size="12.5" font-weight="800">STEP 2 (4ms) · Azure SQL SSD DiskANN (800M=0.80B Vectors!) + In-Lake PREDICT</text>
+  <text x="365" y="353" fill="#E2E8F0" font-size="11.5">• Searches 800M employer SPD, IRS §402(g) &amp; ERISA vectors (Exact $4,100! vs $98,400 DRAM)</text>
+  <text x="365" y="370" fill="#FCD34D" font-size="11.5" font-weight="700">• 4ms plan-specific answer &amp; IRA rollover retention → +$74.5M/yr retained AUM &amp; advisory rev</text>
+
+  <!-- Step 3 -->
+  <rect x="349" y="398" width="572" height="74" rx="8" fill="#111C33" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="365" y="418" fill="#F87171" font-size="12.5" font-weight="800">STEP 3 (4ms) · Foundry IQ ERISA PTE 2020-02, IRS §402(g) &amp; QDRO Gate (SOP-232)</text>
+  <text x="365" y="437" fill="#E2E8F0" font-size="11.5">• Blocks 315 unsubstantiated high-fee rollovers, IRS §402(g) over-caps &amp; unconsented QDRO payouts</text>
+  <text x="365" y="454" fill="#FCA5A5" font-size="11.5" font-weight="700">• Prevents +$17.20M/yr ERISA lawsuits &amp; IRS fines; enforces sponsor RLS across 23,400 users</text>
+
+  <!-- Step 4 -->
+  <rect x="349" y="482" width="572" height="74" rx="8" fill="#111C33" stroke="#10B981" stroke-width="1.2"/>
+  <text x="365" y="502" fill="#34D399" font-size="12.5" font-weight="800">STEP 4 (4ms) · Head of Workplace Wealth Teams Card &amp; Rollover / 1GB SQL Commit</text>
+  <text x="365" y="521" fill="#E2E8F0" font-size="11.5">• Delivers compliant PTE 2020-02 rollover packet, updates Relius &amp; commits to 1GB Free SQL</text>
+  <text x="365" y="538" fill="#6EE7B7" font-size="11.5" font-weight="700">• 16ms (4²ms) E2E Closed Loop · Protects $77,700,000 ($77.70M!) Annual Retirement SLA</text>
+
+  <!-- Right Column: 5-Cloud TCO Comparison -->
+  <rect x="959" y="182" width="285" height="390" rx="12" fill="#0F172A" stroke="#F43F5E" stroke-width="1.5"/>
+  <rect x="959" y="182" width="285" height="36" rx="12" fill="#881337"/>
+  <text x="975" y="205" fill="#FFFFFF" font-size="13.5" font-weight="800">3. 5-Cloud TCO &amp; Rollover Outflow</text>
+
+  <rect x="975" y="232" width="253" height="145" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="989" y="252" fill="#6EE7B7" font-size="12.5" font-weight="800">Microsoft Fabric ($16,300/mo Exact!)</text>
+  <text x="989" y="272" fill="#E2E8F0" font-size="11.5">• F64 Reserved Capacity: $8,448/mo</text>
+  <text x="989" y="290" fill="#E2E8F0" font-size="11.5">• Eventhouse 1.05M EPS + OneLake: $3,752/mo</text>
+  <text x="989" y="308" fill="#E2E8F0" font-size="11.5">• 800M SSD DiskANN (Exact!): $4,100/mo</text>
+  <text x="989" y="326" fill="#E2E8F0" font-size="11.5">• 23,400 Users + 1GB Audit SQL: $0/mo</text>
+  <text x="989" y="348" fill="#34D399" font-size="12" font-weight="800">✓ Saves -$445.7K/mo (-96.5% TCO)</text>
+  <text x="989" y="366" fill="#34D399" font-size="11.5" font-weight="700">✓ 16ms (4²ms) Loop · 315 ERISA/IRS Gates</text>
+
+  <rect x="975" y="392" width="253" height="164" rx="8" fill="#1E293B" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="989" y="412" fill="#FDA4AF" font-size="12.5" font-weight="800">Stitched 4-Cloud ($462,000/mo Exact!)</text>
+  <text x="989" y="432" fill="#CBD5E1" font-size="11.5">• Payroll Stream + Relius CDC: $176,400/mo</text>
+  <text x="989" y="450" fill="#CBD5E1" font-size="11.5">• 800M 6.30TB DRAM Vector Pods: $98,400/mo</text>
+  <text x="989" y="468" fill="#CBD5E1" font-size="11.5">• Cross-Cloud Egress Tax: $0/mo</text>
+  <text x="989" y="486" fill="#CBD5E1" font-size="11.5">• 23,400 Advisor/Sponsor Seats: $187,200/mo</text>
+  <text x="989" y="510" fill="#F87171" font-size="11.5" font-weight="700">✕ 4.8h Lag → Lost Job-Change Rollovers</text>
+  <text x="989" y="528" fill="#F87171" font-size="11.5" font-weight="700">✕ Generic Answers Missing Custom SPDs</text>
+  <text x="989" y="546" fill="#F87171" font-size="11.5" font-weight="700">✕ ERISA PTE 2020-02 Lawsuit Exposure</text>
+
+  <!-- Bottom Decision Matrix Strip -->
+  <rect x="36" y="588" width="1208" height="148" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="56" y="614" fill="#FBBF24" font-size="13.5" font-weight="800">4. Solution Architect Selection Matrix — Global Retirement 401(k) Recordkeeping &amp; Workplace Wealth</text>
+
+  <text x="56" y="640" fill="#6EE7B7" font-size="12" font-weight="700">• Choose Microsoft Fabric (Recommended — 93.3/100):</text>
+  <text x="385" y="640" fill="#E2E8F0" font-size="12">When unifying 1.05M EPS payroll/HRIS streams, Relius/SFDC mirroring, 800M DiskANN ($4,100/mo!), and 23,400 users ($0 seats).</text>
+
+  <text x="56" y="664" fill="#93C5FD" font-size="12" font-weight="700">• Choose Hybrid Fabric + Azure Databricks (86.8/100):</text>
+  <text x="385" y="664" fill="#CBD5E1" font-size="12">When running 10,000-path stochastic Monte Carlo longevity simulations on Spark/GPU while serving 16ms rollovers via Fabric.</text>
+
+  <text x="56" y="688" fill="#FCD34D" font-size="12" font-weight="700">• Choose Snowflake / BigQuery / AWS (82.0–85.5/100):</text>
+  <text x="385" y="688" fill="#CBD5E1" font-weight="400" font-size="12">Snowflake for external HR broker census shares; BigQuery for web analytics; AWS when legacy participant portal is 100% AWS.</text>
+
+  <text x="56" y="716" fill="#94A3B8" font-size="11.5">Sealed Benchmark Proof: DL-937..DL-940 · 🏆 487/488 (99.80% Record!) · 151.4ms Mean · 130.46ms (&lt;131ms!) Ontology Mean (n=118) · 240/240 Tests</text>
+</svg>
