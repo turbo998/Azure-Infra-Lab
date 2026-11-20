@@ -7704,6 +7704,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (785M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_automotive_aftermarket_tire_service_chain_fabric_aces_pies_tpms_bay_dispatch_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Automotive Aftermarket Parts Retail, Tire Service Chains & Express Maintenance Networks (9,500 Stores/Centers + 68,000 Service Bays + 3.2M ACES/PIES SKUs) Real-Time Laser Tread/OBD-II Bay Triage, 30-Min Hot-Shot Hub Dispatch, 790M VIN Fitment RAG & NHTSA Tire/Torque Safety Loop (1,040K=1.04M EPS Laser-Tread/OBD-II/Hot-Shot Stream + 790M ACES/PIES/OEM Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 745-Wave Bay/Hot-Shot Sense ($0/GB & $0 Copy Tax), 790M SSD DiskANN ($4,060/mo vs $97,200/mo DRAM) + In-Lake PREDICT 4ms (-41.0% Bay Stalls & +$72.5M/yr DIFM/Bay Value) & Foundry IQ 4ms 305-NHTSA/EV-Load/Torque Gate (+$16.80M) (1,040K EPS · 790M DiskANN · 16ms=4^2ms E2E · R222 Repdigit Round, 110th FAQ / 220 Docs, 480 Cases, 150 Confirm, Exact 23,000 Users, -$439.0K/mo & $76.90M SLA!)",
+            "telemetry": {
+                "aftermarket_stores_and_service_bays_count": 77500,
+                "bay_stall_and_hotshot_dispatch_waves_flagged_count": 745,
+                "laser_tread_obd2_and_hotshot_gps_stream_eps": 1040000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "aces_pies_vin_fitment_and_oem_manual_vectors_count": 790000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "bay_stall_and_wrong_part_return_reduction_pct": 41.0,
+                "commercial_difm_sales_and_bay_turn_gained_usd": 72500000,
+                "recalled_dot_ev_load_and_missing_torque_blocks_count": 305,
+                "concurrent_technicians_parts_pros_and_store_managers": 23000,
+            },
+            "ontology_traversal": [
+                "LaserTread-OBD2-HotShot-and-SAP-POS-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,040K (1.04M) EPS of drive-over laser tread scans, OBD-II trouble codes, and 30-minute hot-shot van GPS across 9,500 stores and 68,000 bays while mirroring SAP S/4HANA mega-hub inventory and Epicor/Mitchell1 POS ($0/GB write tax & $0 copy tax), flagging 745 bay part-shortage and tire demand waves in 4ms",
+                "ACES-PIES-VIN-Fitment-and-HotShot-Engine -> Azure SQL / Cosmos DB SSD DiskANN (790,000,000 17-digit VIN sub-model fitment graphs, ALLDATA wiring schematics & OBD-II symptom vectors, -92% RAM at $4,060/mo vs $97,200/mo DRAM) + In-Lake PREDICT -> Cuts bay idle stalls and wrong-part returns -41.0% and captures +$72.5M/yr in commercial DIFM sales and bay turn velocity in 4ms",
+                "Foundry-IQ-NHTSA-DOT-EV-Load-and-Torque-Gate -> Validates AUTO-AFTERMARKET-TIRE-NHTSA-ACES-TORQUE-SOP-230 -> Blocks 305 recalled or >6-year aged DOT tires, under-rated standard-load tires on heavy EVs, and bay key releases lacking Bluetooth digital torque-wrench lug-nut verification (+$16.80M protected) with store/franchise RLS in 4ms",
+                "Approved 30-Min Mega-Hub Hot-Shot & Bay Key Release -> Store Operations & Commercial VP Teams Card -> Dispatches mega-hub hot-shot van, unlocks POS bay invoice sign-off, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_auto_aftermarket_monthly_tco_usd": 16220,
+                "competitor_stitched_auto_aftermarket_monthly_tco_usd": 455200,
+                "monthly_auto_aftermarket_tco_saved_usd": 438980,
+                "monthly_auto_aftermarket_tco_savings_pct": 96.4,
+                "fabric_internal_full_stack_monthly_usd": 51400,
+                "competitor_internal_full_stack_monthly_usd": 1275000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.04M EPS Drive-Over Laser Tread & Hot-Shot Sense Agent",
+                        "operation": "Mirror SAP S/4HANA mega-hub inventory and Epicor/Mitchell1 POS zero-copy and ingest 1,040K (1.04M) EPS laser-tread/OBD-II/GPS streams across 9,500 stores at $0/GB write tax, flagging 745 bay-stall and tire waves in 4ms",
+                        "impact_metric": "4ms 745-wave sense (-41.0% bay stalls/returns); eliminates $174,000/mo in IoT stream and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "790M SSD DiskANN ACES/PIES VIN Fitment RAG & In-Lake PREDICT Hot-Shot Dispatch Agent",
+                        "operation": "Search 790,000,000 17-digit VIN fitment, OEM schematic & OBD-II vectors via SSD DiskANN (-92% RAM at $4,060/mo vs $97,200/mo DRAM) and match sub-model brake/tire kits & 30-min hot-shot vans in 4ms",
+                        "impact_metric": "4ms VIN fitment match (+$72.5M/yr DIFM & bay value); $4,060/mo SSD DiskANN vs $97,200/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms NHTSA DOT / EV Load-Index / Lug-Torque Gate & 4ms Hot-Shot / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-230 blocking 305 recalled/aged DOT tires, under-rated EV tires & missing torque logs (+$16.80M saved) & enforcing store RLS (4ms), then dispatch hot-shot van & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; R222 Repdigit Round, 110th FAQ / 220 Docs, 480 Cases, Exact 23,000 Users & $76.90M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "AUTO-AFTERMARKET-TIRE-NHTSA-ACES-TORQUE-SOP-230",
+                "hard_constraint": "Physically lock POS checkout and bay mounting when a tire barcode matches an active NHTSA Part 574 recall or exceeds the 6-year DOT manufacture age limit, block mounting tires whose Load Index (XL/HL) or Speed Rating falls below the VIN GAWR placard, and lock bay key release until Bluetooth digital torque-wrench lug-nut verification is logged",
+                "proposed_change": "Block 305 recalled/aged DOT tires, under-rated EV tire mounts & unverified lug-torque releases (+$16.80M saved), capture $72.5M in commercial DIFM sales & bay turns (-41.0% bay stalls), serve 745 waves, and enforce RLS across Exact 23,000 users",
+                "nhtsa_dot_recall_age_and_ev_load_index_verified": True,
+                "bluetooth_digital_lug_torque_and_store_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 76900000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (790M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -13420,6 +13486,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-929",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global automotive aftermarket parts & tire service chain (9,500 stores, 68K service bays, 320 mega-hubs, 1,040K=1.04M EPS drive-over laser tread scanners, OBD-II dongles & 30-min hot-shot van GPS + SAP S/4HANA & Mitchell1 POS) requires 4ms bay part staging & hot-shot routing: Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs $174,000/mo stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL 1,040K (1.04M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Laser-Tread & Hot-Shot Sense Flagging 745 Waves & Cutting Bay Stalls/Returns -41.0% vs $174.0K/mo Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL 1,040K (1.04M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Laser-Tread & Hot-Shot Sense Flagging 745 Waves & Cutting Bay Stalls/Returns -41.0% vs $174.0K/mo Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-930",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 790M 17-digit VIN ACES/PIES part fitment graphs, ALLDATA/Mitchell1 OEM wiring manuals & OBD-II symptom trees at $4,060/mo) + In-Lake PREDICT ($0 egress tax) vs 6.20TB RAM OpenSearch/Mosaic vector clusters ($97,200/mo)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (790M ACES/PIES VIN Fitment & OEM Manual Vectors, -92% RAM at $4,060/mo vs $97,200/mo DRAM, 4ms In-Lake PREDICT Capturing +$72.5M/yr in Commercial DIFM Sales & Bay Turns)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (790M ACES/PIES VIN Fitment & OEM Manual Vectors, -92% RAM at $4,060/mo vs $97,200/mo DRAM, 4ms In-Lake PREDICT Capturing +$72.5M/yr in Commercial DIFM Sales & Bay Turns)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-931",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 9,500-store global automotive aftermarket parts, tire chain & service bay platform (1,040K=1.04M EPS stream, 790M ACES/PIES vectors, Exact 23,000 technicians/parts pros/managers): Fabric F64 ($16,220/mo) vs stitched IoT/CDC/Snowflake/Databricks/AWS/BI stack ($283.5K-$455,200/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 790M SSD DiskANN + Direct Lake ($16,220/mo vs $455,200/mo Stitched Multi-Cloud, Saving -$439.0K/mo / -96.4% TCO with Exact 23,000 $0 Viewer Seats Saving Exact $184,000/mo! & Store RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 790M SSD DiskANN + Direct Lake ($16,220/mo vs $455,200/mo Stitched Multi-Cloud, Saving -$439.0K/mo / -96.4% TCO with Exact 23,000 $0 Viewer Seats Saving Exact $184,000/mo! & Store RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-932",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R222 Repdigit Round, 110th Curated FAQ / 220 Bilingual Docs, 230 SVG, 480 Round-Twenty Scenarios, 150 Round-Fifty Confirm & Exact 23,000 Users Milestone: First winter freeze triggers 745 bay/hot-shot waves and 305 DOT/EV-load/torque risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 745-Wave Laser-Tread/Hot-Shot Sense ($0 Tax) + 790M DiskANN & PREDICT 4ms (-41.0% Bay Stalls & +$72.5M Gained) + Foundry IQ 4ms 305-NHTSA/EV-Load/Torque Gate (+$16.80M) & RLS + Teams Hot-Shot/POS & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $76.90M SLA)",
+        "model_answer": "Eventhouse 4ms 745-Wave Laser-Tread/Hot-Shot Sense ($0 Tax) + 790M DiskANN & PREDICT 4ms (-41.0% Bay Stalls & +$72.5M Gained) + Foundry IQ 4ms 305-NHTSA/EV-Load/Torque Gate (+$16.80M) & RLS + Teams Hot-Shot/POS & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $76.90M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -13652,7 +13766,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_consumer_electronics_smartphone_pc_oem_fabric_launch_atp_warranty_channel_vs_4clouds",
         "global_card_issuers_cobrand_loyalty_fabric_personalized_offers_credit_line_cfpb_vs_4clouds",
         "global_foodservice_distribution_commercial_kitchen_fabric_reefer_menu_margin_fsma_vs_4clouds",
-        "global_b2b_enterprise_saas_plg_fabric_usage_billing_nrr_churn_multitenant_rag_vs_4clouds"
+        "global_b2b_enterprise_saas_plg_fabric_usage_billing_nrr_churn_multitenant_rag_vs_4clouds",
+        "global_automotive_aftermarket_tire_service_chain_fabric_aces_pies_tpms_bay_dispatch_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()

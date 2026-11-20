@@ -1850,13 +1850,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 76500000)
 
 
+    def test_global_automotive_aftermarket_tire_service_chain_fabric_aces_pies_tpms_bay_dispatch_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_automotive_aftermarket_tire_service_chain_fabric_aces_pies_tpms_bay_dispatch_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["aftermarket_stores_and_service_bays_count"], 77500)
+        self.assertEqual(sim["telemetry"]["bay_stall_and_hotshot_dispatch_waves_flagged_count"], 745)
+        self.assertEqual(sim["telemetry"]["laser_tread_obd2_and_hotshot_gps_stream_eps"], 1040000)
+        self.assertEqual(sim["telemetry"]["aces_pies_vin_fitment_and_oem_manual_vectors_count"], 790000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_auto_aftermarket_tco_saved_usd"], 438980)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_auto_aftermarket_tco_savings_pct"], 96.4)
+        self.assertTrue(sim["foundry_iq_guardrail"]["nhtsa_dot_recall_age_and_ev_load_index_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["bluetooth_digital_lug_torque_and_store_rls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 76900000)
+
+
     def test_scenario_matrix_280_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 476)
-        self.assertEqual(matrix["passed_scenarios"], 475)
+        self.assertEqual(matrix["total_scenarios"], 480)
+        self.assertEqual(matrix["passed_scenarios"], 479)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.79, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 155.1)
+        self.assertEqual(matrix["avg_latency_ms"], 153.8)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -3179,6 +3196,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $76.50M SLA", by_id["DL-928"])
 
 
+    def test_fabric_automotive_aftermarket_tire_service_chain_aces_2026_11_21_r222_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-929", "DL-930", "DL-931", "DL-932"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Laser-Tread & Hot-Shot Sense Flagging 745 Waves & Cutting Bay Stalls/Returns -41.0%", by_id["DL-929"])
+        self.assertIn("790M ACES/PIES VIN Fitment & OEM Manual Vectors, -92% RAM at $4,060/mo vs $97,200/mo DRAM", by_id["DL-930"])
+        self.assertIn("-$439.0K/mo / -96.4% TCO with Exact 23,000 $0 Viewer Seats Saving Exact $184,000/mo!", by_id["DL-931"])
+        self.assertIn("16ms 4^2ms E2E, Protect $76.90M SLA", by_id["DL-932"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -3197,11 +3225,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 475)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 476)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 155.1)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 115)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 133.44)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 479)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 480)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 153.8)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 116)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 132.43)
 
 
 if __name__ == "__main__":
