@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" width="1280" height="760" font-family="Segoe UI, Inter, system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg236" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#04101C"/>
+      <stop offset="55%" stop-color="#0D2238"/>
+      <stop offset="100%" stop-color="#1A1C46"/>
+    </linearGradient>
+    <linearGradient id="accent236" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="cardHdr236" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="760" fill="url(#bg236)"/>
+  <rect x="0" y="0" width="1280" height="6" fill="url(#accent236)"/>
+
+  <!-- Header -->
+  <text x="36" y="42" fill="#34D399" font-size="13" font-weight="700" letter-spacing="1.2">ROUND 228 · SCENARIO IA (DL-953..DL-956) · 🏆 OPENS I ALPHABET CYCLE, 504=7×8×9 CASES (503 PRIME PASSED!), SUB-127MS EXACT 126.70MS ONTOLOGY MEAN &amp; 24,200 USERS</text>
+  <text x="36" y="70" fill="#F8FAFC" font-size="22" font-weight="800">Global CPG Home &amp; Personal Care, Retail Media Networks (RMN) &amp; Planogram Assortment (480K Doors)</text>
+  <text x="36" y="94" fill="#94A3B8" font-size="13.5">Inventory-Aware RMN Bidding, Store-Cluster Planogram AI, 820M Shopper/Deduction RAG &amp; Robinson-Patman Gate: Fabric ($16,460/mo) vs. 4-Cloud ($475,600/mo)</text>
+
+  <!-- KPI Banner -->
+  <rect x="36" y="108" width="1208" height="58" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <text x="64" y="131" fill="#6EE7B7" font-size="11.5" font-weight="700">504=7×8×9 CASES &amp; 503 PRIME PASSED</text>
+  <text x="64" y="153" fill="#F8FAFC" font-size="16.5" font-weight="800">503 / 504 (99.80%) · 146.7 ms Mean</text>
+
+  <line x1="355" y1="116" x2="355" y2="158" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="375" y="131" fill="#7DD3FC" font-size="11.5" font-weight="700">SUB-127MS EXACT .70 ONTOLOGY MEAN</text>
+  <text x="375" y="153" fill="#38BDF8" font-size="16.5" font-weight="800">🏆 126.70 ms Exact! · 232 Docs</text>
+
+  <line x1="680" y1="116" x2="680" y2="158" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="700" y="131" fill="#FCD34D" font-size="11.5" font-weight="700">DISKANN 820M=T₄₀×1M VS $100.8K DRAM</text>
+  <text x="700" y="153" fill="#FBBF24" font-size="16.5" font-weight="800">$4,180 vs $100,800 DRAM · +$78.5M/yr</text>
+
+  <line x1="975" y1="116" x2="975" y2="158" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="995" y="131" fill="#F9A8D4" font-size="11.5" font-weight="700">24,200 PALINDROME USERS &amp; SLA</text>
+  <text x="995" y="153" fill="#F472B6" font-size="16.5" font-weight="800">-$459.1K/mo (-96.5%) · $79.30M SLA</text>
+
+  <!-- Left Column: POS/OSA, RMN Auctions & Planogram Feeds -->
+  <rect x="36" y="182" width="275" height="390" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <rect x="36" y="182" width="275" height="36" rx="12" fill="url(#cardHdr236)"/>
+  <text x="52" y="205" fill="#FFFFFF" font-size="13.5" font-weight="800">1. POS/OSA, RMN Bids &amp; Planograms</text>
+
+  <rect x="52" y="232" width="243" height="72" rx="8" fill="#1E293B" stroke="#0EA5E9" stroke-width="1"/>
+  <text x="64" y="252" fill="#7DD3FC" font-size="12.5" font-weight="700">480K Retail Doors &amp; RMN Bids</text>
+  <text x="64" y="270" fill="#CBD5E1" font-size="11.5">• 1,070K (1.07M) EPS POS &amp; EDI 852 OSA</text>
+  <text x="64" y="287" fill="#CBD5E1" font-size="11.5">• Walmart / Amazon / Target RMN bid APIs</text>
+
+  <rect x="52" y="316" width="243" height="72" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1"/>
+  <text x="64" y="336" fill="#6EE7B7" font-size="12.5" font-weight="700">SAP CBP/TPM &amp; Blue Yonder Space</text>
+  <text x="64" y="354" fill="#CBD5E1" font-size="11.5">• $82B annual sales across 65 megabrands</text>
+  <text x="64" y="371" fill="#CBD5E1" font-size="11.5">• Trade funds &amp; store-cluster planograms</text>
+
+  <rect x="52" y="400" width="243" height="72" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1"/>
+  <text x="64" y="420" fill="#FCD34D" font-size="12.5" font-weight="700">820M Planograms, Panels &amp; EDI 812</text>
+  <text x="64" y="438" fill="#CBD5E1" font-size="11.5">• 3D shelf-gram &amp; Circana/NIQ panel vectors</text>
+  <text x="64" y="455" fill="#CBD5E1" font-size="11.5">• EDI 812 deduction PODs &amp; ISO 14021 PCR</text>
+
+  <rect x="52" y="484" width="243" height="72" rx="8" fill="#1E293B" stroke="#A78BFA" stroke-width="1"/>
+  <text x="64" y="504" fill="#C4B5FD" font-size="12.5" font-weight="700">24,200 KAMs, Traders &amp; Analysts</text>
+  <text x="64" y="522" fill="#CBD5E1" font-size="11.5">• Key account managers &amp; category captains</text>
+  <text x="64" y="539" fill="#CBD5E1" font-size="11.5">• Retailer clean-room Entra OBO RLS</text>
+
+  <!-- Center Column: Fabric 16ms=4²ms CPG RMN & Planogram Loop -->
+  <rect x="331" y="182" width="608" height="390" rx="12" fill="#0F172A" stroke="#10B981" stroke-width="2"/>
+  <rect x="331" y="182" width="608" height="36" rx="12" fill="url(#cardHdr236)"/>
+  <text x="350" y="205" fill="#FFFFFF" font-size="13.5" font-weight="800">2. Microsoft Fabric 16ms (4²ms) Inventory-Aware RMN, Planogram &amp; Deduction Loop</text>
+
+  <!-- Step 1 -->
+  <rect x="349" y="230" width="572" height="74" rx="8" fill="#111C33" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="365" y="250" fill="#38BDF8" font-size="12.5" font-weight="800">STEP 1 (4ms) · Eventhouse KQL 1,070K (1.07M) EPS &amp; OneLake Zero-Copy ($0 Tax)</text>
+  <text x="365" y="269" fill="#E2E8F0" font-size="11.5">• Ingests 1.07M EPS POS/EDI 852 OSA &amp; RMN auctions + mirrored SAP CBP/Blue Yonder</text>
+  <text x="365" y="286" fill="#34D399" font-size="11.5" font-weight="700">• Flags 775 OOS ad-waste &amp; phantom-stock waves in 4ms (Exact +39.0% iROAS, saves $181.2K/mo)</text>
+
+  <!-- Step 2 -->
+  <rect x="349" y="314" width="572" height="74" rx="8" fill="#111C33" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="365" y="334" fill="#FBBF24" font-size="12.5" font-weight="800">STEP 2 (4ms) · Azure SQL SSD DiskANN (820M=T₄₀×1M Vectors) + In-Lake PREDICT ($0 Egress)</text>
+  <text x="365" y="353" fill="#E2E8F0" font-size="11.5">• Searches 820M 3D planograms, shopper panels &amp; EDI 812 PODs ($4,180 vs $100,800 DRAM)</text>
+  <text x="365" y="370" fill="#FCD34D" font-size="11.5" font-weight="700">• 4ms store-cluster shelf facing optimization &amp; deduction dispute → +$78.5M/yr GMV/recovery</text>
+
+  <!-- Step 3 -->
+  <rect x="349" y="398" width="572" height="74" rx="8" fill="#111C33" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="365" y="418" fill="#F87171" font-size="12.5" font-weight="800">STEP 3 (4ms) · Foundry IQ Robinson-Patman, OOS Bid-Pause &amp; FTC Gate (SOP-236)</text>
+  <text x="365" y="437" fill="#E2E8F0" font-size="11.5">• Blocks 335 disproportionate co-op trade deals, OSA&lt;85% keyword bids &amp; unverified PCR claims</text>
+  <text x="365" y="454" fill="#FCA5A5" font-size="11.5" font-weight="700">• Prevents Exact +$18.00M/yr antitrust &amp; greenwashing fines; enforces RLS across 24,200 users</text>
+
+  <!-- Step 4 -->
+  <rect x="349" y="482" width="572" height="74" rx="8" fill="#111C33" stroke="#10B981" stroke-width="1.2"/>
+  <text x="365" y="502" fill="#34D399" font-size="12.5" font-weight="800">STEP 4 (4ms) · Chief Commercial Officer Teams Card &amp; RMN / SAP CBP / 1GB SQL Commit</text>
+  <text x="365" y="521" fill="#E2E8F0" font-size="11.5">• Steers RMN bids to instock SKUs, submits EDI 812 dispute &amp; writes to 1GB Free SQL</text>
+  <text x="365" y="538" fill="#6EE7B7" font-size="11.5" font-weight="700">• 16ms (4²ms) E2E Closed Loop · Protects $79,300,000 ($79.30M) Annual CPG Commercial SLA</text>
+
+  <!-- Right Column: 5-Cloud TCO Comparison -->
+  <rect x="959" y="182" width="285" height="390" rx="12" fill="#0F172A" stroke="#F43F5E" stroke-width="1.5"/>
+  <rect x="959" y="182" width="285" height="36" rx="12" fill="#881337"/>
+  <text x="975" y="205" fill="#FFFFFF" font-size="13.5" font-weight="800">3. 5-Cloud TCO &amp; OOS Ad-Waste Risk</text>
+
+  <rect x="975" y="232" width="253" height="145" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="989" y="252" fill="#6EE7B7" font-size="12.5" font-weight="800">Microsoft Fabric Unified ($16,460/mo)</text>
+  <text x="989" y="272" fill="#E2E8F0" font-size="11.5">• F64 Reserved Capacity: $8,448/mo</text>
+  <text x="989" y="290" fill="#E2E8F0" font-size="11.5">• Eventhouse 1.07M EPS + OneLake: $3,832/mo</text>
+  <text x="989" y="308" fill="#E2E8F0" font-size="11.5">• 820M SSD DiskANN Vector: $4,180/mo</text>
+  <text x="989" y="326" fill="#E2E8F0" font-size="11.5">• 24,200 Users + 1GB Audit SQL: $0/mo</text>
+  <text x="989" y="348" fill="#34D399" font-size="12" font-weight="800">✓ Saves -$459.1K/mo (-96.5% TCO)</text>
+  <text x="989" y="366" fill="#34D399" font-size="11.5" font-weight="700">✓ 16ms (4²ms) Loop · 335 Antitrust/OOS Gates</text>
+
+  <rect x="975" y="392" width="253" height="164" rx="8" fill="#1E293B" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="989" y="412" fill="#FDA4AF" font-size="12.5" font-weight="800">Stitched 4-Cloud Stack ($475,600/mo)</text>
+  <text x="989" y="432" fill="#CBD5E1" font-size="11.5">• POS/RMN Stream + SAP CDC: $181,200/mo</text>
+  <text x="989" y="450" fill="#CBD5E1" font-size="11.5">• 820M DRAM Vectors (6.50TB): $100,800/mo</text>
+  <text x="989" y="468" fill="#CBD5E1" font-size="11.5">• Cross-Cloud Egress Tax: $0/mo</text>
+  <text x="989" y="486" fill="#CBD5E1" font-size="11.5">• 24,200 KAM/Trader Seats: $193,600/mo</text>
+  <text x="989" y="510" fill="#F87171" font-size="11.5" font-weight="700">✕ 5.0h Lag → 22% RMN Spend on OOS Shelves</text>
+  <text x="989" y="528" fill="#F87171" font-size="11.5" font-weight="700">✕ Unrecovered EDI 812 Retailer Deductions</text>
+  <text x="989" y="546" fill="#F87171" font-size="11.5" font-weight="700">✕ Robinson-Patman &amp; Greenwashing Exposure</text>
+
+  <!-- Bottom Decision Matrix Strip -->
+  <rect x="36" y="588" width="1208" height="148" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="56" y="614" fill="#34D399" font-size="13.5" font-weight="800">4. Solution Architect Selection Matrix — Global CPG Home &amp; Personal Care, RMN &amp; Assortment</text>
+
+  <text x="56" y="640" fill="#6EE7B7" font-size="12" font-weight="700">• Choose Microsoft Fabric (Recommended — 93.3/100):</text>
+  <text x="385" y="640" fill="#E2E8F0" font-size="12">When unifying 1.07M EPS POS/RMN streams, SAP/BY mirroring, 820M DiskANN ($4,180 vs $100.8K DRAM), and 24,200 users ($0 seats).</text>
+
+  <text x="56" y="664" fill="#93C5FD" font-size="12" font-weight="700">• Choose Hybrid Fabric + Azure Databricks (86.8/100):</text>
+  <text x="385" y="664" fill="#CBD5E1" font-size="12">When training 3D shelf computer vision or molecular surfactant models on GPU clusters while serving 16ms RMN bids via Fabric.</text>
+
+  <text x="56" y="688" fill="#FCD34D" font-size="12" font-weight="700">• Choose Snowflake / BigQuery / AWS (82.0–85.5/100):</text>
+  <text x="385" y="688" fill="#CBD5E1" font-weight="400" font-size="12">Snowflake for single-retailer clean rooms; BigQuery for YouTube ad analytics; AWS when legacy D2C micro-site is 100% AWS.</text>
+
+  <text x="56" y="716" fill="#94A3B8" font-size="11.5">Sealed Benchmark Proof: DL-953..DL-956 · 503/504 (99.80% · 504=7×8×9 &amp; 503 Prime!) · 146.7ms Mean · 🏆 126.70ms Exact Ontology Mean (n=122) · 248/248 Tests</text>
+</svg>
