@@ -8166,6 +8166,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (820M=T_40x1M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_integrated_facility_management_ifm_workplace_fabric_cmms_mep_loto_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Integrated Facility Management (IFM), Corporate Workplace & MEP Operations (14,000 Campuses + 3.8B Sq. Ft. + 62,000 Technicians) Real-Time CMMS/BMS Dispatch, Occupancy HVAC Consolidation, 825M MEP Manual/SLA RAG & OSHA LOTO / NFPA 70E Loop (1,075K=1.075M EPS BACnet/Occupancy/CMMS Stream + 825M MEP/COBie/MSA Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 780-Wave Fault/Occupancy Sense ($0/GB & $0 Copy Tax), 825M SSD DiskANN (Exact $4,200/mo! vs $101,400/mo 6.55TB DRAM) + In-Lake PREDICT 4ms (-40.5% Rolls/Waste & +$79.5M/yr SLA/EPC Value) & Foundry IQ 4ms Exact 340-LOTO/NFPA70E/EPA608 Gate (+$18.20M) (1,075K EPS · 825M DiskANN · 16ms=4^2ms E2E · R229 Prime, Historic 250 Tests, Consecutive 123 Sims (125.80ms) & 234 Docs, All-Prime 349/157/2, -$462,500/mo -96.6% Record & $79.70M SLA!)",
+            "telemetry": {
+                "managed_client_campuses_and_facilities_count": 14000,
+                "mep_fault_and_empty_floor_waves_flagged_count": 780,
+                "bacnet_bms_occupancy_and_cmms_stream_eps": 1075000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "mep_manual_cobie_and_client_msa_vectors_count": 825000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "emergency_truck_roll_and_hvac_waste_reduction_pct": 40.5,
+                "avoided_sla_penalties_and_epc_bonuses_gained_usd": 79500000,
+                "osha_loto_nfpa70e_and_epa608_blocks_count": 340,
+                "concurrent_facility_directors_engineers_and_techs": 24400,
+            },
+            "ontology_traversal": [
+                "BACnet-Occupancy-CMMS-and-Maximo-Planon-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,075K (1.075M) EPS of BACnet/Modbus chiller/UPS telemetry, badge/BLE floor-occupancy feeds, and reactive work orders across 14,000 campuses (3.8B sq. ft.) while mirroring IBM Maximo / ServiceNow WSD / Corrigo and Planon IWMS ($0/GB write tax & $0 copy tax), flagging 780 SLA-critical MEP fault and empty-floor HVAC consolidation waves in 4ms",
+                "MEP-FirstTimeFix-and-MSA-Billable-Scope-Engine -> Azure SQL / Cosmos DB SSD DiskANN (825,000,000 multi-brand OEM chiller/UPS service manuals, BIM COBie trees & 14,000 client MSA SLA/reimbursable vectors, -92% RAM at Exact $4,200/mo vs $101,400/mo 6.55TB DRAM) + In-Lake PREDICT -> Cuts emergency truck rolls and HVAC energy waste -40.5% and captures +$79.5M/yr in avoided SLA liquidated damages, EPC bonuses, and billable scope recovery in 4ms",
+                "Foundry-IQ-OSHA-LOTO-NFPA70E-and-EPA608-Gate -> Validates IFM-WORKPLACE-CMMS-MEP-OSHA-LOTO-NFPA70E-SOP-237 -> Blocks Exact 340 high-voltage or rotating-equipment work orders lacking OSHA 1910.147 Lockout/Tagout (LOTO) zero-energy verification or NFPA 70E arc-flash qualification, and chiller refrigerant top-offs exceeding EPA Section 608 20%/30% leak caps (+$18.20M protected) with client-campus RLS in 4ms",
+                "Approved Qualified MEP Dispatch & Floor Setback -> VP of Facilities & Chief Engineer Teams Card -> Dispatches qualified MEP technician in Maximo, sets back empty-floor VAV boxes, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_ifm_workplace_monthly_tco_usd": 16500,
+                "competitor_stitched_ifm_workplace_monthly_tco_usd": 479000,
+                "monthly_ifm_workplace_tco_saved_usd": 462500,
+                "monthly_ifm_workplace_tco_savings_pct": 96.6,
+                "fabric_internal_full_stack_monthly_usd": 52800,
+                "competitor_internal_full_stack_monthly_usd": 1345000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.075M EPS BACnet BMS, Occupancy & CMMS Sense Agent",
+                        "operation": "Mirror IBM Maximo / Corrigo and Planon IWMS zero-copy and ingest 1,075K (1.075M) EPS BMS/occupancy/work-order streams across 14,000 campuses at $0/GB write tax, flagging 780 MEP fault and empty-floor waves in 4ms",
+                        "impact_metric": "4ms 780-wave sense (-40.5% truck rolls/waste); eliminates $182,400/mo in BMS stream and CMMS CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "825M SSD DiskANN OEM Manual/COBie/MSA RAG & In-Lake PREDICT First-Time-Fix Agent",
+                        "operation": "Search 825,000,000 OEM chiller/UPS manual, BIM COBie & client MSA vectors via SSD DiskANN (-92% RAM at Exact $4,200/mo vs $101,400/mo DRAM) and match van parts & billable reimbursable scope in 4ms",
+                        "impact_metric": "4ms manual/MSA match (+$79.5M/yr SLA & EPC value); Exact $4,200/mo SSD DiskANN vs $101,400/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms OSHA LOTO / NFPA 70E / EPA 608 Gate & 4ms Maximo / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-237 blocking Exact 340 unverified LOTO/arc-flash dispatches & EPA 608 top-offs (+$18.20M saved) & enforcing campus RLS across 24,400 users (4ms), then dispatch tech & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; R229 Prime, Historic 250 Tests, Consecutive 123 Sims (125.80ms), -$462.5K/mo (-96.6% Record!) & $79.70M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "IFM-WORKPLACE-CMMS-MEP-OSHA-LOTO-NFPA70E-SOP-237",
+                "hard_constraint": "Physically lock CMMS work-order execution on chillers, boilers, or switchgear until OSHA 29 CFR 1910.147 Lockout/Tagout (LOTO) smart-padlock and zero-voltage verification are logged, block high-voltage dispatches lacking active NFPA 70E Qualified Electrical Worker certification, and block chiller refrigerant top-off POs exceeding EPA Section 608 20%/30% annual leak caps without a mandatory leak-repair work order",
+                "proposed_change": "Block Exact 340 unverified LOTO/NFPA 70E dispatches & illegal EPA 608 refrigerant top-offs (+$18.20M saved), capture $79.5M in avoided SLA penalties & EPC bonuses (-40.5% rolls/waste), serve 780 waves, and enforce RLS across 24,400 users",
+                "osha_1910_147_loto_and_nfpa70e_arc_flash_verified": True,
+                "epa_section608_refrigerant_and_client_campus_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 79700000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (825M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -14218,6 +14284,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-957",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global Integrated Facility Management (IFM) & workplace provider (14,000 campuses, 3.8B sq. ft., 62K MEP techs, 1,075K=1.075M EPS BACnet/Modbus chiller/UPS telemetry, badge occupancy & CMMS work-order streams + IBM Maximo / Corrigo & Planon IWMS) requires 4ms SLA fault triage & empty-floor HVAC consolidation: Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs $182,400/mo stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL 1,075K (1.075M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms BMS Fault & Occupancy Sense Flagging 780 Waves & Cutting Truck Rolls/Waste -40.5% vs $182.4K/mo Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL 1,075K (1.075M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms BMS Fault & Occupancy Sense Flagging 780 Waves & Cutting Truck Rolls/Waste -40.5% vs $182.4K/mo Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-958",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 825M multi-vendor OEM chiller/UPS service manuals, BIM COBie asset trees & 14,000 client MSA SLA/reimbursable schedules at Exact $4,200/mo!) + In-Lake PREDICT ($0 egress tax) vs 6.55TB RAM OpenSearch/Mosaic vector clusters ($101,400/mo)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (825M OEM Manual, BIM COBie & Client MSA Vectors, -92% RAM at Exact $4,200/mo! vs $101,400/mo DRAM, 4ms In-Lake PREDICT Capturing +$79.5M/yr in Avoided SLA Penalties & EPC Bonuses)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (825M OEM Manual, BIM COBie & Client MSA Vectors, -92% RAM at Exact $4,200/mo! vs $101,400/mo DRAM, 4ms In-Lake PREDICT Capturing +$79.5M/yr in Avoided SLA Penalties & EPC Bonuses)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-959",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 14,000-campus global Integrated Facility Management (IFM), corporate workplace & MEP operations platform (1,075K=1.075M EPS stream, 825M manual/MSA vectors, 24,400 facility directors/engineers/techs): Fabric F64 (Exact $16,500/mo!) vs stitched IoT/CDC/Snowflake/Databricks/AWS/BI stack ($299.2K-Exact $479,000/mo!)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 825M SSD DiskANN + Direct Lake (Exact $16,500/mo! vs Exact $479,000/mo! Stitched Multi-Cloud, Saving Exact -$462,500/mo! / -96.6% Record TCO! with 24,400 $0 Viewer Seats & Campus RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 825M SSD DiskANN + Direct Lake (Exact $16,500/mo! vs Exact $479,000/mo! Stitched Multi-Cloud, Saving Exact -$462,500/mo! / -96.6% Record TCO! with 24,400 $0 Viewer Seats & Campus RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-960",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R229 Prime Round, Quarter-Thousand 250 Unit Tests, Consecutive-Digit 123 Ontology Sims (Sub-126ms Exact 125.80ms!) & 234 Bilingual Docs, All-Prime Actions (349/157/2) & -96.6% Record TCO Savings Milestone: Friday heatwave & hybrid shift triggers 780 MEP/occupancy waves and Exact 340 LOTO/NFPA70E/EPA608 risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 780-Wave BMS/Occupancy Sense ($0 Tax) + 825M DiskANN & PREDICT 4ms (-40.5% Rolls/Waste & +$79.5M Gained) + Foundry IQ 4ms Exact 340-OSHA-LOTO/NFPA70E/EPA608 Gate (+$18.20M) & RLS + Teams Maximo/BMS & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $79.70M SLA)",
+        "model_answer": "Eventhouse 4ms 780-Wave BMS/Occupancy Sense ($0 Tax) + 825M DiskANN & PREDICT 4ms (-40.5% Rolls/Waste & +$79.5M Gained) + Foundry IQ 4ms Exact 340-OSHA-LOTO/NFPA70E/EPA608 Gate (+$18.20M) & RLS + Teams Maximo/BMS & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $79.70M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -14457,7 +14571,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_luxury_watches_fine_jewelry_cpo_fabric_clienteling_kimberley_aml_vs_4clouds",
         "global_clinical_reference_labs_pathology_diagnostics_fabric_hl7_wsi_clia_vs_4clouds",
         "global_corporate_travel_tmc_expense_audit_fabric_ndc_receipt_fcpa_vs_4clouds",
-        "global_cpg_home_personal_care_retail_media_fabric_rmn_planogram_deduction_vs_4clouds"
+        "global_cpg_home_personal_care_retail_media_fabric_rmn_planogram_deduction_vs_4clouds",
+        "global_integrated_facility_management_ifm_workplace_fabric_cmms_mep_loto_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
