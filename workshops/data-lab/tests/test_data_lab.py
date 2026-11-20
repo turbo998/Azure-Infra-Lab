@@ -2105,13 +2105,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 82400000)
 
 
+    def test_global_coffee_roastery_beverage_qsr_mop_fabric_barista_eudr_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_coffee_roastery_beverage_qsr_mop_fabric_barista_eudr_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["specialty_coffee_and_beverage_qsr_stores_count"], 38000)
+        self.assertEqual(sim["telemetry"]["morning_mop_and_espresso_drift_waves_flagged_count"], 820)
+        self.assertEqual(sim["telemetry"]["mop_checkout_drivethru_and_espresso_stream_eps"], 1115000)
+        self.assertEqual(sim["telemetry"]["beverage_modifier_eudr_polygon_and_roast_vectors_count"], 865000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_coffee_qsr_tco_saved_usd"], 488780)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_coffee_qsr_tco_savings_pct"], 96.7)
+        self.assertTrue(sim["foundry_iq_guardrail"]["allergen_pitcher_isolation_and_eudr_polygon_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["dairy_cold_chain_5c_lockout_and_store_rls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 82800000)
+
+
     def test_scenario_matrix_280_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 536)
-        self.assertEqual(matrix["passed_scenarios"], 535)
+        self.assertEqual(matrix["total_scenarios"], 540)
+        self.assertEqual(matrix["passed_scenarios"], 539)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.81, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 138.2)
+        self.assertEqual(matrix["avg_latency_ms"], 137.2)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -3599,6 +3616,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $82.40M! SLA", by_id["DL-988"])
 
 
+    def test_fabric_coffee_roastery_beverage_qsr_mop_barista_2026_11_21_r237_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-989", "DL-990", "DL-991", "DL-992"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Morning-Peak MOP & Connected Espresso Sense Flagging 820 Waves & Lifting Throughput +43.5%", by_id["DL-989"])
+        self.assertIn("865M Beverage Modifier, EUDR Farm Polygon & Roast Vectors, -92% RAM at $4,360/mo vs $106,200/mo DRAM", by_id["DL-990"])
+        self.assertIn("-$488.8K/mo / -96.7% Record TCO! with 25,800 $0 Viewer Seats", by_id["DL-991"])
+        self.assertIn("16ms 4^2ms E2E, Protect $82.80M! SLA", by_id["DL-992"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -3617,11 +3645,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 535)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 536)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 138.2)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 130)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 119.89)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 539)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 540)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 137.2)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 131)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 119.1)
 
 
 if __name__ == "__main__":
