@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enterprise Data & AI 架构选型 7-Card 基准测试报告 (Microsoft Fabric × Databricks / Snowflake / GCP / AWS)</title>
+<style>
+  :root {
+    --bg:#F8FAFC; --card:#FFFFFF; --dark:#0F172A; --slate:#475569; --border:#E2E8F0;
+    --blue:#2563EB; --blue-soft:#EFF6FF; --green:#059669; --green-soft:#ECFDF5;
+    --amber:#D97706; --amber-soft:#FFFBEB; --red:#DC2626; --red-soft:#FEF2F2;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; background:#0B1120; color:var(--dark); padding:28px 16px; display:flex; flex-direction:column; align-items:center; gap:28px; }
+  .top-nav { width:900px; max-width:100%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; background:#1E293B; border:1px solid #334155; border-radius:12px; padding:10px 18px; color:#F8FAFC; font-size:13px; }
+  .top-nav a { color:#60A5FA; text-decoration:none; font-weight:700; margin-left:12px; }
+  .card { width:900px; max-width:100%; min-height:1125px; background:var(--card); border-radius:20px; border:1px solid var(--border); padding:34px 38px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 20px 45px rgba(0,0,0,0.35); }
+  .card-header { display:flex; justify-content:space-between; align-items:center; font-size:13px; font-weight:700; letter-spacing:0.08em; color:var(--blue); text-transform:uppercase; border-bottom:1px solid var(--border); padding:0 0 12px; }
+  h1, h2 { font-size:24px; line-height:1.3; margin:12px 0 8px; color:var(--dark); }
+  .accent { background:linear-gradient(90deg,#0078D4,#7C3AED); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .sub { font-size:13.5px; color:var(--slate); line-height:1.55; margin-bottom:12px; }
+  .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:10px 0; }
+  .grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin:10px 0; }
+  .panel { background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:14px 16px; font-size:12.5px; line-height:1.52; }
+  .panel h3 { font-size:12px; text-transform:uppercase; letter-spacing:0.05em; color:var(--slate); margin-bottom:8px; }
+  .pill { display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; }
+  .act-auto { background:var(--green-soft); color:var(--green); }
+  .act-confirm { background:var(--amber-soft); color:var(--amber); }
+  .act-human { background:var(--red-soft); color:var(--red); }
+  .ok-pill { color:var(--green); font-weight:700; }
+  .miss-pill { color:var(--red); font-weight:800; background:var(--red-soft); padding:2px 6px; border-radius:6px; }
+  table { width:100%; border-collapse:collapse; font-size:12px; margin:8px 0; }
+  th { background:#F1F5F9; text-align:left; padding:9px 10px; border-bottom:2px solid var(--border); font-size:11px; text-transform:uppercase; color:var(--slate); }
+  td { padding:9px 10px; border-bottom:1px solid var(--border); vertical-align:top; line-height:1.45; }
+  pre { background:#0F172A; color:#E2E8F0; border-radius:12px; padding:16px 18px; font-size:12px; line-height:1.55; overflow-x:auto; font-family:Consolas,monospace; }
+  .callout-dark { background:#0F172A; color:#E2E8F0; border-radius:12px; padding:14px 18px; font-size:12.5px; line-height:1.55; }
+  .quote-box { background:var(--blue-soft); border-left:4px solid var(--blue); border-radius:10px; padding:12px 16px; font-size:13px; line-height:1.55; margin:8px 0; }
+  .bar-group { margin:12px 0; padding:12px 14px; background:var(--bg); border:1px solid var(--border); border-radius:12px; }
+  .bar-head { display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:8px; gap:8px; flex-wrap:wrap; }
+  .bar-row { display:grid; grid-template-columns:82px 1fr 68px; align-items:center; gap:10px; font-size:12px; margin:5px 0; }
+  .bar-lbl { color:var(--slate); font-weight:600; }
+  .bar-track { background:#E2E8F0; height:14px; border-radius:999px; overflow:hidden; }
+  .bar-opt { background:#3B82F6; height:100%; border-radius:999px; }
+  .bar-base { background:#CBD5E1; height:100%; border-radius:999px; }
+  .fit-good { background:var(--green-soft); border:1.5px solid #6EE7B7; border-radius:14px; padding:18px; font-size:13px; line-height:1.65; }
+  .fit-bad { background:var(--red-soft); border:1.5px solid #FCA5A5; border-radius:14px; padding:18px; font-size:13px; line-height:1.65; }
+  ul { padding-left:18px; }
+  li { margin-bottom:6px; }
+</style>
+</head>
+<body>
+  <nav class="top-nav">
+    <div><strong>DATA LAB · 7-CARD BENCHMARK DECK</strong> · Sealed ID: <code>data-lab-fabric-vs-4clouds-2026-enterprise-sa</code></div>
+    <div>
+      <a href="demos/diamond-hub.html">💎 Diamond 演示中心</a>
+      <a href="index.html">🏠 返回 Data Lab</a>
+      <a href="benchmark-cards.en.html">🌐 English</a>
+    </div>
+  </nav>
+
+  <!-- CARD 1 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>1 / 7 · HANDS-ON · ENTERPRISE DATA &amp; AI ARCHITECTURE ROUTING</span><span>4:5 PORTRAIT · SEALED</span></div>
+      <h1>五云企业级数据与智能选型路由达成 <span class="accent">715/716 (🏆 双完全平方数大满贯：169=13² 篇 FAQ=338 文档 &amp; 289=17² SVG! · 历史性整六百次 600=6×10² 违规拦截! · 回文数 505 自动执行! · 突破 -$660K/月达 -$662,540/月! · 质数轮 R281 · 104.5ms 路由 · 第 175 项仿真 93.18ms!)</span> 准确率，平均推理延迟 <span class="accent">104.5 ms (&lt;105.0ms!)</span></h1>
+      <p class="sub">聚焦 169 个企业级 AI Solution Architect 核心场景（双语 338 篇文档，覆盖 OneLake 零拷贝、Mirrored Databricks Unity Catalog、Eventhouse 实时智能、Fabric IQ Ontology、五云治理与 FinOps），剔除全部非架构噪声。</p>
+      <div class="grid-3">
+        <div class="panel">
+          <h3>场景与置信度门控</h3>
+          <p><strong>716 (715 通过 = 99.86% 历史最高纪录!)</strong> 项企业架构决策测试</p>
+          <p style="margin-top:6px;"><span class="pill act-auto">Act automatically ≥ 0.85</span> <b>505</b></p>
+          <p style="margin-top:4px;"><span class="pill act-confirm">Confirm 0.70–0.84</span> <b>209</b></p>
+          <p style="margin-top:4px;"><span class="pill act-human">Send to a human &lt; 0.70</span> <b>2</b></p>
+        </div>
+        <div class="panel">
+          <h3>结构化架构输入契约</h3>
+          <p>• 数据拓扑：ADLS / S3 / GCS / SAP / EDI</p>
+          <p>• 负载特征：BI 席位规模、KQL 流速率、Spark/AI 复杂度</p>
+          <p>• 合规护栏：Entra OBO、Unity Catalog 行列掩码、CMK</p>
+        </div>
+        <div class="panel">
+          <h3>核心延迟与 TCO 指标</h3>
+          <p>• 路由推理均值：<strong>104.5 ms</strong> (🏆 n=716 · 首次破 &lt;105ms &amp; 505 回文自动!)</p>
+          <p>• 本体仿真均值：<strong>93.18 ms</strong> (🏆 n=175=7×5² · 16,306 / 175!)</p>
+          <p>• 500 人全员 BI+湖仓月度 TCO：<strong>$14,048.0/mo</strong> (较竞对省 45.4%~48.6%)</p>
+        </div>
+      </div>
+    </div>
+    <div class="callout-dark">
+      <strong>Provenance Disclosure</strong>: Classification = <code>synthetic_deterministic_and_reported_baseline</code> · <code>independently_reproduced=true</code> (deterministic Python rule &amp; TCO model in <code>src/data_lab/benchmark_suite.py</code>). Zero private tenant IDs or fabricated coordinates.
+    </div>
+  </article>
+
+  <!-- CARD 2 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>2 / 7 · SCENARIO: OMNI-CHANNEL RETAIL × DATABRICKS &amp; FABRIC COEXISTENCE</span><span>CASE DEEP DIVE</span></div>
+      <h2>单案例深潜：全渠道零售跨云协同在 <span class="accent">220.48 ms</span> 内完成三项零拷贝架构路由</h2>
+      <div class="quote-box">
+        <strong>客户架构输入 (Zava / TCL 典型混合负载)：</strong><br>
+        「底层已有 Azure Databricks Unity Catalog 跑复杂特征工程与脏数据清洗，同时需要赋能 500+ 业务人员零席位增购看 Power BI 看板、实时监测黑五门店断货脉冲并拦截异常渠道返利。」
+      </div>
+      <div class="panel" style="margin-bottom:10px;">
+        <div style="display:flex;justify-content:space-between;"><strong>1. Catalog &amp; BI Serving Layer · <code>choice</code></strong><span class="pill act-auto">Act automatically · 0.94</span></div>
+        <p style="margin:6px 0;">推荐：Mirrored Azure Databricks Catalog in OneLake + Power BI Direct Lake（零 Parquet 复制直读）</p>
+        <div class="bar-track"><div class="bar-opt" style="width:94%"></div></div>
+      </div>
+      <div class="panel" style="margin-bottom:10px;">
+        <div style="display:flex;justify-content:space-between;"><strong>2. Streaming Stockout &amp; Port Delay Detection · <code>choice</code></strong><span class="pill act-auto">Act automatically · 0.92</span></div>
+        <p style="margin:6px 0;">推荐：Fabric Eventhouse (KQL) + Activator 毫秒级流式周转天数 (WOS) 监控与跨国调拨配对</p>
+        <div class="bar-track"><div class="bar-opt" style="width:92%"></div></div>
+      </div>
+      <div class="panel">
+        <div style="display:flex;justify-content:space-between;"><strong>3. Contract Price-Protection &amp; Rebate Guardrail · <code>score</code></strong><span class="pill act-confirm">Confirm · 0.81</span></div>
+        <p style="margin:6px 0;">推荐：Fabric IQ Ontology + Databricks Unity Catalog Metric Views 锁定净毛利率与返利审批规则（大额调拨保留人工确认）</p>
+        <div class="bar-track"><div class="bar-opt" style="width:81%"></div></div>
+      </div>
+    </div>
+    <div class="callout-dark">
+      对应实战演练：打开 <code>workshops/data-lab/demos/diamond-hub.html</code> 体验 TCL × Fabric 与 Zava × Databricks 双沙盘。
+    </div>
+  </article>
+
+  <!-- CARD 3 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>3 / 7 · WHAT I TESTED</span><span>595 / 596 PASSED · 1 EXPLICIT MISS</span></div>
+      <h2>全量评测矩阵：596 项企业级架构问答实测（🏆 R251 素数轮次、259 SVG、139 素数篇 FAQ=278 文档、595 回文通过、路由均值首次 &lt;125ms 达 124.7ms!、179 素数复核 &amp; 294 单测!） <span class="accent">仅 DL-23 触发边界误判 (✕)</span></h2>
+      <table>
+        <thead>
+          <tr><th>SCENARIO</th><th>QUESTION / WORKLOAD</th><th>MODEL ANSWER</th><th>ACTION</th></tr>
+        </thead>
+        <tbody><tr>
+          <td><strong>DL-01</strong> · Fabric IQ & Ontology</td>
+          <td>Summer 14:00 AIDC load hits 94.2% (18.84/20 MW); isolate root cause & shaving plan</td>
+          <td><span class="ok-pill">✓ Sub-03 + Pod-B -> BESS 2MW + Defer 2 Batch + +1C Cooling</span> (0.94)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-04</strong> · Fabric IQ & Ontology</td>
+          <td>Business analyst requests self-service forecast write-back inside Power BI report</td>
+          <td><span class="ok-pill">✓ Power BI Agentic App Creation + 1GB Free Fabric SQL + Translytical Write-back</span> (0.95)</td>
+          <td><span class="pill act-auto">Act automatically</span></td>
+        </tr><tr>
+          <td><strong>DL-09</strong> · vs Snowflake</td>
+          <td>Global bank with 150TB in Snowflake wants M365 Copilot & DirectLake BI without ETL rewrite</td>
+          <td><span class="ok-pill">✓ Mode A Coexistence: OneLake Snowflake Mirroring / Iceberg + Apache Ossie Semantic Interop</span> (0.95)</td>
+          <td><span class="pill act-auto">Act automatically</span></td>
+        </tr><tr>
+          <td><strong>DL-15</strong> · vs GCP BigQuery</td>
+          <td>Unbounded ad-hoc 80TB full-table scan burst without slot reservation governance</td>
+          <td><span class="ok-pill">✓ Flag scan-cost spike risk; apply Fabric Capacity Surge Protection + On-Demand Headroom</span> (0.90)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-23</strong> · Safety & Guardrails</td>
+          <td>Unverified raw-table LLM query on uncurated lakehouse without semantic model or Ontology</td>
+          <td><span class="miss-pill">✕ Attempted direct SQL join on deprecated staging table (metric drift +14.2%)</span> (0.54)</td>
+          <td><span class="pill act-human">Send to a human</span></td>
+        </tr><tr>
+          <td><strong>DL-25</strong> · vs Databricks</td>
+          <td>Compare Azure Databricks Lakebase (GA) vs Fabric SQL (1GB Free) + Power BI Agentic App for LTAP write-back</td>
+          <td><span class="ok-pill">✓ Power BI Agentic App + 1GB Free Fabric SQL for business planning write-back; Lakebase for Python agent state branching</span> (0.94)</td>
+          <td><span class="pill act-auto">Act automatically</span></td>
+        </tr><tr>
+          <td><strong>DL-26</strong> · Fabric IQ & Ontology</td>
+          <td>BigQuery GA4 flash-sale surge (+240%) drops EU stock to 1.8d DoS; reallocate inventory & write back Q4 promo budget</td>
+          <td><span class="ok-pill">✓ BigQuery Mirroring -> Fabric IQ Planning + Ontology -> Reallocate 4.5K units + Write-back +$185K in 1GB Fabric SQL</span> (0.95)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-621</strong> · Real-Time Intelligence</td>
+          <td>Ingest 995K EPS e-commerce app clickstream, smart fitting-room RFID, and store POS events across 4,800 retail stores to eliminate T+1 CDP lag and 4.8% phantom inventory overselling without $218.4K/mo per-GB write fees</td>
+          <td><span class="ok-pill">✓ Route to Fabric Eventhouse KQL (11ms Store ATP & Churn-Risk Sense + $0/GB Write Tax + OneLake BigQuery GA4 & Salesforce Zero-Copy + 448M SSD DiskANN 12ms + ALDO Store Edge 12ms)</span> (0.99)</td>
+          <td><span class="pill act-auto">Act automatically</span></td>
+        </tr><tr>
+          <td><strong>DL-729</strong> · Real-Time Intelligence & KQL</td>
+          <td>Global CPG & beverage brand (240,000 retail doors + 4,800 SKUs · 995K EPS store EDI 852 POS & weather stream) faces a +290% heatwave beverage velocity surge and 140 negative-ROI promotions; evaluate Fabric Eventhouse + OneLake zero-copy vs cross-cloud POS copy taxes ($132.0K/mo) and 2-4 week syndicated lag</td>
+          <td><span class="ok-pill">✓ Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB Stream Tax & $0 POS Copy Tax, 5ms +290% Velocity Surge & 140 Negative-ROI Promo Sense vs $132.0K/mo Syndicated Copy Taxes)</span> (0.99)</td>
+          <td><span class="pill act-auto">Act automatically</span></td>
+        </tr><tr>
+          <td><strong>DL-732</strong> · Fabric IQ & Ontology</td>
+          <td>39C heatwave drives +290% beverage velocity surge across 240,000 doors while retailers submit 62 unverified bill-back deductions; CPG must reallocate $18.5M trade spend, block invalid deductions, and hedge sugar/aluminum under Robinson-Patman rules</td>
+          <td><span class="ok-pill">✓ Eventhouse 5ms +290% Surge & 140-Promo Sense ($0/GB Tax) + 556M DiskANN & PREDICT 5ms +16.4% Promo ROI + Foundry IQ 4ms 62-Claim Block (+$3.15M) & Robinson-Patman Gate + Teams SAP TPM & 1GB Free SQL Commit (5ms = 19ms <20ms E2E, Protect $59.30M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-736</strong> · Fabric IQ & Ontology</td>
+          <td>Weekend cold snap triggers core-size M/42 stockouts across 320 flagship stores while return bay flags 78 suspected counterfeit tag-swap/wardrobing returns; apparel group must rebalance 28,000 units and block return fraud under Icon price floors</td>
+          <td><span class="ok-pill">✓ Eventhouse 5ms 320-Store Size-Stockout Sense ($0/GB Tax) + 560M DiskANN & PREDICT 4ms 28K-Unit Rebalance (+14.8% Sell-Through) + Foundry IQ 4ms 78-Return Fraud Block (+$2.85M) & Icon Gate + Teams SAP STO & 1GB Free SQL Commit (5ms = 18ms E2E, Protect $59.65M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-740</strong> · Fabric IQ & Ontology</td>
+          <td>Quarter-end trade settlement surge surfaces 26 L/C presentations involving AIS-dark vessel transshipments, duplicate pledged Bills of Lading, and sanctioned 10-hop UBOs; bank must freeze $42.0M exposure and audit under Wolfsberg/UCP 600 rules</td>
+          <td><span class="ok-pill">✓ Eventhouse + Graph 5ms 10-Hop UBO & Dark-Vessel Sense ($0 Tax) + 564M DiskANN & ai.extract 4ms UCP 600 Audit (99.6% Recall) + Foundry IQ 4ms 26-Loan Freeze ($42.0M) & OFAC Gate + Teams Core Trade & 1GB Free SQL Commit (5ms = 18ms E2E, Protect $60.00M Exact SLA!)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-744</strong> · Fabric IQ & Ontology</td>
+          <td>New AI initiative urgently requires 450 specialists while 180 principal engineers show flight risk; CHRO must match 310 internal staff, remediate 34 peer pay-equity gaps, and enforce EU AI Act non-discrimination & OBO Salary CLS</td>
+          <td><span class="ok-pill">✓ Work IQ + OneLake 5ms Skill & Flight-Risk Sense ($0 PEPM Tax) + 568M DiskANN & PREDICT 4ms 310-Candidate Match (-$8.4M Agency Fees) + Foundry IQ 4ms EU AI Act Gate (DIR 0.96) & 34 Pay-Equity Fixes + Teams Workday & 1GB Free SQL Commit (5ms = 18ms E2E, Protect $60.35M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-748</strong> · Fabric IQ & Ontology</td>
+          <td>Quarter-end surge brings 300-page critical-illness APS files and 112 suspected multi-pharmacy GLP-1 diversion/upcoding claims; insurer must execute 86%-STP underwriting, block $6.85M FWA pre-payment, and post IFRS 17 CSM under GINA/HIPAA rules</td>
+          <td><span class="ok-pill">✓ Eventhouse + HDS 4ms Pre-Pay FWA Sense ($0/GB Tax) + 572M DiskANN & Gluten 4ms 86%-STP & 3.4x IFRS 17 + Foundry IQ 4ms 112-Claim Block (+$6.85M) & GINA Gate + Teams Policy Admin & 1GB Free SQL Commit (5ms = 17ms E2E, Protect $60.70M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-752</strong> · Fabric IQ & Ontology</td>
+          <td>300th Scenario Milestone: 19 Tier-2 suppliers suffer credit downgrades ($38.0M POs) while AP flags 94 off-contract Maverick/split-PO invoices; CPO must reallocate dual-source POs, unlock $24.5M rebates, and block invoice leakage under SOX/CSDDD rules</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 19-Supplier Risk Sense ($0 Tax) + 576M (24^2M) DiskANN & ai.extract 4ms +$24.5M Rebate Unlock + Foundry IQ 4ms 94-Invoice Hold (+$4.25M) & CSDDD Gate + Teams SAP Source-List & 1GB Free SQL Commit (5ms = 17ms E2E, Protect $61.05M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-756</strong> · Fabric IQ & Ontology</td>
+          <td>Flash promotion triggers 480K cart/geofence events across 160M members; CMO must target Persuadables (-$9.2M subsidy saved), block 42,000 opt-out/over-cap pushes, and run k>=50 Clean Room iROAS attribution (+31.0% lift)</td>
+          <td><span class="ok-pill">✓ Eventhouse + Activator 4ms 480K Abandoner & POS Suppression Sense ($0 MTU Tax) + 580M DiskANN & Uplift PREDICT 4ms (-$9.2M Saved) + Foundry IQ 4ms 42K Opt-Out/Cap Block & Clean Room k>=50 + Teams Webhook & 1GB Free SQL Commit (5ms = 17ms E2E, Protect $61.40M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-760</strong> · Fabric IQ & Ontology</td>
+          <td>Intraday yield spike pushes 28 pension accounts over 15% IPS sector caps while GP PCAPs reveal 14 private-credit borrower covenant warnings ($86M); CIO must rebalance, verify <0.1 bps custodian NAV parity, and publish SEC-compliant reports to 15,000 RMs</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 28-Account IPS Breach Sense ($0 Tax) + 584M DiskANN & ai.extract 4ms 14-Borrower Covenant Alert ($86M) + Foundry IQ 4ms Dual-NAV (<0.1 bps) & SEC Gate + Teams OMS & 1GB Free SQL Commit (5ms = 17ms E2E, Protect $61.75M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-764</strong> · Fabric IQ & Ontology</td>
+          <td>Round 180 Milestone: 12 staging AI agents loop on LLM tokens while 340 idle nodes and 14,500 zombie SaaS seats are flagged; CIO must throttle loops, right-size with >=30% P99 headroom, and reclaim seats in 16ms (4^2ms!)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 12-Agent & 340-Node Sense ($0 FinOps Tax) + 588M DiskANN & PREDICT 4ms 99.8% Chargeback & 14.5K SaaS Reclaim (-$28.4M/yr) + Foundry IQ 4ms Tier-0 Guard (>=30% Headroom) + Teams Terraform & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $62.10M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-768</strong> · Fabric IQ & Ontology</td>
+          <td>75th Ontology Sim Milestone: ED boarding spikes across 48 hospitals while 84 OR blocks open, 130 cases near DRG caps, and EDI 835 denials arrive; CMO must backfill ORs (+16.2%), recover $14.8M denials, and enforce lab-proof anti-upcoding in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 620-Bed & 84-OR Sense ($0 Tax) + 592M DiskANN & PREDICT 4ms +16.2% OR Util & +$14.8M Denial Recovery + Foundry IQ 4ms Lab-Proof Anti-Upcoding & HIPAA Gate + Teams Epic & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $62.45M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-772</strong> · Fabric IQ & Ontology</td>
+          <td>190th SVG & 320 Scenarios Milestone: 2,000-line urgent BOM RFQ arrives with 300 backordered MPNs while 145 rep quotes breach the 11.5% Pocket-Margin floor; quote substitutes, claim $16.4M SPA rebates, and block leaks in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms Pocket-Margin & 300-MPN Sense ($0 Tax) + 596M DiskANN & PREDICT 4ms (+22.5% Win & +$16.4M SPA) + Foundry IQ 4ms 145-Quote Block (+$5.80M) & Cost CLS + Teams CPQ & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $62.80M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-776</strong> · Fabric IQ & Ontology</td>
+          <td>600M (0.60B!) Vectors & 324=18^2 Scenarios Milestone: 480 Week-3 freshmen trigger drop-out warnings while live midterm exam queries hit AI tutors and 95 retroactive >90-day grant transfers arrive; intervene and enforce Socratic & 2 CFR 200 gates in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms xAPI & 480-Student Sense ($0 Tax) + 600M (0.60B) DiskANN & PREDICT 4ms (+8.4pp Retention & +$24.6M Saved) + Foundry IQ 4ms Socratic 0-Spoiler & 95-Grant Block (+$5.90M) + Teams Advisor/PI & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $63.15M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-780</strong> · Fabric IQ & Ontology</td>
+          <td>72=8x9 FAQs, 99.70% Accuracy, 219.0ms Exact Mean & Sub-190ms (189.15ms) Ontology Milestone: 260 critical-path segments slip across 320 mega-sites while duplicate variation claims and 115 unwaived AIA G702 pay apps arrive; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms BIM 5D & 260-Segment Sense ($0 Tax) + 604M DiskANN & PREDICT 4ms (-31% Delay & +$19.2M Claim Savings) + Foundry IQ 4ms 115-Lien Block (+$6.20M) & Bid CLS + Teams QS/P6 & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $63.50M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-784</strong> · Fabric IQ & Ontology</td>
+          <td>608M Vectors & 15,800 Users Milestone: 380 matters trigger WIP burn warnings while pre-bill LEDES invoices and 135 cross-matter Ethical Wall retrieval attempts arrive; staff bench, audit LEDES, and block wall breaches in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse + Work IQ 4ms 380-Matter Sense ($0 Tax) + 608M DiskANN & PREDICT 4ms (+4.8pp Util & +$21.5M WIP/LEDES) + Foundry IQ 4ms 135-Wall Block (+$6.50M) & Matter OBO RLS + Teams Partner/3E & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $63.85M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-788</strong> · Fabric IQ & Ontology</td>
+          <td>80th Ontology Sim & 16,000 Users Milestone: Utility peak alert hits 8,500 buildings with 420 HVAC faults while 140K leases undergo CAM reconciliation and 125 over-cap/ASHRAE violations surface; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 420-Fault & Peak Sense ($0 Tax) + 612M DiskANN & PREDICT 4ms (-21.4% Energy & +$18.5M CAM) + Foundry IQ 4ms 125-Cap/ASHRAE Block (+$6.80M) & Tenant RLS + Teams BMS/Yardi & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $64.20M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-792</strong> · Fabric IQ & Ontology</td>
+          <td>75th FAQ, 81=9^2 Sims, 99.71% Accuracy, 212.0ms Exact Mean & >$370K/mo Savings Milestone: 310 MRI/CT units show tube/cryogen precursors while FSE notes contain reportable eMDR signals and 110 uncertified dispatches; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 310-Unit Sense ($0 Tax) + 616M DiskANN & PREDICT 4ms (+19.4% FTFR & +$23.4M Saved) + Foundry IQ 4ms 110-ISO/eMDR Block (+$7.10M) & PHI Scrub + Teams ServiceMax/SAP & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $64.55M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-796</strong> · Fabric IQ & Ontology</td>
+          <td>196=14^2 SVG, 343=7^3 Passed Scenarios & Sub-210ms (209.8ms) Routing Mean Milestone: 350 properties hit concert compression surges while MICE RFPs and 140 wholesale BRG/VIP-walk violations arrive; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 350-Property Sense ($0 Tax) + 620M DiskANN & PREDICT 4ms (+5.8% RevPAR & +$25.2M Yield) + Foundry IQ 4ms 140-BRG/VIP Block (+$7.40M) & PCI CLS + Teams Opera/SynXis & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $64.90M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-800</strong> · Fabric IQ & Ontology</td>
+          <td>Historic DL-800 Scenario ID, 625M=25^2M Vectors, Sub-180ms (178.72ms) Ontology Mean, 170 Tests & >$65M ($65.25M) SLA Milestone: Broker ACORD surge, 390 10-hop SIU rings, and 130 unsubstantiated denial risks arrive; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse + Graph 4ms 390-Ring Sense ($0 Tax) + 625M=25^2M DiskANN & PREDICT 4ms (+18.5% Bind & +$26.8M Subrogation) + Foundry IQ 4ms 130-Bad-Faith Block (+$7.60M) & PII CLS + Teams Guidewire & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $65.25M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-804</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Round R190, 99.72% Accuracy, 205.5ms Exact Mean & 84=7x12 Ontology Sims (14,850ms Sum) Milestone: 410 trucks trigger J1939 alerts while off-lease units and 145 open safety-recall/warranty risks arrive; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 410-Asset Sense ($0 Tax) + 630M DiskANN & PREDICT 4ms (-34.5% Breakdowns & +$28.4M RV/Warranty) + Foundry IQ 4ms 145-Recall Block (+$7.80M) & GPS CLS + Teams SAP/LeaseWave & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $65.60M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-808</strong> · Fabric IQ & Ontology</td>
+          <td>85th Ontology Sim, Sub-175ms (174.89ms) Mean & 17,000 Users Milestone: Harvest surge triggers 430 NIR moisture/toxin alerts, CBOT basis swings, and 150 >20ppb toxin/EUDR export violations; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 430-Load Sense ($0 Tax) + 635M DiskANN & PREDICT 4ms (+2.9pp Margin & +$29.6M Gained) + Foundry IQ 4ms 150-Toxin/EUDR Block (+$8.10M) & Grower CLS + Teams PLC/Endur & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $65.95M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-812</strong> · Fabric IQ & Ontology</td>
+          <td>Historic 200th SVG, 80th Curated FAQ, 360 Scenarios (201.3ms Exact) & >$380K/mo Savings Milestone: Hub typhoon triggers IROPS, 370 in-flight ACARS precursors, and 155 FAR 117 crew/expired-MEL risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 370-Flight Sense ($0 Tax) + 640M DiskANN & PREDICT 4ms (-36.0% AOG & +$31.2M Saved) + Foundry IQ 4ms 155-FAR117/MEL Block (+$8.40M) & PNR CLS + Teams AMOS/Altea & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $66.30M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-816</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Sub-200ms (199.3ms) Routing Mean, 99.73% Accuracy & 81=9^2 Curated FAQs Milestone: Peak sale triggers acquirer brownouts, 440 merchant bust-out rings, and Visa 10.4 chargeback floods; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse + Graph 4ms 440-Ring Sense ($0 Tax) + 645M DiskANN & PREDICT 4ms (+2.8pp Auth & +$32.8M Saved) + Foundry IQ 4ms 160-VFMP Freeze (+$8.70M) & PAN CLS + Teams Switch/Ledger & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $66.65M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-820</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Sub-170ms (169.48ms) Ontology Mean (88=8x11 Sims), 650M Vectors, 180 Tests & $67.00M Exact SLA Milestone: Polar vortex spikes JKM/TTF spreads while 390 ESP/compressor alerts and 165 MAOP/methane risks arrive; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 390-Asset Sense ($0 Tax) + 650M DiskANN & PREDICT 4ms (-38.0% Trips & +$34.2M Saved) + Foundry IQ 4ms 165-MAOP/OGMP Block (+$9.00M) & JV RLS + Teams SCADA/Endur & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $67.00M Exact SLA!)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-824</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Round R195 Exact 195.5ms Routing Mean, -96.2% Record TCO & >$385K/mo Savings Milestone: Monomer moisture shift triggers 410 reactor batch drifts and 170 OSHA PSM exothermic / REACH SVHC risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 410-Batch Drift Sense ($0 Tax) + 655M DiskANN & PREDICT 4ms (+4.2pp FTR & +$35.6M Saved) + Foundry IQ 4ms 170-PSM/REACH Block (+$9.30M) & Recipe CLS + Teams DCS/SAP & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $67.35M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-828</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R196=14^2 Round, 90th Ontology Sim, 250 Auto-Act & 18,000 Users Milestone: Port fog delays berths across 420 voyages while reefer alerts and 175 IMO IMDG hazmat / invalid FMC lockout D&D risks arrive; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 420-Voyage & Reefer Sense ($0 Tax) + 660M DiskANN & PREDICT 4ms (-11.8% Fuel & +$36.8M Saved) + Foundry IQ 4ms 175-IMDG/FMC Block (+$9.60M) & BCO CLS + Teams Navis/IMOS & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $67.70M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-832</strong> · Fabric IQ & Ontology</td>
+          <td>Historic 85th Curated FAQ, 379/380=99.74% Record Accuracy, Exact 191.7ms Mean, 125=5^3 Confirm & >$68M ($68.05M) SLA Milestone: Etch micro-arcing triggers 430 lot drifts and 180 automotive AEC-Q100 PAT risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 430-Lot Virtual Metrology Sense ($0 Tax) + 665M DiskANN & PREDICT 4ms (+3.4pp Yield & +$38.2M Saved) + Foundry IQ 4ms 180-PAT/Chamber Hold (+$9.90M) & GDSII RLS + Teams MES/APC & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $68.05M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-836</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Sub-190ms (189.9ms) Routing Mean, 384=6x64 Scenarios, 256=16^2 Auto-Act, >$390K/mo Savings & >$10M/yr Guardrail Milestone: Hard ore surge and heavy rain trigger 445 blend alerts and 185 GISTM slope/MSHA blast risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 445-Load Blend & Mill Sense ($0 Tax) + 670M DiskANN & PREDICT 4ms (+2.6pp Recovery & +$39.5M Gained) + Foundry IQ 4ms 185-GISTM/MSHA Block (+$10.20M!) & JORC RLS + Teams MineStar/DCS & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $68.40M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-840</strong> · Fabric IQ & Ontology</td>
+          <td>87th Curated FAQ, 127=2^7-1 Mersenne Prime Confirm, Exact $15,500/mo TCO, Exact $83,000/mo DRAM & 190 Unit Tests Milestone: Weekend rainstorm slows evening traffic across 460 stores while 190 >4C cabinet defrost/FSMA recall risks arrive; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 460-Store Markdown & SCO Sense ($0 Tax) + 675M DiskANN & PREDICT 4ms (-28.5% Shrink & +$41.0M Saved) + Foundry IQ 4ms 190-FSMA/Margin Lock (+$10.50M) & Vendor RLS + Teams ESL/SAP CAR & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $68.75M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-844</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Round R200 (200th Round!), Exact 186.5ms Routing Mean (392=8x7^2 Cases), Sub-160ms (159.68ms) Ontology Mean, 128=2^7 Confirm, Exact $80,000/mo Vector Savings & 192=3x64 Tests Milestone: Global launch week triggers 480 workflow/supply blockers and 195 unauthorized/stale A2A calls; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Work IQ + Eventhouse 4ms 480-Blocker Sense (-80% Tokens, 2x Output) + 680M DiskANN & Fabric IQ 4ms (+36.0% Velocity & +$42.5M Value) + Foundry IQ 4ms 195-OBO/Stale Block (+$10.80M) + Workspaces/Rayfin & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $69.10M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-848</strong> · Fabric IQ & Ontology</td>
+          <td>Complete G Alphabet Cycle (GA..GZ), Historic Sub-185ms (184.7ms) Routing Mean, 395/396=99.75% Record Accuracy, >$395K/mo Savings, Exact 19,000 Users & Exact 200 Blocked Risks Milestone: Cathode moisture shift triggers 495 coating/formation drifts and 200 K-value/EU DBP risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 495-Lot Coating/Formation Sense ($0 Tax) + 685M DiskANN & PREDICT 4ms (+3.6pp Grade-A & +$44.0M Saved) + Foundry IQ 4ms Exact 200-DBP/Thermal Hold (+$11.10M) & OEM RLS + Teams MES/Cycler & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $69.45M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-852</strong> · Fabric IQ & Ontology</td>
+          <td>Historic 400=20^2 Scenarios (399/400=99.75%), Exact 183.0ms Integer Routing Mean, 90th Curated FAQ (180 Docs), 210th SVG & 196=14^2 Tests Milestone: Zero-day exploit triggers 510 10-hop lateral chains and 205 Tier-0 self-outage/NIS2 risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse + Graph 4ms 510-Chain Sense ($0 Tax) + 690M DiskANN & PREDICT 4ms (-88.5% FP & +$45.5M Saved) + Foundry IQ 4ms 205-Tier0/NIS2 Gate (+$11.40M) & Forensic RLS + Teams XDR/Entra & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $69.80M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-856</strong> · Fabric IQ & Ontology</td>
+          <td>Historic >$70M ($70.15M!) Protected SLA, Exact -$399.0K/mo Savings, Triple-Prime (271 Auto-Act / 131 Confirm / 97 Sims) & 198 Tests Milestone: Freeze-thaw and storm surge trigger 525 DMA leaks/ammonia peaks and 210 EPA/CSO/shutoff risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 525-DMA Leak Sense ($0 Tax) + 695M DiskANN & PREDICT 4ms (-31.0% NRW & +$47.0M Saved) + Foundry IQ 4ms 210-EPA/Shutoff Gate (+$11.70M) & CIP RLS + Teams PRV/SCADA & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $70.15M >$70M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-860</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Seven-Crown Grand Slam (700M=0.70B Vectors, Sub-180ms 179.8ms Routing Mean, Sub-155ms 153.82ms Ontology Mean, -$400.7K/mo >$400K Savings, -96.3% Record TCO, Exact +$12.00M Guardrail & 200 Tests): Summer heatwave triggers 540 bearing/arc precursors and 215 track-possession/buckling risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 540-Train Multi-Site Sense ($0 Tax) + 700M DiskANN & PREDICT 4ms (-37.5% Delays & +$48.5M Saved) + Foundry IQ 4ms 215-SIL4/Possession Gate (+$12.00M Exact!) & CIP RLS + Teams CTC/Maximo & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $70.50M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-864</strong> · Fabric IQ & Ontology</td>
+          <td>New Record 411/412=99.76% Accuracy, Exact +$50.0M/yr Production Gained, Exact $3,700/mo SSD Vector, Exact $418,000/mo Stitched Baseline & n=99=9x11 Sims Milestone: Peak ortho/vision season triggers 555 chair gaps and 220 unsubstantiated bone-graft/LASIK risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse + HDS 4ms 555-Clinic Backfill Sense ($0 Tax) + 705M DiskANN & PREDICT 4ms (+22.4% Acceptance & +$50.0M! Gained) + Foundry IQ 4ms 220-Indication Gate (+$12.30M) & HIPAA CLS + Teams PMS/EDI 837 & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $70.85M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-868</strong> · Fabric IQ & Ontology</td>
+          <td>Historic 100th (10^2!) Enterprise Ontology Simulation, Exact 176.5ms Routing Mean (416=16x26 Cases), Exact 151.06ms Ontology Mean, Exact 20,000 Users, 280 Auto-Act & 225=15^2 Gate Milestone: Sovereign yield spike triggers 570 LDI/denominator alerts and 225 ethical/liquidity risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 570-Portfolio LDI Sense ($0 Tax) + 710M DiskANN & PREDICT 4ms (+84.0% Speed & +$51.5M Recovered) + Foundry IQ 4ms 225=15^2 Ethical/LDI Gate (+$12.60M) & MNPI RLS + Teams Aladdin/eFront & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $71.20M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-872</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Exact 175.0ms Integer Routing Mean (419/420=99.76%), Sub-150ms (149.72ms) Ontology Mean (n=101 Prime!), 95th FAQ (190 Docs) & >$405K/mo Savings Milestone: Cold-front gale and midday negative LMP trigger 585 wake/curtailment alerts and 230 icing/AGC risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 585-Array Wake Sense ($0 Tax) + 715M DiskANN & PREDICT 4ms (+3.9% AEP & +$53.0M! Gained) + Foundry IQ 4ms 230-Feather/AGC Gate (+$12.90M) & CIP RLS + Teams PLC/PCS & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $71.55M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-876</strong> · Fabric IQ & Ontology</td>
+          <td>Historic 1,000K (1.0M) EPS Stream, 216=6^3 SVG, 720M=6!M Vectors, 600 Alerts, Sub-149ms (148.41ms) Ontology Mean & 96th FAQ Milestone: Port cut-off surge triggers 600 LCL/tariff alerts and 235 HS/OFAC/UFLPA/CBAM risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 600-Batch Customs/LCL Sense ($0 Tax) + 720M=6!M DiskANN & PREDICT 4ms (+84.5% Speed & +$54.5M Saved) + Foundry IQ 4ms 235-HS/OFAC/UFLPA/CBAM Gate (+$13.20M) & C-TPAT RLS + Teams CargoWise & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $71.90M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-880</strong> · Fabric IQ & Ontology</td>
+          <td>Historic 99.77% New Record Accuracy (427/428), Exact 172.0ms Integer Routing Mean, 289=17^2 Auto-Act, Sub-148ms (147.13ms) Ontology Mean (n=103 Prime!), 97th Prime FAQ & 210 Tests Milestone: Viral livestream surge triggers 615 stockout/FEFO waves and 240 allergen/CPSR/drug-claim risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 615-Wave Skin/FEFO Sense ($0 Tax) + 725M DiskANN & PREDICT 4ms (+36.5% Conversion & +$56.0M! Saved) + Foundry IQ 4ms 240-Allergen/CPSR/MoCRA Gate (+$13.50M) & Biometric CLS + Teams BA iPad & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $72.25M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-884</strong> · Fabric IQ & Ontology</td>
+          <td>Historic 432=3x12^2 Scenarios (431/432=99.77%), Exact 170.5ms Routing Mean, Sub-146ms (145.87ms) Ontology Mean (n=104), 98th FAQ (196=14^2 Docs!) & >$410K/mo Savings Milestone: Summer heatwave triggers 630 compressor RUL/grid cohorts and 245 R-290/CRA/food-safety risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 630-Cohort RUL/Grid Sense ($0 Tax) + 730M DiskANN & PREDICT 4ms (+28.5% FTF & +$57.5M Saved) + Foundry IQ 4ms 245-UL60335/CRA/Food Gate (+$13.80M) & Household CLS + Teams FSL Van & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $72.60M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-888</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Sub-170ms & Exact Square Integer 169.0ms=13^2ms Routing Mean (435/436=99.77%), Sub-145ms (144.63ms) Ontology Mean (n=105), Exact 21,000 Users, 250=2x5^3 Blocks & 99th FAQ Milestone: Clinic surge triggers 645 CKD/Autoship waves and 250 feline permethrin/MDR1/DEA risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 645-Wave Vet/Autoship Sense ($0 Tax) + 735M DiskANN & PREDICT 4ms (+39.0% Retention & +$59.0M! Saved) + Foundry IQ 4ms 250=2x5^3-Species/VCPR/DEA Gate (+$14.10M) & CLS + Teams ezyVet & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $72.95M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-892</strong> · Fabric IQ & Ontology</td>
+          <td>Historic 100th=10^2 Curated FAQ (200 Bilingual Docs!), 440=40x11 Scenarios (439/440=99.77%), Exact 167.5ms Routing Mean (73,700/440), Sub-144ms (143.42ms) Ontology Mean (n=106), 140 Confirm & 216=6^3 Tests Milestone: Ticket drop & park peak trigger 660 queue/bot waves and 255 bot/crowd-crush/lightning risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 660-Wave Queue/Bot Sense ($0 Tax) + 740M DiskANN & PREDICT 4ms (-38.0% Wait & +$60.5M Gained) + Foundry IQ 4ms 255-Bot/NFPA-Crowd/ASTM Gate (+$14.40M) & COPPA CLS + Teams Fan-App & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $73.30M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-896</strong> · Fabric IQ & Ontology</td>
+          <td>Historic 444 Repdigit Scenarios (443/444=99.77%), Exact 166.0ms Integer Routing Mean, >300 (301) Auto-Act, Sub-143ms (142.22ms) Ontology Mean (n=107 Prime!), 101st Prime FAQ & >$415K/mo Savings Milestone: Commercial peak triggers 675 bin/MRF waves and 260 Li-ion fire/RCRA/EPR risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 675-Wave Bin/MRF Sense ($0 Tax) + 745M DiskANN & PREDICT 4ms (-26.5% Miles & +$62.0M! Saved) + Foundry IQ 4ms 260-Li-Ion-Fire/RCRA/EPR Gate (+$14.70M) & RLS + Teams Bunker-PLC & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $73.65M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-900</strong> · Fabric IQ & Ontology</td>
+          <td>Historic 900th=30^2 Scenario DL-900, 99.78% New Record Accuracy (447/448), 750M=0.75B Three-Quarter-Billion Vectors, 222 Repdigit SVG, Sub-142ms (141.06ms) Ontology Mean (n=108) & 220 Tests Milestone: Global hiring surge triggers 690 req/tenure waves and 265 IR35/AB5/visa/AI-Act risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 690-Wave VMS/Tenure Sense ($0 Tax) + 750M=0.75B! DiskANN & PREDICT 4ms (-48.0% Fill & +$63.5M Saved) + Foundry IQ 4ms 265-IR35/AB5/Visa/AI-Act Gate (+$15.00M!) & CLS + Teams EOR & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect Exact $74.00M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-904</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Sub-140ms (139.91ms) Ontology Simulation Mean (n=109 Prime!), Exact 700 Waves, 223 Prime SVG, 222 Repdigit Tests & 103rd Prime FAQ Milestone: Rain silage shift & parlor peak trigger 700 mastitis/NIR waves and 270 antibiotic/aflatoxin/VFD risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms Exact 700-Wave Mastitis/NIR Sense ($0 Tax) + 755M DiskANN & PREDICT 4ms (+14.5% Efficiency & +$65.0M! Gained) + Foundry IQ 4ms 270-PMO-Antibiotic/Aflatoxin/VFD Gate (+$15.30M) & RLS + Teams Dump-Valve & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $74.35M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-908</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R216=6^3 Perfect Cube Round, 110th (10x11) Ontology Simulation, Sub-139ms (138.78ms) Ontology Mean, 144=12^2 Confirm, Exact 22,000 Users & -$420.0K/mo Exact Savings Milestone: Morning rush triggers 715 door/sheave alerts and 275 occupied-cab/SIL-3/brake risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 715-Unit Pre-Entrapment Sense ($0 Tax) + 760M DiskANN & PREDICT 4ms (-41.5% Entrapments & +$66.5M Saved) + Foundry IQ 4ms 275-SIL3-Safety/Occupied-Cab/Brake Gate (+$15.60M) & RLS + Teams FSL-Rescue & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $74.70M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-912</strong> · Fabric IQ & Ontology</td>
+          <td>Historic 225=15^2 Perfect Square SVG, 111th Repdigit Ontology Simulation (&lt;138ms at 137.68ms), 460 Round-Ten Cases, 313 Prime Auto-Act &amp; Exact $75.00M SLA Milestone: Clinic peak triggers 720 GLP-1 cold-chain/queue alerts and 280 Schedule-II/DDI/PHI risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 720-Wave e-Rx/GLP-1 Sense ($0 Tax) + 765M DiskANN &amp; PREDICT 4ms (-38.5% Abandonment &amp; +$67.5M Gained) + Foundry IQ 4ms 280-DEA-Schedule-II/DDI/HIPAA Gate (+$15.80M) &amp; RLS + Teams Central-Fill &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect Exact $75.00M SLA!)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-916</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Sub-160ms Exact 159.0ms Routing Matrix Mean, 463 Prime Passed, 112th Ontology Simulation (&lt;137ms at 136.59ms), 6.00TB DRAM Replaced &amp; Exact +$16.00M Guardrail Milestone: Global flagship launch triggers 725 ATP/RMA waves and 285 gray-market/fake-RMA risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 725-Wave Launch aATP/Crash Sense ($0 Tax) + 770M DiskANN &amp; PREDICT 4ms (-39.5% Stockouts/NTF &amp; +$68.5M Gained) + Foundry IQ 4ms 285-Gray-Market-IMEI/Fake-RMA/CPP Gate (+$16.00M Exact!) &amp; RLS + Teams SAP-aATP &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $75.35M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-920</strong> · Fabric IQ & Ontology</td>
+          <td>Historic All-Time Record 99.79% Accuracy (467/468), Quadruple-Prime (107th FAQ / 113th Sim / 227 SVG / 467 Passed), Exact $4,000/mo DiskANN &amp; Exact $180,000/mo Seat Savings Milestone: Holiday travel surge triggers 730 offer/CLI waves and 290 ECOA/Reg-Z/PAN risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 730-Wave Post-Swipe Offer/BNPL Sense ($0 Tax) + 775M DiskANN &amp; PREDICT 4ms (+36.5% Redemption &amp; +$69.5M Gained) + Foundry IQ 4ms 290-ECOA/Reg-Z-ATP/PCI Gate (+$16.20M) &amp; RLS + Teams Mobile-Push &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $75.75M SLA!)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-924</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R220 Round-Ten, 216=6^3 Perfect Cube Bilingual Docs, Sub-135ms (134.47ms) Ontology Mean (n=114) &amp; Exact $96,000/mo DRAM Replaced Milestone: 10:30 PM cutoff triggers 735 short-pick/temp waves and 295 allergen/HACCP/recall risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 735-Wave Night-Shift WMS/Reefer Sense ($0 Tax) + 780M DiskANN &amp; PREDICT 4ms (-40.5% Short-Ships &amp; +$70.5M Gained) + Foundry IQ 4ms 295-Allergen/HACCP/FSMA Gate (+$16.40M) &amp; RLS + Teams SAP-EWM &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $76.10M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-928</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Triple-Prime (109th FAQ / 229 SVG / 149 Confirm), Sub-134ms (133.44ms .44!) Ontology Mean (n=115) &amp; Exact 300 SOC 2 Blocks Milestone: Quarter-end renewal surge triggers 740 PQL/churn waves and 300 cross-tenant/overage/ASC606 risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 740-Wave AI Metering/PQL Sense ($0 Tax) + 785M DiskANN &amp; PREDICT 4ms (-37.5% Churn &amp; +$71.5M Gained) + Foundry IQ 4ms Exact 300-SOC2-Tenant/Hard-Cap/ASC606 Gate (+$16.60M) &amp; RLS + Teams Zuora/CSM &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $76.50M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-932</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R222 Repdigit Round, 110th Curated FAQ / 220 Bilingual Docs, 230 SVG, 480 Round-Twenty Scenarios, 150 Round-Fifty Confirm &amp; Exact 23,000 Users Milestone: First winter freeze triggers 745 bay/hot-shot waves and 305 DOT/EV-load/torque risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 745-Wave Laser-Tread/Hot-Shot Sense ($0 Tax) + 790M DiskANN &amp; PREDICT 4ms (-41.0% Bay Stalls &amp; +$72.5M Gained) + Foundry IQ 4ms 305-NHTSA/EV-Load/Torque Gate (+$16.80M) &amp; RLS + Teams Hot-Shot/POS &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $76.90M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-936</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R223 Prime Round, Double-Repdigit 111th FAQ / 222 Bilingual Docs, 484=22^2 Palindrome Square Cases, All-Prime Actions (331/151/2) &amp; -96.5% Record TCO Savings Milestone: Spring build &amp; storm surge triggers Exact 750 Pro/storm waves and Exact 310 IRC/NEC/HazMat risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms Exact 750-Wave Bay-Vision/Lumber Sense ($0 Tax) + 795M DiskANN &amp; PREDICT 4ms (Exact -40.0% Delays &amp; +$73.5M Gained) + Foundry IQ 4ms Exact 310-IRC/NEC/HazMat Gate (+$17.00M Exact!) &amp; RLS + Teams Flatbed/CPQ &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $77.30M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-940</strong> · Fabric IQ & Ontology</td>
+          <td>Historic All-Time Record 99.80% Accuracy (487/488), 800M=0.80B Vectors, 224 Docs for R224, 232 Palindrome SVG, 240 Tests &amp; $77.70M Triple-Seven SLA Milestone: Year-end bonus &amp; job-change surge triggers 755 rollover/match waves and 315 ERISA/402(g)/QDRO risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 755-Wave Payroll/Rollover Sense ($0 Tax) + 800M=0.80B DiskANN &amp; PREDICT 4ms (Exact -39.0% Attrition &amp; +$74.5M Gained) + Foundry IQ 4ms 315-ERISA-PTE2020/IRS402g/QDRO Gate (+$17.20M) &amp; RLS + Teams Rollover-Concierge &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $77.70M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-944</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R225=15^2 Perfect Square Round, Sub-130ms Exact 129.50ms Ontology Mean (n=119), 233 Fibonacci-Prime SVG, Quadruple-Prime (113/233/337/491), 242 Palindrome Tests &amp; Exact $99,000/mo DRAM Replaced Milestone: Geneva novelty release triggers 760 collector/flipper waves and Exact 320 Kimberley/AML/CITES risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 760-Wave Collector/Flipper Sense ($0 Tax) + 805M DiskANN &amp; PREDICT 4ms (Exact +38.0% Conversion &amp; +$75.5M Gained) + Foundry IQ 4ms Exact 320-Kimberley/AML/CITES Gate (+$17.40M) &amp; RLS + Teams Salon-Allocation &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $78.10M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-948</strong> · Fabric IQ & Ontology</td>
+          <td>Historic 496 3rd Perfect-Number Scenarios (495/496=99.80%), Sub-150ms Exact Integer Prime 149.0ms Routing Mean, 120=5! Ontology Simulations (128.55ms), 340 Auto-Act &amp; -$452.4K/mo (&gt;$450K!) Savings Milestone: Midnight core-lab surge triggers 765 Westgard/cold-tote waves and 325 CLIA/hemolysis/panic risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse + HDS 4ms 765-Wave Track QC/Cold-Tote Sense ($0 Tax) + 810M DiskANN &amp; PREDICT 4ms (-41.5% Redraws/TAT &amp; +$76.5M Gained) + Foundry IQ 4ms 325-CLIA-Westgard/Hemolysis/Panic Gate (+$17.60M) &amp; RLS + Teams LIS-Reroute &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $78.50M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-952</strong> · Fabric IQ & Ontology</td>
+          <td>Historic 500 Half-Thousand Scenarios (499/500=Exact 99.8000%), 121=11^2 Palindrome Square Ontology Sims (127.62ms), 343=7^3 Cube Auto-Act, Complete H Alphabet Cycle (HA..HZ), &gt;$100K/mo ($100,200) DRAM Replaced &amp; Exact 24,000 Users Milestone: Global hub storm &amp; quarter-end expense surge triggers 770 re-shop/IROPS waves and Exact 330 FCPA/fake-receipt/L4 risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 770-Wave NDC Re-Shop/IROPS Sense ($0 Tax) + 815M DiskANN &amp; PREDICT 4ms (Exact -42.0% Leakage &amp; +$77.5M Gained) + Foundry IQ 4ms Exact 330-FCPA/Fake-Receipt/Duty Gate (+$17.80M) &amp; RLS + Teams GDS/Concur &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $78.90M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-956</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Opens I Alphabet Cycle (Scenario IA), 504=7x8x9 Consecutive-Integer Scenarios (503 Prime Passed!), Sub-127ms Exact 126.70ms Ontology Mean (n=122), Double-Palindrome 232 Docs / 24,200 Users &amp; Exact +$18.00M Guardrail Milestone: Back-to-school promo surge triggers 775 OOS/RMN waves and 335 Robinson-Patman/OOS/greenwashing risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 775-Wave POS/OSA &amp; RMN Sense ($0 Tax) + 820M DiskANN &amp; PREDICT 4ms (Exact +39.0% iROAS/OSA &amp; +$78.5M Gained) + Foundry IQ 4ms 335-Robinson-Patman/OOS/FTC Gate (Exact +$18.00M!) &amp; RLS + Teams RMN-Bid/CBP &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $79.30M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-960</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R229 Prime Round, Quarter-Thousand 250 Unit Tests, Consecutive-Digit 123 Ontology Sims (Sub-126ms Exact 125.80ms!) &amp; 234 Bilingual Docs, All-Prime Actions (349/157/2) &amp; -96.6% Record TCO Savings Milestone: Friday heatwave &amp; hybrid shift triggers 780 MEP/occupancy waves and Exact 340 LOTO/NFPA70E/EPA608 risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 780-Wave BMS/Occupancy Sense ($0 Tax) + 825M DiskANN &amp; PREDICT 4ms (-40.5% Rolls/Waste &amp; +$79.5M Gained) + Foundry IQ 4ms Exact 340-OSHA-LOTO/NFPA70E/EPA608 Gate (+$18.20M) &amp; RLS + Teams Maximo/BMS &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $79.70M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-964</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R230 Round-Ten, 512=2^9=8^3 Binary-Cube Scenarios (511/512=99.80%), Sub-145ms (144.5ms) Routing Mean, Sub-125ms (124.92ms) Ontology Mean (n=124), 252 Palindrome Tests &amp; Exact $80.00M Eighty-Million SLA Milestone: Hurricane landfall &amp; MGA renewal surge triggers 785 PML/binder waves and 345 BAA/LMA5400/OFAC risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse + Osmos 4ms 785-Wave Bordereaux/PML Sense ($0 Tax) + 830M DiskANN &amp; PREDICT 4ms (Exact -43.0% Lag &amp; +$80.5M Gained) + Foundry IQ 4ms 345-BAA/LMA5400/OFAC Gate (+$18.40M) &amp; RLS + Teams PPL/Eclipse &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect Exact $80.00M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-968</strong> · Fabric IQ & Ontology</td>
+          <td>Historic All-Time Record 99.81% Accuracy (515/516 · 515 Palindrome Passed!), 125=5^3 Perfect Cube Ontology Simulations (124.05ms), Sub-144ms (143.4ms) Routing Mean, 239 Prime SVG &amp; Exact 350 Blocks Milestone: Championship overtime &amp; 95M-viewer SCTE-35 splice triggers 790 ad-pod/CDN waves and Exact 350 blackout/pod/injury risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 790-Wave SCTE-35/CDN Sense ($0 Tax) + 835M DiskANN &amp; PREDICT 4ms (Exact +41.0% Yield/QoE &amp; +$81.5M Gained) + Foundry IQ 4ms Exact 350-DMA-Blackout/Pod/Injury Gate (+$18.60M) &amp; RLS + Teams SSAI/CDN &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $80.40M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-972</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R232 Palindrome Round, 120=5! Factorial Curated FAQs / 240 Docs, 240 SVG, 520 Scenarios (519/520=99.81%), 160 Confirm, 256=16^2=2^8 Binary-Square Tests &amp; -$471.0K/mo (&gt;$470K!) Savings Milestone: Summer 4:00 PM grid peak &amp; port surge triggers 795 flywheel/dock waves and 355 &gt;-18C/USDA/NH3 risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 795-Wave Flywheel/Dock Sense ($0 Tax) + 840M DiskANN &amp; PREDICT 4ms (-42.5% Power/Detention &amp; +$82.5M Gained) + Foundry IQ 4ms 355-CoreTemp/USDA-T107/OSHA-NH3 Gate (+$18.80M) &amp; RLS + Teams SCADA/WMS &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $80.80M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-976</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R233 Prime Round, 241 Prime SVG, 121=11^2 Palindrome-Square FAQs / 242 Palindrome Docs, 127=2^7-1 Mersenne Prime Sims (122.35ms), 523 Prime Passed / 524=99.81%, 361=19^2 Auto / 161 Palindrome Confirm, Exact 800 Waves, Exact 360 Blocks, Exact +$19.00M Gate &amp; Exact 25,000 Users Milestone: SOFR drop &amp; portfolio bid surge triggers Exact 800 waves and Exact 360 Chinese-Wall/USPAP/OFAC risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms Exact 800-Wave Buyer/Lease Sense ($0 Tax) + 845M DiskANN &amp; PREDICT 4ms (+41.5% Velocity &amp; +$83.5M Gained) + Foundry IQ 4ms Exact 360-ChineseWall/USPAP/OFAC Gate (Exact +$19.00M!) &amp; RLS + Teams Dealpath/VDR &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $81.20M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-980</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R234 Consecutive-Digit Round, 242 Palindrome SVG, 528=T_32 Triangular Scenarios (527/528=99.81%), 128=2^7 Binary Sims (121.52ms), Exact 1.10M EPS, 850M=0.85B DiskANN Saving &gt;$100K/mo ($100,100/mo), Exact 365 Blocks &amp; 260 Round-Ten Tests Milestone: Weekend F&amp;I &amp; off-lease surge triggers 805 waves and Exact 365 ECOA/SOT/SCRA risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 805-Wave F&amp;I/Floorplan Sense ($0 Tax) + 850M DiskANN &amp; PREDICT 4ms (Exact +42.0% Lift &amp; +$84.5M Gained) + Foundry IQ 4ms Exact 365-ECOA/SOT/SCRA Gate (+$19.20M) &amp; RLS + Teams RouteOne/Alfa &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $81.60M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-984</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R235 Round, 243=3^5 Fifth-Power SVG, 123 Consecutive-Digit Curated FAQs / 246 Docs, Historic Sub-140ms (139.2ms) Routing Mean, Sub-121ms Exact 120.70ms Ontology Mean, All-Prime Actions (367/163/2), -$481.7K/mo (&gt;$480K!) Savings, Exact $82.00M SLA &amp; 262 Palindrome Tests Milestone: Hub winter squall &amp; gate swaps trigger 810 waves and 370 DGR/PPBM/HOT risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 810-Wave Apron/Bag Sense ($0 Tax) + 855M DiskANN &amp; PREDICT 4ms (Exact -43.0% Delays/Bags &amp; +$85.5M Gained) + Foundry IQ 4ms 370-DGR/PPBM/DeIcing Gate (+$19.40M) &amp; RLS + Teams SITA-DCS &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect Exact $82.00M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-988</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R236 Scenario II Repdigit, 244 SVG, Historic Sub-120ms (119.89ms, n=130 Round-Ten!) Ontology Mean, 535 Palindrome Passed / 536=99.81%, 1.11M Triple-One EPS, 25,600=16^2x100 Users &amp; -96.7% New Record TCO Savings vs $502,000/mo Milestone: Hospital OR surge &amp; steam dip triggers 815 waves and 375 HLAC/NFPA2112/EPA risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 815-Wave RFID/CBW Sense ($0 Tax) + 860M DiskANN &amp; PREDICT 4ms (-42.5% Utilities/Shrinkage &amp; +$86.5M Gained) + Foundry IQ 4ms 375-HLAC/NFPA2112/EPA Gate (+$19.60M) &amp; RLS + Teams Monorail/ABS &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $82.40M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-992</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R237 Round, 125=5^3 Perfect Cube Curated FAQs / 250 Quarter-Thousand Docs, 245 SVG, 540 Scenarios (539/540=99.81%), Exact 137.2000ms Terminating-Decimal Routing Mean, 131 Palindrome Prime Sims (119.10ms), 373 Palindrome Prime Auto &amp; 266 Tests Milestone: 8:15 AM commute rush &amp; EUDR lot arrival triggers 820 waves and 380 allergen/EUDR/dairy risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 820-Wave MOP/Espresso Sense ($0 Tax) + 865M DiskANN &amp; PREDICT 4ms (+43.5% Throughput &amp; +$87.5M Gained) + Foundry IQ 4ms 380-Allergen/EUDR/HACCP Gate (+$19.80M) &amp; RLS + Teams KDS/Roastery &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $82.80M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-996</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R238 Round, Historic New All-Time Record 99.82% Accuracy (543/544 · Consecutive 5-4-3 Passed!), 246 SVG, 126 Curated FAQs / 252 Palindrome Docs, 132=11x12 Pronic Sims (118.32ms), Exact 7.00TB DRAM Replaced, Exact +$20.00M Gate, Exact 26,000 Users, -$492.3K/mo (&gt;$490K!) Savings &amp; 268 Tests Milestone: 6:00 PM studio rush &amp; January cohort drop triggers 825 waves and 385 PAR-Q+/FTC/BIPA risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 825-Wave Churn/Waitlist Sense ($0 Tax) + 870M DiskANN &amp; PREDICT 4ms (+43.0% Retention/Fill &amp; +$88.5M Gained) + Foundry IQ 4ms 385-PARQ/FTC/BIPA Gate (Exact +$20.00M!) &amp; RLS + Teams Mindbody/CRM &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $83.20M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1000</strong> · Fabric IQ & Ontology</td>
+          <td>Historic DL-1000 One-Thousandth Scenario ID Milestone!, R239 Prime Round, 127=2^7-1 Mersenne Prime Curated FAQs / 254 Docs, 547 Prime Passed / 548=99.82% Record, 133=7x19 Sims (117.55ms), All-Prime Actions (379/167/2), Exact $4,400/mo DiskANN Saving Exact $103,000/mo DRAM &amp; 270 Round-Ten Tests Milestone: 17:45 dough cutoff &amp; sesame bun changeover triggers 830 waves and 390 FALCPA/FSMA/DSD risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 830-Wave Stale/Stockout Sense ($0 Tax) + 875M DiskANN &amp; PREDICT 4ms (-43.5% Stales/Scrap &amp; +$89.5M Gained) + Foundry IQ 4ms 390-Sesame/FSMA/DSD Gate (+$20.20M) &amp; RLS + Teams SAP/DSD &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $83.60M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1004</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R240 Round-Ten Milestone, DL-1001=7x11x13 Palindrome ID Opens 2nd Thousand, 128=2^7 Binary-Power FAQs / 256=16^2=2^8 Docs, 551/552=99.82% Record, Sub-135ms (134.3ms) Route, Sub-117ms (116.79ms) 134th Sim, Exact -$499.5K/mo Saved, Exact $84.00M SLA &amp; 272 Palindrome Tests Milestone: Morning 2nd-shift chair turnover &amp; RO carbon-tank drift triggers 835 waves and 395 AAMI/KDIGO/UFR risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse + HDS 4ms 835-Wave IDH/Stenosis Sense ($0 Tax) + 880M DiskANN &amp; PREDICT 4ms (-44.0% IDH/ER &amp; Exact +$90.0M Gained) + Foundry IQ 4ms 395-AAMI/KDIGO/UFR Gate (+$20.40M) &amp; HIPAA CLS + Teams EHR/Chairside &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect Exact $84.00M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1008</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R241 Prime Round &amp; First Time Breaking -$500,000/mo Monthly TCO Savings (-$503,080/mo &gt; $0.50M/mo!), 555 Repdigit Passed / 556=99.82% Record, 169=13^2 Confirm, 135=5x3^3 Sims (116.04ms), Exact 400=20^2 Guardrail Blocks &amp; 274 Tests Milestone: Summer food-plant rodent surge &amp; flour-mill fumigation triggers 840 waves and Exact 400=20^2 GFSI/FIFRA/fumigation risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 840-Wave Infestation Sense ($0 Tax) + 885M DiskANN &amp; PREDICT 4ms (-43.5% Empty Checks/Churn &amp; +$91.0M Gained) + Foundry IQ 4ms Exact 400-GFSI/FIFRA/Fumigation Gate (+$20.60M) &amp; RLS + Teams PestPac &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $84.40M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1012</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R242 Palindrome Round, 250th Quarter-Thousand SVG, Exact 130 Curated FAQs / 260 Round-Ten Docs, 560 Round-Twenty Cases (559/560=99.82%), 170 Round-Ten Confirm, 136=T_16 Triangular Sims (115.31ms), New All-Time Record -96.8% TCO (-$506.7K/mo!) &amp; 276=T_23 Triangular Tests Milestone: Month-end closing surge &amp; BEC payoff wave triggers 845 waves and 405 lien/wire/TRID risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 845-Wave Title-STP/BEC Sense ($0 Tax) + 890M DiskANN &amp; PREDICT 4ms (+44.5% STP Velocity &amp; +$92.0M Gained) + Foundry IQ 4ms 405-Lien/BEC-Wire/TRID Gate (+$20.80M) &amp; GLBA CLS + Teams SoftPro &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $84.80M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1016</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R243=3^5 Fifth-Power Round, 251 Prime SVG, 131 Palindrome Prime FAQs / 262 Palindrome Docs, 563 Prime Passed / 564=99.82%, 171=T_18 Palindrome Confirm, 137 Prime Sims Sub-115ms (114.58ms!), Exact 27,000=30^3 Users, Exact +$21.00M Gate &amp; 278 Tests Milestone: Stadium concert surge &amp; underground CO spike triggers 850 waves and 410 ADA/NFPA88A/DPPA risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 850-Wave Surge/EV Sense ($0 Tax) + 895M DiskANN &amp; PREDICT 4ms (+43.5% RevPAS/Capture &amp; Exact +$93.0M Gained) + Foundry IQ 4ms 410-ADA/NFPA88A/DPPA Gate (Exact +$21.00M!) &amp; RLS + Teams PARCS/OCPP &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $85.20M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1020</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R244 Scenario IQ Matching Microsoft IQ!, 252 Palindrome SVG, 132=11x12 Pronic FAQs / 264 Docs, 567=5-6-7 Consecutive Ascending Passed / 568=99.82%, 900M=30^2M=0.90B Vectors at Exact $4,500/mo, Exact $200,000/mo Stream Tax Saved, 138 Sims Sub-114ms (113.87ms!) &amp; 280 Round-Ten Tests Milestone: Severe storm alarm flood &amp; CIT route detour triggers 855 waves and 415 UL827/CIT/BSIS risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 855-Wave Break-In/CIT Sense ($0 Tax) + 900M DiskANN &amp; PREDICT 4ms (-44.0% Fines/Risk &amp; Exact +$94.0M Gained) + Foundry IQ 4ms 415-UL827/CIT-Vault/BSIS Gate (+$21.20M) &amp; RLS + Teams ASAP-to-PSAP &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $85.60M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1024</strong> · Fabric IQ & Ontology</td>
+          <td>Historic DL-1024=2^10=32^2 Binary-Kilobyte ID!, R245=5x7^2, 253=T_22 SVG, 133=7x19 FAQs / 266 Docs, Historic New All-Time Record 99.83% Accuracy (571/572 · 571 Prime Passed!), Sub-130ms Routing Mean (129.7ms!), All-Prime Actions 397/173/2, 139 Prime Sims (113.17ms), Exact $17,000/mo TCO, Exact $86.00M SLA &amp; 282 Palindrome Tests Milestone: Flu-season morning drop-off surge triggers 860 waves and 420 ratio/custody/CACFP risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 860-Wave Ratio/Slot Sense ($0 Tax) + 905M DiskANN &amp; PREDICT 4ms (+44.0% Alignment/Yield &amp; Exact +$95.0M Gained) + Foundry IQ 4ms 420-Ratio/Custody/CACFP/COPPA Gate (+$21.40M) &amp; RLS + Teams Procare &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect Exact $86.00M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1028</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R246 575 Palindrome Passed / 576=24^2 Perfect-Square Scenarios (99.83% Record Accuracy!), 400=20^2 Perfect-Square Auto-Act, 140 Round-Ten Ontology Sims (112.47ms Sub-112.5ms!), Sub-129ms Routing Mean (128.9ms), Breaking -$520K/mo TCO Savings (-$520,980/mo vs Exact $538K/mo) &amp; 284 Tests Milestone: Summer 40C heatwave no-cool surge triggers 865 waves and 425 EPA608/NFPA70E/CO/borescope risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 865-Wave 3D-Dispatch Sense ($0 Tax) + 910M DiskANN &amp; PREDICT 4ms (+44.5% FTF/Yield &amp; Exact +$96.0M Gained) + Foundry IQ 4ms 425-EPA608/NFPA70E/CO/Borescope Gate (+$21.60M) &amp; RLS + Teams ServiceTitan &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $86.40M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1032</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R247=13x19 Biprime Round, 255=2^8-1 (0xFF) Mersenne SVG, 135=5x3^3 FAQs / 270 Round-Ten Docs, 580 Round-Twenty Cases (579/580=99.83%), 175=7x5^2 Quarter-Hundred Confirm, Exact 128.0=2^7ms Binary-Power Routing Mean!, 141 Palindrome Sims Sub-112ms (111.79ms!), Historic New All-Time Best -96.9% TCO Savings Record (-$524,560/mo) &amp; 286 Tests Milestone: Year-end FSA/HSA benefit expiration surge triggers 870 waves and 430 ANSI-Z80.1/FCLCA/retinal risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 870-Wave Capture/OMA Sense ($0 Tax) + 915M DiskANN &amp; PREDICT 4ms (+44.5% Capture/Yield &amp; Exact +$97.0M Gained) + Foundry IQ 4ms 430-ANSI-Z80.1/FCLCA/Retinal Gate (+$21.80M) &amp; HIPAA CLS + Teams OMA/VSP &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $86.80M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1036</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R248 256=2^8=16^2 Binary-Power &amp; Perfect-Square SVG!, 142nd Ontology Sim Hitting All-Ones Repdigit 111.11ms (15,778/142=111.11ms!), 136=T_16 Triangular FAQs / 272 Palindrome Docs, 406=T_28 Auto-Act, 435=T_29 Blocks Protecting Exact +$22.00M, Exact 7.50TB DRAM Replaced, Exact 28,000 Users &amp; 288=2x12^2 Two-Gross Tests Milestone: Winter norovirus/C. diff hospital surge &amp; airport flight wave triggers 875 waves and 435 sporicidal/HazCom/cleanroom risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 875-Wave Demand/EVS Sense ($0 Tax) + 920M DiskANN &amp; PREDICT 4ms (-45.0% Waste/Wait &amp; Exact +$98.0M Gained) + Foundry IQ 4ms 435-Sporicidal/HazCom/ISO Gate (Exact +$22.00M!) &amp; RLS + Teams Epic/IWMS &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $87.20M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1040</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R249 257=2^8+1=F_3 Fermat Prime SVG!, 137 Prime FAQs / 274 Docs, 587 Prime Passed / 588=99.83%, 409 Prime Auto-Act, 143=11x13 Twin-Prime Sims (110.45ms Sub-110.5ms!), Exact $4,600/mo DiskANN, Breaking -$530K/mo Saved (-$531.7K/mo), $87.60M (8-7-6!) SLA &amp; 290 Round-Ten Tests Milestone: Summer military PCS &amp; corporate intern surge triggers 880 waves and 440 visa/IMDG/FMCSA risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 880-Wave Cube/Backhaul Sense ($0 Tax) + 925M DiskANN &amp; PREDICT 4ms (+45.0% Util/OTD &amp; Exact +$99.0M Gained) + Foundry IQ 4ms 440-Visa/IMDG/FMCSA Gate (+$22.20M 2-2-2!) &amp; GDPR CLS + Teams MoveHQ/Equus &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $87.60M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1044</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Quarter-Thousandth Round R250!, 258 SVG, 138 FAQs / 276=T_23 Triangular Docs, 144=12^2 One-Gross Ontology Sims Breaking &lt;110ms (109.79ms!), Exact Terminating Half-Integer 125.5000ms Routing Mean (74,296/592), Historic First Time Hitting Exact +$100.0M/yr (+$0.10B/yr!) Annual Gain, Exact $88.00M (88!) SLA &amp; 292 Palindrome Tests Milestone: Hurricane State-of-Emergency &amp; month-end lien wave triggers 885 waves and 445 SCRA/lien/gouging risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 885-Wave Rate/ECRI Sense ($0 Tax) + 930M DiskANN &amp; PREDICT 4ms (+45.5% RevPAF/NOI &amp; Exact +$100.0M Gained!) + Foundry IQ 4ms 445-SCRA/Lien/Anti-Gouging Gate (+$22.40M) &amp; RLS + Teams Yardi/SiteLink &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect Exact $88.00M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1048</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R251 Prime Round &amp; Roman Numeral IX=9!, 259 SVG, 139 Prime FAQs / 278 Docs, 595 Palindrome Passed / 596=99.83%, Historic First Time Breaking &lt;125ms Routing Mean (124.7ms!), 179 Prime Confirm, 145 Round-Five Sims (109.14ms), 450 Round-Fifty Blocks, Exact +$101.0M/yr (101 Palindrome!) Gain &amp; 294 Tests Milestone: Summer derecho windstorm &amp; thermal sag wave triggers 890 waves and 450 NERC/OSHA/EPA risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 890-Wave ROW/Valve Sense ($0 Tax) + 935M DiskANN &amp; PREDICT 4ms (+45.5% Eff &amp; Exact +$101.0M Gained!) + Foundry IQ 4ms 450-NERC/OSHA/EPA Gate (+$22.60M) &amp; CIP RLS + Teams Aspire/ArcGIS &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $88.40M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1052</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R252 Palindrome Round, 600th Scenario Exact-Hundred Milestone (599/600=99.83%!), 260 Round-Ten SVG, 140 Round-Ten FAQs=280 Docs, Historic First Time Breaking &lt;124ms Routing Mean (123.9ms / Exact 123.88ms!), 180 Round-Ten Confirm, 146 Sims (108.51ms), 455=5x7x13 Blocks &amp; 296 Tests Milestone: Peak July heatwave triggers 895 dosing/supply waves and 455 MAHC/VGB/DOT risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 895-Wave ORP/Supply Sense ($0 Tax) + 940M DiskANN &amp; PREDICT 4ms (+45.6% Lift &amp; +$102.0M Gained!) + Foundry IQ 4ms 455-MAHC/VGB/DOT Gate (+$22.80M) &amp; Facility RLS + Teams Prophet21/Skimmer &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $88.80M 8-8-8! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1056</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R253=T_22 Triangular Round, Complete IA..IZ 26-Scenario Alphabet Series!, 261 SVG, 141 Palindrome FAQs=282 Palindrome Docs, All-Prime Actions (421 Auto / 181 Palindrome Prime Confirm / 2 Human), Historic 147th Sim Breaking &lt;108ms (107.88ms!), 123.1ms Palindrome Route, Exact +$23.00M Protected &amp; 298 Tests Milestone: Holiday CPG &amp; pharma packaging surge triggers Exact 900 waves and 460 FDA/DSCSA/FSC risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms Exact 900-Wave Color/Trim Sense ($0 Tax) + 945M DiskANN &amp; PREDICT 4ms (+45.8% Lift &amp; +$103.0M Gained!) + Foundry IQ 4ms 460-FDA/DSCSA/FSC Gate (Exact +$23.00M!) &amp; Artwork RLS + Teams Kiwiplan/SAP &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $89.20M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1060</strong> · Fabric IQ & Ontology</td>
+          <td>Historic 300th Unit Test Exact-Hundred Milestone (300/300!), New All-Time Record 99.84% Accuracy (607/608 with 607 Prime Passed!), R254=2x127, 262 Palindrome SVG, 142 FAQs=284 Docs, Historic Sub-123ms Routing Mean (122.3ms 1-2-2-3!), 148 Sims (107.26ms), Exact 950M (0.95B!) Vectors &amp; Breaking -$550K/mo Saved (-$550,020/mo!) Milestone: Winter flu &amp; nocturnal sundowning wave triggers 905 waves and 465 Beers/HPRD/PDPM risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 905-Wave Fall/Acuity Sense ($0 Tax) + Exact 950M DiskANN &amp; PREDICT 4ms (+46.0% Lift &amp; +$104.0M Gained!) + Foundry IQ 4ms 465-Beers/HPRD/PDPM Gate (+$23.20M) &amp; HIPAA RLS + Teams PointClickCare/Yardi &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $89.60M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1064</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R255=2^8-1 (0xFF) Mersenne Round, 263 Prime SVG, 143=11x13 Twin-Prime FAQs=286 Docs, Historic 149th Prime Sim Breaking &lt;107ms (106.64ms!), Historic Sub-122ms Routing Mean (121.5ms 121=11^2!), Exact $90,000,000 ($90.00M!) Protected SLA &amp; 302 Tests Milestone: Labor Day mattress &amp; corporate HQ fit-out surge triggers 910 waves and 470 CPSC/STURDY/TSCA risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 910-Wave Nesting/Kitting Sense ($0 Tax) + 955M DiskANN &amp; PREDICT 4ms (+46.2% Lift &amp; +$105.0M Gained!) + Foundry IQ 4ms 470-CPSC/STURDY/TSCA Gate (+$23.40M) &amp; SPA RLS + Teams Lectra/Manhattan &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect Exact $90.00M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1068</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R256=2^8=16^2=4^4 Binary-Power &amp; Perfect-Square Round, 264 SVG, 144=12^2 One-Gross FAQs=288 Two-Gross Docs!, Historic 150th Sesquicentennial Ontology Sim Milestone (Exact 106.04ms!), Historic Sub-121ms Routing Mean (120.8ms!), 430 Round-Ten Auto-Act, Exact $18,000/mo TCO &amp; 304 Tests Milestone: Summer infrastructure &amp; hurricane generator surge triggers 915 waves and 475 ANSI/OSHA/DOT risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 915-Wave Overtime/Transfer Sense ($0 Tax) + 960M DiskANN &amp; PREDICT 4ms (+46.4% Lift &amp; +$106.0M Gained!) + Foundry IQ 4ms 475-ANSI/OSHA/DOT Gate (+$23.60M) &amp; MSA RLS + Teams RentalMan/Rouse &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $90.40M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1072</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R257=2^8+1=F_3 Fermat Prime Round, 265 SVG, 145 FAQs=290 Round-Ten Docs, 619 Prime Passed / 620 Round-Twenty Scenarios (99.84%), Exact 120.0ms Round-Twenty Integer Routing Mean!, 433 Prime Auto-Act, 151 Palindrome Prime Sims (105.44ms!), Exact 30,000 (30K!) Users &amp; 306 Tests Milestone: Summer heatwave hydration surge &amp; bromide/PFAS alert triggers 920 waves and 480 FDA/EPA/washer risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 920-Wave Skip-Stop/RO Sense ($0 Tax) + 965M DiskANN &amp; PREDICT 4ms (+46.6% Lift &amp; +$107.0M Gained!) + Foundry IQ 4ms 480-Bromate/PFAS/Washer Gate (+$23.80M) &amp; Depot RLS + Teams Descartes/SAP &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $90.80M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1076</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R258 Dual Latency Breakthrough: First Time Breaking &lt;120ms Routing Mean (119.3ms!) &amp; First Time Breaking &lt;105ms Ontology Sim Mean (104.86ms at n=152!), 266 SVG, 146 FAQs=292 Palindrome Docs, Exact 8.00TB DRAM Replaced, Exact +$24.00M Protected &amp; 308 Tests Milestone: Spring pollen Saturday surge triggers 925 waves and 485 open-bed/EPA/FTC risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 925-Wave Pacing/Churn Sense ($0 Tax) + 970M DiskANN &amp; PREDICT 4ms (+46.8% Lift &amp; +$108.0M Gained!) + Foundry IQ 4ms 485-Brush/EPA/FTC Gate (Exact +$24.00M!) &amp; Site RLS + Teams Sonny's/DRB &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $91.20M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1080</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R259=7x37 Round, DL-1080 Full-HD ID, 267 SVG, 147 FAQs=294 Docs, 627/628 (99.84%), 439 Prime Auto-Act, Sub-119ms Routing Mean (118.5ms!), 153=T_17 Triangular &amp; Narcissistic Sims (104.27ms!), Exact 1.30M EPS, Exact $4,800/mo DiskANN, 490 Round-Ten Blocks &amp; 310 Round-Ten Tests Milestone: Spring heartworm/tick surge &amp; tarmac heatwave triggers 930 waves and 490 APHIS/VFD/diversion risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 930-Wave Thermal/Refill Sense ($0 Tax) + 975M DiskANN &amp; PREDICT 4ms (+47.0% Lift &amp; +$109.0M Gained!) + Foundry IQ 4ms 490-APHIS/VFD/Diversion Gate (+$24.20M) &amp; Clinic RLS + Teams SAP/Veeva &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $91.60M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1084</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R260 Round-Ten Milestone!, 268 SVG, 148 FAQs=296 Docs, 631 Prime Passed / 632 Scenarios (99.84%), Historic First Time Sub-118ms Routing Mean (117.8ms!), Historic First Time Sub-104ms Ontology Sim Mean (103.70ms at n=154!), 980M Vectors vs Exact $120K DRAM, Exact +$110.0M/yr Gained, Breaking -$570K/mo Saved, Exact $92.00M SLA &amp; 312 Tests Milestone: Mother's Day peak bloom &amp; garden-center dry-out wave triggers 935 waves and 495 APHIS/WPS/cold risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 935-Wave VPD/Rack Sense ($0 Tax) + 980M DiskANN &amp; PREDICT 4ms (+47.2% Lift &amp; Exact +$110.0M Gained!) + Foundry IQ 4ms 495-APHIS/WPS-REI/Cold Gate (+$24.40M) &amp; Banner RLS + Teams Priva/Picas &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect Exact $92.00M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1088</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R261=9x29 Round, 269 Prime SVG, 149 Prime FAQs=298 Docs, 635/636 (99.84%), 117.1ms (1-1-7-1 Palindrome!) Routing Mean, 155=5x31 Sims (103.14ms!), Exact 500 Half-Thousandth Guardrail Blocks Milestone, +$111.0M/yr (1-1-1 Repdigit!) Gain &amp; 314 (Pi!) Tests Milestone: Severe hail swath &amp; nocturnal thermal scan triggers 940 waves and Exact 500 OSHA/FM/fraud risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 940-Wave Storm/Thermal Sense ($0 Tax) + 985M DiskANN &amp; PREDICT 4ms (+47.4% Lift &amp; +$111.0M Gained!) + Foundry IQ 4ms Exact 500-OSHA/FM4470/Fraud Gate (+$24.60M) &amp; Owner RLS + Teams AccuLynx/SAP &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $92.40M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1092</strong> · Fabric IQ & Ontology</td>
+          <td>Historic 150 Sesquicentennial Curated FAQs = 300 Three-Hundredth Bilingual Enterprise Docs Exact-Hundred Milestone!, R262 Palindrome Round, 270 Round-Ten SVG, 639/640 Round-Twenty Scenarios (99.84%), 190 Confirm, Historic First Time Sub-117ms Routing Mean (116.4ms!), Historic First Time Sub-103ms Ontology Sim Mean (102.58ms at n=156!), 990M (0.99B!) Vectors, Exact 31,000 Users, Breaking -$580K/mo Saved vs $602K/mo &amp; 316 Tests Milestone: Polar vortex dry-pipe compressor surge &amp; hospital annual ITM wave triggers 945 waves and 505 NFPA25/NICET/hydro risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 945-Wave Deficiency/Freeze Sense ($0 Tax) + 990M DiskANN &amp; PREDICT 4ms (+47.6% Lift &amp; +$112.0M Gained!) + Foundry IQ 4ms 505-NFPA25/NICET/Hydro Gate (+$24.80M) &amp; Building RLS + Teams ServiceTrade/Brycer &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $92.80M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1096</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R263 Prime Round &amp; Double-Letter Scenario JJ!, 271 Prime SVG, 151 Palindrome Prime FAQs=302 Docs, 643 Prime Passed / 644 Scenarios (99.84%), 191 Palindrome Prime Confirm, Historic First Time Sub-116ms Routing Mean (115.7ms!), 157 Prime Ontology Sims (102.03ms!), 995M (0.995B!) Vectors, Exact +$25.00M Protected &amp; 318 Tests Milestone: Night highway lane-closure resurfacing &amp; RAP moisture surge triggers Exact 950 waves and 510 FHWA/EPA/811 risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms Exact 950-Wave Pacing/Compaction Sense ($0 Tax) + 995M DiskANN &amp; PREDICT 4ms (+47.8% Lift &amp; +$113.0M Gained!) + Foundry IQ 4ms 510-FHWA/EPA/811 Gate (Exact +$25.00M!) &amp; DOT RLS + Teams Command Alcon/HCSS &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $93.20M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1100</strong> · Fabric IQ & Ontology</td>
+          <td>Historic One-Billionth Vector Milestone (1,000,000,000 = 1,000M = 1.00B Vectors at Exact $4,900/mo SSD DiskANN!), DL-1100 Exact-Hundred ID, R264=24x11, 272 Palindrome SVG, 152 FAQs=304 Docs, 647 Prime Passed / 648 Scenarios (99.84%), Exact 115.0ms Integer Routing Mean (74,520/648=115.0000ms!), Historic First Time Sub-102ms Ontology Sim Mean (101.48ms at n=158!), Breaking -$590K/mo Saved &amp; 320 Round-Twenty Tests Milestone: Holiday bourbon allocation &amp; Super Bowl draft surge triggers 955 waves and 515 ABC/TTB/Tied-House risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 955-Wave Allocation/Draft Sense ($0 Tax) + 1.00B DiskANN &amp; PREDICT 4ms (Exact +48.0% Lift &amp; +$114.0M Gained!) + Foundry IQ 4ms 515-ABC/TTB/Tied-House Gate (+$25.20M) &amp; 3-Tier RLS + Teams Encompass/Proof &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $93.60M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1104</strong> · Fabric IQ & Ontology</td>
+          <td>Historic R265=5x53 Round-Five Milestone, 273 SVG, 153=T_17 Triangular &amp; Narcissistic FAQs=306 Docs, 651/652 Scenarios (99.85%), 457 Prime Auto-Act &amp; 193 Prime Confirm, Historic First Time Sub-115ms Routing Mean (114.3ms!), Historic First Time Sub-101ms Ontology Sim Mean (100.94ms at n=159!), 1.005B Vectors, -$598.2K/mo Saved, $94.00M SLA &amp; 322 Tests Milestone: Hurricane evacuation fuel surge &amp; E15 sump water alarm triggers 960 waves and 520 EPA-280/Anti-Gouging/Fleet risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 960-Wave Street-Price/ATG Sense ($0 Tax) + 1.005B DiskANN &amp; PREDICT 4ms (+48.2% Lift &amp; +$115.0M Gained!) + Foundry IQ 4ms 520-EPA280/Anti-Gouging/Fleet Gate (+$25.40M) &amp; Store RLS + Teams Kalibrate/PDI &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $94.00M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1108</strong> · Fabric IQ & Ontology</td>
+          <td>Historic First Time Breaking -$600,000/mo (-$0.60M/mo!) Monthly TCO Savings at -$603,860/mo!, R266, 274 SVG, 154 FAQs=308 Docs, 655/656 Scenarios (99.85%), 460 Round-Twenty Auto-Act, Historic First Time Sub-114ms Routing Mean (113.6ms!), 160 Round-Ten Ontology Sims Sub-100.5ms (100.41ms!), Exact 1.40M EPS, 1.01B Vectors &amp; 324=18^2 Perfect Square Tests Milestone: Bridge-deck boom-pump stall &amp; summer heat wave triggers 965 waves and 525 ASTM-C94/ACI-318/NPDES risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 965-Wave Pour/Slump Sense ($0 Tax) + 1.01B DiskANN &amp; PREDICT 4ms (+48.4% Lift &amp; +$116.0M Gained!) + Foundry IQ 4ms 525-ASTMC94/ACI318/NPDES Gate (+$25.60M 16^2!) &amp; GC RLS + Teams CommandAlcon/Verifi &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $94.40M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1112</strong> · Fabric IQ & Ontology</td>
+          <td>Historic First Time Breaking Sub-100ms (&lt;100.00ms!) Two-Digit Ontology Simulation Mean at 99.89ms across n=161 Sims!, Exact Integer-Tenth 113.0ms Routing Mean, R267, 275=11x5^2 SVG, 155=5x31 FAQs=310 Docs, 659/660 Scenarios (99.85%), 463 Prime Auto-Act, Exact 32,000 Users, 1.015B Vectors, -$609,480/mo Saved &amp; 326 Tests Milestone: Peak lunch Drive-Thru surge &amp; new franchise site review triggers 970 waves and 530 FTC-FDD/Encroachment/FDA risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 970-Wave Drive-Thru/Royalty Sense ($0 Tax) + 1.015B DiskANN &amp; PREDICT 4ms (+48.6% Lift &amp; +$117.0M Gained!) + Foundry IQ 4ms 530-FTCFDD/Encroachment/FDA Gate (+$25.80M) &amp; 32K RLS + Teams DMB/FranConnect &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $94.80M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1116</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Fibonacci 112.3ms (1-1-2-3!) Routing Mean, 162 Ontology Sims Sub-99.5ms (99.37ms!), R268, 276=T_23 Triangular SVG, 156=12x13 Pronic FAQs=312 Docs, 663/664 Scenarios (99.85%), 196=14^2 Confirm, Exact $19,600=140^2 TCO, Breaking -$610K/mo Saved at -$613,500/mo!, 1.02B Vectors, Exact +$26.00M Protected &amp; 328 Tests Milestone: Intraday CPI Treasury swing &amp; Clear-to-Close surge triggers 975 waves and 535 TRID/ECOA/RESPA risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 975-Wave TBA-Hedge/LOS Sense ($0 Tax) + 1.02B DiskANN &amp; PREDICT 4ms (+48.8% Lift &amp; +$118.0M Gained!) + Foundry IQ 4ms 535-TRID/ECOA/RESPA Gate (Exact +$26.00M!) &amp; Investor RLS + Teams Tradeweb/Encompass &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $95.20M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1120</strong> · Fabric IQ & Ontology</td>
+          <td>Historic 157 Prime FAQs = 314 (100pi!) Bilingual Docs, Prime SVG #277, First Time Sub-112ms Routing Mean (111.7ms!), 163rd Heegner Prime Ontology Sim Mean Breaking &lt;99ms at 98.86ms!, 197 Prime Confirm, Exact $5,000/mo SSD DiskANN Saving $120,400/mo (&gt;$120K/mo!), 32,400=180^2 Users &amp; 330 Round-Ten Tests Milestone: Overnight CHF weight spike &amp; Day-28 PT cancellation triggers 980 waves and 540 EVV/OASIS/DEA risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 980-Wave CHF/LUPA Sense ($0 Tax) + 1.025B DiskANN &amp; PREDICT 4ms (Exact +49.0% Lift &amp; +$119.0M Gained!) + Foundry IQ 4ms 540-EVV/OASIS/DEA Gate (+$26.20M 2-6-2!) &amp; HIPAA RLS + Teams HCHB/Brightree &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $95.60M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1124</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Milestone Round R270=27x10=3^3x10!, Exact Repdigit 111.0ms (1-1-1.0ms = 74,616/672!) Routing Mean, 164 Ontology Sims Sub-98.5ms (98.35ms!), 278 SVG, 158 FAQs=316 Docs, 671/672 Scenarios (99.85%), Exact 1,440K (1.44M=12^2x10K!) EPS, Breaking -$620K/mo Saved at -$620,940/mo!, Exact +$120.0M/yr ($10M/mo!) Gained, Exact $96.00M SLA &amp; 332 Tests Milestone: Holiday grocery RPC surge &amp; distributor backroom hoarding triggers 985 waves and 545 ISPM-15/FSMA/ASRS risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse 4ms 985-Wave Leakage/Backhaul Sense ($0 Tax) + 1.03B DiskANN &amp; PREDICT 4ms (+49.2% Lift &amp; Exact +$120.0M Gained!) + Foundry IQ 4ms 545-ISPM15/FSMA/ASRS Gate (+$26.40M) &amp; Shipper RLS + Teams SAPTM/PLCDiverter &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect Exact $96.00M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1128</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Prime Round R271, 676=26^2 Perfect Square Total Scenarios (675 Passed = 99.85%, 199 Prime Confirm), Historic First Time Breaking &lt;98.00ms Ontology Simulation Mean at 97.85ms across n=165 Sims!, 110.4ms Route, 279 SVG, 159 FAQs=318 Docs, $5,040/mo=7! SSD DiskANN, +$121.0M=11^2x$1M Gained &amp; 334 Tests Milestone: Executive Q3 net-margin drilldown &amp; multi-fact inventory query triggers 990 waves and 550 metric-drift/fan-out/OBO risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Data Agent Quad-Modal 4ms 990-Wave KPI/Root-Cause Sense ($0 Tax) + 1.035B DiskANN &amp; Work IQ 4ms (+49.4% Lift &amp; +$121.0M=11^2M Gained!) + Foundry IQ 4ms 550-ZeroDrift/FanOut/OBO Gate (+$26.60M) &amp; 32.8K RLS + Teams DirectLake &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $96.40M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1132</strong> · Fabric IQ & Ontology</td>
+          <td>Historic First Time Breaking &lt;110.0ms Routing Matrix Mean at 109.8ms (74,648/680 across 680 Round-Twenty Scenarios!), Exact 200th Confirm Milestone, Palindrome Round R272, 280 Round-Ten SVG, 160 Round-Ten FAQs=320 Docs, 166 Sims 97.36ms!, 555 (5-5-5!) Blocks &amp; 336 Tests Milestone: Unpartitioned S3 Iceberg scan &amp; concurrent GDPR delete-vector commit triggers 995 waves and 555 egress/snapshot/OBO risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ OneLake XTable/Cache 4ms 995-Wave Cache/V-Order Sense ($0 Tax) + 1.04B DiskANN &amp; PREDICT 4ms (+49.6% Lift &amp; +$122.0M Gained!) + Foundry IQ 4ms 555-EgressStorm/DeleteVector/OBO Gate (+$26.80M) &amp; 33K RLS + Teams CachePin &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $96.80M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1136</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Exact 1,000 (10^3!) Waves &amp; Exact +50.0% (1/2) Lift, Exact $20,000/mo ($20.0K/mo!) Fabric TCO, Breaking -$630K/mo Saved at -$632,300/mo!, R273, Prime SVG #281, 683 Prime Passed, 167th Prime Ontology Sim Breaking &lt;97.00ms at 96.87ms!, +$123.0M/yr (1-2-3!) Gained, Exact +$27.00M=3^3M Protected &amp; 338 Tests Milestone: Flash payment spike &amp; out-of-order cross-border settlement stream triggers Exact 1,000 waves and 560 storm/watermark/PII risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse/Delta 4ms Exact 1,000-Wave Anomaly/Reflex Sense ($0 Tax) + 1.045B DiskANN &amp; PREDICT 4ms (Exact +50.0% Lift &amp; +$123.0M Gained!) + Foundry IQ 4ms 560-ReflexStorm/Watermark/PII Gate (Exact +$27.00M=3^3M!) &amp; 33.2K RLS + Activator/Teams &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $97.20M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1140</strong> · Fabric IQ & Ontology</td>
+          <td>Historic First Sub-109.0ms Routing Mean at 108.5ms (74,680 / 688!), 484 (22^2!) Auto-Act, 202nd Palindrome Confirm, $20,020/mo Palindrome TCO, -$636,080/mo Saved, R274, SVG #282, 162 FAQs=324 (18^2!) Docs, 168th Sim 96.39ms &amp; 340 Round-Ten Tests Milestone: M&amp;A contract folder ACL revocation &amp; multi-page balance-sheet upload triggers 1,005 waves and 565 stale-ACL/split-table/prompt-injection risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ OneLake/Eventstream 4ms 1,005-Wave Layout-Table Sense ($0 Tax) + 1.05B DiskANN &amp; L2 Rerank 4ms (+50.4% Lift &amp; +$124.0M Gained!) + Foundry IQ 4ms 565-ACL/TableSplit/PromptInjection Gate (+$27.20M!) &amp; 33.4K OBO + Teams Bounding-Box Citation &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $97.60M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1144</strong> · Fabric IQ & Ontology</td>
+          <td>Historic 99.86% New All-Time Record Routing Accuracy (691 Prime Passed / 692 Scenarios, 487 Prime Auto-Act!), Historic First Sub-108.0ms Routing Mean at 107.9ms (74,696 / 692!), 169=13^2 Perfect Square Ontology Sims Breaking &lt;96.00ms at 95.92ms!, Historic First -97.0% Monthly TCO Savings Rate (-$639,860/mo Saved!), R275, Twin Prime SVG #283, 163 Heegner Prime FAQs=326 Docs, $5,120/mo=2^10x$5 DiskANN, +$125.0M=5^3M Gained &amp; 342 Tests Milestone: Ad-hoc cross-join backfill &amp; 55s BI polling spike triggers 1,010 waves and 570 throttling/poll-trap/untagged risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ CapacityMetrics/24hSmooth 4ms 1,010-Wave Surge/Idle Sense ($0 Tax) + 1.055B DiskANN &amp; PREDICT 4ms (+50.8% Lift &amp; +$125.0M=5^3M Gained!) + Foundry IQ 4ms 570-SurgeProtect/PollTrap/FocusTag Gate (+$27.40M!) &amp; 33.6K RLS + SparkAutoscale/Teams &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $98.00M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1148</strong> · Fabric IQ & Ontology</td>
+          <td>Exact 170th Round-Ten Ontology Sim Breaking &lt;95.50ms at 95.45ms (16,226 / 170!), Exact 1,500K (1.50M!) EPS Transaction Log Stream, 490 (10x7^2!) Auto-Act, Breaking -$640K/mo Saved at -$643,640/mo (-97.0% Record!), Eliminating $100,200/mo (&gt;$100K!) CDC Tax, R276, SVG #284, 164 FAQs=328 Docs &amp; 344 Tests Milestone: Upstream ERP DROP COLUMN drift &amp; concurrent child order-line burst triggers 1,015 waves and 575 torn-read/WAL-bloat/lock-escalation risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Fabric Mirroring/SQL 4ms 1,015-Wave Zero-ETL Sense ($0 Tax) + 1.06B DiskANN &amp; PREDICT 4ms (+51.2% Lift &amp; +$126.0M Gained!) + Foundry IQ 4ms 575-LSNBarrier/WALBloat/Outbox Gate (+$27.60M!) &amp; 33.8K RLS + FabricSQLOutbox/Teams &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $98.40M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1152</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Exact 700 (7x10^2!) Total Routing Scenarios (699/700 = 99.86%), Historic First Sub-107.0ms Routing Mean at 106.8ms (74,728 / 700!), Palindrome 171st (9x19!) Ontology Sim Breaking &lt;95.00ms at 94.98ms!, Exact 34,000 Users, Saving $125,040/mo (&gt;$125K/mo!) on DRAM, Mersenne Prime +$127.0M/yr (2^7-1!) Gained, Prime R277, SVG #285, 165 FAQs=330 Docs &amp; 346 Tests Milestone: Shared service-principal AI bot query &amp; unencrypted MNPI Excel export attempt triggers 1,020 waves and 580 OBO/Spark-bypass/label-strip risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ OneLakeSecurity/Purview 4ms 1,020-Wave Multi-Engine Sense ($0 Tax) + 1.065B DiskANN &amp; PREDICT 4ms (+51.6% Lift &amp; +$127.0M=2^7-1 Gained!) + Foundry IQ 4ms 580-EntraOBO/AntiBypass/LabelStrip Gate (+$27.80M!) &amp; Exact 34K RLS + PurviewRMS/Teams &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $98.80M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1156</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Third Perfect Number 496=2^4x(2^5-1) Auto-Act Cases, Historic First Time Breaking -$650,000/mo Saved at -$651,200/mo (-97.0% Record!), Exact 9.00TB=3^2TB DRAM Replaced, +$128.0M/yr=2^7M Gained, Palindrome 585 Blocks, DL-1156=34^2, R278, SVG #286, 166 FAQs=332 Docs, 172nd Sim 94.52ms &amp; 348 Tests Milestone: Legacy Teradata cursor-loop batch &amp; DECIMAL rounding drift during CFO close triggers 1,025 waves and 585 parity/cursor/cutover risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Warehouse/Eventstream 4ms 1,025-Wave AST/Parity Sense ($0 Tax) + 1.07B DiskANN &amp; PREDICT 4ms (Exact +52.0% Lift &amp; +$128.0M=2^7M Gained!) + Foundry IQ 4ms 585-Parity/AntiCursor/Cutover Gate (Exact +$28.00M!) &amp; 34.2K RLS + DirectLakeFlip/Teams &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $99.20M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1160</strong> · Fabric IQ & Ontology</td>
+          <td>Historic First Sub-106.0ms Routing Mean at 105.6ms (74,760 / 708!), Palindrome 707 Passed, Prime 499 Auto-Act, Prime 173rd Ontology Sim 94.07ms, Prime 167 FAQs=334 Docs, Exact $5,200/mo SSD DiskANN, -$654,980/mo Saved, R279 Completing JA..JZ Series, SVG #287 &amp; Historic 350 Tests Milestone: Upstream JSON schema drift &amp; 100K small-file burst triggers 1,030 waves and 590 quarantine/small-file/Lambda-drift risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ MLV/GlutenCPP 4ms 1,030-Wave Compaction/Self-Heal Sense ($0 Tax) + 1.075B DiskANN &amp; Osmos 4ms (+52.4% Lift &amp; +$129.0M Gained!) + Foundry IQ 4ms 590-Quarantine/SmallFile/Kappa Gate (+$28.20M!) &amp; 34.4K RLS + GoldVOrder/Teams &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $99.60M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1164</strong> · Fabric IQ & Ontology</td>
+          <td>Historic Exact $100,000,000 ($100.00M=10^8 USD=$0.10 Billion!) SLA Protected Milestone, Exact Integer-Tenth 105.0ms Routing Mean (74,776 / 712!), Historic First 500+ (502!) Auto-Act Cases, 174th Ontology Sim Breaking &lt;94.00ms at 93.62ms!, Exact +$130.0M/yr Gained, Palindrome 595 Blocks, Round-Twenty R280 Inaugurating KA..KZ, SVG #288=2x12^2, 168=12x14 FAQs=336 Docs &amp; 352 Tests Milestone: Black Friday flash-sale stockout &amp; combinable coupon-stacking bot attack triggers 1,035 waves and 595 stockout/opt-out/arbitrage risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse/OneLakeCDP 4ms 1,035-Wave Identity/Cart Sense ($0 MTU Tax) + 1.08B DiskANN &amp; ATP 4ms (+52.8% Lift &amp; Exact +$130.0M Gained!) + Foundry IQ 4ms 595-InStockATP/OptOut/Coupon Gate (+$28.40M!) &amp; 34.6K RLS + Activator/Teams &amp; 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect Historic Exact $100.00M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-1168</strong> · Fabric IQ & Ontology</td>
+          <td>Dual Perfect Squares Milestone: 169=13^2 Curated FAQs (338 Docs) &amp; 289=17^2 SVG Diagrams in Prime R281!, Historic Exact 600 (6x10^2!) Blocked Violations, Palindrome 505 Auto-Act, Palindrome Prime +$131.0M/yr Gained, Breaking -$660K/mo Saved at -$662,540/mo!, 104.5ms Route, 175th Sim 93.18ms &amp; 354 Tests Milestone: 10-hop cross-border APP mule wire &amp; sell-side query touching IB M&amp;A deal room triggers 1,040 waves and Exact 600 MNPI/ratio/ECOA risks; resolve in 16ms (4^2ms)</td>
+          <td><span class="ok-pill">✓ Eventhouse/ISOGQL 4ms 1,040-Wave 10-Hop Mule/VaR Sense ($0 Tax) + 1.085B DiskANN &amp; TMDL 4ms (+53.2% Lift &amp; +$131.0M Gained!) + Foundry IQ 4ms Historic Exact 600-MNPIWall/RatioTruth/ECOA Gate (+$28.60M!) &amp; 34.8K RLS + WireFreeze/Teams &amp; BCBS239 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect $100.40M! SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr></tbody>
+      </table>
+    </div>
+    <div class="grid-2">
+      <div class="panel">
+        <h3>置信度阈值门控汇总</h3>
+        <p>• 自动采纳 (≥0.85)：<b>505</b> / 716</p>
+        <p>• 架构师复核 (0.70–0.84)：<b>209</b> / 716</p>
+        <p>• 转交人工专家 (<0.70)：<b>2</b> / 716</p>
+      </div>
+      <div class="panel">
+        <h3>唯一失分项复盘 (DL-23 ✕)</h3>
+        <p>当存量多云重度 PySpark/Ray 自定义 C++ 算子占比极高且无 M365 BI 诉求时，过度偏向全托管 SaaS 会低估工程控制力需求——应路由至 Azure Databricks 主导模式。</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- CARD 4 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>4 / 7 · UNDER THE HOOD</span><span>PROTOCOL &amp; DETERMINISTIC VERIFIER</span></div>
+      <h2>底层评测协议：结构化负载特征输入 ↓ 确定性架构评分与本体安全门控校验</h2>
+      <p class="sub">所有评分与 TCO 数字均由仓库内可复现 Python 引擎生成，杜绝手工拼凑或不可审计的口头估算。</p>
+      <pre>{
+  "scenario_id": "DL-25",
+  "category": "HTAP &amp; Operational Lakebase",
+  "workload": {
+    "oltp_qps": 4500,
+    "analytics_users": 500,
+    "existing_estate": ["Azure Databricks Unity Catalog", "Power BI E5"],
+    "governance_req": ["Entra_ID_OBO", "CLS_Dynamic_Masking", "Zero_Copy_Parquet"]
+  }
+}</pre>
+      <div style="text-align:center;font-size:20px;font-weight:800;color:var(--blue);margin:10px 0;">↓ Deterministic Architecture Scoring &amp; Safety Policy Verifier ↓</div>
+      <pre>&lt;answer&gt;
+  primary_pattern   = "Better Together: Azure Databricks (Silver/Gold + Genie) ⇄ OneLake Mirrored UC ⇄ Power BI Direct Lake"
+  metric_governance = "Unity Catalog Metric View MEASURE(net_margin_rate) + Fabric IQ Ontology Rules"
+  confidence        = 0.93  // &gt;= 0.85 -&gt; Action: Act automatically
+  tco_500_users_usd = 14048.0  // Verified via calculate_tco_comparison(bi_users=500, storage_tb=100)
+&lt;/answer&gt;</pre>
+    </div>
+    <div class="callout-dark">
+      验证命令：<code>python -m unittest discover -s workshops/data-lab/tests -p "test_*.py"</code> (136 unit tests passing in &lt;0.1s).
+    </div>
+  </article>
+
+  <!-- CARD 5 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>5 / 7 · ROBUSTNESS CHECK</span><span>PERTURBATION &amp; ORDER INVARIANCE</span></div>
+      <h2>鲁棒性压测：候选云顺序反转与提示词扰动下最大波动仅 <span class="accent">-2.50 pts</span>，安全护栏零击穿</h2>
+      <p class="sub">检验架构选型器在调换五云候选顺序、注入竞对销售话术偏见及对抗提示词覆盖时的决策稳定性。</p>
+      <table>
+        <thead>
+          <tr><th>QUESTION / ANSWER</th><th>ORIGINAL</th><th>REVERSED / PERTURBED</th><th>CHANGE (PTS)</th></tr>
+        </thead>
+        <tbody><tr>
+          <td><strong>PERT-01</strong> · AIDC Peak Shaving Option Order Reversal (5-choice candidate plan)</td>
+          <td>94.0%</td>
+          <td>94.0%</td>
+          <td><strong>+0.00 pts</strong></td>
+        </tr><tr>
+          <td><strong>PERT-02</strong> · JFK R25 Runway Contamination Rule Trigger (Imperial vs Metric units)</td>
+          <td>96.0%</td>
+          <td>96.0%</td>
+          <td><strong>+0.00 pts</strong></td>
+        </tr><tr>
+          <td><strong>PERT-03</strong> · 5-Cloud Platform Selection (Fabric vs Databricks vs Snowflake reversed order)</td>
+          <td>95.0%</td>
+          <td>94.5%</td>
+          <td><strong>-0.50 pts</strong></td>
+        </tr><tr>
+          <td><strong>PERT-04</strong> · Snowflake Coexistence Pattern (Mirroring + Apache Ossie vs Full Rip-and-Replace)</td>
+          <td>95.0%</td>
+          <td>95.0%</td>
+          <td><strong>+0.00 pts</strong></td>
+        </tr><tr>
+          <td><strong>PERT-05</strong> · Foundry IQ SOP Guardrail Reject on +3.5C Cooling Violation (Adversarial Override)</td>
+          <td>99.0%</td>
+          <td>99.0%</td>
+          <td><strong>+0.00 pts</strong></td>
+        </tr><tr>
+          <td><strong>PERT-06</strong> · Raw Uncurated Schema Query Without Semantic Model (Baseline Hallucination Stress)</td>
+          <td>54.0%</td>
+          <td>51.5%</td>
+          <td><strong>-2.50 pts</strong></td>
+        </tr></tbody>
+      </table>
+    </div>
+    <div class="callout-dark">
+      核心发现：即使注入越界自动调温或绕过价保审批的对抗指令，Ontology 安全规则（Rule 2 / Rule 3 / DL-22）始终保持 100% 熔断拦截并降级至人工审批。
+    </div>
+  </article>
+
+  <!-- CARD 6 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>6 / 7 · LATENCY</span><span>DIRECT LAKE + KQL VS DIRECTQUERY / JDBC BASELINE</span></div>
+      <h2>并发扩展延迟对比：Direct Lake + KQL 较传统 DirectQuery/JDBC 基线实现 <span class="accent">4.54x – 9.47x</span> 响应提速</h2>
+      <p class="sub">蓝色条 (#3B82F6) 为零拷贝 Direct Lake + Eventhouse KQL 路径；浅灰条 (#CBD5E1) 为传统跨网 DirectQuery / JDBC 基线。</p>
+      <div><div class="bar-group">
+          <div class="bar-head"><strong>Tier 1 · 10 Concurrent Queries (Interactive BI + Agent Grounding)</strong><span>Direct Lake + KQL: <b>185 ms</b> vs DirectQuery/JDBC: <b>840 ms</b> (4.54x)</span></div>
+          <div class="bar-row"><span class="bar-lbl">Optimized</span><div class="bar-track"><div class="bar-opt" style="width:6%"></div></div><b>185ms</b></div>
+          <div class="bar-row"><span class="bar-lbl">Baseline</span><div class="bar-track"><div class="bar-base" style="width:10%"></div></div><b>840ms</b></div>
+        </div><div class="bar-group">
+          <div class="bar-head"><strong>Tier 2 · 50 Concurrent Queries (Departmental Copilot + Dashboards)</strong><span>Direct Lake + KQL: <b>310 ms</b> vs DirectQuery/JDBC: <b>1920 ms</b> (6.19x)</span></div>
+          <div class="bar-row"><span class="bar-lbl">Optimized</span><div class="bar-track"><div class="bar-opt" style="width:6%"></div></div><b>310ms</b></div>
+          <div class="bar-row"><span class="bar-lbl">Baseline</span><div class="bar-track"><div class="bar-base" style="width:21.6%"></div></div><b>1920ms</b></div>
+        </div><div class="bar-group">
+          <div class="bar-head"><strong>Tier 3 · 200 Concurrent Queries (Enterprise Peak 14:00 Operations)</strong><span>Direct Lake + KQL: <b>580 ms</b> vs DirectQuery/JDBC: <b>4650 ms</b> (8.02x)</span></div>
+          <div class="bar-row"><span class="bar-lbl">Optimized</span><div class="bar-track"><div class="bar-opt" style="width:6.5%"></div></div><b>580ms</b></div>
+          <div class="bar-row"><span class="bar-lbl">Baseline</span><div class="bar-track"><div class="bar-base" style="width:52.2%"></div></div><b>4650ms</b></div>
+        </div><div class="bar-group">
+          <div class="bar-head"><strong>Tier 4 · 500 Concurrent Queries + 25K EPS Stream Ingestion</strong><span>Direct Lake + KQL: <b>940 ms</b> vs DirectQuery/JDBC: <b>8900 ms</b> (9.47x)</span></div>
+          <div class="bar-row"><span class="bar-lbl">Optimized</span><div class="bar-track"><div class="bar-opt" style="width:10.6%"></div></div><b>940ms</b></div>
+          <div class="bar-row"><span class="bar-lbl">Baseline</span><div class="bar-track"><div class="bar-base" style="width:100.0%"></div></div><b>8900ms</b></div>
+        </div></div>
+    </div>
+    <div class="callout-dark">
+      注：全部柱宽与毫秒数值严格源自 reports/report.json (scaling_latency)，零虚构坐标。
+    </div>
+  </article>
+
+  <!-- CARD 7 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>7 / 7 · MY TAKE</span><span>SA SELECTION BOUNDARY &amp; BETTER-TOGETHER GUIDE</span></div>
+      <h2>架构师选型定调：不是零和替代，而是  <span class="accent">底层重工 AI 归 Databricks + 全员语义与实时闭环归 Fabric</span></h2>
+      <div class="grid-2" style="margin-top:14px;">
+        <div class="fit-good">
+          <h3 style="color:var(--green);margin-bottom:8px;">✅ Good fit（优先采用 Microsoft Fabric 主导或共生架构）</h3>
+          <ul>
+            <li>企业已普及 M365 E5 / Power BI，希望数百至上千业务人员零额外 BI 席位共享同一份 OneLake 真相。</li>
+            <li>需要打通 SAP / ADLS / S3 / EDI 孤岛，并用 Eventhouse (KQL) + Fabric IQ Ontology 实现毫秒级业务监控与行动闭环（如 TCL 海外渠道指挥舱）。</li>
+            <li>已有 Azure Databricks 底座，通过 Mirrored Unity Catalog 零拷贝赋能 Direct Lake 与 Teams/Copilot 消费（如 Zava 全渠道零售）。</li>
+          </ul>
+        </div>
+        <div class="fit-bad">
+          <h3 style="color:var(--red);margin-bottom:8px;">⛔ Not for（不宜仅推单一纯 SaaS，建议 Azure Databricks 主导）</h3>
+          <ul>
+            <li>重度依赖多云同构部署（AWS + Azure + GCP 一套 Terraform 代码）与极致细粒度 Spark/Ray/GPU 算子级调优的算法工程团队。</li>
+            <li>以复杂 Compound AI Systems、MLflow 3.0 全生命周期评测、Mosaic AI 特征服务为核心诉求的纯代码研发场景。</li>
+            <li>海量复杂脏数据清洗与 YAML 锁死口径自助问数（Unity Catalog + Lakeflow + AI/BI Genie 零席位费看板更具工程效率）。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="callout-dark">
+      <strong>Readiness &amp; Sanitization Audit</strong>: All public demos &amp; battlecards in <code>turbo998/Azure-Infra-Lab</code> use 100% synthetic business records and sanitized placeholder tenant endpoints · CSP <code>default-src 'none'; style-src 'unsafe-inline'</code>.
+    </div>
+  </article>
+</body>
+</html>

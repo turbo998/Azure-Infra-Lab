@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg289" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#060B18"/>
+      <stop offset="50%" stop-color="#0C172F"/>
+      <stop offset="100%" stop-color="#062126"/>
+    </linearGradient>
+    <linearGradient id="accent289" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+    <linearGradient id="redGrad289" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2E111D"/>
+      <stop offset="100%" stop-color="#180B13"/>
+    </linearGradient>
+    <linearGradient id="greenGrad289" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#092923"/>
+      <stop offset="100%" stop-color="#081C29"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg289)"/>
+  <rect x="20" y="18" width="1360" height="824" rx="18" fill="none" stroke="url(#accent289)" stroke-width="2" opacity="0.65"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1320" height="92" rx="14" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <text x="64" y="68" fill="#10B981" font-family="Segoe UI, Arial, sans-serif" font-size="15.5" font-weight="700">PERFECT-SQUARE SVG #289=17² · PRIME R281 (SCENARIO KB · DL-1165..1168) · 🏆 169=13² FAQS, EXACT 600 BLOCKS, PALINDROME 505 AUTO &amp; -$662.5K/mo SAVED!</text>
+  <text x="64" y="96" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Financial Services Anti-Fraud Graph (10-Hop GQL), Hybrid Research RAG×TMDL &amp; BCBS 239 Reporting</text>
+  <text x="64" y="116" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5">185M Accounts ($4.8T Flow · 1,550K EPS) · 1,040 Waves (+53.2% Lift) · 1.085B SSD DiskANN ($5,240/mo) · +$131.0M/yr Palindrome Prime Gained · 104.5ms Route · 354 Tests</text>
+
+  <!-- Left Panel: Stitched Standalone Graph DB + Naive RAG Stack -->
+  <rect x="40" y="144" width="635" height="390" rx="14" fill="url(#redGrad289)" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="62" y="176" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">⛔ Stitched Standalone Graph DB (Neo4j) + Naive RAG Stack ($682,700/mo)</text>
+  <text x="62" y="198" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="13">15–60m Graph ETL Lag Misses Wire Fraud · LLM Ratio Hallucinations · MNPI Cross-Desk Leaks</text>
+
+  <rect x="62" y="214" width="590" height="64" rx="10" fill="#1E1B2E" stroke="#F87171" stroke-width="1"/>
+  <text x="78" y="238" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Standalone In-Memory Graph DB &amp; Core Banking CDC Tax ($258,200/mo)</text>
+  <text x="78" y="260" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Copying ISO 20022 wires to external Neo4j/Neptune takes 15–60 min; APP fraud funds exit in 3 min</text>
+
+  <rect x="62" y="288" width="590" height="64" rx="10" fill="#1E1B2E" stroke="#F87171" stroke-width="1"/>
+  <text x="78" y="312" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Naive Text-Chunk RAG on 400-Page 10-K Financial Tables</text>
+  <text x="78" y="334" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">LLM performs mental math across split GAAP/Non-GAAP tables → severe NIM/CET1 ratio hallucinations</text>
+
+  <rect x="62" y="362" width="590" height="72" rx="10" fill="#1E1B2E" stroke="#F87171" stroke-width="1"/>
+  <text x="78" y="386" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 9.15 TB In-Memory DRAM ($132,600/mo) + 34,800 Advisor BI Seats ($282,600/mo)</text>
+  <text x="78" y="408" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">1.085B 10-K/UBO vectors in RAM + per-seat BI viewer licensing across 34,800 bankers and advisors</text>
+
+  <rect x="62" y="446" width="590" height="72" rx="10" fill="#3B0D1E" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="78" y="472" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">❌ Critical FSI Compliance Failure Modes (Blocked by SOP-289):</text>
+  <text x="78" y="494" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• IB M&amp;A deal-room MNPI leaked to sell-side research • Unexplained credit blocks violate ECOA/Reg-B</text>
+
+  <!-- Right Panel: Microsoft Fabric Unified FSI Lakehouse + SSD DiskANN -->
+  <rect x="705" y="144" width="655" height="390" rx="14" fill="url(#greenGrad289)" stroke="#10B981" stroke-width="1.8"/>
+  <text x="727" y="176" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">✅ Fabric Unified FSI Lakehouse + ISO GQL ($20,160/mo · -$662,540/mo Saved!)</text>
+  <text x="727" y="198" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13">16ms (4+4+4+4=4²ms) E2E · Saves -$662.5K/mo (-97.0%!) · +$131.0M/yr Value · $100.40M SLA</text>
+
+  <rect x="727" y="214" width="610" height="68" rx="10" fill="#0F293A" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="743" y="238" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">① DL-1165 (4ms): Eventhouse KQL 1,550K EPS + Zero-Copy 10-Hop ISO GQL Mule Graph</text>
+  <text x="743" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Traverses 10-hop UBO &amp; mule rings directly on OneLake Delta ($0 graph copy tax) → 1,040 waves (+53.2% lift)</text>
+
+  <rect x="727" y="292" width="610" height="68" rx="10" fill="#0F293A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="743" y="316" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">② DL-1166 (4ms): 1.085B SSD DiskANN ($5,240/mo · -92% RAM) + Deterministic TMDL Ratios</text>
+  <text x="743" y="336" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Fuses 100% exact TMDL DAX/SQL ratios with 1,085M 10-K/SAR vectors, saving $127,360/mo (+$131.0M/yr!)</text>
+
+  <rect x="727" y="370" width="610" height="68" rx="10" fill="#0F293A" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="743" y="394" fill="#D8B4FE" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">③ DL-1167 (4ms · Palindrome 505 Auto-Act!): SOP-289 Historic Exact 600-Block FSI Gate</text>
+  <text x="743" y="414" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Blocks Exact 600 MNPI Chinese-Wall breaches, ratio hallucinations &amp; ECOA violations (+$28.60M · 34.8K usr)</text>
+
+  <rect x="727" y="448" width="610" height="68" rx="10" fill="#0F293A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="743" y="472" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">④ DL-1168 (4ms): In-Flight Wire Freeze, CRO Teams Card &amp; BCBS 239 1GB SQL Commit</text>
+  <text x="743" y="492" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Freezes mule wire in-flight &amp; commits BCBS 239 lineage + ECOA reason codes in 4ms (16ms = 4²ms E2E!)</text>
+
+  <!-- Bottom 5-Cloud Comparison & Sealed Telemetry Table -->
+  <rect x="40" y="552" width="1320" height="270" rx="14" fill="#0B1325" stroke="#334155" stroke-width="1.5"/>
+  <text x="64" y="584" fill="#10B981" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">📊 5-Cloud FSI Anti-Fraud Graph, Hybrid Research RAG &amp; Regulatory Matrix (185M Accounts · $4.8T Flow · 34,800 Users · R281)</text>
+
+  <line x1="60" y1="598" x2="1340" y2="598" stroke="#334155" stroke-width="1"/>
+  <text x="66" y="620" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">FSI Capability</text>
+  <text x="340" y="620" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Fabric KQL + ISO GQL + TMDL</text>
+  <text x="605" y="620" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Databricks FSI + Mosaic</text>
+  <text x="840" y="620" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Snowflake FSI Cloud</text>
+  <text x="1085" y="620" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Spanner Graph / Neptune</text>
+
+  <line x1="60" y1="630" x2="1340" y2="630" stroke="#1E293B" stroke-width="1"/>
+  <text x="66" y="654" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">10-Hop Real-Time AML/Fraud Graph</text>
+  <text x="340" y="654" fill="#10B981" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">Zero-Copy OneLake ISO GQL (4ms)</text>
+  <text x="605" y="654" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Spark GraphFrames (Batch)</text>
+  <text x="840" y="654" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">External Graph Container</text>
+  <text x="1085" y="654" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Separate Graph DB Copy</text>
+
+  <line x1="60" y1="666" x2="1340" y2="666" stroke="#1E293B" stroke-width="1"/>
+  <text x="66" y="690" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Hybrid 10-K RAG + Exact Ratios</text>
+  <text x="340" y="690" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">TMDL (100% Exact) + $5.24K DiskANN</text>
+  <text x="605" y="690" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Genie + 9.15TB DRAM ($132.6K)</text>
+  <text x="840" y="690" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Cortex Analyst + Search GB/mo</text>
+  <text x="1085" y="690" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Separate SQL + Vector Console</text>
+
+  <line x1="60" y1="702" x2="1340" y2="702" stroke="#1E293B" stroke-width="1"/>
+  <text x="66" y="726" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">MNPI Chinese Wall &amp; Excel Export</text>
+  <text x="340" y="726" fill="#10B981" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">Entra OBO + Persistent Purview RMS</text>
+  <text x="605" y="726" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">UC Filter (Add Purview for Export)</text>
+  <text x="840" y="726" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Role-Only (No Export RMS)</text>
+  <text x="1085" y="726" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">IAM Only (No Export RMS)</text>
+
+  <line x1="60" y1="738" x2="1340" y2="738" stroke="#1E293B" stroke-width="1"/>
+  <text x="66" y="762" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Monthly Total TCO (34,800 Users)</text>
+  <text x="340" y="762" fill="#10B981" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">$20,160/mo (-97.0% · -$662.5K/mo!)</text>
+  <text x="605" y="762" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">$399,000/mo (+ BI Seats)</text>
+  <text x="840" y="762" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">$448,000/mo (+ BI Seats)</text>
+  <text x="1085" y="762" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">$682,700/mo (Graph+4Clouds)</text>
+
+  <rect x="60" y="778" width="1280" height="32" rx="8" fill="#0F293A" stroke="#10B981" stroke-width="1"/>
+  <text x="76" y="799" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🏆 R281 Sealed Baseline: 715/716 Passed (99.86% · Palindrome 505 Auto-Act) · 104.5ms Route! · 175th Sim 93.18ms · 169=13² FAQs · 289=17² SVGs · 354 Tests</text>
+</svg>
