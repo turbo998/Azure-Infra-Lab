@@ -2649,16 +2649,45 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 95200000)
 
 
-    def test_scenario_matrix_328_cases_and_explicit_miss(self) -> None:
+    def test_global_home_health_hospice_remote_patient_monitoring_evv_oasis_fabric_cms_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_home_health_hospice_remote_patient_monitoring_evv_oasis_fabric_cms_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["home_health_hospice_branches_and_active_patients_count"], 1650000)
+        self.assertEqual(sim["telemetry"]["chf_triage_lupa_rescue_and_oxygen_swap_waves_flagged_count"], 980)
+        self.assertEqual(sim["telemetry"]["bluetooth_rpm_vitals_poc_and_evv_gps_stream_eps"], 1430000)
+        self.assertEqual(sim["telemetry"]["oasis_e_wound_staging_vision_and_pdgm_vectors_count"], 1025000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_home_health_hospice_tco_saved_usd"], 617220)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_home_health_hospice_tco_savings_pct"], 96.9)
+        self.assertTrue(sim["foundry_iq_guardrail"]["cures_act_evv_geofence_and_duration_interlock_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["cms_oasis_f2f_concordance_and_dea_schedule2_disposal_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 95600000)
+
+
+    def test_scenario_matrix_330_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 664)
-        self.assertEqual(matrix["passed_scenarios"], 663)
+        self.assertEqual(matrix["total_scenarios"], 668)
+        self.assertEqual(matrix["passed_scenarios"], 667)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.85, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 112.3)
+        self.assertEqual(matrix["avg_latency_ms"], 111.7)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_home_health_hospice_rpm_evv_oasis_r269_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1117", "DL-1118", "DL-1119", "DL-1120"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("980-Wave", by_id["DL-1117"]["expected"])
+        self.assertIn("Exact $5,000/mo", by_id["DL-1118"]["expected"])
+        self.assertIn("-$617,220/mo", by_id["DL-1119"]["expected"])
+        self.assertIn("$95.60M!", by_id["DL-1120"]["expected"])
 
 
     def test_mortgage_origination_servicing_mbs_trid_r268_scenarios(self) -> None:
@@ -4517,11 +4546,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 663)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 664)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 112.3)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 162)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 99.37)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 667)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 668)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 111.7)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 163)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 98.86)
 
 
 if __name__ == "__main__":
