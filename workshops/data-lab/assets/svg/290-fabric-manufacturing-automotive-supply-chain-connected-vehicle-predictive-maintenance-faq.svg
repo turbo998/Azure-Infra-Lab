@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg290" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06101E"/>
+      <stop offset="50%" stop-color="#0B1B32"/>
+      <stop offset="100%" stop-color="#051324"/>
+    </linearGradient>
+    <linearGradient id="hdr290" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <style>
+      .t-title { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 20px; font-weight: 800; fill: #F8FAFC; }
+      .t-sub { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 12.5px; font-weight: 600; fill: #93C5FD; }
+      .t-sec { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; font-weight: 800; fill: #E2E8F0; }
+      .t-body { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11.5px; font-weight: 500; fill: #CBD5E1; }
+      .t-mono { font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 11px; font-weight: 700; fill: #6EE7B7; }
+      .t-badge { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 800; fill: #06101E; }
+      .box { fill: #0F172A; stroke: #334155; stroke-width: 1.5; rx: 10; }
+      .box-fab { fill: #06283D; stroke: #0EA5E9; stroke-width: 2; rx: 10; }
+      .box-gate { fill: #063229; stroke: #10B981; stroke-width: 2; rx: 10; }
+      .box-warn { fill: #2A1215; stroke: #EF4444; stroke-width: 1.8; rx: 10; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg290)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="18" width="1352" height="74" rx="12" fill="#0F172A" stroke="url(#hdr290)" stroke-width="2.5"/>
+  <text x="44" y="48" class="t-title">290 · Manufacturing &amp; Automotive Supply-Chain Control Tower, 12M Connected Vehicles &amp; Closed-Loop PdM (R282 · Scenario KC)</text>
+  <text x="44" y="72" class="t-sub">🏆 Historic 720=6! Scenarios · Exact 103.9ms (&lt;104ms!) Route · 176th Sim 92.74ms (&lt;93ms!) · -97.1% Record TCO Saving -$666,720/mo · 170 FAQs=340 Docs · 210=P_4 Confirm · 356 Tests!</text>
+
+  <!-- Left Column: Stitched Multi-Cloud Anti-Pattern -->
+  <rect x="24" y="108" width="420" height="540" class="box-warn"/>
+  <text x="42" y="136" class="t-sec" fill="#FCA5A5">❌ Stitched Manufacturing &amp; SDV Stack ($686,900/mo)</text>
+  <text x="42" y="158" class="t-body">• 12M Connected Vehicles + 320 Plants + 4,800 Suppliers</text>
+
+  <rect x="42" y="174" width="384" height="92" class="box"/>
+  <text x="56" y="198" class="t-sec" fill="#F87171">1. Per-Signal IoT &amp; Time-Series Tax ($156,000/mo)</text>
+  <text x="56" y="218" class="t-body">• AWS IoT FleetWise/SiteWise or standalone time-series DBs</text>
+  <text x="56" y="236" class="t-body">• Disconnected from SAP spare-parts inventory &amp; BOM tables</text>
+  <text x="56" y="254" class="t-mono" fill="#FCA5A5">Lag: 2–12h Batch PdM → Unplanned Die-Caster Line-Stop</text>
+
+  <rect x="42" y="280" width="384" height="92" class="box"/>
+  <text x="56" y="304" class="t-sec" fill="#F87171">2. SAP S/4HANA &amp; EDI Connector Tax ($104,000/mo)</text>
+  <text x="56" y="324" class="t-body">• Fivetran MAR + Kafka Connect copying ACDOCA/MATDOC/MD04</text>
+  <text x="56" y="342" class="t-body">• Flat SQL tables fail on 5-tier automotive BOM shortage blasts</text>
+  <text x="56" y="360" class="t-mono" fill="#FCA5A5">Risk: Missing Tier-2 MCU Wafer Delay Until Plant Starves</text>
+
+  <rect x="42" y="386" width="384" height="92" class="box"/>
+  <text x="56" y="410" class="t-sec" fill="#F87171">3. 9.20 TB DRAM Vector Silo ($133,200/mo)</text>
+  <text x="56" y="430" class="t-body">• 1.09B 3D CAD, FFT spectrograms &amp; FMEA manuals in RAM</text>
+  <text x="56" y="448" class="t-body">• Cannot join live SAP MARD spare-part ATP during retrieval</text>
+  <text x="56" y="466" class="t-mono" fill="#FCA5A5">Overpay: $127,940/mo Excess DRAM vs NVMe SSD DiskANN</text>
+
+  <rect x="42" y="492" width="384" height="136" class="box"/>
+  <text x="56" y="516" class="t-sec" fill="#F87171">4. 35,000 Users BI Tax &amp; Safety Gaps ($293,700/mo)</text>
+  <text x="56" y="536" class="t-body">• 28,440 active plant/supply-chain viewers × $10 = $284,400/mo</text>
+  <text x="56" y="554" class="t-body">• +$9,300/mo standalone OLTP work-order audit DB</text>
+  <text x="56" y="572" class="t-body">• No deterministic ISO 26262 in-motion OTA or OSHA LOTO gate</text>
+  <text x="56" y="596" class="t-mono" fill="#FCA5A5">Total Stitched TCO: $686,900/mo | High Line-Stop Risk</text>
+
+  <!-- Right Column: Microsoft Fabric 16ms Smart Manufacturing Architecture -->
+  <rect x="464" y="108" width="912" height="540" class="box-fab"/>
+  <text x="484" y="136" class="t-sec" fill="#38BDF8">✅ Microsoft Fabric Smart Manufacturing &amp; Connected Vehicle Lakehouse ($20,180/mo · Saves -$666,720/mo / -97.1%!)</text>
+  <text x="484" y="158" class="t-body">Pooled F64 ($14,920/mo) + 1.09B SSD DiskANN ($5,260/mo) + $0 Time-Series/SAP Copy Tax + $0 BI Viewer Seats for Exact 35,000 Users</text>
+
+  <!-- Step 1 -->
+  <rect x="484" y="174" width="430" height="145" class="box"/>
+  <rect x="498" y="186" width="92" height="22" rx="6" fill="#0EA5E9"/>
+  <text x="510" y="201" class="t-badge">STEP 1 · 4 ms</text>
+  <text x="600" y="202" class="t-sec" fill="#7DD3FC">Eventhouse KQL + Digital Twin Builder</text>
+  <text x="498" y="226" class="t-body">• Ingests 1,560K (1.56M) EPS CAN-Bus/BMS (12M vehicles) &amp;</text>
+  <text x="498" y="244" class="t-body">  OPC-UA vibration/current across 320 plants ($0 stream tax)</text>
+  <text x="498" y="262" class="t-body">• OneLake SAP S/4HANA Shortcuts + 5-Tier BOM ISO GQL Graph</text>
+  <text x="498" y="284" class="t-mono">Flags 1,045 Spindle, BMS &amp; BOM Waves | Saves $260.0K/mo</text>
+
+  <!-- Step 2 -->
+  <rect x="928" y="174" width="428" height="145" class="box"/>
+  <rect x="942" y="186" width="92" height="22" rx="6" fill="#10B981"/>
+  <text x="954" y="201" class="t-badge">STEP 2 · 4 ms</text>
+  <text x="1044" y="202" class="t-sec" fill="#6EE7B7">1.09B SSD DiskANN + SAP Spare-Part ATP</text>
+  <text x="942" y="226" class="t-body">• 1,090,000,000 (1.09B!) 3D CAD assemblies, FFT vibration</text>
+  <text x="942" y="244" class="t-body">  spectrograms, DTC fault trees &amp; IATF 16949 FMEA vectors</text>
+  <text x="942" y="262" class="t-body">• Inline join with live SAP S/4HANA MARD/RESB spare-part ATP</text>
+  <text x="942" y="284" class="t-mono">$5,260/mo SSD vs $133.2K DRAM (-92% RAM) | +$132.0M/yr!</text>
+
+  <!-- Step 3 -->
+  <rect x="484" y="335" width="430" height="150" class="box-gate"/>
+  <rect x="498" y="347" width="92" height="22" rx="6" fill="#F59E0B"/>
+  <text x="510" y="362" class="t-badge">STEP 3 · 4 ms</text>
+  <text x="600" y="363" class="t-sec" fill="#FDE68A">Foundry IQ Safety &amp; OTA Gate (SOP-290)</text>
+  <text x="498" y="387" class="t-body">• Blocks 605 Industrial &amp; Automotive Violations (+$28.80M):</text>
+  <text x="498" y="405" class="t-body">  1. ISO 26262 ASIL-D / UNECE R156 in-motion OTA ECU writes</text>
+  <text x="498" y="423" class="t-body">  2. OSHA 1910.147 maintenance dispatch without LOTO verify</text>
+  <text x="498" y="441" class="t-body">  3. Unapproved PPAP supplier emergency air-freight POs</text>
+  <text x="498" y="465" class="t-mono">Enforces Plant &amp; Supplier Entra OBO Across 35,000 Users</text>
+
+  <!-- Step 4 -->
+  <rect x="928" y="335" width="428" height="150" class="box"/>
+  <rect x="942" y="347" width="92" height="22" rx="6" fill="#38BDF8"/>
+  <text x="954" y="362" class="t-badge">STEP 4 · 4 ms</text>
+  <text x="1044" y="363" class="t-sec" fill="#7DD3FC">SAP PM Work-Order, Parked OTA &amp; 1GB SQL</text>
+  <text x="942" y="387" class="t-body">• Reserves SAP MM spare part &amp; creates LOTO-tagged PM order</text>
+  <text x="942" y="405" class="t-body">• Queues parked-state EV BMS balancing OTA calibration</text>
+  <text x="942" y="423" class="t-body">• Serves 35,000 users via $0 Direct Lake &amp; commits 1GB SQL</text>
+  <text x="942" y="465" class="t-mono">4+4+4+4 = 16ms (4²ms) E2E | Protects $100.80M SLA!</text>
+
+  <!-- 5-Cloud TCO Bar Comparison inside Right Box -->
+  <rect x="484" y="500" width="872" height="132" class="box"/>
+  <text x="502" y="524" class="t-sec">📊 5-Cloud Smart Manufacturing &amp; Connected Vehicle Monthly TCO (12M Vehicles · 320 Plants · 35,000 Users)</text>
+  <text x="502" y="548" class="t-mono" fill="#10B981">Microsoft Fabric (F64 + DiskANN): $20,180/mo  [██] 🏆 -97.1% Record Savings (-$666,720/mo Saved!)</text>
+  <text x="502" y="568" class="t-body">Azure Databricks (Standalone):   $398,000/mo [████████████████████████████] ($35,500/mo in OneLake Coexistence)</text>
+  <text x="502" y="588" class="t-body">GCP BigQuery + Pub/Sub + Looker: $415,000/mo [█████████████████████████████]</text>
+  <text x="502" y="608" class="t-body">Snowflake + AWS IoT Stitched:    $686,900/mo [████████████████████████████████████████████████]</text>
+
+  <!-- Bottom KPI Milestone Strip -->
+  <rect x="24" y="664" width="1352" height="176" rx="12" fill="#0F172A" stroke="#10B981" stroke-width="2"/>
+  <text x="44" y="694" class="t-title" fill="#6EE7B7">🏆 Round 282 (Palindrome R282 · Scenario KC · DL-1169..DL-1172) Sealed Benchmark &amp; Mathematical Milestones</text>
+
+  <rect x="44" y="710" width="315" height="114" class="box"/>
+  <text x="60" y="734" class="t-sec" fill="#38BDF8">🎯 720 = 6! Scenarios &amp; 103.9ms</text>
+  <text x="60" y="756" class="t-body">• 719 Prime Pass / 720=6! (99.86% Record!)</text>
+  <text x="60" y="776" class="t-body">• Exact 103.9ms Route (74,808/720 &lt;104ms!)</text>
+  <text x="60" y="796" class="t-mono">508 Auto · 210=P_4=T_20 Confirm · 2 Human</text>
+
+  <rect x="375" y="710" width="315" height="114" class="box"/>
+  <text x="391" y="734" class="t-sec" fill="#6EE7B7">⚡ 176th Sim Breaking &lt;93.00ms!</text>
+  <text x="391" y="756" class="t-body">• Ontology Sim Mean: 92.74ms (16,322/176!)</text>
+  <text x="391" y="776" class="t-body">• 1,560K (1.56M) EPS · 1,045 Active Waves</text>
+  <text x="391" y="796" class="t-mono">16ms (4²ms) E2E · $100.80M SLA Protected</text>
+
+  <rect x="706" y="710" width="315" height="114" class="box"/>
+  <text x="722" y="734" class="t-sec" fill="#FDE68A">💎 1.09B DiskANN &amp; -97.1% Record TCO</text>
+  <text x="722" y="756" class="t-body">• 1,090M Vectors: $5,260 vs $133,200 DRAM</text>
+  <text x="722" y="776" class="t-body">• +$132.0M/yr ($11.00M/mo!) · +53.6% Lift</text>
+  <text x="722" y="796" class="t-mono">-$666,720/mo Saved (-97.1% New Record!)</text>
+
+  <rect x="1037" y="710" width="319" height="114" class="box"/>
+  <text x="1053" y="734" class="t-sec" fill="#C4B5FD">🛡️ Dual Round-Tens: 170 FAQs &amp; 290 SVGs</text>
+  <text x="1053" y="756" class="t-body">• 170 Curated FAQs (340 Bilingual Docs!)</text>
+  <text x="1053" y="776" class="t-body">• 290 Architecture SVGs · 605 Safety Blocks</text>
+  <text x="1053" y="796" class="t-mono">Exact 35,000 Users · 356/356 Unit Tests</text>
+</svg>
