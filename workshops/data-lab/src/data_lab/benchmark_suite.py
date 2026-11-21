@@ -9024,6 +9024,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (885M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_title_insurance_escrow_settlement_fabric_title_plant_wire_fraud_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Commercial Title Insurance, Real Estate Escrow Settlement, Automated Title Plant Search & Wire-Fraud Prevention Networks (1,400 Branches + 3,100 County Title Plants + $1.8T Annual Escrow) Instant Clear-to-Close Title STP, 890M Historical-Deed/Lien/ALTA RAG & BEC Wire-Fraud/Lien/TRID Gate (1,140K=1.14M EPS PRIA-Deed/Fedwire/RON Stream + 890M Deed/Lien/Plat Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 845-Wave Title-STP/BEC Sense ($0/GB & $0 Copy Tax), 890M SSD DiskANN ($4,460/mo vs $109,200/mo 7.20TB DRAM—Saving $104,740/mo!) + In-Lake PREDICT 4ms (+44.5% STP Velocity & +$92.0M/yr Gained) & Foundry IQ 4ms 405-Lien/BEC-Wire/TRID Gate (+$20.80M) (1,140K EPS · 890M DiskANN · 16ms=4^2ms E2E · R242 Palindrome, Historic 250th Quarter-Thousand SVG, 130 FAQs=260 Docs, 559/560=99.82%, 136=T_16 Sims 115.31ms, New Record -96.8% TCO -$506.7K/mo & $84.80M SLA!)",
+            "telemetry": {
+                "escrow_settlement_branches_count": 1400,
+                "instant_title_stp_and_bec_wire_waves_flagged_count": 845,
+                "county_deed_fedwire_and_ron_stream_eps": 1140000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "historical_deed_lien_and_alta_policy_vectors_count": 890000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "instant_title_stp_and_closing_velocity_lift_pct": 44.5,
+                "underwriting_stp_and_fraud_prevented_gained_usd": 92000000,
+                "unreleased_lien_bec_wire_and_trid_blocks_count": 405,
+                "concurrent_escrow_officers_title_examiners_and_lenders": 26800,
+            },
+            "ontology_traversal": [
+                "County-Deed-Fedwire-RON-and-SoftPro-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,140K (1.14M) EPS of 3,100-county PRIA/MISMO e-recording deed streams, Fedwire/RTP mortgage payoff requests, Remote Online Notarization (RON) biometric logs, and email DMARC/DKIM headers across 1,400 branches while mirroring SoftPro / RamQuest / Qualia escrow ledgers ($0/GB write tax & $0 copy tax), flagging 845 instant clear-to-close STP and BEC wire-anomaly waves in 4ms",
+                "Chain-of-Title-Curative-and-STP-Underwriting-Engine -> Azure SQL / Cosmos DB SSD DiskANN (890,000,000 scanned historical county deeds, mechanic's/IRS tax liens & ALTA Schedule B exceptions, -92% RAM at $4,460/mo vs $109,200/mo 7.20TB DRAM—saving $104,740/mo!) + In-Lake PREDICT -> Lifts instant title straight-through processing (STP) and closing velocity +44.5% and captures +$92.0M/yr in underwriting and fraud-avoidance value in 4ms",
+                "Foundry-IQ-SeniorLien-BECWire-and-CFPB-TRID-Gate -> Validates TITLE-INSURANCE-ESCROW-WIRE-TRID-SOP-250 -> Blocks 405 clean ALTA commitments over un-released senior IRS tax / mechanic's liens or forged uninsured Quitclaim Deeds, spoofed BEC payoff wires >$25,000 failing Early Warning bank-ownership match, and CFPB TRID 3-business-day Closing Disclosure waiting-period violations (+$20.80M protected) with GLBA NPI CLS in 4ms",
+                "Approved ALTA Commitment & Verified Fedwire Release -> Chief Title Underwriter & Escrow Officer Teams Card -> Issues ALTA Title Commitment in SoftPro, releases verified Fedwire payoff, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_title_escrow_monthly_tco_usd": 16940,
+                "competitor_stitched_title_escrow_monthly_tco_usd": 523600,
+                "monthly_title_escrow_tco_saved_usd": 506660,
+                "monthly_title_escrow_tco_savings_pct": 96.8,
+                "fabric_internal_full_stack_monthly_usd": 55400,
+                "competitor_internal_full_stack_monthly_usd": 1465000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.14M EPS 3,100-County Deed, Fedwire & RON Sense Agent",
+                        "operation": "Mirror SoftPro / RamQuest escrow ledgers zero-copy and ingest 1,140K (1.14M) EPS county deed/Fedwire/RON streams across 1,400 branches at $0/GB write tax, flagging 845 title STP and BEC wire waves in 4ms",
+                        "impact_metric": "4ms 845-wave sense (+44.5% STP/escrow velocity); eliminates Exact $198,000/mo in stream and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "890M SSD DiskANN Historical-Deed/Lien/ALTA RAG & In-Lake PREDICT Curative Agent",
+                        "operation": "Search 890,000,000 historical county deed, lien & ALTA exception vectors via SSD DiskANN (-92% RAM at $4,460/mo vs $109,200/mo 7.20TB DRAM—saving $104,740/mo!) and resolve 50-year chains of title in 4ms",
+                        "impact_metric": "4ms chain-of-title match (+$92.0M/yr STP & wire-fraud savings); $4,460/mo SSD DiskANN vs $109,200/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms Unreleased-Lien / BEC-Wire / CFPB-TRID Gate & 4ms SoftPro / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-250 blocking 405 senior-lien, BEC payoff-wire & TRID 3-day risks (+$20.80M saved) & enforcing GLBA CLS across 26,800 users (4ms), then issue ALTA commitment & commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; R242 Palindrome, 250th SVG, New Record -96.8% TCO (-$506.7K/mo!) & $84.80M! SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "TITLE-INSURANCE-ESCROW-WIRE-TRID-SOP-250",
+                "hard_constraint": "Block automated clean ALTA Title Commitment issuance whenever an un-released senior mortgage, mechanic's lien, IRS federal tax lien, or uninsured recent Quitclaim Deed appears in the 50-year chain of title, freeze any outgoing mortgage-payoff or seller Fedwire >$25,000 failing Early Warning bank-ownership match, and enforce the CFPB TRID 3-business-day Closing Disclosure waiting period",
+                "proposed_change": "Block 405 un-released senior lien, BEC spoofed payoff-wire & CFPB TRID 3-day risks (+$20.80M saved), capture $92.0M in instant title STP & prevented wire fraud (+44.5% lift), serve 845 waves, and enforce GLBA CLS across 26,800 users",
+                "chain_of_title_senior_lien_release_and_quitclaim_verified": True,
+                "bec_payoff_wire_ownership_and_cfpb_trid_3day_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 84800000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (890M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -15700,6 +15766,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1009",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global title insurance, real estate escrow & title plant network (1,400 branches, 3,100 county title plants, $1.8T annual escrow volume, 1,140K=1.14M EPS PRIA deed e-recordings, Fedwire payoff instructions & RON streams + SoftPro/RamQuest & servicer registries) requires 4ms instant title STP & BEC payoff wire-fraud sense: Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs Exact $198,000/mo stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL 1,140K (1.14M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Instant Title STP & BEC Wire-Anomaly Sense Flagging 845 Waves & Lifting STP Velocity +44.5% vs Exact $198.0K/mo Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL 1,140K (1.14M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Instant Title STP & BEC Wire-Anomaly Sense Flagging 845 Waves & Lifting STP Velocity +44.5% vs Exact $198.0K/mo Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1010",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 890M scanned historical county deeds, mechanic's/IRS tax liens, metes-and-bounds plats & ALTA Schedule B exceptions at $4,460/mo) + In-Lake PREDICT ($0 egress tax) vs 7.20TB RAM OpenSearch/Mosaic vector clusters ($109,200/mo)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (890M Historical Deed, Lien & ALTA Exception Vectors, -92% RAM at $4,460/mo vs $109,200/mo 7.20TB DRAM—Saving $104,740/mo!, 4ms In-Lake PREDICT Capturing +$92.0M/yr in Instant STP & Prevented Wire Fraud)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (890M Historical Deed, Lien & ALTA Exception Vectors, -92% RAM at $4,460/mo vs $109,200/mo 7.20TB DRAM—Saving $104,740/mo!, 4ms In-Lake PREDICT Capturing +$92.0M/yr in Instant STP & Prevented Wire Fraud)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1011",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 1,400-branch global title insurance, real estate escrow & 3,100-county title plant platform (1,140K=1.14M EPS stream, 890M deed/lien vectors, 26,800 escrow officers/title examiners/lenders): Fabric F64 ($16,940/mo) vs stitched Kafka/CDC/Snowflake/Databricks/AWS/BI stack ($329.2K-$523,600/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 890M SSD DiskANN + Direct Lake ($16,940/mo vs $523,600/mo Stitched Multi-Cloud, Saving -$506.7K/mo (-$506,660/mo!) / -96.8% New All-Time Record TCO! with 26,800 $0 Viewer Seats & GLBA NPI CLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 890M SSD DiskANN + Direct Lake ($16,940/mo vs $523,600/mo Stitched Multi-Cloud, Saving -$506.7K/mo (-$506,660/mo!) / -96.8% New All-Time Record TCO! with 26,800 $0 Viewer Seats & GLBA NPI CLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1012",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R242 Palindrome Round, 250th Quarter-Thousand SVG, Exact 130 Curated FAQs / 260 Round-Ten Docs, 560 Round-Twenty Cases (559/560=99.82%), 170 Round-Ten Confirm, 136=T_16 Triangular Sims (115.31ms), New All-Time Record -96.8% TCO (-$506.7K/mo!) & 276=T_23 Triangular Tests Milestone: Month-end closing surge & BEC payoff wave triggers 845 waves and 405 lien/wire/TRID risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 845-Wave Title-STP/BEC Sense ($0 Tax) + 890M DiskANN & PREDICT 4ms (+44.5% STP Velocity & +$92.0M Gained) + Foundry IQ 4ms 405-Lien/BEC-Wire/TRID Gate (+$20.80M) & GLBA CLS + Teams SoftPro & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $84.80M! SLA)",
+        "model_answer": "Eventhouse 4ms 845-Wave Title-STP/BEC Sense ($0 Tax) + 890M DiskANN & PREDICT 4ms (+44.5% STP Velocity & +$92.0M Gained) + Foundry IQ 4ms 405-Lien/BEC-Wire/TRID Gate (+$20.80M) & GLBA CLS + Teams SoftPro & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $84.80M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -15952,7 +16066,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_fitness_health_club_boutique_studio_fabric_churn_class_yield_vs_4clouds",
         "global_commercial_industrial_bakery_dsd_route_fabric_stale_buyback_fsma_vs_4clouds",
         "global_outpatient_dialysis_renal_care_fabric_hemodialysis_esrd_vbc_vs_4clouds",
-        "global_commercial_pest_control_iot_trap_fabric_ipm_fifra_route_vs_4clouds"
+        "global_commercial_pest_control_iot_trap_fabric_ipm_fifra_route_vs_4clouds",
+        "global_title_insurance_escrow_settlement_fabric_title_plant_wire_fraud_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
