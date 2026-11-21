@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad263" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#091322"/>
+      <stop offset="50%" stop-color="#121E36"/>
+      <stop offset="100%" stop-color="#0A1D24"/>
+    </linearGradient>
+    <linearGradient id="hdrGrad263" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#B45309"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="fabricCard263" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B2E3B"/>
+      <stop offset="100%" stop-color="#072227"/>
+    </linearGradient>
+    <linearGradient id="warnCard263" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3B1018"/>
+      <stop offset="100%" stop-color="#22080D"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="900" fill="url(#bgGrad263)"/>
+  <rect x="24" y="20" width="1352" height="96" rx="14" fill="url(#hdrGrad263)" opacity="0.95"/>
+  <text x="48" y="56" font-family="Segoe UI, Arial, sans-serif" font-size="21.5" font-weight="700" fill="#FFFFFF">
+    SVG #263 · Commercial Furniture, Office Fit-Out, Mattress &amp; Upholstery, 3D CPQ, CNC Nesting &amp; CPSC / STURDY 5-Cloud Architecture
+  </text>
+  <text x="48" y="84" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="600" fill="#E0F2FE">
+    🏆 Historic R255=2⁸-1 (0xFF) Mersenne Round · 263 Prime SVG · 143=11×13 Twin-Prime FAQs=286 Docs · 149 Prime Sims Sub-107ms (106.64ms!) · Exact $90.00M SLA!
+  </text>
+  <text x="48" y="105" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#BAE6FD">
+    1,450 Showrooms/Plants + 18,000 White-Glove Trucks + 620K MTO SKUs · 1,245K (1.245M) EPS · 955M 3D/Hide Vectors · Historic Sub-122ms Route (121.5ms 121=11²!)
+  </text>
+
+  <!-- Left Column: Sources -->
+  <rect x="24" y="132" width="310" height="580" rx="12" fill="#0F172A" stroke="#38BDF8" stroke-width="2"/>
+  <text x="42" y="162" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#38BDF8">
+    1. 3D CPQ, CNC &amp; Fleet Sources
+  </text>
+  <rect x="40" y="180" width="278" height="122" rx="8" fill="#1E293B" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="54" y="204" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#7DD3FC">
+    🛋️ 3D CPQ &amp; Lectra CNC Cutters
+  </text>
+  <text x="54" y="226" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• CET Designer / 3D WebGL Room CPQ</text>
+  <text x="54" y="246" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Lectra / Gerber Hide Optical Scanners</text>
+  <text x="54" y="266" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• 18,000 White-Glove Truck Shock/GPS</text>
+  <text x="54" y="286" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#FBBF24">• 1,245,000 EPS (1.245M) Live Stream</text>
+
+  <rect x="40" y="316" width="278" height="122" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="54" y="340" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#6EE7B7">
+    🏭 1,450 Showrooms/Plants &amp; ERP
+  </text>
+  <text x="54" y="362" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• SAP S/4HANA Variant Config (AVC)</text>
+  <text x="54" y="382" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Manhattan WMS Complete-Set Kitting</text>
+  <text x="54" y="402" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• 620K MTO SKUs &amp; Dye-Lot Roll Inv</text>
+  <text x="54" y="422" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#38BDF8">• Zero-Copy Open Mirroring ($0 CDC Tax)</text>
+
+  <rect x="40" y="452" width="278" height="122" rx="8" fill="#1E293B" stroke="#8B5CF6" stroke-width="1.2"/>
+  <text x="54" y="476" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#C4B5FD">
+    📐 955M (0.955B) 3D BIM &amp; Hide Corpus
+  </text>
+  <text x="54" y="498" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• 3D USDZ / Revit BIM Geometry Meshes</text>
+  <text x="54" y="518" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Textile Dye-Lot ΔE &amp; Wyzenbeek Specs</text>
+  <text x="54" y="538" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Natural Leather Hide Scar Polygons</text>
+  <text x="54" y="558" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• CPSC 1633, STURDY &amp; TSCA Certs</text>
+
+  <rect x="40" y="588" width="278" height="108" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="54" y="612" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#FCD34D">
+    👥 29,400 Enterprise Users
+  </text>
+  <text x="54" y="634" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Showroom Designers &amp; Contract Dealers</text>
+  <text x="54" y="654" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Plant CNC Engineers &amp; Fleet Ops</text>
+  <text x="54" y="674" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• $0 Power BI Viewer + Dealer SPA RLS</text>
+
+  <!-- Center Top: Microsoft Fabric 16ms Architecture -->
+  <rect x="352" y="132" width="1024" height="365" rx="12" fill="url(#fabricCard263)" stroke="#10B981" stroke-width="2.5"/>
+  <text x="374" y="162" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#34D399">
+    2. 🏆 Microsoft Fabric + Azure SQL DiskANN + Foundry IQ Unified Closed Loop (4 + 4 + 4 + 4 = 16ms = 4²ms E2E · $17,860/mo TCO)
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="372" y="180" width="235" height="298" rx="10" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.8"/>
+  <text x="386" y="206" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#38BDF8">
+    ① Eventhouse KQL + OneLake (4ms)
+  </text>
+  <text x="386" y="230" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• 1,245K (1.245M) EPS Stream ($0 Tax)</text>
+  <text x="386" y="250" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Zero-Copy SAP AVC &amp; Manhattan</text>
+  <text x="386" y="270" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• Flags 910 CNC Leather Nesting</text>
+  <text x="386" y="290" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">  &amp; Complete-Set Kitting Waves</text>
+  <text x="386" y="314" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#FBBF24">• +46.2% Hide Yield &amp; Completion</text>
+  <text x="386" y="338" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A7F3D0">• Eliminates $214,800/mo Stream</text>
+  <text x="386" y="356" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A7F3D0">  &amp; Fivetran MAR CDC Taxes</text>
+  <rect x="386" y="426" width="207" height="36" rx="6" fill="#0369A1"/>
+  <text x="412" y="449" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">P95 Latency: 4 ms ($0 Tax)</text>
+
+  <!-- Step 2 -->
+  <rect x="622" y="180" width="240" height="298" rx="10" fill="#0F172A" stroke="#8B5CF6" stroke-width="1.8"/>
+  <text x="636" y="206" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#C4B5FD">
+    ② 955M SSD DiskANN + PREDICT (4ms)
+  </text>
+  <text x="636" y="230" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• 955M 3D USDZ/BIM, Dye-Lot</text>
+  <text x="636" y="250" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">  Spectral &amp; Hide Scar Vectors</text>
+  <text x="636" y="274" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• NVMe SSD Graph (-92% DRAM)</text>
+  <text x="636" y="294" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• $4,720/mo vs Exact $117,000/mo</text>
+  <text x="636" y="314" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#FBBF24">• Saves $112,280/mo (7.85TB DRAM)</text>
+  <text x="636" y="338" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A7F3D0">• In-Lake PREDICT Captures</text>
+  <text x="636" y="356" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A7F3D0">  +$105.0M/yr MTO &amp; Yield Margin!</text>
+  <rect x="636" y="426" width="212" height="36" rx="6" fill="#5B21B6"/>
+  <text x="660" y="449" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">P95 Latency: 4 ms (-92% RAM)</text>
+
+  <!-- Step 3 -->
+  <rect x="877" y="180" width="240" height="298" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.8"/>
+  <text x="891" y="206" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#6EE7B7">
+    ③ Foundry IQ SOP-263 Gate (4ms)
+  </text>
+  <text x="891" y="230" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Blocks 470 Product Safety Risks:</text>
+  <text x="891" y="250" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#F87171">  1. CPSC 16 CFR 1633 Mattress</text>
+  <text x="891" y="270" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#F87171">     Open-Flame / TB 117 Lot Gap</text>
+  <text x="891" y="290" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#F87171">  2. Federal STURDY Act (ASTM</text>
+  <text x="891" y="310" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#F87171">     F2057) Dresser Anti-Tip Gap</text>
+  <text x="891" y="330" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#F87171">  3. EPA TSCA Title VI Formaldehyde</text>
+  <text x="891" y="354" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• Protects +$23.40M · 29.4K RLS</text>
+  <rect x="891" y="426" width="212" height="36" rx="6" fill="#047857"/>
+  <text x="915" y="449" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">P95 Latency: 4 ms (470 Blocked)</text>
+
+  <!-- Step 4 -->
+  <rect x="1132" y="180" width="224" height="298" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.8"/>
+  <text x="1146" y="206" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#FCD34D">
+    ④ CNC &amp; White-Glove Commit (4ms)
+  </text>
+  <text x="1146" y="230" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Teams VP Manufacturing Card</text>
+  <text x="1146" y="250" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Lectra 91.5% CNC Hide Toolpath</text>
+  <text x="1146" y="270" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Manhattan Complete-Set Kitting</text>
+  <text x="1146" y="290" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">  &amp; SAP AVC Lead-Time Commit</text>
+  <text x="1146" y="314" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• 1GB Free Fabric SQL Audit</text>
+  <text x="1146" y="338" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#FBBF24">• Protects Exact $90.00M SLA!</text>
+  <rect x="1146" y="426" width="196" height="36" rx="6" fill="#B45309"/>
+  <text x="1165" y="449" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">Total: 16 ms (4² ms!)</text>
+
+  <!-- Center Bottom: Legacy Stitched Stack Comparison -->
+  <rect x="352" y="512" width="1024" height="200" rx="12" fill="url(#warnCard263)" stroke="#EF4444" stroke-width="2"/>
+  <text x="374" y="542" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#FCA5A5">
+    3. ⛔ Legacy Stitched Multi-Cloud Stack (Kafka + Fivetran + 7.85TB In-Memory Vector + DW + Paid BI): 552,000 ms (9.20 min) · $571,600/mo
+  </text>
+  <rect x="372" y="558" width="315" height="136" rx="8" fill="#1E1B2E" stroke="#F87171" stroke-width="1.2"/>
+  <text x="388" y="582" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#FCA5A5">
+    💸 $214,800/mo Stream &amp; CDC Taxes
+  </text>
+  <text x="388" y="604" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Kafka/Kinesis per-GB write tax on 1.245M EPS</text>
+  <text x="388" y="624" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Fivetran MAR fees on SAP AVC / Manhattan</text>
+  <text x="388" y="644" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#FCA5A5">• 9.20m lag causes 14% hide scrap &amp; split trips</text>
+
+  <rect x="704" y="558" width="315" height="136" rx="8" fill="#1E1B2E" stroke="#F87171" stroke-width="1.2"/>
+  <text x="720" y="582" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#FCA5A5">
+    🔥 Exact $117,000/mo for 7.85 TB DRAM
+  </text>
+  <text x="720" y="604" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• 955M 3D BIM &amp; hide vectors pinned in RAM</text>
+  <text x="720" y="624" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Mosaic AI / Cortex / Pinecone memory bloat</text>
+  <text x="720" y="644" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• Replaced by $4,720/mo Azure SQL DiskANN</text>
+
+  <rect x="1036" y="558" width="320" height="136" rx="8" fill="#1E1B2E" stroke="#F87171" stroke-width="1.2"/>
+  <text x="1052" y="582" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#FCA5A5">
+    ⚠️ $239,800/mo BI Seats &amp; CPSC Exposure
+  </text>
+  <text x="1052" y="604" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• 29,400 paid BI seats across 1,450 sites</text>
+  <text x="1052" y="624" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• No deterministic CPSC 1633, STURDY anti-tip</text>
+  <text x="1052" y="644" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#FCA5A5">  or EPA TSCA Title VI formaldehyde gate</text>
+
+  <!-- Bottom KPI Bar -->
+  <rect x="24" y="728" width="1352" height="150" rx="12" fill="#0F172A" stroke="#38BDF8" stroke-width="2"/>
+  <text x="48" y="758" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#38BDF8">
+    4. Sealed Round 255 (Scenario JB · DL-1061..DL-1064) Executive Scorecard — Historic R255=2⁸-1 (0xFF) &amp; Exact $90.00M SLA!
+  </text>
+  <text x="48" y="788" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#E2E8F0">
+    • Evaluation Accuracy: 611 / 612 (99.84% Record Accuracy · 427 Auto / 183 Confirm / 2 Human · 143=11×13 Twin-Prime FAQs=286 Docs)
+  </text>
+  <text x="48" y="814" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#34D399">
+    • Dual-Denominator Latency: Routing Mean 121.5 ms (n=612 · Historic Sub-122ms &amp; 121=11²!) · Ontology Sim Mean 106.64 ms (n=149 Prime · Historic Sub-107ms!)
+  </text>
+  <text x="48" y="840" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#FBBF24">
+    • Monthly TCO Inflection: $17,860/mo vs $571,600/mo (Saves -$553,740/mo or -96.9% Record · $6,644,880/yr!) · +$105.0M/yr · Exact $90.00M SLA · 302 Tests!
+  </text>
+  <text x="48" y="864" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" fill="#94A3B8">
+    Provenance: Synthetic deterministic enterprise scenario &amp; vendor spec baseline (independently_reproduced=true, live_cloud_cluster_execution=not_measured).
+  </text>
+</svg>

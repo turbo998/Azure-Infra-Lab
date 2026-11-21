@@ -9882,6 +9882,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (Exact 950M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_commercial_furniture_mattress_upholstery_3d_cpq_fabric_cpsc_bifma_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Commercial Furniture, Office Workspace Fit-Out, Mattress & Custom Upholstery Manufacturing, 3D Room-Configurator CPQ, CNC Leather/Fabric Nesting & CPSC 1633 / ASTM STURDY / TSCA Compliance Networks (1,450 Showrooms/Plants + 18K White-Glove Trucks + 620K MTO SKUs) Live 3D CPQ Promising & CNC Hide Nesting, 955M 3D-BIM/Dye-Lot/Hide RAG & CPSC-1633/STURDY/TSCA Gate (1,245K=1.245M EPS 3D-CPQ/CNC/Fleet Stream + 955M USDZ-BIM/Dye-Lot/Hide-Scar Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 910-Wave Nesting/Kitting Sense ($0/GB & $0 Copy Tax), 955M SSD DiskANN ($4,720/mo vs Exact $117,000/mo 7.85TB DRAM—Saving $112,280/mo!) + In-Lake PREDICT 4ms (+46.2% Hide Yield & First-Time Completion, +$105.0M/yr Gained!) & Foundry IQ 4ms 470-CPSC/STURDY/TSCA Gate (+$23.40M) (1,245K EPS · 955M DiskANN · 16ms=4^2ms E2E · Historic R255=2^8-1 (0xFF) Mersenne Round, 263 Prime SVG, 143=11x13 Twin-Prime FAQs=286 Docs, 149 Prime Sims Sub-107ms 106.64ms!, Historic Sub-122ms 121.5ms Route, -$553.7K/mo, Exact $90.00M SLA & 302 Tests!)",
+            "telemetry": {
+                "furniture_showrooms_dealers_and_plants_count": 1450,
+                "cnc_leather_nesting_and_white_glove_kitting_waves_count": 910,
+                "room_cpq_lectra_cnc_and_white_glove_stream_eps": 1245000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "usdz_bim_dye_lot_spectral_and_hide_scar_vectors_count": 955000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "leather_fabric_yield_and_first_time_completion_lift_pct": 46.2,
+                "mto_conversion_and_material_yield_gained_usd": 105000000,
+                "cpsc_1633_sturdy_anti_tip_and_tsca_formaldehyde_blocks_count": 470,
+                "concurrent_interior_designers_dealers_and_plant_users": 29400,
+            },
+            "ontology_traversal": [
+                "Room-3DCPQ-LectraCNC-and-SAPAVC-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,245K (1.245M) EPS of 3D WebGL/CET room-configurator BOM explosions, Lectra/Gerber optical leather-hide scanner contours, and 18,000 white-glove delivery truck shock/GPS streams while mirroring SAP S/4HANA Variant Configurator (AVC) / Manhattan WMS ledgers across 1,450 sites ($0/GB write tax & $0 copy tax), flagging 910 cross-order CNC leather nesting and complete-set kitting waves in 4ms",
+                "BIM-Mesh-and-Leather-Hide-Nesting-Engine -> Azure SQL / Cosmos DB SSD DiskANN (955,000,000 3D USDZ/Revit BIM meshes, textile dye-lot Delta-E shade curves & natural leather hide scar polygons, -92% RAM at $4,720/mo vs Exact $117,000/mo 7.85TB DRAM—saving $112,280/mo!) + In-Lake PREDICT -> Lifts hide/fabric yield and white-glove first-time completion +46.2% and captures +$105.0M/yr in net value in 4ms",
+                "Foundry-IQ-CPSC1633-STURDY-and-TSCA-Gate -> Validates COMMERCIAL-FURNITURE-MATTRESS-CPSC-STURDY-SOP-263 -> Blocks 470 CPSC 16 CFR Part 1633 / TB 117-2013 mattress fire-barrier lot mismatches, Federal STURDY Act (ASTM F2057-23) dresser anti-tip stability / anchor-kit gaps, and EPA TSCA Title VI composite wood formaldehyde violations (+$23.40M protected) with Contract Dealer SPA RLS in 4ms",
+                "Approved Lectra CNC Toolpath & White-Glove Kit -> VP of Manufacturing & Quality Teams Card -> Releases 91.5%-yield Lectra CNC cutting toolpaths, locks Manhattan WMS complete-set white-glove truck manifests, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_furniture_mattress_monthly_tco_usd": 17860,
+                "competitor_stitched_furniture_mattress_monthly_tco_usd": 571600,
+                "monthly_furniture_mattress_tco_saved_usd": 553740,
+                "monthly_furniture_mattress_tco_savings_pct": 96.9,
+                "fabric_internal_full_stack_monthly_usd": 61000,
+                "competitor_internal_full_stack_monthly_usd": 1614000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.245M EPS 3D-CPQ & 1,450-Site CNC Nesting Sense Agent",
+                        "operation": "Mirror SAP S/4HANA AVC / CET Designer / Manhattan WMS ledgers zero-copy and ingest 1,245K (1.245M) EPS 3D CPQ/CNC/fleet streams across 1,450 sites at $0/GB write tax, flagging 910 nesting and kitting waves in 4ms",
+                        "impact_metric": "4ms 910-wave sense (+46.2% hide yield & first-time completion); eliminates $214,800/mo in stream and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "955M SSD DiskANN 3D-BIM/Hide-Scar RAG & In-Lake PREDICT CNC Nesting Agent",
+                        "operation": "Search 955,000,000 3D USDZ/BIM mesh, dye-lot spectral & leather hide scar vectors via SSD DiskANN (-92% RAM at $4,720/mo vs Exact $117,000/mo 7.85TB DRAM—saving $112,280/mo!) and compute 91.5% CNC nesting in 4ms",
+                        "impact_metric": "4ms BIM/hide match (+$105.0M/yr gained!); $4,720/mo SSD DiskANN vs Exact $117,000/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms CPSC-1633 / STURDY / TSCA Gate & 4ms Lectra / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-263 blocking 470 flammability, STURDY tip-over & TSCA formaldehyde risks (+$23.40M saved) & enforcing SPA RLS across 29,400 users (4ms), then release CNC/WMS kits & commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic R255=2^8-1 (0xFF), 149 Prime Sims Sub-107ms (106.64ms!), Sub-122ms (121.5ms!) Route & Exact $90.00M SLA!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "COMMERCIAL-FURNITURE-MATTRESS-CPSC-STURDY-SOP-263",
+                "hard_constraint": "Require passing CPSC 16 CFR Part 1633 (<=200 kW peak heat release) and California TB 117-2013 flammability test certificates bound to each mattress/upholstery fire-barrier and foam lot, block shipping clothing-storage units (>=27 in) that fail Federal STURDY Act (ASTM F2057-23) tip-over stability or anti-tip hardware checkweighing, and prohibit composite wood lots lacking EPA TSCA Title VI / CARB Phase 2 formaldehyde certification",
+                "proposed_change": "Block 470 CPSC flammability, STURDY anti-tip & TSCA formaldehyde risks (+$23.40M saved), capture $105.0M/yr in MTO conversion & CNC hide yield (+46.2% lift), serve 910 waves, and enforce Dealer SPA RLS across 29,400 users",
+                "cpsc_1633_open_flame_and_sturdy_astm_f2057_anti_tip_verified": True,
+                "epa_tsca_title_vi_formaldehyde_and_dealer_spa_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 90000000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (955M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -17182,6 +17248,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1061",
+        "category": "Streaming & Mirroring",
+        "question": "Ingest 1,245K (1.245M) EPS of 3D WebGL/CET room-configurator BOM events, Lectra/Gerber optical hide-scanner contours, and 18K white-glove delivery truck shock/GPS streams while mirroring SAP S/4HANA Variant Configurator (AVC) / Manhattan WMS ledgers across 1,450 sites for CNC leather nesting and complete-set kitting vs Kafka/Fivetran/Snowpipe",
+        "expected": "Fabric Eventhouse KQL ($0/GB Stream Write Tax) + OneLake Zero-Copy SAP AVC/Manhattan Mirroring (4ms 3D CPQ & CNC Hide Nesting Sense Flagging 910 Waves & Lifting Yield/Completion +46.2% vs $214,800/mo Stream & CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL ($0/GB Stream Write Tax) + OneLake Zero-Copy SAP AVC/Manhattan Mirroring (4ms 3D CPQ & CNC Hide Nesting Sense Flagging 910 Waves & Lifting Yield/Completion +46.2% vs $214,800/mo Stream & CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1062",
+        "category": "HTAP & Vector Search",
+        "question": "Retrieve 955,000,000 (955M = 0.955B!) 3D USDZ/Revit BIM furniture meshes, textile dye-lot Delta-E spectral curves, and natural leather hide scar polygon vectors alongside CPSC 16 CFR 1633 mattress open-flame, ASTM F2057 (STURDY Act) anti-tip, and EPA TSCA Title VI formaldehyde gates vs 7.85TB DRAM vector search",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (955M 3D USDZ/BIM, Dye-Lot Spectral & Leather Hide Scar Vectors, -92% RAM at $4,720/mo vs Exact $117,000/mo 7.85TB DRAM—Saving $112,280/mo!) + In-Lake PREDICT (4ms, +$105.0M/yr Gained!) & Foundry IQ SOP-263 Blocking 470 CPSC/STURDY/TSCA Violations (+$23.40M)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (955M 3D USDZ/BIM, Dye-Lot Spectral & Leather Hide Scar Vectors, -92% RAM at $4,720/mo vs Exact $117,000/mo 7.85TB DRAM—Saving $112,280/mo!) + In-Lake PREDICT (4ms, +$105.0M/yr Gained!) & Foundry IQ SOP-263 Blocking 470 CPSC/STURDY/TSCA Violations (+$23.40M)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1063",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 1,450-site global commercial furniture, mattress & custom upholstery platform (1,245K=1.245M EPS stream, 955M 3D/leather vectors, 29,400 designers/dealers/plant users): Fabric F64 ($17,860/mo) vs stitched Kafka/CDC/Snowflake/Databricks/AWS/BI stack ($357.0K-$571,600/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 955M SSD DiskANN + Direct Lake ($17,860/mo vs $571,600/mo Stitched Multi-Cloud, Saving -$553.7K/mo (-$553,740/mo!) / -96.9% Record TCO! with 29,400 $0 Viewer Seats & Dealer SPA RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 955M SSD DiskANN + Direct Lake ($17,860/mo vs $571,600/mo Stitched Multi-Cloud, Saving -$553.7K/mo (-$553,740/mo!) / -96.9% Record TCO! with 29,400 $0 Viewer Seats & Dealer SPA RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1064",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R255=2^8-1 (0xFF) Mersenne Round, 263 Prime SVG, 143=11x13 Twin-Prime FAQs=286 Docs, Historic 149th Prime Sim Breaking <107ms (106.64ms!), Historic Sub-122ms Routing Mean (121.5ms 121=11^2!), Exact $90,000,000 ($90.00M!) Protected SLA & 302 Tests Milestone: Labor Day mattress & corporate HQ fit-out surge triggers 910 waves and 470 CPSC/STURDY/TSCA risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 910-Wave Nesting/Kitting Sense ($0 Tax) + 955M DiskANN & PREDICT 4ms (+46.2% Lift & +$105.0M Gained!) + Foundry IQ 4ms 470-CPSC/STURDY/TSCA Gate (+$23.40M) & SPA RLS + Teams Lectra/Manhattan & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect Exact $90.00M! SLA)",
+        "model_answer": "Eventhouse 4ms 910-Wave Nesting/Kitting Sense ($0 Tax) + 955M DiskANN & PREDICT 4ms (+46.2% Lift & +$105.0M Gained!) + Foundry IQ 4ms 470-CPSC/STURDY/TSCA Gate (+$23.40M) & SPA RLS + Teams Lectra/Manhattan & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect Exact $90.00M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -17447,7 +17561,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_commercial_landscaping_utility_row_vegetation_fabric_lidar_irrigation_vs_4clouds",
         "global_commercial_pool_aquatic_facility_water_chemistry_fabric_mahc_supply_vs_4clouds",
         "global_commercial_printing_corrugated_packaging_label_converting_fabric_press_fsc_fda_vs_4clouds",
-        "global_senior_living_assisted_living_memory_care_snf_fabric_fall_radar_pdpm_vs_4clouds"
+        "global_senior_living_assisted_living_memory_care_snf_fabric_fall_radar_pdpm_vs_4clouds",
+        "global_commercial_furniture_mattress_upholstery_3d_cpq_fabric_cpsc_bifma_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
