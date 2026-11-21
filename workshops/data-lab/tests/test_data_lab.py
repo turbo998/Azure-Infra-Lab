@@ -2394,13 +2394,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 89200000)
 
 
-    def test_scenario_matrix_298_cases_and_explicit_miss(self) -> None:
+    def test_global_senior_living_assisted_living_memory_care_snf_fabric_fall_radar_pdpm_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_senior_living_assisted_living_memory_care_snf_fabric_fall_radar_pdpm_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["senior_living_memory_care_and_snf_communities_count"], 2400)
+        self.assertEqual(sim["telemetry"]["nocturnal_fall_assist_and_acuity_staffing_waves_flagged_count"], 905)
+        self.assertEqual(sim["telemetry"]["mmwave_fall_radar_uwb_and_emar_stream_eps"], 1230000)
+        self.assertEqual(sim["telemetry"]["mds30_nursing_note_gait_and_care_tier_vectors_count"], 950000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_senior_living_tco_saved_usd"], 550020)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_senior_living_tco_savings_pct"], 96.9)
+        self.assertTrue(sim["foundry_iq_guardrail"]["cms_f605_anti_chemical_restraint_and_beers_criteria_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["minimum_hprd_acuity_staffing_and_pdpm_proof_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 89600000)
+
+
+    def test_scenario_matrix_300_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 604)
-        self.assertEqual(matrix["passed_scenarios"], 603)
+        self.assertEqual(matrix["total_scenarios"], 608)
+        self.assertEqual(matrix["passed_scenarios"], 607)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 99.83, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 123.1)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 99.84, places=2)
+        self.assertEqual(matrix["avg_latency_ms"], 122.3)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -4075,6 +4092,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $89.20M! SLA", by_id["DL-1056"])
 
 
+    def test_fabric_senior_living_assisted_living_memory_care_snf_2026_11_21_r254_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-1057", "DL-1058", "DL-1059", "DL-1060"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Nocturnal Fall & ADL Acuity Sense Flagging 905 Waves & Lifting Prevention/Capture +46.0%", by_id["DL-1057"])
+        self.assertIn("Exact 950M=0.95B MDS 3.0, Gait Trajectory & Level-of-Care Contract Vectors, -92% RAM at Exact $4,700/mo vs $116,400/mo Exact 7.80TB DRAM", by_id["DL-1058"])
+        self.assertIn("Saving -$550.0K/mo (-$550,020/mo Breaking -$550K/mo!) / -96.9% Record TCO! with 29,200 $0 Viewer Seats", by_id["DL-1059"])
+        self.assertIn("16ms 4^2ms E2E, Protect $89.60M! SLA", by_id["DL-1060"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -4093,11 +4121,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 603)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 604)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 123.1)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 147)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 107.88)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 607)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 608)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 122.3)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 148)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 107.26)
 
 
 if __name__ == "__main__":

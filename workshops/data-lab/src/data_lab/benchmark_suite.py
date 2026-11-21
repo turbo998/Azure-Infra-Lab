@@ -9816,6 +9816,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (945M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_senior_living_assisted_living_memory_care_snf_fabric_fall_radar_pdpm_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Commercial Senior Living, Assisted Living, Memory Care & Post-Acute Skilled Nursing Facility (SNF) Communities, Ambient Fall-Radar Telemetry, Clinical Acuity Staffing & CMS PDPM Compliance Networks (2,400 Communities + 280K Beds + 3.6M Fall-Radar/UWB Sensors) Nocturnal Bed-Exit Fall Prevention & ADL Acuity Capture, Exact 950M (0.95B!) MDS/Care-Plan RAG & CMS-F605/Beers/HPRD/PDPM Gate (1,230K=1.23M 1-2-3! EPS mmWave-Radar/UWB/eMAR Stream + Exact 950M MDS-3.0/Gait/Care-Tier Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 905-Wave Fall/Acuity Sense ($0/GB & $0 Copy Tax), Exact 950M SSD DiskANN (Exact $4,700/mo vs $116,400/mo Exact 7.80TB DRAM—Saving $111,700/mo!) + In-Lake PREDICT 4ms (+46.0% Fall-Prev & Acuity Lift, +$104.0M/yr Gained!) & Foundry IQ 4ms 465-Beers/HPRD/PDPM Gate (+$23.20M) (1,230K EPS · 950M DiskANN · 16ms=4^2ms E2E · R254, Historic 300th Unit Test Exact-Hundred Milestone 300/300!, New All-Time Record 99.84% Accuracy 607/608!, 262 Palindrome SVG, 142 FAQs=284 Docs, Sub-123ms 122.3ms Route, 148 Sims 107.26ms, Breaking -$550K/mo Saved -$550,020/mo! & $89.60M SLA!)",
+            "telemetry": {
+                "senior_living_memory_care_and_snf_communities_count": 2400,
+                "nocturnal_fall_assist_and_acuity_staffing_waves_flagged_count": 905,
+                "mmwave_fall_radar_uwb_and_emar_stream_eps": 1230000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "mds30_nursing_note_gait_and_care_tier_vectors_count": 950000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "fall_prevention_and_acuity_billing_capture_lift_pct": 46.0,
+                "resident_los_retention_and_acuity_revenue_gained_usd": 104000000,
+                "beers_chemical_restraint_hprd_and_pdpm_blocks_count": 465,
+                "concurrent_executive_directors_dons_and_clinicians": 29200,
+            },
+            "ontology_traversal": [
+                "Ambient-mmWave-FallRadar-UWB-and-PointClickCare-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,230K (1.23M 1-2-3!) EPS of 60GHz mmWave gait/fall radar, bed-exit pressure sensors, and UWB memory-care wander beacons across 3.6M sensors while mirroring PointClickCare / MatrixCare / Yardi Senior Living / Kronos ledgers across 2,400 communities ($0/GB write tax & $0 copy tax), flagging 905 nocturnal bed-exit assist and ADL acuity staffing waves in 4ms",
+                "MDS30-Clinical-and-Acuity-Capture-Engine -> Azure SQL / Cosmos DB SSD DiskANN (Exact 950,000,000=0.95B CMS MDS 3.0 functional assessments, longitudinal nursing notes & tiered Level-of-Care contracts, -92% RAM at Exact $4,700/mo vs $116,400/mo Exact 7.80TB DRAM—saving $111,700/mo!) + In-Lake PREDICT -> Lifts fall prevention and ADL acuity capture +46.0% and captures +$104.0M/yr in net value in 4ms",
+                "Foundry-IQ-BeersDrug-HPRD-and-PDPM-Gate -> Validates SENIOR-LIVING-MEMORY-CARE-SNF-PDPM-SOP-262 -> Blocks 465 CMS 42 CFR 483.12 (F605) psychotropic chemical-restraint / AGS Beers high-anticholinergic fall-drug orders, minimum nursing Hours Per Resident Day (HPRD) & memory-care certification shortfalls, and unverified CMS PDPM comorbidity upcodes (+$23.20M protected) with HIPAA PHI RLS in 4ms",
+                "Approved Bedside Nurse-Call & Acuity Roster -> Chief Nursing Officer & Community ED Teams Card -> Dispatches instant bedside nurse-call alerts, updates PointClickCare care plans & Yardi Level-of-Care billing, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_senior_living_monthly_tco_usd": 17680,
+                "competitor_stitched_senior_living_monthly_tco_usd": 567700,
+                "monthly_senior_living_tco_saved_usd": 550020,
+                "monthly_senior_living_tco_savings_pct": 96.9,
+                "fabric_internal_full_stack_monthly_usd": 60400,
+                "competitor_internal_full_stack_monthly_usd": 1602000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.23M EPS 3.6M-Radar Fall & 2,400-Community Acuity Sense Agent",
+                        "operation": "Mirror PointClickCare / MatrixCare / Yardi / Kronos ledgers zero-copy and ingest 1,230K (1.23M 1-2-3!) EPS mmWave fall-radar/UWB streams across 2,400 communities at $0/GB write tax, flagging 905 fall and acuity waves in 4ms",
+                        "impact_metric": "4ms 905-wave sense (+46.0% fall prevention & acuity capture); eliminates $213,200/mo in stream and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Exact 950M (0.95B!) SSD DiskANN MDS/Care-Plan RAG & In-Lake PREDICT Acuity Agent",
+                        "operation": "Search Exact 950,000,000 MDS 3.0 assessment, gait trajectory & care-tier vectors via SSD DiskANN (-92% RAM at Exact $4,700/mo vs $116,400/mo Exact 7.80TB DRAM—saving $111,700/mo!) and score fall/acuity bundles in 4ms",
+                        "impact_metric": "4ms MDS/acuity match (+$104.0M/yr gained!); Exact $4,700/mo SSD DiskANN vs $116,400/mo Exact 7.80TB DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms Beers-Drug / HPRD / PDPM Gate & 4ms PointClickCare / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-262 blocking 465 Beers/chemical-restraint, HPRD understaffing & PDPM upcode risks (+$23.20M saved) & enforcing HIPAA RLS across 29,200 users (4ms), then dispatch nurse-call/billing & commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic 300/300 Tests!, 99.84% New Record Accuracy (607/608), Sub-123ms (122.3ms!) Route, -$550.0K/mo & $89.60M SLA!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "SENIOR-LIVING-MEMORY-CARE-SNF-PDPM-SOP-262",
+                "hard_constraint": "Block off-label antipsychotic chemical restraints (CMS 42 CFR 483.12 / F605) and unreviewed AGS Beers Criteria high-anticholinergic/benzodiazepine medications in fall-risk seniors, prohibit publishing shift rosters below state/CMS minimum RN/LPN/CNA Hours Per Resident Day (HPRD) or memory-care certification requirements, and block CMS PDPM comorbidity tier upgrades lacking signed MDS 3.0 clinical documentation",
+                "proposed_change": "Block 465 Beers/chemical-restraint, HPRD staffing & unverified PDPM upcode risks (+$23.20M saved), capture $104.0M/yr in resident LOS retention & verified Level-of-Care revenue (+46.0% lift), serve 905 waves, and enforce HIPAA PHI RLS across 29,200 users",
+                "cms_f605_anti_chemical_restraint_and_beers_criteria_verified": True,
+                "minimum_hprd_acuity_staffing_and_pdpm_proof_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 89600000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (Exact 950M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -17068,6 +17134,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1057",
+        "category": "Streaming & Mirroring",
+        "question": "Ingest 1,230K (1.23M 1-2-3!) EPS of ambient 60GHz mmWave gait/fall radar, bed-exit pressure sensors, and UWB memory-care wander beacons across 3.6M sensors while mirroring PointClickCare / MatrixCare / Yardi Senior Living / Kronos ledgers across 2,400 communities for nocturnal fall prevention and ADL acuity staffing vs Kafka/Fivetran/Snowpipe",
+        "expected": "Fabric Eventhouse KQL ($0/GB Stream Write Tax) + OneLake Zero-Copy PointClickCare/Yardi Mirroring (4ms Nocturnal Fall & ADL Acuity Sense Flagging 905 Waves & Lifting Prevention/Capture +46.0% vs $213,200/mo Stream & CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL ($0/GB Stream Write Tax) + OneLake Zero-Copy PointClickCare/Yardi Mirroring (4ms Nocturnal Fall & ADL Acuity Sense Flagging 905 Waves & Lifting Prevention/Capture +46.0% vs $213,200/mo Stream & CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1058",
+        "category": "HTAP & Vector Search",
+        "question": "Retrieve Exact 950,000,000 (950M = 0.95B!) CMS MDS 3.0 functional assessments, longitudinal nursing progress notes, gait-kinematic trajectories, and tiered Level-of-Care contract vectors alongside CMS 42 CFR 483.12 anti-chemical-restraint / Beers drug, minimum HPRD staffing, and PDPM documentation gates vs Exact 7.80TB DRAM vector search",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (Exact 950M=0.95B MDS 3.0, Gait Trajectory & Level-of-Care Contract Vectors, -92% RAM at Exact $4,700/mo vs $116,400/mo Exact 7.80TB DRAM—Saving $111,700/mo!) + In-Lake PREDICT (4ms, +$104.0M/yr Gained!) & Foundry IQ SOP-262 Blocking 465 Beers/HPRD/PDPM Violations (+$23.20M)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (Exact 950M=0.95B MDS 3.0, Gait Trajectory & Level-of-Care Contract Vectors, -92% RAM at Exact $4,700/mo vs $116,400/mo Exact 7.80TB DRAM—Saving $111,700/mo!) + In-Lake PREDICT (4ms, +$104.0M/yr Gained!) & Foundry IQ SOP-262 Blocking 465 Beers/HPRD/PDPM Violations (+$23.20M)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1059",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 2,400-community global senior living, memory care & post-acute SNF platform (1,230K=1.23M 1-2-3! EPS stream, Exact 950M=0.95B MDS/care vectors, 29,200 EDs/DONs/clinicians): Fabric F64 ($17,680/mo) vs stitched Kafka/CDC/Snowflake/Databricks/AWS/BI stack ($355.0K-$567,700/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + Exact 950M SSD DiskANN + Direct Lake ($17,680/mo vs $567,700/mo Stitched Multi-Cloud, Saving -$550.0K/mo (-$550,020/mo Breaking -$550K/mo!) / -96.9% Record TCO! with 29,200 $0 Viewer Seats & HIPAA PHI RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + Exact 950M SSD DiskANN + Direct Lake ($17,680/mo vs $567,700/mo Stitched Multi-Cloud, Saving -$550.0K/mo (-$550,020/mo Breaking -$550K/mo!) / -96.9% Record TCO! with 29,200 $0 Viewer Seats & HIPAA PHI RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1060",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic 300th Unit Test Exact-Hundred Milestone (300/300!), New All-Time Record 99.84% Accuracy (607/608 with 607 Prime Passed!), R254=2x127, 262 Palindrome SVG, 142 FAQs=284 Docs, Historic Sub-123ms Routing Mean (122.3ms 1-2-2-3!), 148 Sims (107.26ms), Exact 950M (0.95B!) Vectors & Breaking -$550K/mo Saved (-$550,020/mo!) Milestone: Winter flu & nocturnal sundowning wave triggers 905 waves and 465 Beers/HPRD/PDPM risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 905-Wave Fall/Acuity Sense ($0 Tax) + Exact 950M DiskANN & PREDICT 4ms (+46.0% Lift & +$104.0M Gained!) + Foundry IQ 4ms 465-Beers/HPRD/PDPM Gate (+$23.20M) & HIPAA RLS + Teams PointClickCare/Yardi & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $89.60M! SLA)",
+        "model_answer": "Eventhouse 4ms 905-Wave Fall/Acuity Sense ($0 Tax) + Exact 950M DiskANN & PREDICT 4ms (+46.0% Lift & +$104.0M Gained!) + Foundry IQ 4ms 465-Beers/HPRD/PDPM Gate (+$23.20M) & HIPAA RLS + Teams PointClickCare/Yardi & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $89.60M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -17332,7 +17446,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_self_storage_reit_climate_controlled_fabric_dynamic_pricing_lien_auction_vs_4clouds",
         "global_commercial_landscaping_utility_row_vegetation_fabric_lidar_irrigation_vs_4clouds",
         "global_commercial_pool_aquatic_facility_water_chemistry_fabric_mahc_supply_vs_4clouds",
-        "global_commercial_printing_corrugated_packaging_label_converting_fabric_press_fsc_fda_vs_4clouds"
+        "global_commercial_printing_corrugated_packaging_label_converting_fabric_press_fsc_fda_vs_4clouds",
+        "global_senior_living_assisted_living_memory_care_snf_fabric_fall_radar_pdpm_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
