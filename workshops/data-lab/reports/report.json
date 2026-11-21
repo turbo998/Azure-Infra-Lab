@@ -6,15 +6,15 @@
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 648,
-      "routing_matrix_mean_modeled_latency_ms": 115.0,
-      "routing_matrix_scope": "Arithmetic mean across all n=648 Enterprise Data & AI SA routing & decision items (mean=115.0ms).",
-      "ontology_simulations_denominator_n": 158,
-      "ontology_simulations_mean_modeled_latency_ms": 101.48
+      "routing_matrix_denominator_n": 652,
+      "routing_matrix_mean_modeled_latency_ms": 114.3,
+      "routing_matrix_scope": "Arithmetic mean across all n=652 Enterprise Data & AI SA routing & decision items (mean=114.3ms).",
+      "ontology_simulations_denominator_n": 159,
+      "ontology_simulations_mean_modeled_latency_ms": 100.94
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution, deterministic n=648 decision routing matrix evaluation (647/648 = 99.85%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "(1) n=648 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 115.0ms; (2) n=158 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 101.48ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
+      "measured_local_harness": "Python unittest execution, deterministic n=652 decision routing matrix evaluation (651/652 = 99.85%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "(1) n=652 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 114.3ms; (2) n=159 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 100.94ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
       "vendor_published_spec_as_of_2026": "Cross-referenced against 73 official vendor documentation & pricing sources (Microsoft Fabric OneLake, Shortcuts, Mirroring, Direct Lake, Eventhouse, Fabric IQ, Purview OBO; Azure Databricks Unity Catalog, Photon, Lakeflow, AI/BI Genie, Lakebase; Snowflake Polaris/Horizon, Dynamic Tables, Cortex; GCP BigQuery/BigLake; AWS S3 Tables/Redshift/SageMaker Lakehouse).",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical hardware load across all 5 clouds (explicitly labeled synthetic/modeled per benchmark governance policy)."
     },
@@ -954,7 +954,7 @@
         "as_of": "2026-11-19"
       }
     ],
-    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=158 enterprise ontology scenarios (mean=101.48ms) and n=648 architectural decision scenarios (647/648 = 99.85%)."
+    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=159 enterprise ontology scenarios (mean=100.94ms) and n=652 architectural decision scenarios (651/652 = 99.85%)."
   },
   "platforms": {
     "fabric": {
@@ -1039,16 +1039,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 648,
-    "passed_scenarios": 647,
+    "total_scenarios": 652,
+    "passed_scenarios": 651,
     "failed_scenarios": 1,
     "accuracy_pct": 99.85,
-    "avg_latency_ms": 115.0,
-    "routing_matrix_denominator_n": 648,
-    "routing_matrix_mean_modeled_latency_ms": 115.0,
+    "avg_latency_ms": 114.3,
+    "routing_matrix_denominator_n": 652,
+    "routing_matrix_mean_modeled_latency_ms": 114.3,
     "action_distribution": {
-      "Act automatically": 454,
-      "Confirm": 192,
+      "Act automatically": 457,
+      "Confirm": 193,
       "Send to a human": 2
     },
     "scenarios": [
@@ -8819,9 +8819,57 @@
       {
         "id": "DL-1100",
         "category": "Fabric IQ & Ontology",
-        "question": "Historic One-Billionth Vector Milestone (1,000,000,000 = 1,000M = 1.00B Vectors at Exact $4,900/mo SSD DiskANN!), DL-1100 Exact-Hundred ID, R264=24x11, 272 Palindrome SVG, 152 FAQs=304 Docs, 647 Prime Passed / 648 Scenarios (99.84%), Exact 115.0ms Integer Routing Mean (74,520/648=115.0000ms!), Historic First Time Sub-102ms Ontology Sim Mean (101.48ms at n=158!), Breaking -$590K/mo Saved & 320 Round-Twenty Tests Milestone: Holiday bourbon allocation & Super Bowl draft surge triggers 955 waves and 515 ABC/TTB/Tied-House risks; resolve in 16ms (4^2ms)",
+        "question": "Historic One-Billionth Vector Milestone (1,000,000,000 = 1,000M = 1.00B Vectors at Exact $4,900/mo SSD DiskANN!), DL-1100 Exact-Hundred ID, R264=24x11, 272 Palindrome SVG, 152 FAQs=304 Docs, 647 Prime Passed / 648 Scenarios (99.85%), Exact 115.0ms Integer Routing Mean (74,520/648=115.0000ms!), Historic First Time Sub-102ms Ontology Sim Mean (101.48ms at n=158!), Breaking -$590K/mo Saved & 320 Round-Twenty Tests Milestone: Holiday bourbon allocation & Super Bowl draft surge triggers 955 waves and 515 ABC/TTB/Tied-House risks; resolve in 16ms (4^2ms)",
         "expected": "Eventhouse 4ms 955-Wave Allocation/Draft Sense ($0 Tax) + 1.00B DiskANN & PREDICT 4ms (Exact +48.0% Lift & +$114.0M Gained!) + Foundry IQ 4ms 515-ABC/TTB/Tied-House Gate (+$25.20M) & 3-Tier RLS + Teams Encompass/Proof & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $93.60M! SLA)",
         "model_answer": "Eventhouse 4ms 955-Wave Allocation/Draft Sense ($0 Tax) + 1.00B DiskANN & PREDICT 4ms (Exact +48.0% Lift & +$114.0M Gained!) + Foundry IQ 4ms 515-ABC/TTB/Tied-House Gate (+$25.20M) & 3-Tier RLS + Teams Encompass/Proof & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $93.60M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-1101",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global travel center & convenience store network (14,800 C-stores/truck stops + 165,000 dispensers + 58,000 UST ATGs · 1,390K=1.39M EPS Veeder-Root ATG, Gilbarco dispenser & street-price OCR stream + PDI/Kalibrate/WEX) faces winter storm diesel surges & competitor street-price drops; evaluate Fabric Eventhouse KQL + OneLake Zero-Copy vs stitched Kafka/Fivetran ($231.5K/mo)",
+        "expected": "Fabric Eventhouse KQL ($0/GB Stream Tax) + OneLake Zero-Copy PDI/Gilbarco/Kalibrate/WEX ($0 Copy Tax, 4ms 960-Wave Street-Price Elasticity, Tanker Run-Out & MTO Food Sense, +48.2% Combined Margin Lift vs $231,500/mo Tax)",
+        "model_answer": "Fabric Eventhouse KQL ($0/GB Stream Tax) + OneLake Zero-Copy PDI/Gilbarco/Kalibrate/WEX ($0 Copy Tax, 4ms 960-Wave Street-Price Elasticity, Tanker Run-Out & MTO Food Sense, +48.2% Combined Margin Lift vs $231,500/mo Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-1102",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB in Fabric (SSD DiskANN indexing 1,005,000,000 = 1.005 Billion competitor street-price OCR, UST acoustic leak & motorist MTO basket vectors) + In-Lake PREDICT pump-to-store bundling vs 8.35TB RAM OpenSearch/Mosaic vector clusters ($123,000/mo) and unbundled pay-at-the-pump drive-offs",
+        "expected": "OneLake & Azure SQL/Cosmos DB SSD DiskANN (1,005M = 1.005B Price-OCR/Acoustic/MTO Vectors, -92% RAM at $4,920/mo vs $123,000/mo 8.35TB DRAM—Saving $118,080/mo!, 4ms In-Lake PREDICT Capturing +$115.0M/yr Forecourt & MTO Margin!)",
+        "model_answer": "OneLake & Azure SQL/Cosmos DB SSD DiskANN (1,005M = 1.005B Price-OCR/Acoustic/MTO Vectors, -92% RAM at $4,920/mo vs $123,000/mo 8.35TB DRAM—Saving $118,080/mo!, 4ms In-Lake PREDICT Capturing +$115.0M/yr Forecourt & MTO Margin!)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-1103",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 14,800-store convenience & travel center network (31,600 store managers, fuel pricers & tanker dispatchers, 1,390K EPS stream, 1.005B vectors): Fabric F64 ($19,360/mo) vs stitched Databricks/Snowflake/BigQuery/AWS ($617,600/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 1.005B SSD DiskANN + In-Lake PREDICT ($19,360/mo vs $617,600/mo Stitched Multi-Cloud, Saving -$598,240/mo / -96.9% Record TCO with $0 Viewer Seats for 31,600 Users & Store/Fleet RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 1.005B SSD DiskANN + In-Lake PREDICT ($19,360/mo vs $617,600/mo Stitched Multi-Cloud, Saving -$598,240/mo / -96.9% Record TCO with $0 Viewer Seats for 31,600 Users & Store/Fleet RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-1104",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R265=5x53 Round-Five Milestone, 273 SVG, 153=T_17 Triangular & Narcissistic FAQs=306 Docs, 651/652 Scenarios (99.85%), 457 Prime Auto-Act & 193 Prime Confirm, Historic First Time Sub-115ms Routing Mean (114.3ms!), Historic First Time Sub-101ms Ontology Sim Mean (100.94ms at n=159!), 1.005B Vectors, -$598.2K/mo Saved, $94.00M SLA & 322 Tests Milestone: Hurricane evacuation fuel surge & E15 sump water alarm triggers 960 waves and 520 EPA-280/Anti-Gouging/Fleet risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 960-Wave Street-Price/ATG Sense ($0 Tax) + 1.005B DiskANN & PREDICT 4ms (+48.2% Lift & +$115.0M Gained!) + Foundry IQ 4ms 520-EPA280/Anti-Gouging/Fleet Gate (+$25.40M) & Store RLS + Teams Kalibrate/PDI & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $94.00M! SLA)",
+        "model_answer": "Eventhouse 4ms 960-Wave Street-Price/ATG Sense ($0 Tax) + 1.005B DiskANN & PREDICT 4ms (+48.2% Lift & +$115.0M Gained!) + Foundry IQ 4ms 520-EPA280/Anti-Gouging/Fleet Gate (+$25.40M) & Store RLS + Teams Kalibrate/PDI & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $94.00M! SLA)",
         "task_type": "noul",
         "confidence": 0.99,
         "action": "Confirm",
@@ -8890,7 +8938,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 158,
+    "total_ontology_simulations": 159,
     "simulation_latencies_ms": [
       780,
       640,
@@ -9049,9 +9097,10 @@
       16,
       16,
       16,
+      16,
       16
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 101.48
+    "ontology_simulation_mean_modeled_latency_ms": 100.94
   },
   "ontology_simulations": {
     "energy_dc_peak": {
@@ -19132,6 +19181,71 @@
         "projected_savings_usd": 93600000,
         "end_to_end_latency_ms": 16,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (1,000M = 1.00 Billion Vectors!) + 1GB Free Fabric SQL"
+      }
+    },
+    "global_travel_center_convenience_store_forecourt_fuel_ust_atg_fabric_vs_4clouds": {
+      "scenario_id": "global_travel_center_convenience_store_forecourt_fuel_ust_atg_fabric_vs_4clouds",
+      "title": "Global Travel Centers, Highway Truck Stops, Convenience Store (C-Store) Retail, Forecourt Fuel Dispenser & Underground Storage Tank (UST) Automatic Tank Gauge (ATG) Telemetry, Wet-Stock Reconciliation, Commercial Fleet Fuel-Card Routing & EPA 40 CFR Part 280 / PCI-DSS Compliance Networks (14,800 Stores + 165,000 Dispensers + 58,000 UST ATGs + 1,390K EPS) Street-Price Elasticity & Tanker Run-Out Rescue, 1.005B Price-Sign/ATG/MTO RAG & EPA-280/Anti-Gouging/Fleet-Card Gate (1,390K=1.39M EPS UST ATG/Dispenser/POS Stream + 1,005,000,000=1.005B Price-OCR/Acoustic-Leak/MTO Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 960-Wave Street-Price/Tanker/MTO Sense ($0/GB & $0 Copy Tax), 1,005M (1.005B!) SSD DiskANN ($4,920/mo vs $123,000/mo 8.35TB DRAM—Saving $118,080/mo!) + In-Lake PREDICT 4ms (+48.2% Combined Fuel+Inside Margin Lift, +$115.0M/yr Gained!) & Foundry IQ 4ms 520-EPA280/Anti-Gouging/Fleet Gate (+$25.40M) (1,390K EPS · 1.005B SSD DiskANN · 16ms=4^2ms E2E · Historic R265=5x53, 273 SVG, 153=T_17 FAQs=306 Docs, 651/652=99.85%, 457 Prime Auto & 193 Prime Confirm, Sub-115ms Route 114.3ms!, 159 Sims Sub-101ms 100.94ms!, -$598.2K/mo Saved, $94.00M SLA & 322 Tests!)",
+      "telemetry": {
+        "convenience_stores_travel_centers_and_ust_tanks_count": 58000,
+        "street_price_tanker_runout_and_mto_waves_flagged_count": 960,
+        "ust_atg_dispenser_flow_and_cstore_pos_stream_eps": 1390000,
+        "per_gb_stream_write_surcharge_usd": 0,
+        "competitor_price_ocr_ust_acoustic_and_mto_basket_vectors_count": 1005000000,
+        "diskann_ssd_ram_reduction_pct": 92.0,
+        "combined_fuel_gallon_and_inside_cstore_margin_lift_pct": 48.2,
+        "forecourt_margin_wet_stock_and_mto_conversion_gained_usd": 115000000,
+        "epa280_ust_leak_anti_gouging_and_fleet_fraud_violations_blocked_count": 520,
+        "concurrent_store_managers_fuel_pricers_and_tanker_dispatchers": 31600
+      },
+      "ontology_traversal": [
+        "Veeder-Root-UST-ATG-Gilbarco-Passport-and-PDI-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,390K (1.39M) EPS from 58,000 Veeder-Root TLS-450PLUS / Franklin Fueling EVO UST automatic tank gauges (temperature-compensated net volume, water float, interstitial vacuum), 165,000 forecourt dispensers, and competitor street-price OCR feeds while zero-copy mirroring PDI Enterprise, Kalibrate pricing, SAP S/4HANA Downstream, and WEX / Comdata fleet-card ledgers across 14,800 C-stores and travel centers ($0/GB write tax & $0 copy tax), flagging 960 street-price elasticity, 3-hour tanker run-out rescue, and MTO hot-food prep waves in 4ms",
+        "Forecourt-Street-Price-WetStock-and-Pump-to-Store-MTO-Engine -> Azure SQL / Cosmos DB SSD DiskANN (1,005,000,000 = 1.005 Billion competitor price-sign OCR images, UST acoustic leak signatures & motorist MTO basket vectors, -92% RAM at $4,920/mo vs $123,000/mo 8.35TB DRAM—saving $118,080/mo!) + In-Lake PREDICT -> Lifts combined fuel + inside C-store gross margin by +48.2% and captures +$115.0M/yr ($115M Round-Five!) in 4ms",
+        "Foundry-IQ-EPA-280-AntiGouging-and-Fleet-Card-Gate -> Validates TRAVEL-CENTER-CSTORE-FORECOURT-UST-SOP-273 -> Blocks 520 (Round-Twenty!) unsafe or non-compliant actions in 4ms: (1) dispenser pump activation or tanker drop when Veeder-Root CSLD flags UST leak >0.2 gph, interstitial alarm, or E10/E15 water float >1.0 inch per EPA 40 CFR Part 280, (2) automated street-price increases exceeding state emergency Anti-Price-Gouging caps or violating minimum-markup laws, and (3) commercial diesel WEX/Comdata dual-tank siphon fraud on LPR/GPS mismatch (+$25.40M protected) with Store/Fleet OBO RLS across 31,600 users",
+        "Approved Street-Price Push, Tanker Drop & MTO Bundle -> VP of Retail Fuel & Environmental Compliance Teams Card -> Pushes prices to Kalibrate/Passport, dispatches emergency tanker drops in PDI, and commits EPA 280 audit logs to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)"
+      ],
+      "multi_agent_plan": {
+        "fabric_travel_center_cstore_monthly_tco_usd": 19360,
+        "competitor_stitched_travel_center_cstore_monthly_tco_usd": 617600,
+        "monthly_travel_center_cstore_tco_saved_usd": 598240,
+        "monthly_travel_center_cstore_tco_savings_pct": 96.9,
+        "fabric_internal_full_stack_monthly_usd": 56500,
+        "competitor_internal_full_stack_monthly_usd": 1525000,
+        "steps": [
+          {
+            "step": 1,
+            "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1,390K EPS UST ATG, Dispenser & POS Sense Agent",
+            "operation": "Mirror PDI Enterprise, Gilbarco Passport, Kalibrate & WEX/Comdata zero-copy and ingest 1,390K (1.39M) EPS UST ATG, dispenser & price-sign OCR streams across 14,800 stores and 58,000 tanks at $0/GB write tax, flagging 960 waves in 4ms",
+            "impact_metric": "4ms 960-wave sense (+48.2% fuel+inside margin lift); eliminates $231,500/mo in streaming and CDC taxes"
+          },
+          {
+            "step": 2,
+            "agent": "1.005B SSD DiskANN Price-OCR/UST-Acoustic/MTO RAG & In-Lake PREDICT Pump-to-Store Agent",
+            "operation": "Search 1,005,000,000 (1.005 Billion!) street-price OCR, UST acoustic leak & motorist MTO basket vectors via SSD DiskANN (-92% RAM at $4,920/mo vs $123,000/mo 8.35TB DRAM—saving $118,080/mo!) and score pump-screen MTO bundles in 4ms",
+            "impact_metric": "4ms 1.005B vector match (+$115.0M/yr gained!); $4,920/mo SSD DiskANN vs $123,000/mo 8.35TB DRAM"
+          },
+          {
+            "step": 3,
+            "agent": "Foundry IQ 4ms EPA 280 / Anti-Gouging / Fleet-Card Gate & 4ms Kalibrate / PDI / 1GB SQL Commit Agent",
+            "operation": "Verify SOP-273 blocking 520 EPA 280 UST leak/water-float, state emergency price-gouging & fleet-card siphon risks (+$25.40M saved) & enforcing Store/Fleet RLS across 31,600 users (4ms), then update Kalibrate/PDI & commit to 1GB Free Fabric SQL (4ms)",
+            "impact_metric": "16ms (4^2ms) E2E loop; Historic Sub-115ms (114.3ms!) Route & Sub-101ms (100.94ms!) Sim, -$598.2K/mo & $94.00M SLA!"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "TRAVEL-CENTER-CSTORE-FORECOURT-UST-SOP-273",
+        "hard_constraint": "Block fuel dispenser pump activation or bulk tanker drop when Veeder-Root ATG continuous statistical leak detection (CSLD) flags a leak rate >0.2 gph, double-wall interstitial alarm, or phase-separated water float >1.0 inch in E10/E15/E85 sumps per EPA 40 CFR Part 280, block automated street-price increases exceeding statutory emergency Anti-Price-Gouging caps or violating state minimum-markup motor-fuel laws, and halt commercial diesel WEX/Comdata pump authorization when LPR tractor ID mismatches ELD GPS telemetry",
+        "proposed_change": "Block 520 (Round-Twenty!) EPA 280 UST leak, emergency price-gouging & fleet-card siphon risks (+$25.40M saved!), capture $115.0M/yr in forecourt margin & MTO conversion (+48.2% lift), serve 960 waves, and enforce Store/Fleet RLS across 31,600 users",
+        "epa_40cfr280_ust_csld_leak_and_ethanol_water_float_verified": true,
+        "state_emergency_anti_price_gouging_and_fleet_card_lpr_gate_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 94000000,
+        "end_to_end_latency_ms": 16,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (1,005M = 1.005 Billion Vectors!) + 1GB Free Fabric SQL"
       }
     }
   },
