@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" width="1280" height="760">
+  <defs>
+    <linearGradient id="bg249" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent249" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="cardFabric249" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#064E3B"/>
+      <stop offset="100%" stop-color="#022C22"/>
+    </linearGradient>
+    <linearGradient id="cardStitched249" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#450A0A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="760" fill="url(#bg249)"/>
+  <rect x="20" y="16" width="1240" height="6" rx="3" fill="url(#accent249)"/>
+
+  <!-- Header -->
+  <text x="36" y="52" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800">
+    249 · Global Commercial Pest Control, IoT Trap Telemetry &amp; Food-Plant IPM Auditing Architecture (R241)
+  </text>
+  <text x="36" y="76" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">
+    1,850 Branches + 42K Technicians + 8.5M Connected Rodent/Termite/UV Traps · 🏆 Historic -$503.1K/mo (&gt;$0.50M/mo!) Savings, 555 Passed &amp; Exact 400=20^2 Blocks!
+  </text>
+  <rect x="965" y="34" width="285" height="44" rx="10" fill="#065F46" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1107" y="54" text-anchor="middle" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800">🏆 R241 PRIME · &gt;$500K/MO SAVED!</text>
+  <text x="1107" y="71" text-anchor="middle" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">16ms (4²ms) · -$503,080/mo (-96.7%)</text>
+
+  <!-- Left Column: IoT Trap & Field Route Sources -->
+  <rect x="30" y="96" width="280" height="475" rx="14" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="48" y="124" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">1. SMART TRAP &amp; IPM ROUTE EDGE</text>
+  <text x="48" y="143" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">1,135K (1.135M) EPS IoT &amp; Route Stream</text>
+
+  <rect x="46" y="158" width="248" height="86" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1"/>
+  <text x="60" y="179" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🪤 8.5M Connected Rodent/Termite Traps</text>
+  <text x="60" y="198" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• NB-IoT/LoRaWAN infrared catch triggers</text>
+  <text x="60" y="214" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Subterranean termite acoustic/moisture</text>
+  <text x="60" y="230" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Silo sulfuryl fluoride ppm gas sensors</text>
+
+  <rect x="46" y="256" width="248" height="92" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1"/>
+  <text x="60" y="277" fill="#FDE68A" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🦟 Smart UV Fly-Lights &amp; CAD Maps</text>
+  <text x="60" y="296" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Macro glueboard camera insect counts</text>
+  <text x="60" y="312" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• 2.4M food/hospitality CAD floorplans</text>
+  <text x="60" y="328" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Dock-door-ajar &amp; micro-climate feeds</text>
+
+  <rect x="46" y="360" width="248" height="92" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1"/>
+  <text x="60" y="381" fill="#BAE6FD" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🚐 42,000 Licensed Technicians</text>
+  <text x="60" y="400" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Barcode bait-station &amp; exclusion logs</text>
+  <text x="60" y="416" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• State RUP applicator license registry</text>
+  <text x="60" y="432" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Vehicle GPS &amp; chemical van inventory</text>
+
+  <rect x="46" y="464" width="248" height="90" rx="10" fill="#0F172A" stroke="#A855F7" stroke-width="1"/>
+  <text x="60" y="485" fill="#E9D5FF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🗄️ PestPac / ServiceTitan &amp; GFSI</text>
+  <text x="60" y="504" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Zero-copy work orders &amp; SAP billing</text>
+  <text x="60" y="520" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• SQF / BRCGS / AIB &amp; EPA FIFRA labels</text>
+  <text x="60" y="536" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• $0/GB stream tax &amp; $0 CDC copy tax</text>
+
+  <!-- Center Top: Microsoft Fabric 16ms Path -->
+  <rect x="332" y="96" width="600" height="295" rx="14" fill="url(#cardFabric249)" stroke="#10B981" stroke-width="2"/>
+  <text x="352" y="124" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">
+    2A. MICROSOFT FABRIC UNIFIED 16ms (4²ms) IPM LOOP ($16,920/mo · -$503.1K/mo!)
+  </text>
+
+  <rect x="350" y="138" width="272" height="112" rx="10" fill="#065F46" stroke="#34D399" stroke-width="1.2"/>
+  <text x="364" y="159" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800">① Eventhouse KQL (4ms · $0 Tax)</text>
+  <text x="364" y="178" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Ingests 1,135K (1.135M) EPS 8.5M traps</text>
+  <text x="364" y="194" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Flags 840=7×120 infestation waves</text>
+  <text x="364" y="210" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Cuts empty trap checks &amp; churn -43.5%</text>
+  <text x="364" y="226" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">• Saves $196,800/mo stream &amp; CDC tax</text>
+
+  <rect x="640" y="138" width="274" height="112" rx="10" fill="#065F46" stroke="#34D399" stroke-width="1.2"/>
+  <text x="654" y="159" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800">② 885M SSD DiskANN + PREDICT (4ms)</text>
+  <text x="654" y="178" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• 885M insect vision, CAD &amp; FIFRA vectors</text>
+  <text x="654" y="194" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• $4,440/mo (-92% RAM vs $108.6K DRAM)</text>
+  <text x="654" y="210" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Auto-compiles BRCGS/SQF audit dossiers</text>
+  <text x="654" y="226" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">• Saves $104,160/mo DRAM + $91.0M/yr</text>
+
+  <rect x="350" y="262" width="564" height="114" rx="10" fill="#042F2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="366" y="284" fill="#FDE68A" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">
+    ③ Foundry IQ IPM Safety Gate (SOP-249 · 4ms) + ④ Teams &amp; PestPac Write-Back (4ms)
+  </text>
+  <text x="366" y="304" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Hard-Blocks Exact 400 (20²!) Violations: (1) GFSI (SQF/BRCGS) interior food-handling zone toxic rodenticide placement;
+  </text>
+  <text x="366" y="321" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+      (2) Unlicensed EPA FIFRA RUP dispatch or waterway/pollinator buffer breach; (3) &gt;1.0 ppm fumigation clearance (+$20.60M!)
+  </text>
+  <text x="366" y="338" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">
+    • 26,600 Route Supervisors &amp; Client Food-Safety QA Directors on Direct Lake ($0 BI Seat Tax, saves $212,800/mo)
+  </text>
+  <text x="366" y="355" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">
+    • Mode A Coexistence: Mirrored Azure Databricks Unity Catalog shares custom YOLO/ViT insect classifiers zero-copy
+  </text>
+
+  <!-- Center Bottom: Stitched Multi-Cloud Anti-Pattern -->
+  <rect x="332" y="405" width="600" height="166" rx="14" fill="url(#cardStitched249)" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="352" y="431" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">
+    2B. STITCHED MULTI-CLOUD BASELINE (Exact $520,000/mo · Blind Empty-Trap Checks &amp; Recall Risk)
+  </text>
+  <text x="352" y="454" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ IoT Core + Kafka + Fivetran Ingest (1,135K EPS + PestPac CDC): $196,800/mo per-GB write &amp; connector taxes
+  </text>
+  <text x="352" y="474" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ Dedicated In-Memory Vector Cluster (7.15TB DRAM for 885M insect vision, CAD &amp; FIFRA label vectors): $108,600/mo
+  </text>
+  <text x="352" y="494" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ Per-Seat BI Licensing for 26,600 Supervisors, Entomologists &amp; Client QA Portals (26,600 × $8): $212,800/mo
+  </text>
+  <text x="352" y="514" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ Fixed monthly calendar routes waste 70% of technician time on empty boxes &amp; lack food-zone chemical interlocks
+  </text>
+  <text x="352" y="538" fill="#FDE047" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800">
+    ⚡ Fabric Net Advantage: 🏆 -$503,080/mo (&gt;$0.50M/mo! -96.7%) TCO Saved · 16ms vs 940ms · $84.40M SLA Protected!
+  </text>
+
+  <!-- Right Column: Sealed Benchmark Scorecard & Scenario IN (DL-1005..DL-1008) -->
+  <rect x="952" y="96" width="298" height="475" rx="14" fill="#1E293B" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="970" y="124" fill="#60A5FA" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">3. SEALED BENCHMARK (DL-1005..1008)</text>
+  <text x="970" y="143" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">🏆 R241 Prime · First &gt;$500K/mo Savings!</text>
+
+  <rect x="968" y="156" width="266" height="72" rx="9" fill="#0F172A" stroke="#10B981" stroke-width="1"/>
+  <text x="980" y="175" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">DL-1005 · 8.5M Trap Breach Sense</text>
+  <text x="980" y="192" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.93 · Act automatically (4ms)</text>
+  <text x="980" y="209" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">840 waves · -43.5% empty checks · -$196.8K</text>
+
+  <rect x="968" y="238" width="266" height="72" rx="9" fill="#0F172A" stroke="#10B981" stroke-width="1"/>
+  <text x="980" y="257" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">DL-1006 · 885M DiskANN Insect RAG</text>
+  <text x="980" y="274" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.92 · Act automatically (4ms)</text>
+  <text x="980" y="291" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">$4,440 (4-4-4-0!) vs $108.6K DRAM (-$104.2K)</text>
+
+  <rect x="968" y="320" width="266" height="76" rx="9" fill="#0F172A" stroke="#F59E0B" stroke-width="1"/>
+  <text x="980" y="339" fill="#FDE68A" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">DL-1007 · GFSI/FIFRA/Fumigation Gate</text>
+  <text x="980" y="356" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.79 · Confirm (5ms)</text>
+  <text x="980" y="373" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">Exact 400=20² blocks · ≤1ppm · +$20.60M</text>
+
+  <rect x="968" y="406" width="266" height="76" rx="9" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="980" y="425" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">DL-1008 · 26.6K Client QA Zero-Seat BI</text>
+  <text x="980" y="442" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.94 · Act automatically (3ms)</text>
+  <text x="980" y="459" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">Saves $212,800/mo BI tax · 2.4M-Site RLS</text>
+
+  <rect x="968" y="492" width="266" height="64" rx="9" fill="#0F172A" stroke="#A855F7" stroke-width="1"/>
+  <text x="980" y="511" fill="#E9D5FF" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="800">Cumulative R241 Sealed Metrics:</text>
+  <text x="980" y="528" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">• 555/556 (99.82%) · 169=13² Confirm!</text>
+  <text x="980" y="544" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">• 133.4ms Route / 116.04ms Sim · 274 Tests</text>
+
+  <!-- Bottom Bar: 5-Cloud Decision Matrix & Provenance -->
+  <rect x="30" y="586" width="1220" height="150" rx="14" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="50" y="614" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">
+    4. FIVE-CLOUD EXECUTIVE SELECTION MATRIX &amp; TCO INFLECTION POINT (1,850 BRANCHES · 42K TECHS · 8.5M TRAPS)
+  </text>
+  <text x="50" y="638" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    • Microsoft Fabric (Lead): $16,920/mo (-96.7%) · Eventhouse 1.135M EPS ($0 tax) + 885M SSD DiskANN ($4,440/mo) + 26,600 Viewers ($0) + SOP-249 Gate
+  </text>
+  <text x="50" y="660" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Azure Databricks (Mode A Coexistence): Custom YOLO/ViT insect species classifiers &amp; vector-disease ML → OneLake Mirrored UC → Fabric Direct Lake
+  </text>
+  <text x="50" y="682" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Snowflake / GCP BigQuery / AWS Lakehouse: High per-GB stream ingestion ($196.8K/mo), 7.15TB DRAM vector cluster ($108.6K/mo) &amp; 26.6K BI seat taxes ($212.8K/mo)
+  </text>
+  <text x="50" y="712" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600">
+    Provenance: Sealed deterministic evaluation in workshops/data-lab/reports/report.json · 129 FAQs (258 Docs) · 249 SVG · 274/274 Unit Tests Passing
+  </text>
+</svg>

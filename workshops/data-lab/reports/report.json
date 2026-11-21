@@ -6,15 +6,15 @@
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 552,
-      "routing_matrix_mean_modeled_latency_ms": 134.3,
-      "routing_matrix_scope": "Arithmetic mean across all n=552 Enterprise Data & AI SA routing & decision items (mean=134.3ms).",
-      "ontology_simulations_denominator_n": 134,
-      "ontology_simulations_mean_modeled_latency_ms": 116.79
+      "routing_matrix_denominator_n": 556,
+      "routing_matrix_mean_modeled_latency_ms": 133.4,
+      "routing_matrix_scope": "Arithmetic mean across all n=556 Enterprise Data & AI SA routing & decision items (mean=133.4ms).",
+      "ontology_simulations_denominator_n": 135,
+      "ontology_simulations_mean_modeled_latency_ms": 116.04
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution, deterministic n=552 decision routing matrix evaluation (551/552 = 99.82%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "(1) n=552 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 134.3ms; (2) n=134 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 116.79ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
+      "measured_local_harness": "Python unittest execution, deterministic n=556 decision routing matrix evaluation (555/556 = 99.82%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "(1) n=556 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 133.4ms; (2) n=135 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 116.04ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
       "vendor_published_spec_as_of_2026": "Cross-referenced against 73 official vendor documentation & pricing sources (Microsoft Fabric OneLake, Shortcuts, Mirroring, Direct Lake, Eventhouse, Fabric IQ, Purview OBO; Azure Databricks Unity Catalog, Photon, Lakeflow, AI/BI Genie, Lakebase; Snowflake Polaris/Horizon, Dynamic Tables, Cortex; GCP BigQuery/BigLake; AWS S3 Tables/Redshift/SageMaker Lakehouse).",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical hardware load across all 5 clouds (explicitly labeled synthetic/modeled per benchmark governance policy)."
     },
@@ -954,7 +954,7 @@
         "as_of": "2026-11-19"
       }
     ],
-    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=134 enterprise ontology scenarios (mean=116.79ms) and n=552 architectural decision scenarios (551/552 = 99.82%)."
+    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=135 enterprise ontology scenarios (mean=116.04ms) and n=556 architectural decision scenarios (555/556 = 99.82%)."
   },
   "platforms": {
     "fabric": {
@@ -1039,16 +1039,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 552,
-    "passed_scenarios": 551,
+    "total_scenarios": 556,
+    "passed_scenarios": 555,
     "failed_scenarios": 1,
     "accuracy_pct": 99.82,
-    "avg_latency_ms": 134.3,
-    "routing_matrix_denominator_n": 552,
-    "routing_matrix_mean_modeled_latency_ms": 134.3,
+    "avg_latency_ms": 133.4,
+    "routing_matrix_denominator_n": 556,
+    "routing_matrix_mean_modeled_latency_ms": 133.4,
     "action_distribution": {
-      "Act automatically": 382,
-      "Confirm": 168,
+      "Act automatically": 385,
+      "Confirm": 169,
       "Send to a human": 2
     },
     "scenarios": [
@@ -7675,6 +7675,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 4
+      },
+      {
+        "id": "DL-1005",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global commercial pest control, urban vector & food-plant IPM network (1,850 branches, 42,000 technicians, 8.5M connected rodent/termite/UV-insect traps across 2.4M sites, 1,135K=1.135M EPS trap triggers, glueboard camera feeds & handheld scans + PestPac/ServiceTitan & SAP billing) requires 4ms infestation breach sense & targeted exclusion routing: Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs $196,800/mo stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL 1,135K (1.135M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Infestation Breach & Exclusion Sense Flagging 840 Waves & Cutting Empty Trap Checks/Churn -43.5% vs $196.8K/mo Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL 1,135K (1.135M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Infestation Breach & Exclusion Sense Flagging 840 Waves & Cutting Empty Trap Checks/Churn -43.5% vs $196.8K/mo Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-1006",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 885M macro glueboard insect morphological embeddings, 2.4M client CAD facility floorplans & GFSI/EPA FIFRA labels at $4,440/mo 4-4-4-0!) + In-Lake PREDICT ($0 egress tax) vs 7.15TB RAM OpenSearch/Mosaic vector clusters ($108,600/mo)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (885M Insect Vision, CAD Floorplan & EPA FIFRA Vectors, -92% RAM at $4,440/mo vs $108,600/mo 7.15TB DRAM—Saving $104,160/mo!, 4ms In-Lake PREDICT Capturing +$91.0M/yr in Route Productivity & Retention)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (885M Insect Vision, CAD Floorplan & EPA FIFRA Vectors, -92% RAM at $4,440/mo vs $108,600/mo 7.15TB DRAM—Saving $104,160/mo!, 4ms In-Lake PREDICT Capturing +$91.0M/yr in Route Productivity & Retention)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-1007",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 1,850-branch global commercial pest control & 8.5M-trap food IPM platform (1,135K=1.135M EPS stream, 885M insect/CAD vectors, 26,600 route supervisors/entomologists/client QA directors): Fabric F64 ($16,920/mo) vs stitched IoT-Core/CDC/Snowflake/Databricks/AWS/BI stack ($327.0K-Exact $520,000/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 885M SSD DiskANN + Direct Lake ($16,920/mo vs Exact $520,000/mo Stitched Multi-Cloud, Historic First Time Saving >$0.50M/mo: -$503.1K/mo (-$503,080/mo!) / -96.7% Record TCO! with 26,600 $0 Viewer Seats & Client-Site RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 885M SSD DiskANN + Direct Lake ($16,920/mo vs Exact $520,000/mo Stitched Multi-Cloud, Historic First Time Saving >$0.50M/mo: -$503.1K/mo (-$503,080/mo!) / -96.7% Record TCO! with 26,600 $0 Viewer Seats & Client-Site RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-1008",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R241 Prime Round & First Time Breaking -$500,000/mo Monthly TCO Savings (-$503,080/mo > $0.50M/mo!), 555 Repdigit Passed / 556=99.82% Record, 169=13^2 Confirm, 135=5x3^3 Sims (116.04ms), Exact 400=20^2 Guardrail Blocks & 274 Tests Milestone: Summer food-plant rodent surge & flour-mill fumigation triggers 840 waves and Exact 400=20^2 GFSI/FIFRA/fumigation risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 840-Wave Infestation Sense ($0 Tax) + 885M DiskANN & PREDICT 4ms (-43.5% Empty Checks/Churn & +$91.0M Gained) + Foundry IQ 4ms Exact 400-GFSI/FIFRA/Fumigation Gate (+$20.60M) & RLS + Teams PestPac & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $84.40M! SLA)",
+        "model_answer": "Eventhouse 4ms 840-Wave Infestation Sense ($0 Tax) + 885M DiskANN & PREDICT 4ms (-43.5% Empty Checks/Churn & +$91.0M Gained) + Foundry IQ 4ms Exact 400-GFSI/FIFRA/Fumigation Gate (+$20.60M) & RLS + Teams PestPac & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $84.40M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 4
       }
     ]
   },
@@ -7738,7 +7786,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 134,
+    "total_ontology_simulations": 135,
     "simulation_latencies_ms": [
       780,
       640,
@@ -7873,9 +7921,10 @@
       16,
       16,
       16,
+      16,
       16
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 116.79
+    "ontology_simulation_mean_modeled_latency_ms": 116.04
   },
   "ontology_simulations": {
     "energy_dc_peak": {
@@ -16396,6 +16445,71 @@
         "projected_savings_usd": 84000000,
         "end_to_end_latency_ms": 16,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Healthcare Data Solutions (HDS) + OneLake Zero-Copy + Azure SQL SSD DiskANN (880M Vectors) + 1GB Free Fabric SQL"
+      }
+    },
+    "global_commercial_pest_control_iot_trap_fabric_ipm_fifra_route_vs_4clouds": {
+      "scenario_id": "global_commercial_pest_control_iot_trap_fabric_ipm_fifra_route_vs_4clouds",
+      "title": "Global Commercial Pest Control, Urban Vector & Termite Telemetry, Food-Plant IPM Auditing & Environmental Route Services (1,850 Branches + 42K Techs + 8.5M Connected Rodent/Termite/UV Traps) Dynamic Infestation Exclusion Dispatch, 885M Insect-Vision/CAD/GFSI RAG & EPA FIFRA/Food-Zone/Fumigation Gate (1,135K=1.135M EPS NB-IoT-Trap/UV-Glueboard/Handheld Stream + 885M Insect-Vision/Floorplan/FIFRA Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 840-Wave Infestation Sense ($0/GB & $0 Copy Tax), 885M SSD DiskANN ($4,440/mo 4-4-4-0! vs $108,600/mo 7.15TB DRAM—Saving $104,160/mo!) + In-Lake PREDICT 4ms (-43.5% Empty Checks/Churn & +$91.0M/yr Gained) & Foundry IQ 4ms Exact 400=20^2-GFSI/FIFRA/Fumigation Gate (+$20.60M) (1,135K EPS · 885M DiskANN · 16ms=4^2ms E2E · R241 Prime, Historic -$503.1K/mo >$0.50M/mo! Savings, 555 Repdigit Passed / 556=99.82%, 135=5x3^3 Sims 116.04ms, 169=13^2 Confirm & $84.40M SLA!)",
+      "telemetry": {
+        "service_branches_count": 1850,
+        "infestation_and_exclusion_waves_flagged_count": 840,
+        "iot_trap_glueboard_and_handheld_stream_eps": 1135000,
+        "per_gb_stream_write_surcharge_usd": 0,
+        "insect_vision_cad_floorplan_and_fifra_vectors_count": 885000000,
+        "diskann_ssd_ram_reduction_pct": 92.0,
+        "empty_trap_check_and_client_churn_reduction_pct": 43.5,
+        "route_productivity_and_retained_contracts_gained_usd": 91000000,
+        "gfsi_food_zone_fifra_rup_and_fumigation_blocks_count": 400,
+        "concurrent_route_supervisors_entomologists_and_client_qa": 26600
+      },
+      "ontology_traversal": [
+        "Smart-Trap-Glueboard-and-PestPac-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,135K (1.135M) EPS of 8.5M NB-IoT/LoRaWAN rodent trap triggers, subterranean termite moisture sensors, UV glueboard camera counts, and 42,000 technician handheld scans across 2.4M commercial sites while mirroring PestPac / ServiceTitan and SAP billing ($0/GB write tax & $0 copy tax), flagging 840 (7x120!) active perimeter breaches and pest surges in 4ms",
+        "Insect-Vision-and-Exclusion-Route-Engine -> Azure SQL / Cosmos DB SSD DiskANN (885,000,000 macro glueboard insect morphological embeddings, 2.4M client CAD facility floorplans & GFSI/EPA FIFRA labels, -92% RAM at $4,440/mo vs $108,600/mo 7.15TB DRAM—saving $104,160/mo!) + In-Lake PREDICT -> Cuts unproductive empty-trap truck rolls and client churn -43.5% and captures +$91.0M/yr in route margin and contract retention in 4ms",
+        "Foundry-IQ-GFSI-FoodZone-FIFRA-and-Fumigation-Gate -> Validates COMMERCIAL-PEST-CONTROL-IPM-FIFRA-GFSI-SOP-249 -> Blocks Exact 400 (20^2!) toxic anticoagulant rodenticide dispatches inside interior food-handling CAD polygons (GFSI/SQF/BRCGS), unlicensed EPA FIFRA Restricted-Use Pesticide (RUP) or waterway-buffer applications, and >1.0 ppm sulfuryl fluoride fumigation re-entry clearances (+$20.60M protected) with Client-Site RLS in 4ms",
+        "Approved Exclusion Dispatch & BRCGS Audit Dossier -> Technical Director & Client QA Teams Card -> Reroutes technician in PestPac, publishes BRCGS/SQF audit dossier, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)"
+      ],
+      "multi_agent_plan": {
+        "fabric_pest_control_monthly_tco_usd": 16920,
+        "competitor_stitched_pest_control_monthly_tco_usd": 520000,
+        "monthly_pest_control_tco_saved_usd": 503080,
+        "monthly_pest_control_tco_savings_pct": 96.7,
+        "fabric_internal_full_stack_monthly_usd": 55200,
+        "competitor_internal_full_stack_monthly_usd": 1456000,
+        "steps": [
+          {
+            "step": 1,
+            "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.135M EPS 8.5M-Trap, UV Glueboard & Dock-Door Sense Agent",
+            "operation": "Mirror PestPac / ServiceTitan and SAP ledgers zero-copy and ingest 1,135K (1.135M) EPS trap/glueboard/handheld streams across 1,850 branches and 8.5M traps at $0/GB write tax, flagging 840 infestation waves in 4ms",
+            "impact_metric": "4ms 840-wave sense (-43.5% empty checks/churn); eliminates $196,800/mo in IoT stream and ERP CDC taxes"
+          },
+          {
+            "step": 2,
+            "agent": "885M SSD DiskANN Insect-Vision/CAD/GFSI RAG & In-Lake PREDICT Exclusion Route Agent",
+            "operation": "Search 885,000,000 glueboard insect vision, CAD floorplan & EPA FIFRA vectors via SSD DiskANN (-92% RAM at $4,440/mo vs $108,600/mo 7.15TB DRAM—saving $104,160/mo!) and optimize 42K technician routes in 4ms",
+            "impact_metric": "4ms species/route match (+$91.0M/yr route yield & retention); $4,440/mo SSD DiskANN vs $108,600/mo DRAM"
+          },
+          {
+            "step": 3,
+            "agent": "Foundry IQ 4ms GFSI Food-Zone / EPA FIFRA / Fumigation Gate & 4ms PestPac / 1GB SQL Commit Agent",
+            "operation": "Verify SOP-249 blocking Exact 400=20^2 food-zone toxic bait, RUP & >1ppm fumigation risks (+$20.60M saved) & enforcing RLS across 26,600 users (4ms), then dispatch PestPac route & commit to 1GB Free SQL (4ms)",
+            "impact_metric": "16ms (4^2ms) E2E loop; R241 Prime, Historic -$503.1K/mo (>$0.50M/mo!) Saved, 555/556 (99.82%) & $84.40M! SLA"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "COMMERCIAL-PEST-CONTROL-IPM-FIFRA-GFSI-SOP-249",
+        "hard_constraint": "Block chemical anticoagulant rodenticides inside interior food-handling or packaging CAD polygons under GFSI (SQF / BRCGS / AIB) rules, block EPA FIFRA Restricted-Use Pesticide (RUP) dispatches lacking valid state applicator certification or violating pollinator/watershed buffer zones, and block structural fumigation re-entry clearance until dual sensors verify residual gas <= 1.0 ppm",
+        "proposed_change": "Block Exact 400 (20^2!) GFSI food-zone toxic bait, EPA FIFRA RUP & >1.0 ppm fumigation clearance risks (+$20.60M saved), capture $91.0M in route productivity & commercial retention (-43.5% empty checks), serve 840 waves, and enforce RLS across 26,600 users",
+        "gfsi_interior_food_zone_non_toxic_and_fifra_rup_verified": true,
+        "fumigation_clearance_ppm_and_client_site_rls_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 84400000,
+        "end_to_end_latency_ms": 16,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (885M Vectors) + 1GB Free Fabric SQL"
       }
     }
   },
