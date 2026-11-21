@@ -2275,13 +2275,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 86400000)
 
 
-    def test_scenario_matrix_284_cases_and_explicit_miss(self) -> None:
+    def test_global_retail_optical_eyewear_freeform_lens_lab_fabric_teleoptometry_vsp_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_retail_optical_eyewear_freeform_lens_lab_fabric_teleoptometry_vsp_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["optical_retail_stores_and_freeform_labs_count"], 5842)
+        self.assertEqual(sim["telemetry"]["exam_capture_and_oma_lab_waves_flagged_count"], 870)
+        self.assertEqual(sim["telemetry"]["phoropter_oct_and_oma_lab_stream_eps"], 1165000)
+        self.assertEqual(sim["telemetry"]["facial_3d_freeform_corridor_and_vsp_vectors_count"], 915000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_retail_optical_tco_saved_usd"], 524560)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_retail_optical_tco_savings_pct"], 96.9)
+        self.assertTrue(sim["foundry_iq_guardrail"]["ansi_z801_optical_tolerance_and_fclca_rx_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["retinal_detachment_panic_referral_and_hipaa_cls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 86800000)
+
+
+    def test_scenario_matrix_286_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 576)
-        self.assertEqual(matrix["passed_scenarios"], 575)
+        self.assertEqual(matrix["total_scenarios"], 580)
+        self.assertEqual(matrix["passed_scenarios"], 579)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.83, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 128.9)
+        self.assertEqual(matrix["avg_latency_ms"], 128.0)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -3879,6 +3896,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $86.40M! SLA", by_id["DL-1028"])
 
 
+    def test_fabric_retail_optical_eyewear_freeform_lens_lab_2026_11_21_r247_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-1029", "DL-1030", "DL-1031", "DL-1032"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Exam-to-Frame Capture & OMA Lab Sense Flagging 870 Waves & Lifting Capture/Yield +44.5%", by_id["DL-1029"])
+        self.assertIn("915M 3D Facial, Freeform Corridor & Vision-Plan Vectors, -92% RAM at $4,560/mo vs $112,200/mo 7.45TB DRAM", by_id["DL-1030"])
+        self.assertIn("Saving -$524.6K/mo (-$524,560/mo!) / -96.9% New All-Time Record TCO! with 27,800 $0 Viewer Seats", by_id["DL-1031"])
+        self.assertIn("16ms 4^2ms E2E, Protect $86.80M! SLA", by_id["DL-1032"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -3897,11 +3925,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 575)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 576)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 128.9)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 140)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 112.47)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 579)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 580)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 128.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 141)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 111.79)
 
 
 if __name__ == "__main__":

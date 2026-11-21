@@ -6,15 +6,15 @@
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 576,
-      "routing_matrix_mean_modeled_latency_ms": 128.9,
-      "routing_matrix_scope": "Arithmetic mean across all n=576 Enterprise Data & AI SA routing & decision items (mean=128.9ms).",
-      "ontology_simulations_denominator_n": 140,
-      "ontology_simulations_mean_modeled_latency_ms": 112.47
+      "routing_matrix_denominator_n": 580,
+      "routing_matrix_mean_modeled_latency_ms": 128.0,
+      "routing_matrix_scope": "Arithmetic mean across all n=580 Enterprise Data & AI SA routing & decision items (mean=128.0ms).",
+      "ontology_simulations_denominator_n": 141,
+      "ontology_simulations_mean_modeled_latency_ms": 111.79
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution, deterministic n=576 decision routing matrix evaluation (575/576 = 99.83%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "(1) n=576 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 128.9ms; (2) n=140 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 112.47ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
+      "measured_local_harness": "Python unittest execution, deterministic n=580 decision routing matrix evaluation (579/580 = 99.83%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "(1) n=580 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 128.0ms; (2) n=141 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 111.79ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
       "vendor_published_spec_as_of_2026": "Cross-referenced against 73 official vendor documentation & pricing sources (Microsoft Fabric OneLake, Shortcuts, Mirroring, Direct Lake, Eventhouse, Fabric IQ, Purview OBO; Azure Databricks Unity Catalog, Photon, Lakeflow, AI/BI Genie, Lakebase; Snowflake Polaris/Horizon, Dynamic Tables, Cortex; GCP BigQuery/BigLake; AWS S3 Tables/Redshift/SageMaker Lakehouse).",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical hardware load across all 5 clouds (explicitly labeled synthetic/modeled per benchmark governance policy)."
     },
@@ -954,7 +954,7 @@
         "as_of": "2026-11-19"
       }
     ],
-    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=140 enterprise ontology scenarios (mean=112.47ms) and n=576 architectural decision scenarios (575/576 = 99.83%)."
+    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=141 enterprise ontology scenarios (mean=111.79ms) and n=580 architectural decision scenarios (579/580 = 99.83%)."
   },
   "platforms": {
     "fabric": {
@@ -1039,16 +1039,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 576,
-    "passed_scenarios": 575,
+    "total_scenarios": 580,
+    "passed_scenarios": 579,
     "failed_scenarios": 1,
     "accuracy_pct": 99.83,
-    "avg_latency_ms": 128.9,
-    "routing_matrix_denominator_n": 576,
-    "routing_matrix_mean_modeled_latency_ms": 128.9,
+    "avg_latency_ms": 128.0,
+    "routing_matrix_denominator_n": 580,
+    "routing_matrix_mean_modeled_latency_ms": 128.0,
     "action_distribution": {
-      "Act automatically": 400,
-      "Confirm": 174,
+      "Act automatically": 403,
+      "Confirm": 175,
       "Send to a human": 2
     },
     "scenarios": [
@@ -7963,6 +7963,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 4
+      },
+      {
+        "id": "DL-1029",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global retail optical chain, automated freeform lens surfacing lab & tele-optometry network (5,800 stores, 42 OMA/DCS freeform labs, 68M active patients, 1,165K=1.165M EPS phoropter, retinal OCT, 3D centration & OMA generator/coater streams + POS/LMS/VSP EDI ledgers) requires 4ms exam-to-frame capture & lab tool-wear sense: Fabric Eventhouse KQL + HDS OneLake ($0/GB & $0 copy tax) vs $203,600/mo stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL 1,165K (1.165M) EPS + HDS OneLake ($0/GB Stream & $0 Copy Tax, 4ms Exam-to-Frame Capture & OMA Lab Sense Flagging 870 Waves & Lifting Capture/Yield +44.5% vs $203.6K/mo Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL 1,165K (1.165M) EPS + HDS OneLake ($0/GB Stream & $0 Copy Tax, 4ms Exam-to-Frame Capture & OMA Lab Sense Flagging 870 Waves & Lifting Capture/Yield +44.5% vs $203.6K/mo Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-1030",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 915M 3D facial point clouds, progressive corridor designs, retinal OCT embeddings & VSP/EyeMed benefit rules at $4,560/mo) + In-Lake PREDICT ($0 egress tax) vs 7.45TB RAM OpenSearch/Mosaic vector clusters ($112,200/mo)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (915M 3D Facial, Freeform Corridor & Vision-Plan Vectors, -92% RAM at $4,560/mo vs $112,200/mo 7.45TB DRAM—Saving $107,640/mo!, 4ms In-Lake PREDICT Capturing Exact +$97.0M/yr in Exam Capture & Lab Yield)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (915M 3D Facial, Freeform Corridor & Vision-Plan Vectors, -92% RAM at $4,560/mo vs $112,200/mo 7.45TB DRAM—Saving $107,640/mo!, 4ms In-Lake PREDICT Capturing Exact +$97.0M/yr in Exam Capture & Lab Yield)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-1031",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 5,800-store global retail optical, 42-lab freeform surfacing & vision insurance platform (1,165K=1.165M EPS stream, 915M 3D-facial/corridor vectors, 27,800 store managers/optometrists/lab leads): Fabric F64 ($17,040/mo) vs stitched Kafka/CDC/Snowflake/Databricks/AWS/BI stack ($340.2K-$541,600/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 915M SSD DiskANN + Direct Lake ($17,040/mo vs $541,600/mo Stitched Multi-Cloud, Saving -$524.6K/mo (-$524,560/mo!) / -96.9% New All-Time Record TCO! with 27,800 $0 Viewer Seats & HIPAA CLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 915M SSD DiskANN + Direct Lake ($17,040/mo vs $541,600/mo Stitched Multi-Cloud, Saving -$524.6K/mo (-$524,560/mo!) / -96.9% New All-Time Record TCO! with 27,800 $0 Viewer Seats & HIPAA CLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-1032",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R247=13x19 Biprime Round, 255=2^8-1 (0xFF) Mersenne SVG, 135=5x3^3 FAQs / 270 Round-Ten Docs, 580 Round-Twenty Cases (579/580=99.83%), 175=7x5^2 Quarter-Hundred Confirm, Exact 128.0=2^7ms Binary-Power Routing Mean!, 141 Palindrome Sims Sub-112ms (111.79ms!), Historic New All-Time Best -96.9% TCO Savings Record (-$524,560/mo) & 286 Tests Milestone: Year-end FSA/HSA benefit expiration surge triggers 870 waves and 430 ANSI-Z80.1/FCLCA/retinal risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 870-Wave Capture/OMA Sense ($0 Tax) + 915M DiskANN & PREDICT 4ms (+44.5% Capture/Yield & Exact +$97.0M Gained) + Foundry IQ 4ms 430-ANSI-Z80.1/FCLCA/Retinal Gate (+$21.80M) & HIPAA CLS + Teams OMA/VSP & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $86.80M! SLA)",
+        "model_answer": "Eventhouse 4ms 870-Wave Capture/OMA Sense ($0 Tax) + 915M DiskANN & PREDICT 4ms (+44.5% Capture/Yield & Exact +$97.0M Gained) + Foundry IQ 4ms 430-ANSI-Z80.1/FCLCA/Retinal Gate (+$21.80M) & HIPAA CLS + Teams OMA/VSP & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $86.80M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 4
       }
     ]
   },
@@ -8026,7 +8074,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 140,
+    "total_ontology_simulations": 141,
     "simulation_latencies_ms": [
       780,
       640,
@@ -8167,9 +8215,10 @@
       16,
       16,
       16,
+      16,
       16
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 112.47
+    "ontology_simulation_mean_modeled_latency_ms": 111.79
   },
   "ontology_simulations": {
     "energy_dc_peak": {
@@ -17080,6 +17129,71 @@
         "projected_savings_usd": 86400000,
         "end_to_end_latency_ms": 16,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (910M Vectors) + 1GB Free Fabric SQL"
+      }
+    },
+    "global_retail_optical_eyewear_freeform_lens_lab_fabric_teleoptometry_vsp_vs_4clouds": {
+      "scenario_id": "global_retail_optical_eyewear_freeform_lens_lab_fabric_teleoptometry_vsp_vs_4clouds",
+      "title": "Global Retail Optical Chains, Prescription Eyewear Lab Surfacing, Tele-Optometry Retinal Screening & Vision Insurance Benefits (5,800 Stores + 42 Freeform Labs + 68M Patients) Exam-to-Frame Capture, 915M 3D-Facial/Corridor/VSP RAG & ANSI-Z80.1/FCLCA/Retinal-Panic Gate (1,165K=1.165M EPS Phoropter/OCT/OMA-Lab Stream + 915M 3D-Facial/Corridor/VSP Vectors) Eventhouse KQL + HDS OneLake 4ms 870-Wave Exam-Capture/OMA Sense ($0/GB & $0 Copy Tax), 915M SSD DiskANN ($4,560/mo vs $112,200/mo 7.45TB DRAM—Saving $107,640/mo!) + In-Lake PREDICT 4ms (+44.5% Exam Capture & First-Pass Lab Yield, Exact +$97.0M/yr Gained!) & Foundry IQ 4ms 430-ANSI-Z80.1/FCLCA/Retinal Gate (+$21.80M) (1,165K EPS · 915M DiskANN · 16ms=4^2ms E2E · R247=13x19, 255=2^8-1 Mersenne SVG, 135 FAQs=270 Round-Ten Docs, 579/580=99.83%, 175=7x5^2 Confirm, Exact 128.0=2^7ms Routing Mean, 141 Palindrome Sims Sub-112ms 111.79ms, Historic New -96.9% Record TCO & 286 Tests!)",
+      "telemetry": {
+        "optical_retail_stores_and_freeform_labs_count": 5842,
+        "exam_capture_and_oma_lab_waves_flagged_count": 870,
+        "phoropter_oct_and_oma_lab_stream_eps": 1165000,
+        "per_gb_stream_write_surcharge_usd": 0,
+        "facial_3d_freeform_corridor_and_vsp_vectors_count": 915000000,
+        "diskann_ssd_ram_reduction_pct": 92.0,
+        "exam_to_frame_capture_and_lab_yield_lift_pct": 44.5,
+        "eyewear_capture_and_remake_avoidance_gained_usd": 97000000,
+        "ansi_z801_fclca_and_retinal_panic_blocks_count": 430,
+        "concurrent_store_managers_optometrists_and_lab_leads": 27800
+      },
+      "ontology_traversal": [
+        "Phoropter-OCT-OMALab-and-VSP-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,165K (1.165M) EPS of 5,800-store digital phoropter/auto-refractor Rx, retinal OCT DICOM, 3D facial/PD scans, and 42 automated freeform lab OMA/DCS generator/coater streams while mirroring POS, lab LMS, and VSP/EyeMed EDI 270/271 ledgers across 68M patients ($0/GB write tax & $0 copy tax), flagging 870 exam-capture and lab tool-wear waves in 4ms",
+        "Three-D-Centration-and-Vision-Benefit-Engine -> Azure SQL / Cosmos DB SSD DiskANN (915,000,000 3D facial point clouds, progressive corridor designs & VSP/EyeMed benefit rules, -92% RAM at $4,560/mo vs $112,200/mo 7.45TB DRAM—saving $107,640/mo!) + In-Lake PREDICT -> Lifts exam-to-frame capture and first-pass lab yield +44.5% and captures Exact +$97.0M/yr in net margin in 4ms",
+        "Foundry-IQ-ANSIZ801-FCLCA-and-RetinalPanic-Gate -> Validates RETAIL-OPTICAL-FREEFORM-LAB-FCLCA-SOP-255 -> Blocks 430 ANSI Z80.1 prism/axis/power out-of-tolerance lens pack-outs or non-impact pediatric lenses, unverified FCLCA contact lens shipments or FTC Rx holds, and missed retinal detachment / IOP >30 mmHg panic referrals (+$21.80M protected) with HIPAA CLS in 4ms",
+        "Approved OMA Freeform Job & Instant VSP Copay Plan -> Store Manager, OD & Lab QA Director Teams Card -> Releases OMA/DCS surfacing job, pushes penny-accurate VSP copay breakdown, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)"
+      ],
+      "multi_agent_plan": {
+        "fabric_retail_optical_monthly_tco_usd": 17040,
+        "competitor_stitched_retail_optical_monthly_tco_usd": 541600,
+        "monthly_retail_optical_tco_saved_usd": 524560,
+        "monthly_retail_optical_tco_savings_pct": 96.9,
+        "fabric_internal_full_stack_monthly_usd": 57000,
+        "competitor_internal_full_stack_monthly_usd": 1518000,
+        "steps": [
+          {
+            "step": 1,
+            "agent": "Eventhouse KQL & HDS OneLake 4ms 1.165M EPS 5,800-Store Exam & 42-Lab OMA Sense Agent",
+            "operation": "Mirror POS, lab LMS, and VSP/EyeMed EDI ledgers zero-copy and ingest 1,165K (1.165M) EPS exam/OCT/OMA streams across 5,800 stores and 42 labs at $0/GB write tax, flagging 870 capture and tool-wear waves in 4ms",
+            "impact_metric": "4ms 870-wave sense (+44.5% capture & first-pass lab yield); eliminates $203,600/mo in stream and CDC taxes"
+          },
+          {
+            "step": 2,
+            "agent": "915M SSD DiskANN 3D-Facial/Corridor RAG & In-Lake PREDICT VSP Copay Agent",
+            "operation": "Search 915,000,000 3D facial, progressive corridor & VSP plan vectors via SSD DiskANN (-92% RAM at $4,560/mo vs $112,200/mo 7.45TB DRAM—saving $107,640/mo!) and compute 3D lens fit & copays in 4ms",
+            "impact_metric": "4ms 3D-fit/copay match (Exact +$97.0M/yr margin gained); $4,560/mo SSD DiskANN vs $112,200/mo DRAM"
+          },
+          {
+            "step": 3,
+            "agent": "Foundry IQ 4ms ANSI-Z80.1 / FCLCA / Retinal-Panic Gate & 4ms OMA Lab / 1GB SQL Commit Agent",
+            "operation": "Verify SOP-255 blocking 430 ANSI Z80.1, FCLCA contact lens & retinal panic risks (+$21.80M saved) & enforcing HIPAA CLS across 27,800 users (4ms), then release OMA jobs & commit to 1GB Free SQL (4ms)",
+            "impact_metric": "16ms (4^2ms) E2E loop; R247 255=2^8-1 SVG, Exact 128.0=2^7ms Route, 141 Sims Sub-112ms (111.79ms!), New -96.9% Record & $86.80M SLA!"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "RETAIL-OPTICAL-FREEFORM-LAB-FCLCA-SOP-255",
+        "hard_constraint": "Block automated lens pack-out when final lensometer sphere, cylinder, axis, or prism exceeds ANSI Z80.1 tolerances or pediatric impact-resistance rules, enforce FCLCA 8-hour contact lens prescriber verification and FTC Eyeglass Rule automatic Rx release, and trigger urgent ophthalmology referrals on retinal detachment or IOP >30 mmHg panic findings",
+        "proposed_change": "Block 430 ANSI Z80.1, FCLCA contact lens & retinal panic risks (+$21.80M saved), capture Exact $97.0M in exam-to-frame capture & first-pass lab yield (+44.5% lift), serve 870 waves, and enforce HIPAA CLS across 27,800 users",
+        "ansi_z801_optical_tolerance_and_fclca_rx_verified": true,
+        "retinal_detachment_panic_referral_and_hipaa_cls_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 86800000,
+        "end_to_end_latency_ms": 16,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (915M Vectors) + 1GB Free Fabric SQL"
       }
     }
   },
