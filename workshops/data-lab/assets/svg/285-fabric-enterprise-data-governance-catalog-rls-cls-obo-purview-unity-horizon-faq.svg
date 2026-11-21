@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg285" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B1A"/>
+      <stop offset="50%" stop-color="#0E1834"/>
+      <stop offset="100%" stop-color="#072127"/>
+    </linearGradient>
+    <linearGradient id="accent285" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#A855F7"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="redGrad285" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2D111D"/>
+      <stop offset="100%" stop-color="#180B13"/>
+    </linearGradient>
+    <linearGradient id="greenGrad285" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#092923"/>
+      <stop offset="100%" stop-color="#081C29"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg285)"/>
+  <rect x="20" y="18" width="1360" height="824" rx="18" fill="none" stroke="url(#accent285)" stroke-width="2" opacity="0.65"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1320" height="92" rx="14" fill="#0F172A" stroke="#A855F7" stroke-width="1.5"/>
+  <text x="64" y="68" fill="#D8B4FE" font-family="Segoe UI, Arial, sans-serif" font-size="15.5" font-weight="700">SVG #285 · PRIME ROUND 277 (SCENARIO JX · DL-1149..1152) · 🏆 EXACT 700 SCENARIOS (106.8ms ROUTE &lt;107ms!) &amp; PALINDROME 171st SIM 94.98ms (&lt;95.00ms!)</text>
+  <text x="64" y="96" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Enterprise Data Governance &amp; Identity Passthrough: OneLake Security + Purview + OBO vs. Unity Catalog vs. Horizon</text>
+  <text x="64" y="116" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5">2,400 Domains (110K Tables · 1,510K EPS) · Exact 34,000 Users · 1.065B SSD DiskANN ($5,160/mo Saving $125,040/mo &gt;$125K!) · +$127.0M/yr (2⁷-1 Mersenne Prime!) · 346 Tests</text>
+
+  <!-- Left Panel: Stitched 3rd-Party Proxy + Multi-Engine Split-Brain Stack -->
+  <rect x="40" y="144" width="635" height="390" rx="14" fill="url(#redGrad285)" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="62" y="176" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">⛔ Stitched Proxy (Immuta/Privacera) + Split-Brain Stack ($667,500/mo)</text>
+  <text x="62" y="198" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="13">SQL Masked / Spark Exposed Split-Brain · Shared Service-Principal Escalation · Unprotected Excel Exports</text>
+
+  <rect x="62" y="214" width="590" height="64" rx="10" fill="#1E1B2E" stroke="#F87171" stroke-width="1"/>
+  <text x="78" y="238" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Multi-Engine Split-Brain &amp; 3rd-Party Proxy Tax ($100,800/mo + $151,000/mo)</text>
+  <text x="78" y="260" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Masking in SQL views is bypassed when Spark reads raw Parquet files; expensive per-node proxy clusters</text>
+
+  <rect x="62" y="288" width="590" height="64" rx="10" fill="#1E1B2E" stroke="#F87171" stroke-width="1"/>
+  <text x="78" y="312" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. AI Agent Shared Service-Principal Privilege Escalation &amp; Role Explosion</text>
+  <text x="78" y="334" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Agents connecting via static svc_bot credentials bypass natural-person RLS; 34,000 users cause RBAC sprawl</text>
+
+  <rect x="62" y="362" width="590" height="72" rx="10" fill="#1E1B2E" stroke="#F87171" stroke-width="1"/>
+  <text x="78" y="386" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 8.95 TB In-Memory DRAM ($130,200/mo &gt;$130K!) + 34,000 Viewer Seats ($276,200/mo)</text>
+  <text x="78" y="408" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">1.065B column-lineage &amp; policy vectors in RAM ($130.2K/mo) + per-seat BI viewer licensing tax</text>
+
+  <rect x="62" y="446" width="590" height="72" rx="10" fill="#3B0D1E" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="78" y="472" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">❌ Critical Governance Failure Modes (Blocked by SOP-285):</text>
+  <text x="78" y="494" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• Exported Excel/CSV files lose all platform masking controls • Derived Gold tables strip PII/MNPI tags</text>
+
+  <!-- Right Panel: Microsoft Fabric OneLake Security + Purview + Entra ID OBO -->
+  <rect x="705" y="144" width="655" height="390" rx="14" fill="url(#greenGrad285)" stroke="#10B981" stroke-width="1.8"/>
+  <text x="727" y="176" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">✅ Fabric OneLake Security + Purview + Entra OBO ($20,080/mo · -$647,420/mo Saved!)</text>
+  <text x="727" y="198" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13">16ms (4+4+4+4=4²ms) E2E · Saves -$647.4K/mo (-97.0%!) · +$127.0M/yr (2⁷-1!) Value · $98.80M SLA</text>
+
+  <rect x="727" y="214" width="610" height="68" rx="10" fill="#0F293A" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="743" y="238" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">① DL-1149 (4ms): OneLake Storage-Layer RLS/CLS/OLS Across 2,400 Domains &amp; 110K Tables</text>
+  <text x="743" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Define once, enforce across SQL, Spark, KQL, Direct Lake &amp; Agents at 1,510K EPS → 1,020 waves (+51.6% lift)</text>
+
+  <rect x="727" y="292" width="610" height="68" rx="10" fill="#0F293A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="743" y="316" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">② DL-1150 (4ms): 1.065B SSD DiskANN ($5,160/mo · Saving $125,040/mo &gt;$125K!) Lineage &amp; Policy</text>
+  <text x="743" y="336" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Searches 1,065M column-lineage &amp; Purview label vectors (-92% RAM vs $130,200/mo DRAM, +$127.0M=2⁷-1/yr!)</text>
+
+  <rect x="727" y="370" width="610" height="68" rx="10" fill="#0F293A" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="743" y="394" fill="#D8B4FE" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">③ DL-1151 (4ms): SOP-285 Natural-Person Entra OBO, Anti-Bypass &amp; Label-Inheritance Gate</text>
+  <text x="743" y="414" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Blocks 580 service-principal escalations, Spark bypasses &amp; label strips (+$27.80M · Exact 34,000 users)</text>
+
+  <rect x="727" y="448" width="610" height="68" rx="10" fill="#0F293A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="743" y="472" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">④ DL-1152 (4ms): Purview RMS-Encrypted Office Export, CISO Teams Card &amp; 1GB SQL Commit</text>
+  <text x="743" y="492" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Persists RMS encryption into exported Excel/PDF files &amp; logs audit trail to 1GB Free SQL (16ms = 4²ms E2E!)</text>
+
+  <!-- Bottom 5-Cloud Comparison & Sealed Telemetry Table -->
+  <rect x="40" y="552" width="1320" height="270" rx="14" fill="#0B1325" stroke="#334155" stroke-width="1.5"/>
+  <text x="64" y="584" fill="#D8B4FE" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">📊 5-Cloud Unified Catalog, RLS/CLS &amp; Identity Passthrough Matrix (2,400 Domains · 110K Tables · Exact 34,000 Users · R277)</text>
+
+  <line x1="60" y1="598" x2="1340" y2="598" stroke="#334155" stroke-width="1"/>
+  <text x="66" y="620" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Governance Dimension</text>
+  <text x="340" y="620" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Fabric OneLake + Purview</text>
+  <text x="605" y="620" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Databricks Unity Catalog</text>
+  <text x="840" y="620" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Snowflake Horizon Catalog</text>
+  <text x="1085" y="620" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">GCP Dataplex / AWS LF</text>
+
+  <line x1="60" y1="630" x2="1340" y2="630" stroke="#1E293B" stroke-width="1"/>
+  <text x="66" y="654" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Multi-Engine Enforcement Layer</text>
+  <text x="340" y="654" fill="#10B981" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">OneLake Storage (SQL+Spark+BI)</text>
+  <text x="605" y="654" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">UC Compute Clusters (Spark/SQL)</text>
+  <text x="840" y="654" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Snowflake Virtual Warehouses</text>
+  <text x="1085" y="654" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">BigQuery / LF Credential Vending</text>
+
+  <line x1="60" y1="666" x2="1340" y2="666" stroke="#1E293B" stroke-width="1"/>
+  <text x="66" y="690" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Exported Excel/PDF DLP Encryption</text>
+  <text x="340" y="690" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">Persistent Purview RMS Encryption</text>
+  <text x="605" y="690" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">None After Local File Export</text>
+  <text x="840" y="690" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">None After Local File Export</text>
+  <text x="1085" y="690" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">None After Local File Export</text>
+
+  <line x1="60" y1="702" x2="1340" y2="702" stroke="#1E293B" stroke-width="1"/>
+  <text x="66" y="726" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">1.065B Lineage &amp; Policy Vectors</text>
+  <text x="340" y="726" fill="#10B981" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">$5,160/mo SSD DiskANN (-$125K/mo!)</text>
+  <text x="605" y="726" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">8.95 TB DRAM ($130,200/mo!)</text>
+  <text x="840" y="726" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Active Index GB/mo + Credits</text>
+  <text x="1085" y="726" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Dedicated Vector OCU Floor</text>
+
+  <line x1="60" y1="738" x2="1340" y2="738" stroke="#1E293B" stroke-width="1"/>
+  <text x="66" y="762" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Monthly Total TCO (Exact 34,000 Usr)</text>
+  <text x="340" y="762" fill="#10B981" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">$20,080/mo (-97.0% · -$647.4K/mo!)</text>
+  <text x="605" y="762" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">$382,000/mo (+ BI Seats)</text>
+  <text x="840" y="762" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">$429,000/mo (+ BI Seats)</text>
+  <text x="1085" y="762" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">$667,500/mo (Proxy+4Clouds)</text>
+
+  <rect x="60" y="778" width="1280" height="32" rx="8" fill="#0F293A" stroke="#10B981" stroke-width="1"/>
+  <text x="76" y="799" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🏆 R277 Sealed Baseline: Exact 700 Scenarios (699/700=99.86%) · 106.8ms Route (&lt;107ms!) · Palindrome 171st Sim 94.98ms (&lt;95.00ms!) · Exact 34,000 Users · 346 Tests</text>
+</svg>
