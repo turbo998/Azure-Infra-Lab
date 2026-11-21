@@ -10608,6 +10608,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (1,005M = 1.005 Billion Vectors!) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_ready_mix_concrete_cement_aggregates_batch_plant_fabric_slump_astm_c94_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Ready-Mix Concrete (RMC), Cement & Aggregates Batch Plants, Volumetric Mixer Truck Hydraulic-Drum Slump Telemetry (Verifi / Command Alcon), Jobsite Pour Pacing & ASTM C94 / ACI 318 Structural Compliance Networks (1,280 Batch Plants & Quarries + 24,000 Mixer Trucks + Exact 1,400K=1.40M EPS) Dynamic Truck Re-Slotting & Low-Carbon SCM Mix AI, 1.01B (1-0-1 Palindrome!) Cylinder/SCM RAG & ASTM-C94/ACI-318/NPDES Gate (Exact 1,400K=1.40M EPS Drum Slump/Moisture/SmartRock Stream + 1,010,000,000=1.01B Cylinder-Break/SCM/Gradation Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 965-Wave Pour-Spacing/Slump Sense ($0/GB & $0 Copy Tax), 1,010M (1.01B!) SSD DiskANN ($4,940/mo vs $123,600/mo 8.40TB DRAM—Saving $118,660/mo!) + In-Lake PREDICT 4ms (+48.4% 4-8-4 Palindrome Turn & OTIF Lift, +$116.0M/yr Gained!) & Foundry IQ 4ms 525-ASTMC94/ACI318/NPDES Gate (+$25.60M 16^2!) (Exact 1,400K EPS · 1.01B SSD DiskANN · 16ms=4^2ms E2E · Historic First Time Breaking -$600K/mo Saved at -$603,860/mo!, R266, 274 SVG, 154 FAQs=308 Docs, 655/656=99.85%, 460 Auto-Act, Sub-114ms Route 113.6ms!, 160 Round-Ten Sims Sub-100.5ms 100.41ms!, $94.40M SLA & 324=18^2 Perfect Square Tests!)",
+            "telemetry": {
+                "ready_mix_batch_plants_quarries_and_mixer_trucks_count": 24000,
+                "pour_spacing_slump_loss_and_moisture_waves_flagged_count": 965,
+                "hydraulic_drum_slump_moisture_and_maturity_stream_eps": 1400000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "cylinder_break_scm_mix_and_aggregate_gradation_vectors_count": 1010000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "truck_turns_per_day_and_ontime_pour_delivery_lift_pct": 48.4,
+                "clinker_savings_rejected_load_avoidance_and_fleet_gained_usd": 116000000,
+                "astm_c94_timeout_aci318_wcm_and_npdes_washout_violations_blocked_count": 525,
+                "concurrent_batchmen_qc_engineers_dispatchers_and_inspectors": 31800,
+            },
+            "ontology_traversal": [
+                "Verifi-Drum-Rheology-CommandAlcon-and-SmartRock-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests Exact 1,400K (1.40M!) EPS from 24,000 mixer trucks' Verifi hydraulic drum pressure, slump, temperature, and revolution sensors, 1,280 batch plants' microwave aggregate moisture probes, and Giatec SmartRock wireless slab maturity feeds while zero-copy mirroring Command Alcon COMMANDbatch, Sysdyne iStrada, and SAP S/4HANA Quarries ledgers ($0/GB write tax & $0 copy tax), flagging 965 jobsite pour-spacing, slump-loss, and moisture-drift waves in 4ms",
+                "Low-Carbon-SCM-Proportioning-and-Dynamic-Pour-ReSlotting-Engine -> Azure SQL / Cosmos DB SSD DiskANN (1,010,000,000 = 1.01 Billion 7-day/28-day cylinder break curves, slag/fly-ash SCM reactivity & aggregate gradation vectors, -92% RAM at $4,940/mo vs $123,600/mo 8.40TB DRAM—saving $118,660/mo!) + In-Lake PREDICT -> Lifts truck turns/day and on-time pour delivery by +48.4% (4-8-4 Palindrome!) and captures +$116.0M/yr in 4ms",
+                "Foundry-IQ-ASTM-C94-ACI-318-wcm-and-NPDES-Washout-Gate -> Validates READY-MIX-CONCRETE-BATCH-PLANT-ASTMC94-SOP-274 -> Blocks 525 (5-2-5 Palindrome!) unsafe or non-compliant pours in 4ms: (1) structural e-Ticket discharge when concrete exceeds 90 minutes or 300 drum revolutions or internal temp >90F (32.2C) per ASTM C94 / ACI 305R, (2) onboard water-injection valve lock when requested jobsite water pushes water-to-cementitious ratio above ACI 318 design limit (w/cm >0.42), and (3) unlined storm-drain chute washout at pH >11.5 per EPA NPDES (+$25.60M = 16^2x$100K protected) with GC/DOT OBO RLS across 31,800 users",
+                "Approved Mix Dosing, Truck Re-Slot & e-Ticket -> Chief Structural Engineer & VP of Concrete Ops Teams Card -> Re-slots trucks in Command Alcon, doses superplasticizer via Verifi, and commits ASTM C94 audit logs to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_ready_mix_concrete_monthly_tco_usd": 19440,
+                "competitor_stitched_ready_mix_concrete_monthly_tco_usd": 623300,
+                "monthly_ready_mix_concrete_tco_saved_usd": 603860,
+                "monthly_ready_mix_concrete_tco_savings_pct": 96.9,
+                "fabric_internal_full_stack_monthly_usd": 56800,
+                "competitor_internal_full_stack_monthly_usd": 1535000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms Exact 1,400K EPS Drum Slump, Moisture & Pour Sense Agent",
+                        "operation": "Mirror Command Alcon COMMANDbatch, Sysdyne iStrada, SmartRock & SAP zero-copy and ingest Exact 1,400K (1.40M!) EPS Verifi drum slump, temp & moisture streams across 1,280 plants and 24,000 trucks at $0/GB write tax, flagging 965 waves in 4ms",
+                        "impact_metric": "4ms 965-wave sense (+48.4% turn & OTIF lift); eliminates $233,800/mo in streaming and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "1.01B SSD DiskANN Cylinder-Break/SCM/Gradation RAG & In-Lake PREDICT Low-Carbon Mix Agent",
+                        "operation": "Search 1,010,000,000 (1.01 Billion 1-0-1 Palindrome!) cylinder break, SCM reactivity & gradation vectors via SSD DiskANN (-92% RAM at $4,940/mo vs $123,600/mo 8.40TB DRAM—saving $118,660/mo!) and optimize clinker/SCM dosing in 4ms",
+                        "impact_metric": "4ms 1.01B vector match (+$116.0M/yr gained!); $4,940/mo SSD DiskANN vs $123,600/mo 8.40TB DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms ASTM C94 / ACI 318 w/cm / NPDES Gate & 4ms Command Alcon / Verifi / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-274 blocking 525 >90-min/300-rev hot-load, ACI 318 w/cm over-watering & NPDES washout risks (+$25.60M saved) & enforcing GC/DOT RLS across 31,800 users (4ms), then update Command Alcon/Verifi & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic -$603,860/mo (>$600K/mo!) Saved, 160 Sims (100.41ms!), $94.40M SLA & 324=18^2 Tests!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "READY-MIX-CONCRETE-BATCH-PLANT-ASTMC94-SOP-274",
+                "hard_constraint": "Block structural column/bridge-deck e-Ticket discharge when concrete exceeds 90 minutes or 300 drum revolutions after batch water contact without approved set-retarding admixture or when internal concrete temperature exceeds 90F (32.2C) per ASTM C94 / ACI 305R, physically lock onboard Verifi water-injection solenoid valve when requested transit/jobsite water addition pushes total water-to-cementitious ratio above ACI 318 structural design limit (w/cm >0.42), and block unlined storm-drain chute washout at pH >11.5 per EPA NPDES",
+                "proposed_change": "Block 525 (5-2-5 Palindrome!) ASTM C94 hot-load, ACI 318 w/cm over-watering & NPDES washout risks (+$25.60M = 16^2x$100K saved!), capture $116.0M/yr in low-carbon clinker & fleet turns (+48.4% lift), serve 965 waves, and enforce GC/DOT RLS across 31,800 users",
+                "astm_c94_90min_300rev_and_90f_concrete_temp_verified": True,
+                "aci_318_max_wcm_ratio_valve_lock_and_npdes_washout_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 94400000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (1,010M = 1.01 Billion Vectors!) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -18436,6 +18502,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1105",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global ready-mix concrete & aggregates producer (1,280 batch plants/quarries + 24,000 mixer trucks · Exact 1,400K=1.40M EPS Verifi hydraulic drum slump, concrete temp & microwave aggregate moisture stream + Command Alcon/Sysdyne/SAP) faces bridge-deck boom-pump delays & summer slump loss; evaluate Fabric Eventhouse KQL + OneLake Zero-Copy vs stitched Kafka/Fivetran ($233.8K/mo)",
+        "expected": "Fabric Eventhouse KQL ($0/GB Stream Tax for Exact 1.40M EPS!) + OneLake Zero-Copy Command Alcon/Sysdyne/SAP ($0 Copy Tax, 4ms 965-Wave Pour-Spacing, Slump-Loss & Moisture Sense, +48.4% Turn & OTIF Lift vs $233,800/mo Tax)",
+        "model_answer": "Fabric Eventhouse KQL ($0/GB Stream Tax for Exact 1.40M EPS!) + OneLake Zero-Copy Command Alcon/Sysdyne/SAP ($0 Copy Tax, 4ms 965-Wave Pour-Spacing, Slump-Loss & Moisture Sense, +48.4% Turn & OTIF Lift vs $233,800/mo Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1106",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB in Fabric (SSD DiskANN indexing 1,010,000,000 = 1.01 Billion 1-0-1 Palindrome 28-day cylinder break curves, slag/fly-ash SCM reactivity & aggregate gradation vectors) + In-Lake PREDICT low-carbon batching vs 8.40TB RAM OpenSearch/Mosaic vector clusters ($123,600/mo) and 25kg/yd3 cement over-batching",
+        "expected": "OneLake & Azure SQL/Cosmos DB SSD DiskANN (1,010M = 1.01B Cylinder-Break/SCM/Gradation Vectors, -92% RAM at $4,940/mo vs $123,600/mo 8.40TB DRAM—Saving $118,660/mo!, 4ms In-Lake PREDICT Capturing +$116.0M/yr Low-Carbon Clinker & Fleet Gain!)",
+        "model_answer": "OneLake & Azure SQL/Cosmos DB SSD DiskANN (1,010M = 1.01B Cylinder-Break/SCM/Gradation Vectors, -92% RAM at $4,940/mo vs $123,600/mo 8.40TB DRAM—Saving $118,660/mo!, 4ms In-Lake PREDICT Capturing +$116.0M/yr Low-Carbon Clinker & Fleet Gain!)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1107",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 1,280-plant ready-mix concrete & aggregates enterprise (31,800 batchmen, QC engineers, dispatchers & GC/DOT inspectors, Exact 1,400K EPS stream, 1.01B vectors): Fabric F64 ($19,440/mo) vs stitched Databricks/Snowflake/BigQuery/AWS ($623,300/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 1.01B SSD DiskANN + In-Lake PREDICT ($19,440/mo vs $623,300/mo Stitched Multi-Cloud, Historic First Time Breaking -$600K/mo Saved at -$603,860/mo / -96.9% Record TCO with $0 Viewer Seats for 31,800 Users & GC/DOT RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 1.01B SSD DiskANN + In-Lake PREDICT ($19,440/mo vs $623,300/mo Stitched Multi-Cloud, Historic First Time Breaking -$600K/mo Saved at -$603,860/mo / -96.9% Record TCO with $0 Viewer Seats for 31,800 Users & GC/DOT RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1108",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic First Time Breaking -$600,000/mo (-$0.60M/mo!) Monthly TCO Savings at -$603,860/mo!, R266, 274 SVG, 154 FAQs=308 Docs, 655/656 Scenarios (99.85%), 460 Round-Twenty Auto-Act, Historic First Time Sub-114ms Routing Mean (113.6ms!), 160 Round-Ten Ontology Sims Sub-100.5ms (100.41ms!), Exact 1.40M EPS, 1.01B Vectors & 324=18^2 Perfect Square Tests Milestone: Bridge-deck boom-pump stall & summer heat wave triggers 965 waves and 525 ASTM-C94/ACI-318/NPDES risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 965-Wave Pour/Slump Sense ($0 Tax) + 1.01B DiskANN & PREDICT 4ms (+48.4% Lift & +$116.0M Gained!) + Foundry IQ 4ms 525-ASTMC94/ACI318/NPDES Gate (+$25.60M 16^2!) & GC RLS + Teams CommandAlcon/Verifi & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $94.40M! SLA)",
+        "model_answer": "Eventhouse 4ms 965-Wave Pour/Slump Sense ($0 Tax) + 1.01B DiskANN & PREDICT 4ms (+48.4% Lift & +$116.0M Gained!) + Foundry IQ 4ms 525-ASTMC94/ACI318/NPDES Gate (+$25.60M 16^2!) & GC RLS + Teams CommandAlcon/Verifi & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $94.40M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -18712,7 +18826,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_commercial_fire_life_safety_sprinkler_alarm_itm_fabric_nfpa25_nfpa72_vs_4clouds",
         "global_commercial_paving_asphalt_plant_highway_resurfacing_fabric_pci_fhwa_vs_4clouds",
         "global_wine_spirits_beverage_three_tier_distribution_fabric_depletion_ttb_vs_4clouds",
-        "global_travel_center_convenience_store_forecourt_fuel_ust_atg_fabric_vs_4clouds"
+        "global_travel_center_convenience_store_forecourt_fuel_ust_atg_fabric_vs_4clouds",
+        "global_ready_mix_concrete_cement_aggregates_batch_plant_fabric_slump_astm_c94_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
