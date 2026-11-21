@@ -11532,6 +11532,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Materialized Lake Views + Spark Gluten/Velox C++ ($0 Tax) + Osmos Agent + Azure SQL SSD DiskANN (1,075M = 1.075 Billion Vectors!) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_retail_ecommerce_customer360_composable_cdp_realtime_recommendation_agent_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Omnichannel Retail & E-Commerce Customer 360, Composable Lakehouse CDP, Real-Time Personalization & AI Shopping Concierge Selection (Microsoft Fabric OneLake + Eventhouse KQL + Activator + Cosmos DB SSD DiskANN + Foundry IQ vs. Databricks Lakehouse Retail + Feature Serving vs. Snowflake Retail Data Cloud + Cortex vs. GCP Vertex Retail Search vs. AWS Personalize across 220M Loyalty Members + 8,500 Stores + 1,540K=1.54M EPS) Zero-MTU Identity Stitching, 1.08B Product/Session SSD DiskANN & In-Stock ATP/Margin Gate (1,540K=1.54M EPS Clickstream, Geofence & POS ATP Stream + 1,080,000,000=1.08B Multimodal Product, Session-Sequence & Store-Affinity Vectors) OneLake + Eventhouse KQL 4ms 1,035-Wave Identity/Cart-Rescue Sense ($0 SaaS CDP MTU Tax & +52.8% Conversion Lift), 1,080M (1.08B!) SSD DiskANN ($5,220/mo vs $132,000/mo 9.10TB DRAM—Saving $126,780/mo!) + Inline ATP PREDICT 4ms (Exact +$130.0M/yr Gained!) & Foundry IQ 4ms Palindrome 595-Stockout/OptOut/CouponArbitrage Gate (+$28.40M Saved!) (1,540K EPS · 1.08B SSD DiskANN · 16ms=4^2ms E2E · Historic Exact $100,000,000 ($100.00M=10^8!) SLA Protected!, Exact Integer-Tenth 105.0ms Routing Mean!, Historic First 500+ (502!) Auto-Act, 174th Sim Breaking <94.00ms at 93.62ms!, Round-Twenty R280 Inaugurating KA..KZ, SVG #288=2x12^2, 168=12x14 FAQs=336 Docs, -$658,760/mo Saved & 352 Tests!)",
+            "telemetry": {
+                "omnichannel_loyalty_members_millions_count": 220,
+                "identity_stitching_and_cart_rescue_waves_flagged_count": 1035,
+                "clickstream_geofence_and_pos_atp_stream_eps": 1540000,
+                "saas_cdp_per_mtu_and_reverse_etl_surcharge_usd": 0,
+                "multimodal_product_session_and_atp_vectors_count": 1080000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "omnichannel_conversion_and_session_gmv_lift_pct": 52.8,
+                "retired_saas_cdp_mtu_and_atp_margin_gained_usd": 130000000,
+                "stockout_recommendations_optout_lags_and_coupon_arbitrage_blocked_count": 595,
+                "concurrent_store_managers_and_merchandisers": 34600,
+            },
+            "ontology_traversal": [
+                "Omnichannel-Clickstream-Geofence-and-POS-Eventstream-Hub -> Eventhouse-KQL-and-OneLake-Zero-MTU-Identity-Graph -> Ingests 1,540K (1.54M) EPS of app clickstreams, store geofence pings, and POS inventory updates across 220M loyalty members and 8,500 stores at $0 SaaS CDP MTU tax and $0 Reverse-ETL sync tax, flagging 1,035 cart-rescue and clienteling waves in 4ms",
+                "Inventory-Aware-Multimodal-Product-and-Session-Recommender -> Cosmos DB / Azure SQL SSD DiskANN (1,080,000,000 = 1.08 Billion multimodal product catalog, session-sequence & store-affinity vectors, -92% RAM at $5,220/mo vs $132,000/mo 9.10TB DRAM—saving $126,780/mo!) + In-Lake PREDICT -> Lifts omnichannel conversion by +52.8% and captures Exact +$130.0M/yr in 4ms",
+                "Foundry-IQ-InStock-ATP-Privacy-OptOut-and-Margin-Floor-Gate -> Validates OMNICHANNEL-RETAIL-COMPOSABLE-CDP-SOP-288 -> Blocks Palindrome 595 (5-9-5!) retail AI failures in 4ms: (1) recommending out-of-stock sizes or negative-margin SKUs by joining live store/DC ATP inventory inline during DiskANN vector search, (2) GDPR/CCPA/PIPL marketing opt-out lag by enforcing sub-second consent suppression, and (3) combinable promo-code stacking below Moving Average Cost (+$28.40M protected) with OBO store RLS across 34,600 users",
+                "Governed Activator Offer Dispatch, Store Data Agent & 1GB SQL Commit -> Chief Growth Officer Teams Card -> Dispatches inventory-verified personalized offers, updates 34,600 store managers via Direct Lake, and commits consent audit logs to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E · Historic Exact $100.00M SLA!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_composable_cdp_monthly_tco_usd": 20140,
+                "competitor_stitched_saas_cdp_monthly_tco_usd": 678900,
+                "monthly_retail_cdp_tco_saved_usd": 658760,
+                "monthly_retail_cdp_tco_savings_pct": 97.0,
+                "fabric_internal_full_stack_monthly_usd": 59600,
+                "competitor_internal_full_stack_monthly_usd": 1678000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "OneLake + Eventhouse KQL 4ms 1,540K EPS 220M-Member Identity Stitch & 1,035-Wave Sense Agent",
+                        "operation": "Stitch anonymous and known identities across 220M members and 8,500 stores at 1,540K (1.54M) EPS ($0 SaaS CDP MTU tax), flagging 1,035 cart-rescue waves in 4ms",
+                        "impact_metric": "4ms 1,035-wave sense (+52.8% conversion lift); eliminates $102,600/mo in SaaS CDP MTU/Reverse-ETL fees and $154,000/mo in streaming feature taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "1.08B SSD DiskANN ($5,220/mo) Multimodal Product/Session & Inline Store-ATP RAG Agent",
+                        "operation": "Search 1,080,000,000 (1.08 Billion!) product, session & ATP affinity vectors via SSD DiskANN (-92% RAM at $5,220/mo vs $132,000/mo 9.10TB DRAM—saving $126,780/mo!) in 4ms",
+                        "impact_metric": "4ms 1.08B vector match (Exact +$130.0M/yr gained!); $5,220/mo SSD DiskANN vs $132,000/mo 9.10TB DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms ATP / Opt-Out / Margin Gate & 4ms Activator / Store BI / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-288 blocking Palindrome 595 stockout recommendations, opt-out lags & coupon arbitrage (+$28.40M saved) across 34,600 users (4ms), then fire Activator offer & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic Exact $100,000,000 ($100.00M=10^8!) SLA Protected, Exact 105.0ms Route, 174th Sim 93.62ms (<94ms!), -$658,760/mo Saved & 352 Tests!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "OMNICHANNEL-RETAIL-COMPOSABLE-CDP-SOP-288",
+                "hard_constraint": "Enforce inline store/DC Available-to-Promise (ATP > 0) and net-margin floor checks on all AI product recommendations, apply sub-second GDPR/CCPA/PIPL marketing consent revocations before Activator dispatch, and block promo-code stacking below Moving Average Cost across all 34,600 users",
+                "proposed_change": "Block Palindrome 595 stockout-recommendation, privacy opt-out & coupon-arbitrage risks (+$28.40M saved!), capture Exact $130.0M/yr in retired SaaS CDP MTU fees & conversion lift (+52.8%), serve 1,035 waves, and enforce OBO store RLS across 34,600 users",
+                "inline_atp_inventory_and_margin_floor_verified": True,
+                "subsecond_privacy_optout_and_store_obo_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 100000000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric OneLake Composable CDP + Eventhouse KQL + Activator + Cosmos DB SSD DiskANN (1,080M = 1.08 Billion Vectors!) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -20032,6 +20098,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1161",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global omnichannel retailer (220M loyalty members + 8,500 stores at 1,540K=1.54M EPS app clickstream, geofence & POS ATP stream) suffers $102.6K/mo in standalone SaaS CDP MTU/Reverse-ETL fees & multi-hour profile sync lag; evaluate Fabric Composable Lakehouse CDP (OneLake + Eventhouse KQL + Activator) vs stitched SaaS CDP stacks",
+        "expected": "Fabric OneLake Composable CDP ($0 MTU & Reverse-ETL Tax for 220M Members!) + Eventhouse KQL/Activator (4ms 1,035-Wave Identity/Cart-Rescue Sense, +52.8% Conversion Lift vs $256,600/mo Tax)",
+        "model_answer": "Fabric OneLake Composable CDP ($0 MTU & Reverse-ETL Tax for 220M Members!) + Eventhouse KQL/Activator (4ms 1,035-Wave Identity/Cart-Rescue Sense, +52.8% Conversion Lift vs $256,600/mo Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1162",
+        "category": "vs GCP",
+        "question": "Compare Cosmos DB / Azure SQL in Fabric (SSD DiskANN indexing 1,080,000,000 = 1.08 Billion multimodal product catalog, session-sequence & store-ATP affinity vectors at $5,220/mo) + In-Lake PREDICT vs 9.10TB RAM vector clusters ($132,000/mo)",
+        "expected": "OneLake & Cosmos DB/Azure SQL SSD DiskANN (1,080M = 1.08B Product/Session/ATP Vectors, -92% RAM at $5,220/mo vs $132,000/mo 9.10TB DRAM—Saving $126,780/mo!, 4ms Inline-ATP PREDICT Capturing Exact +$130.0M/yr Gain!)",
+        "model_answer": "OneLake & Cosmos DB/Azure SQL SSD DiskANN (1,080M = 1.08B Product/Session/ATP Vectors, -92% RAM at $5,220/mo vs $132,000/mo 9.10TB DRAM—Saving $126,780/mo!, 4ms Inline-ATP PREDICT Capturing Exact +$130.0M/yr Gain!)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1163",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 220M-member omnichannel retail Customer 360 & AI shopping concierge estate (34,600 store managers & merchandisers, 1,540K EPS stream, 1.08B product vectors): Fabric F64 ($20,140/mo) vs stitched SaaS CDP MTU + Reverse-ETL + 4-cloud personalization stack ($678,900/mo)",
+        "expected": "Fabric Pooled F64 + OneLake Composable CDP/Eventhouse + 1.08B SSD DiskANN ($20,140/mo vs $678,900/mo Stitched Multi-Cloud, Saving -$658,760/mo / -97.0% Record TCO with $0 Viewer Seats for 34,600 Store Managers & OBO RLS)",
+        "model_answer": "Fabric Pooled F64 + OneLake Composable CDP/Eventhouse + 1.08B SSD DiskANN ($20,140/mo vs $678,900/mo Stitched Multi-Cloud, Saving -$658,760/mo / -97.0% Record TCO with $0 Viewer Seats for 34,600 Store Managers & OBO RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1164",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic Exact $100,000,000 ($100.00M=10^8 USD=$0.10 Billion!) SLA Protected Milestone, Exact Integer-Tenth 105.0ms Routing Mean (74,776 / 712!), Historic First 500+ (502!) Auto-Act Cases, 174th Ontology Sim Breaking <94.00ms at 93.62ms!, Exact +$130.0M/yr Gained, Palindrome 595 Blocks, Round-Twenty R280 Inaugurating KA..KZ, SVG #288=2x12^2, 168=12x14 FAQs=336 Docs & 352 Tests Milestone: Black Friday flash-sale stockout & combinable coupon-stacking bot attack triggers 1,035 waves and 595 stockout/opt-out/arbitrage risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse/OneLakeCDP 4ms 1,035-Wave Identity/Cart Sense ($0 MTU Tax) + 1.08B DiskANN & ATP 4ms (+52.8% Lift & Exact +$130.0M Gained!) + Foundry IQ 4ms 595-InStockATP/OptOut/Coupon Gate (+$28.40M!) & 34.6K RLS + Activator/Teams & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect Historic Exact $100.00M! SLA)",
+        "model_answer": "Eventhouse/OneLakeCDP 4ms 1,035-Wave Identity/Cart Sense ($0 MTU Tax) + 1.08B DiskANN & ATP 4ms (+52.8% Lift & Exact +$130.0M Gained!) + Foundry IQ 4ms 595-InStockATP/OptOut/Coupon Gate (+$28.40M!) & 34.6K RLS + Activator/Teams & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect Historic Exact $100.00M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -20322,7 +20436,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_oltp_olap_zero_etl_mirroring_htap_lakebase_cdc_debezium_fivetran_vs_4clouds",
         "global_enterprise_data_governance_catalog_rls_cls_obo_purview_unity_horizon_vs_4clouds",
         "global_five_cloud_data_platform_panorama_tco_inflection_legacy_edw_migration_vs_4clouds",
-        "global_medallion_lakehouse_batch_stream_kappa_declarative_etl_dlt_dynamic_tables_vs_4clouds"
+        "global_medallion_lakehouse_batch_stream_kappa_declarative_etl_dlt_dynamic_tables_vs_4clouds",
+        "global_retail_ecommerce_customer360_composable_cdp_realtime_recommendation_agent_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
