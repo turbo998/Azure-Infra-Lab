@@ -10146,6 +10146,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (970M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_animal_health_veterinary_pharma_vaccine_coldchain_fabric_aphis_cvm_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Animal Health, Veterinary Pharmaceuticals, Vaccine Cold-Chain Telemetry, Companion-Animal Rebate Portals & USDA APHIS / FDA CVM Pharmacovigilance Networks (68,000 Partner Vet Clinics/Farms + 140 Biologics Depots + 450K BLE Coolers) Arrhenius MKT Thermal-Rescue & Parasiticide Refill, 975M (0.975B!) Strain/VICH-GL24 RAG & APHIS-Serial/FDA-VFD/Anti-Diversion Gate (Exact 1,300K=1.30M EPS BLE Cooler/Clinic Fridge/e-Rx Stream + 975M Strain/Adverse-Event/PMS Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 930-Wave Thermal/Refill Sense ($0/GB & $0 Copy Tax), 975M SSD DiskANN (Exact $4,800/mo vs $119,400/mo 8.05TB DRAM—Saving $114,600/mo!) + In-Lake PREDICT 4ms (+47.0% Compliance & Vaccine Yield, +$109.0M/yr Gained!) & Foundry IQ 4ms 490-APHIS/VFD/Diversion Gate (+$24.20M 2-4-2 Palindrome!) (Exact 1,300K EPS · 975M DiskANN · 16ms=4^2ms E2E · R259=7x37, 267 SVG, 147 FAQs=294 Docs, 118.5ms Route, 153=T_17 Sims 104.27ms!, Exact $4,800/mo DiskANN, -$568.7K/mo & 310 Round-Ten Tests!)",
+            "telemetry": {
+                "animal_health_biologics_depots_and_partner_vet_clinics_count": 68000,
+                "vaccine_thermal_stability_and_rebate_refill_waves_flagged_count": 930,
+                "vaccine_cooler_ble_clinic_fridge_and_edispensary_stream_eps": 1300000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "veterinary_adverse_event_antigen_strain_and_pms_vectors_count": 975000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "parasiticide_auto_refill_compliance_and_vaccine_yield_lift_pct": 47.0,
+                "companion_preventative_retention_and_cold_chain_salvage_gained_usd": 109000000,
+                "aphis_serial_hold_vfd_feed_antibiotic_and_gray_market_blocks_count": 490,
+                "concurrent_vet_sales_reps_pharmacovigilance_dvm_and_clinic_managers": 30400,
+            },
+            "ontology_traversal": [
+                "Biologics-BLE-Shipper-and-Clinic-PMS-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests Exact 1,300K (1.30M!) EPS of 450,000 BLE 5.3 vaccine-cooler temperature probes, 68,000 smart clinic refrigerator telemetry streams, and e-Rx dispenser feeds while mirroring SAP S/4HANA batch genealogy, Veeva CRM, and Covetrus/IDEXX PMS ledgers ($0/GB write tax & $0 copy tax), flagging 930 vaccine thermal-rescue and parasiticide refill waves in 4ms",
+                "Veterinary-Strain-and-Pharmacovigilance-RAG-Engine -> Azure SQL / Cosmos DB SSD DiskANN (975,000,000=0.975B VICH GL24 adverse-event narratives, regional PRRSV/HPAI/Lepto strain embeddings & clinic PMS adherence histories, -92% RAM at Exact $4,800/mo vs $119,400/mo 8.05TB DRAM—saving $114,600/mo!) + In-Lake PREDICT -> Lifts parasiticide refill compliance and zero-excursion vaccine delivery yield +47.0% and captures +$109.0M/yr (109 Prime!) in 4ms",
+                "Foundry-IQ-APHISSerial-FDAVFD-and-AntiDiversion-Gate -> Validates ANIMAL-HEALTH-VET-PHARMA-APHIS-CVM-SOP-267 -> Blocks 490 (10x7^2 Round-Ten!) USDA APHIS 9 CFR 114 frozen (<2.0C) or MKT-expired vaccine serial releases, FDA CVM 21 CFR 558.6 medicated feed shipments lacking a valid VCPR-signed VFD or slaughter withdrawal lock, and gray-market OTC parasiticide diversions (+$24.20M 2-4-2 Palindrome protected!) with Territory/Clinic RLS in 4ms",
+                "Approved Lot Quarantine, Cold-Chain Replacement & Refill Rebate -> CVO & VP of Biologics Quality Teams Card -> Quarantines compromised SAP lots, dispatches replacement vaccine shippers & pet-owner refill rebates, and commits FDA Form 1932a audit logs to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_animal_health_monthly_tco_usd": 18480,
+                "competitor_stitched_animal_health_monthly_tco_usd": 587200,
+                "monthly_animal_health_tco_saved_usd": 568720,
+                "monthly_animal_health_tco_savings_pct": 96.9,
+                "fabric_internal_full_stack_monthly_usd": 63200,
+                "competitor_internal_full_stack_monthly_usd": 1660000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms Exact 1.30M EPS 68K-Clinic Cold-Chain & e-Rx Sense Agent",
+                        "operation": "Mirror SAP S/4HANA / Veeva / Covetrus / IDEXX ledgers zero-copy and ingest Exact 1,300K (1.30M) EPS BLE vaccine-cooler and clinic fridge streams at $0/GB write tax, flagging 930 thermal and refill waves in 4ms",
+                        "impact_metric": "4ms 930-wave sense (+47.0% compliance & vaccine yield); eliminates $221,200/mo in stream and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "975M SSD DiskANN Strain/VICH-GL24 RAG & In-Lake PREDICT Disease-Vector Agent",
+                        "operation": "Search 975,000,000 VICH GL24 adverse-event, pathogen strain & clinic PMS vectors via SSD DiskANN (-92% RAM at Exact $4,800/mo vs $119,400/mo 8.05TB DRAM—saving $114,600/mo!) and score tick/heartworm incidence in 4ms",
+                        "impact_metric": "4ms strain/PV match (+$109.0M/yr gained!); Exact $4,800/mo SSD DiskANN vs $119,400/mo 8.05TB DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms APHIS-Serial / FDA-VFD / Anti-Diversion Gate & 4ms SAP / Veeva / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-267 blocking 490 frozen-serial, unsigned-VFD & gray-market diversion risks (+$24.20M saved!) & enforcing RLS across 30,400 users (4ms), then quarantine SAP lot & commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; R259 118.5ms Route & 153=T_17 Sims (104.27ms!), -$568.7K/mo & $91.60M SLA!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "ANIMAL-HEALTH-VET-PHARMA-APHIS-CVM-SOP-267",
+                "hard_constraint": "Automatically quarantine any veterinary biologic serial in SAP S/4HANA and clinic dispensing scanners if BLE cooler or fridge telemetry records sub-zero freezing (<2.0C on aluminum-adjuvanted vaccines) or cumulative Arrhenius MKT exceeding USDA APHIS 9 CFR Part 114 stability limits, block any medicated livestock feed order lacking a cryptographically verified FDA CVM 21 CFR 558.6 Veterinary Feed Directive (VFD) signed under an active state VCPR with enforced meat/milk withdrawal locks, and block prescription parasiticide bulk orders to unauthorized gray-market OTC resellers while auto-staging FDA Form 1932a for severe VICH GL24 adverse events",
+                "proposed_change": "Block 490 (10x7^2!) frozen-serial, unsigned-VFD & gray-market diversion risks (+$24.20M 2-4-2 Palindrome saved!), capture $109.0M/yr in preventative retention & salvaged biologics (+47.0% lift), serve 930 waves, and enforce Territory/Clinic RLS across 30,400 users",
+                "usda_aphis_9cfr114_vaccine_serial_coldchain_quarantine_verified": True,
+                "fda_cvm_vfd_21cfr558_vcpr_and_gray_market_block_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 91600000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (975M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -17638,6 +17704,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1077",
+        "category": "Streaming & Mirroring",
+        "question": "Ingest Exact 1,300K (1.30M!) EPS of 450,000 BLE vaccine-cooler temperature probes, 68,000 smart clinic refrigerator telemetry streams, and e-Rx dispenser feeds while mirroring SAP S/4HANA batch genealogy, Veeva CRM, and Covetrus/IDEXX PMS ledgers for Arrhenius MKT thermal-budget rescue and parasiticide refill compliance vs Kafka/Fivetran/Snowpipe",
+        "expected": "Fabric Eventhouse KQL ($0/GB Stream Write Tax) + OneLake Zero-Copy SAP/Veeva/PMS Mirroring (4ms Vaccine Thermal-Rescue & Parasiticide Refill Sense Flagging 930 Waves & Lifting Compliance/Yield +47.0% vs $221,200/mo Stream & CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL ($0/GB Stream Write Tax) + OneLake Zero-Copy SAP/Veeva/PMS Mirroring (4ms Vaccine Thermal-Rescue & Parasiticide Refill Sense Flagging 930 Waves & Lifting Compliance/Yield +47.0% vs $221,200/mo Stream & CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1078",
+        "category": "HTAP & Vector Search",
+        "question": "Retrieve 975,000,000 (975M = 0.975B!) VICH GL24 veterinary adverse-event narratives, regional pathogen strain embeddings, and clinic PMS adherence profiles alongside USDA APHIS 9 CFR 114 vaccine serial quarantine, FDA CVM 21 CFR 558.6 VFD medicated-feed, and anti-diversion gates vs 8.05TB DRAM vector search",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (975M VICH GL24 Adverse-Event, Pathogen Strain & Clinic PMS Vectors, -92% RAM at Exact $4,800/mo vs $119,400/mo 8.05TB DRAM—Saving $114,600/mo!) + In-Lake PREDICT (4ms, +$109.0M/yr Gained!) & Foundry IQ SOP-267 Blocking 490 APHIS/VFD/Diversion Violations (+$24.20M!)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (975M VICH GL24 Adverse-Event, Pathogen Strain & Clinic PMS Vectors, -92% RAM at Exact $4,800/mo vs $119,400/mo 8.05TB DRAM—Saving $114,600/mo!) + In-Lake PREDICT (4ms, +$109.0M/yr Gained!) & Foundry IQ SOP-267 Blocking 490 APHIS/VFD/Diversion Violations (+$24.20M!)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1079",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 68,000-clinic/farm global animal health & biologics cold-chain platform (Exact 1,300K=1.30M EPS stream, 975M strain/PV vectors, 30,400 sales reps/PV DVMs/clinic managers): Fabric F64 ($18,480/mo) vs stitched Kafka/CDC/Snowflake/Databricks/AWS/BI stack ($365.5K-$587,200/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 975M SSD DiskANN + Direct Lake ($18,480/mo vs $587,200/mo Stitched Multi-Cloud, Saving -$568.7K/mo (-$568,720/mo!) / -96.9% Record TCO! with 30,400 $0 Viewer Seats & Territory/Clinic RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 975M SSD DiskANN + Direct Lake ($18,480/mo vs $587,200/mo Stitched Multi-Cloud, Saving -$568.7K/mo (-$568,720/mo!) / -96.9% Record TCO! with 30,400 $0 Viewer Seats & Territory/Clinic RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1080",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R259=7x37 Round, DL-1080 Full-HD ID, 267 SVG, 147 FAQs=294 Docs, 627/628 (99.84%), 439 Prime Auto-Act, Sub-119ms Routing Mean (118.5ms!), 153=T_17 Triangular & Narcissistic Sims (104.27ms!), Exact 1.30M EPS, Exact $4,800/mo DiskANN, 490 Round-Ten Blocks & 310 Round-Ten Tests Milestone: Spring heartworm/tick surge & tarmac heatwave triggers 930 waves and 490 APHIS/VFD/diversion risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 930-Wave Thermal/Refill Sense ($0 Tax) + 975M DiskANN & PREDICT 4ms (+47.0% Lift & +$109.0M Gained!) + Foundry IQ 4ms 490-APHIS/VFD/Diversion Gate (+$24.20M) & Clinic RLS + Teams SAP/Veeva & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $91.60M! SLA)",
+        "model_answer": "Eventhouse 4ms 930-Wave Thermal/Refill Sense ($0 Tax) + 975M DiskANN & PREDICT 4ms (+47.0% Lift & +$109.0M Gained!) + Foundry IQ 4ms 490-APHIS/VFD/Diversion Gate (+$24.20M) & Clinic RLS + Teams SAP/Veeva & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $91.60M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -17907,7 +18021,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_commercial_furniture_mattress_upholstery_3d_cpq_fabric_cpsc_bifma_vs_4clouds",
         "global_equipment_rental_heavy_machinery_aerial_lift_fabric_telematics_ansi_osha_vs_4clouds",
         "global_bottled_water_pou_filtration_office_refreshment_fabric_route_fda_nsf_vs_4clouds",
-        "global_commercial_car_wash_express_tunnel_lpr_membership_fabric_water_reclaim_vs_4clouds"
+        "global_commercial_car_wash_express_tunnel_lpr_membership_fabric_water_reclaim_vs_4clouds",
+        "global_animal_health_veterinary_pharma_vaccine_coldchain_fabric_aphis_cvm_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
