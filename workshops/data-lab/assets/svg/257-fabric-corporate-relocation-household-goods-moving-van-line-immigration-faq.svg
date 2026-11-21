@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" width="1280" height="760">
+  <defs>
+    <linearGradient id="bg257" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="accent257" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="cardFabric257" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#064E3B"/>
+      <stop offset="100%" stop-color="#022C22"/>
+    </linearGradient>
+    <linearGradient id="cardStitched257" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#450A0A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="760" fill="url(#bg257)"/>
+  <rect x="20" y="16" width="1240" height="6" rx="3" fill="url(#accent257)"/>
+
+  <!-- Header -->
+  <text x="36" y="52" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800">
+    257=2^8+1=F_3 · Global Corporate Relocation (RMC), HHG Van Lines &amp; Mobility Architecture (R249)
+  </text>
+  <text x="36" y="76" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">
+    950 Hubs + 32K Moving Trucks + 1.8M Moves/Yr · 🏆 257=F_3 Fermat Prime SVG, 137 Prime FAQs, 587 Prime Passed, 409 Prime Auto &amp; 290 Tests!
+  </text>
+  <rect x="955" y="34" width="295" height="44" rx="10" fill="#065F46" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1102" y="54" text-anchor="middle" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800">🏆 257=F_3 FERMAT PRIME · 137 PRIME FAQS!</text>
+  <text x="1102" y="71" text-anchor="middle" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">16ms (4²ms) · -$531,720/mo (&gt;$530K/mo!)</text>
+
+  <!-- Left Column: Mobile 3D Survey, Van Line & Immigration Edge Sources -->
+  <rect x="30" y="96" width="280" height="475" rx="14" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="48" y="124" fill="#60A5FA" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">1. 3D SURVEY &amp; VAN LINE EDGE</text>
+  <text x="48" y="143" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">1,175K (1.175M) EPS Mobility &amp; Fleet Stream</text>
+
+  <rect x="46" y="158" width="248" height="86" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1"/>
+  <text x="60" y="179" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">📱 Mobile AI 3D Room Cube Survey</text>
+  <text x="60" y="198" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Smartphone LiDAR/video furniture scans</text>
+  <text x="60" y="214" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• ±2.5% cube/weight &amp; custom crating AI</text>
+  <text x="60" y="230" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• AI packing-photo lithium/hazmat detection</text>
+
+  <rect x="46" y="256" width="248" height="92" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1"/>
+  <text x="60" y="277" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🚚 32,000 HHG Trucks &amp; Ocean Containers</text>
+  <text x="60" y="296" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Real-time trailer remaining cube &amp; axle load</text>
+  <text x="60" y="312" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Air-ride shock G-force &amp; RFID carton logs</text>
+  <text x="60" y="328" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• 950 origin/destination SIT warehouse hubs</text>
+
+  <rect x="46" y="360" width="248" height="92" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1"/>
+  <text x="60" y="381" fill="#FDE68A" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🛂 Visa, Customs &amp; Tax Equalization</text>
+  <text x="60" y="400" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Fragomen/BAL work-visa &amp; 90/180-day logs</text>
+  <text x="60" y="416" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• 190-country HHG customs &amp; DAFF biosecurity</text>
+  <text x="60" y="432" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• IRS / OECD relocation tax gross-up engine</text>
+
+  <rect x="46" y="464" width="248" height="90" rx="10" fill="#0F172A" stroke="#A855F7" stroke-width="1"/>
+  <text x="60" y="485" fill="#E9D5FF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🗄️ Equus AssignmentPro / MoveHQ / SAP</text>
+  <text x="60" y="504" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Zero-copy 2,400 Core-Flex client policies</text>
+  <text x="60" y="520" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Military DP3 / GSA &amp; executive buyouts</text>
+  <text x="60" y="536" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• $0/GB stream tax &amp; $0 CDC copy tax</text>
+
+  <!-- Center Top: Microsoft Fabric 16ms Path -->
+  <rect x="332" y="96" width="600" height="295" rx="14" fill="url(#cardFabric257)" stroke="#10B981" stroke-width="2"/>
+  <text x="352" y="124" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">
+    2A. MICROSOFT FABRIC UNIFIED 16ms (4²ms) RELOCATION &amp; VAN LINE LOOP ($17,080/mo · -96.9%)
+  </text>
+
+  <rect x="350" y="138" width="272" height="112" rx="10" fill="#065F46" stroke="#34D399" stroke-width="1.2"/>
+  <text x="364" y="159" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800">① Eventhouse KQL (4ms · $0 Tax)</text>
+  <text x="364" y="178" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Ingests 1,175K (1.175M) EPS 3D/van feeds</text>
+  <text x="364" y="194" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Flags 880 consolidation &amp; overflow waves</text>
+  <text x="364" y="210" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Lifts cube utilization &amp; OTD +45.0%</text>
+  <text x="364" y="226" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">• Saves $206,000/mo stream &amp; CDC tax</text>
+
+  <rect x="640" y="138" width="274" height="112" rx="10" fill="#065F46" stroke="#34D399" stroke-width="1.2"/>
+  <text x="654" y="159" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800">② 925M SSD DiskANN + PREDICT (4ms)</text>
+  <text x="654" y="178" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• 925M 3D furniture, policy &amp; customs vectors</text>
+  <text x="654" y="194" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Exact $4,600/mo (-92% vs $113.4K DRAM)</text>
+  <text x="654" y="210" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Multi-shipper backhaul &amp; tax gross-up</text>
+  <text x="654" y="226" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">• Saves $108,800/mo + Exact $99.0M/yr (99!)</text>
+
+  <rect x="350" y="262" width="564" height="114" rx="10" fill="#042F2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="366" y="284" fill="#FDE68A" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">
+    ③ Foundry IQ Visa/PE, IMDG Lithium &amp; FMCSA Gate (SOP-257 · 4ms) + ④ MoveHQ Commit (4ms)
+  </text>
+  <text x="366" y="304" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Hard-Blocks 440 Violations: (1) Cross-border HHG dispatch before work-visa approval or 90/180-day PE limit;
+  </text>
+  <text x="366" y="321" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+      (2) IMDG lithium-ion e-bike/soil container packing; (3) FMCSA Part 375 &gt;110% hostage-load billing (+$22.20M 2-2-2!)
+  </text>
+  <text x="366" y="338" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">
+    • 28,200 Mobility Counselors, Van-Line Dispatchers &amp; Client HR Leads on Direct Lake ($0 Tax, saves $225.6K/mo)
+  </text>
+  <text x="366" y="355" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">
+    • Mode A Coexistence: Mirrored Azure Databricks Unity Catalog shares custom home-buyout AVM &amp; FX ML zero-copy
+  </text>
+
+  <!-- Center Bottom: Stitched Multi-Cloud Anti-Pattern -->
+  <rect x="332" y="405" width="600" height="166" rx="14" fill="url(#cardStitched257)" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="352" y="431" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">
+    2B. STITCHED MULTI-CLOUD BASELINE ($548,800/mo · ±22% Cube Overflows &amp; 31% Empty Backhauls)
+  </text>
+  <text x="352" y="454" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ Kafka + Fivetran + Warehouse Ingest (1,175K EPS + Equus/MoveHQ CDC): $206,000/mo per-GB write &amp; CDC taxes
+  </text>
+  <text x="352" y="474" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ Dedicated In-Memory Vector Cluster (7.55TB DRAM for 925M 3D furniture &amp; policy vectors): $113,400/mo
+  </text>
+  <text x="352" y="494" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ Per-Seat BI Licensing for 28,200 Counselors, Dispatchers &amp; Client HR Leads (28,200 × $8): $225,600/mo
+  </text>
+  <text x="352" y="514" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ Manual visual surveys cause load-day overflows &amp; lack visa/PE, lithium-ion &amp; FMCSA Part 375 gates
+  </text>
+  <text x="352" y="538" fill="#FDE047" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800">
+    ⚡ Fabric Net Advantage: -$531,720/mo (&gt;$530K/mo! · -96.9% Record) Saved · 16ms vs 940ms · $87.60M (8-7-6!) SLA!
+  </text>
+
+  <!-- Right Column: Sealed Benchmark Scorecard & Scenario IV (DL-1037..DL-1040) -->
+  <rect x="952" y="96" width="298" height="475" rx="14" fill="#1E293B" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="970" y="124" fill="#60A5FA" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">3. SEALED BENCHMARK (DL-1037..1040)</text>
+  <text x="970" y="143" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">🏆 257=F_3 Prime SVG · 587 Prime Passed!</text>
+
+  <rect x="968" y="156" width="266" height="72" rx="9" fill="#0F172A" stroke="#10B981" stroke-width="1"/>
+  <text x="980" y="175" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">DL-1037 · 3D Cube &amp; Backhaul Sense</text>
+  <text x="980" y="192" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.93 · Act automatically (4ms)</text>
+  <text x="980" y="209" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">880 waves · +45.0% util · -$206.0K/mo</text>
+
+  <rect x="968" y="238" width="266" height="72" rx="9" fill="#0F172A" stroke="#10B981" stroke-width="1"/>
+  <text x="980" y="257" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">DL-1038 · 925M DiskANN Policy RAG</text>
+  <text x="980" y="274" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.92 · Act automatically (4ms)</text>
+  <text x="980" y="291" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">Exact $4,600 vs $113.4K DRAM (-$108.8K!)</text>
+
+  <rect x="968" y="320" width="266" height="76" rx="9" fill="#0F172A" stroke="#F59E0B" stroke-width="1"/>
+  <text x="980" y="339" fill="#FDE68A" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">DL-1039 · Visa/IMDG/FMCSA Gate</text>
+  <text x="980" y="356" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.79 · Confirm (5ms)</text>
+  <text x="980" y="373" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">1039 Prime! 440 blocks · +$22.20M (2-2-2!)</text>
+
+  <rect x="968" y="406" width="266" height="76" rx="9" fill="#0F172A" stroke="#38BDF8" stroke-width="1"/>
+  <text x="980" y="425" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">DL-1040 · 28.2K Zero-Seat BI</text>
+  <text x="980" y="442" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.94 · Act automatically (3ms)</text>
+  <text x="980" y="459" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">409 Prime Auto! Saves $225,600/mo BI tax</text>
+
+  <rect x="968" y="492" width="266" height="64" rx="9" fill="#0F172A" stroke="#A855F7" stroke-width="1"/>
+  <text x="980" y="511" fill="#E9D5FF" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="800">Cumulative R249 Sealed Metrics:</text>
+  <text x="980" y="528" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">• 587/588 (99.83%) · 409 Prime Auto-Act!</text>
+  <text x="980" y="544" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">• 126.3ms Route / 110.45ms (n=143) · 290 Tests</text>
+
+  <!-- Bottom Bar: 5-Cloud Decision Matrix & Provenance -->
+  <rect x="30" y="586" width="1220" height="150" rx="14" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="50" y="614" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">
+    4. FIVE-CLOUD EXECUTIVE SELECTION MATRIX &amp; TCO INFLECTION POINT (950 HUBS · 32K TRUCKS · 1.8M MOVES/YR)
+  </text>
+  <text x="50" y="638" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    • Microsoft Fabric (Lead): $17,080/mo (-96.9%) · Eventhouse 1.175M EPS ($0 tax) + 925M SSD DiskANN (Exact $4,600/mo) + 28,200 Viewers ($0)
+  </text>
+  <text x="50" y="660" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Azure Databricks (Mode A Coexistence): Custom home-buyout AVM &amp; multi-currency FX hedging ML → OneLake Mirrored UC → Fabric Direct Lake
+  </text>
+  <text x="50" y="682" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Snowflake / GCP BigQuery / AWS Lakehouse: High per-GB stream ingestion ($206.0K/mo), 7.55TB DRAM ($113.4K/mo) &amp; 28.2K BI seat taxes ($225.6K/mo)
+  </text>
+  <text x="50" y="712" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600">
+    Provenance: Sealed deterministic evaluation in workshops/data-lab/reports/report.json · 137 Prime FAQs (274 Docs) · 257=F_3 SVG · 290/290 Tests Passing
+  </text>
+</svg>
