@@ -10080,6 +10080,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (965M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_commercial_car_wash_express_tunnel_lpr_membership_fabric_water_reclaim_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Commercial Car Wash, Express Tunnel Franchises, LPR Unlimited Monthly Membership Clubs, Water-Reclamation IoT & EPA Clean Water Act / FTC Subscription Compliance Networks (2,100 Tunnels + 12.5M LPR Subscribers + 85K PLC/3D-Scanner/Reclaim Sensors) 140-Car/Hr Conveyor Pacing & Churn Rescue, 970M (0.97B!) 3D-Trim/Re-ID RAG & Brush-Retract/EPA-POTW/FTC Gate (1,290K=1.29M EPS LPR/3D-Scanner/Reclaim Stream + 970M 3D-Vehicle-Trim/Re-ID/Weather Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 925-Wave Pacing/Churn Sense ($0/GB & $0 Copy Tax), 970M SSD DiskANN ($4,780/mo vs $118,800/mo Exact 8.00TB DRAM—Saving $114,020/mo!) + In-Lake PREDICT 4ms (+46.8% Cars/Hr & Member LTV, +$108.0M/yr Gained!) & Foundry IQ 4ms 485-Brush/EPA/FTC Gate (Exact +$24.00M!) (1,290K EPS · 970M DiskANN · 16ms=4^2ms E2E · R258, Historic Dual Latency Breakthrough: First Time Sub-120ms Routing Mean 119.3ms & First Time Sub-105ms Sim Mean 104.86ms!, 266 SVG, 146 FAQs=292 Palindrome Docs, Exact 8.00TB DRAM Replaced, -$565.0K/mo & 308 Tests!)",
+            "telemetry": {
+                "express_tunnel_car_wash_locations_count": 2100,
+                "conveyor_pacing_and_churn_rescue_waves_flagged_count": 925,
+                "lpr_gate_3d_scanner_and_water_reclaim_stream_eps": 1290000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "vehicle_3d_trim_reid_and_weather_elasticity_vectors_count": 970000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "peak_cars_per_hour_and_member_ltv_lift_pct": 46.8,
+                "unlimited_club_net_retention_and_lane_yield_gained_usd": 108000000,
+                "open_bed_brush_epa_potw_and_ftc_passback_blocks_count": 485,
+                "concurrent_site_managers_district_leads_and_techs": 30200,
+            },
+            "ontology_traversal": [
+                "Tunnel-LPR-3DArch-and-DRBPatheon-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,290K (1.29M) EPS of pay-station LPR/RFID gate reads, entrance 3D laser vehicle-profile scans, conveyor chain speed, and hydro-cyclone water-reclaim turbidity streams across 2,100 sites while mirroring Sonny's DRB SiteWatch / Patheon POS / Stripe ledgers across 12.5M subscribers ($0/GB write tax & $0 copy tax), flagging 925 conveyor pacing and card-updater churn-rescue waves in 4ms",
+                "Vehicle-3DTrim-and-Appearance-ReID-Engine -> Azure SQL / Cosmos DB SSD DiskANN (970,000,000=0.97B 3D exterior trim vulnerability profiles, pre-wash damage snapshots & vehicle make/color Re-ID embeddings, -92% RAM at $4,780/mo vs $118,800/mo Exact 8.00TB DRAM—saving $114,020/mo!) + In-Lake PREDICT -> Lifts peak cars/hour throughput and Unlimited Wash Club LTV +46.8% and captures +$108.0M/yr in net value in 4ms",
+                "Foundry-IQ-BrushRetract-EPAPOTW-and-FTCClickToCancel-Gate -> Validates COMMERCIAL-CAR-WASH-TUNNEL-LPR-EPA-SOP-266 -> Blocks 485 open-pickup-bed debris / aftermarket roof-rack brush-wrap hazards (Touchless Retract), EPA 40 CFR 403 POTW oil-water separator TPH/pH discharge excursions, and FTC Click-to-Cancel billing / LPR passback plate-sharing frauds (Exact +$24.00M protected!) with Site/LPR RLS in 4ms",
+                "Approved Brush Retract Override & Gate Release -> VP of Tunnel Ops & Regional Director Teams Card -> Triggers Sonny's/WashTec pneumatic brush retract, opens DRB pay-station gates & commits card-updater retries to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_car_wash_monthly_tco_usd": 18320,
+                "competitor_stitched_car_wash_monthly_tco_usd": 583300,
+                "monthly_car_wash_tco_saved_usd": 564980,
+                "monthly_car_wash_tco_savings_pct": 96.9,
+                "fabric_internal_full_stack_monthly_usd": 62800,
+                "competitor_internal_full_stack_monthly_usd": 1650000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.29M EPS 2,100-Tunnel LPR & 12.5M-Member Sense Agent",
+                        "operation": "Mirror Sonny's DRB Patheon POS / Stripe ledgers zero-copy and ingest 1,290K (1.29M) EPS LPR/3D-profile/reclaim streams across 2,100 sites at $0/GB write tax, flagging 925 pacing and churn waves in 4ms",
+                        "impact_metric": "4ms 925-wave sense (+46.8% cars/hr & member LTV); eliminates $219,600/mo in stream and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "970M SSD DiskANN 3D-Trim/Re-ID RAG & In-Lake PREDICT Churn/Weather Agent",
+                        "operation": "Search 970,000,000 3D vehicle trim profile, pre-wash damage & appearance Re-ID vectors via SSD DiskANN (-92% RAM at $4,780/mo vs $118,800/mo Exact 8.00TB DRAM—saving $114,020/mo!) and score brush envelopes in 4ms",
+                        "impact_metric": "4ms 3D/Re-ID match (+$108.0M/yr gained!); $4,780/mo SSD DiskANN vs $118,800/mo Exact 8.00TB DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms Brush-Retract / EPA-POTW / FTC Gate & 4ms Sonny's / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-266 blocking 485 open-bed wrap, EPA POTW & FTC/passback risks (Exact +$24.00M saved!) & enforcing RLS across 30,200 users (4ms), then trigger PLC retract & commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic Sub-120ms (119.3ms!) Route & Sub-105ms (104.86ms!) Sim, -$565.0K/mo & $91.20M SLA!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "COMMERCIAL-CAR-WASH-TUNNEL-LPR-EPA-SOP-266",
+                "hard_constraint": "Automatically trigger pneumatic top/wrap brush retraction (Touchless Override) when entrance 3D scanners detect loose cargo in open pickup truck beds or non-standard roof racks, lock municipal sewer discharge valves if oil-water separator TPH (>100 mg/L) or pH (<6.0 or >9.5) breaches EPA 40 CFR 403 POTW limits (and ban hydrofluoric acid wheel cleaners), and enforce immediate FTC Click-to-Cancel (16 CFR 425) billing termination plus LPR vehicle-body Re-ID passback anti-sharing blocks",
+                "proposed_change": "Block 485 open-bed brush-wrap, EPA POTW discharge & FTC/passback risks (Exact +$24.00M saved!), capture $108.0M/yr in Unlimited Wash Club retention & lane throughput (+46.8% lift), serve 925 waves, and enforce Site/LPR RLS across 30,200 users",
+                "open_truck_bed_brush_retract_and_epa_potw_tph_verified": True,
+                "ftc_click_to_cancel_and_lpr_reid_passback_block_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 91200000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (970M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -17524,6 +17590,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1073",
+        "category": "Streaming & Mirroring",
+        "question": "Ingest 1,290K (1.29M) EPS of pay-station LPR/RFID gate reads, entrance 3D vehicle-profile scans, and hydro-cyclone water-reclaim telemetry across 2,100 express tunnels while mirroring Sonny's DRB Patheon POS / Stripe ledgers across 12.5M monthly subscribers for 140-car/hr conveyor pacing and involuntary-churn recovery vs Kafka/Fivetran/Snowpipe",
+        "expected": "Fabric Eventhouse KQL ($0/GB Stream Write Tax) + OneLake Zero-Copy DRB Patheon/Stripe Mirroring (4ms Tunnel Pacing & Churn-Rescue Sense Flagging 925 Waves & Lifting Cars/Hr & LTV +46.8% vs $219,600/mo Stream & CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL ($0/GB Stream Write Tax) + OneLake Zero-Copy DRB Patheon/Stripe Mirroring (4ms Tunnel Pacing & Churn-Rescue Sense Flagging 925 Waves & Lifting Cars/Hr & LTV +46.8% vs $219,600/mo Stream & CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1074",
+        "category": "HTAP & Vector Search",
+        "question": "Retrieve 970,000,000 (970M = 0.97B!) 3D vehicle exterior trim vulnerability profiles, pre-wash damage snapshots, and vehicle appearance Re-ID embeddings alongside open-pickup-bed brush retraction, EPA 40 CFR 403 oil-water discharge, and FTC Click-to-Cancel / LPR passback gates vs Exact 8.00TB DRAM vector search",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (970M 3D Vehicle Trim, Pre-Wash Damage & Appearance Re-ID Vectors, -92% RAM at $4,780/mo vs $118,800/mo Exact 8.00TB DRAM—Saving $114,020/mo!) + In-Lake PREDICT (4ms, +$108.0M/yr Gained!) & Foundry IQ SOP-266 Blocking 485 Brush/EPA/FTC Violations (Exact +$24.00M!)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (970M 3D Vehicle Trim, Pre-Wash Damage & Appearance Re-ID Vectors, -92% RAM at $4,780/mo vs $118,800/mo Exact 8.00TB DRAM—Saving $114,020/mo!) + In-Lake PREDICT (4ms, +$108.0M/yr Gained!) & Foundry IQ SOP-266 Blocking 485 Brush/EPA/FTC Violations (Exact +$24.00M!)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1075",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 2,100-site global express tunnel car wash & 12.5M-subscriber LPR platform (1,290K=1.29M EPS stream, 970M 3D/Re-ID vectors, 30,200 site managers/district leads/techs): Fabric F64 ($18,320/mo) vs stitched Kafka/CDC/Snowflake/Databricks/AWS/BI stack ($363.0K-$583,300/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 970M SSD DiskANN + Direct Lake ($18,320/mo vs $583,300/mo Stitched Multi-Cloud, Saving -$565.0K/mo (-$564,980/mo!) / -96.9% Record TCO! with 30,200 $0 Viewer Seats & Site/LPR RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 970M SSD DiskANN + Direct Lake ($18,320/mo vs $583,300/mo Stitched Multi-Cloud, Saving -$565.0K/mo (-$564,980/mo!) / -96.9% Record TCO! with 30,200 $0 Viewer Seats & Site/LPR RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1076",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R258 Dual Latency Breakthrough: First Time Breaking <120ms Routing Mean (119.3ms!) & First Time Breaking <105ms Ontology Sim Mean (104.86ms at n=152!), 266 SVG, 146 FAQs=292 Palindrome Docs, Exact 8.00TB DRAM Replaced, Exact +$24.00M Protected & 308 Tests Milestone: Spring pollen Saturday surge triggers 925 waves and 485 open-bed/EPA/FTC risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 925-Wave Pacing/Churn Sense ($0 Tax) + 970M DiskANN & PREDICT 4ms (+46.8% Lift & +$108.0M Gained!) + Foundry IQ 4ms 485-Brush/EPA/FTC Gate (Exact +$24.00M!) & Site RLS + Teams Sonny's/DRB & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $91.20M! SLA)",
+        "model_answer": "Eventhouse 4ms 925-Wave Pacing/Churn Sense ($0 Tax) + 970M DiskANN & PREDICT 4ms (+46.8% Lift & +$108.0M Gained!) + Foundry IQ 4ms 485-Brush/EPA/FTC Gate (Exact +$24.00M!) & Site RLS + Teams Sonny's/DRB & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $91.20M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -17792,7 +17906,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_senior_living_assisted_living_memory_care_snf_fabric_fall_radar_pdpm_vs_4clouds",
         "global_commercial_furniture_mattress_upholstery_3d_cpq_fabric_cpsc_bifma_vs_4clouds",
         "global_equipment_rental_heavy_machinery_aerial_lift_fabric_telematics_ansi_osha_vs_4clouds",
-        "global_bottled_water_pou_filtration_office_refreshment_fabric_route_fda_nsf_vs_4clouds"
+        "global_bottled_water_pou_filtration_office_refreshment_fabric_route_fda_nsf_vs_4clouds",
+        "global_commercial_car_wash_express_tunnel_lpr_membership_fabric_water_reclaim_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
