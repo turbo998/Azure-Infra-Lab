@@ -2445,13 +2445,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 90400000)
 
 
-    def test_scenario_matrix_304_cases_and_explicit_miss(self) -> None:
+    def test_global_bottled_water_pou_filtration_office_refreshment_fabric_route_fda_nsf_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_bottled_water_pou_filtration_office_refreshment_fabric_route_fda_nsf_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["bottling_plants_and_route_distribution_depots_count"], 780)
+        self.assertEqual(sim["telemetry"]["skip_stop_route_and_pou_filter_waves_flagged_count"], 920)
+        self.assertEqual(sim["telemetry"]["dispenser_load_cell_ro_tds_and_ozone_stream_eps"], 1275000)
+        self.assertEqual(sim["telemetry"]["aquifer_recharge_ro_fouling_and_planogram_vectors_count"], 965000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_bottled_water_tco_saved_usd"], 561240)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_bottled_water_tco_savings_pct"], 96.9)
+        self.assertTrue(sim["foundry_iq_guardrail"]["fda_21cfr129_bromate_10ppb_and_epa_pfas_4ppt_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["enose_voc_puncture_and_caustic_rinse_zero_residue_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 90800000)
+
+
+    def test_scenario_matrix_306_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 616)
-        self.assertEqual(matrix["passed_scenarios"], 615)
+        self.assertEqual(matrix["total_scenarios"], 620)
+        self.assertEqual(matrix["passed_scenarios"], 619)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.84, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 120.8)
+        self.assertEqual(matrix["avg_latency_ms"], 120.0)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -4159,6 +4176,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $90.40M! SLA", by_id["DL-1068"])
 
 
+    def test_fabric_bottled_water_pou_filtration_office_refreshment_2026_11_21_r257_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-1069", "DL-1070", "DL-1071", "DL-1072"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Skip-Stop Route & POU Filter Sense Flagging 920 Waves & Lifting Drop/Deposit +46.6%", by_id["DL-1069"])
+        self.assertIn("965M Spring-Aquifer, RO Fouling & Micro-Market Planogram Vectors, -92% RAM at $4,760/mo vs $118,200/mo 7.95TB DRAM", by_id["DL-1070"])
+        self.assertIn("Saving -$561.2K/mo (-$561,240/mo Breaking -$560K/mo!) / -96.9% Record TCO! with Exact 30,000 $0 Viewer Seats", by_id["DL-1071"])
+        self.assertIn("16ms 4^2ms E2E, Protect $90.80M! SLA", by_id["DL-1072"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -4177,11 +4205,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 615)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 616)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 120.8)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 150)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 106.04)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 619)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 620)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 120.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 151)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 105.44)
 
 
 if __name__ == "__main__":

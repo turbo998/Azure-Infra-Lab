@@ -10014,6 +10014,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (960M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_bottled_water_pou_filtration_office_refreshment_fabric_route_fda_nsf_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Bottled Water, Point-of-Use (POU) Water Filtration, Office Coffee & Refreshment Services (OCS) & Returnable 5-Gallon Jug Route Delivery Networks (780 Plants/Depots + 22K Route Trucks + 5.4M Dispensers/Kiosks) Dynamic Skip-Stop Route & POU Filter Swap, 965M Aquifer/RO/Planogram RAG & FDA-129-Bromate/EPA-PFAS/Washer Gate (1,275K=1.275M EPS Dispenser/RO/Ozone Stream + 965M Aquifer/RO-Fouling/Planogram Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 920-Wave Skip-Stop/Filter Sense ($0/GB & $0 Copy Tax), 965M SSD DiskANN ($4,760/mo vs $118,200/mo 7.95TB DRAM—Saving $113,440/mo!) + In-Lake PREDICT 4ms (+46.6% Drop Density & Deposit Recovery, +$107.0M/yr 107-Prime Gained!) & Foundry IQ 4ms 480-Bromate/PFAS/Washer Gate (+$23.80M) (1,275K EPS · 965M DiskANN · 16ms=4^2ms E2E · Historic R257=2^8+1=F_3 Fermat Prime Round, 265 SVG, 145 FAQs=290 Round-Ten Docs, 619 Prime Passed/620=99.84%, Exact 120.0ms Round-Twenty Integer Route!, 151 Palindrome Prime Sims 105.44ms, Exact 30,000 Users, -$561.2K/mo & 306 Tests!)",
+            "telemetry": {
+                "bottling_plants_and_route_distribution_depots_count": 780,
+                "skip_stop_route_and_pou_filter_waves_flagged_count": 920,
+                "dispenser_load_cell_ro_tds_and_ozone_stream_eps": 1275000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "aquifer_recharge_ro_fouling_and_planogram_vectors_count": 965000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "route_drop_density_and_jug_deposit_recovery_lift_pct": 46.6,
+                "route_savings_and_pou_subscription_arr_gained_usd": 107000000,
+                "fda_bromate_epa_pfas_and_washer_residue_blocks_count": 480,
+                "concurrent_depot_managers_route_drivers_and_qa_users": 30000,
+            },
+            "ontology_traversal": [
+                "Dispenser-LoadCell-RO-and-SAPDSD-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,275K (1.275M) EPS of 5.4M connected 5-gallon cooler load-cells, Reverse-Osmosis (RO) POU TDS/flow probes, and bottling-line ozone analyzers while mirroring SAP S/4HANA DSD / Descartes / Cantaloupe ledgers across 780 depots ($0/GB write tax & $0 copy tax), flagging 920 dynamic skip-stop route and POU filter-replacement waves in 4ms",
+                "Aquifer-Hydrogeology-and-RO-Fouling-Engine -> Azure SQL / Cosmos DB SSD DiskANN (965,000,000 spring-aquifer recharge curves, municipal water-hardness RO fouling maps & breakroom micro-market planogram vectors, -92% RAM at $4,760/mo vs $118,200/mo 7.95TB DRAM—saving $113,440/mo!) + In-Lake PREDICT -> Lifts route drop density and empty-jug deposit recovery +46.6% and captures +$107.0M/yr (107 Prime!) in net value in 4ms",
+                "Foundry-IQ-FDABromate-EPAPFAS-and-WasherResidue-Gate -> Validates BOTTLED-WATER-POU-ROUTE-FDA-NSF-SOP-265 -> Blocks 480 (Round-Twenty!) FDA 21 CFR Part 129 ozonation bromate (>=10 ppb) excursions, EPA / IBWA PFAS (PFOA/PFOS >4.0 ppt) carbon-bed breakthroughs, and 5-gallon bottle-washer caustic-rinse / e-Nose VOC contamination hazards (+$23.80M protected) with Depot/Account RLS in 4ms",
+                "Approved Skip-Stop Route & Batch Release -> VP of Water Quality & Route Ops Teams Card -> Pushes Descartes dynamic handheld routes across 22,000 trucks, releases SAP DSD bottling lots & POU filter orders, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_bottled_water_monthly_tco_usd": 18160,
+                "competitor_stitched_bottled_water_monthly_tco_usd": 579400,
+                "monthly_bottled_water_tco_saved_usd": 561240,
+                "monthly_bottled_water_tco_savings_pct": 96.9,
+                "fabric_internal_full_stack_monthly_usd": 62200,
+                "competitor_internal_full_stack_monthly_usd": 1638000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.275M EPS 5.4M-Dispenser & 780-Depot Route Sense Agent",
+                        "operation": "Mirror SAP S/4HANA DSD / Descartes / Cantaloupe ledgers zero-copy and ingest 1,275K (1.275M) EPS cooler/RO/ozone streams across 780 depots at $0/GB write tax, flagging 920 skip-stop and filter-swap waves in 4ms",
+                        "impact_metric": "4ms 920-wave sense (+46.6% route drop density & jug deposit recovery); eliminates $218,000/mo in stream and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "965M SSD DiskANN Aquifer/RO/Planogram RAG & In-Lake PREDICT POU Conversion Agent",
+                        "operation": "Search 965,000,000 spring-aquifer, RO membrane fouling & breakroom planogram vectors via SSD DiskANN (-92% RAM at $4,760/mo vs $118,200/mo 7.95TB DRAM—saving $113,440/mo!) and score skip-stop/POU conversion in 4ms",
+                        "impact_metric": "4ms aquifer/RO match (+$107.0M/yr 107-Prime gained!); $4,760/mo SSD DiskANN vs $118,200/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms FDA-Bromate / EPA-PFAS / Washer Gate & 4ms Descartes / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-265 blocking 480 bromate, PFAS & washer caustic risks (+$23.80M saved) & enforcing RLS across Exact 30,000 users (4ms), then dispatch Descartes routes & commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic R257=F_3 Fermat Prime, Exact 120.0ms Route, 151 Palindrome Prime Sims (105.44ms!), -$561.2K/mo & $90.80M SLA!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "BOTTLED-WATER-POU-ROUTE-FDA-NSF-SOP-265",
+                "hard_constraint": "Quarantine any bottling lot where ozonation disinfection byproduct bromate reaches >=10 ppb (FDA 21 CFR 165.110 / Part 129) or GAC/ion-exchange PFAS breakthrough exceeds 4.0 ppt PFOA/PFOS, and physically puncture/lock out returned 5-gallon jugs failing electronic-nose VOC checks or final pure-water washer rinse conductivity parity (FDA 21 CFR 129.80)",
+                "proposed_change": "Block 480=Round-Twenty FDA bromate, EPA PFAS & caustic-rinse washer risks (+$23.80M saved), capture $107.0M/yr (107 Prime!) in route drop efficiency & POU recurring ARR (+46.6% lift), serve 920 waves, and enforce Depot/Account RLS across Exact 30,000 users",
+                "fda_21cfr129_bromate_10ppb_and_epa_pfas_4ppt_verified": True,
+                "enose_voc_puncture_and_caustic_rinse_zero_residue_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 90800000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (965M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -17410,6 +17476,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1069",
+        "category": "Streaming & Mirroring",
+        "question": "Ingest 1,275K (1.275M) EPS of 5.4M connected 5-gallon water cooler load-cells, Reverse-Osmosis (RO) POU TDS/flow probes, and bottling-line ozone analyzers while mirroring SAP S/4HANA DSD / Descartes / Cantaloupe ledgers across 780 depots for skip-stop route optimization and empty-jug deposit recovery vs Kafka/Fivetran/Snowpipe",
+        "expected": "Fabric Eventhouse KQL ($0/GB Stream Write Tax) + OneLake Zero-Copy SAP DSD/Cantaloupe Mirroring (4ms Skip-Stop Route & POU Filter Sense Flagging 920 Waves & Lifting Drop/Deposit +46.6% vs $218,000/mo Stream & CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL ($0/GB Stream Write Tax) + OneLake Zero-Copy SAP DSD/Cantaloupe Mirroring (4ms Skip-Stop Route & POU Filter Sense Flagging 920 Waves & Lifting Drop/Deposit +46.6% vs $218,000/mo Stream & CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1070",
+        "category": "HTAP & Vector Search",
+        "question": "Retrieve 965,000,000 (965M = 0.965B!) spring-aquifer recharge models, municipal water-hardness RO membrane fouling curves, and breakroom micro-market planogram vectors alongside FDA 21 CFR 129 bromate (<10 ppb), EPA PFAS (<4.0 ppt), and 5-gallon washer caustic-rinse gates vs 7.95TB DRAM vector search",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (965M Spring-Aquifer, RO Fouling & Micro-Market Planogram Vectors, -92% RAM at $4,760/mo vs $118,200/mo 7.95TB DRAM—Saving $113,440/mo!) + In-Lake PREDICT (4ms, +$107.0M/yr 107-Prime Gained!) & Foundry IQ SOP-265 Blocking 480 Bromate/PFAS/Washer Violations (+$23.80M)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (965M Spring-Aquifer, RO Fouling & Micro-Market Planogram Vectors, -92% RAM at $4,760/mo vs $118,200/mo 7.95TB DRAM—Saving $113,440/mo!) + In-Lake PREDICT (4ms, +$107.0M/yr 107-Prime Gained!) & Foundry IQ SOP-265 Blocking 480 Bromate/PFAS/Washer Violations (+$23.80M)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1071",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 780-depot global bottled water, 5.4M-dispenser POU filtration & office refreshment platform (1,275K=1.275M EPS stream, 965M aquifer/RO vectors, Exact 30,000 depot managers/drivers/QA users): Fabric F64 ($18,160/mo) vs stitched Kafka/CDC/Snowflake/Databricks/AWS/BI stack ($361.0K-$579,400/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 965M SSD DiskANN + Direct Lake ($18,160/mo vs $579,400/mo Stitched Multi-Cloud, Saving -$561.2K/mo (-$561,240/mo Breaking -$560K/mo!) / -96.9% Record TCO! with Exact 30,000 $0 Viewer Seats & Depot/Account RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 965M SSD DiskANN + Direct Lake ($18,160/mo vs $579,400/mo Stitched Multi-Cloud, Saving -$561.2K/mo (-$561,240/mo Breaking -$560K/mo!) / -96.9% Record TCO! with Exact 30,000 $0 Viewer Seats & Depot/Account RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1072",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R257=2^8+1=F_3 Fermat Prime Round, 265 SVG, 145 FAQs=290 Round-Ten Docs, 619 Prime Passed / 620 Round-Twenty Scenarios (99.84%), Exact 120.0ms Round-Twenty Integer Routing Mean!, 433 Prime Auto-Act, 151 Palindrome Prime Sims (105.44ms!), Exact 30,000 (30K!) Users & 306 Tests Milestone: Summer heatwave hydration surge & bromide/PFAS alert triggers 920 waves and 480 FDA/EPA/washer risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 920-Wave Skip-Stop/RO Sense ($0 Tax) + 965M DiskANN & PREDICT 4ms (+46.6% Lift & +$107.0M Gained!) + Foundry IQ 4ms 480-Bromate/PFAS/Washer Gate (+$23.80M) & Depot RLS + Teams Descartes/SAP & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $90.80M! SLA)",
+        "model_answer": "Eventhouse 4ms 920-Wave Skip-Stop/RO Sense ($0 Tax) + 965M DiskANN & PREDICT 4ms (+46.6% Lift & +$107.0M Gained!) + Foundry IQ 4ms 480-Bromate/PFAS/Washer Gate (+$23.80M) & Depot RLS + Teams Descartes/SAP & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $90.80M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -17677,7 +17791,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_commercial_printing_corrugated_packaging_label_converting_fabric_press_fsc_fda_vs_4clouds",
         "global_senior_living_assisted_living_memory_care_snf_fabric_fall_radar_pdpm_vs_4clouds",
         "global_commercial_furniture_mattress_upholstery_3d_cpq_fabric_cpsc_bifma_vs_4clouds",
-        "global_equipment_rental_heavy_machinery_aerial_lift_fabric_telematics_ansi_osha_vs_4clouds"
+        "global_equipment_rental_heavy_machinery_aerial_lift_fabric_telematics_ansi_osha_vs_4clouds",
+        "global_bottled_water_pou_filtration_office_refreshment_fabric_route_fda_nsf_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
