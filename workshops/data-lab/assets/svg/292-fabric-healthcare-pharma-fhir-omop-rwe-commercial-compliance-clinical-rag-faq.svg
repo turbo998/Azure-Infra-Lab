@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg292" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05141F"/>
+      <stop offset="50%" stop-color="#0A2236"/>
+      <stop offset="100%" stop-color="#041220"/>
+    </linearGradient>
+    <linearGradient id="hdr292" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <style>
+      .t-title { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 20px; font-weight: 800; fill: #F8FAFC; }
+      .t-sub { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 12.5px; font-weight: 600; fill: #6EE7B7; }
+      .t-sec { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; font-weight: 800; fill: #E2E8F0; }
+      .t-body { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11.5px; font-weight: 500; fill: #CBD5E1; }
+      .t-mono { font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 11px; font-weight: 700; fill: #6EE7B7; }
+      .t-badge { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 800; fill: #05141F; }
+      .box { fill: #0F172A; stroke: #334155; stroke-width: 1.5; rx: 10; }
+      .box-fab { fill: #06283D; stroke: #10B981; stroke-width: 2; rx: 10; }
+      .box-gate { fill: #063229; stroke: #38BDF8; stroke-width: 2; rx: 10; }
+      .box-warn { fill: #2A1215; stroke: #EF4444; stroke-width: 1.8; rx: 10; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg292)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="18" width="1352" height="74" rx="12" fill="#0F172A" stroke="url(#hdr292)" stroke-width="2.5"/>
+  <text x="44" y="48" class="t-title">292 · Healthcare &amp; Life Sciences Commercial Compliance, FHIR/OMOP RWE &amp; 1.10B Clinical RAG (R284 · Scenario KE)</text>
+  <text x="44" y="72" class="t-sub">🏆 Palindrome SVG #292 · 727 Palindrome Prime Passed · 102.8ms (&lt;103ms!) Route · 178th Sim 91.88ms (&lt;92ms!) · Exact 1.10B Vectors ($5,300/mo) · -$675,080/mo Saved · Historic 360=360° Tests!</text>
+
+  <!-- Left Column: Stitched Multi-Cloud Anti-Pattern -->
+  <rect x="24" y="108" width="420" height="540" class="box-warn"/>
+  <text x="42" y="136" class="t-sec" fill="#FCA5A5">❌ Stitched Healthcare &amp; Pharma Stack ($695,300/mo)</text>
+  <text x="42" y="158" class="t-body">• 65M Patient Lives + 480 Sites + 1.8M HCPs · 1.58M EPS</text>
+
+  <rect x="42" y="174" width="384" height="92" class="box"/>
+  <text x="56" y="198" class="t-sec" fill="#F87171">1. Managed FHIR/DICOM API &amp; Stream Tax ($158,000/mo)</text>
+  <text x="56" y="218" class="t-body">• Standalone HealthLake / Healthcare API billed per GB &amp; query</text>
+  <text x="56" y="236" class="t-body">• Deeply nested FHIR JSON requires weeks of custom flattening</text>
+  <text x="56" y="254" class="t-mono" fill="#FCA5A5">Delay: 3–4 Weeks to Build Oncology Phase-III OMOP Cohort</text>
+
+  <rect x="42" y="280" width="384" height="92" class="box"/>
+  <text x="56" y="304" class="t-sec" fill="#F87171">2. EHR &amp; Veeva CRM Connector Tax ($105,600/mo)</text>
+  <text x="56" y="324" class="t-body">• Fivetran MAR + external Spark jobs mapping SNOMED/RxNorm</text>
+  <text x="56" y="342" class="t-body">• Disconnected from live HCP Sunshine Act spend ledgers</text>
+  <text x="56" y="360" class="t-mono" fill="#FCA5A5">Risk: Missing Real-Time Trial Eligibility at Point of Care</text>
+
+  <rect x="42" y="386" width="384" height="92" class="box"/>
+  <text x="56" y="410" class="t-sec" fill="#F87171">3. 9.30 TB DRAM Clinical Vector Silo ($134,400/mo)</text>
+  <text x="56" y="430" class="t-body">• Exact 1.10B pathology, DICOM-SR &amp; FDA label vectors in RAM</text>
+  <text x="56" y="448" class="t-body">• Overpays $129,100/mo vs NVMe SSD DiskANN ($5,300/mo!)</text>
+  <text x="56" y="466" class="t-mono" fill="#FCA5A5">Risk: Sales Rep RAG Synthesizes Off-Label Indication Claims</text>
+
+  <rect x="42" y="492" width="384" height="136" class="box"/>
+  <text x="56" y="516" class="t-sec" fill="#F87171">4. 35,400 Users BI Tax &amp; Privacy Gaps ($297,300/mo)</text>
+  <text x="56" y="536" class="t-body">• 28,800 (2×120²!) active viewers × $10/seat = $288,000/mo</text>
+  <text x="56" y="554" class="t-body">• +$9,300/mo standalone 21 CFR Part 11 audit DB</text>
+  <text x="56" y="572" class="t-body">• Rare-disease cohorts (&lt;11 patients) risk HIPAA re-identification</text>
+  <text x="56" y="596" class="t-mono" fill="#FCA5A5">Total Stitched TCO: $695,300/mo | High OPDP/HIPAA Risk</text>
+
+  <!-- Right Column: Microsoft Fabric 16ms Healthcare & Life Sciences Architecture -->
+  <rect x="464" y="108" width="912" height="540" class="box-fab"/>
+  <text x="484" y="136" class="t-sec" fill="#6EE7B7">✅ Microsoft Fabric Healthcare Data Solutions &amp; Pharma Compliance Lakehouse ($20,220/mo · Saves -$675,080/mo!)</text>
+  <text x="484" y="158" class="t-body">Pooled F64 ($14,920/mo) + Exact 1.10B SSD DiskANN ($5,300/mo) + $0 FHIR/OMOP API Tax + $0 BI Viewer Seats for 35,400 Users</text>
+
+  <!-- Step 1 -->
+  <rect x="484" y="174" width="430" height="145" class="box"/>
+  <rect x="498" y="186" width="92" height="22" rx="6" fill="#10B981"/>
+  <text x="510" y="201" class="t-badge">STEP 1 · 4 ms</text>
+  <text x="600" y="202" class="t-sec" fill="#6EE7B7">Healthcare Data Solutions + Eventhouse KQL</text>
+  <text x="498" y="226" class="t-body">• Turnkey FHIR R4 / DICOM / CCLF → OneLake OMOP CDM v5.4</text>
+  <text x="498" y="244" class="t-body">• Ingests 1,580K (1.58M) EPS HL7v2 ADT, ICU vitals &amp; Veeva</text>
+  <text x="498" y="262" class="t-body">  HCP interaction streams across 65M lives ($0 API/stream tax)</text>
+  <text x="498" y="284" class="t-mono">Flags 1,055 Trial, Sepsis &amp; Sunshine Waves | Saves $263.6K/mo</text>
+
+  <!-- Step 2 -->
+  <rect x="928" y="174" width="428" height="145" class="box"/>
+  <rect x="942" y="186" width="92" height="22" rx="6" fill="#0EA5E9"/>
+  <text x="954" y="201" class="t-badge">STEP 2 · 4 ms</text>
+  <text x="1044" y="202" class="t-sec" fill="#7DD3FC">Exact 1.10B SSD DiskANN ($5,300/mo)</text>
+  <text x="942" y="226" class="t-body">• 1,100,000,000 (Exact 1.10B!) pathology notes, DICOM-SR</text>
+  <text x="942" y="244" class="t-body">  radiology reports, trial protocols &amp; FDA Prescribing Info</text>
+  <text x="942" y="262" class="t-body">• Inline join with OneLake OMOP genomic &amp; therapy-line tables</text>
+  <text x="942" y="284" class="t-mono">$5,300/mo SSD vs $134.4K DRAM | +54.4% Lift &amp; +$134.0M/yr!</text>
+
+  <!-- Step 3 -->
+  <rect x="484" y="335" width="430" height="150" class="box-gate"/>
+  <rect x="498" y="347" width="92" height="22" rx="6" fill="#F59E0B"/>
+  <text x="510" y="362" class="t-badge">STEP 3 · 4 ms</text>
+  <text x="600" y="363" class="t-sec" fill="#FDE68A">Foundry IQ OPDP, HIPAA &amp; AKS Gate (SOP-292)</text>
+  <text x="498" y="387" class="t-body">• Blocks 615 Healthcare &amp; Pharma Violations (+$29.20M):</text>
+  <text x="498" y="405" class="t-body">  1. FDA OPDP off-label commercial claims by sales reps</text>
+  <text x="498" y="423" class="t-body">  2. HIPAA Safe Harbor re-identification (cohort cell &lt; 11)</text>
+  <text x="498" y="441" class="t-body">  3. Sunshine Act (Open Payments) &amp; AKS HCP FMV fee breaches</text>
+  <text x="498" y="465" class="t-mono">Compartment Entra OBO Across 35,400 Clinicians &amp; MSLs</text>
+
+  <!-- Step 4 -->
+  <rect x="928" y="335" width="428" height="150" class="box"/>
+  <rect x="942" y="347" width="92" height="22" rx="6" fill="#6366F1"/>
+  <text x="954" y="362" class="t-badge" fill="#F8FAFC">STEP 4 · 4 ms</text>
+  <text x="1044" y="363" class="t-sec" fill="#C7D2FE">Trial Alert, MSL Approval &amp; Part 11 1GB SQL</text>
+  <text x="942" y="387" class="t-body">• Alerts oncology trial coordinator at point of care</text>
+  <text x="942" y="405" class="t-body">• Releases FDA-on-label verified medical deck to Veeva CRM</text>
+  <text x="942" y="423" class="t-body">• Commits 21 CFR Part 11 audit trail to 1GB Free Fabric SQL</text>
+  <text x="942" y="465" class="t-mono">4+4+4+4 = 16ms (4²ms) E2E | Protects $101.60M SLA!</text>
+
+  <!-- 5-Cloud TCO Bar Comparison inside Right Box -->
+  <rect x="484" y="500" width="872" height="132" class="box"/>
+  <text x="502" y="524" class="t-sec">📊 5-Cloud Healthcare RWE &amp; Pharma Compliance Monthly TCO (65M Lives · 480 Sites · 35,400 Users)</text>
+  <text x="502" y="548" class="t-mono" fill="#10B981">Microsoft Fabric (F64 + DiskANN): $20,220/mo  [██] 🏆 &gt;-$675K/mo Saved (-$675,080/mo · -97.1%!)</text>
+  <text x="502" y="568" class="t-body">Azure Databricks HLS (Standalone):$405,000/mo [████████████████████████████] ($36,000/mo in OneLake Coexistence)</text>
+  <text x="502" y="588" class="t-body">GCP Healthcare API + BigQuery:    $428,000/mo [█████████████████████████████]</text>
+  <text x="502" y="608" class="t-body">Snowflake HLS + AWS HealthLake:   $695,300/mo [████████████████████████████████████████████████]</text>
+
+  <!-- Bottom KPI Milestone Strip -->
+  <rect x="24" y="664" width="1352" height="176" rx="12" fill="#0F172A" stroke="#10B981" stroke-width="2"/>
+  <text x="44" y="694" class="t-title" fill="#6EE7B7">🏆 Round 284 (Scenario KE · DL-1177..DL-1180 · Palindrome SVG #292) Sealed Benchmark &amp; Mathematical Milestones</text>
+
+  <rect x="44" y="710" width="315" height="114" class="box"/>
+  <text x="60" y="734" class="t-sec" fill="#38BDF8">🎯 727 Palindrome Prime &amp; 102.8ms</text>
+  <text x="60" y="756" class="t-body">• 727 Palindrome Prime / 728 (99.86%!)</text>
+  <text x="60" y="776" class="t-body">• First Sub-103ms Route: 102.8ms!</text>
+  <text x="60" y="796" class="t-mono">514 Auto · 212 Palindrome Confirm · 2 Human</text>
+
+  <rect x="375" y="710" width="315" height="114" class="box"/>
+  <text x="391" y="734" class="t-sec" fill="#6EE7B7">⚡ 178th Sim Breaking &lt;92.00ms!</text>
+  <text x="391" y="756" class="t-body">• Ontology Sim Mean: 91.88ms (16,354/178!)</text>
+  <text x="391" y="776" class="t-body">• 1,580K (1.58M) EPS · 1,055 Active Waves</text>
+  <text x="391" y="796" class="t-mono">16ms (4²ms) E2E · $101.60M SLA Protected</text>
+
+  <rect x="706" y="710" width="315" height="114" class="box"/>
+  <text x="722" y="734" class="t-sec" fill="#FDE68A">💎 Exact 1.10B Vectors &amp; $5,300/mo</text>
+  <text x="722" y="756" class="t-body">• 1,100M Vectors: $5,300 vs $134,400 DRAM</text>
+  <text x="722" y="776" class="t-body">• -$675,080/mo Saved (&gt;-$675K/mo!)</text>
+  <text x="722" y="796" class="t-mono">+$134.0M/yr Gained · +54.4% Velocity Lift</text>
+
+  <rect x="1037" y="710" width="319" height="114" class="box"/>
+  <text x="1053" y="734" class="t-sec" fill="#C4B5FD">🛡️ Historic 360 = 360° Full-Circle Tests</text>
+  <text x="1053" y="756" class="t-body">• Palindrome SVG #292 &amp; +$29.20M Saved</text>
+  <text x="1053" y="776" class="t-body">• 172 Curated FAQs (344 Bilingual Docs)</text>
+  <text x="1053" y="796" class="t-mono">615 Blocks · 35,400 Users · 360/360 Tests!</text>
+</svg>
