@@ -10344,6 +10344,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (985M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_commercial_fire_life_safety_sprinkler_alarm_itm_fabric_nfpa25_nfpa72_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Commercial Fire & Life-Safety Systems Inspection, Testing & Maintenance (ITM), NFPA 25 Fire-Sprinkler & Pump Telemetry, NFPA 72 Addressable Fire-Alarm Diagnostics, Kitchen Hood Suppression & AHJ Compliance Networks (1,480 Branches + 1.85M Buildings + 42,000 NICET Techs) On-Site Red-Tag Quote & Dry-Pipe Freeze Rescue, 990M (0.99B!) Panel/Barcode/AHJ RAG & NFPA25-Impairment/NICET/Hydro-Test Gate (1,345K=1.345M EPS NFPA 72 Trouble/NFPA 25 Riser/Compressor Stream + 990M Panel-Manual/Barcode/AHJ Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 945-Wave Deficiency/Freeze Sense ($0/GB & $0 Copy Tax), 990M SSD DiskANN ($4,860/mo vs $121,200/mo 8.20TB DRAM—Saving $116,340/mo!) + In-Lake PREDICT 4ms (+47.6% Deficiency Conversion & FTF, +$112.0M/yr Gained!) & Foundry IQ 4ms 505-NFPA25/NICET/Hydro Gate (+$24.80M!) (1,345K EPS · 990M DiskANN · 16ms=4^2ms E2E · Historic 150 Curated FAQs = 300 Bilingual Docs Exact-Hundred Milestone!, R262 Palindrome, 270 Round-Ten SVG, 639/640 Round-Twenty Scenarios, 190 Confirm, Sub-117ms 116.4ms Route!, 156 Sims Sub-103ms 102.58ms!, Exact 31,000 Users, Breaking -$580K/mo Saved -$583.0K/mo vs $602K/mo & 316 Tests!)",
+            "telemetry": {
+                "fire_life_safety_branches_and_monitored_commercial_buildings_count": 1480,
+                "red_tag_deficiency_repair_and_dry_pipe_freeze_waves_flagged_count": 945,
+                "nfpa72_panel_trouble_nfpa25_riser_pressure_and_compressor_stream_eps": 1345000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "fire_panel_fault_manual_barcoded_device_and_ahj_code_vectors_count": 990000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "red_tag_deficiency_to_repair_conversion_and_first_time_fix_lift_pct": 47.6,
+                "deficiency_repair_pull_through_and_avoided_freeze_claims_gained_usd": 112000000,
+                "nfpa25_red_tag_impairment_nicet_cert_and_ansul_hood_blocks_count": 505,
+                "concurrent_nicet_techs_branch_dispatchers_and_ahj_inspectors": 31000,
+            },
+            "ontology_traversal": [
+                "NFPA72-Alarm-Panel-and-NFPA25-Sprinkler-Riser-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,345K (1.345M) EPS of NFPA 72 addressable fire-alarm trouble/supervisory signals, NFPA 25 sprinkler riser pressure/compressor telemetry, and 42,000 NICET technician barcode scans across 1,480 branches and 1.85M buildings while mirroring ServiceTrade / InspectPoint / BuildingReports and SAP S/4HANA van-stock ledgers ($0/GB write tax & $0 copy tax), flagging 945 on-site Red-Tag quote and dry-pipe freeze waves in 4ms",
+                "Legacy-FirePanel-and-Obsolete-Valve-CrossRef-RAG-Engine -> Azure SQL / Cosmos DB SSD DiskANN (990,000,000=0.99B 40-year multi-brand fire-panel service manuals, barcoded valve/detector photos & municipal AHJ fire-code vectors, -92% RAM at $4,860/mo vs $121,200/mo 8.20TB DRAM—saving $116,340/mo!) + In-Lake PREDICT -> Lifts Red-Tag deficiency-to-repair conversion and first-time fix rate +47.6% and captures +$112.0M/yr in 4ms",
+                "Foundry-IQ-NFPA25Impairment-NICET-and-HydroTest-Gate -> Validates COMMERCIAL-FIRE-LIFE-SAFETY-NFPA25-NFPA72-SOP-270 -> Blocks 505 (Palindrome!) unnotified NFPA 25 Chapter 15 Red-Tag impairments (>10hr without AHJ/Brycer & FM Global notice or Fire Watch), uncertified NICET Level II/III clean-agent/alarm dispatches, and overdue NFPA 96 kitchen-hood / NFPA 10 6yr-12yr hydrostatic-test extinguisher certifications (+$24.80M protected!) with Building/AHJ RLS in 4ms",
+                "Approved On-Site Deficiency Quote, Brycer AHJ Filing & Van Dispatch -> VP of ITM & Branch Ops Teams Card -> Pushes instant on-site ServiceTrade repair quote, files Brycer AHJ Red-Tag notice, and commits NFPA 25/72 audit logs to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_fire_life_safety_monthly_tco_usd": 18960,
+                "competitor_stitched_fire_life_safety_monthly_tco_usd": 602000,
+                "monthly_fire_life_safety_tco_saved_usd": 583040,
+                "monthly_fire_life_safety_tco_savings_pct": 96.9,
+                "fabric_internal_full_stack_monthly_usd": 64400,
+                "competitor_internal_full_stack_monthly_usd": 1690000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.345M EPS 1.85M-Building NFPA 72/25 & Barcode Sense Agent",
+                        "operation": "Mirror ServiceTrade / InspectPoint / BuildingReports / SAP ledgers zero-copy and ingest 1,345K (1.345M) EPS NFPA 72 alarm trouble and NFPA 25 riser streams at $0/GB write tax, flagging 945 deficiency and freeze waves in 4ms",
+                        "impact_metric": "4ms 945-wave sense (+47.6% conversion & FTF); eliminates $226,000/mo in stream and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "990M SSD DiskANN Panel/Valve Cross-Ref RAG & In-Lake PREDICT On-Site Quote Agent",
+                        "operation": "Search 990,000,000 (0.99B!) fire-panel manual, obsolete valve & AHJ code vectors via SSD DiskANN (-92% RAM at $4,860/mo vs $121,200/mo 8.20TB DRAM—saving $116,340/mo!) and price on-site repairs in 4ms",
+                        "impact_metric": "4ms part/AHJ match (+$112.0M/yr gained!); $4,860/mo SSD DiskANN vs $121,200/mo 8.20TB DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms NFPA25-Impairment / NICET / Hydro Gate & 4ms ServiceTrade / Brycer / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-270 blocking 505 Red-Tag impairment, NICET & hydro-test risks (+$24.80M saved!) & enforcing RLS across Exact 31,000 users (4ms), then push ServiceTrade quote & commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic 150 FAQs = 300 Docs, Sub-117ms (116.4ms!) Route & Sub-103ms (102.58ms!) Sim, -$583.0K/mo & $92.80M SLA!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "COMMERCIAL-FIRE-LIFE-SAFETY-NFPA25-NFPA72-SOP-270",
+                "hard_constraint": "Require electronic NFPA 25 Chapter 15 Red-Tag Impairment Notification to the local Authority Having Jurisdiction (AHJ / Brycer) and property insurer (FM Global Red-Tag Permit) plus confirmed Fire Watch activation before closing any work order with a >10-hour sprinkler or fire-pump impairment, block ServiceTrade technician dispatch on hospital fire-alarm or NFPA 2001 clean-agent systems without active NICET Level II/III and state fire-marshal licenses, and block green-tag certification of overdue NFPA 96 kitchen hood fusible links or NFPA 10 6-year/12-year hydrostatic-test extinguishers",
+                "proposed_change": "Block 505 (Palindrome!) Red-Tag impairment, NICET & hydrostatic-test risks (+$24.80M saved!), capture $112.0M/yr in deficiency repair pull-through & avoided freeze bursts (+47.6% lift), serve 945 waves, and enforce Building/AHJ RLS across Exact 31,000 users",
+                "nfpa25_red_tag_ahj_brycer_and_fm_global_impairment_verified": True,
+                "nicet_level_cert_and_nfpa10_hydrostatic_test_gate_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 92800000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (990M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -17980,6 +18046,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1089",
+        "category": "Streaming & Mirroring",
+        "question": "Ingest 1,345K (1.345M) EPS of NFPA 72 addressable fire-alarm trouble/supervisory signals, NFPA 25 sprinkler riser pressure/compressor telemetry, and 42,000 NICET technician barcode scans across 1,480 branches and 1.85M buildings while mirroring ServiceTrade/InspectPoint/BuildingReports and SAP S/4HANA van-stock ledgers vs Kafka/Fivetran/Snowpipe",
+        "expected": "Fabric Eventhouse KQL ($0/GB Stream Write Tax) + OneLake Zero-Copy ServiceTrade/BuildingReports/SAP Mirroring (4ms On-Site Red-Tag Quote & Dry-Pipe Freeze Sense Flagging 945 Waves & Lifting Conversion/FTF +47.6% vs $226,000/mo Stream & CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL ($0/GB Stream Write Tax) + OneLake Zero-Copy ServiceTrade/BuildingReports/SAP Mirroring (4ms On-Site Red-Tag Quote & Dry-Pipe Freeze Sense Flagging 945 Waves & Lifting Conversion/FTF +47.6% vs $226,000/mo Stream & CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1090",
+        "category": "HTAP & Vector Search",
+        "question": "Retrieve 990,000,000 (990M = 0.99B!) 40-year multi-brand fire-panel service manuals, barcoded valve/detector photos, and municipal AHJ fire-code vectors alongside NFPA 25 Chapter 15 Red-Tag impairment, NICET Level II/III licensing, and NFPA 10 hydrostatic-test gates vs 8.20TB DRAM vector search",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (990M Fire-Panel Manual, Obsolete Valve & AHJ Code Vectors, -92% RAM at $4,860/mo vs $121,200/mo 8.20TB DRAM—Saving $116,340/mo!) + In-Lake PREDICT (4ms, +$112.0M/yr Gained!) & Foundry IQ SOP-270 Blocking 505 NFPA25/NICET/Hydro Violations (+$24.80M!)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (990M Fire-Panel Manual, Obsolete Valve & AHJ Code Vectors, -92% RAM at $4,860/mo vs $121,200/mo 8.20TB DRAM—Saving $116,340/mo!) + In-Lake PREDICT (4ms, +$112.0M/yr Gained!) & Foundry IQ SOP-270 Blocking 505 NFPA25/NICET/Hydro Violations (+$24.80M!)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1091",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 1,480-branch & 1.85M-building global commercial fire & life-safety ITM platform (1,345K=1.345M EPS stream, 990M=0.99B panel/AHJ vectors, Exact 31,000=31K NICET techs/dispatchers/AHJs): Fabric F64 ($18,960/mo) vs stitched Kafka/CDC/Snowflake/Databricks/AWS/BI stack ($374.2K-$602,000/mo Breaking $600K/mo!)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 990M SSD DiskANN + Direct Lake ($18,960/mo vs $602,000/mo Stitched Multi-Cloud, Saving -$583.0K/mo (-$583,040/mo Breaking -$580K/mo!) / -96.9% Record TCO! with Exact 31,000 $0 Viewer Seats & Building/AHJ RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 990M SSD DiskANN + Direct Lake ($18,960/mo vs $602,000/mo Stitched Multi-Cloud, Saving -$583.0K/mo (-$583,040/mo Breaking -$580K/mo!) / -96.9% Record TCO! with Exact 31,000 $0 Viewer Seats & Building/AHJ RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1092",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic 150 Sesquicentennial Curated FAQs = 300 Three-Hundredth Bilingual Enterprise Docs Exact-Hundred Milestone!, R262 Palindrome Round, 270 Round-Ten SVG, 639/640 Round-Twenty Scenarios (99.84%), 190 Confirm, Historic First Time Sub-117ms Routing Mean (116.4ms!), Historic First Time Sub-103ms Ontology Sim Mean (102.58ms at n=156!), 990M (0.99B!) Vectors, Exact 31,000 Users, Breaking -$580K/mo Saved vs $602K/mo & 316 Tests Milestone: Polar vortex dry-pipe compressor surge & hospital annual ITM wave triggers 945 waves and 505 NFPA25/NICET/hydro risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 945-Wave Deficiency/Freeze Sense ($0 Tax) + 990M DiskANN & PREDICT 4ms (+47.6% Lift & +$112.0M Gained!) + Foundry IQ 4ms 505-NFPA25/NICET/Hydro Gate (+$24.80M) & Building RLS + Teams ServiceTrade/Brycer & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $92.80M! SLA)",
+        "model_answer": "Eventhouse 4ms 945-Wave Deficiency/Freeze Sense ($0 Tax) + 990M DiskANN & PREDICT 4ms (+47.6% Lift & +$112.0M Gained!) + Foundry IQ 4ms 505-NFPA25/NICET/Hydro Gate (+$24.80M) & Building RLS + Teams ServiceTrade/Brycer & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $92.80M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -18252,7 +18366,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_commercial_car_wash_express_tunnel_lpr_membership_fabric_water_reclaim_vs_4clouds",
         "global_animal_health_veterinary_pharma_vaccine_coldchain_fabric_aphis_cvm_vs_4clouds",
         "global_commercial_greenhouse_horticulture_cea_floriculture_fabric_vpd_aphis_vs_4clouds",
-        "global_commercial_roofing_building_envelope_storm_restoration_fabric_drone_cpq_osha_vs_4clouds"
+        "global_commercial_roofing_building_envelope_storm_restoration_fabric_drone_cpq_osha_vs_4clouds",
+        "global_commercial_fire_life_safety_sprinkler_alarm_itm_fabric_nfpa25_nfpa72_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
