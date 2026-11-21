@@ -2207,13 +2207,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 84800000)
 
 
+    def test_global_parking_garage_mobility_hub_fabric_lpr_revpas_ev_curbside_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_parking_garage_mobility_hub_fabric_lpr_revpas_ev_curbside_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["parking_garages_and_mobility_hubs_count"], 6800)
+        self.assertEqual(sim["telemetry"]["revpas_surge_and_ev_overstay_waves_flagged_count"], 850)
+        self.assertEqual(sim["telemetry"]["gateless_lpr_bay_sensor_and_ocpp_stream_eps"], 1145000)
+        self.assertEqual(sim["telemetry"]["vehicle_reid_event_curve_and_landlord_vectors_count"], 895000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_parking_mobility_tco_saved_usd"], 510240)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_parking_mobility_tco_savings_pct"], 96.8)
+        self.assertTrue(sim["foundry_iq_guardrail"]["ada_accessible_quota_and_nfpa88a_co_ev_shutoff_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["dppa_lpr_privacy_masking_and_landlord_rls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 85200000)
+
+
     def test_scenario_matrix_280_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 560)
-        self.assertEqual(matrix["passed_scenarios"], 559)
+        self.assertEqual(matrix["total_scenarios"], 564)
+        self.assertEqual(matrix["passed_scenarios"], 563)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.82, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 132.4)
+        self.assertEqual(matrix["avg_latency_ms"], 131.5)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -3767,6 +3784,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $84.80M! SLA", by_id["DL-1012"])
 
 
+    def test_fabric_parking_garage_mobility_hub_lpr_ev_2026_11_21_r243_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-1013", "DL-1014", "DL-1015", "DL-1016"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Gateless LPR RevPAS & EV Overstay Sense Flagging 850 Waves & Lifting RevPAS/Capture +43.5%", by_id["DL-1013"])
+        self.assertIn("895M Vehicle Re-ID, Demand Curve & Landlord Waterfall Vectors, -92% RAM at $4,480/mo vs $109,800/mo 7.25TB DRAM", by_id["DL-1014"])
+        self.assertIn("Saving -$510.2K/mo (-$510,240/mo >$510K!) / -96.8% Record TCO! with Exact 27,000=30^3 $0 Viewer Seats", by_id["DL-1015"])
+        self.assertIn("16ms 4^2ms E2E, Protect $85.20M! SLA", by_id["DL-1016"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -3785,11 +3813,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 559)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 560)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 132.4)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 136)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 115.31)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 563)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 564)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 131.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 137)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 114.58)
 
 
 if __name__ == "__main__":
