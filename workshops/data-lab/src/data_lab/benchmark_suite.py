@@ -9948,6 +9948,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (955M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_equipment_rental_heavy_machinery_aerial_lift_fabric_telematics_ansi_osha_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Commercial Equipment Rental, Heavy Construction Machinery, Aerial Work Platforms (AWP), Temporary Power/HVAC & Trench-Safety Fleet Networks (1,600 Branches + 1.1M Machines + 24K Lowboy/Service Trucks) Off-Rent Overtime Recovery & Fleet Rebalancing, 960M (0.96B!) Damage/Rouse/OEM RAG & ANSI-A92/OSHA-Trench/DOT Gate (1,260K=1.26M EPS AEMP-2.0/RFID/Fleet Stream + 960M 360-Damage/Rouse-Rate/OEM Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 915-Wave Overtime/Transfer Sense ($0/GB & $0 Copy Tax), 960M SSD DiskANN ($4,740/mo vs $117,600/mo 7.90TB DRAM—Saving $112,860/mo!) + In-Lake PREDICT 4ms (+46.4% Dollar-Util & Recovery Lift, +$106.0M/yr Gained!) & Foundry IQ 4ms 475-ANSI/OSHA/DOT Gate (+$23.60M) (1,260K EPS · 960M DiskANN · 16ms=4^2ms E2E · Historic R256=2^8=16^2=4^4 Round, 264 SVG, 144=12^2 One-Gross FAQs=288 Two-Gross Docs!, Historic 150th Sim Milestone Exact 106.04ms!, Sub-121ms 120.8ms Route, Exact $18,000/mo TCO, -$557.5K/mo & 304 Tests!)",
+            "telemetry": {
+                "equipment_rental_branches_and_yard_depots_count": 1600,
+                "off_rent_overtime_and_transfer_waves_flagged_count": 915,
+                "aemp20_telematics_and_yard_rfid_stream_eps": 1260000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "walkaround_damage_rouse_rate_and_oem_manual_vectors_count": 960000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "fleet_dollar_utilization_and_overtime_recovery_lift_pct": 46.4,
+                "dollar_utilization_overtime_and_damage_gained_usd": 106000000,
+                "ansi_a9220_osha_trench_and_dot_superload_blocks_count": 475,
+                "concurrent_branch_managers_mechanics_and_reps": 29600,
+            },
+            "ontology_traversal": [
+                "AEMP20-Fleet-YardRFID-and-RentalMan-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,260K (1.26M) EPS of ISO 15143-3 (AEMP 2.0) CAN-bus engine hours, hydraulic pressure, keypad PIN immobilizers, and yard RFID gate scans across 1.1M machines while mirroring Wynne Systems RentalMan / Infor M3 / Rouse Analytics ledgers across 1,600 branches ($0/GB write tax & $0 copy tax), flagging 915 off-rent overtime recovery and cross-branch rebalancing waves in 4ms",
+                "Walkaround-Damage-and-Rouse-Pricing-Engine -> Azure SQL / Cosmos DB SSD DiskANN (960,000,000=0.96B 360-degree check-in damage vision embeddings, Rouse zip-code spot-rate curves & JLG/Genie/CAT hydraulic manuals, -92% RAM at $4,740/mo vs $117,600/mo 7.90TB DRAM—saving $112,860/mo!) + In-Lake PREDICT -> Lifts fleet Dollar Utilization and overtime/damage recovery +46.4% and captures +$106.0M/yr in net value in 4ms",
+                "Foundry-IQ-ANSIA92-OSHATrench-and-DOTSuperload-Gate -> Validates EQUIPMENT-RENTAL-HEAVY-MACHINERY-ANSI-OSHA-SOP-264 -> Blocks 475 (19x5^2!) ANSI A92.20 / OSHA 1926.453 aerial-lift annual inspection lapses or load/tilt sensor faults, OSHA 1926 Subpart P PE-tabulated trench-shield depth mismatches, and unpermitted >80,000 lb DOT superload dispatches (+$23.60M protected) with National Account MSA RLS in 4ms",
+                "Approved Yard RFID Gate Release & Overtime Invoice -> VP of Fleet Ops & Regional Director Teams Card -> Opens branch RFID gate in Wynne RentalMan, bills weekend off-rent overtime & dispatches lowboy transfers, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_equipment_rental_monthly_tco_usd": 18000,
+                "competitor_stitched_equipment_rental_monthly_tco_usd": 575500,
+                "monthly_equipment_rental_tco_saved_usd": 557500,
+                "monthly_equipment_rental_tco_savings_pct": 96.9,
+                "fabric_internal_full_stack_monthly_usd": 61600,
+                "competitor_internal_full_stack_monthly_usd": 1626000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.26M EPS 1.1M-Machine AEMP & 1,600-Yard Sense Agent",
+                        "operation": "Mirror Wynne RentalMan / Infor M3 / Rouse ledgers zero-copy and ingest 1,260K (1.26M) EPS AEMP 2.0/RFID streams across 1,600 branches at $0/GB write tax, flagging 915 off-rent overtime and transfer waves in 4ms",
+                        "impact_metric": "4ms 915-wave sense (+46.4% Dollar Util & overtime recovery); eliminates $216,400/mo in stream and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "960M (0.96B!) SSD DiskANN 360-Damage/Rouse RAG & In-Lake PREDICT Spot-Rate Agent",
+                        "operation": "Search 960,000,000 360-degree damage photo, Rouse rate curve & OEM schematic vectors via SSD DiskANN (-92% RAM at $4,740/mo vs $117,600/mo 7.90TB DRAM—saving $112,860/mo!) and score damage/rates in 4ms",
+                        "impact_metric": "4ms damage/rate match (+$106.0M/yr gained!); $4,740/mo SSD DiskANN vs $117,600/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms ANSI-A92 / OSHA-Trench / DOT Gate & 4ms RentalMan / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-264 blocking 475 uninspected lifts, trench-depth & DOT superload risks (+$23.60M saved) & enforcing MSA RLS across 29,600 users (4ms), then open yard gates & commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic R256=2^8=16^2, 144=12^2 FAQs, 150th Sim (Exact 106.04ms!), Exact $18,000/mo TCO & $90.40M SLA!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "EQUIPMENT-RENTAL-HEAVY-MACHINERY-ANSI-OSHA-SOP-264",
+                "hard_constraint": "Physically lock out yard RFID gate check-out for aerial boom/scissor lifts with expired 13-month ANSI A92.20 / OSHA 1926.453 structural inspections or active load/tilt sensor faults, block allocating trench shields whose PE-tabulated lateral earth-pressure rating is exceeded by jobsite excavation depth/soil type (OSHA 1926 Subpart P), and prohibit dispatching >80,000 lb lowboy hauls without a valid state DOT superload bridge permit",
+                "proposed_change": "Block 475=19x5^2 ANSI A92.20, OSHA trench-shoring & DOT superload risks (+$23.60M saved), capture $106.0M/yr in Dollar Utilization, overtime billing & damage recovery (+46.4% lift), serve 915 waves, and enforce National Account MSA RLS across 29,600 users",
+                "ansi_a9220_aerial_inspection_and_osha_trench_pe_verified": True,
+                "dot_superload_bridge_permit_and_national_msa_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 90400000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (960M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -17296,6 +17362,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1065",
+        "category": "Streaming & Mirroring",
+        "question": "Ingest 1,260K (1.26M) EPS of ISO 15143-3 (AEMP 2.0) CAN-bus engine hours, hydraulic load, and yard RFID gate telemetry across 1.1M machines while mirroring Wynne Systems RentalMan / Infor M3 / Rouse Analytics ledgers across 1,600 rental branches for off-rent overtime recovery and fleet rebalancing vs Kafka/Fivetran/Snowpipe",
+        "expected": "Fabric Eventhouse KQL ($0/GB Stream Write Tax) + OneLake Zero-Copy RentalMan/Rouse Mirroring (4ms Off-Rent Overtime & Rebalancing Sense Flagging 915 Waves & Lifting Dollar-Util/Recovery +46.4% vs $216,400/mo Stream & CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL ($0/GB Stream Write Tax) + OneLake Zero-Copy RentalMan/Rouse Mirroring (4ms Off-Rent Overtime & Rebalancing Sense Flagging 915 Waves & Lifting Dollar-Util/Recovery +46.4% vs $216,400/mo Stream & CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1066",
+        "category": "HTAP & Vector Search",
+        "question": "Retrieve 960,000,000 (960M = 0.96B!) 360-degree pre/post-rental walkaround damage photos, Rouse zip-code spot-rate elasticity curves, and multi-OEM hydraulic service manuals alongside ANSI A92.20 aerial-lift inspection, OSHA 1926 Subpart P trench-shoring depth, and DOT superload permit gates vs 7.90TB DRAM vector search",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (960M=0.96B 360-Damage Vision, Rouse Spot-Rate & OEM Manual Vectors, -92% RAM at $4,740/mo vs $117,600/mo 7.90TB DRAM—Saving $112,860/mo!) + In-Lake PREDICT (4ms, +$106.0M/yr Gained!) & Foundry IQ SOP-264 Blocking 475 ANSI/OSHA/DOT Violations (+$23.60M)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (960M=0.96B 360-Damage Vision, Rouse Spot-Rate & OEM Manual Vectors, -92% RAM at $4,740/mo vs $117,600/mo 7.90TB DRAM—Saving $112,860/mo!) + In-Lake PREDICT (4ms, +$106.0M/yr Gained!) & Foundry IQ SOP-264 Blocking 475 ANSI/OSHA/DOT Violations (+$23.60M)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1067",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 1,600-branch global commercial equipment rental & 1.1M-machine AEMP 2.0 platform (1,260K=1.26M EPS stream, 960M=0.96B damage/rate vectors, 29,600 branch managers/mechanics/reps): Fabric F64 (Exact $18,000/mo) vs stitched Kafka/CDC/Snowflake/Databricks/AWS/BI stack ($359.0K-$575,500/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 960M SSD DiskANN + Direct Lake (Exact $18,000/mo vs $575,500/mo Stitched Multi-Cloud, Saving -$557.5K/mo (-$557,500/mo 5-5-7-5!) / -96.9% Record TCO! with 29,600 $0 Viewer Seats & National MSA RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 960M SSD DiskANN + Direct Lake (Exact $18,000/mo vs $575,500/mo Stitched Multi-Cloud, Saving -$557.5K/mo (-$557,500/mo 5-5-7-5!) / -96.9% Record TCO! with 29,600 $0 Viewer Seats & National MSA RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1068",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R256=2^8=16^2=4^4 Binary-Power & Perfect-Square Round, 264 SVG, 144=12^2 One-Gross FAQs=288 Two-Gross Docs!, Historic 150th Sesquicentennial Ontology Sim Milestone (Exact 106.04ms!), Historic Sub-121ms Routing Mean (120.8ms!), 430 Round-Ten Auto-Act, Exact $18,000/mo TCO & 304 Tests Milestone: Summer infrastructure & hurricane generator surge triggers 915 waves and 475 ANSI/OSHA/DOT risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 915-Wave Overtime/Transfer Sense ($0 Tax) + 960M DiskANN & PREDICT 4ms (+46.4% Lift & +$106.0M Gained!) + Foundry IQ 4ms 475-ANSI/OSHA/DOT Gate (+$23.60M) & MSA RLS + Teams RentalMan/Rouse & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $90.40M! SLA)",
+        "model_answer": "Eventhouse 4ms 915-Wave Overtime/Transfer Sense ($0 Tax) + 960M DiskANN & PREDICT 4ms (+46.4% Lift & +$106.0M Gained!) + Foundry IQ 4ms 475-ANSI/OSHA/DOT Gate (+$23.60M) & MSA RLS + Teams RentalMan/Rouse & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $90.40M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -17562,7 +17676,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_commercial_pool_aquatic_facility_water_chemistry_fabric_mahc_supply_vs_4clouds",
         "global_commercial_printing_corrugated_packaging_label_converting_fabric_press_fsc_fda_vs_4clouds",
         "global_senior_living_assisted_living_memory_care_snf_fabric_fall_radar_pdpm_vs_4clouds",
-        "global_commercial_furniture_mattress_upholstery_3d_cpq_fabric_cpsc_bifma_vs_4clouds"
+        "global_commercial_furniture_mattress_upholstery_3d_cpq_fabric_cpsc_bifma_vs_4clouds",
+        "global_equipment_rental_heavy_machinery_aerial_lift_fabric_telematics_ansi_osha_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()

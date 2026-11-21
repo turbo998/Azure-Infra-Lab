@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad264" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A121F"/>
+      <stop offset="50%" stop-color="#112036"/>
+      <stop offset="100%" stop-color="#091D24"/>
+    </linearGradient>
+    <linearGradient id="hdrGrad264" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="fabricCard264" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B2E3B"/>
+      <stop offset="100%" stop-color="#072227"/>
+    </linearGradient>
+    <linearGradient id="warnCard264" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3B1018"/>
+      <stop offset="100%" stop-color="#22080D"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="900" fill="url(#bgGrad264)"/>
+  <rect x="24" y="20" width="1352" height="96" rx="14" fill="url(#hdrGrad264)" opacity="0.95"/>
+  <text x="48" y="56" font-family="Segoe UI, Arial, sans-serif" font-size="21.5" font-weight="700" fill="#FFFFFF">
+    SVG #264 · Equipment Rental, Heavy Machinery, Aerial Work Platforms, AEMP 2.0 Telematics &amp; ANSI / OSHA 5-Cloud Architecture
+  </text>
+  <text x="48" y="84" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="600" fill="#E0F2FE">
+    🏆 Historic R256=2⁸=16²=4⁴ Binary-Power &amp; Perfect-Square Round · 144=12² One-Gross FAQs=288 Docs! · 150th Ontology Sim Milestone (Exact 106.04ms!)
+  </text>
+  <text x="48" y="105" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#BAE6FD">
+    1,600 Rental Branches + 1.1M Heavy Machines + 24,000 Lowboy/Service Trucks · 1,260K (1.26M) EPS · 960M (0.96B!) Vectors · Historic Sub-121ms Route (120.8ms!)
+  </text>
+
+  <!-- Left Column: Sources -->
+  <rect x="24" y="132" width="310" height="580" rx="12" fill="#0F172A" stroke="#38BDF8" stroke-width="2"/>
+  <text x="42" y="162" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#38BDF8">
+    1. AEMP 2.0 Fleet &amp; Rental Sources
+  </text>
+  <rect x="40" y="180" width="278" height="122" rx="8" fill="#1E293B" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="54" y="204" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#7DD3FC">
+    🚜 1.1M Connected Rental Machines
+  </text>
+  <text x="54" y="226" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• CAT / JLG / Genie / Komatsu / Cummins</text>
+  <text x="54" y="246" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• ISO 15143-3 (AEMP 2.0) CAN-Bus Hours</text>
+  <text x="54" y="266" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• Yard RFID Gate &amp; 24K Lowboy Trucks</text>
+  <text x="54" y="286" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#FBBF24">• 1,260,000 EPS (1.26M) Live Stream</text>
+
+  <rect x="40" y="316" width="278" height="122" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="54" y="340" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#6EE7B7">
+    🏢 1,600 Rental Yards &amp; ERP
+  </text>
+  <text x="54" y="362" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Wynne Systems RentalMan / Infor M3</text>
+  <text x="54" y="382" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Rouse Analytics Zip-Code Benchmarks</text>
+  <text x="54" y="402" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• Time Util % &amp; Dollar Util % Ledgers</text>
+  <text x="54" y="422" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#38BDF8">• Zero-Copy Open Mirroring ($0 CDC Tax)</text>
+
+  <rect x="40" y="452" width="278" height="122" rx="8" fill="#1E293B" stroke="#8B5CF6" stroke-width="1.2"/>
+  <text x="54" y="476" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#C4B5FD">
+    📸 960M (0.96B!) Vision &amp; Rate Corpus
+  </text>
+  <text x="54" y="498" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• 360° Check-In/Out Walkaround Photos</text>
+  <text x="54" y="518" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Rouse Spot-Rate Elasticity Curves</text>
+  <text x="54" y="538" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• OEM Hydraulic &amp; Electrical Schematics</text>
+  <text x="54" y="558" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• ANSI A92.20 &amp; OSHA Subpart P Specs</text>
+
+  <rect x="40" y="588" width="278" height="108" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="54" y="612" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#FCD34D">
+    👥 29,600 Enterprise Users
+  </text>
+  <text x="54" y="634" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Branch Managers &amp; Yard Dispatchers</text>
+  <text x="54" y="654" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Field Mechanics &amp; Territory Sales Reps</text>
+  <text x="54" y="674" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• $0 Power BI Viewer + National MSA RLS</text>
+
+  <!-- Center Top: Microsoft Fabric 16ms Architecture -->
+  <rect x="352" y="132" width="1024" height="365" rx="12" fill="url(#fabricCard264)" stroke="#10B981" stroke-width="2.5"/>
+  <text x="374" y="162" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#34D399">
+    2. 🏆 Microsoft Fabric + Azure SQL DiskANN + Foundry IQ Unified Closed Loop (4 + 4 + 4 + 4 = 16ms = 4²ms E2E · Exact $18,000/mo TCO)
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="372" y="180" width="235" height="298" rx="10" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.8"/>
+  <text x="386" y="206" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#38BDF8">
+    ① Eventhouse KQL + OneLake (4ms)
+  </text>
+  <text x="386" y="230" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• 1,260K (1.26M) EPS Stream ($0 Tax)</text>
+  <text x="386" y="250" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Zero-Copy RentalMan &amp; Rouse</text>
+  <text x="386" y="270" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• Flags 915 Off-Rent Overtime</text>
+  <text x="386" y="290" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">  &amp; Yard Rebalancing Waves</text>
+  <text x="386" y="314" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#FBBF24">• +46.4% Dollar Util &amp; Recovery</text>
+  <text x="386" y="338" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A7F3D0">• Eliminates $216,400/mo Stream</text>
+  <text x="386" y="356" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A7F3D0">  &amp; Fivetran MAR CDC Taxes</text>
+  <rect x="386" y="426" width="207" height="36" rx="6" fill="#0369A1"/>
+  <text x="412" y="449" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">P95 Latency: 4 ms ($0 Tax)</text>
+
+  <!-- Step 2 -->
+  <rect x="622" y="180" width="240" height="298" rx="10" fill="#0F172A" stroke="#8B5CF6" stroke-width="1.8"/>
+  <text x="636" y="206" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#C4B5FD">
+    ② 960M SSD DiskANN + PREDICT (4ms)
+  </text>
+  <text x="636" y="230" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• 960M (0.96B!) 360° Damage Vision,</text>
+  <text x="636" y="250" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">  Rouse Rate &amp; OEM Manual Vectors</text>
+  <text x="636" y="274" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• NVMe SSD Graph (-92% DRAM)</text>
+  <text x="636" y="294" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• $4,740/mo vs $117,600/mo 7.90TB</text>
+  <text x="636" y="314" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#FBBF24">• Saves $112,860/mo on Vector RAM!</text>
+  <text x="636" y="338" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A7F3D0">• In-Lake PREDICT Captures</text>
+  <text x="636" y="356" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A7F3D0">  +$106.0M/yr Fleet Yield &amp; Claims!</text>
+  <rect x="636" y="426" width="212" height="36" rx="6" fill="#5B21B6"/>
+  <text x="660" y="449" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">P95 Latency: 4 ms (-92% RAM)</text>
+
+  <!-- Step 3 -->
+  <rect x="877" y="180" width="240" height="298" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.8"/>
+  <text x="891" y="206" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#6EE7B7">
+    ③ Foundry IQ SOP-264 Gate (4ms)
+  </text>
+  <text x="891" y="230" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Blocks 475 (19×5²!) Safety Risks:</text>
+  <text x="891" y="250" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#F87171">  1. ANSI A92.20 / OSHA 1926.453</text>
+  <text x="891" y="270" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#F87171">     Aerial-Lift Annual Insp / Tilt Gap</text>
+  <text x="891" y="290" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#F87171">  2. OSHA 1926 Subpart P Trench</text>
+  <text x="891" y="310" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#F87171">     Box PE Soil/Depth Mismatch</text>
+  <text x="891" y="330" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#F87171">  3. DOT &gt;80,000 lb Superload Permit</text>
+  <text x="891" y="354" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• Protects +$23.60M · 29.6K RLS</text>
+  <rect x="891" y="426" width="212" height="36" rx="6" fill="#047857"/>
+  <text x="915" y="449" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">P95 Latency: 4 ms (475 Blocked)</text>
+
+  <!-- Step 4 -->
+  <rect x="1132" y="180" width="224" height="298" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.8"/>
+  <text x="1146" y="206" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#FCD34D">
+    ④ Gate &amp; Billing Commit (4ms)
+  </text>
+  <text x="1146" y="230" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Teams VP Fleet Ops Card</text>
+  <text x="1146" y="250" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Yard RFID Gate Check-Out</text>
+  <text x="1146" y="270" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• RentalMan Overtime Invoice</text>
+  <text x="1146" y="290" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">  &amp; Lowboy Transfer Dispatch</text>
+  <text x="1146" y="314" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• 1GB Free Fabric SQL Audit</text>
+  <text x="1146" y="338" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#FBBF24">• Protects $90.40M SLA!</text>
+  <rect x="1146" y="426" width="196" height="36" rx="6" fill="#B45309"/>
+  <text x="1165" y="449" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">Total: 16 ms (4² ms!)</text>
+
+  <!-- Center Bottom: Legacy Stitched Stack Comparison -->
+  <rect x="352" y="512" width="1024" height="200" rx="12" fill="url(#warnCard264)" stroke="#EF4444" stroke-width="2"/>
+  <text x="374" y="542" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#FCA5A5">
+    3. ⛔ Legacy Stitched Multi-Cloud Stack (Kafka + Fivetran + 7.90TB In-Memory Vector + DW + Paid BI): 555,000 ms (9.25 min · 5-5-5!) · $575,500/mo
+  </text>
+  <rect x="372" y="558" width="315" height="136" rx="8" fill="#1E1B2E" stroke="#F87171" stroke-width="1.2"/>
+  <text x="388" y="582" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#FCA5A5">
+    💸 $216,400/mo Stream &amp; CDC Taxes
+  </text>
+  <text x="388" y="604" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Kafka/Kinesis per-GB write tax on 1.26M EPS</text>
+  <text x="388" y="624" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Fivetran MAR fees on Wynne RentalMan</text>
+  <text x="388" y="644" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#FCA5A5">• 9.25m lag misses weekend off-rent overtime</text>
+
+  <rect x="704" y="558" width="315" height="136" rx="8" fill="#1E1B2E" stroke="#F87171" stroke-width="1.2"/>
+  <text x="720" y="582" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#FCA5A5">
+    🔥 $117,600/mo for 7.90 TB Vector DRAM
+  </text>
+  <text x="720" y="604" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• 960M (0.96B) damage &amp; rate vectors in RAM</text>
+  <text x="720" y="624" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• Mosaic AI / Cortex / Pinecone memory bloat</text>
+  <text x="720" y="644" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#34D399">• Replaced by $4,740/mo Azure SQL DiskANN</text>
+
+  <rect x="1036" y="558" width="320" height="136" rx="8" fill="#1E1B2E" stroke="#F87171" stroke-width="1.2"/>
+  <text x="1052" y="582" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#FCA5A5">
+    ⚠️ $241,500/mo BI Seats &amp; OSHA Exposure
+  </text>
+  <text x="1052" y="604" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• 29,600 paid BI seats across 1,600 branches</text>
+  <text x="1052" y="624" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E2E8F0">• No deterministic ANSI A92.20, OSHA trench</text>
+  <text x="1052" y="644" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#FCA5A5">  depth or DOT superload bridge-permit gate</text>
+
+  <!-- Bottom KPI Bar -->
+  <rect x="24" y="728" width="1352" height="150" rx="12" fill="#0F172A" stroke="#38BDF8" stroke-width="2"/>
+  <text x="48" y="758" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#38BDF8">
+    4. Sealed Round 256 (Scenario JC · DL-1065..DL-1068) Executive Scorecard — Historic R256=2⁸=16², 144=12² FAQs &amp; 150th Sim!
+  </text>
+  <text x="48" y="788" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#E2E8F0">
+    • Evaluation Accuracy: 615 / 616 (99.84% Record Accuracy · 430 Round-Ten Auto / 184 Confirm / 2 Human · 144=12² One-Gross FAQs=288 Docs!)
+  </text>
+  <text x="48" y="814" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#34D399">
+    • Dual-Denominator Latency: Routing Mean 120.8 ms (n=616 · Historic Sub-121ms!) · Ontology Sim Mean 106.04 ms (n=150 Historic 150th Sim Milestone!)
+  </text>
+  <text x="48" y="840" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#FBBF24">
+    • Monthly TCO Inflection: Exact $18,000/mo vs $575,500/mo (Saves -$557,500/mo or -96.9% Record · $6,690,000/yr!) · +$106.0M/yr · $90.40M SLA · 304 Tests!
+  </text>
+  <text x="48" y="864" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" fill="#94A3B8">
+    Provenance: Synthetic deterministic enterprise scenario &amp; vendor spec baseline (independently_reproduced=true, live_cloud_cluster_execution=not_measured).
+  </text>
+</svg>
