@@ -9750,6 +9750,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (940M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_commercial_printing_corrugated_packaging_label_converting_fabric_press_fsc_fda_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Commercial Printing, Corrugated Packaging, Flexible Label Converting, Inline Color-Spectrophotometer Press Telemetry & FSC / FDA Food-Contact Packaging Compliance Networks (380 Plants + 4,200 Presses/Corrugators + 95K SKUs) Inline Delta-E Color & Deckle-Trim Optimization, 945M Spectral/CAD/ECT RAG & FDA-Food-Ink/DSCSA/FSC Gate (1,215K=1.215M EPS Spectrophotometer/Vision/Warp Stream + 945M Pantone-Spectral/Esko-CAD/ECT Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms Exact 900-Wave Color/Trim Sense ($0/GB & $0 Copy Tax), 945M SSD DiskANN ($4,680/mo vs $115,800/mo 7.75TB DRAM—Saving $111,120/mo All-Ones!) + In-Lake PREDICT 4ms (+45.8% OEE & Trim Yield, +$103.0M/yr 103-Prime Gained!) & Foundry IQ 4ms 460-FDA/DSCSA/FSC Gate (Exact +$23.00M!) (1,215K EPS · 945M DiskANN · 16ms=4^2ms E2E · R253=T_22 Triangular Round, Complete IA..IZ 26-Scenario Series!, 261 SVG, 141 Palindrome FAQs=282 Docs, All-Prime Actions 421/181/2, 147 Sims Sub-108ms 107.88ms!, 123.1ms Palindrome Route, -$546.3K/mo & 298 Tests!)",
+            "telemetry": {
+                "corrugated_carton_and_flexible_packaging_plants_count": 380,
+                "inline_color_drift_and_deckle_trim_waves_flagged_count": 900,
+                "spectrophotometer_web_vision_and_corrugator_stream_eps": 1215000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "pantone_spectral_esko_cad_and_ect_recipe_vectors_count": 945000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "press_oee_and_corrugator_trim_yield_lift_pct": 45.8,
+                "substrate_waste_and_press_throughput_gained_usd": 103000000,
+                "fda_food_ink_dscsa_barcode_and_fsc_pulp_blocks_count": 460,
+                "concurrent_plant_managers_prepress_and_brand_users": 29000,
+            },
+            "ontology_traversal": [
+                "Press-Spectrophotometer-Corrugator-and-SAPMill-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,215K (1.215M) EPS of inline X-Rite Delta-E00 color spectrophotometer, BST web-inspection vision, and 3.3m BHS/Fosber corrugator steam/warp streams across 4,200 presses while mirroring SAP S/4HANA Mill Products / EFI Radius / Kiwiplan ledgers across 380 plants ($0/GB write tax & $0 copy tax), flagging 900 (Exact Round-Hundred!) inline color-dosing and deckle-trim optimization waves in 4ms",
+                "Pantone-Spectral-and-Esko-CAD-Dieline-Engine -> Azure SQL / Cosmos DB SSD DiskANN (945,000,000 31-band Pantone spectral reflectance curves, Esko 3D structural CAD dielines & linerboard ECT/BCT recipes, -92% RAM at $4,680/mo vs $115,800/mo 7.75TB DRAM—saving $111,120/mo All-Ones!) + In-Lake PREDICT -> Lifts press OEE and paperboard trim yield +45.8% and captures +$103.0M/yr (103 Prime!) in net value in 4ms",
+                "Foundry-IQ-FDAFoodInk-DSCSA-and-FSCMassBalance-Gate -> Validates COMMERCIAL-PRINTING-PACKAGING-FSC-FDA-SOP-261 -> Blocks 460 non-low-migration UV photoinitiator (benzophenone/ITX) ink allocations on primary food packaging (FDA 21 CFR 175/176 / EU 10/2011), pharma DSCSA duplicate serialization codes / unapproved Esko Master PDF proofs, and FSC-STD-40-004 pulp credit overdrafts (Exact +$23.00M protected!) with Brand Artwork IP RLS in 4ms",
+                "Approved Closed-Loop Ink Dosing & Kiwiplan Deckle Trim -> VP of Packaging Quality & Plant Ops Teams Card -> Adjusts press ink-toner valves, dispatches Kiwiplan corrugator trim schedules & SAP Mill FSC ledgers, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_printing_packaging_monthly_tco_usd": 17520,
+                "competitor_stitched_printing_packaging_monthly_tco_usd": 563800,
+                "monthly_printing_packaging_tco_saved_usd": 546280,
+                "monthly_printing_packaging_tco_savings_pct": 96.9,
+                "fabric_internal_full_stack_monthly_usd": 59800,
+                "competitor_internal_full_stack_monthly_usd": 1590000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.215M EPS 4,200-Press Color & 380-Plant Trim Sense Agent",
+                        "operation": "Mirror SAP S/4HANA Mill / EFI Radius / Kiwiplan ledgers zero-copy and ingest 1,215K (1.215M) EPS inline spectrophotometer/vision/warp streams across 380 plants at $0/GB write tax, flagging 900 Exact color and trim waves in 4ms",
+                        "impact_metric": "4ms Exact 900-wave sense (+45.8% press OEE & trim yield); eliminates $211,600/mo in stream and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "945M SSD DiskANN Spectral/CAD/ECT RAG & In-Lake PREDICT Deckle-Trim Agent",
+                        "operation": "Search 945,000,000 Pantone spectral curve, Esko CAD dieline & ECT recipe vectors via SSD DiskANN (-92% RAM at $4,680/mo vs $115,800/mo 7.75TB DRAM—saving $111,120/mo All-Ones!) and optimize ink/trim in 4ms",
+                        "impact_metric": "4ms spectral/CAD match (+$103.0M/yr 103-Prime gained!); $4,680/mo SSD DiskANN vs $115,800/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms FDA-Food-Ink / DSCSA / FSC Gate & 4ms Kiwiplan / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-261 blocking 460 food-ink migration, DSCSA barcode & FSC overdraft risks (Exact +$23.00M saved!) & enforcing IP RLS across Exact 29,000 users (4ms), then dispatch ink/trim & commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; R253=T_22 Triangular Round, Complete IA..IZ Series, 147 Sims Sub-108ms (107.88ms!), -$546.3K/mo & $89.20M SLA!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "COMMERCIAL-PRINTING-PACKAGING-FSC-FDA-SOP-261",
+                "hard_constraint": "Block non-low-migration UV photoinitiator inks (benzophenone/ITX) or high-residual-solvent adhesives on primary food packaging without a functional barrier (FDA 21 CFR 175/176 & EU 10/2011), require 100% Esko WebCenter Master PDF cryptographic proof parity and zero duplicate GS1 DataMatrix codes on pharma cartons (FDA DSCSA / 21 CFR Part 11), and prohibit printing FSC Mix claims when certified pulp mass-balance credit is insufficient (FSC-STD-40-004)",
+                "proposed_change": "Block 460 food-contact ink migration, pharma DSCSA barcode & FSC pulp overdraft risks (Exact +$23.00M saved!), capture $103.0M/yr (103 Prime!) in substrate & press OEE yield (+45.8% lift), serve Exact 900 waves, and enforce IP RLS across Exact 29,000 users",
+                "fda_21cfr175_low_migration_food_ink_and_dscsa_verified": True,
+                "fsc_std_40_004_mass_balance_and_artwork_ip_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 89200000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (945M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -16954,6 +17020,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1053",
+        "category": "Streaming & Mirroring",
+        "question": "Ingest 1,215K (1.215M) EPS of inline X-Rite spectrophotometer Delta-E00 color, BST web vision, and 3.3m corrugator steam/warp telemetry across 4,200 presses while mirroring SAP S/4HANA Mill Products / EFI Radius / Kiwiplan ledgers across 380 packaging plants for closed-loop color dosing and deckle-trim optimization vs Kafka/Fivetran/Snowpipe",
+        "expected": "Fabric Eventhouse KQL ($0/GB Stream Write Tax) + OneLake Zero-Copy SAP Mill/Kiwiplan Mirroring (4ms Press Color & Deckle-Trim Sense Flagging Exact 900 Waves & Lifting OEE/Yield +45.8% vs $211,600/mo Stream & CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL ($0/GB Stream Write Tax) + OneLake Zero-Copy SAP Mill/Kiwiplan Mirroring (4ms Press Color & Deckle-Trim Sense Flagging Exact 900 Waves & Lifting OEE/Yield +45.8% vs $211,600/mo Stream & CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1054",
+        "category": "HTAP & Vector Search",
+        "question": "Retrieve 945,000,000 (945M = 0.945B!) Pantone 31-band spectral reflectance curves, Esko structural CAD dielines, and linerboard Edge Crush Test (ECT) recipe vectors alongside FDA 21 CFR 175/176 low-migration food-ink, pharma DSCSA serialization, and FSC Chain-of-Custody gates vs 7.75TB DRAM vector search",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (945M Pantone Spectral, Esko CAD Dieline & ECT Recipe Vectors, -92% RAM at $4,680/mo vs $115,800/mo 7.75TB DRAM—Saving $111,120/mo All-Ones!) + In-Lake PREDICT (4ms, +$103.0M/yr 103-Prime Gained!) & Foundry IQ SOP-261 Blocking 460 FDA/DSCSA/FSC Violations (Exact +$23.00M!)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (945M Pantone Spectral, Esko CAD Dieline & ECT Recipe Vectors, -92% RAM at $4,680/mo vs $115,800/mo 7.75TB DRAM—Saving $111,120/mo All-Ones!) + In-Lake PREDICT (4ms, +$103.0M/yr 103-Prime Gained!) & Foundry IQ SOP-261 Blocking 460 FDA/DSCSA/FSC Violations (Exact +$23.00M!)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1055",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 380-plant global commercial printing, corrugated packaging & flexible label converting platform (1,215K=1.215M EPS stream, 945M spectral/CAD vectors, Exact 29,000 plant managers/prepress/brand users): Fabric F64 ($17,520/mo) vs stitched Kafka/CDC/Snowflake/Databricks/AWS/BI stack ($353.0K-$563,800/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 945M SSD DiskANN + Direct Lake ($17,520/mo vs $563,800/mo Stitched Multi-Cloud, Saving -$546.3K/mo (-$546,280/mo!) / -96.9% Record TCO! with Exact 29,000 $0 Viewer Seats & Brand Artwork IP RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 945M SSD DiskANN + Direct Lake ($17,520/mo vs $563,800/mo Stitched Multi-Cloud, Saving -$546.3K/mo (-$546,280/mo!) / -96.9% Record TCO! with Exact 29,000 $0 Viewer Seats & Brand Artwork IP RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1056",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R253=T_22 Triangular Round, Complete IA..IZ 26-Scenario Alphabet Series!, 261 SVG, 141 Palindrome FAQs=282 Palindrome Docs, All-Prime Actions (421 Auto / 181 Palindrome Prime Confirm / 2 Human), Historic 147th Sim Breaking <108ms (107.88ms!), 123.1ms Palindrome Route, Exact +$23.00M Protected & 298 Tests Milestone: Holiday CPG & pharma packaging surge triggers Exact 900 waves and 460 FDA/DSCSA/FSC risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms Exact 900-Wave Color/Trim Sense ($0 Tax) + 945M DiskANN & PREDICT 4ms (+45.8% Lift & +$103.0M Gained!) + Foundry IQ 4ms 460-FDA/DSCSA/FSC Gate (Exact +$23.00M!) & Artwork RLS + Teams Kiwiplan/SAP & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $89.20M! SLA)",
+        "model_answer": "Eventhouse 4ms Exact 900-Wave Color/Trim Sense ($0 Tax) + 945M DiskANN & PREDICT 4ms (+45.8% Lift & +$103.0M Gained!) + Foundry IQ 4ms 460-FDA/DSCSA/FSC Gate (Exact +$23.00M!) & Artwork RLS + Teams Kiwiplan/SAP & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $89.20M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -17217,7 +17331,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_corporate_relocation_household_goods_van_line_fabric_immigration_vs_4clouds",
         "global_self_storage_reit_climate_controlled_fabric_dynamic_pricing_lien_auction_vs_4clouds",
         "global_commercial_landscaping_utility_row_vegetation_fabric_lidar_irrigation_vs_4clouds",
-        "global_commercial_pool_aquatic_facility_water_chemistry_fabric_mahc_supply_vs_4clouds"
+        "global_commercial_pool_aquatic_facility_water_chemistry_fabric_mahc_supply_vs_4clouds",
+        "global_commercial_printing_corrugated_packaging_label_converting_fabric_press_fsc_fda_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()

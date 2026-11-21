@@ -2377,13 +2377,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 88800000)
 
 
-    def test_scenario_matrix_296_cases_and_explicit_miss(self) -> None:
+    def test_global_commercial_printing_corrugated_packaging_label_converting_fabric_press_fsc_fda_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_commercial_printing_corrugated_packaging_label_converting_fabric_press_fsc_fda_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["corrugated_carton_and_flexible_packaging_plants_count"], 380)
+        self.assertEqual(sim["telemetry"]["inline_color_drift_and_deckle_trim_waves_flagged_count"], 900)
+        self.assertEqual(sim["telemetry"]["spectrophotometer_web_vision_and_corrugator_stream_eps"], 1215000)
+        self.assertEqual(sim["telemetry"]["pantone_spectral_esko_cad_and_ect_recipe_vectors_count"], 945000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_printing_packaging_tco_saved_usd"], 546280)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_printing_packaging_tco_savings_pct"], 96.9)
+        self.assertTrue(sim["foundry_iq_guardrail"]["fda_21cfr175_low_migration_food_ink_and_dscsa_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["fsc_std_40_004_mass_balance_and_artwork_ip_rls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 89200000)
+
+
+    def test_scenario_matrix_298_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 600)
-        self.assertEqual(matrix["passed_scenarios"], 599)
+        self.assertEqual(matrix["total_scenarios"], 604)
+        self.assertEqual(matrix["passed_scenarios"], 603)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.83, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 123.9)
+        self.assertEqual(matrix["avg_latency_ms"], 123.1)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -4047,6 +4064,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $88.80M 8-8-8! SLA", by_id["DL-1052"])
 
 
+    def test_fabric_commercial_printing_corrugated_packaging_label_2026_11_21_r253_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-1053", "DL-1054", "DL-1055", "DL-1056"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Press Color & Deckle-Trim Sense Flagging Exact 900 Waves & Lifting OEE/Yield +45.8%", by_id["DL-1053"])
+        self.assertIn("945M Pantone Spectral, Esko CAD Dieline & ECT Recipe Vectors, -92% RAM at $4,680/mo vs $115,800/mo 7.75TB DRAM—Saving $111,120/mo All-Ones!", by_id["DL-1054"])
+        self.assertIn("Saving -$546.3K/mo (-$546,280/mo!) / -96.9% Record TCO! with Exact 29,000 $0 Viewer Seats", by_id["DL-1055"])
+        self.assertIn("16ms 4^2ms E2E, Protect $89.20M! SLA", by_id["DL-1056"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -4065,11 +4093,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 599)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 600)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 123.9)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 146)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 108.51)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 603)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 604)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 123.1)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 147)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 107.88)
 
 
 if __name__ == "__main__":
