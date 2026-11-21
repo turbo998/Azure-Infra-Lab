@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" width="1280" height="760">
+  <defs>
+    <linearGradient id="bg252" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="50%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent252" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="cardFabric252" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#064E3B"/>
+      <stop offset="100%" stop-color="#022C22"/>
+    </linearGradient>
+    <linearGradient id="cardStitched252" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#450A0A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="760" fill="url(#bg252)"/>
+  <rect x="20" y="16" width="1240" height="6" rx="3" fill="url(#accent252)"/>
+
+  <!-- Header -->
+  <text x="36" y="52" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800">
+    252 · Global Security Guarding, UL 827 Central Stations &amp; CIT Armored Vault Architecture (R244 · Scenario IQ)
+  </text>
+  <text x="36" y="76" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">
+    1,650 Branches + 380K Guards / 18K CIT Trucks + 4.2M Alarm Panels · 🏆 Scenario IQ, 567=5-6-7 Passed, 900M=0.90B Vectors &amp; Exact $200K/mo Stream Saved!
+  </text>
+  <rect x="960" y="34" width="290" height="44" rx="10" fill="#065F46" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1105" y="54" text-anchor="middle" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800">🏆 SCENARIO IQ · 900M=0.90B VECTORS</text>
+  <text x="1105" y="71" text-anchor="middle" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">16ms (4²ms) · -$513,820/mo (-96.8%)</text>
+
+  <!-- Left Column: Alarm Panels & CIT Edge Sources -->
+  <rect x="30" y="96" width="280" height="475" rx="14" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="48" y="124" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">1. ALARM PANEL &amp; CIT FLEET EDGE</text>
+  <text x="48" y="143" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">1,150K (1.15M) EPS Security Stream</text>
+
+  <rect x="46" y="158" width="248" height="86" rx="10" fill="#0F172A" stroke="#EF4444" stroke-width="1"/>
+  <text x="60" y="179" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🚨 4.2M Monitored Alarm Panels</text>
+  <text x="60" y="198" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• SIA DC-09 / Contact ID intrusion codes</text>
+  <text x="60" y="214" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• 5-sec ONVIF edge AI video verification</text>
+  <text x="60" y="230" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• TMA ASAP-to-PSAP 911 dispatch link</text>
+
+  <rect x="46" y="256" width="248" height="92" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1"/>
+  <text x="60" y="277" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🚛 18,000 Armored CIT Vault Trucks</text>
+  <text x="60" y="296" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Dual-custody biometric vault interlock</text>
+  <text x="60" y="312" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Encrypted bank GPS geofence polygons</text>
+  <text x="60" y="328" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Retail smart-safe bill validator counts</text>
+
+  <rect x="46" y="360" width="248" height="92" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1"/>
+  <text x="60" y="381" fill="#BAE6FD" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">👮 380,000 Security Officers</text>
+  <text x="60" y="400" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• NFC guard-tour checkpoint scans</text>
+  <text x="60" y="416" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• BSIS state armed firearm permit status</text>
+  <text x="60" y="432" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Mobile patrol GPS &amp; bodycam feeds</text>
+
+  <rect x="46" y="464" width="248" height="90" rx="10" fill="#0F172A" stroke="#A855F7" stroke-width="1"/>
+  <text x="60" y="485" fill="#E9D5FF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🗄️ Manitou / WinTeam / TrackTik</text>
+  <text x="60" y="504" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Zero-copy UL 827 alarm &amp; shift ledgers</text>
+  <text x="60" y="520" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• 2.4M client site Post Orders &amp; SLAs</text>
+  <text x="60" y="536" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• $0/GB stream tax &amp; $0 CDC copy tax</text>
+
+  <!-- Center Top: Microsoft Fabric 16ms Path -->
+  <rect x="332" y="96" width="600" height="295" rx="14" fill="url(#cardFabric252)" stroke="#10B981" stroke-width="2"/>
+  <text x="352" y="124" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">
+    2A. MICROSOFT FABRIC UNIFIED 16ms (4²ms) SECURITY LOOP ($16,980/mo · -96.8%)
+  </text>
+
+  <rect x="350" y="138" width="272" height="112" rx="10" fill="#065F46" stroke="#34D399" stroke-width="1.2"/>
+  <text x="364" y="159" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800">① Eventhouse KQL (4ms · $0 Tax)</text>
+  <text x="364" y="178" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Ingests 1,150K (1.15M) EPS SIA/CIT</text>
+  <text x="364" y="194" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Suppresses 98% weather/disarm alarms</text>
+  <text x="364" y="210" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Flags 855 break-in &amp; CIT waves (-44.0%)</text>
+  <text x="364" y="226" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">• Saves Exact $200,000/mo stream/CDC tax</text>
+
+  <rect x="640" y="138" width="274" height="112" rx="10" fill="#065F46" stroke="#34D399" stroke-width="1.2"/>
+  <text x="654" y="159" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800">② 900M=0.90B SSD DiskANN (4ms)</text>
+  <text x="654" y="178" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• 900M=30²M video clips &amp; Post Orders</text>
+  <text x="654" y="194" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Exact $4,500/mo (-92% RAM vs 7.30TB)</text>
+  <text x="654" y="210" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Instant site keyholder &amp; CIT route match</text>
+  <text x="654" y="226" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">• Saves $105,900/mo + Exact $94.0M/yr</text>
+
+  <rect x="350" y="262" width="564" height="114" rx="10" fill="#042F2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="366" y="284" fill="#FDE68A" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">
+    ③ Foundry IQ UL827/CIT/BSIS Gate (SOP-252 · 4ms) + ④ Teams &amp; PSAP Write-Back (4ms)
+  </text>
+  <text x="366" y="304" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Hard-Blocks 415 Violations: (1) Unverified non-duress 911 police dispatch lacking UL 827 / TMA video or ECV check;
+  </text>
+  <text x="366" y="321" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+      (2) CIT armored inner-vault unlock outside encrypted bank geofence; (3) Expired BSIS firearm permits (+$21.20M!)
+  </text>
+  <text x="366" y="338" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">
+    • 27,200 Central Dispatchers, Patrol Commanders &amp; Client CSOs on Direct Lake ($0 BI Seat Tax, saves $217,600/mo)
+  </text>
+  <text x="366" y="355" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">
+    • Mode A Coexistence: Mirrored Azure Databricks Unity Catalog shares custom thermal vision &amp; ATM cash demand ML
+  </text>
+
+  <!-- Center Bottom: Stitched Multi-Cloud Anti-Pattern -->
+  <rect x="332" y="405" width="600" height="166" rx="14" fill="url(#cardStitched252)" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="352" y="431" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">
+    2B. STITCHED MULTI-CLOUD BASELINE ($530,800/mo · 95%+ False-Alarm Flood &amp; Municipal Fines)
+  </text>
+  <text x="352" y="454" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ Kafka + Fivetran + Warehouse Ingest (1,150K EPS + Manitou CDC): Exact $200,000/mo ($0.20M/mo!) stream &amp; CDC taxes
+  </text>
+  <text x="352" y="474" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ Dedicated In-Memory Vector Cluster (7.30TB DRAM for 900M video clip &amp; site Post-Order vectors): $110,400/mo
+  </text>
+  <text x="352" y="494" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ Per-Seat BI Licensing for 27,200 Central Dispatchers, Patrol Leads &amp; Client CSOs (27,200 × $8): $217,600/mo
+  </text>
+  <text x="352" y="514" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ Uncorrelated PIR alarms flood operators during storms &amp; lack physical CIT vault / BSIS firearm interlocks
+  </text>
+  <text x="352" y="538" fill="#FDE047" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800">
+    ⚡ Fabric Net Advantage: -$513,820/mo (-96.8% Record!) TCO Saved · 16ms vs 940ms · $85.60M SLA Protected!
+  </text>
+
+  <!-- Right Column: Sealed Benchmark Scorecard & Scenario IQ (DL-1017..DL-1020) -->
+  <rect x="952" y="96" width="298" height="475" rx="14" fill="#1E293B" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="970" y="124" fill="#60A5FA" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">3. SEALED BENCHMARK (DL-1017..1020)</text>
+  <text x="970" y="143" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">🏆 Scenario IQ · 567=5-6-7 Passed!</text>
+
+  <rect x="968" y="156" width="266" height="72" rx="9" fill="#0F172A" stroke="#10B981" stroke-width="1"/>
+  <text x="980" y="175" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">DL-1017 · SIA Alarm &amp; CIT Sense</text>
+  <text x="980" y="192" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.93 · Act automatically (4ms)</text>
+  <text x="980" y="209" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">855 waves · -44.0% fines · Save Exact $200K!</text>
+
+  <rect x="968" y="238" width="266" height="72" rx="9" fill="#0F172A" stroke="#10B981" stroke-width="1"/>
+  <text x="980" y="257" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">🏆 DL-1018 · 900M=0.90B DiskANN RAG</text>
+  <text x="980" y="274" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.92 · Act automatically (4ms)</text>
+  <text x="980" y="291" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">Exact $4,500 vs $110.4K DRAM (-$105.9K!)</text>
+
+  <rect x="968" y="320" width="266" height="76" rx="9" fill="#0F172A" stroke="#F59E0B" stroke-width="1"/>
+  <text x="980" y="339" fill="#FDE68A" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">DL-1019 · UL827/CIT/BSIS Gate</text>
+  <text x="980" y="356" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.79 · Confirm (5ms)</text>
+  <text x="980" y="373" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">415 blocks · TMA ECV · +$21.20M gate</text>
+
+  <rect x="968" y="406" width="266" height="76" rx="9" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="980" y="425" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">DL-1020 · 27.2K CSO Zero-Seat BI</text>
+  <text x="980" y="442" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.94 · Act automatically (3ms)</text>
+  <text x="980" y="459" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">Saves $217,600/mo BI tax · 2.4M-Site RLS</text>
+
+  <rect x="968" y="492" width="266" height="64" rx="9" fill="#0F172A" stroke="#A855F7" stroke-width="1"/>
+  <text x="980" y="511" fill="#E9D5FF" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="800">Cumulative R244 Sealed Metrics:</text>
+  <text x="980" y="528" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">• 567/568 (99.82%) · 132=11×12 FAQs=264 Docs!</text>
+  <text x="980" y="544" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">• 130.6ms Route / 113.87ms Sim · 280 Tests</text>
+
+  <!-- Bottom Bar: 5-Cloud Decision Matrix & Provenance -->
+  <rect x="30" y="586" width="1220" height="150" rx="14" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="50" y="614" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">
+    4. FIVE-CLOUD EXECUTIVE SELECTION MATRIX &amp; TCO INFLECTION POINT (1,650 BRANCHES · 4.2M PANELS · 18K CIT TRUCKS)
+  </text>
+  <text x="50" y="638" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    • Microsoft Fabric (Lead): $16,980/mo (-96.8%) · Eventhouse 1.15M EPS ($0 tax) + 900M SSD DiskANN (Exact $4,500/mo) + 27,200 Viewers ($0) + SOP-252 Gate
+  </text>
+  <text x="50" y="660" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Azure Databricks (Mode A Coexistence): Custom thermal perimeter vision &amp; ATM denomination demand ML → OneLake Mirrored UC → Fabric Direct Lake
+  </text>
+  <text x="50" y="682" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Snowflake / GCP BigQuery / AWS Lakehouse: High per-GB stream ingestion (Exact $200K/mo), 7.30TB DRAM vector cluster ($110.4K/mo) &amp; 27.2K BI seat taxes ($217.6K/mo)
+  </text>
+  <text x="50" y="712" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600">
+    Provenance: Sealed deterministic evaluation in workshops/data-lab/reports/report.json · 132=11×12 FAQs (264 Docs) · 252 Palindrome SVG · 280/280 Unit Tests Passing
+  </text>
+</svg>

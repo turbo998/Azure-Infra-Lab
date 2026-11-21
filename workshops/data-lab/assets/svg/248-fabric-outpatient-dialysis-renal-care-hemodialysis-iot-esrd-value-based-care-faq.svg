@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" width="1280" height="760">
+  <defs>
+    <linearGradient id="bg248" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="accent248" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="cardFabric248" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#064E3B"/>
+      <stop offset="100%" stop-color="#022C22"/>
+    </linearGradient>
+    <linearGradient id="cardStitched248" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#450A0A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="760" fill="url(#bg248)"/>
+  <rect x="20" y="16" width="1240" height="6" rx="3" fill="url(#accent248)"/>
+
+  <!-- Header -->
+  <text x="36" y="52" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800">
+    248 · Global Outpatient Dialysis Clinics, Renal Care Networks &amp; ESRD Value-Based Care Architecture (R240)
+  </text>
+  <text x="36" y="76" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">
+    4,100 Dialysis Clinics + 540K ESRD/CKD Patients + 135K Connected Hemodialysis Machines · 🏆 R240 Round-Ten, 128=2^7 FAQs=256=16^2=2^8 Docs &amp; Exact -$499.5K/mo Saved!
+  </text>
+  <rect x="975" y="34" width="275" height="44" rx="10" fill="#065F46" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1112" y="54" text-anchor="middle" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800">🏆 R240 · 128=2^7 FAQs / 256 DOCS</text>
+  <text x="1112" y="71" text-anchor="middle" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">16ms (4²ms) · -$499.5K/mo (-96.7%)</text>
+
+  <!-- Left Column: Clinical Edge & Bio-Telemetry Sources -->
+  <rect x="30" y="96" width="280" height="475" rx="14" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="48" y="124" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">1. CHAIRSIDE &amp; RO WATER EDGE</text>
+  <text x="48" y="143" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">1,130K (1.13M) EPS Biomedical Stream</text>
+
+  <rect x="46" y="158" width="248" height="86" rx="10" fill="#0F172A" stroke="#06B6D4" stroke-width="1"/>
+  <text x="60" y="179" fill="#A5F3FC" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🩸 135,000 Hemodialysis Machines</text>
+  <text x="60" y="198" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Crit-Line optical RBV % hematocrit slope</text>
+  <text x="60" y="214" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Venous/arterial line pressure &amp; TMP</text>
+  <text x="60" y="230" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Ultrafiltration rate (UFR mL/kg/hr)</text>
+
+  <rect x="46" y="256" width="248" height="92" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1"/>
+  <text x="60" y="277" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">💧 AAMI RO Water &amp; Home PD Cyclers</text>
+  <text x="60" y="296" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Post-carbon Total Chlorine ≤0.1 mg/L</text>
+  <text x="60" y="312" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Endotoxin ≤0.25 EU/mL &amp; conductivity</text>
+  <text x="60" y="328" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Overnight Home APD cycler drain logs</text>
+
+  <rect x="46" y="360" width="248" height="92" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1"/>
+  <text x="60" y="381" fill="#FDE68A" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🩺 AV-Fistula Acoustic &amp; Labs</text>
+  <text x="60" y="400" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Electronic stethoscope AVF bruit spectra</text>
+  <text x="60" y="416" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Monthly Hb, Ferritin, TSAT, K+ &amp; spKt/V</text>
+  <text x="60" y="432" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Bio-impedance dry-weight trajectories</text>
+
+  <rect x="46" y="464" width="248" height="90" rx="10" fill="#0F172A" stroke="#A855F7" stroke-width="1"/>
+  <text x="60" y="485" fill="#E9D5FF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🗄️ Nephrology EHR &amp; CMS VBC</text>
+  <text x="60" y="504" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Zero-copy Epic/Acumen EHR &amp; central LIS</text>
+  <text x="60" y="520" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• CMS ESRD PPS &amp; KCC/ETC quality bundles</text>
+  <text x="60" y="536" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• $0/GB stream tax &amp; $0 CDC copy tax</text>
+
+  <!-- Center Top: Microsoft Fabric 16ms Path -->
+  <rect x="332" y="96" width="600" height="295" rx="14" fill="url(#cardFabric248)" stroke="#10B981" stroke-width="2"/>
+  <text x="352" y="124" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">
+    2A. MICROSOFT FABRIC UNIFIED 16ms (4²ms) CLINICAL LOOP (Exact $16,900/mo · -96.7%)
+  </text>
+
+  <rect x="350" y="138" width="272" height="112" rx="10" fill="#065F46" stroke="#34D399" stroke-width="1.2"/>
+  <text x="364" y="159" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800">① Eventhouse + HDS (4ms · $0 Tax)</text>
+  <text x="364" y="178" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Ingests 1,130K (1.13M) EPS dialysis/RO</text>
+  <text x="364" y="194" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Flags 835 IDH &amp; AVF stenosis waves</text>
+  <text x="364" y="210" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Cuts IDH &amp; ER hospitalizations -44.0%</text>
+  <text x="364" y="226" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">• Saves $195,600/mo stream &amp; EHR CDC tax</text>
+
+  <rect x="640" y="138" width="274" height="112" rx="10" fill="#065F46" stroke="#34D399" stroke-width="1.2"/>
+  <text x="654" y="159" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800">② 880M SSD DiskANN + PREDICT (4ms)</text>
+  <text x="654" y="178" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• 880M AVF acoustic, BP &amp; CMS vectors</text>
+  <text x="654" y="194" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• $4,420/mo (-92% RAM vs Exact $108K DRAM)</text>
+  <text x="654" y="210" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• 14-day early PTA vascular access triage</text>
+  <text x="654" y="226" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">• Saves $103,580/mo DRAM + Exact $90.0M/yr</text>
+
+  <rect x="350" y="262" width="564" height="114" rx="10" fill="#042F2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="366" y="284" fill="#FDE68A" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">
+    ③ Foundry IQ Clinical Safety Gate (SOP-248 · 4ms) + ④ Teams &amp; Chairside Write-Back (4ms)
+  </text>
+  <text x="366" y="304" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Hard-Blocks 395 Violations: (1) AAMI/ISO 23500 RO water Total Chlorine &gt;0.1 mg/L or endotoxin &gt;0.25 EU/mL (commands Bypass);
+  </text>
+  <text x="366" y="321" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+      (2) KDIGO/FDA black-box ESA dosing when Hb &gt;11.5 g/dL; (3) Ultrafiltration rate UFR &gt;13 mL/kg/hr without MD sign-off (+$20.40M!)
+  </text>
+  <text x="366" y="338" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">
+    • 26,400 Nephrologists, Charge Nurses &amp; Dietitians on Direct Lake ($0 BI Seat Tax, saves $211,200/mo) · HIPAA PHI CLS
+  </text>
+  <text x="366" y="355" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">
+    • Mode A Coexistence: Mirrored Azure Databricks Unity Catalog shares custom kidney-transplant matching &amp; survival ML zero-copy
+  </text>
+
+  <!-- Center Bottom: Stitched Multi-Cloud Anti-Pattern -->
+  <rect x="332" y="405" width="600" height="166" rx="14" fill="url(#cardStitched248)" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="352" y="431" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">
+    2B. STITCHED MULTI-CLOUD BASELINE ($516,400/mo · T+1 IDH Crash &amp; Hemolysis Exposure)
+  </text>
+  <text x="352" y="454" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ Kafka + Fivetran + Healthcare Stream Ingest (1,130K EPS + EHR CDC): $195,600/mo per-GB write &amp; connector taxes
+  </text>
+  <text x="352" y="474" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ Dedicated In-Memory Vector Cluster (7.10TB DRAM for 880M AVF acoustic, waveform &amp; clinical note vectors): Exact $108,000/mo
+  </text>
+  <text x="352" y="494" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ Per-Seat BI Licensing for 26,400 Nephrologists, Charge Nurses &amp; Dietitians (26,400 × $8): $211,200/mo
+  </text>
+  <text x="352" y="514" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ T+1 Batch Lag misses 30-min IDH warning window &amp; lacks physical RO water chlorine bypass interlock
+  </text>
+  <text x="352" y="538" fill="#FDE047" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800">
+    ⚡ Fabric Net Advantage: Exact -$499,500/mo (-96.7%) TCO Saved · 16ms vs 940ms · Exact $84.00M Cumulative SLA Protected!
+  </text>
+
+  <!-- Right Column: Sealed Benchmark Scorecard & Scenario IM (DL-1001..DL-1004) -->
+  <rect x="952" y="96" width="298" height="475" rx="14" fill="#1E293B" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="970" y="124" fill="#60A5FA" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">3. SEALED BENCHMARK (DL-1001..1004)</text>
+  <text x="970" y="143" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">🏆 R240 · DL-1001 Opens 2nd Thousand!</text>
+
+  <rect x="968" y="156" width="266" height="72" rx="9" fill="#0F172A" stroke="#10B981" stroke-width="1"/>
+  <text x="980" y="175" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">🏆 DL-1001 · IDH &amp; Home PD Sense</text>
+  <text x="980" y="192" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.93 · Act automatically (4ms)</text>
+  <text x="980" y="209" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">1001=7×11×13! 835 waves · -44.0% IDH/ER</text>
+
+  <rect x="968" y="238" width="266" height="72" rx="9" fill="#0F172A" stroke="#10B981" stroke-width="1"/>
+  <text x="980" y="257" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">DL-1002 · 880M DiskANN AVF Bruit</text>
+  <text x="980" y="274" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.92 · Act automatically (4ms)</text>
+  <text x="980" y="291" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">$4,420 vs Exact $108K DRAM (Save $103.6K!)</text>
+
+  <rect x="968" y="320" width="266" height="76" rx="9" fill="#0F172A" stroke="#F59E0B" stroke-width="1"/>
+  <text x="980" y="339" fill="#FDE68A" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">DL-1003 · AAMI/KDIGO/UFR Gate</text>
+  <text x="980" y="356" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.79 · Confirm (5ms)</text>
+  <text x="980" y="373" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">395 blocks · Cl≤0.1ppm · Hb≤11.5 · +$20.40M</text>
+
+  <rect x="968" y="406" width="266" height="76" rx="9" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="980" y="425" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">DL-1004 · 26.4K Clinician Zero-Seat BI</text>
+  <text x="980" y="442" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.94 · Act automatically (3ms)</text>
+  <text x="980" y="459" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">Saves $211,200/mo BI tax · HIPAA PHI CLS</text>
+
+  <rect x="968" y="492" width="266" height="64" rx="9" fill="#0F172A" stroke="#A855F7" stroke-width="1"/>
+  <text x="980" y="511" fill="#E9D5FF" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="800">Cumulative R240 Sealed Metrics:</text>
+  <text x="980" y="528" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">• 551/552 (99.82%) · 128=2^7 FAQs=256 Docs!</text>
+  <text x="980" y="544" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">• 134.3ms Route / 116.79ms Sim · 272 Tests</text>
+
+  <!-- Bottom Bar: 5-Cloud Decision Matrix & Provenance -->
+  <rect x="30" y="586" width="1220" height="150" rx="14" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="50" y="614" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">
+    4. FIVE-CLOUD EXECUTIVE SELECTION MATRIX &amp; TCO INFLECTION POINT (4,100 CLINICS · 540K PATIENTS · 135K MACHINES)
+  </text>
+  <text x="50" y="638" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    • Microsoft Fabric (Lead): Exact $16,900/mo (-96.7%) · Eventhouse+HDS 1.13M EPS ($0 tax) + 880M SSD DiskANN ($4,420/mo) + 26,400 Viewers ($0) + SOP-248 Gate
+  </text>
+  <text x="50" y="660" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Azure Databricks (Mode A Coexistence): Custom kidney-transplant matching &amp; survival ML → OneLake Mirrored Unity Catalog → Fabric Direct Lake
+  </text>
+  <text x="50" y="682" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Snowflake / GCP BigQuery / AWS Lakehouse: High per-GB stream ingestion ($195.6K/mo), 7.10TB DRAM vector cluster (Exact $108K/mo) &amp; 26.4K BI seat taxes ($211.2K/mo)
+  </text>
+  <text x="50" y="712" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600">
+    Provenance: Sealed deterministic evaluation in workshops/data-lab/reports/report.json · 128=2^7 FAQs (256=16^2=2^8 Docs) · 248 SVG · 272/272 Palindrome Unit Tests Passing
+  </text>
+</svg>
