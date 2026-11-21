@@ -2360,13 +2360,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 88400000)
 
 
-    def test_scenario_matrix_294_cases_and_explicit_miss(self) -> None:
+    def test_global_commercial_pool_aquatic_facility_water_chemistry_fabric_mahc_supply_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_commercial_pool_aquatic_facility_water_chemistry_fabric_mahc_supply_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["wholesale_pool_branches_and_service_depots_count"], 850)
+        self.assertEqual(sim["telemetry"]["heatwave_dosing_and_supply_restock_waves_flagged_count"], 895)
+        self.assertEqual(sim["telemetry"]["orp_fac_ph_and_vsp_controller_stream_eps"], 1200000)
+        self.assertEqual(sim["telemetry"]["lsi_water_balance_vsp_curve_and_oem_sku_vectors_count"], 940000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_pool_aquatic_tco_saved_usd"], 542580)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_pool_aquatic_tco_savings_pct"], 96.9)
+        self.assertTrue(sim["foundry_iq_guardrail"]["cdc_mahc_hyperchlorination_and_vgb_anti_entrapment_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["dot_class51_oxidizer_class8_acid_segregation_and_rls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 88800000)
+
+
+    def test_scenario_matrix_296_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 596)
-        self.assertEqual(matrix["passed_scenarios"], 595)
+        self.assertEqual(matrix["total_scenarios"], 600)
+        self.assertEqual(matrix["passed_scenarios"], 599)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.83, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 124.7)
+        self.assertEqual(matrix["avg_latency_ms"], 123.9)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -4019,6 +4036,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $88.40M! SLA", by_id["DL-1048"])
 
 
+    def test_fabric_commercial_pool_aquatic_facility_water_chemistry_2026_11_21_r252_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-1049", "DL-1050", "DL-1051", "DL-1052"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Water-Chemistry & Supply Sense Flagging 895 Waves & Lifting Compliance/Fill +45.6%", by_id["DL-1049"])
+        self.assertIn("940M LSI Water-Balance, VSP Curve & OEM SKU Vectors, -92% RAM at $4,660/mo vs $115,200/mo 7.70TB DRAM", by_id["DL-1050"])
+        self.assertIn("Saving -$542.6K/mo (-$542,580/mo >$540K!) / -96.9% Record TCO! with 28,900=170^2 $0 Viewer Seats", by_id["DL-1051"])
+        self.assertIn("16ms 4^2ms E2E, Protect $88.80M 8-8-8! SLA", by_id["DL-1052"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -4037,11 +4065,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 595)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 596)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 124.7)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 145)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 109.14)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 599)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 600)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 123.9)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 146)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 108.51)
 
 
 if __name__ == "__main__":
