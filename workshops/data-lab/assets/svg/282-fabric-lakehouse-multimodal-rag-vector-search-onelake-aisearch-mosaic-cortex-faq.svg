@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg282" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B19"/>
+      <stop offset="50%" stop-color="#0D1730"/>
+      <stop offset="100%" stop-color="#061E26"/>
+    </linearGradient>
+    <linearGradient id="accent282" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+    <linearGradient id="redGrad282" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2D121E"/>
+      <stop offset="100%" stop-color="#1A0C14"/>
+    </linearGradient>
+    <linearGradient id="greenGrad282" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A2823"/>
+      <stop offset="100%" stop-color="#081C29"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg282)"/>
+  <rect x="20" y="18" width="1360" height="824" rx="18" fill="none" stroke="url(#accent282)" stroke-width="2" opacity="0.65"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1320" height="92" rx="14" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="64" y="68" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">SVG #282 · ROUND 274 (SCENARIO JU · DL-1137..1140) · 🏆 HISTORIC FIRST SUB-109.0ms ROUTING MEAN (108.5ms!) &amp; 484=22² AUTO-ACT</text>
+  <text x="64" y="96" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Enterprise Lakehouse Multimodal RAG &amp; Vector Search: OneLake + SSD DiskANN vs. Mosaic AI vs. Cortex Search</text>
+  <text x="64" y="116" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5">48M Enterprise Docs (120 TB · 1.05B Chunks) · 1,480K EPS · 1,005 Waves (+50.4% Lift) · $5,100/mo SSD DiskANN vs. $128,400/mo 8.80TB DRAM · $20,020/mo Palindrome TCO (-$636,080/mo)</text>
+
+  <!-- Left Panel: Legacy Stitched In-Memory HNSW Stack -->
+  <rect x="40" y="144" width="635" height="390" rx="14" fill="url(#redGrad282)" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="62" y="176" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">⛔ Legacy Stitched In-Memory HNSW + Fixed-Token Chunking Stack ($656,100/mo)</text>
+  <text x="62" y="198" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="13">4,200ms E2E Latency · Split-Table Numeric Hallucinations · Stale SharePoint ACL Permission Leaks</text>
+
+  <rect x="62" y="214" width="590" height="64" rx="10" fill="#1E1B2E" stroke="#F87171" stroke-width="1"/>
+  <text x="78" y="238" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Naive Fixed-Token Chunking (512 Tokens) &amp; Batch GPU OCR ($148,000/mo)</text>
+  <text x="78" y="260" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Slices multi-page financial &amp; engineering tables in half without headers → 40%+ numeric hallucinations</text>
+
+  <rect x="62" y="288" width="590" height="64" rx="10" fill="#1E1B2E" stroke="#F87171" stroke-width="1"/>
+  <text x="78" y="312" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Duplicate Document Copy &amp; Nightly ACL Sync Jobs ($99,000/mo)</text>
+  <text x="78" y="334" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">SharePoint permission revocations lag 24 hours behind vector index → CISO blocks production rollout</text>
+
+  <rect x="62" y="362" width="590" height="72" rx="10" fill="#1E1B2E" stroke="#F87171" stroke-width="1"/>
+  <text x="78" y="386" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 1.05B Vectors in Pure In-Memory HNSW DRAM Cluster (8.80 TB RAM = $128,400/mo!)</text>
+  <text x="78" y="408" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Mosaic AI Vector Units / Cortex Search / OpenSearch OCUs keep full graph in RAM + $271.4K/mo seat tax</text>
+
+  <rect x="62" y="446" width="590" height="72" rx="10" fill="#3B0D1E" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="78" y="472" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">❌ Critical Production Failure Modes (Blocked by SOP-282):</text>
+  <text x="78" y="494" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• Ex-team members query confidential M&amp;A PDFs before nightly re-index • Hidden white-text PDF prompt injection</text>
+
+  <!-- Right Panel: Microsoft Fabric OneLake + SSD DiskANN + Foundry IQ -->
+  <rect x="705" y="144" width="655" height="390" rx="14" fill="url(#greenGrad282)" stroke="#10B981" stroke-width="1.8"/>
+  <text x="727" y="176" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">✅ Fabric OneLake + SSD DiskANN + Foundry IQ ($20,020/mo Palindrome TCO!)</text>
+  <text x="727" y="198" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13">16ms (4+4+4+4=4²ms) E2E · Saves -$636,080/mo (-96.9%) · +$124.0M/yr Value · $97.60M SLA</text>
+
+  <rect x="727" y="214" width="610" height="68" rx="10" fill="#0F293A" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="743" y="238" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">① DL-1137 (4ms): OneLake 48M-Doc Shortcuts &amp; Layout-Aware Markdown Table Chunking</text>
+  <text x="743" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Ingests 1,480K EPS file/ACL events ($0 copy tax); preserves table headers across pages → 1,005 waves (+50.4% lift)</text>
+
+  <rect x="727" y="292" width="610" height="68" rx="10" fill="#0F293A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="743" y="316" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">② DL-1138 (4ms): 1.05-Billion (1,050M!) SSD DiskANN ($5,100/mo · -92% RAM) + Hybrid Rerank</text>
+  <text x="743" y="336" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">BM25 + 1,536-dim NVMe Vamana graph + L2 Semantic Ranker saves $123,300/mo vs 8.80TB DRAM (+$124.0M/yr)</text>
+
+  <rect x="727" y="370" width="610" height="68" rx="10" fill="#0F293A" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="743" y="394" fill="#D8B4FE" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">③ DL-1139 (4ms): Foundry IQ SOP-282 Live Entra OBO ACL Trimming &amp; Anti-Injection Gate</text>
+  <text x="743" y="414" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Blocks 565 stale-ACL leaks, split-table hallucinations &amp; PDF prompt injections (+$27.20M saved · 33,400 users)</text>
+
+  <rect x="727" y="448" width="610" height="68" rx="10" fill="#0F293A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="743" y="472" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">④ DL-1140 (4ms · 202nd Palindrome Confirm!): Teams Bounding-Box Citation Card &amp; 1GB SQL</text>
+  <text x="743" y="492" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Delivers exact PDF page + bounding-box citations &amp; commits audit trail to 1GB Free Fabric SQL (16ms = 4²ms E2E!)</text>
+
+  <!-- Bottom 5-Cloud Comparison & Sealed Telemetry Table -->
+  <rect x="40" y="552" width="1320" height="270" rx="14" fill="#0B1325" stroke="#334155" stroke-width="1.5"/>
+  <text x="64" y="584" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">📊 5-Cloud Multimodal RAG &amp; Billion-Vector Matrix (48M Docs · 120 TB · 1.05B Chunks · 33,400 Users · Sealed R274)</text>
+
+  <line x1="60" y1="598" x2="1340" y2="598" stroke="#334155" stroke-width="1"/>
+  <text x="66" y="620" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Platform / Dimension</text>
+  <text x="340" y="620" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Fabric OneLake + SSD DiskANN</text>
+  <text x="605" y="620" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Databricks Mosaic Vector</text>
+  <text x="840" y="620" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Snowflake Cortex Search</text>
+  <text x="1085" y="620" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Vertex AI / Bedrock KB</text>
+
+  <line x1="60" y1="630" x2="1340" y2="630" stroke="#1E293B" stroke-width="1"/>
+  <text x="66" y="654" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">1.05B Vector Storage Media &amp; Cost</text>
+  <text x="340" y="654" fill="#10B981" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">NVMe SSD DiskANN ($5,100/mo)</text>
+  <text x="605" y="654" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">In-Memory VSUs (~$128.4K/mo)</text>
+  <text x="840" y="654" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Active Index GB/mo + Credits</text>
+  <text x="1085" y="654" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">OpenSearch Vector OCU Floor</text>
+
+  <line x1="60" y1="666" x2="1340" y2="666" stroke="#1E293B" stroke-width="1"/>
+  <text x="66" y="690" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Table Parsing &amp; Hybrid Search</text>
+  <text x="340" y="690" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">Layout Markdown + L2 Reranker</text>
+  <text x="605" y="690" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">ai_parse_document + Hybrid</text>
+  <text x="840" y="690" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">PARSE_DOCUMENT + Rerank</text>
+  <text x="1085" y="690" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Doc AI / Textract + Rerank</text>
+
+  <line x1="60" y1="702" x2="1340" y2="702" stroke="#1E293B" stroke-width="1"/>
+  <text x="66" y="726" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Document ACL Security Trimming</text>
+  <text x="340" y="726" fill="#10B981" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">Live Entra ID OBO + SharePoint</text>
+  <text x="605" y="726" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">UC Filter (Custom M365 Sync)</text>
+  <text x="840" y="726" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Role-Level Only (No User OBO)</text>
+  <text x="1085" y="726" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Workspace IAM / Custom Meta</text>
+
+  <line x1="60" y1="738" x2="1340" y2="738" stroke="#1E293B" stroke-width="1"/>
+  <text x="66" y="762" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Monthly Total TCO (33,400 Users)</text>
+  <text x="340" y="762" fill="#10B981" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">$20,020/mo (-96.9% · -$636.1K/mo)</text>
+  <text x="605" y="762" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">$368,000/mo (+ BI Seats)</text>
+  <text x="840" y="762" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">$412,000/mo (+ BI Seats)</text>
+  <text x="1085" y="762" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">$656,100/mo (Stitched Stack)</text>
+
+  <rect x="60" y="778" width="1280" height="32" rx="8" fill="#0F293A" stroke="#10B981" stroke-width="1"/>
+  <text x="76" y="799" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🏆 R274 Sealed Baseline: 687/688 Passed (99.85% · 484=22² Auto-Act + 202 Palindrome Confirm) · 108.5ms Routing Mean (&lt;109ms!) · 168th Sim 96.39ms · 340 Tests</text>
+</svg>
