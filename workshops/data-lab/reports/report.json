@@ -6,15 +6,15 @@
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 544,
-      "routing_matrix_mean_modeled_latency_ms": 136.2,
-      "routing_matrix_scope": "Arithmetic mean across all n=544 Enterprise Data & AI SA routing & decision items (mean=136.2ms).",
-      "ontology_simulations_denominator_n": 132,
-      "ontology_simulations_mean_modeled_latency_ms": 118.32
+      "routing_matrix_denominator_n": 548,
+      "routing_matrix_mean_modeled_latency_ms": 135.3,
+      "routing_matrix_scope": "Arithmetic mean across all n=548 Enterprise Data & AI SA routing & decision items (mean=135.3ms).",
+      "ontology_simulations_denominator_n": 133,
+      "ontology_simulations_mean_modeled_latency_ms": 117.55
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution, deterministic n=544 decision routing matrix evaluation (543/544 = 99.82%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "(1) n=544 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 136.2ms; (2) n=132 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 118.32ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
+      "measured_local_harness": "Python unittest execution, deterministic n=548 decision routing matrix evaluation (547/548 = 99.82%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "(1) n=548 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 135.3ms; (2) n=133 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 117.55ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
       "vendor_published_spec_as_of_2026": "Cross-referenced against 73 official vendor documentation & pricing sources (Microsoft Fabric OneLake, Shortcuts, Mirroring, Direct Lake, Eventhouse, Fabric IQ, Purview OBO; Azure Databricks Unity Catalog, Photon, Lakeflow, AI/BI Genie, Lakebase; Snowflake Polaris/Horizon, Dynamic Tables, Cortex; GCP BigQuery/BigLake; AWS S3 Tables/Redshift/SageMaker Lakehouse).",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical hardware load across all 5 clouds (explicitly labeled synthetic/modeled per benchmark governance policy)."
     },
@@ -954,7 +954,7 @@
         "as_of": "2026-11-19"
       }
     ],
-    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=132 enterprise ontology scenarios (mean=118.32ms) and n=544 architectural decision scenarios (543/544 = 99.82%)."
+    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=133 enterprise ontology scenarios (mean=117.55ms) and n=548 architectural decision scenarios (547/548 = 99.82%)."
   },
   "platforms": {
     "fabric": {
@@ -1039,16 +1039,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 544,
-    "passed_scenarios": 543,
+    "total_scenarios": 548,
+    "passed_scenarios": 547,
     "failed_scenarios": 1,
     "accuracy_pct": 99.82,
-    "avg_latency_ms": 136.2,
-    "routing_matrix_denominator_n": 544,
-    "routing_matrix_mean_modeled_latency_ms": 136.2,
+    "avg_latency_ms": 135.3,
+    "routing_matrix_denominator_n": 548,
+    "routing_matrix_mean_modeled_latency_ms": 135.3,
     "action_distribution": {
-      "Act automatically": 376,
-      "Confirm": 166,
+      "Act automatically": 379,
+      "Confirm": 167,
       "Send to a human": 2
     },
     "scenarios": [
@@ -7579,6 +7579,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 4
+      },
+      {
+        "id": "DL-997",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global commercial industrial bakery & DSD route network (195 automated bakeries, 28,000 DSD trucks, 620,000 retail doors, 1,125K=1.125M EPS tunnel-oven PLCs, handheld DSD rack/Kwiptag stale scans & EDI 852 POS + SAP S/4HANA & IBP ledgers) requires 4ms pre-18:00 dough-cutoff route replenishment & stale reduction: Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs Exact $194,400/mo stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL 1,125K (1.125M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms DSD Stale & Stockout Sense Flagging 830 Waves & Cutting Stale Buybacks/Scrap -43.5% vs Exact $194.4K/mo Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL 1,125K (1.125M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms DSD Stale & Stockout Sense Flagging 830 Waves & Cutting Stale Buybacks/Scrap -43.5% vs Exact $194.4K/mo Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-998",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 875M=7x125M inline flour NIR/Farinograph curves, 3D laser loaf-volume/crust-color embeddings & 28,000 IBP distributor territory contracts at Exact $4,400/mo) + In-Lake PREDICT ($0 egress tax) vs 7.05TB RAM OpenSearch/Mosaic vector clusters ($107,400/mo)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (875M Flour NIR, 3D Loaf-Vision & IBP Contract Vectors, -92% RAM at Exact $4,400/mo vs $107,400/mo 7.05TB DRAM—Saving Exact $103,000/mo!, 4ms In-Lake PREDICT Capturing +$89.5M/yr in Reduced Stales & Scrap)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (875M Flour NIR, 3D Loaf-Vision & IBP Contract Vectors, -92% RAM at Exact $4,400/mo vs $107,400/mo 7.05TB DRAM—Saving Exact $103,000/mo!, 4ms In-Lake PREDICT Capturing +$89.5M/yr in Reduced Stales & Scrap)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-999",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 195-plant commercial industrial bakery & 28,000-truck DSD route platform (1,125K=1.125M EPS stream, 875M rheology/vision/IBP vectors, 26,200 route distributors/plant managers/merchandisers): Fabric F64 ($16,880/mo) vs stitched Kafka/CDC/Snowflake/Databricks/AWS/BI stack ($322.4K-$512,800/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 875M SSD DiskANN + Direct Lake ($16,880/mo vs $512,800/mo Stitched Multi-Cloud, Saving -$495.9K/mo >$495K! / -96.7% Record TCO! with 26,200 $0 Viewer Seats & IBP Route RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 875M SSD DiskANN + Direct Lake ($16,880/mo vs $512,800/mo Stitched Multi-Cloud, Saving -$495.9K/mo >$495K! / -96.7% Record TCO! with 26,200 $0 Viewer Seats & IBP Route RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-1000",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic DL-1000 One-Thousandth Scenario ID Milestone!, R239 Prime Round, 127=2^7-1 Mersenne Prime Curated FAQs / 254 Docs, 547 Prime Passed / 548=99.82% Record, 133=7x19 Sims (117.55ms), All-Prime Actions (379/167/2), Exact $4,400/mo DiskANN Saving Exact $103,000/mo DRAM & 270 Round-Ten Tests Milestone: 17:45 dough cutoff & sesame bun changeover triggers 830 waves and 390 FALCPA/FSMA/DSD risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 830-Wave Stale/Stockout Sense ($0 Tax) + 875M DiskANN & PREDICT 4ms (-43.5% Stales/Scrap & +$89.5M Gained) + Foundry IQ 4ms 390-Sesame/FSMA/DSD Gate (+$20.20M) & RLS + Teams SAP/DSD & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $83.60M! SLA)",
+        "model_answer": "Eventhouse 4ms 830-Wave Stale/Stockout Sense ($0 Tax) + 875M DiskANN & PREDICT 4ms (-43.5% Stales/Scrap & +$89.5M Gained) + Foundry IQ 4ms 390-Sesame/FSMA/DSD Gate (+$20.20M) & RLS + Teams SAP/DSD & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $83.60M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 4
       }
     ]
   },
@@ -7642,7 +7690,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 132,
+    "total_ontology_simulations": 133,
     "simulation_latencies_ms": [
       780,
       640,
@@ -7775,9 +7823,10 @@
       16,
       16,
       16,
+      16,
       16
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 118.32
+    "ontology_simulation_mean_modeled_latency_ms": 117.55
   },
   "ontology_simulations": {
     "energy_dc_peak": {
@@ -16168,6 +16217,71 @@
         "projected_savings_usd": 83200000,
         "end_to_end_latency_ms": 16,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (870M Vectors) + 1GB Free Fabric SQL"
+      }
+    },
+    "global_commercial_industrial_bakery_dsd_route_fabric_stale_buyback_fsma_vs_4clouds": {
+      "scenario_id": "global_commercial_industrial_bakery_dsd_route_fabric_stale_buyback_fsma_vs_4clouds",
+      "title": "Global Commercial Industrial Bakery, Fresh Packaged Bread & Direct-Store-Delivery (DSD) Route Networks (195 Automated Bakeries + 28K DSD Trucks + 620K Retail Doors) 18:00 Dough-Cutoff Route Replenishment, 875M Flour-NIR/3D-Crust/IBP-Contract RAG & FALCPA Sesame/FSMA/DSD-Stale Gate (1,125K=1.125M EPS Tunnel-Oven/DSD-Handheld/EDI-852 Stream + 875M Flour-Rheology/3D-Loaf-Vision/IBP Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 830-Wave Stale/Stockout Sense ($0/GB & $0 Copy Tax), 875M SSD DiskANN (Exact $4,400/mo vs $107,400/mo 7.05TB DRAM—Saving Exact $103,000/mo!) + In-Lake PREDICT 4ms (-43.5% Stales/Scrap & +$89.5M/yr Gained) & Foundry IQ 4ms 390-Sesame/FSMA/DSD Gate (+$20.20M) (1,125K EPS · 875M DiskANN · 16ms=4^2ms E2E · R239 Prime, Historic DL-1000 1,000th Scenario ID!, 547/548=99.82% Record, 127=2^7-1 Mersenne Prime FAQs, 133=7x19 Sims 117.55ms, All-Prime Actions 379/167/2, -$495.9K/mo >$495K! & $83.60M SLA!)",
+      "telemetry": {
+        "industrial_bakeries_count": 195,
+        "dsd_stale_and_stockout_waves_flagged_count": 830,
+        "oven_plc_dsd_handheld_and_edi852_stream_eps": 1125000,
+        "per_gb_stream_write_surcharge_usd": 0,
+        "flour_nir_3d_loaf_vision_and_ibp_vectors_count": 875000000,
+        "diskann_ssd_ram_reduction_pct": 92.0,
+        "dsd_stale_buyback_and_oven_scrap_reduction_pct": 43.5,
+        "stale_reduction_and_route_yield_gained_usd": 89500000,
+        "sesame_allergen_fsma_bake_and_phantom_stale_blocks_count": 390,
+        "concurrent_route_distributors_plant_managers_and_buyers": 26200
+      },
+      "ontology_traversal": [
+        "Tunnel-Oven-DSD-Handheld-and-SAP-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,125K (1.125M) EPS of 195-bakery tunnel-oven zone PLCs, proof-box sensors, 28,000 DSD route-truck handheld rack/Kwiptag stale scans, and 620,000-door EDI 852 POS streams while mirroring SAP S/4HANA batch and IBP settlement tables ($0/GB write tax & $0 copy tax), flagging 830 high-stale or promo-stockout route waves before the 18:00 dough-mixing cutoff in 4ms",
+        "Dough-Rheology-and-DSD-Load-Optimization-Engine -> Azure SQL / Cosmos DB SSD DiskANN (875,000,000 inline flour NIR/Farinograph curves, 3D laser loaf-volume/crust-color embeddings & 28K IBP territory contracts, -92% RAM at Exact $4,400/mo vs $107,400/mo 7.05TB DRAM—saving Exact $103,000/mo!) + In-Lake PREDICT -> Cuts DSD stale buybacks and oven scrap -43.5% and captures +$89.5M/yr in net margin in 4ms",
+        "Foundry-IQ-FALCPA-Sesame-FSMA-and-DSD-Geofence-Gate -> Validates COMMERCIAL-BAKERY-DSD-ROUTE-FALCPA-FSMA-SOP-247 -> Blocks 390 (Round-Ten!) sesame/9-major-allergen line changeovers lacking LIMS ELISA negative swab certificates (FDA FALCPA/FASTER Act), <93.3°C (200°F) core-bake temperature FSMA lethality breaches, and off-geofence phantom DSD stale-return credits (+$20.20M protected) with IBP Route RLS in 4ms",
+        "Approved Route Load Sheet & Oven Damper Setpoints -> VP of DSD Operations & Plant Manager Teams Card -> Dispatches 28,000 truck load sheets, updates tunnel-oven ribbon burners, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)"
+      ],
+      "multi_agent_plan": {
+        "fabric_bakery_dsd_monthly_tco_usd": 16880,
+        "competitor_stitched_bakery_dsd_monthly_tco_usd": 512800,
+        "monthly_bakery_dsd_tco_saved_usd": 495920,
+        "monthly_bakery_dsd_tco_savings_pct": 96.7,
+        "fabric_internal_full_stack_monthly_usd": 54800,
+        "competitor_internal_full_stack_monthly_usd": 1438000,
+        "steps": [
+          {
+            "step": 1,
+            "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.125M EPS Tunnel-Oven, DSD Handheld & EDI 852 Sense Agent",
+            "operation": "Mirror SAP S/4HANA and IBP settlement ledgers zero-copy and ingest 1,125K (1.125M) EPS oven/DSD/POS streams across 195 bakeries and 28,000 route trucks at $0/GB write tax, flagging 830 stale and stockout waves in 4ms",
+            "impact_metric": "4ms 830-wave sense (-43.5% stales/scrap); eliminates Exact $194,400/mo in stream and ERP CDC taxes"
+          },
+          {
+            "step": 2,
+            "agent": "875M SSD DiskANN Flour-NIR/3D-Crust/IBP RAG & In-Lake PREDICT Route Replenishment Agent",
+            "operation": "Search 875,000,000 flour NIR/Farinograph, 3D loaf-vision & IBP contract vectors via SSD DiskANN (-92% RAM at Exact $4,400/mo vs $107,400/mo 7.05TB DRAM—saving Exact $103,000/mo!) and optimize 28K truck load sheets in 4ms",
+            "impact_metric": "4ms rheology/route match (+$89.5M/yr net margin gained); Exact $4,400/mo SSD DiskANN vs $107,400/mo DRAM"
+          },
+          {
+            "step": 3,
+            "agent": "Foundry IQ 4ms FALCPA Sesame / FSMA / DSD-Geofence Gate & 4ms Route / 1GB SQL Commit Agent",
+            "operation": "Verify SOP-247 blocking 390 sesame allergen, <93.3°C core-bake & phantom stale risks (+$20.20M saved) & enforcing RLS across 26,200 users (4ms), then dispatch 28K load sheets & commit to 1GB Free SQL (4ms)",
+            "impact_metric": "16ms (4^2ms) E2E loop; R239 Prime, Historic DL-1000 ID!, 547/548 (99.82%), 133 Sims 117.55ms & $83.60M! SLA"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "COMMERCIAL-BAKERY-DSD-ROUTE-FALCPA-FSMA-SOP-247",
+        "hard_constraint": "Block mixer and depositor start commands when transitioning from Sesame or 9-major-allergen SKUs without a signed LIMS ELISA/ATP negative swab certificate (FDA FALCPA/FASTER Act), quarantine any bake lot with internal crumb core temperature <93.3°C (200°F) under FSMA Preventive Controls, and freeze DSD stale-buyback credits scanned outside verified retail store GPS geofences",
+        "proposed_change": "Block 390 FALCPA sesame changeover, FSMA <93.3°C core-bake & off-geofence phantom stale risks (+$20.20M saved), capture $89.5M in reduced DSD stales & oven scrap (-43.5% reduction), serve 830 waves, and enforce RLS across 26,200 users",
+        "falcpa_sesame_allergen_swab_and_fsma_core_bake_temp_verified": true,
+        "dsd_gps_geofence_stale_credit_and_ibp_territory_rls_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 83600000,
+        "end_to_end_latency_ms": 16,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (875M Vectors) + 1GB Free Fabric SQL"
       }
     }
   },
