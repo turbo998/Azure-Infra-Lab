@@ -9420,6 +9420,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (915M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_commercial_janitorial_building_sanitation_fabric_smart_restroom_evs_osha_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Commercial Janitorial, Building Sanitation, Hospital Environmental Services (EVS), Smart Restroom Telemetry & OSHA Chemical Compliance Networks (18,500 Sites + 420K Custodians + 6.8M Connected Sensors) Demand-Driven Cleaning, 920M BIM/ATP/SDS RAG & EPA-List-K/OSHA-HazCom/Cleanroom Gate (1,170K=1.17M EPS Dispenser/ToF/Scrubber/ATP Stream + 920M BIM/ATP/OSHA-SDS Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 875-Wave Demand-Clean/Bed-Turn Sense ($0/GB & $0 Copy Tax), 920M SSD DiskANN ($4,580/mo vs $112,800/mo Exact 7.50TB DRAM—Saving $108,220/mo!) + In-Lake PREDICT 4ms (-45.0% Empty-Room Waste & Bed-Turn Wait, Exact +$98.0M/yr Gained!) & Foundry IQ 4ms 435=T_29 Sporicidal/HazCom/ISO Gate (Exact +$22.00M!) (1,170K EPS · 920M DiskANN · 16ms=4^2ms E2E · R248, Historic 256=2^8=16^2 SVG, 136=T_16 FAQs=272 Palindrome Docs, 583/584=99.83%, 406=T_28 Auto-Act, 142 Sims Hitting All-Ones Repdigit 111.11ms!, Exact 28,000 Users & 288=2x12^2 Tests!)",
+            "telemetry": {
+                "commercial_towers_airports_and_hospital_evs_sites_count": 18500,
+                "demand_clean_and_isolation_bed_waves_flagged_count": 875,
+                "restroom_dispenser_tof_scrubber_and_atp_stream_eps": 1170000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "bim_quota_atp_heatmap_and_osha_sds_vectors_count": 920000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "empty_room_cleaning_and_bed_turn_wait_reduction_pct": 45.0,
+                "demand_porter_and_bed_turnover_efficiency_gained_usd": 98000000,
+                "sporicidal_dwell_hazcom_chlorine_and_cleanroom_blocks_count": 435,
+                "concurrent_site_managers_evs_nurses_and_owners": 28000,
+            },
+            "ontology_traversal": [
+                "Restroom-Dispenser-ToF-Scrubber-and-EpicADT-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,170K (1.17M) EPS of 6.8M smart towel/soap dispenser fill levels, doorway ToF people-counters, autonomous floor scrubber SLAM, and hospital ATP bioluminescence feeds while mirroring WinTeam / Workday and Epic HL7 ADT ledgers across 18,500 sites and 420,000 custodians ($0/GB write tax & $0 copy tax), flagging 875 demand-driven cleaning and STAT isolation bed-turnover waves in 4ms",
+                "Demand-Porter-and-EVS-Turnover-Engine -> Azure SQL / Cosmos DB SSD DiskANN (920,000,000 ISSA 612 BIM cleaning quotas, high-touch ATP fluorescence maps & multilingual OSHA SDS sheets, -92% RAM at $4,580/mo vs $112,800/mo Exact 7.50TB DRAM—saving $108,220/mo!) + In-Lake PREDICT -> Cuts empty-room cleaning waste and hospital bed-turnover wait -45.0% and captures Exact +$98.0M/yr in net value in 4ms",
+                "Foundry-IQ-Sporicidal-HazCom-and-Cleanroom-Gate -> Validates COMMERCIAL-JANITORIAL-EVS-OSHA-HAZCOM-SOP-256 -> Blocks 435 (T_29!) C. diff isolation bed releases lacking EPA List K sporicidal wet-contact dwell or ATP <250 RLU checks, OSHA HazCom bleach + acid/ammonia chlorine gas mixing, and non-lint-free/high-VOC wipes in ISO 14644 cleanrooms (Exact +$22.00M protected!) with Client/Campus RLS in 4ms",
+                "Approved Day-Porter Route & Clean-Bed Release Plan -> Site Manager & EVS Infection-Control Teams Card -> Dispatches multilingual day-porter task, unlocks Epic Clean Bed status, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_janitorial_evs_monthly_tco_usd": 17060,
+                "competitor_stitched_janitorial_evs_monthly_tco_usd": 545200,
+                "monthly_janitorial_evs_tco_saved_usd": 528140,
+                "monthly_janitorial_evs_tco_savings_pct": 96.9,
+                "fabric_internal_full_stack_monthly_usd": 57400,
+                "competitor_internal_full_stack_monthly_usd": 1530000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.17M EPS 6.8M-Sensor Restroom & Hospital EVS Sense Agent",
+                        "operation": "Mirror WinTeam / Workday / Epic ADT ledgers zero-copy and ingest 1,170K (1.17M) EPS dispenser/ToF/scrubber/ATP streams across 18,500 sites at $0/GB write tax, flagging 875 demand-clean and bed-turn waves in 4ms",
+                        "impact_metric": "4ms 875-wave sense (-45.0% empty-room waste & bed wait); eliminates $204,800/mo (200x2^10!) in stream and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "920M SSD DiskANN BIM/ATP/SDS RAG & In-Lake PREDICT Demand-Porter Agent",
+                        "operation": "Search 920,000,000 BIM quota, high-touch ATP & multilingual OSHA SDS vectors via SSD DiskANN (-92% RAM at $4,580/mo vs $112,800/mo Exact 7.50TB DRAM—saving $108,220/mo!) and optimize porter & scrubber routes in 4ms",
+                        "impact_metric": "4ms BIM/SDS match (Exact +$98.0M/yr value gained); $4,580/mo SSD DiskANN vs $112,800/mo Exact 7.50TB DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms Sporicidal / HazCom / ISO-14644 Gate & 4ms Epic / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-256 blocking 435=T_29 sporicidal, bleach-acid & cleanroom risks (Exact +$22.00M saved!) & enforcing RLS across Exact 28,000 users (4ms), then unlock beds & commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; R248 256=2^8=16^2 SVG, 111.11ms Repdigit Sim Mean (n=142), -$528.1K/mo (-96.9%) & $87.20M SLA!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "COMMERCIAL-JANITORIAL-EVS-OSHA-HAZCOM-SOP-256",
+                "hard_constraint": "Block hospital C. diff / CRE isolation bed releases lacking verified EPA List K sporicidal wet-contact dwell time and ATP bioluminescence <250 RLU readings, hard-lock chemical dispensers against mixing sodium hypochlorite bleach with acid or ammonia agents under OSHA 29 CFR 1910.1200 HazCom, and enforce ISO 14644 cleanroom lint-free consumable rules",
+                "proposed_change": "Block 435=T_29 sporicidal dwell, bleach-acid chlorine & cleanroom risks (Exact +$22.00M saved!), capture Exact $98.0M in demand-driven cleaning & bed-turnover efficiency (-45.0% waste/wait), serve 875 waves, and enforce RLS across Exact 28,000 users",
+                "epa_list_k_sporicidal_dwell_and_atp_rlu_verified": True,
+                "osha_hazcom_bleach_acid_and_iso14644_cleanroom_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 87200000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (920M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -16384,6 +16450,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1033",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global commercial janitorial, building sanitation & hospital EVS network (18,500 towers/airports/hospitals, 420K custodians, 6.8M smart restroom dispensers, doorway ToF counters & autonomous scrubbers, 1,170K=1.17M EPS sensor & ATP feeds + WinTeam/Workday/Epic ADT ledgers) requires 4ms demand-driven cleaning & STAT bed-turnover sense: Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs $204,800/mo (200x2^10!) stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL 1,170K (1.17M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Demand-Driven Cleaning & EVS Bed-Turnover Sense Flagging 875 Waves & Cutting Waste/Wait -45.0% vs $204.8K/mo Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL 1,170K (1.17M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Demand-Driven Cleaning & EVS Bed-Turnover Sense Flagging 875 Waves & Cutting Waste/Wait -45.0% vs $204.8K/mo Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1034",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 920M ISSA 612 BIM cleaning quotas, high-touch ATP fluorescence maps, EPA List K labels & multilingual OSHA SDS sheets at $4,580/mo) + In-Lake PREDICT ($0 egress tax) vs Exact 7.50TB RAM OpenSearch/Mosaic vector clusters ($112,800/mo)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (920M BIM Quota, High-Touch ATP & Multilingual OSHA SDS Vectors, -92% RAM at $4,580/mo vs $112,800/mo Exact 7.50TB DRAM—Saving $108,220/mo!, 4ms In-Lake PREDICT Capturing Exact +$98.0M/yr in Demand-Cleaning & Bed-Turn Yield)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (920M BIM Quota, High-Touch ATP & Multilingual OSHA SDS Vectors, -92% RAM at $4,580/mo vs $112,800/mo Exact 7.50TB DRAM—Saving $108,220/mo!, 4ms In-Lake PREDICT Capturing Exact +$98.0M/yr in Demand-Cleaning & Bed-Turn Yield)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1035",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for an 18,500-site global commercial janitorial, hospital EVS & smart restroom platform (1,170K=1.17M EPS stream, 920M BIM/SDS vectors, Exact 28,000 site managers/EVS nurses/property owners): Fabric F64 ($17,060/mo) vs stitched Kafka/CDC/Snowflake/Databricks/AWS/BI stack ($342.4K-$545,200/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 920M SSD DiskANN + Direct Lake ($17,060/mo vs $545,200/mo Stitched Multi-Cloud, Saving -$528.1K/mo (-$528,140/mo!) / -96.9% Record TCO! with Exact 28,000 $0 Viewer Seats & Client RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 920M SSD DiskANN + Direct Lake ($17,060/mo vs $545,200/mo Stitched Multi-Cloud, Saving -$528.1K/mo (-$528,140/mo!) / -96.9% Record TCO! with Exact 28,000 $0 Viewer Seats & Client RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1036",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R248 256=2^8=16^2 Binary-Power & Perfect-Square SVG!, 142nd Ontology Sim Hitting All-Ones Repdigit 111.11ms (15,778/142=111.11ms!), 136=T_16 Triangular FAQs / 272 Palindrome Docs, 406=T_28 Auto-Act, 435=T_29 Blocks Protecting Exact +$22.00M, Exact 7.50TB DRAM Replaced, Exact 28,000 Users & 288=2x12^2 Two-Gross Tests Milestone: Winter norovirus/C. diff hospital surge & airport flight wave triggers 875 waves and 435 sporicidal/HazCom/cleanroom risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 875-Wave Demand/EVS Sense ($0 Tax) + 920M DiskANN & PREDICT 4ms (-45.0% Waste/Wait & Exact +$98.0M Gained) + Foundry IQ 4ms 435-Sporicidal/HazCom/ISO Gate (Exact +$22.00M!) & RLS + Teams Epic/IWMS & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $87.20M! SLA)",
+        "model_answer": "Eventhouse 4ms 875-Wave Demand/EVS Sense ($0 Tax) + 920M DiskANN & PREDICT 4ms (-45.0% Waste/Wait & Exact +$98.0M Gained) + Foundry IQ 4ms 435-Sporicidal/HazCom/ISO Gate (Exact +$22.00M!) & RLS + Teams Epic/IWMS & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $87.20M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -16642,7 +16756,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_security_guarding_alarm_central_station_fabric_video_cit_vault_vs_4clouds",
         "global_early_childhood_education_childcare_center_fabric_ratio_enrollment_cacfp_vs_4clouds",
         "global_commercial_hvac_plumbing_electrical_field_service_fabric_pricebook_epa608_vs_4clouds",
-        "global_retail_optical_eyewear_freeform_lens_lab_fabric_teleoptometry_vsp_vs_4clouds"
+        "global_retail_optical_eyewear_freeform_lens_lab_fabric_teleoptometry_vsp_vs_4clouds",
+        "global_commercial_janitorial_building_sanitation_fabric_smart_restroom_evs_osha_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()

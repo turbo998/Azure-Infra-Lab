@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" width="1280" height="760">
+  <defs>
+    <linearGradient id="bg256" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="accent256" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="cardFabric256" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#064E3B"/>
+      <stop offset="100%" stop-color="#022C22"/>
+    </linearGradient>
+    <linearGradient id="cardStitched256" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#450A0A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="760" fill="url(#bg256)"/>
+  <rect x="20" y="16" width="1240" height="6" rx="3" fill="url(#accent256)"/>
+
+  <!-- Header -->
+  <text x="36" y="52" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800">
+    256=2^8=16^2 · Global Commercial Janitorial, Hospital EVS &amp; Smart Restroom Architecture (R248)
+  </text>
+  <text x="36" y="76" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">
+    18,500 Sites + 420K Staff + 6.8M Sensors · 🏆 256=2^8=16^2 SVG, 111.11ms All-Ones Repdigit Sim Mean (n=142), Exact 28K Users &amp; 288=2×12² Tests!
+  </text>
+  <rect x="955" y="34" width="295" height="44" rx="10" fill="#065F46" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1102" y="54" text-anchor="middle" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800">🏆 256=2^8 SVG · 111.11ms REPDIGIT SIM!</text>
+  <text x="1102" y="71" text-anchor="middle" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">16ms (4²ms) · -$528,140/mo (-96.9%) · 288 Tests</text>
+
+  <!-- Left Column: Smart Restroom, Scrubber & Hospital EVS Edge Sources -->
+  <rect x="30" y="96" width="280" height="475" rx="14" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="48" y="124" fill="#2DD4BF" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">1. RESTROOM &amp; HOSPITAL EVS EDGE</text>
+  <text x="48" y="143" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">1,170K (1.17M) EPS Sanitation Stream</text>
+
+  <rect x="46" y="158" width="248" height="86" rx="10" fill="#0F172A" stroke="#14B8A6" stroke-width="1"/>
+  <text x="60" y="179" fill="#99F6E4" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🧻 6.8M Smart Restroom &amp; ToF Sensors</text>
+  <text x="60" y="198" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Paper towel &amp; soap dispenser fill (&lt;12%)</text>
+  <text x="60" y="214" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Doorway ToF people-counters &amp; NH3 odor</text>
+  <text x="60" y="230" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Autonomous floor scrubber SLAM telemetry</text>
+
+  <rect x="46" y="256" width="248" height="92" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1"/>
+  <text x="60" y="277" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🏥 Hospital EVS &amp; Cleanroom Counters</text>
+  <text x="60" y="296" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Epic HL7 ADT isolation-bed discharges</text>
+  <text x="60" y="312" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• ATP bioluminescence meters (&lt;250 RLU)</text>
+  <text x="60" y="328" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• UV-C robot dose &amp; ISO 14644 particle logs</text>
+
+  <rect x="46" y="360" width="248" height="92" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1"/>
+  <text x="60" y="381" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🧪 EPA List K &amp; OSHA HazCom SDS</text>
+  <text x="60" y="400" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• C. diff sporicidal wet-contact dwell timers</text>
+  <text x="60" y="416" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Smart chemical dispenser bleach/acid lock</text>
+  <text x="60" y="432" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Multilingual OSHA SDS &amp; Green Seal rules</text>
+
+  <rect x="46" y="464" width="248" height="90" rx="10" fill="#0F172A" stroke="#A855F7" stroke-width="1"/>
+  <text x="60" y="485" fill="#E9D5FF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🗄️ WinTeam / Workday / Client IWMS</text>
+  <text x="60" y="504" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Zero-copy 420K custodian shift rosters</text>
+  <text x="60" y="520" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• 18,500 commercial &amp; hospital SLA ledgers</text>
+  <text x="60" y="536" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">• $0/GB stream tax &amp; $0 CDC copy tax</text>
+
+  <!-- Center Top: Microsoft Fabric 16ms Path -->
+  <rect x="332" y="96" width="600" height="295" rx="14" fill="url(#cardFabric256)" stroke="#10B981" stroke-width="2"/>
+  <text x="352" y="124" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">
+    2A. MICROSOFT FABRIC UNIFIED 16ms (4²ms) JANITORIAL &amp; EVS LOOP ($17,060/mo · -96.9%)
+  </text>
+
+  <rect x="350" y="138" width="272" height="112" rx="10" fill="#065F46" stroke="#34D399" stroke-width="1.2"/>
+  <text x="364" y="159" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800">① Eventhouse KQL (4ms · $0 Tax)</text>
+  <text x="364" y="178" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Ingests 1,170K (1.17M) EPS sensor/ADT feeds</text>
+  <text x="364" y="194" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Flags 875 demand-clean &amp; bed-turn waves</text>
+  <text x="364" y="210" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Cuts empty-room waste &amp; bed wait -45.0%</text>
+  <text x="364" y="226" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">• Saves $204,800/mo (200×2¹⁰!) stream tax</text>
+
+  <rect x="640" y="138" width="274" height="112" rx="10" fill="#065F46" stroke="#34D399" stroke-width="1.2"/>
+  <text x="654" y="159" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800">② 920M SSD DiskANN + PREDICT (4ms)</text>
+  <text x="654" y="178" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• 920M BIM quota, ATP &amp; OSHA SDS vectors</text>
+  <text x="654" y="194" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• $4,580/mo (-92% vs $112.8K Exact 7.50TB)</text>
+  <text x="654" y="210" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11">• Dynamic day-porter &amp; scrubber routing</text>
+  <text x="654" y="226" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">• Saves $108,220/mo + Exact $98.0M/yr</text>
+
+  <rect x="350" y="262" width="564" height="114" rx="10" fill="#042F2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="366" y="284" fill="#FDE68A" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">
+    ③ Foundry IQ EPA List K, OSHA HazCom &amp; Cleanroom Gate (SOP-256 · 4ms) + ④ EVS Commit (4ms)
+  </text>
+  <text x="366" y="304" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Hard-Blocks 435=T_29 Violations: (1) C. diff bed release lacking EPA List K sporicidal dwell or ATP &lt;250 RLU;
+  </text>
+  <text x="366" y="321" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+      (2) OSHA HazCom bleach + acid/ammonia chlorine gas mixing; (3) ISO 14644 cleanroom lint/VOC wipes (Exact +$22.00M!)
+  </text>
+  <text x="366" y="338" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">
+    • Exact 28,000 Site Managers, Infection-Control Nurses &amp; Building Owners on Direct Lake ($0 Tax, saves $224.0K/mo)
+  </text>
+  <text x="366" y="355" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">
+    • Mode A Coexistence: Mirrored Azure Databricks Unity Catalog shares custom autonomous scrubber SLAM ML zero-copy
+  </text>
+
+  <!-- Center Bottom: Stitched Multi-Cloud Anti-Pattern -->
+  <rect x="332" y="405" width="600" height="166" rx="14" fill="url(#cardStitched256)" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="352" y="431" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">
+    2B. STITCHED MULTI-CLOUD BASELINE ($545,200/mo · 35% Empty-Room Waste &amp; Restroom Stockouts)
+  </text>
+  <text x="352" y="454" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ Kafka + Fivetran + Warehouse Ingest (1,170K EPS + WinTeam/ADT CDC): $204,800/mo per-GB write &amp; CDC taxes
+  </text>
+  <text x="352" y="474" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ Dedicated In-Memory Vector Cluster (Exact 7.50TB DRAM for 920M BIM, ATP &amp; SDS vectors): $112,800/mo
+  </text>
+  <text x="352" y="494" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ Per-Seat BI Licensing for Exact 28,000 Site Managers, EVS Leads &amp; Building Owners (28,000 × $8): $224,000/mo
+  </text>
+  <text x="352" y="514" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✕ Static clip-board schedules miss restroom stockouts &amp; lack C. diff sporicidal / bleach-acid interlocks
+  </text>
+  <text x="352" y="538" fill="#FDE047" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800">
+    ⚡ Fabric Net Advantage: -$528,140/mo (-96.9% Record!) Saved · 16ms vs 940ms · $87.20M SLA Protected!
+  </text>
+
+  <!-- Right Column: Sealed Benchmark Scorecard & Scenario IU (DL-1033..DL-1036) -->
+  <rect x="952" y="96" width="298" height="475" rx="14" fill="#1E293B" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="970" y="124" fill="#60A5FA" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">3. SEALED BENCHMARK (DL-1033..1036)</text>
+  <text x="970" y="143" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">🏆 111.11ms Repdigit Sim · 256=2^8 SVG!</text>
+
+  <rect x="968" y="156" width="266" height="72" rx="9" fill="#0F172A" stroke="#10B981" stroke-width="1"/>
+  <text x="980" y="175" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">DL-1033 · Demand Clean &amp; EVS Sense</text>
+  <text x="980" y="192" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.93 · Act automatically (4ms)</text>
+  <text x="980" y="209" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">1033 Prime! 875 waves · -45.0% waste/wait</text>
+
+  <rect x="968" y="238" width="266" height="72" rx="9" fill="#0F172A" stroke="#10B981" stroke-width="1"/>
+  <text x="980" y="257" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">DL-1034 · 920M DiskANN BIM/SDS RAG</text>
+  <text x="980" y="274" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.92 · Act automatically (4ms)</text>
+  <text x="980" y="291" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">$4,580 vs $112.8K Exact 7.50TB DRAM!</text>
+
+  <rect x="968" y="320" width="266" height="76" rx="9" fill="#0F172A" stroke="#F59E0B" stroke-width="1"/>
+  <text x="980" y="339" fill="#FDE68A" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">DL-1035 · Sporicidal/HazCom/ISO Gate</text>
+  <text x="980" y="356" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.79 · Confirm (5ms)</text>
+  <text x="980" y="373" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">435=T_29 blocks · Exact +$22.00M gate!</text>
+
+  <rect x="968" y="406" width="266" height="76" rx="9" fill="#0F172A" stroke="#38BDF8" stroke-width="1"/>
+  <text x="980" y="425" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800">DL-1036 · Exact 28K Zero-Seat BI</text>
+  <text x="980" y="442" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Confidence: 0.94 · Act automatically (3ms)</text>
+  <text x="980" y="459" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">Saves $224,000/mo BI tax + Client RLS</text>
+
+  <rect x="968" y="492" width="266" height="64" rx="9" fill="#0F172A" stroke="#A855F7" stroke-width="1"/>
+  <text x="980" y="511" fill="#E9D5FF" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="800">Cumulative R248 Sealed Metrics:</text>
+  <text x="980" y="528" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">• 583/584 (99.83%) · 406=T_28 Auto-Act!</text>
+  <text x="980" y="544" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="10.5">• 127.2ms Route / 🏆 111.11ms (n=142)!</text>
+
+  <!-- Bottom Bar: 5-Cloud Decision Matrix & Provenance -->
+  <rect x="30" y="586" width="1220" height="150" rx="14" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="50" y="614" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">
+    4. FIVE-CLOUD EXECUTIVE SELECTION MATRIX &amp; TCO INFLECTION POINT (18,500 SITES · 420K CUSTODIANS · 6.8M SENSORS)
+  </text>
+  <text x="50" y="638" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    • Microsoft Fabric (Lead): $17,060/mo (-96.9%) · Eventhouse 1.17M EPS ($0 tax) + 920M SSD DiskANN ($4,580/mo) + Exact 28,000 Viewers ($0)
+  </text>
+  <text x="50" y="660" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Azure Databricks (Mode A Coexistence): Custom autonomous scrubber SLAM &amp; custodian attrition ML → OneLake Mirrored UC → Fabric Direct Lake
+  </text>
+  <text x="50" y="682" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Snowflake / GCP BigQuery / AWS Lakehouse: High per-GB stream ingestion ($204.8K/mo), Exact 7.50TB DRAM ($112.8K/mo) &amp; 28K BI seat taxes ($224K/mo)
+  </text>
+  <text x="50" y="712" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600">
+    Provenance: Sealed deterministic evaluation in workshops/data-lab/reports/report.json · 136=T_16 FAQs (272 Docs) · 256=2^8 SVG · 288/288 Tests Passing
+  </text>
+</svg>

@@ -2292,13 +2292,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 86800000)
 
 
-    def test_scenario_matrix_286_cases_and_explicit_miss(self) -> None:
+    def test_global_commercial_janitorial_building_sanitation_fabric_smart_restroom_evs_osha_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_commercial_janitorial_building_sanitation_fabric_smart_restroom_evs_osha_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["commercial_towers_airports_and_hospital_evs_sites_count"], 18500)
+        self.assertEqual(sim["telemetry"]["demand_clean_and_isolation_bed_waves_flagged_count"], 875)
+        self.assertEqual(sim["telemetry"]["restroom_dispenser_tof_scrubber_and_atp_stream_eps"], 1170000)
+        self.assertEqual(sim["telemetry"]["bim_quota_atp_heatmap_and_osha_sds_vectors_count"], 920000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_janitorial_evs_tco_saved_usd"], 528140)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_janitorial_evs_tco_savings_pct"], 96.9)
+        self.assertTrue(sim["foundry_iq_guardrail"]["epa_list_k_sporicidal_dwell_and_atp_rlu_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["osha_hazcom_bleach_acid_and_iso14644_cleanroom_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 87200000)
+
+
+    def test_scenario_matrix_288_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 580)
-        self.assertEqual(matrix["passed_scenarios"], 579)
+        self.assertEqual(matrix["total_scenarios"], 584)
+        self.assertEqual(matrix["passed_scenarios"], 583)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.83, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 128.0)
+        self.assertEqual(matrix["avg_latency_ms"], 127.2)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -3907,6 +3924,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $86.80M! SLA", by_id["DL-1032"])
 
 
+    def test_fabric_commercial_janitorial_building_sanitation_evs_2026_11_21_r248_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-1033", "DL-1034", "DL-1035", "DL-1036"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Demand-Driven Cleaning & EVS Bed-Turnover Sense Flagging 875 Waves & Cutting Waste/Wait -45.0%", by_id["DL-1033"])
+        self.assertIn("920M BIM Quota, High-Touch ATP & Multilingual OSHA SDS Vectors, -92% RAM at $4,580/mo vs $112,800/mo Exact 7.50TB DRAM", by_id["DL-1034"])
+        self.assertIn("Saving -$528.1K/mo (-$528,140/mo!) / -96.9% Record TCO! with Exact 28,000 $0 Viewer Seats", by_id["DL-1035"])
+        self.assertIn("16ms 4^2ms E2E, Protect $87.20M! SLA", by_id["DL-1036"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -3925,11 +3953,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 579)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 580)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 128.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 141)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 111.79)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 583)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 584)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 127.2)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 142)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 111.11)
 
 
 if __name__ == "__main__":
