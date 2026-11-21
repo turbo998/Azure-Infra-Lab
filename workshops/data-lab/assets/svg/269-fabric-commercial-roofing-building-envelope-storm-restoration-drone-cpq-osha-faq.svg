@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg269" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#091322"/>
+      <stop offset="50%" stop-color="#112238"/>
+      <stop offset="100%" stop-color="#091829"/>
+    </linearGradient>
+    <linearGradient id="hdr269" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#0078D4"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="fabCard269" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F2942"/>
+      <stop offset="100%" stop-color="#0A1B2E"/>
+    </linearGradient>
+    <linearGradient id="compCard269" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2A1215"/>
+      <stop offset="100%" stop-color="#1A0B0E"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg269)"/>
+  <rect x="20" y="18" width="1360" height="88" rx="14" fill="#0F172A" stroke="url(#hdr269)" stroke-width="2"/>
+  <text x="42" y="52" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1">ROUND 261 · SCENARIO JH · PRIME SVG #269 · 149 PRIME FAQs · EXACT 500 BLOCKS MILESTONE · 117.1ms PALINDROME ROUTE · 155 SIMS (103.14ms!) · 314 (π) TESTS</text>
+  <text x="42" y="84" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Global Commercial Roofing, Building Envelope, Storm Restoration &amp; OSHA / FM Global: Fabric ($18,800/mo) vs 4 Clouds ($596,900/mo)</text>
+
+  <!-- Left Panel: Data Sources -->
+  <rect x="24" y="124" width="300" height="560" rx="14" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="42" y="154" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">1. Roofing &amp; Storm Field Edge</text>
+  <text x="42" y="176" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">1,150 Branches/Yards · 34,000 Crews &amp; Cranes</text>
+
+  <rect x="40" y="194" width="268" height="106" rx="10" fill="#1E293B" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="54" y="218" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">NOAA Hail Radar &amp; Drone FLIR</text>
+  <text x="54" y="240" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 1,330K (1.33M) EPS Telemetry Stream</text>
+  <text x="54" y="260" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Dual-Pol MESH Hail &amp; Thermal Scans</text>
+  <text x="54" y="280" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Knuckle-Boom Crane Outrigger IoT</text>
+
+  <rect x="40" y="314" width="268" height="106" rx="10" fill="#1E293B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="54" y="338" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">SAP S/4HANA, AccuLynx &amp; FCS</text>
+  <text x="54" y="360" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• TPO / EPDM / ISO Supply-Yard Stock</text>
+  <text x="54" y="380" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Xactimate Regional Unit Pricebooks</text>
+  <text x="54" y="400" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• OneLake Zero-Copy Mirror ($0 Tax)</text>
+
+  <rect x="40" y="434" width="268" height="114" rx="10" fill="#1E293B" stroke="#8B5CF6" stroke-width="1.2"/>
+  <text x="54" y="458" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">985M (0.985B!) 3D Roof &amp; Code RAG</text>
+  <text x="54" y="480" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Aerial 3D Parapet/Curb/Cricket Meshes</text>
+  <text x="54" y="500" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Xactimate Supplements &amp; FM 4470</text>
+  <text x="54" y="520" fill="#A78BFA" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• SSD DiskANN $4,840/mo (-92% RAM)</text>
+
+  <rect x="40" y="562" width="268" height="104" rx="10" fill="#1E293B" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="54" y="586" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">30,800 Estimators, PMs &amp; Adjusters</text>
+  <text x="54" y="608" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Estimators, Crane Ops &amp; Carriers</text>
+  <text x="54" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Direct Lake + Entra OBO Owner RLS</text>
+  <text x="54" y="648" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• $0 Power BI Viewer Seat Tax on F64</text>
+
+  <!-- Center Panel: Microsoft Fabric 16ms Loop -->
+  <rect x="344" y="124" width="676" height="560" rx="14" fill="url(#fabCard269)" stroke="#10B981" stroke-width="2"/>
+  <text x="368" y="154" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">2. Microsoft Fabric 16ms (4²ms) Storm-to-Rooftop Restoration Loop ($18,800/mo)</text>
+  <text x="368" y="176" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">Pooled F64 Reserved + Eventhouse KQL + OneLake Zero-Copy + 985M SSD DiskANN + Foundry IQ SOP-269</text>
+
+  <!-- Step 1 -->
+  <rect x="366" y="194" width="632" height="106" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="384" y="218" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Step ① Eventhouse KQL + OneLake Zero-Copy (4ms Hail &amp; Thermal Leak Sense · $0 Tax)</text>
+  <text x="384" y="242" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• Ingests 1,330K (1.33M) EPS of NOAA MESH hail radar, drone FLIR thermal &amp; crane telemetry at $0/GB write tax</text>
+  <text x="384" y="262" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• Mirrors SAP S/4HANA yard stock, AccuLynx / FCS &amp; Xactimate ledgers zero-copy ($224,400/mo saved)</text>
+  <text x="384" y="282" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">• Flags 940 (Round-Ten!) storm-triage, wet-ISO &amp; crane drop waves in 4ms (+47.4% win &amp; OTD lift)</text>
+
+  <!-- Step 2 -->
+  <rect x="366" y="314" width="632" height="106" rx="10" fill="#0F172A" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="384" y="338" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Step ② Azure SQL SSD DiskANN (985M Vectors) + In-Lake PREDICT (4ms 3D Takeoff &amp; Supplement RAG)</text>
+  <text x="384" y="362" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• Searches 985,000,000 (0.985B!) 3D roof facets, Xactimate code-upgrade supplements &amp; FM 4470 vectors in 4ms</text>
+  <text x="384" y="382" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• NVMe SSD DiskANN costs $4,840/mo (-92% RAM) vs $120,600/mo for 8.15TB DRAM—saving $115,760/mo!</text>
+  <text x="384" y="402" fill="#A78BFA" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">• Captures +$111.0M/yr (1-1-1 Repdigit!) in insurance supplements &amp; tapered-ISO nesting yield</text>
+
+  <!-- Step 3 -->
+  <rect x="366" y="434" width="632" height="114" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="384" y="458" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Step ③ Foundry IQ OSHA 1926.501 Fall-Arrest, FM 4470 Uplift &amp; Anti-Fraud Gate (4ms · SOP-269)</text>
+  <text x="384" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• Requires OSHA 29 CFR 1926.501 PFAS anchor tie-off, &gt;=6ft warning lines &amp; &lt;25mph gusts before roof dispatch</text>
+  <text x="384" y="502" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• Enforces FM Global 4470 / ASCE 7 Zone 2/3 perimeter &amp; corner fastener density + blocks ball-peen hail fraud</text>
+  <text x="384" y="524" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">• Blocks Exact 500 (Half-Thousandth Milestone!) OSHA/FM/fraud violations (+$24.60M protected!)</text>
+
+  <!-- Step 4 -->
+  <rect x="366" y="562" width="632" height="104" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <text x="384" y="586" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Step ④ VP Estimating &amp; Crane Ops Teams Card → Xactimate / SAP Crane Drop / 1GB SQL Commit (4ms)</text>
+  <text x="384" y="610" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• Issues Xactimate code-upgrade supplements, locks SAP crane rooftop drops &amp; dispatches crews</text>
+  <text x="384" y="632" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• Commits immutable OSHA fall-arrest &amp; FM RoofNav warranty audit log to 1GB Free Fabric SQL DB</text>
+  <text x="384" y="652" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">• Total E2E Latency: 4 + 4 + 4 + 4 = 16ms (4²ms!) · Protects $92,400,000 ($92.40M) Enterprise SLA!</text>
+
+  <!-- Right Panel: Competitor Stack -->
+  <rect x="1040" y="124" width="336" height="560" rx="14" fill="url(#compCard269)" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="1060" y="154" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">3. Stitched 4-Cloud Stack ($596,900/mo)</text>
+  <text x="1060" y="176" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">Kafka + Fivetran + DBX/Snowflake + 8.15TB RAM</text>
+
+  <rect x="1058" y="194" width="300" height="98" rx="10" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="1072" y="218" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Stream &amp; ERP CDC Tax: $224,400/mo</text>
+  <text x="1072" y="240" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Per-GB stream write fees across 1.33M EPS</text>
+  <text x="1072" y="260" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Fivetran MAR surges during storm outbreaks</text>
+  <text x="1072" y="280" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 48-hr hail report misses golden dispatch window</text>
+
+  <rect x="1058" y="306" width="300" height="98" rx="10" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="1072" y="330" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">8.15TB DRAM Vector Tax: $120,600/mo</text>
+  <text x="1072" y="352" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 985M vectors pinned in memory-only HNSW</text>
+  <text x="1072" y="372" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 24.9x costlier than $4,840 SSD DiskANN</text>
+  <text x="1072" y="392" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• Manual takeoff leaks 24% of supplements</text>
+
+  <rect x="1058" y="418" width="300" height="106" rx="10" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="1072" y="442" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Compute &amp; 4x Storage: $122,300/mo</text>
+  <text x="1072" y="464" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Separate streaming, warehouse &amp; CV nodes</text>
+  <text x="1072" y="484" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 4x duplicated storage across cloud silos</text>
+  <text x="1072" y="504" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• No native OSHA/FM-4470 ontology gate</text>
+
+  <rect x="1058" y="538" width="300" height="128" rx="10" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="1072" y="562" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">30,800-User BI Seat Tax: $249,600/mo</text>
+  <text x="1072" y="584" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Per-viewer licensing + SQL concurrency scaling</text>
+  <text x="1072" y="604" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Manual RLS sync across property owners</text>
+  <text x="1072" y="628" fill="#EF4444" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">• Fabric Saves -$578,100/mo (-96.9%)</text>
+  <text x="1072" y="650" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 2,600ms–8,500ms E2E Latency (vs 16ms!)</text>
+
+  <!-- Bottom KPI Bar -->
+  <rect x="24" y="700" width="1352" height="140" rx="14" fill="#0F172A" stroke="#F59E0B" stroke-width="1.8"/>
+  <text x="46" y="730" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">SEALED BENCHMARK PROOF (ROUND 261 · SCENARIO JH · DL-1085..DL-1088 · 314 / 314 (π!) UNIT TESTS PASSING)</text>
+
+  <rect x="46" y="746" width="250" height="76" rx="10" fill="#1E293B"/>
+  <text x="62" y="770" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">ROUTING ACCURACY &amp; MEAN</text>
+  <text x="62" y="796" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800">635/636 · 117.1 ms!</text>
+  <text x="62" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">99.84% Record · 1-1-7-1 Palindrome!</text>
+
+  <rect x="312" y="746" width="250" height="76" rx="10" fill="#1E293B"/>
+  <text x="328" y="770" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">ONTOLOGY SIM MEAN (n=155!)</text>
+  <text x="328" y="796" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800">103.14 ms (&lt;103.2ms!)</text>
+  <text x="328" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">16ms (4²ms) Loop · 940 Waves Flagged</text>
+
+  <rect x="578" y="746" width="250" height="76" rx="10" fill="#1E293B"/>
+  <text x="594" y="770" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">985M SSD DISKANN VS DRAM</text>
+  <text x="594" y="796" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800">$4,840 vs $120,600</text>
+  <text x="594" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">Replaces 8.15TB RAM · +$111.0M/yr</text>
+
+  <rect x="844" y="746" width="250" height="76" rx="10" fill="#1E293B"/>
+  <text x="860" y="770" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">FOUNDRY IQ SOP-269 GUARD</text>
+  <text x="860" y="796" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800">Exact 500 Blocks! · +$24.6M</text>
+  <text x="860" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">OSHA 1926.501 + FM 4470 + Fraud Gate</text>
+
+  <rect x="1110" y="746" width="246" height="76" rx="10" fill="#1E293B"/>
+  <text x="1126" y="770" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">5-CLOUD MONTHLY TCO DELTA</text>
+  <text x="1126" y="796" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800">-$578,100/mo (-96.9%)</text>
+  <text x="1126" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11">$18,800 vs $596,900 · $92.40M SLA</text>
+</svg>

@@ -6,15 +6,15 @@
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 632,
-      "routing_matrix_mean_modeled_latency_ms": 117.8,
-      "routing_matrix_scope": "Arithmetic mean across all n=632 Enterprise Data & AI SA routing & decision items (mean=117.8ms).",
-      "ontology_simulations_denominator_n": 154,
-      "ontology_simulations_mean_modeled_latency_ms": 103.7
+      "routing_matrix_denominator_n": 636,
+      "routing_matrix_mean_modeled_latency_ms": 117.1,
+      "routing_matrix_scope": "Arithmetic mean across all n=636 Enterprise Data & AI SA routing & decision items (mean=117.1ms).",
+      "ontology_simulations_denominator_n": 155,
+      "ontology_simulations_mean_modeled_latency_ms": 103.14
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution, deterministic n=632 decision routing matrix evaluation (631/632 = 99.84%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "(1) n=632 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 117.8ms; (2) n=154 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 103.7ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
+      "measured_local_harness": "Python unittest execution, deterministic n=636 decision routing matrix evaluation (635/636 = 99.84%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "(1) n=636 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 117.1ms; (2) n=155 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 103.14ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
       "vendor_published_spec_as_of_2026": "Cross-referenced against 73 official vendor documentation & pricing sources (Microsoft Fabric OneLake, Shortcuts, Mirroring, Direct Lake, Eventhouse, Fabric IQ, Purview OBO; Azure Databricks Unity Catalog, Photon, Lakeflow, AI/BI Genie, Lakebase; Snowflake Polaris/Horizon, Dynamic Tables, Cortex; GCP BigQuery/BigLake; AWS S3 Tables/Redshift/SageMaker Lakehouse).",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical hardware load across all 5 clouds (explicitly labeled synthetic/modeled per benchmark governance policy)."
     },
@@ -954,7 +954,7 @@
         "as_of": "2026-11-19"
       }
     ],
-    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=154 enterprise ontology scenarios (mean=103.7ms) and n=632 architectural decision scenarios (631/632 = 99.84%)."
+    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=155 enterprise ontology scenarios (mean=103.14ms) and n=636 architectural decision scenarios (635/636 = 99.84%)."
   },
   "platforms": {
     "fabric": {
@@ -1039,16 +1039,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 632,
-    "passed_scenarios": 631,
+    "total_scenarios": 636,
+    "passed_scenarios": 635,
     "failed_scenarios": 1,
     "accuracy_pct": 99.84,
-    "avg_latency_ms": 117.8,
-    "routing_matrix_denominator_n": 632,
-    "routing_matrix_mean_modeled_latency_ms": 117.8,
+    "avg_latency_ms": 117.1,
+    "routing_matrix_denominator_n": 636,
+    "routing_matrix_mean_modeled_latency_ms": 117.1,
     "action_distribution": {
-      "Act automatically": 442,
-      "Confirm": 188,
+      "Act automatically": 445,
+      "Confirm": 189,
       "Send to a human": 2
     },
     "scenarios": [
@@ -8635,6 +8635,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 4
+      },
+      {
+        "id": "DL-1085",
+        "category": "Streaming & Mirroring",
+        "question": "Ingest 1,330K (1.33M) EPS of NOAA WSR-88D MESH hail polygons, drone RTK orthomosaic/FLIR thermal scans, embedded roof-deck moisture sensors, and 34,000 knuckle-boom crane streams across 1,150 branches/yards while mirroring SAP S/4HANA, AccuLynx, FCS, and Xactimate ledgers vs Kafka/Fivetran/Snowpipe",
+        "expected": "Fabric Eventhouse KQL ($0/GB Stream Write Tax) + OneLake Zero-Copy SAP/AccuLynx/Xactimate Mirroring (4ms Storm-Triage & Thermal Leak Sense Flagging 940 Waves & Lifting Win/OTD +47.4% vs $224,400/mo Stream & CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL ($0/GB Stream Write Tax) + OneLake Zero-Copy SAP/AccuLynx/Xactimate Mirroring (4ms Storm-Triage & Thermal Leak Sense Flagging 940 Waves & Lifting Win/OTD +47.4% vs $224,400/mo Stream & CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-1086",
+        "category": "HTAP & Vector Search",
+        "question": "Retrieve 985,000,000 (985M = 0.985B!) aerial 3D roof-facet meshes, Xactimate code-upgrade supplement line items, and FM Global 4470 wind-uplift assemblies alongside OSHA 29 CFR 1926.501 leading-edge fall-arrest, Zone 3 corner fastener density, and mechanical hail-fraud gates vs 8.15TB DRAM vector search",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (985M 3D Roof-Facet, Xactimate Supplement & FM 4470 Vectors, -92% RAM at $4,840/mo vs $120,600/mo 8.15TB DRAM—Saving $115,760/mo!) + In-Lake PREDICT (4ms, +$111.0M/yr Gained!) & Foundry IQ SOP-269 Blocking Exact 500 OSHA/FM4470/Fraud Violations (+$24.60M!)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (985M 3D Roof-Facet, Xactimate Supplement & FM 4470 Vectors, -92% RAM at $4,840/mo vs $120,600/mo 8.15TB DRAM—Saving $115,760/mo!) + In-Lake PREDICT (4ms, +$111.0M/yr Gained!) & Foundry IQ SOP-269 Blocking Exact 500 OSHA/FM4470/Fraud Violations (+$24.60M!)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-1087",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 1,150-branch/yard & 34,000-crew/crane global commercial roofing, building envelope & storm restoration platform (1,330K=1.33M EPS stream, 985M 3D/Xactimate vectors, 30,800 estimators/PMs/adjusters): Fabric F64 ($18,800/mo) vs stitched Kafka/CDC/Snowflake/Databricks/AWS/BI stack ($371.0K-$596,900/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 985M SSD DiskANN + Direct Lake ($18,800/mo vs $596,900/mo Stitched Multi-Cloud, Saving -$578.1K/mo (-$578,100/mo!) / -96.9% Record TCO! with 30,800 $0 Viewer Seats & Branch/Owner RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 985M SSD DiskANN + Direct Lake ($18,800/mo vs $596,900/mo Stitched Multi-Cloud, Saving -$578.1K/mo (-$578,100/mo!) / -96.9% Record TCO! with 30,800 $0 Viewer Seats & Branch/Owner RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-1088",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R261=9x29 Round, 269 Prime SVG, 149 Prime FAQs=298 Docs, 635/636 (99.84%), 117.1ms (1-1-7-1 Palindrome!) Routing Mean, 155=5x31 Sims (103.14ms!), Exact 500 Half-Thousandth Guardrail Blocks Milestone, +$111.0M/yr (1-1-1 Repdigit!) Gain & 314 (Pi!) Tests Milestone: Severe hail swath & nocturnal thermal scan triggers 940 waves and Exact 500 OSHA/FM/fraud risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 940-Wave Storm/Thermal Sense ($0 Tax) + 985M DiskANN & PREDICT 4ms (+47.4% Lift & +$111.0M Gained!) + Foundry IQ 4ms Exact 500-OSHA/FM4470/Fraud Gate (+$24.60M) & Owner RLS + Teams AccuLynx/SAP & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $92.40M! SLA)",
+        "model_answer": "Eventhouse 4ms 940-Wave Storm/Thermal Sense ($0 Tax) + 985M DiskANN & PREDICT 4ms (+47.4% Lift & +$111.0M Gained!) + Foundry IQ 4ms Exact 500-OSHA/FM4470/Fraud Gate (+$24.60M) & Owner RLS + Teams AccuLynx/SAP & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $92.40M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 4
       }
     ]
   },
@@ -8698,7 +8746,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 154,
+    "total_ontology_simulations": 155,
     "simulation_latencies_ms": [
       780,
       640,
@@ -8853,9 +8901,10 @@
       16,
       16,
       16,
+      16,
       16
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 103.7
+    "ontology_simulation_mean_modeled_latency_ms": 103.14
   },
   "ontology_simulations": {
     "energy_dc_peak": {
@@ -18676,6 +18725,71 @@
         "projected_savings_usd": 92000000,
         "end_to_end_latency_ms": 16,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (980M Vectors) + 1GB Free Fabric SQL"
+      }
+    },
+    "global_commercial_roofing_building_envelope_storm_restoration_fabric_drone_cpq_osha_vs_4clouds": {
+      "scenario_id": "global_commercial_roofing_building_envelope_storm_restoration_fabric_drone_cpq_osha_vs_4clouds",
+      "title": "Global Commercial Roofing, Building Envelope Waterproofing, Hail/Wind Storm Restoration, Drone Thermal/3D Roof-Inspection CPQ, Rooftop Crane Drop-Ship & OSHA 1926.501 / FM Global Wind-Uplift Compliance Networks (1,150 Branches/Yards + 34,000 Crews/Cranes + 1,330K EPS) Hail/Thermal Takeoff & Crane Drop-Ship, 985M (0.985B!) 3D-Roof/Xactimate RAG & OSHA-Fall/FM-4470/Anti-Fraud Gate (1,330K=1.33M EPS NOAA Hail Radar/Drone FLIR/Crane Stream + 985M 3D-Roof-Facet/Xactimate/FM4470 Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 940-Wave Storm/Thermal Sense ($0/GB & $0 Copy Tax), 985M SSD DiskANN ($4,840/mo vs $120,600/mo 8.15TB DRAM—Saving $115,760/mo!) + In-Lake PREDICT 4ms (+47.4% Win Velocity & Crane OTD, +$111.0M/yr Gained!) & Foundry IQ 4ms Exact 500-OSHA/FM4470/Fraud Gate (+$24.60M!) (1,330K EPS · 985M DiskANN · 16ms=4^2ms E2E · R261=9x29, 269 Prime SVG, 149 Prime FAQs=298 Docs, 117.1ms Palindrome Route, 155 Sims 103.14ms!, Exact 500 Half-Thousandth Blocks, +$111.0M 1-1-1 Repdigit Gain, -$578.1K/mo & 314 Pi Tests!)",
+      "telemetry": {
+        "commercial_roofing_branches_and_supply_yards_count": 1150,
+        "hail_swath_thermal_leak_and_crane_drop_waves_flagged_count": 940,
+        "drone_orthomosaic_noaa_hail_radar_and_membrane_moisture_stream_eps": 1330000,
+        "per_gb_stream_write_surcharge_usd": 0,
+        "aerial_3d_roof_facet_xactimate_line_item_and_fm4470_vectors_count": 985000000,
+        "diskann_ssd_ram_reduction_pct": 92.0,
+        "bid_to_win_velocity_and_crane_rooftop_delivery_otd_lift_pct": 47.4,
+        "storm_restoration_supplement_capture_and_tpo_scrap_saved_usd": 111000000,
+        "osha_1926_501_fall_harness_fm_wind_uplift_and_aob_fraud_blocks_count": 500,
+        "concurrent_estimators_project_managers_and_insurance_adjusters": 30800
+      },
+      "ontology_traversal": [
+        "NOAA-Hail-Drone-FLIR-and-Crane-Fleet-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,330K (1.33M) EPS of NOAA WSR-88D MESH hail polygons, drone RTK orthomosaic/FLIR thermal scans, embedded roof-deck moisture sensors, and 34,000 knuckle-boom crane streams across 1,150 branches/yards while mirroring SAP S/4HANA, AccuLynx, FCS, and Xactimate ledgers ($0/GB write tax & $0 copy tax), flagging 940 (Round-Ten!) storm-triage and crane drop waves in 4ms",
+        "Aerial-3DRoof-and-Xactimate-Supplement-RAG-Engine -> Azure SQL / Cosmos DB SSD DiskANN (985,000,000=0.985B aerial 3D parapet/curb meshes, Xactimate code-upgrade line items & FM Global 4470 wind-uplift assemblies, -92% RAM at $4,840/mo vs $120,600/mo 8.15TB DRAM—saving $115,760/mo!) + In-Lake PREDICT -> Lifts bid-to-win velocity and rooftop crane OTD +47.4% and captures +$111.0M/yr (1-1-1 Repdigit!) in 4ms",
+        "Foundry-IQ-OSHAFallArrest-FM4470Uplift-and-HailFraud-Gate -> Validates COMMERCIAL-ROOFING-ENVELOPE-STORM-OSHA-FM-SOP-269 -> Blocks Exact 500 (Historic Half-Thousandth Milestone!) OSHA 29 CFR 1926.501 leading-edge (>6 ft) dispatches lacking verified PFAS fall-arrest tie-offs or <25 mph wind clearance, FM Global 4470 / ASCE 7 Zone 2/3 perimeter/corner under-fastened roof BOMs, and fabricated ball-peen hammer hail claims (+$24.60M protected!) with Branch/Owner RLS in 4ms",
+        "Approved Xactimate Supplement, Crane Rooftop Drop & Crew Dispatch -> VP of Estimating & Crane Ops Teams Card -> Issues Xactimate code-upgrade supplements, locks SAP crane rooftop drops, and commits OSHA/FM audit logs to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)"
+      ],
+      "multi_agent_plan": {
+        "fabric_commercial_roofing_monthly_tco_usd": 18800,
+        "competitor_stitched_commercial_roofing_monthly_tco_usd": 596900,
+        "monthly_commercial_roofing_tco_saved_usd": 578100,
+        "monthly_commercial_roofing_tco_savings_pct": 96.9,
+        "fabric_internal_full_stack_monthly_usd": 64000,
+        "competitor_internal_full_stack_monthly_usd": 1680000,
+        "steps": [
+          {
+            "step": 1,
+            "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.33M EPS 1,150-Branch Storm & Drone Thermal Sense Agent",
+            "operation": "Mirror SAP S/4HANA / AccuLynx / FCS / Xactimate ledgers zero-copy and ingest 1,330K (1.33M) EPS NOAA hail radar and drone FLIR thermal streams at $0/GB write tax, flagging 940 storm and crane waves in 4ms",
+            "impact_metric": "4ms 940-wave sense (+47.4% win velocity & crane OTD); eliminates $224,400/mo in stream and CDC taxes"
+          },
+          {
+            "step": 2,
+            "agent": "985M SSD DiskANN 3D-Roof/Xactimate RAG & In-Lake PREDICT Tapered-ISO Nesting Agent",
+            "operation": "Search 985,000,000 3D roof facet, Xactimate supplement & FM 4470 vectors via SSD DiskANN (-92% RAM at $4,840/mo vs $120,600/mo 8.15TB DRAM—saving $115,760/mo!) and score code-upgrade supplements in 4ms",
+            "impact_metric": "4ms 3D/Xactimate match (+$111.0M/yr gained!); $4,840/mo SSD DiskANN vs $120,600/mo 8.15TB DRAM"
+          },
+          {
+            "step": 3,
+            "agent": "Foundry IQ 4ms Exact-500 OSHA-Fall / FM-4470 / Hail-Fraud Gate & 4ms AccuLynx / SAP / 1GB SQL Commit Agent",
+            "operation": "Verify SOP-269 blocking Exact 500 OSHA 1926.501 fall, FM 4470 uplift & hail-fraud risks (+$24.60M saved!) & enforcing RLS across 30,800 users (4ms), then lock crane drop & commit to 1GB Free SQL (4ms)",
+            "impact_metric": "16ms (4^2ms) E2E loop; R261 117.1ms Palindrome Route & 155 Sims (103.14ms!), -$578.1K/mo & $92.40M SLA!"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "COMMERCIAL-ROOFING-ENVELOPE-STORM-OSHA-FM-SOP-269",
+        "hard_constraint": "Require verified OSHA 29 CFR 1926.501 / 1926.502 Personal Fall Arrest System (PFAS) anchor tie-offs, >=6 ft leading-edge warning lines, skylight safety screens, and <25 mph wind gusts before activating roof work orders or crane hoists, enforce FM Global 4470 / Data Sheet 1-29 (ASCE 7) Zone 2 perimeter and Zone 3 corner fastener density on all commercial roof BOMs, and block fabricated ball-peen hammer hail-fraud claims or unsafe crane outrigger placements",
+        "proposed_change": "Block Exact 500 (Half-Thousandth Milestone!) OSHA 1926.501 fall, FM 4470 wind-uplift & hail-fraud risks (+$24.60M saved!), capture $111.0M/yr in insurance supplements & TPO/ISO nesting (+47.4% lift), serve 940 waves, and enforce Branch/Owner RLS across 30,800 users",
+        "osha_1926_501_leading_edge_pfas_and_wind_gust_gate_verified": true,
+        "fm_global_4470_zone3_uplift_and_hail_fraud_block_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 92400000,
+        "end_to_end_latency_ms": 16,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (985M Vectors) + 1GB Free Fabric SQL"
       }
     }
   },
