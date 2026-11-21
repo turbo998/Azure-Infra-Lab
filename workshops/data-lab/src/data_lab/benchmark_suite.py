@@ -9156,6 +9156,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (895M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_security_guarding_alarm_central_station_fabric_video_cit_vault_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Commercial Security Guarding, Alarm Monitoring Central Stations (UL 827), AI Video Verification & Cash-in-Transit (CIT) Armored Route Operations (1,650 Branches + 380K Guards / 18K CIT Trucks + 4.2M Alarm Panels) 98% False-Alarm Suppression, 900M=0.90B Video-Clip/Post-Order RAG & UL-827/CIT-Vault/BSIS Gate (1,150K=1.15M EPS SIA-DC09/ONVIF-Video/CIT-Truck Stream + 900M=30^2M Video-Verification/Post-Order Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 855-Wave Break-In/CIT Sense ($0/GB & $0 Copy Tax), 900M SSD DiskANN (Exact $4,500/mo vs $110,400/mo 7.30TB DRAM—Saving $105,900/mo!) + In-Lake PREDICT 4ms (-44.0% False-Alarm Fines/Risk & Exact +$94.0M/yr Gained) & Foundry IQ 4ms 415-UL827/CIT-Vault/BSIS Gate (+$21.20M) (1,150K EPS · 900M DiskANN · 16ms=4^2ms E2E · R244 Scenario IQ, 252 Palindrome SVG, 132=11x12 FAQs=264 Docs, 567=5-6-7 Passed/568=99.82%, 138 Sims 113.87ms, Exact $200K/mo Stream Saved & 280 Tests!)",
+            "telemetry": {
+                "security_branches_and_ul827_stations_count": 1650,
+                "verified_breakin_and_cit_route_waves_flagged_count": 855,
+                "sia_alarm_onvif_video_and_cit_stream_eps": 1150000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "video_verification_clip_and_post_order_vectors_count": 900000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "false_alarm_fine_and_cit_dwell_risk_reduction_pct": 44.0,
+                "avoided_fines_and_patrol_efficiency_gained_usd": 94000000,
+                "ul827_ecv_cit_geofence_and_bsis_firearm_blocks_count": 415,
+                "concurrent_central_dispatchers_patrol_leads_and_csos": 27200,
+            },
+            "ontology_traversal": [
+                "SIA-Alarm-ONVIF-CIT-and-Manitou-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,150K (1.15M) EPS of 4.2M SIA DC-09 / Contact ID alarm panels, 5-second ONVIF edge video verification clips, 380,000 guard NFC tour scans, and 18,000 CIT armored truck GPS/vault telemetry streams while mirroring Manitou / WinTeam / TrackTik ledgers ($0/GB write tax & $0 copy tax), suppressing 98% of weather/disarm false alarms and flagging 855 verified break-in and CIT route-dwell waves in 4ms",
+                "Video-Verification-and-CIT-Route-Optimization-Engine -> Azure SQL / Cosmos DB SSD DiskANN (900,000,000=30^2M=0.90B 5-second perimeter video embeddings, CIT route threat maps & 2.4M site Post Orders, -92% RAM at Exact $4,500/mo vs $110,400/mo 7.30TB DRAM—saving $105,900/mo!) + In-Lake PREDICT -> Cuts municipal false-alarm fines, patrol overtime, and CIT route risk -44.0% and captures Exact +$94.0M/yr in net value in 4ms",
+                "Foundry-IQ-UL827-CITVault-and-BSIS-Firearm-Gate -> Validates SECURITY-GUARDING-UL827-CIT-VAULT-BSIS-SOP-252 -> Blocks 415 unverified non-duress 911 police dispatches lacking UL 827 / TMA CS-V-01 2-zone/video confirmation or ECV call checks, off-geofence CIT armored inner-vault door unlocks, and armed-post shift assignments with expired BSIS firearm permits (+$21.20M protected) with Client-Site RLS in 4ms",
+                "Approved ASAP-to-PSAP 911 Packet & Patrol Dispatch -> UL 827 Watch Commander & CIT Ops Teams Card -> Transmits TMA ASAP-to-PSAP verified 911 packet, dispatches mobile patrol in TrackTik, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_security_cit_monthly_tco_usd": 16980,
+                "competitor_stitched_security_cit_monthly_tco_usd": 530800,
+                "monthly_security_cit_tco_saved_usd": 513820,
+                "monthly_security_cit_tco_savings_pct": 96.8,
+                "fabric_internal_full_stack_monthly_usd": 55800,
+                "competitor_internal_full_stack_monthly_usd": 1483000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.15M EPS 4.2M-Panel SIA, ONVIF Video & CIT Sense Agent",
+                        "operation": "Mirror Manitou / WinTeam / TrackTik ledgers zero-copy and ingest 1,150K (1.15M) EPS SIA/video/CIT streams across 1,650 branches and 4.2M panels at $0/GB write tax, flagging 855 break-in and CIT waves in 4ms",
+                        "impact_metric": "4ms 855-wave sense (-44.0% false-alarm fines/risk); eliminates Exact $200,000/mo ($0.20M/mo!) in stream and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "900M=0.90B SSD DiskANN Video-Clip/Post-Order RAG & In-Lake PREDICT Triage Agent",
+                        "operation": "Search 900,000,000 (30^2M = 0.90B!) 5-sec video clip, CIT threat map & site Post-Order vectors via SSD DiskANN (-92% RAM at Exact $4,500/mo vs $110,400/mo 7.30TB DRAM—saving $105,900/mo!) and match site escalation SOPs in 4ms",
+                        "impact_metric": "4ms video/Post-Order match (Exact +$94.0M/yr value gained); Exact $4,500/mo SSD DiskANN vs $110,400/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms UL-827 / CIT-Vault / BSIS-Firearm Gate & 4ms ASAP-to-PSAP / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-252 blocking 415 unverified-911, off-geofence CIT vault & expired firearm risks (+$21.20M saved) & enforcing RLS across 27,200 users (4ms), then transmit ASAP-to-PSAP & commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; R244 Scenario IQ, 567=5-6-7 Passed, 900M=0.90B Vectors, -$513.8K/mo (-96.8%) & $85.60M! SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "SECURITY-GUARDING-UL827-CIT-VAULT-BSIS-SOP-252",
+                "hard_constraint": "Block automated non-duress 911 PSAP police dispatches lacking UL 827 / TMA CS-V-01 2-zone/video verification or completed Enhanced Call Verification (ECV), hard-lock armored Cash-in-Transit (CIT) inner electromagnetic vault doors outside encrypted bank/vault GPS geofences, and block armed-post scheduling for guards with expired state BSIS firearm permits",
+                "proposed_change": "Block 415 unverified 911 dispatch, off-geofence CIT vault & expired BSIS firearm risks (+$21.20M saved), capture Exact $94.0M in avoided false-alarm fines & patrol/CIT efficiency (-44.0% reduction), serve 855 waves, and enforce RLS across 27,200 users",
+                "ul827_tma_video_ecv_and_cit_vault_geofence_verified": True,
+                "bsis_armed_guard_firearm_permit_and_client_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 85600000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (900M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -15928,6 +15994,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1017",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global commercial security guarding, UL 827 central station & CIT armored fleet network (1,650 branches, 380K guards, 18,000 CIT trucks, 4.2M alarm panels & smart safes, 1,150K=1.15M EPS SIA DC-09 signals, ONVIF edge video & CIT telemetry + Manitou/WinTeam/TrackTik ledgers) requires 4ms 98% false-alarm suppression & CIT route sense: Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs Exact $200,000/mo ($0.20M/mo!) stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL 1,150K (1.15M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms False-Alarm Suppression & CIT Route Sense Flagging 855 Waves & Cutting Fines/Risk -44.0% vs Exact $200.0K/mo Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL 1,150K (1.15M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms False-Alarm Suppression & CIT Route Sense Flagging 855 Waves & Cutting Fines/Risk -44.0% vs Exact $200.0K/mo Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1018",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 900M=30^2M=0.90B 5-second perimeter video verification embeddings, CIT route threat maps & 2.4M site Post Orders at Exact $4,500/mo) + In-Lake PREDICT ($0 egress tax) vs 7.30TB RAM OpenSearch/Mosaic vector clusters ($110,400/mo)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (900M=30^2M=0.90B Video Clip, CIT Route & Site Post-Order Vectors, -92% RAM at Exact $4,500/mo vs $110,400/mo 7.30TB DRAM—Saving $105,900/mo!, 4ms In-Lake PREDICT Capturing Exact +$94.0M/yr in Avoided Fines & Patrol Yield)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (900M=30^2M=0.90B Video Clip, CIT Route & Site Post-Order Vectors, -92% RAM at Exact $4,500/mo vs $110,400/mo 7.30TB DRAM—Saving $105,900/mo!, 4ms In-Lake PREDICT Capturing Exact +$94.0M/yr in Avoided Fines & Patrol Yield)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1019",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 1,650-branch global security guarding, UL 827 central station & 18K-truck CIT platform (1,150K=1.15M EPS stream, 900M=0.90B video/SOP vectors, 27,200 dispatchers/patrol leads/client CSOs): Fabric F64 ($16,980/mo) vs stitched Kafka/CDC/Snowflake/Databricks/AWS/BI stack ($333.6K-$530,800/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 900M SSD DiskANN + Direct Lake ($16,980/mo vs $530,800/mo Stitched Multi-Cloud, Saving -$513.8K/mo (-$513,820/mo!) / -96.8% Record TCO! with 27,200 $0 Viewer Seats & Client-Site RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 900M SSD DiskANN + Direct Lake ($16,980/mo vs $530,800/mo Stitched Multi-Cloud, Saving -$513.8K/mo (-$513,820/mo!) / -96.8% Record TCO! with 27,200 $0 Viewer Seats & Client-Site RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1020",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic R244 Scenario IQ Matching Microsoft IQ!, 252 Palindrome SVG, 132=11x12 Pronic FAQs / 264 Docs, 567=5-6-7 Consecutive Ascending Passed / 568=99.82%, 900M=30^2M=0.90B Vectors at Exact $4,500/mo, Exact $200,000/mo Stream Tax Saved, 138 Sims Sub-114ms (113.87ms!) & 280 Round-Ten Tests Milestone: Severe storm alarm flood & CIT route detour triggers 855 waves and 415 UL827/CIT/BSIS risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 855-Wave Break-In/CIT Sense ($0 Tax) + 900M DiskANN & PREDICT 4ms (-44.0% Fines/Risk & Exact +$94.0M Gained) + Foundry IQ 4ms 415-UL827/CIT-Vault/BSIS Gate (+$21.20M) & RLS + Teams ASAP-to-PSAP & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $85.60M! SLA)",
+        "model_answer": "Eventhouse 4ms 855-Wave Break-In/CIT Sense ($0 Tax) + 900M DiskANN & PREDICT 4ms (-44.0% Fines/Risk & Exact +$94.0M Gained) + Foundry IQ 4ms 415-UL827/CIT-Vault/BSIS Gate (+$21.20M) & RLS + Teams ASAP-to-PSAP & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $85.60M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -16182,7 +16296,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_outpatient_dialysis_renal_care_fabric_hemodialysis_esrd_vbc_vs_4clouds",
         "global_commercial_pest_control_iot_trap_fabric_ipm_fifra_route_vs_4clouds",
         "global_title_insurance_escrow_settlement_fabric_title_plant_wire_fraud_vs_4clouds",
-        "global_parking_garage_mobility_hub_fabric_lpr_revpas_ev_curbside_vs_4clouds"
+        "global_parking_garage_mobility_hub_fabric_lpr_revpas_ev_curbside_vs_4clouds",
+        "global_security_guarding_alarm_central_station_fabric_video_cit_vault_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
