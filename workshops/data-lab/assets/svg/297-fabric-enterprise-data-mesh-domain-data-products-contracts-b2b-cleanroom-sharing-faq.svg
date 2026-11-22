@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg297" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#060F22"/>
+      <stop offset="50%" stop-color="#0C1C3A"/>
+      <stop offset="100%" stop-color="#051226"/>
+    </linearGradient>
+    <linearGradient id="hdr297" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+    <style>
+      .t-title { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 20px; font-weight: 800; fill: #F8FAFC; }
+      .t-sub { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 12.5px; font-weight: 600; fill: #7DD3FC; }
+      .t-sec { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; font-weight: 800; fill: #E2E8F0; }
+      .t-body { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11.5px; font-weight: 500; fill: #CBD5E1; }
+      .t-mono { font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 11px; font-weight: 700; fill: #6EE7B7; }
+      .t-badge { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 800; fill: #060F22; }
+      .box { fill: #0F172A; stroke: #334155; stroke-width: 1.5; rx: 10; }
+      .box-fab { fill: #07263B; stroke: #38BDF8; stroke-width: 2; rx: 10; }
+      .box-gate { fill: #063229; stroke: #10B981; stroke-width: 2; rx: 10; }
+      .box-warn { fill: #2A1215; stroke: #EF4444; stroke-width: 1.8; rx: 10; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg297)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="18" width="1352" height="74" rx="12" fill="#0F172A" stroke="url(#hdr297)" stroke-width="2.5"/>
+  <text x="44" y="48" class="t-title">297 · Enterprise Data Mesh, Data Contracts &amp; B2B Clean-Room Sharing Architecture (R289=17² · Scenario KJ · DL-1200!)</text>
+  <text x="44" y="72" class="t-sub">🏆 Historic First Sub-90.0ms Ontology Sim (89.80ms!) · Palindrome 747/748 (99.87%) · 529=23² Auto · Historic First -97.2% TCO (-$695,980/mo!) · Exact $132K/mo DRAM Saved · 370 Tests!</text>
+
+  <!-- Left Column: Stitched Multi-Cloud Anti-Pattern -->
+  <rect x="24" y="108" width="420" height="540" class="box-warn"/>
+  <text x="42" y="136" class="t-sec" fill="#FCA5A5">❌ Stitched 14-Copy ETL &amp; B2B Sync Stack ($716,300/mo!)</text>
+  <text x="42" y="158" class="t-body">• 85 Business Domains · 3,400 Data Products · 1,400 B2B Partners</text>
+
+  <rect x="42" y="174" width="384" height="92" class="box"/>
+  <text x="56" y="198" class="t-sec" fill="#F87171">1. B2B Clean-Room &amp; Egress Copy Tax ($164,600/mo)</text>
+  <text x="56" y="218" class="t-body">• Cross-region B2B data replication &amp; per-scan clean-room fees</text>
+  <text x="56" y="236" class="t-body">• Legacy SFTP/CSV partner exports lose governance &amp; revocability</text>
+  <text x="56" y="254" class="t-mono" fill="#FCA5A5">Tax: $164.6K/mo Provider Replication &amp; Egress Charges</text>
+
+  <rect x="42" y="280" width="384" height="92" class="box"/>
+  <text x="56" y="304" class="t-sec" fill="#F87171">2. 14-Copy Inter-BU ETL Spaghetti ($108,800/mo)</text>
+  <text x="56" y="324" class="t-body">• 85 BUs copy core tables 14 times via Airflow/ADF pipelines</text>
+  <text x="56" y="342" class="t-body">• Unannounced upstream schema drops break 40 BI dashboards</text>
+  <text x="56" y="360" class="t-mono" fill="#FCA5A5">Chaos: $108.8K/mo Redundant ETL &amp; Broken Downstream SLAs</text>
+
+  <rect x="42" y="386" width="384" height="92" class="box"/>
+  <text x="56" y="410" class="t-sec" fill="#F87171">3. 9.55 TB DRAM Schema/Lineage Silo ($137,400/mo)</text>
+  <text x="56" y="430" class="t-body">• 1.125B data-contract schema &amp; column-lineage vectors in RAM</text>
+  <text x="56" y="448" class="t-body">• Overpays Exact $132,000/mo vs NVMe SSD DiskANN ($5,400/mo)</text>
+  <text x="56" y="466" class="t-mono" fill="#FCA5A5">Blindspot: Zero Automated Blast-Radius Impact Analysis</text>
+
+  <rect x="42" y="492" width="384" height="136" class="box"/>
+  <text x="56" y="516" class="t-sec" fill="#F87171">4. 36,400 Users BI Tax &amp; Privacy Risk ($305,500/mo)</text>
+  <text x="56" y="536" class="t-body">• 29,700 active viewers × $10/seat = $297,000/mo + $8.5K DB</text>
+  <text x="56" y="554" class="t-body">• B2B partner differencing queries re-identify small cohorts (k&lt;25)</text>
+  <text x="56" y="572" class="t-body">• Semantic definitions lost when tables cross tenant boundaries</text>
+  <text x="56" y="596" class="t-mono" fill="#FCA5A5">Total Stitched TCO: $716,300/mo | High Schema/PII Risk</text>
+
+  <!-- Right Column: Microsoft Fabric 16ms Data Mesh & B2B Clean-Room Architecture -->
+  <rect x="464" y="108" width="912" height="540" class="box-fab"/>
+  <text x="484" y="136" class="t-sec" fill="#38BDF8">✅ Microsoft Fabric Zero-Copy Data Mesh, Data Contracts &amp; OneLake IQ Sharing ($20,320/mo · Saves -$695,980/mo!)</text>
+  <text x="484" y="158" class="t-body">Pooled F64 ($14,920/mo) + Exact $5,400/mo 1.125B SSD DiskANN + $0 Copy/Sharing Tax + $0 BI Seats for 36,400 Users</text>
+
+  <!-- Step 1 -->
+  <rect x="484" y="174" width="430" height="145" class="box"/>
+  <rect x="498" y="186" width="92" height="22" rx="6" fill="#0EA5E9"/>
+  <text x="510" y="201" class="t-badge">STEP 1 · 4 ms</text>
+  <text x="600" y="202" class="t-sec" fill="#7DD3FC">Fabric Domains + OneLake IQ Sharing</text>
+  <text x="498" y="226" class="t-body">• 85 federated Domains &amp; 3,400 Certified Data Products with</text>
+  <text x="498" y="244" class="t-body">  in-place cross-BU &amp; B2B Shortcuts ($0 copy/replication tax)</text>
+  <text x="498" y="262" class="t-body">• Ingests 1,630K (1.63M) EPS contract &amp; clean-room probes</text>
+  <text x="498" y="284" class="t-mono">Flags 1,080 (3×360°) Schema/SLA Waves | Saves $273.4K/mo</text>
+
+  <!-- Step 2 -->
+  <rect x="928" y="174" width="428" height="145" class="box"/>
+  <rect x="942" y="186" width="92" height="22" rx="6" fill="#10B981"/>
+  <text x="954" y="201" class="t-badge">STEP 2 · 4 ms</text>
+  <text x="1044" y="202" class="t-sec" fill="#6EE7B7">1.125B SSD DiskANN (Exact $5,400/mo!)</text>
+  <text x="942" y="226" class="t-body">• Shares tables + .rdf Ontology + .md Agent instructions in place</text>
+  <text x="942" y="244" class="t-body">• 1,125,000,000 (1.125B!) schema contract, column blast-radius</text>
+  <text x="942" y="262" class="t-body">  lineage &amp; clean-room privacy vectors on NVMe SSD DiskANN</text>
+  <text x="942" y="284" class="t-mono">Exact $5,400/mo SSD (Saves Exact $132K/mo!) | Prime +$139M/yr!</text>
+
+  <!-- Step 3 -->
+  <rect x="484" y="335" width="430" height="150" class="box-gate"/>
+  <rect x="498" y="347" width="92" height="22" rx="6" fill="#F59E0B"/>
+  <text x="510" y="362" class="t-badge">STEP 3 · 4 ms</text>
+  <text x="600" y="363" class="t-sec" fill="#FDE68A">Foundry IQ Contract &amp; Clean-Room Gate (SOP-297)</text>
+  <text x="498" y="387" class="t-body">• Blocks 640 (10×8²!) Mesh &amp; Clean-Room Violations (+$30.20M):</text>
+  <text x="498" y="405" class="t-body">  1. Breaking producer schema drops/type mutations in CI/CD</text>
+  <text x="498" y="423" class="t-body">  2. B2B clean-room queries with k-anonymity &lt; 25 or differencing</text>
+  <text x="498" y="441" class="t-body">  3. Unauthorized raw CSV exports (instant shortcut revocation)</text>
+  <text x="498" y="465" class="t-mono">Purview Labels &amp; Entra OBO RLS Across 36,400 Users</text>
+
+  <!-- Step 4 -->
+  <rect x="928" y="335" width="428" height="150" class="box"/>
+  <rect x="942" y="347" width="92" height="22" rx="6" fill="#A855F7"/>
+  <text x="954" y="362" class="t-badge">STEP 4 · 4 ms</text>
+  <text x="1044" y="363" class="t-sec" fill="#E9D5FF">Zero-Copy Shortcut, Clean-Room BI &amp; 1GB SQL</text>
+  <text x="942" y="387" class="t-body">• Activates zero-copy cross-domain &amp; B2B partner Shortcuts</text>
+  <text x="942" y="405" class="t-body">• Serves 36,400 internal/partner users via $0 Direct Lake BI</text>
+  <text x="942" y="423" class="t-body">• Commits data-contract SLA ledger to 1GB Free Fabric SQL</text>
+  <text x="942" y="465" class="t-mono">4+4+4+4 = 16ms (4²ms) E2E | Protects $103.60M SLA!</text>
+
+  <!-- 5-Cloud TCO Bar Comparison inside Right Box -->
+  <rect x="484" y="500" width="872" height="132" class="box"/>
+  <text x="502" y="524" class="t-sec">📊 5-Cloud Enterprise Data Mesh &amp; B2B Clean-Room Monthly TCO (85 Domains · 3,400 Products · 36,400 Users)</text>
+  <text x="502" y="548" class="t-mono" fill="#10B981">Microsoft Fabric (F64 + DiskANN): $20,320/mo  [██] 🏆 Historic First -97.2% TCO Saved (-$695,980/mo!)</text>
+  <text x="502" y="568" class="t-body">Azure Databricks UC + Sharing:    $421,000/mo [████████████████████████████] ($37,400/mo in OneLake Coexistence)</text>
+  <text x="502" y="588" class="t-body">Snowflake Horizon + Clean Rooms:  $498,000/mo [█████████████████████████████████]</text>
+  <text x="502" y="608" class="t-body">Stitched 14-Copy ETL + B2B Sync:  $716,300/mo [████████████████████████████████████████████████]</text>
+
+  <!-- Bottom KPI Milestone Strip -->
+  <rect x="24" y="664" width="1352" height="176" rx="12" fill="#0F172A" stroke="#38BDF8" stroke-width="2"/>
+  <text x="44" y="694" class="t-title" fill="#7DD3FC">🏆 Round 289 = 17² (Scenario KJ · DL-1197..DL-1200 · First Sub-90.0ms Ontology Sim at 89.80ms!) Milestones</text>
+
+  <rect x="44" y="710" width="315" height="114" class="box"/>
+  <text x="60" y="734" class="t-sec" fill="#38BDF8">🎯 Palindrome 747 &amp; 529=23² Auto</text>
+  <text x="60" y="756" class="t-body">• Palindrome 747/748 (99.87% Record!)</text>
+  <text x="60" y="776" class="t-body">• 100.2ms Route (74,920 / 748)</text>
+  <text x="60" y="796" class="t-mono">529=23² Square Auto · 217 Confirm</text>
+
+  <rect x="375" y="710" width="315" height="114" class="box"/>
+  <text x="391" y="734" class="t-sec" fill="#6EE7B7">⚡ Historic Sub-90ms Sim (89.80ms!)</text>
+  <text x="391" y="756" class="t-body">• First Sub-90.0ms: 89.80ms (16,434/183!)</text>
+  <text x="391" y="776" class="t-body">• 1,630K (1.63M) EPS · 1,080=3×360° Waves</text>
+  <text x="391" y="796" class="t-mono">Historic DL-1200 · $103.60M SLA!</text>
+
+  <rect x="706" y="710" width="315" height="114" class="box"/>
+  <text x="722" y="734" class="t-sec" fill="#FDE68A">💎 Exact $132K DRAM &amp; -97.2% TCO!</text>
+  <text x="722" y="756" class="t-body">• 1.125B Vectors: Saves Exact $132,000/mo!</text>
+  <text x="722" y="776" class="t-body">• First -97.2% TCO (-$695,980/mo Saved!)</text>
+  <text x="722" y="796" class="t-mono">Prime +$139.0M/yr · Exact $5,400/mo SSD</text>
+
+  <rect x="1037" y="710" width="319" height="114" class="box"/>
+  <text x="1053" y="734" class="t-sec" fill="#C4B5FD">🛡️ 640=10×8² Blocks &amp; 370 Tests</text>
+  <text x="1053" y="756" class="t-body">• 640 Schema/k&lt;25/Export Blocks (+$30.20M)</text>
+  <text x="1053" y="776" class="t-body">• 177 FAQs (354 Docs) · 297 SVG · R289=17²</text>
+  <text x="1053" y="796" class="t-mono">36,400 Users · Round-Ten 370/370 Tests!</text>
+</svg>
