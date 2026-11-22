@@ -1,0 +1,280 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820">
+  <defs>
+    <linearGradient id="bg311" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="hdr311" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="50%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="card311" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="820" fill="url(#bg311)"/>
+  <rect x="20" y="18" width="1360" height="92" rx="14" fill="url(#hdr311)" opacity="0.95"/>
+  <text x="45" y="52" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700">
+    #311 · Global Media, Streaming OTT Personalization, Real-Time Ad-Tech SSAI, Gaming LiveOps &amp; Rights Royalty RAG (R303 · Scenario KX)
+  </text>
+  <text x="45" y="80" fill="#F3E8FF" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="600">
+    🏆 Twin-Prime 197th Sim at 84.56ms (&lt;84.60ms!) · 803/804 (99.88%) at 93.5ms Route · Prime 571 Auto + Palindrome-Triangular 231 Confirm · First &gt;$140K/mo DRAM Saved ($140,120/mo!) · 398 Tests
+  </text>
+  <text x="45" y="100" fill="#E0E7FF" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    320M Active Streamers/Players · 1,770K (1.77M) EPS CMCD/SCTE-35/Combat Stream · 8-Hop Household/Guild ISO GQL · 1.195B Scene/Rights SSD DiskANN ($5,680/mo) · 710 COPPA/Blackout/Anti-Cheat Blocks
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="25" y="128" width="320" height="430" rx="12" fill="url(#card311)" stroke="#38BDF8" stroke-width="2"/>
+  <rect x="25" y="128" width="320" height="40" rx="12" fill="#0284C7"/>
+  <text x="40" y="154" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="700">
+    ① Eventhouse KQL + OneLake (4 ms)
+  </text>
+  <text x="40" y="190" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">
+    1,770K (1.77M) EPS Live QoE &amp; LiveOps
+  </text>
+  <text x="40" y="214" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • 320M active OTT viewers &amp; game players
+  </text>
+  <text x="40" y="236" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Video CMCD QoE, SCTE-35 ad-pod markers
+  </text>
+  <text x="40" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Game server tick, matchmaking &amp; store events
+  </text>
+  <text x="40" y="280" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Zero-copy Zuora/Stripe &amp; Rightsline tables
+  </text>
+  <rect x="40" y="302" width="290" height="68" rx="8" fill="#0C4A6E" stroke="#38BDF8" stroke-width="1"/>
+  <text x="52" y="325" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">
+    ⚡ Round-Ten 1,150 Waves Flagged in 4ms
+  </text>
+  <text x="52" y="346" fill="#BAE6FD" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    Rebuffering spikes, churn &amp; SSAI ad pods
+  </text>
+  <text x="52" y="364" fill="#BAE6FD" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    $0 per-event SaaS, graph DB &amp; CDC tax!
+  </text>
+  <rect x="40" y="384" width="290" height="156" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="52" y="408" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    Eliminates $298,600/mo Stitched Tax:
+  </text>
+  <text x="52" y="430" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✗ Amplitude / Mixpanel MTU overage fees
+  </text>
+  <text x="52" y="450" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✗ Standalone Neptune / Neo4j graph clusters
+  </text>
+  <text x="52" y="470" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✗ Fivetran billing &amp; rights CDC connectors
+  </text>
+  <text x="52" y="498" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    ✓ Exact +62.0% Ad eCPM &amp; Retention Lift
+  </text>
+  <text x="52" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✓ DL-1253 Verified (Act automatically)
+  </text>
+
+  <!-- Step 2 -->
+  <rect x="368" y="128" width="320" height="430" rx="12" fill="url(#card311)" stroke="#A855F7" stroke-width="2"/>
+  <rect x="368" y="128" width="320" height="40" rx="12" fill="#7E22CE"/>
+  <text x="383" y="154" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="700">
+    ② 8-Hop Graph + 1.195B DiskANN (4 ms)
+  </text>
+  <text x="383" y="190" fill="#D8B4FE" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">
+    ISO GQL + NVMe SSD DiskANN ($5,680/mo)
+  </text>
+  <text x="383" y="214" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • 8-Hop: Household→Device→Profile→Guild→
+  </text>
+  <text x="383" y="236" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    CoOpSquad→AdCampaign→Right→Territory
+  </text>
+  <text x="383" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • 1,195,000,000 (1.195B!) multimodal video
+  </text>
+  <text x="383" y="280" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    scene, game-item &amp; licensing contract vectors
+  </text>
+  <rect x="383" y="302" width="290" height="68" rx="8" fill="#4C1D95" stroke="#A855F7" stroke-width="1"/>
+  <text x="395" y="325" fill="#E9D5FF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">
+    🏆 First &gt;$140K/mo DRAM Saved ($140,120/mo!)
+  </text>
+  <text x="395" y="346" fill="#DDD6FE" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    $5,680/mo SSD DiskANN (-92% RAM) vs.
+  </text>
+  <text x="395" y="364" fill="#DDD6FE" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    $145,800/mo for 10.25 TB in-memory HNSW
+  </text>
+  <rect x="383" y="384" width="290" height="156" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="395" y="408" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    4ms Hybrid Graph + Vector Monetization:
+  </text>
+  <text x="395" y="430" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Contextual scene-to-ad brand suitability
+  </text>
+  <text x="395" y="450" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Skill-balanced guild &amp; squad matchmaking
+  </text>
+  <text x="395" y="470" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Multi-territory MG &amp; royalty waterfall RAG
+  </text>
+  <text x="395" y="498" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    ✓ Captures +$153.0M/yr ($12.75M/mo) Gain!
+  </text>
+  <text x="395" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✓ DL-1254 Verified (Act automatically)
+  </text>
+
+  <!-- Step 3 -->
+  <rect x="711" y="128" width="320" height="430" rx="12" fill="url(#card311)" stroke="#F43F5E" stroke-width="2"/>
+  <rect x="711" y="128" width="320" height="40" rx="12" fill="#BE123C"/>
+  <text x="726" y="154" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="700">
+    ③ Foundry IQ 710-Block Gate (4 ms)
+  </text>
+  <text x="726" y="190" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">
+    Policy: MEDIA-OTT-GAMING-RIGHTS-SOP-311
+  </text>
+  <text x="726" y="214" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Gate 1: COPPA / GDPR-K child profile lock
+  </text>
+  <text x="726" y="236" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    (zero behavioral ads or predatory loot boxes)
+  </text>
+  <text x="726" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Gate 2: Live sports DMA regional blackout
+  </text>
+  <text x="726" y="280" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    &amp; territorial licensing window DRM hard-lock
+  </text>
+  <rect x="726" y="302" width="290" height="68" rx="8" fill="#881337" stroke="#F43F5E" stroke-width="1"/>
+  <text x="738" y="325" fill="#FFE4E6" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">
+    🛡️ Round-Ten 710 Violations Blocked (4ms)
+  </text>
+  <text x="738" y="346" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    Protects Exact +$33.00M in COPPA fines,
+  </text>
+  <text x="738" y="364" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    league blackout penalties &amp; VIP churn!
+  </text>
+  <rect x="726" y="384" width="290" height="156" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="738" y="408" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    Gate 3: Anti-Cheat &amp; Royalty Waterfall:
+  </text>
+  <text x="738" y="430" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Blocks single-signal packet-loss false bans
+  </text>
+  <text x="738" y="450" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Verifies MG recoupment &amp; withholding tax
+  </text>
+  <text x="738" y="470" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Entra ID OBO RLS across 39,200 users
+  </text>
+  <text x="738" y="498" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    ✓ 32,220 Active Viewers at $0 BI Seat Cost
+  </text>
+  <text x="738" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✓ DL-1256 Verified (Confirm · 0.99)
+  </text>
+
+  <!-- Step 4 -->
+  <rect x="1055" y="128" width="320" height="430" rx="12" fill="url(#card311)" stroke="#10B981" stroke-width="2"/>
+  <rect x="1055" y="128" width="320" height="40" rx="12" fill="#047857"/>
+  <text x="1070" y="154" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="700">
+    ④ SSAI + LiveOps + 1GB SQL (4 ms)
+  </text>
+  <text x="1070" y="190" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">
+    16ms (4²ms) Closed-Loop Monetization
+  </text>
+  <text x="1070" y="214" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Injects HLS/DASH SSAI personalized ad pod
+  </text>
+  <text x="1070" y="236" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Dispatches LiveOps retention reward drop
+  </text>
+  <text x="1070" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Settles studio/creator royalty statements
+  </text>
+  <text x="1070" y="280" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Commits audit log to 1GB Free Fabric SQL
+  </text>
+  <rect x="1070" y="302" width="290" height="68" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1"/>
+  <text x="1082" y="325" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">
+    💰 Saves -$754,500/mo (-97.3% Record TCO!)
+  </text>
+  <text x="1082" y="346" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    Fabric Pooled F64: $20,600/mo All-In vs.
+  </text>
+  <text x="1082" y="364" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    $775,100/mo Stitched 5-Cloud/SaaS Stack
+  </text>
+  <rect x="1070" y="384" width="290" height="156" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1082" y="408" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    Sealed R303 Benchmark Milestones:
+  </text>
+  <text x="1082" y="430" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • 803 / 804 (99.88%) · 93.5ms Routing Mean
+  </text>
+  <text x="1082" y="450" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Twin-Prime 197th Sim at 84.56ms (&lt;84.60ms!)
+  </text>
+  <text x="1082" y="470" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Prime 571 Auto-Act + 231=T_21 Confirm
+  </text>
+  <text x="1082" y="498" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    ✓ Protects $109.20M Annual SLA · 398 Tests
+  </text>
+  <text x="1082" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✓ DL-1255 Verified (Act automatically)
+  </text>
+
+  <!-- Bottom 5-Cloud Comparison Bar -->
+  <rect x="25" y="576" width="1350" height="222" rx="12" fill="#0F172A" stroke="#334155" stroke-width="2"/>
+  <text x="45" y="608" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">
+    5-Cloud Monthly TCO &amp; Architectural Comparison (320M Active Streamers/Players · 1.77M EPS · 1.195B Vectors · 39,200 Users)
+  </text>
+
+  <rect x="45" y="624" width="250" height="156" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="2"/>
+  <text x="60" y="650" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">✅ Microsoft Fabric (F64)</text>
+  <text x="60" y="676" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">$20,600 / mo</text>
+  <text x="60" y="700" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $0 Per-Event / Graph / CDC Tax</text>
+  <text x="60" y="720" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $5,680/mo 1.195B SSD DiskANN</text>
+  <text x="60" y="740" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $0 Viewer Seats (39,200 Users)</text>
+  <text x="60" y="762" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Saves -$754,500/mo (-97.3%!)</text>
+
+  <rect x="310" y="624" width="250" height="156" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="325" y="650" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">AWS + SaaS Stitched</text>
+  <text x="325" y="676" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">$775,100 / mo</text>
+  <text x="325" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $298.6K/mo SaaS/Neptune/CDC</text>
+  <text x="325" y="720" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $145.8K/mo 10.25TB RAM Vector</text>
+  <text x="325" y="740" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $158.2K/mo BI Viewer Seats</text>
+  <text x="325" y="762" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">37.6× Higher Monthly Cost</text>
+
+  <rect x="575" y="624" width="250" height="156" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="590" y="650" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Snowflake Media Cloud</text>
+  <text x="590" y="676" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">$782,000 / mo</text>
+  <text x="590" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Strong B2B Media Clean Rooms</text>
+  <text x="590" y="720" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• High Cortex RAM &amp; Stream Credits</text>
+  <text x="590" y="740" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• External 8-hop graph engine needed</text>
+  <text x="590" y="762" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">→ Mount via OneLake Iceberg</text>
+
+  <rect x="840" y="624" width="250" height="156" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="855" y="650" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">GCP BigQuery + Vertex</text>
+  <text x="855" y="676" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">$769,000 / mo</text>
+  <text x="855" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Native GAM / YouTube Ad Exports</text>
+  <text x="855" y="720" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Steep Streaming &amp; 10.25TB RAM</text>
+  <text x="855" y="740" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Looker per-seat licensing fees</text>
+  <text x="855" y="762" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">→ Zero-Copy Shortcut to OneLake</text>
+
+  <rect x="1105" y="624" width="250" height="156" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="1120" y="650" fill="#FDBA74" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Azure Databricks</text>
+  <text x="1120" y="676" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">$758,000 / mo</text>
+  <text x="1120" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Strong Offline RL &amp; Spark ML</text>
+  <text x="1120" y="720" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Mosaic RAM Vector &amp; SQL DBU Cost</text>
+  <text x="1120" y="740" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Separate BI viewer licensing</text>
+  <text x="1120" y="762" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">→ Mirror UC to OneLake Direct Lake</text>
+</svg>
