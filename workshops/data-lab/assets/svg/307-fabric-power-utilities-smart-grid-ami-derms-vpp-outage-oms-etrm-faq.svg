@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg307" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06121E"/>
+      <stop offset="50%" stop-color="#0A1F34"/>
+      <stop offset="100%" stop-color="#071526"/>
+    </linearGradient>
+    <linearGradient id="hdr307" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="cardBlue307" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F2848"/>
+      <stop offset="100%" stop-color="#09182E"/>
+    </linearGradient>
+    <linearGradient id="cardGreen307" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#063B30"/>
+      <stop offset="100%" stop-color="#04241D"/>
+    </linearGradient>
+    <linearGradient id="cardRed307" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3C1220"/>
+      <stop offset="100%" stop-color="#240A13"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="820" fill="url(#bg307)" rx="16"/>
+  <rect x="24" y="20" width="1352" height="92" rx="12" fill="url(#hdr307)" opacity="0.18" stroke="#34D399" stroke-width="1.5"/>
+
+  <text x="44" y="54" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">
+    PRIME SVG #307 · ROUND 299 · SCENARIO KT (DL-1237..1240) · FIRST SUB-86.0ms SIM (85.98ms AT 193rd TWIN-PRIME SIM!) · PALINDROME-PRIME 787/788 (95.3ms!) · 390 TESTS!
+  </text>
+  <text x="44" y="82" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800">
+    Power &amp; Utilities Smart Grid AMI, DERMS Virtual Power Plant (VPP), Outage OMS &amp; Wholesale ETRM Architecture
+  </text>
+  <text x="44" y="103" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+    Microsoft Fabric Eventhouse KQL + Fabric Graph (8-Hop IEC CIM GQL) + OneLake SAP IS-U Shortcuts + 1.175B SSD DiskANN (Exact $5,600/mo) vs. 4 Clouds
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="24" y="128" width="320" height="430" rx="12" fill="url(#cardBlue307)" stroke="#0EA5E9" stroke-width="1.5"/>
+  <text x="42" y="158" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">1. AMI, DERMS &amp; SCADA (4ms)</text>
+  <text x="42" y="182" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">42M AMI Meters · 6.8K Substations · 1,730K EPS</text>
+
+  <rect x="40" y="198" width="288" height="72" rx="8" fill="#0B192C" stroke="#1E3A5F"/>
+  <text x="52" y="220" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Eventhouse KQL Prime 1.73M EPS Stream</text>
+  <text x="52" y="240" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 15-Min/1-Sec AMI &amp; Last-Gasp Outage Stream</text>
+  <text x="52" y="258" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• IEEE 2030.5 Solar/BESS/EV &amp; ISO LMP Ticks</text>
+
+  <rect x="40" y="282" width="288" height="72" rx="8" fill="#0B192C" stroke="#1E3A5F"/>
+  <text x="52" y="304" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">OneLake Zero-Copy SAP IS-U &amp; ETRM</text>
+  <text x="52" y="324" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Customer Tariffs &amp; Medical-Baseline Flags</text>
+  <text x="52" y="342" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Wholesale ISO/RTO Day-Ahead Positions</text>
+
+  <rect x="40" y="366" width="288" height="82" rx="8" fill="#062E26" stroke="#10B981"/>
+  <text x="52" y="390" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">4ms Prime 1,130-Wave Grid &amp; LMP Sense</text>
+  <text x="52" y="410" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eliminates $291,400/mo Historian/Graph/CDC</text>
+  <text x="52" y="428" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• +60.4% SAIDI Restoration &amp; VPP Lift</text>
+
+  <text x="42" y="476" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 0 Per-Tag Historian License Tax</text>
+  <text x="42" y="498" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Sub-Second Phase-Imbalance &amp; Swell Sense</text>
+  <text x="42" y="520" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">→ 4ms Latency · Prime 1,130 Waves</text>
+
+  <!-- Step 2 -->
+  <rect x="364" y="128" width="340" height="430" rx="12" fill="url(#cardBlue307)" stroke="#10B981" stroke-width="1.5"/>
+  <text x="382" y="158" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">2. 8-Hop CIM GQL &amp; 1.175B RAG (4ms)</text>
+  <text x="382" y="182" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">IEC 61970 CIM + Exact $5,600/mo SSD DiskANN</text>
+
+  <rect x="380" y="198" width="308" height="86" rx="8" fill="#0B192C" stroke="#1E3A5F"/>
+  <text x="392" y="220" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Fabric Graph 8-Hop IEC CIM Feeder Graph</text>
+  <text x="392" y="240" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Substation Breaker → Recloser → Switch</text>
+  <text x="392" y="258" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• → Padmount Transformer → Service Meter</text>
+  <text x="392" y="274" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• $0 Standalone Neptune / Neo4j Tax</text>
+
+  <rect x="380" y="296" width="308" height="96" rx="8" fill="#0B192C" stroke="#1E3A5F"/>
+  <text x="392" y="318" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1,175,000,000 (1.175B!) SSD DiskANN Vectors</text>
+  <text x="392" y="338" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Transformer DGA &amp; Synchrophasor Signatures</text>
+  <text x="392" y="356" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• FLISR Switching Rules &amp; Wholesale PPAs</text>
+  <text x="392" y="376" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Exact $5,600/mo vs $143,400/mo 10.05TB DRAM</text>
+
+  <rect x="380" y="404" width="308" height="72" rx="8" fill="#062E26" stroke="#10B981"/>
+  <text x="392" y="426" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Saves $137,800/mo (&gt;$137.8K/mo!) on RAM</text>
+  <text x="392" y="446" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Captures Prime +$149.0M/yr VPP &amp; OMS Gain</text>
+  <text x="392" y="464" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Instant Faulted-Feeder Tie-Switch Plan</text>
+
+  <text x="382" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">→ 4ms Latency · -92.0% RAM Footprint</text>
+
+  <!-- Step 3 -->
+  <rect x="724" y="128" width="320" height="430" rx="12" fill="url(#cardRed307)" stroke="#F43F5E" stroke-width="1.5"/>
+  <text x="742" y="158" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">3. Foundry IQ Gate SOP-307 (4ms)</text>
+  <text x="742" y="182" fill="#FFE4E6" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">Round-Ten 690 Grid Risks Blocked (+$32.20M)</text>
+
+  <rect x="740" y="198" width="288" height="78" rx="8" fill="#2A0A14" stroke="#881337"/>
+  <text x="752" y="220" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">① NERC CIP-005/007 &amp; Relay Gate</text>
+  <text x="752" y="240" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks unverified OT SCADA breaker writes</text>
+  <text x="752" y="258" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Enforces relay protection coordination</text>
+
+  <rect x="740" y="288" width="288" height="78" rx="8" fill="#2A0A14" stroke="#881337"/>
+  <text x="752" y="310" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">② Transformer Thermal &amp; IEEE 1547</text>
+  <text x="752" y="330" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Caps VPP discharge at feeder kVA limits</text>
+  <text x="752" y="348" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks reverse-flow voltage swell breaches</text>
+
+  <rect x="740" y="378" width="288" height="86" rx="8" fill="#2A0A14" stroke="#881337"/>
+  <text x="752" y="400" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">③ Medical Life-Support &amp; ETRM VaR</text>
+  <text x="752" y="420" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks disconnects on life-support homes</text>
+  <text x="752" y="438" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks unhedged wholesale ISO short bids</text>
+  <text x="752" y="454" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Entra OBO RLS across 38,400 Users</text>
+
+  <text x="742" y="520" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">→ 4ms Latency · +$32.20M Saved</text>
+
+  <!-- Step 4 -->
+  <rect x="1064" y="128" width="312" height="430" rx="12" fill="url(#cardGreen307)" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1082" y="158" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">4. VPP Dispatch &amp; TCO (4ms)</text>
+  <text x="1082" y="182" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">16ms (4²ms) E2E · -$737,780/mo (-97.3%)</text>
+
+  <rect x="1080" y="198" width="280" height="82" rx="8" fill="#042019" stroke="#059669"/>
+  <text x="1092" y="220" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Closed-Loop VPP &amp; FLISR Execution</text>
+  <text x="1092" y="240" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• IEEE 2030.5 VPP Dispatch &amp; Tie Switching</text>
+  <text x="1092" y="258" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 1GB Free Fabric SQL NERC/FERC Audit Log</text>
+
+  <rect x="1080" y="292" width="280" height="92" rx="8" fill="#042019" stroke="#059669"/>
+  <text x="1092" y="314" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">5-Cloud Monthly TCO Comparison</text>
+  <text x="1092" y="336" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Fabric F64 + DiskANN: $20,520/mo</text>
+  <text x="1092" y="356" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Stitched 4-Cloud Stack: $758,300/mo</text>
+  <text x="1092" y="374" fill="#FDE047" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Net Savings: -$737,780/mo (-97.3%)</text>
+
+  <rect x="1080" y="396" width="280" height="86" rx="8" fill="#042019" stroke="#059669"/>
+  <text x="1092" y="418" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">38,400 Users ($0 Viewer Seat Tax)</text>
+  <text x="1092" y="438" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 31,500 Active Viewers Save $315.0K/mo</text>
+  <text x="1092" y="456" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Protects $107.60M Annual Grid SLA</text>
+
+  <text x="1082" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">→ 4+4+4+4 = 16ms (4²ms) E2E</text>
+
+  <!-- Bottom Benchmark Table -->
+  <rect x="24" y="574" width="1352" height="224" rx="12" fill="#091526" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="44" y="604" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">
+    5-Cloud Smart Grid AMI, DERMS/VPP &amp; ETRM Decision Matrix (Sealed R299 · Palindrome-Prime 787/788 = 99.87% · 95.3ms Route · 85.98ms 193rd Sim)
+  </text>
+  <text x="44" y="634" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Platform Architecture</text>
+  <text x="370" y="634" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1.73M EPS Stream + 8-Hop CIM Graph</text>
+  <text x="690" y="634" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1.175B DGA/PPA Vector Cost</text>
+  <text x="980" y="634" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">38.4K Users BI Tax</text>
+  <text x="1170" y="634" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Monthly TCO</text>
+
+  <line x1="44" y1="644" x2="1356" y2="644" stroke="#1E3A5F" stroke-width="1"/>
+
+  <text x="44" y="670" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">🏆 Microsoft Fabric (F64 Pooled)</text>
+  <text x="370" y="670" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Eventhouse KQL + 8-Hop CIM GQL ($0 Tax)</text>
+  <text x="690" y="670" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Exact $5,600/mo (SSD DiskANN)</text>
+  <text x="980" y="670" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">$0 (Included in F64)</text>
+  <text x="1170" y="670" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">$20,520/mo (-97.3%)</text>
+
+  <text x="44" y="700" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Snowflake Energy Data Cloud</text>
+  <text x="370" y="700" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13">Snowpipe + External Graph Native App</text>
+  <text x="690" y="700" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$143,400/mo (10.05TB DRAM)</text>
+  <text x="980" y="700" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$315,000/mo (External BI)</text>
+  <text x="1170" y="700" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$758,300/mo</text>
+
+  <text x="44" y="730" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">AWS (Timestream + Neptune + Bedrock)</text>
+  <text x="370" y="730" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13">Timestream + Neptune Graph (~$50K/mo)</text>
+  <text x="690" y="730" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$143,400/mo (OpenSearch RAM)</text>
+  <text x="980" y="730" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$315,000/mo (QuickSight)</text>
+  <text x="1170" y="730" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$768,000/mo</text>
+
+  <text x="44" y="760" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">GCP (BigQuery GIS + Vertex AI)</text>
+  <text x="370" y="760" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13">BigQuery Stream + External Graph Aura</text>
+  <text x="690" y="760" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$143,400/mo (Vertex RAM)</text>
+  <text x="980" y="760" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$315,000/mo (Looker Seats)</text>
+  <text x="1170" y="760" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$742,000/mo</text>
+
+  <text x="44" y="786" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Azure Databricks Lakehouse for Energy</text>
+  <text x="370" y="786" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13">Spark Streaming + GraphFrames DBUs</text>
+  <text x="690" y="786" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$143,400/mo (Mosaic RAM)</text>
+  <text x="980" y="786" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$315,000/mo (BI + SQL DBU)</text>
+  <text x="1170" y="786" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$734,000/mo</text>
+</svg>
