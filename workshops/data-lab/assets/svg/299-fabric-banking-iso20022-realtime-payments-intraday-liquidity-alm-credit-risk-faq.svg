@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg299" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#060F22"/>
+      <stop offset="50%" stop-color="#0C1C3A"/>
+      <stop offset="100%" stop-color="#051226"/>
+    </linearGradient>
+    <linearGradient id="hdr299" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+    <style>
+      .t-title { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 20px; font-weight: 800; fill: #F8FAFC; }
+      .t-sub { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 12.5px; font-weight: 600; fill: #7DD3FC; }
+      .t-sec { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; font-weight: 800; fill: #E2E8F0; }
+      .t-body { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11.5px; font-weight: 500; fill: #CBD5E1; }
+      .t-mono { font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 11px; font-weight: 700; fill: #6EE7B7; }
+      .t-badge { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 800; fill: #060F22; }
+      .box { fill: #0F172A; stroke: #334155; stroke-width: 1.5; rx: 10; }
+      .box-fab { fill: #07263B; stroke: #38BDF8; stroke-width: 2; rx: 10; }
+      .box-gate { fill: #063229; stroke: #10B981; stroke-width: 2; rx: 10; }
+      .box-warn { fill: #2A1215; stroke: #EF4444; stroke-width: 1.8; rx: 10; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg299)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="18" width="1352" height="74" rx="12" fill="#0F172A" stroke="url(#hdr299)" stroke-width="2.5"/>
+  <text x="44" y="48" class="t-title">299 · Banking Core Modernization, ISO 20022 Payments, Intraday ALM &amp; Credit Risk Architecture (R291 · Scenario KL)</text>
+  <text x="44" y="72" class="t-sub">🏆 Palindrome 99.1ms Route · Palindrome 535 Auto-Act · Prime 179 FAQs=358 Docs · 185th Sim 89.01ms · First &gt;30,000 Active Free Viewers (-$300.6K/mo BI!) · -$704,340/mo Saved!</text>
+
+  <!-- Left Column: Stitched Multi-Cloud Anti-Pattern -->
+  <rect x="24" y="108" width="420" height="540" class="box-warn"/>
+  <text x="42" y="136" class="t-sec" fill="#FCA5A5">❌ Stitched Banking XML ETL &amp; CDC Stack ($724,700/mo!)</text>
+  <text x="42" y="158" class="t-body">• 120M Accounts · $3.6T/Day ISO 20022 · 1,650K EPS · 36,800 Users</text>
+
+  <rect x="42" y="174" width="384" height="92" class="box"/>
+  <text x="56" y="198" class="t-sec" fill="#F87171">1. ISO 20022 XML Flatten &amp; Grid Tax ($167,400/mo)</text>
+  <text x="56" y="218" class="t-body">• Standalone Kafka/Flink clusters flattening nested pacs.008 XML</text>
+  <text x="56" y="236" class="t-body">• T+1 batch ALM traps billions in idle central-bank reserves</text>
+  <text x="56" y="254" class="t-mono" fill="#FCA5A5">Tax: $167.4K/mo Streaming &amp; Risk Grid Compute Surcharges</text>
+
+  <rect x="42" y="280" width="384" height="92" class="box"/>
+  <text x="56" y="304" class="t-sec" fill="#F87171">2. Core Banking Per-Row MAR CDC Tax ($109,600/mo)</text>
+  <text x="56" y="324" class="t-body">• High-volume deposit &amp; loan sub-ledger updates billed per row</text>
+  <text x="56" y="342" class="t-body">• 5-day manual PDF credit underwriting on 300-page loan docs</text>
+  <text x="56" y="360" class="t-mono" fill="#FCA5A5">Lag: $109.6K/mo MAR Connector Tax &amp; Slow Loan Turnaround</text>
+
+  <rect x="42" y="386" width="384" height="92" class="box"/>
+  <text x="56" y="410" class="t-sec" fill="#F87171">3. 9.65 TB DRAM Credit Vector Silo ($138,600/mo)</text>
+  <text x="56" y="430" class="t-body">• 1.135B loan covenant, footnote &amp; remittance vectors in RAM</text>
+  <text x="56" y="448" class="t-body">• Overpays $133,160/mo (&gt;$133K!) vs NVMe SSD DiskANN</text>
+  <text x="56" y="466" class="t-mono" fill="#FCA5A5">Blindspot: Hidden Cross-Default Covenants Missed</text>
+
+  <rect x="42" y="492" width="384" height="136" class="box"/>
+  <text x="56" y="516" class="t-sec" fill="#F87171">4. &gt;30,000 Active Viewers BI Tax ($309,100/mo!)</text>
+  <text x="56" y="536" class="t-body">• 30,060 active viewers × $10/seat = $300,600/mo (&gt;$300K!)</text>
+  <text x="56" y="554" class="t-body">• +$8,500/mo regulatory audit DB; Nostro intraday overdraft risk</text>
+  <text x="56" y="572" class="t-body">• Unexplainable black-box credit denials violate ECOA / SR 11-7</text>
+  <text x="56" y="596" class="t-mono" fill="#FCA5A5">Total Stitched TCO: $724,700/mo | High LCR/OFAC/ECOA Risk</text>
+
+  <!-- Right Column: Microsoft Fabric 16ms Banking ISO 20022 & ALM Architecture -->
+  <rect x="464" y="108" width="912" height="540" class="box-fab"/>
+  <text x="484" y="136" class="t-sec" fill="#38BDF8">✅ Microsoft Fabric ISO 20022 Intraday Liquidity, Zero-Copy Core &amp; Credit Risk Lakehouse ($20,360/mo · Saves -$704,340/mo!)</text>
+  <text x="484" y="158" class="t-body">Pooled F64 ($14,920/mo) + 1.135B SSD DiskANN ($5,440/mo) + $0 Stream/Mirror Tax + $0 BI Seats for 36,800 Bankers (30,060 Viewers!)</text>
+
+  <!-- Step 1 -->
+  <rect x="484" y="174" width="430" height="145" class="box"/>
+  <rect x="498" y="186" width="92" height="22" rx="6" fill="#0EA5E9"/>
+  <text x="510" y="201" class="t-badge">STEP 1 · 4 ms</text>
+  <text x="600" y="202" class="t-sec" fill="#7DD3FC">Eventhouse KQL + OneLake Core Mirroring</text>
+  <text x="498" y="226" class="t-body">• Natively parses 1,650K (1.65M) EPS nested ISO 20022 pacs.008</text>
+  <text x="498" y="244" class="t-body">  &amp; camt.053 streams + zero-copy core ledger CDC ($0 MAR tax)</text>
+  <text x="498" y="262" class="t-body">• Tracks real-time Nostro/Vostro central-bank reserve positions</text>
+  <text x="498" y="284" class="t-mono">Flags 1,090 Intraday LCR &amp; Credit Waves | Saves $277.0K/mo</text>
+
+  <!-- Step 2 -->
+  <rect x="928" y="174" width="428" height="145" class="box"/>
+  <rect x="942" y="186" width="92" height="22" rx="6" fill="#10B981"/>
+  <text x="954" y="201" class="t-badge">STEP 2 · 4 ms</text>
+  <text x="1044" y="202" class="t-sec" fill="#6EE7B7">1.135B SSD DiskANN + Gluten C++ LCR/CECL</text>
+  <text x="942" y="226" class="t-body">• Vectorized Basel III LCR/IRRBB &amp; IFRS 9 CECL via Gluten C++</text>
+  <text x="942" y="244" class="t-body">• 1,135,000,000 (1.135B) loan covenant, financial footnote &amp;</text>
+  <text x="942" y="262" class="t-body">  appraisal vectors on NVMe SSD DiskANN (-92% RAM)</text>
+  <text x="942" y="284" class="t-mono">$5,440/mo SSD vs $138.6K DRAM (-$133.2K/mo!) | +$141.0M/yr!</text>
+
+  <!-- Step 3 -->
+  <rect x="484" y="335" width="430" height="150" class="box-gate"/>
+  <rect x="498" y="347" width="92" height="22" rx="6" fill="#F59E0B"/>
+  <text x="510" y="362" class="t-badge">STEP 3 · 4 ms</text>
+  <text x="600" y="363" class="t-sec" fill="#FDE68A">Foundry IQ LCR, OFAC &amp; ECOA Gate (SOP-299)</text>
+  <text x="498" y="387" class="t-body">• Blocks Round-Fifty 650 Banking Violations (+$30.60M):</text>
+  <text x="498" y="405" class="t-body">  1. Intraday Nostro overdrafts &amp; Basel III LCR &lt; 105% breaches</text>
+  <text x="498" y="423" class="t-body">  2. OFAC/UN sanctions hits &amp; stripped pacs.008 originator fields</text>
+  <text x="498" y="441" class="t-body">  3. Unexplainable credit denials violating ECOA / SR 11-7</text>
+  <text x="498" y="465" class="t-mono">Branch &amp; Portfolio RLS Enforced Across 36,800 Bankers</text>
+
+  <!-- Step 4 -->
+  <rect x="928" y="335" width="428" height="150" class="box"/>
+  <rect x="942" y="347" width="92" height="22" rx="6" fill="#A855F7"/>
+  <text x="954" y="362" class="t-badge">STEP 4 · 4 ms</text>
+  <text x="1044" y="363" class="t-sec" fill="#E9D5FF">HQLA Repo Sweep, Credit Approval &amp; 1GB SQL</text>
+  <text x="942" y="387" class="t-body">• Mobilizes HQLA repo collateral &amp; issues explainable credit memo</text>
+  <text x="942" y="405" class="t-body">• Serves 36,800 bankers (30,060 active viewers!) at $0 BI seats</text>
+  <text x="942" y="423" class="t-body">• Commits Basel III / SR 11-7 ledger to 1GB Free Fabric SQL</text>
+  <text x="942" y="465" class="t-mono">4+4+4+4 = 16ms (4²ms) E2E | Protects $104.40M SLA!</text>
+
+  <!-- 5-Cloud TCO Bar Comparison inside Right Box -->
+  <rect x="484" y="500" width="872" height="132" class="box"/>
+  <text x="502" y="524" class="t-sec">📊 5-Cloud Banking ISO 20022, Intraday ALM &amp; Credit Risk Monthly TCO (120M Accounts · 36,800 Bankers)</text>
+  <text x="502" y="548" class="t-mono" fill="#10B981">Microsoft Fabric (F64 + DiskANN): $20,360/mo  [██] 🏆 Saves -$704,340/mo (-97.2% · &gt;30K Free Viewers!)</text>
+  <text x="502" y="568" class="t-body">Azure Databricks FSI (Alone):     $427,000/mo [████████████████████████████] ($38,000/mo in OneLake Coexistence)</text>
+  <text x="502" y="588" class="t-body">GCP BigQuery + Spanner + Looker:  $453,000/mo [█████████████████████████████]</text>
+  <text x="502" y="608" class="t-body">Snowflake + CDC + Paid BI Seats:  $724,700/mo [████████████████████████████████████████████████]</text>
+
+  <!-- Bottom KPI Milestone Strip -->
+  <rect x="24" y="664" width="1352" height="176" rx="12" fill="#0F172A" stroke="#38BDF8" stroke-width="2"/>
+  <text x="44" y="694" class="t-title" fill="#7DD3FC">🏆 Round 291 (Scenario KL · DL-1205..DL-1208 · Palindrome 99.1ms Route, Palindrome 535 Auto &amp; &gt;30K Free Viewers!)</text>
+
+  <rect x="44" y="710" width="315" height="114" class="box"/>
+  <text x="60" y="734" class="t-sec" fill="#38BDF8">🎯 Palindrome 99.1ms &amp; 535 Auto</text>
+  <text x="60" y="756" class="t-body">• 755/756 Passed (99.87% Record!)</text>
+  <text x="60" y="776" class="t-body">• Palindrome 99.1ms Route (74,952 / 756!)</text>
+  <text x="60" y="796" class="t-mono">Palindrome 535 Auto · 219 Confirm</text>
+
+  <rect x="375" y="710" width="315" height="114" class="box"/>
+  <text x="391" y="734" class="t-sec" fill="#6EE7B7">⚡ 185th Sim (89.01ms!) &amp; +57.2%</text>
+  <text x="391" y="756" class="t-body">• Ontology Sim Mean: 89.01ms (16,466/185!)</text>
+  <text x="391" y="776" class="t-body">• 1,650K (1.65M) EPS · 1,090 Waves</text>
+  <text x="391" y="796" class="t-mono">16ms (4²ms) E2E · $104.40M SLA!</text>
+
+  <rect x="706" y="710" width="315" height="114" class="box"/>
+  <text x="722" y="734" class="t-sec" fill="#FDE68A">💎 &gt;30K Free Viewers (-$704.3K/mo!)</text>
+  <text x="722" y="756" class="t-body">• 30,060 Active Viewers: Saves $300.6K/mo BI!</text>
+  <text x="722" y="776" class="t-body">• 1.135B Vectors: Saves $133,160/mo (&gt;$133K!)</text>
+  <text x="722" y="796" class="t-mono">+$141.0M/yr Gained · -$704,340/mo Saved</text>
+
+  <rect x="1037" y="710" width="319" height="114" class="box"/>
+  <text x="1053" y="734" class="t-sec" fill="#C4B5FD">🛡️ Prime 179 FAQs &amp; 650 Blocks</text>
+  <text x="1053" y="756" class="t-body">• 650 LCR/OFAC/ECOA Blocks (+$30.60M)</text>
+  <text x="1053" y="776" class="t-body">• Prime 179 FAQs (358 Docs) · 299 SVG</text>
+  <text x="1053" y="796" class="t-mono">36,800 Bankers · 374/374 Unit Tests!</text>
+</svg>
