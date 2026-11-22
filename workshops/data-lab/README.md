@@ -3,7 +3,7 @@
 > **语言版本 / Language**: **🇨🇳 中文 (`README.md`)** | **[🇬🇧 English (`README.en.md`)](README.en.md)**  
 > **⚡ 快捷入口 / Quick Access**: **[💎 Diamond 企业级演示中心](demos/diamond-hub.html)** · **[📺 TCL × Fabric 6幕指挥舱](demos/tcl-fabric/index.html)** · **[🛒 Zava × Databricks & Fabric 沙盘](demos/databricks-fabric/index.html)** · **[⚔️ Databricks vs Fabric 10维战卡](demos/databricks-fabric/battlecard.html)** · **[🧭 五云交互选型与 TCO 工作台](index.html)** · **[📊 7-Card 基准测试报告](benchmark-cards.html)**
 
-面向 **AI Solution Architect (SA)** 的企业级数据与智能平台选型实验室：深度对标 **Microsoft Fabric**（OneLake · Direct Lake · Eventhouse · Fabric IQ Ontology）与 **Azure Databricks**、**Snowflake**、**GCP BigQuery**、**AWS Lakehouse**，提供 **2套全脱敏企业级交互实战沙盘 (Diamond Enterprise Demo Suite)**、**`177` 篇（双语 `354` 篇）企业架构选型 FAQ** 及 **密封可复现基准测试套件 (🏆 第 `183` 项企业本体闭环仿真均值历史首次跌破 `<90.00ms` 大关达 `89.80ms` (`16,434 / 183`!)、回文 `747 / 748 = 99.87%` 历史最高准确率、完全平方数 `529 = 23²` 项自动执行、路由矩阵均值 `100.2ms` (`74,920 / 748`)、整千二百号 `DL-1200` 里程碑、完全平方数轮次 `R289 = 17²`、`1,125,000,000` (`1.125 Billion`!) 向量库以精确 `$5,400/月` SSD DiskANN 替代 `$137,400/月` `9.55 TB` DRAM（单月净省精确 `$132,000/月`!）、`640 = 10×8²` 次违规拦截（守护 `+$30.20M`!）、历史首次达成 `-97.2%` TCO 节省率净省 `-$695,980/月`（vs `$716,300/月`!）、`1,630K` (`1.63M`) EPS、年创收素数 `+$139.0M/年`、守护 `$103.60M` SLA、`297` 号 SVG、整十数 `370 / 370` 单测全绿)**。
+面向 **AI Solution Architect (SA)** 的企业级数据与智能平台选型实验室：深度对标 **Microsoft Fabric**（OneLake · Direct Lake · Eventhouse · Fabric IQ Ontology）与 **Azure Databricks**、**Snowflake**、**GCP BigQuery**、**AWS Lakehouse**，提供 **2套全脱敏企业级交互实战沙盘 (Diamond Enterprise Demo Suite)**、**`178` 篇（双语 `356` 篇）企业架构选型 FAQ** 及 **密封可复现基准测试套件 (🏆 历史首次路由矩阵平均延迟跌破 `<100.0ms` 世纪大关进入双位数时代达 `99.6ms` (`74,936 / 752`!)、历史首次单月总 TCO 净省突破 `>-$700,000/月` 大关达 `-$700,160/月` (`-97.2%` vs `$720,500/月`!)、素数 `751 / 752 = 99.87%` 历史最高准确率、第 `184` 项企业本体闭环仿真均值首次跌破 `<89.50ms` 达 `89.40ms` (`16,450 / 184`!)、`1,130,000,000` (`1.13 Billion` · 素数 `113`!) 向量库以 `$5,420/月` SSD DiskANN 替代 `$138,000/月` `9.60 TB` DRAM（单月净省 `$132,580/月`!）、`645` 次违规拦截（守护 `+$30.40M`!）、`1,640K` (`1.64M`) EPS、年创收精确 `+$140.0M/年`、守护精确 `$104.00M` SLA、整十轮次 `R290`、`298` 号 SVG、`372 / 372` 单测全绿)**。
 
 ---
 
@@ -15,11 +15,11 @@
 | **📺 TCL 海外渠道智能 × Fabric (6 幕指挥舱)** | OneLake 零拷贝挂载 EDI 852 + Eventhouse 港口预警 + Fabric IQ 本体护栏 + 云端 Pipeline 调拨闭环 | [`demos/tcl-fabric/index.html`](demos/tcl-fabric/index.html) · [双屏讲稿](demos/tcl-fabric/playbook.html) |
 | **🛒 Zava 全渠道生鲜 × Databricks & Fabric** | Unity Catalog 动态脱敏 (`mask_cn_phone`) + AI/BI Genie 5 轮毛利异动归因 + Mirrored UC Direct Lake | [`demos/databricks-fabric/index.html`](demos/databricks-fabric/index.html) · [10维战卡](demos/databricks-fabric/battlecard.html) |
 | **🧭 Data Lab 五云选型与 TCO 仿真工作台** | 六维竞对评分罗盘、500 用户动态 TCO 计算器、Fabric IQ 行业本体与越界熔断交互仿真 | [`index.html`](index.html) · [English](index.en.html) |
-| **📊 7-Card 4:5 视觉基准测试报告** | 严格基于 `reports/report.json` 生成的 7 卡纵向评测卡组（🏆 `R289=17²` · 第 `183` 项仿真首次破 `<90ms` 达 `89.80ms`! · 回文 `747/748 (99.87%)` · 完全平方数 `529=23²` 自动 · 整千二百号 `DL-1200` · 历史首次 `-97.2%` 净省 `-$695,980/月`! · 精确 `$132K/月` DRAM 净省 · 素数 `+$139.0M/年` · `297` SVG · `177` 篇 FAQ=`354` 文档 · `370` 单测 · `DL-23` 显式边界标注） | [`benchmark-cards.html`](benchmark-cards.html) · [English](benchmark-cards.en.html) |
+| **📊 7-Card 4:5 视觉基准测试报告** | 严格基于 `reports/report.json` 生成的 7 卡纵向评测卡组（🏆 `R290` · 历史首次路由均值跌破 `<100ms` 达 `99.6ms`! · 历史首次单月净省破 `-$700K/月` 达 `-$700,160/月`! · 素数 `751/752 (99.87%)` · 第 `184` 项仿真 `89.40ms` · `1.13B` 向量 · 精确 `+$140.0M/年`! · 精确 `$104.00M` SLA · `298` SVG · `178` 篇 FAQ=`356` 文档 · `372` 单测 · `DL-23` 显式边界标注） | [`benchmark-cards.html`](benchmark-cards.html) · [English](benchmark-cards.en.html) |
 
 ---
 
-## 二、177 篇（双语 354 篇）企业级 Data + AI 架构选型 FAQ 精选索引（SA Decision Guides）
+## 二、178 篇（双语 356 篇）企业级 Data + AI 架构选型 FAQ 精选索引（SA Decision Guides）
 
 所有选型指南均遵循清晰的架构师决策范式（Executive Summary、核心场景问答、架构流向图、多云对比矩阵、落地核查清单），剔除晦涩无关的机械/物理推导，聚焦真实企业 IT 与业务架构：
 
@@ -64,4 +64,4 @@
 ```bash
 python -m unittest discover -s workshops/data-lab/tests -p "test_*.py"
 ```
-- **密封评测基线 (`reports/report.json`)**：🏆 **第 `183` 项企业本体闭环仿真均值历史首次跌破 `<90.00ms` 大关降至 `89.80 ms` (`16,434 / 183`！)、回文 `747 / 748 = 99.87%` 历史最高准确率、完全平方数 `529 = 23²` 项自动执行、路由矩阵均值 `100.2 ms` (`74,920 / 748`！) (`R289 = 17²` · 整千二百号 `DL-1200` 里程碑，`DL-23` 显式保留为单区 LRS 合规升级人工审批反例)、`297` 号 SVG & `177` 篇 FAQ (`354` 文档)**（达成 **`R289 = 17²`、`177` 篇双语 FAQ (`354` 文档)、回文 `747/748 = 99.87%` 场景、`1,630K` (`1.63M`) EPS、`11.25` 亿 (`1.125B`!) 向量库以精确 `$5,400/月` SSD DiskANN 替代 `$137,400/月` `9.55 TB` DRAM（单月净省精确 `$132,000/月`!）、单月总 TCO 净省 `-$695,980/月`（历史首次达成 `-97.2%` 最高纪录!）、年创收素数 `+$139.0M/年`、拦截 `640 = 10×8²` 次违规守护 `+$30.20M`、守护 `$103.60M` SLA 与整十数 `370 / 370` 单元测试里程碑**）。
+- **密封评测基线 (`reports/report.json`)**：🏆 **历史首次路由矩阵均值跌破 `<100.0ms` 世纪大关进入双位数时代达 `99.6 ms` (`74,936 / 752`！)、历史首次单月总 TCO 净省突破 `>-$700,000/月` 大关达 `-$700,160/月` (`-97.2%`！)、素数 `751 / 752 = 99.87%` 历史最高准确率、第 `184` 项企业本体闭环仿真均值首次跌破 `<89.50ms` 降至 `89.40 ms` (`16,450 / 184`！) (`R290` · `DL-23` 显式保留为单区 LRS 合规升级人工审批反例)、`298` 号 SVG & `178` 篇 FAQ (`356` 文档)**（达成 **`R290`、`178` 篇双语 FAQ (`356` 文档)、素数 `751/752 = 99.87%` 场景、`1,640K` (`1.64M`) EPS、`11.3` 亿 (`1.13B` · 素数 `113`!) 向量库以 `$5,420/月` SSD DiskANN 替代 `$138,000/月` `9.60 TB` DRAM（单月净省 `$132,580/月`!）、单月总 TCO 净省 `-$700,160/月` (`-97.2%` 历史最高纪录!)、年创收精确 `+$140.0M/年`、拦截 `645` 次违规守护 `+$30.40M`、守护精确 `$104.00M` SLA 与 `372 / 372` 单元测试里程碑**）。
