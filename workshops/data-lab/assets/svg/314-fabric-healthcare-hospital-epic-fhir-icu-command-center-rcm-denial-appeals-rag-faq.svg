@@ -1,0 +1,280 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820">
+  <defs>
+    <linearGradient id="bg314" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="hdr314" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+    <linearGradient id="card314" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="820" fill="url(#bg314)"/>
+  <rect x="20" y="18" width="1360" height="92" rx="14" fill="url(#hdr314)" opacity="0.95"/>
+  <text x="45" y="52" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="20.5" font-weight="700">
+    #314 (π) · Global Healthcare Hospital Epic/FHIR ICU Command Center, Bed Orchestration &amp; RCM Denial Appeals RAG (R306 · Scenario LA)
+  </text>
+  <text x="45" y="80" fill="#CCFBF1" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">
+    🏆 Historic Two-Hundredth 200th (2×10²!) Ontology Sim at Exact 83.53ms (16,706/200!) · Exact 1.80M EPS · Perfect-Square 1.21B (11²×10⁷) Vectors · Palindrome 404 Tests!
+  </text>
+  <text x="45" y="100" fill="#E0E7FF" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    650 Hospitals (95K Beds) · Exact 1,800K (1.80M) EPS ICU/ADT/FHIR Stream · 8-Hop Bed/Infection ISO GQL · 1.21B Clinical/Payer SSD DiskANN ($5,740/mo) · 725 Safety/HIPAA/RCM Blocks
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="25" y="128" width="320" height="430" rx="12" fill="url(#card314)" stroke="#38BDF8" stroke-width="2"/>
+  <rect x="25" y="128" width="320" height="40" rx="12" fill="#0284C7"/>
+  <text x="40" y="154" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="700">
+    ① Eventhouse KQL + OneLake (4 ms)
+  </text>
+  <text x="40" y="190" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">
+    Exact 1,800K (1.80M!) EPS ICU &amp; FHIR
+  </text>
+  <text x="40" y="214" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • 650 hospitals &amp; 95,000 inpatient beds
+  </text>
+  <text x="40" y="236" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Bedside ICU waveforms &amp; HL7v2 ADT events
+  </text>
+  <text x="40" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Epic / Cerner FHIR R4 orders &amp; X12 835/837
+  </text>
+  <text x="40" y="280" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Zero-copy Epic Clarity/Caboodle &amp; staffing
+  </text>
+  <rect x="40" y="302" width="290" height="68" rx="8" fill="#0C4A6E" stroke="#38BDF8" stroke-width="1"/>
+  <text x="52" y="325" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">
+    ⚡ 1,165 Sepsis/Bed/RCM Waves in 4ms
+  </text>
+  <text x="52" y="346" fill="#BAE6FD" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    Early qSOFA sepsis, ED boarding &amp; denials
+  </text>
+  <text x="52" y="364" fill="#BAE6FD" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    $0 per-resource FHIR, graph DB &amp; CDC tax!
+  </text>
+  <rect x="40" y="384" width="290" height="156" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="52" y="408" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    Eliminates $304,000/mo Stitched Tax:
+  </text>
+  <text x="52" y="430" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✗ AWS HealthLake / GCP FHIR per-call fees
+  </text>
+  <text x="52" y="450" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✗ Standalone Neptune / Neo4j patient graphs
+  </text>
+  <text x="52" y="470" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✗ Fivetran Epic Clarity/Caboodle CDC tax
+  </text>
+  <text x="52" y="498" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    ✓ +63.2% Bed Turnover &amp; Appeal Lift
+  </text>
+  <text x="52" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✓ DL-1265 Verified (Act automatically)
+  </text>
+
+  <!-- Step 2 -->
+  <rect x="368" y="128" width="320" height="430" rx="12" fill="url(#card314)" stroke="#A855F7" stroke-width="2"/>
+  <rect x="368" y="128" width="320" height="40" rx="12" fill="#7E22CE"/>
+  <text x="383" y="154" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="700">
+    ② 8-Hop Graph + 1.21B DiskANN (4 ms)
+  </text>
+  <text x="383" y="190" fill="#D8B4FE" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">
+    ISO GQL + Perfect-Square 1.21B DiskANN
+  </text>
+  <text x="383" y="214" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • 8-Hop: Patient→ED→OR→ICUBed→SharedDevice
+  </text>
+  <text x="383" y="236" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    →CriticalLab→CareTeamShift→PayerPriorAuth
+  </text>
+  <text x="383" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Perfect-Square 1,210,000,000 (11²×10⁷!)
+  </text>
+  <text x="383" y="280" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    clinical note, DICOM &amp; payer policy vectors
+  </text>
+  <rect x="383" y="302" width="290" height="68" rx="8" fill="#4C1D95" stroke="#A855F7" stroke-width="1"/>
+  <text x="395" y="325" fill="#E9D5FF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">
+    💎 1.21B Vectors at $5,740/mo (-92% RAM)
+  </text>
+  <text x="395" y="346" fill="#DDD6FE" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    Saves $141,860/mo vs. $147,600/mo for
+  </text>
+  <text x="395" y="364" fill="#DDD6FE" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    10.40 TB in-memory HNSW vector cluster
+  </text>
+  <rect x="383" y="384" width="290" height="156" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="395" y="408" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    4ms Infection Tracing &amp; Denial Appeals:
+  </text>
+  <text x="395" y="430" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Isolates MRSA/CRE shared-equipment hops
+  </text>
+  <text x="395" y="450" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Matches chart notes to payer LCD criteria
+  </text>
+  <text x="395" y="470" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Auto-drafts cited X12 275 appeal packets
+  </text>
+  <text x="395" y="498" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    ✓ Captures +$156.0M/yr (Exact $13.00M/mo!)
+  </text>
+  <text x="395" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✓ DL-1266 Verified (Act automatically)
+  </text>
+
+  <!-- Step 3 -->
+  <rect x="711" y="128" width="320" height="430" rx="12" fill="url(#card314)" stroke="#F43F5E" stroke-width="2"/>
+  <rect x="711" y="128" width="320" height="40" rx="12" fill="#BE123C"/>
+  <text x="726" y="154" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="700">
+    ③ Foundry IQ 725-Block Gate (4 ms)
+  </text>
+  <text x="726" y="190" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">
+    Policy: HEALTHCARE-EPIC-FHIR-ICU-RCM-SOP-314
+  </text>
+  <text x="726" y="214" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Gate 1: Renal eGFR dosing adjustment &amp;
+  </text>
+  <text x="726" y="236" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    cross-reactive drug allergy hard-stop
+  </text>
+  <text x="726" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Gate 2: HIPAA Safe Harbor 18-PHI redaction
+  </text>
+  <text x="726" y="280" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    &amp; 42 CFR Part 2 behavioral record isolation
+  </text>
+  <rect x="726" y="302" width="290" height="68" rx="8" fill="#881337" stroke="#F43F5E" stroke-width="1"/>
+  <text x="738" y="325" fill="#FFE4E6" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">
+    🛡️ 725 Clinical &amp; Compliance Blocks (4ms)
+  </text>
+  <text x="738" y="346" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    Protects +$33.60M in malpractice claims,
+  </text>
+  <text x="738" y="364" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    HIPAA fines &amp; False Claims Act audits!
+  </text>
+  <rect x="726" y="384" width="290" height="156" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="738" y="408" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    Gate 3: Anti-Upcoding &amp; Prior-Auth Lock:
+  </text>
+  <text x="738" y="430" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Blocks unsupported CC/MCC DRG upcoding
+  </text>
+  <text x="738" y="450" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Verifies active Prior-Auth before OR booking
+  </text>
+  <text x="738" y="470" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Entra ID OBO RLS across 39,800 users
+  </text>
+  <text x="738" y="498" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    ✓ 32,760 Active Viewers at $0 BI Seat Cost
+  </text>
+  <text x="738" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✓ DL-1268 Verified (Confirm · 0.99)
+  </text>
+
+  <!-- Step 4 -->
+  <rect x="1055" y="128" width="320" height="430" rx="12" fill="url(#card314)" stroke="#10B981" stroke-width="2"/>
+  <rect x="1055" y="128" width="320" height="40" rx="12" fill="#047857"/>
+  <text x="1070" y="154" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="700">
+    ④ ICU/RCM Action + 1GB SQL (4 ms)
+  </text>
+  <text x="1070" y="190" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">
+    16ms (4²ms) Clinical &amp; RCM Loop
+  </text>
+  <text x="1070" y="214" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Fires Epic BestPractice sepsis order set
+  </text>
+  <text x="1070" y="236" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Orchestrates PACU-to-ward bed turnover
+  </text>
+  <text x="1070" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Submits cited X12 275 claim appeal packet
+  </text>
+  <text x="1070" y="280" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Commits HIPAA audit log to 1GB Free SQL
+  </text>
+  <rect x="1070" y="302" width="290" height="68" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1"/>
+  <text x="1082" y="325" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">
+    💰 Saves -$767,040/mo (-97.4% Record TCO!)
+  </text>
+  <text x="1082" y="346" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    Fabric Pooled F64: $20,660/mo All-In vs.
+  </text>
+  <text x="1082" y="364" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    $787,700/mo Stitched 5-Cloud Stack
+  </text>
+  <rect x="1070" y="384" width="290" height="156" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1082" y="408" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    Sealed R306 Benchmark Milestones:
+  </text>
+  <text x="1082" y="430" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Historic 200th Sim at Exact 83.53ms!
+  </text>
+  <text x="1082" y="450" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • 815 / 816 (99.88%) · 92.1ms Routing Mean
+  </text>
+  <text x="1082" y="470" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Round-Ten 580 Auto + 234 Confirm
+  </text>
+  <text x="1082" y="498" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    ✓ Protects $110.40M SLA · Palindrome 404 Tests
+  </text>
+  <text x="1082" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✓ DL-1267 Verified (Act automatically)
+  </text>
+
+  <!-- Bottom 5-Cloud Comparison Bar -->
+  <rect x="25" y="576" width="1350" height="222" rx="12" fill="#0F172A" stroke="#334155" stroke-width="2"/>
+  <text x="45" y="608" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">
+    5-Cloud Monthly TCO &amp; Architectural Comparison (650 Hospitals · Exact 1.80M EPS · Perfect-Square 1.21B Vectors · 39,800 Users)
+  </text>
+
+  <rect x="45" y="624" width="250" height="156" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="2"/>
+  <text x="60" y="650" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">✅ Microsoft Fabric (F64)</text>
+  <text x="60" y="676" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">$20,660 / mo</text>
+  <text x="60" y="700" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $0 FHIR / Graph / Epic CDC Tax</text>
+  <text x="60" y="720" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $5,740/mo 1.21B SSD DiskANN</text>
+  <text x="60" y="740" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $0 Viewer Seats (39,800 Users)</text>
+  <text x="60" y="762" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Saves -$767,040/mo (-97.4%!)</text>
+
+  <rect x="310" y="624" width="250" height="156" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="325" y="650" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">AWS HealthLake Stitched</text>
+  <text x="325" y="676" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">$787,700 / mo</text>
+  <text x="325" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $304.0K/mo FHIR/Neptune/CDC</text>
+  <text x="325" y="720" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $147.6K/mo 10.40TB RAM Vector</text>
+  <text x="325" y="740" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $160.3K/mo BI Viewer Seats</text>
+  <text x="325" y="762" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">38.1× Higher Monthly Cost</text>
+
+  <rect x="575" y="624" width="250" height="156" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="590" y="650" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Snowflake Healthcare</text>
+  <text x="590" y="676" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">$794,000 / mo</text>
+  <text x="590" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Payer Claims Data Sharing</text>
+  <text x="590" y="720" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• High Cortex RAM &amp; Stream Credits</text>
+  <text x="590" y="740" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• External 8-hop graph needed</text>
+  <text x="590" y="762" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">→ Mount via OneLake Iceberg</text>
+
+  <rect x="840" y="624" width="250" height="156" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="855" y="650" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">GCP Healthcare + Vertex</text>
+  <text x="855" y="676" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">$781,000 / mo</text>
+  <text x="855" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Managed FHIR Store &amp; BigQuery</text>
+  <text x="855" y="720" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $148.5K/mo 10.40TB RAM Vector</text>
+  <text x="855" y="740" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Looker per-seat licensing fees</text>
+  <text x="855" y="762" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">→ Zero-Copy Shortcut to OneLake</text>
+
+  <rect x="1105" y="624" width="250" height="156" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="1120" y="650" fill="#FDBA74" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Azure Databricks</text>
+  <text x="1120" y="676" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">$770,000 / mo</text>
+  <text x="1120" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Strong OMOP RWE Cohort ML</text>
+  <text x="1120" y="720" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Mosaic RAM Vector &amp; DBU Cost</text>
+  <text x="1120" y="740" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Separate BI viewer licensing</text>
+  <text x="1120" y="762" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">→ Mirror UC to OneLake Direct Lake</text>
+</svg>
