@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg295" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#060F22"/>
+      <stop offset="50%" stop-color="#0C1C3A"/>
+      <stop offset="100%" stop-color="#051226"/>
+    </linearGradient>
+    <linearGradient id="hdr295" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+    <style>
+      .t-title { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 20px; font-weight: 800; fill: #F8FAFC; }
+      .t-sub { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 12.5px; font-weight: 600; fill: #7DD3FC; }
+      .t-sec { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; font-weight: 800; fill: #E2E8F0; }
+      .t-body { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11.5px; font-weight: 500; fill: #CBD5E1; }
+      .t-mono { font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 11px; font-weight: 700; fill: #6EE7B7; }
+      .t-badge { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 800; fill: #060F22; }
+      .box { fill: #0F172A; stroke: #334155; stroke-width: 1.5; rx: 10; }
+      .box-fab { fill: #07263B; stroke: #38BDF8; stroke-width: 2; rx: 10; }
+      .box-gate { fill: #063229; stroke: #10B981; stroke-width: 2; rx: 10; }
+      .box-warn { fill: #2A1215; stroke: #EF4444; stroke-width: 1.8; rx: 10; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg295)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="18" width="1352" height="74" rx="12" fill="#0F172A" stroke="url(#hdr295)" stroke-width="2.5"/>
+  <text x="44" y="48" class="t-title">295 · Enterprise Semantic Layer, Metric Store &amp; BI-to-AI Zero Metric Drift Architecture (R287 · Scenario KH)</text>
+  <text x="44" y="72" class="t-sub">🏆 Palindrome-Prime 181st Sim Sub-91.0ms (90.62ms!) · Exact 101.2ms Route · Prime 739/740 &amp; 523 Auto · Exact 175 FAQs=350 Docs · 1.115B Vectors · -$687,620/mo Saved!</text>
+
+  <!-- Left Column: Stitched Multi-Cloud Anti-Pattern -->
+  <rect x="24" y="108" width="420" height="540" class="box-warn"/>
+  <text x="42" y="136" class="t-sec" fill="#FCA5A5">❌ Stitched Headless BI &amp; Import Stack ($707,900/mo!)</text>
+  <text x="42" y="158" class="t-body">• 850 Models · 52,000 KPIs · 1,610K EPS · Exact 36,000 Users</text>
+
+  <rect x="42" y="174" width="384" height="92" class="box"/>
+  <text x="56" y="198" class="t-sec" fill="#F87171">1. Cube/AtScale Cache &amp; Import Tax ($161,800/mo)</text>
+  <text x="56" y="218" class="t-body">• Standalone pre-aggregation clusters + hourly Import extracts</text>
+  <text x="56" y="236" class="t-body">• Duplicate data storage &amp; 4-hour stale dashboard latency</text>
+  <text x="56" y="254" class="t-mono" fill="#FCA5A5">Tax: $161.8K/mo Extra Compute &amp; Pre-Agg Server Licensing</text>
+
+  <rect x="42" y="280" width="384" height="92" class="box"/>
+  <text x="56" y="304" class="t-sec" fill="#F87171">2. Multi-Dialect Metric Sync &amp; Drift ($108,000/mo)</text>
+  <text x="56" y="324" class="t-body">• Rewriting KPIs across LookML, dbt YAML, DAX &amp; AI prompts</text>
+  <text x="56" y="342" class="t-body">• Raw LLM Text-to-SQL triggers fan-out chasm-trap double-count</text>
+  <text x="56" y="360" class="t-mono" fill="#FCA5A5">Drift: CEO Dashboard NRR 108.4% vs Chatbot SQL 119.2%</text>
+
+  <rect x="42" y="386" width="384" height="92" class="box"/>
+  <text x="56" y="410" class="t-sec" fill="#F87171">3. 9.45 TB DRAM Semantic AST Silo ($136,200/mo)</text>
+  <text x="56" y="430" class="t-body">• 1.115B TMDL AST, lineage &amp; query-plan vectors in RAM</text>
+  <text x="56" y="448" class="t-body">• Overpays $130,840/mo vs NVMe SSD DiskANN ($5,360/mo)</text>
+  <text x="56" y="466" class="t-mono" fill="#FCA5A5">Silo: Uncoordinated BI &amp; AI Semantic Catalogs</text>
+
+  <rect x="42" y="492" width="384" height="136" class="box"/>
+  <text x="56" y="516" class="t-sec" fill="#F87171">4. Exact 36,000 Users BI Seat Tax ($301,900/mo)</text>
+  <text x="56" y="536" class="t-body">• 29,340 active viewers × $10/seat = $293,400/mo</text>
+  <text x="56" y="554" class="t-body">• +$8,500/mo standalone metric catalog metadata DB</text>
+  <text x="56" y="572" class="t-body">• Service-principal caching strips per-user Entra OBO RLS</text>
+  <text x="56" y="596" class="t-mono" fill="#FCA5A5">Total Stitched TCO: $707,900/mo | High Chasm-Trap Risk</text>
+
+  <!-- Right Column: Microsoft Fabric 16ms Semantic Layer Architecture -->
+  <rect x="464" y="108" width="912" height="540" class="box-fab"/>
+  <text x="484" y="136" class="t-sec" fill="#38BDF8">✅ Microsoft Fabric Direct Lake + TMDL + Apache Ossie Unified Semantic Layer ($20,280/mo · Saves -$687,620/mo!)</text>
+  <text x="484" y="158" class="t-body">Pooled F64 ($14,920/mo) + 1.115B SSD DiskANN ($5,360/mo) + $0 Headless Cache/Import Tax + $0 BI Seats for Exact 36,000 Users</text>
+
+  <!-- Step 1 -->
+  <rect x="484" y="174" width="430" height="145" class="box"/>
+  <rect x="498" y="186" width="92" height="22" rx="6" fill="#0EA5E9"/>
+  <text x="510" y="201" class="t-badge">STEP 1 · 4 ms</text>
+  <text x="600" y="202" class="t-sec" fill="#7DD3FC">Power BI Direct Lake + TMDL + Eventhouse</text>
+  <text x="498" y="226" class="t-body">• Zero-copy in-memory column framing over OneLake V-Order</text>
+  <text x="498" y="244" class="t-body">  Parquet ($0 Import refresh &amp; $0 Cube/AtScale cache tax)</text>
+  <text x="498" y="262" class="t-body">• Ingests 1,610K (1.61M) EPS DAX/XMLA/NL2DAX query telemetry</text>
+  <text x="498" y="284" class="t-mono">Flags 1,070 Metric-Drift &amp; Fan-Out Waves | Saves $269.8K/mo</text>
+
+  <!-- Step 2 -->
+  <rect x="928" y="174" width="428" height="145" class="box"/>
+  <rect x="942" y="186" width="92" height="22" rx="6" fill="#10B981"/>
+  <text x="954" y="201" class="t-badge">STEP 2 · 4 ms</text>
+  <text x="1044" y="202" class="t-sec" fill="#6EE7B7">1.115B SSD DiskANN + Apache Ossie Interop</text>
+  <text x="942" y="226" class="t-body">• Bidirectional TMDL ↔ Snowflake YAML ↔ Databricks Metric</text>
+  <text x="942" y="244" class="t-body">  Views transpilation via OneLake IQ &amp; Apache Ossie</text>
+  <text x="942" y="262" class="t-body">• 1,115,000,000 (1.115B) TMDL AST &amp; query vectors on SSD</text>
+  <text x="942" y="284" class="t-mono">$5,360/mo SSD vs $136.2K DRAM (-$130.8K/mo) | Prime +$137.0M/yr!</text>
+
+  <!-- Step 3 -->
+  <rect x="484" y="335" width="430" height="150" class="box-gate"/>
+  <rect x="498" y="347" width="92" height="22" rx="6" fill="#F59E0B"/>
+  <text x="510" y="362" class="t-badge">STEP 3 · 4 ms</text>
+  <text x="600" y="363" class="t-sec" fill="#FDE68A">Foundry IQ Chasm-Trap &amp; Zero-Drift Gate (SOP-295)</text>
+  <text x="498" y="387" class="t-body">• Blocks 630 Semantic &amp; Governance Violations (+$29.80M):</text>
+  <text x="498" y="405" class="t-body">  1. Many-to-many join fan-out chasm-trap double-counting</text>
+  <text x="498" y="423" class="t-body">  2. Ad-hoc LLM SQL bypassing certified GAAP/NRR TMDL KPIs</text>
+  <text x="498" y="441" class="t-body">  3. Stale Import extracts &amp; RLS/OLS bypasses</text>
+  <text x="498" y="465" class="t-mono">Entra OBO RLS/CLS/OLS Enforced Across Exact 36,000 Users</text>
+
+  <!-- Step 4 -->
+  <rect x="928" y="335" width="428" height="150" class="box"/>
+  <rect x="942" y="347" width="92" height="22" rx="6" fill="#A855F7"/>
+  <text x="954" y="362" class="t-badge">STEP 4 · 4 ms</text>
+  <text x="1044" y="363" class="t-sec" fill="#E9D5FF">Zero-Drift BI, Excel XMLA, Copilot &amp; 1GB SQL</text>
+  <text x="942" y="387" class="t-body">• Serves 0.00%-drift answers to Power BI, Excel Live Pivot,</text>
+  <text x="942" y="405" class="t-body">  Fabric Data Agent &amp; M365 Copilot across Exact 36,000 users</text>
+  <text x="942" y="423" class="t-body">• Commits TMDL lineage &amp; audit trail to 1GB Free Fabric SQL</text>
+  <text x="942" y="465" class="t-mono">4+4+4+4 = 16ms (4²ms) E2E | Protects $102.80M SLA!</text>
+
+  <!-- 5-Cloud TCO Bar Comparison inside Right Box -->
+  <rect x="484" y="500" width="872" height="132" class="box"/>
+  <text x="502" y="524" class="t-sec">📊 5-Cloud Enterprise Semantic Layer &amp; Metric Store Monthly TCO (850 Models · 52K KPIs · Exact 36,000 Users)</text>
+  <text x="502" y="548" class="t-mono" fill="#10B981">Microsoft Fabric (Direct Lake F64): $20,280/mo  [██] 🏆 Saves -$687,620/mo (-97.1% Record TCO!)</text>
+  <text x="502" y="568" class="t-body">Azure Databricks Metric Views:      $414,500/mo [████████████████████████████] ($36,800/mo in OneLake Coexistence)</text>
+  <text x="502" y="588" class="t-body">GCP Looker LookML + BigQuery:       $441,000/mo [█████████████████████████████]</text>
+  <text x="502" y="608" class="t-body">Snowflake + AtScale/Cube + BI:      $707,900/mo [████████████████████████████████████████████████]</text>
+
+  <!-- Bottom KPI Milestone Strip -->
+  <rect x="24" y="664" width="1352" height="176" rx="12" fill="#0F172A" stroke="#38BDF8" stroke-width="2"/>
+  <text x="44" y="694" class="t-title" fill="#7DD3FC">🏆 Round 287 (Scenario KH · DL-1189..DL-1192 · Palindrome-Prime 181st Sim Sub-91.0ms!) Sealed Benchmark Milestones</text>
+
+  <rect x="44" y="710" width="315" height="114" class="box"/>
+  <text x="60" y="734" class="t-sec" fill="#38BDF8">🎯 Exact 101.2ms Route &amp; Prime 739</text>
+  <text x="60" y="756" class="t-body">• Prime 739/740 Passed (99.86% Record!)</text>
+  <text x="60" y="776" class="t-body">• Exact 101.20ms Route (74,888 / 740!)</text>
+  <text x="60" y="796" class="t-mono">Prime 523 Auto · 215 Confirm · 2 Human</text>
+
+  <rect x="375" y="710" width="315" height="114" class="box"/>
+  <text x="391" y="734" class="t-sec" fill="#6EE7B7">⚡ Palindrome-Prime 181st Sim (90.62ms!)</text>
+  <text x="391" y="756" class="t-body">• First Sub-91.0ms Mean: 90.62ms (16,402/181!)</text>
+  <text x="391" y="776" class="t-body">• 1,610K (1.61M) EPS · 1,070 Waves</text>
+  <text x="391" y="796" class="t-mono">16ms (4²ms) E2E · $102.80M SLA!</text>
+
+  <rect x="706" y="710" width="315" height="114" class="box"/>
+  <text x="722" y="734" class="t-sec" fill="#FDE68A">💎 1.115B Vectors &amp; Prime +$137.0M/yr</text>
+  <text x="722" y="756" class="t-body">• 1.115B Vectors: Saves $130,840/mo vs DRAM</text>
+  <text x="722" y="776" class="t-body">• Saves -$687,620/mo (-97.1% vs $707.9K!)</text>
+  <text x="722" y="796" class="t-mono">Prime +$137.0M/yr · +55.6% Lift</text>
+
+  <rect x="1037" y="710" width="319" height="114" class="box"/>
+  <text x="1053" y="734" class="t-sec" fill="#C4B5FD">🛡️ Exact 175 FAQs = 350 Docs &amp; 36K Users</text>
+  <text x="1053" y="756" class="t-body">• 630 Chasm/Drift/RLS Blocks (+$29.80M!)</text>
+  <text x="1053" y="776" class="t-body">• Exact 175 FAQs (350 Bilingual Docs!) · 295 SVG</text>
+  <text x="1053" y="796" class="t-mono">Exact 36,000 Users · 366/366 Unit Tests</text>
+</svg>
