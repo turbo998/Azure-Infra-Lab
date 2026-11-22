@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg296" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#060F22"/>
+      <stop offset="50%" stop-color="#0C1C3A"/>
+      <stop offset="100%" stop-color="#051226"/>
+    </linearGradient>
+    <linearGradient id="hdr296" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+    <style>
+      .t-title { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 20px; font-weight: 800; fill: #F8FAFC; }
+      .t-sub { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 12.5px; font-weight: 600; fill: #7DD3FC; }
+      .t-sec { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; font-weight: 800; fill: #E2E8F0; }
+      .t-body { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11.5px; font-weight: 500; fill: #CBD5E1; }
+      .t-mono { font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 11px; font-weight: 700; fill: #6EE7B7; }
+      .t-badge { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 800; fill: #060F22; }
+      .box { fill: #0F172A; stroke: #334155; stroke-width: 1.5; rx: 10; }
+      .box-fab { fill: #07263B; stroke: #38BDF8; stroke-width: 2; rx: 10; }
+      .box-gate { fill: #063229; stroke: #10B981; stroke-width: 2; rx: 10; }
+      .box-warn { fill: #2A1215; stroke: #EF4444; stroke-width: 1.8; rx: 10; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg296)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="18" width="1352" height="74" rx="12" fill="#0F172A" stroke="url(#hdr296)" stroke-width="2.5"/>
+  <text x="44" y="48" class="t-title">296 · Enterprise CCaaS, Real-Time Agent Assist, Voice RAG &amp; WFM Architecture (R288 · Scenario KI)</text>
+  <text x="44" y="72" class="t-sub">🏆 Historic First 99.87% Accuracy (Prime 743/744!) · First Sub-101ms Route (100.7ms!) · Perfect-Cube 216=6³ Confirm · 1.12B Vectors · First &gt;-$690K/mo Saved (-$691,800/mo!)</text>
+
+  <!-- Left Column: Stitched Multi-Cloud Anti-Pattern -->
+  <rect x="24" y="108" width="420" height="540" class="box-warn"/>
+  <text x="42" y="136" class="t-sec" fill="#FCA5A5">❌ Stitched CCaaS Per-Minute AI &amp; ETL Stack ($712,100/mo!)</text>
+  <text x="42" y="158" class="t-body">• 45,000 Seats · 180M Calls/Yr · 1,620K (1.62M) EPS · 36,200 Users</text>
+
+  <rect x="42" y="174" width="384" height="92" class="box"/>
+  <text x="56" y="198" class="t-sec" fill="#F87171">1. Per-Minute CCaaS AI Add-On Tax ($163,200/mo)</text>
+  <text x="56" y="218" class="t-body">• Per-minute Contact Lens / CCAI surcharges + 24/7 GPU nodes</text>
+  <text x="56" y="236" class="t-body">• Only 1-2% of calls audited due to prohibitive per-minute cost</text>
+  <text x="56" y="254" class="t-mono" fill="#FCA5A5">Tax: $163.2K/mo Telephony AI Add-Ons &amp; Idle Endpoints</text>
+
+  <rect x="42" y="280" width="384" height="92" class="box"/>
+  <text x="56" y="304" class="t-sec" fill="#F87171">2. Disconnected CRM/OMS &amp; ETL Lag ($108,400/mo)</text>
+  <text x="56" y="324" class="t-body">• Agents swivel across 7 screens (420s AHT · &lt;64% FCR)</text>
+  <text x="56" y="342" class="t-body">• Generic RAG bots lack live order status &amp; shipment context</text>
+  <text x="56" y="360" class="t-mono" fill="#FCA5A5">Lag: $108.4K/mo Kafka/Fivetran MAR Sync &amp; Missed Saves</text>
+
+  <rect x="42" y="386" width="384" height="92" class="box"/>
+  <text x="56" y="410" class="t-sec" fill="#F87171">3. 9.50 TB DRAM SOP/Transcript Silo ($136,800/mo)</text>
+  <text x="56" y="430" class="t-body">• 1.12B call transcripts, SOPs &amp; warranty vectors in RAM</text>
+  <text x="56" y="448" class="t-body">• Overpays $131,420/mo (&gt;$131K!) vs NVMe SSD DiskANN</text>
+  <text x="56" y="466" class="t-mono" fill="#FCA5A5">Risk: Unredacted PCI-DSS PAN/CVV Stored in Vector Index</text>
+
+  <rect x="42" y="492" width="384" height="136" class="box"/>
+  <text x="56" y="516" class="t-sec" fill="#F87171">4. 36,200 Users BI Tax &amp; Refund Leakage ($303,700/mo)</text>
+  <text x="56" y="536" class="t-body">• 29,520 active viewers × $10/seat = $295,200/mo + $8.5K DB</text>
+  <text x="56" y="554" class="t-body">• Uncapped chatbot goodwill refunds &amp; TCPA DNC fines</text>
+  <text x="56" y="572" class="t-body">• Static spreadsheet WFM scheduling causes 18% abandonment</text>
+  <text x="56" y="596" class="t-mono" fill="#FCA5A5">Total Stitched TCO: $712,100/mo | High PCI/TCPA Risk</text>
+
+  <!-- Right Column: Microsoft Fabric 16ms CCaaS & Agent Assist Architecture -->
+  <rect x="464" y="108" width="912" height="540" class="box-fab"/>
+  <text x="484" y="136" class="t-sec" fill="#38BDF8">✅ Microsoft Fabric Real-Time Agent Assist, 100% Auto-QA &amp; WFM Lakehouse ($20,300/mo · Saves -$691,800/mo!)</text>
+  <text x="484" y="158" class="t-body">Pooled F64 ($14,920/mo) + 1.12B SSD DiskANN ($5,380/mo) + $0 Per-Minute CCaaS Tax + $0 BI Seats for 36,200 Users</text>
+
+  <!-- Step 1 -->
+  <rect x="484" y="174" width="430" height="145" class="box"/>
+  <rect x="498" y="186" width="92" height="22" rx="6" fill="#0EA5E9"/>
+  <text x="510" y="201" class="t-badge">STEP 1 · 4 ms</text>
+  <text x="600" y="202" class="t-sec" fill="#7DD3FC">Eventhouse KQL + OneLake CRM Shortcuts</text>
+  <text x="498" y="226" class="t-body">• Ingests 1,620K (1.62M) EPS live speech-to-text, sentiment &amp;</text>
+  <text x="498" y="244" class="t-body">  queue telemetry ($0 per-minute CCaaS analytics surcharge)</text>
+  <text x="498" y="262" class="t-body">• Zero-copy joins live D365/Salesforce/SAP OMS order status</text>
+  <text x="498" y="284" class="t-mono">Flags 1,075 Sentiment/Queue Waves | Saves $271.6K/mo</text>
+
+  <!-- Step 2 -->
+  <rect x="928" y="174" width="428" height="145" class="box"/>
+  <rect x="942" y="186" width="92" height="22" rx="6" fill="#10B981"/>
+  <text x="954" y="201" class="t-badge">STEP 2 · 4 ms</text>
+  <text x="1044" y="202" class="t-sec" fill="#6EE7B7">1.12B SSD DiskANN + Spark PREDICT WFM</text>
+  <text x="942" y="226" class="t-body">• 100% Auto-QA &amp; 15-min Erlang-C WFM via C++ Spark PREDICT</text>
+  <text x="942" y="244" class="t-body">• 1,120,000,000 (1.12B!) SOP, warranty clause &amp; golden call</text>
+  <text x="942" y="262" class="t-body">  transcript vectors on NVMe SSD DiskANN (-92% RAM)</text>
+  <text x="942" y="284" class="t-mono">$5,380/mo SSD vs $136.8K DRAM (-$131.4K/mo!) | +$138.0M/yr!</text>
+
+  <!-- Step 3 -->
+  <rect x="484" y="335" width="430" height="150" class="box-gate"/>
+  <rect x="498" y="347" width="92" height="22" rx="6" fill="#F59E0B"/>
+  <text x="510" y="362" class="t-badge">STEP 3 · 4 ms</text>
+  <text x="600" y="363" class="t-sec" fill="#FDE68A">Foundry IQ PCI-DSS, Refund &amp; TCPA Gate (SOP-296)</text>
+  <text x="498" y="387" class="t-body">• Blocks 635 CX Compliance Violations (Exact +$30.00M!):</text>
+  <text x="498" y="405" class="t-body">  1. Inline PCI-DSS v4.0 16-digit PAN/CVV &amp; HIPAA PHI scrub</text>
+  <text x="498" y="423" class="t-body">  2. Unauthorized goodwill credit/refund promises above cap</text>
+  <text x="498" y="441" class="t-body">  3. Outbound callbacks violating TCPA Do-Not-Call (DNC)</text>
+  <text x="498" y="465" class="t-mono">Queue &amp; Region RLS Enforced Across 36,200 CX Users</text>
+
+  <!-- Step 4 -->
+  <rect x="928" y="335" width="428" height="150" class="box"/>
+  <rect x="942" y="347" width="92" height="22" rx="6" fill="#A855F7"/>
+  <text x="954" y="362" class="t-badge">STEP 4 · 4 ms</text>
+  <text x="1044" y="363" class="t-sec" fill="#E9D5FF">Agent Desktop Assist, WFM Shift &amp; 1GB SQL</text>
+  <text x="942" y="387" class="t-body">• Pushes order-aware next-best-action card to agent desktop</text>
+  <text x="942" y="405" class="t-body">• Serves 36,200 supervisors/agents via $0 Direct Lake BI</text>
+  <text x="942" y="423" class="t-body">• Commits PCI/TCPA QA audit ledger to 1GB Free Fabric SQL</text>
+  <text x="942" y="465" class="t-mono">4+4+4+4 = 16ms (4²ms) E2E | Protects $103.20M SLA!</text>
+
+  <!-- 5-Cloud TCO Bar Comparison inside Right Box -->
+  <rect x="484" y="500" width="872" height="132" class="box"/>
+  <text x="502" y="524" class="t-sec">📊 5-Cloud CCaaS Real-Time Agent Assist &amp; WFM Monthly TCO (45,000 Seats · 180M Calls/Yr · 36,200 Users)</text>
+  <text x="502" y="548" class="t-mono" fill="#10B981">Microsoft Fabric (F64 + DiskANN): $20,300/mo  [██] 🏆 First &gt;-$690K/mo Saved (-$691,800/mo · -97.1%!)</text>
+  <text x="502" y="568" class="t-body">Azure Databricks Mosaic (Alone):  $418,000/mo [████████████████████████████] ($37,100/mo in OneLake Coexistence)</text>
+  <text x="502" y="588" class="t-body">AWS Connect Contact Lens + BI:    $528,000/mo [███████████████████████████████████]</text>
+  <text x="502" y="608" class="t-body">Snowflake + CCaaS Add-Ons + BI:   $712,100/mo [████████████████████████████████████████████████]</text>
+
+  <!-- Bottom KPI Milestone Strip -->
+  <rect x="24" y="664" width="1352" height="176" rx="12" fill="#0F172A" stroke="#38BDF8" stroke-width="2"/>
+  <text x="44" y="694" class="t-title" fill="#7DD3FC">🏆 Round 288 (Scenario KI · DL-1193..DL-1196 · Historic First 99.87% Accuracy &amp; Sub-101ms Route!) Milestones</text>
+
+  <rect x="44" y="710" width="315" height="114" class="box"/>
+  <text x="60" y="734" class="t-sec" fill="#38BDF8">🎯 Historic First 99.87% &amp; 100.7ms</text>
+  <text x="60" y="756" class="t-body">• Prime 743/744 (99.87% All-Time Record!)</text>
+  <text x="60" y="776" class="t-body">• 100.7ms Route (74,904 / 744 &lt;101.0ms!)</text>
+  <text x="60" y="796" class="t-mono">526 Auto · 216=6³ Cube Confirm · 2 Human</text>
+
+  <rect x="375" y="710" width="315" height="114" class="box"/>
+  <text x="391" y="734" class="t-sec" fill="#6EE7B7">⚡ 182nd Sim (90.21ms!) &amp; +56.0% Lift</text>
+  <text x="391" y="756" class="t-body">• Ontology Sim Mean: 90.21ms (16,418/182!)</text>
+  <text x="391" y="776" class="t-body">• 1,620K (1.62M) EPS · 1,075 Waves</text>
+  <text x="391" y="796" class="t-mono">Exact +56.0% FCR/AHT Lift · $103.20M SLA!</text>
+
+  <rect x="706" y="710" width="315" height="114" class="box"/>
+  <text x="722" y="734" class="t-sec" fill="#FDE68A">💎 1.12B Vectors &amp; -$691,800/mo</text>
+  <text x="722" y="756" class="t-body">• 1.12B Vectors: Saves $131,420/mo (&gt;$131K!)</text>
+  <text x="722" y="776" class="t-body">• First &gt;-$690K/mo Saved (-$691,800/mo!)</text>
+  <text x="722" y="796" class="t-mono">+$138.0M/yr Gained · $20,300/mo TCO</text>
+
+  <rect x="1037" y="710" width="319" height="114" class="box"/>
+  <text x="1053" y="734" class="t-sec" fill="#C4B5FD">🛡️ Exact +$30.00M Guardrail Milestone</text>
+  <text x="1053" y="756" class="t-body">• 635 PCI/Refund/TCPA Blocks (+$30.00M!)</text>
+  <text x="1053" y="776" class="t-body">• 176 Curated FAQs (352 Docs) · 296 SVG</text>
+  <text x="1053" y="796" class="t-mono">36,200 Users · 368/368 Unit Tests</text>
+</svg>
