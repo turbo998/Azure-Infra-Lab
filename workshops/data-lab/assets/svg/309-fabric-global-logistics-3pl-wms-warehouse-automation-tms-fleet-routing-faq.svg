@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg309" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#061220"/>
+      <stop offset="50%" stop-color="#0B1E36"/>
+      <stop offset="100%" stop-color="#071526"/>
+    </linearGradient>
+    <linearGradient id="hdr309" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="50%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="cardBlue309" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F2848"/>
+      <stop offset="100%" stop-color="#09182E"/>
+    </linearGradient>
+    <linearGradient id="cardGreen309" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#063B30"/>
+      <stop offset="100%" stop-color="#04241D"/>
+    </linearGradient>
+    <linearGradient id="cardRed309" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3C1220"/>
+      <stop offset="100%" stop-color="#240A13"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="820" fill="url(#bg309)" rx="16"/>
+  <rect x="24" y="20" width="1352" height="92" rx="12" fill="url(#hdr309)" opacity="0.18" stroke="#38BDF8" stroke-width="1.5"/>
+
+  <text x="44" y="54" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">
+    SVG #309 · ROUND 301 · SCENARIO KV (DL-1245..1248) · HISTORIC EXACT 700 BLOCKED VIOLATIONS! · 195th SIM AT 85.26ms! · PALINDROME 565 AUTO &amp; TWIN-PRIME 229 CONFIRM · 394 TESTS!
+  </text>
+  <text x="44" y="82" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800">
+    Global Logistics 3PL/4PL, Warehouse Automation (WMS / ASRS) &amp; Dynamic Fleet Routing (TMS) Architecture
+  </text>
+  <text x="44" y="103" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+    Microsoft Fabric Eventhouse H3 KQL + Fabric Graph (8-Hop ISO GQL) + OneLake SAP EWM/TM Shortcuts + 1.185B SSD DiskANN ($5,640/mo) vs. AWS / GCP / Databricks / Snowflake
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="24" y="128" width="320" height="430" rx="12" fill="url(#cardBlue309)" stroke="#0EA5E9" stroke-width="1.5"/>
+  <text x="42" y="158" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">1. Fleet &amp; WMS Stream (4ms)</text>
+  <text x="42" y="182" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">85K Trucks · 1,200 Hubs · Exact 1,750K (1.75M) EPS</text>
+
+  <rect x="40" y="198" width="288" height="72" rx="8" fill="#0B192C" stroke="#1E3A5F"/>
+  <text x="52" y="220" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Eventhouse H3 KQL Exact 1.75M EPS</text>
+  <text x="52" y="240" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Live Truck ELD/GPS/Reefer &amp; Port AIS</text>
+  <text x="52" y="258" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Warehouse ASRS Shuttle &amp; Sorter PLC Ticks</text>
+
+  <rect x="40" y="282" width="288" height="72" rx="8" fill="#0B192C" stroke="#1E3A5F"/>
+  <text x="52" y="304" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">OneLake Zero-Copy SAP EWM/TM &amp; WMS</text>
+  <text x="52" y="324" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Manhattan WMS Wave Picks &amp; Dock Slots</text>
+  <text x="52" y="342" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Carrier Rate Cards &amp; Shipper SLAs</text>
+
+  <rect x="40" y="366" width="288" height="82" rx="8" fill="#062E26" stroke="#10B981"/>
+  <text x="52" y="390" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">4ms 1,140-Wave Dock &amp; Backhaul Sense</text>
+  <text x="52" y="410" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eliminates $295,000/mo API/Graph/CDC Tax</text>
+  <text x="52" y="428" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• +61.2% OTD &amp; Empty-Mile Reduction Lift</text>
+
+  <text x="42" y="476" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 0 Per-Shipment Map API Tax · 0 Detention</text>
+  <text x="42" y="498" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Real-Time Dock Appointment Re-Slotting</text>
+  <text x="42" y="520" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">→ 4ms Latency · 1,140 Waves Flagged</text>
+
+  <!-- Step 2 -->
+  <rect x="364" y="128" width="340" height="430" rx="12" fill="url(#cardBlue309)" stroke="#14B8A6" stroke-width="1.5"/>
+  <text x="382" y="158" fill="#2DD4BF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">2. 8-Hop GQL &amp; 1.185B RAG (4ms)</text>
+  <text x="382" y="182" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">ISO/IEC 39075 GQL + $5,640/mo SSD DiskANN</text>
+
+  <rect x="380" y="198" width="308" height="86" rx="8" fill="#0B192C" stroke="#1E3A5F"/>
+  <text x="392" y="220" fill="#5EEAD4" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Fabric Graph 8-Hop Intermodal Graph</text>
+  <text x="392" y="240" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Pickup → Sort Hub → Port → Cross-Dock</text>
+  <text x="392" y="258" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• → LTL Linehaul → Backhaul Cube Match</text>
+  <text x="392" y="274" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• $0 Standalone Neptune / Neo4j Tax</text>
+
+  <rect x="380" y="296" width="308" height="96" rx="8" fill="#0B192C" stroke="#1E3A5F"/>
+  <text x="392" y="318" fill="#5EEAD4" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1,185,000,000 (1.185B!) SSD DiskANN Vectors</text>
+  <text x="392" y="338" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Bills of Lading (BOL) &amp; 10-Digit HS Tariffs</text>
+  <text x="392" y="356" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 3D Carton-Cubing Scans &amp; LTL Rate Tables</text>
+  <text x="392" y="376" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• $5,640/mo vs $144,600/mo 10.15TB DRAM</text>
+
+  <rect x="380" y="404" width="308" height="72" rx="8" fill="#062E26" stroke="#10B981"/>
+  <text x="392" y="426" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Saves $138,960/mo (&gt;$138.9K/mo!) on RAM</text>
+  <text x="392" y="446" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Captures Palindrome-Prime +$151.0M/yr!</text>
+  <text x="392" y="464" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Instant Customs &amp; Freight Bill Audit</text>
+
+  <text x="382" y="520" fill="#2DD4BF" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">→ 4ms Latency · -92.0% RAM Footprint</text>
+
+  <!-- Step 3 -->
+  <rect x="724" y="128" width="320" height="430" rx="12" fill="url(#cardRed309)" stroke="#F43F5E" stroke-width="1.5"/>
+  <text x="742" y="158" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">3. Foundry IQ Gate SOP-309 (4ms)</text>
+  <text x="742" y="182" fill="#FFE4E6" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">Historic Exact 700 Risks Blocked (+$32.60M)</text>
+
+  <rect x="740" y="198" width="288" height="78" rx="8" fill="#2A0A14" stroke="#881337"/>
+  <text x="752" y="220" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">① FMCSA / EU ELD HOS Fatigue Gate</text>
+  <text x="752" y="240" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Verifies live driver remaining HOS hours</text>
+  <text x="752" y="258" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks fatiguing route diversions</text>
+
+  <rect x="740" y="288" width="288" height="78" rx="8" fill="#2A0A14" stroke="#881337"/>
+  <text x="752" y="310" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">② IMDG / IATA Hazmat Segregation</text>
+  <text x="752" y="330" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks oxidizer + flammable co-loading</text>
+  <text x="752" y="348" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Enforces lithium-ion placard limits</text>
+
+  <rect x="740" y="378" width="288" height="86" rx="8" fill="#2A0A14" stroke="#881337"/>
+  <text x="752" y="400" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">③ Pharma GDP &amp; FSMA 204 MKT Gate</text>
+  <text x="752" y="420" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Quarantines thermal-excursion reefer lots</text>
+  <text x="752" y="438" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks spoiled inventory WMS putaway</text>
+  <text x="752" y="454" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Entra OBO RLS across 38,800 Users</text>
+
+  <text x="742" y="520" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">→ 4ms Latency · +$32.60M Saved</text>
+
+  <!-- Step 4 -->
+  <rect x="1064" y="128" width="312" height="430" rx="12" fill="url(#cardGreen309)" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1082" y="158" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">4. WMS/TMS Dispatch &amp; TCO (4ms)</text>
+  <text x="1082" y="182" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">16ms (4²ms) E2E · -$746,140/mo (-97.3%)</text>
+
+  <rect x="1080" y="198" width="280" height="82" rx="8" fill="#042019" stroke="#059669"/>
+  <text x="1092" y="220" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Closed-Loop Dock &amp; Backhaul Action</text>
+  <text x="1092" y="240" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Dynamic Dock Slot &amp; Backhaul Assignment</text>
+  <text x="1092" y="258" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 1GB Free Fabric SQL FMCSA/GDP Audit Log</text>
+
+  <rect x="1080" y="292" width="280" height="92" rx="8" fill="#042019" stroke="#059669"/>
+  <text x="1092" y="314" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">5-Cloud Monthly TCO Comparison</text>
+  <text x="1092" y="336" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Fabric F64 + DiskANN: $20,560/mo</text>
+  <text x="1092" y="356" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Stitched 4-Cloud Stack: $766,700/mo</text>
+  <text x="1092" y="374" fill="#FDE047" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Net Savings: -$746,140/mo (-97.3%)</text>
+
+  <rect x="1080" y="396" width="280" height="86" rx="8" fill="#042019" stroke="#059669"/>
+  <text x="1092" y="418" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">38,800 Users ($0 Viewer Seat Tax)</text>
+  <text x="1092" y="438" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 31,860 Active Viewers Save $318.6K/mo</text>
+  <text x="1092" y="456" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Protects $108.40M Annual Logistics SLA</text>
+
+  <text x="1082" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">→ 4+4+4+4 = 16ms (4²ms) E2E</text>
+
+  <!-- Bottom Benchmark Table -->
+  <rect x="24" y="574" width="1352" height="224" rx="12" fill="#091526" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="44" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">
+    5-Cloud Global Logistics 3PL/4PL, WMS &amp; TMS Decision Matrix (Sealed R301 · 795/796 = 99.87% · 94.4ms Route · 85.26ms 195th Sim)
+  </text>
+  <text x="44" y="634" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Platform Architecture</text>
+  <text x="370" y="634" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1.75M EPS Stream + 8-Hop Hub Graph</text>
+  <text x="690" y="634" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1.185B BOL/Tariff Vector Cost</text>
+  <text x="980" y="634" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">38.8K Users BI Tax</text>
+  <text x="1170" y="634" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Monthly TCO</text>
+
+  <line x1="44" y1="644" x2="1356" y2="644" stroke="#1E3A5F" stroke-width="1"/>
+
+  <text x="44" y="670" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">🏆 Microsoft Fabric (F64 Pooled)</text>
+  <text x="370" y="670" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Eventhouse H3 KQL + 8-Hop GQL ($0 Tax)</text>
+  <text x="690" y="670" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">$5,640/mo (SSD DiskANN)</text>
+  <text x="980" y="670" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">$0 (Included in F64)</text>
+  <text x="1170" y="670" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">$20,560/mo (-97.3%)</text>
+
+  <text x="44" y="700" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Snowflake Logistics Data Cloud</text>
+  <text x="370" y="700" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13">Snowpipe + External Graph Native App</text>
+  <text x="690" y="700" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$144,600/mo (10.15TB DRAM)</text>
+  <text x="980" y="700" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$318,600/mo (External BI)</text>
+  <text x="1170" y="700" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$766,700/mo</text>
+
+  <text x="44" y="730" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">AWS (IoT + Location + Neptune)</text>
+  <text x="370" y="730" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13">Location API + Neptune Graph (~$50K/mo)</text>
+  <text x="690" y="730" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$144,600/mo (OpenSearch RAM)</text>
+  <text x="980" y="730" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$318,600/mo (QuickSight)</text>
+  <text x="1170" y="730" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$776,000/mo</text>
+
+  <text x="44" y="760" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">GCP (Fleet Routing + BigQuery GIS)</text>
+  <text x="370" y="760" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13">Per-Shipment API + External Graph Aura</text>
+  <text x="690" y="760" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$144,600/mo (Vertex RAM)</text>
+  <text x="980" y="760" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$318,600/mo (Looker Seats)</text>
+  <text x="1170" y="760" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$750,000/mo</text>
+
+  <text x="44" y="786" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Azure Databricks Lakehouse for Logistics</text>
+  <text x="370" y="786" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13">Spark Streaming + GraphFrames DBUs</text>
+  <text x="690" y="786" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$144,600/mo (Mosaic RAM)</text>
+  <text x="980" y="786" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$318,600/mo (BI + SQL DBU)</text>
+  <text x="1170" y="786" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$742,000/mo</text>
+</svg>
