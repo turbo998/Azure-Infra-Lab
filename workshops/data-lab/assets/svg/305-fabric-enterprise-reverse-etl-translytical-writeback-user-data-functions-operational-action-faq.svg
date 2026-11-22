@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg305" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#061220"/>
+      <stop offset="50%" stop-color="#0B1E36"/>
+      <stop offset="100%" stop-color="#071526"/>
+    </linearGradient>
+    <linearGradient id="hdr305" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="cardBlue305" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F2848"/>
+      <stop offset="100%" stop-color="#09182E"/>
+    </linearGradient>
+    <linearGradient id="cardGreen305" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#063B30"/>
+      <stop offset="100%" stop-color="#04241D"/>
+    </linearGradient>
+    <linearGradient id="cardRed305" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3C1220"/>
+      <stop offset="100%" stop-color="#240A13"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="820" fill="url(#bg305)" rx="16"/>
+  <rect x="24" y="20" width="1352" height="92" rx="12" fill="url(#hdr305)" opacity="0.18" stroke="#38BDF8" stroke-width="1.5"/>
+
+  <text x="44" y="54" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">
+    SVG #305 · ROUND 297 · SCENARIO KR (DL-1229..1232) · FIRST SUB-87.0ms SIM (86.71ms AT 191st PALINDROME-PRIME SIM!) · 779/780 (96.2ms!) · 225=15² CONFIRM · EXACT 38K USERS!
+  </text>
+  <text x="44" y="82" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800">
+    Enterprise Reverse ETL, Translytical Write-Back (Power BI + UDF + Fabric SQL DB) &amp; Operational Action Loop
+  </text>
+  <text x="44" y="103" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+    Microsoft Fabric Translytical Task Flows + SQL Database in Fabric + User Data Functions + Activator + 1.165B SSD DiskANN ($5,560/mo) vs. Hightouch / Census &amp; 4 Clouds
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="24" y="128" width="320" height="430" rx="12" fill="url(#cardBlue305)" stroke="#0EA5E9" stroke-width="1.5"/>
+  <text x="42" y="158" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">1. Translytical Write-Back (4ms)</text>
+  <text x="42" y="182" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">3,200 Apps · Exact 38,000 Users · 1,710K (1.71M) EPS</text>
+
+  <rect x="40" y="198" width="288" height="72" rx="8" fill="#0B192C" stroke="#1E3A5F"/>
+  <text x="52" y="220" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Power BI + User Data Functions (UDF)</text>
+  <text x="52" y="240" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Native In-Report Approvals &amp; Price Overrides</text>
+  <text x="52" y="258" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Row-Level ACID Write to Fabric SQL DB</text>
+
+  <rect x="40" y="282" width="288" height="72" rx="8" fill="#0B192C" stroke="#1E3A5F"/>
+  <text x="52" y="304" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Zero-Lag Auto-Mirroring &amp; Activator</text>
+  <text x="52" y="324" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Instant Direct Lake Echo without Refresh</text>
+  <text x="52" y="342" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Palindrome 1,710K EPS Reflex Event Stream</text>
+
+  <rect x="40" y="366" width="288" height="82" rx="8" fill="#062E26" stroke="#10B981"/>
+  <text x="52" y="390" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">4ms 1,120-Wave Conflict &amp; Quota Sense</text>
+  <text x="52" y="410" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eliminates $287,800/mo Reverse ETL/DB Tax</text>
+  <text x="52" y="428" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• +59.6% Decision-to-Action Velocity Lift</text>
+
+  <text x="42" y="476" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 0 Hightouch/Census MAR Tax · 0 Stale Overwrites</text>
+  <text x="42" y="498" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Unified Analytical + Transactional Storage</text>
+  <text x="42" y="520" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">→ 4ms Latency · 1,120 Waves Flagged</text>
+
+  <!-- Step 2 -->
+  <rect x="364" y="128" width="340" height="430" rx="12" fill="url(#cardBlue305)" stroke="#6366F1" stroke-width="1.5"/>
+  <text x="382" y="158" fill="#818CF8" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">2. 1.165B Outbox &amp; Schema RAG (4ms)</text>
+  <text x="382" y="182" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">$5,560/mo SSD DiskANN vs 9.95TB DRAM</text>
+
+  <rect x="380" y="198" width="308" height="86" rx="8" fill="#0B192C" stroke="#1E3A5F"/>
+  <text x="392" y="220" fill="#A5B4FC" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Optimistic Concurrency &amp; Schema Map</text>
+  <text x="392" y="240" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Pre-Write Row-Version &amp; ETag Verification</text>
+  <text x="392" y="258" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Salesforce, Dynamics 365 &amp; SAP OData Map</text>
+  <text x="392" y="274" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Zero Lost Updates Across 3,200 Apps</text>
+
+  <rect x="380" y="296" width="308" height="96" rx="8" fill="#0B192C" stroke="#1E3A5F"/>
+  <text x="392" y="318" fill="#A5B4FC" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1,165,000,000 (1.165B!) SSD DiskANN Vectors</text>
+  <text x="392" y="338" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Transactional Outbox Keys &amp; State Snapshots</text>
+  <text x="392" y="356" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• API Rate-Limit Contracts &amp; Approval Policies</text>
+  <text x="392" y="376" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• $5,560/mo vs $142,200/mo 9.95TB DRAM</text>
+
+  <rect x="380" y="404" width="308" height="72" rx="8" fill="#062E26" stroke="#10B981"/>
+  <text x="392" y="426" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Saves $136,640/mo (&gt;$136.6K/mo!) on RAM</text>
+  <text x="392" y="446" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Captures +$147.0M/yr Operational Agility Gain</text>
+  <text x="392" y="464" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Sub-Second Bi-Directional State Sync</text>
+
+  <text x="382" y="520" fill="#818CF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">→ 4ms Latency · -92.0% RAM Footprint</text>
+
+  <!-- Step 3 -->
+  <rect x="724" y="128" width="320" height="430" rx="12" fill="url(#cardRed305)" stroke="#F43F5E" stroke-width="1.5"/>
+  <text x="742" y="158" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">3. Foundry IQ Gate SOP-305 (4ms)</text>
+  <text x="742" y="182" fill="#FFE4E6" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">Round-Ten 680 Write-Back Risks Blocked (+$31.80M)</text>
+
+  <rect x="740" y="198" width="288" height="78" rx="8" fill="#2A0A14" stroke="#881337"/>
+  <text x="752" y="220" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">① Transactional Outbox Idempotency</text>
+  <text x="752" y="240" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks double-click duplicate mutations</text>
+  <text x="752" y="258" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks stale-read overwrites of CRM edits</text>
+
+  <rect x="740" y="288" width="288" height="78" rx="8" fill="#2A0A14" stroke="#881337"/>
+  <text x="752" y="310" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">② CRM/ERP API Rate-Limit Governor</text>
+  <text x="752" y="330" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Coalesces burst writes into micro-batches</text>
+  <text x="752" y="348" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Prevents HTTP 429 exhaustion on SAP/SFDC</text>
+
+  <rect x="740" y="378" width="288" height="86" rx="8" fill="#2A0A14" stroke="#881337"/>
+  <text x="752" y="400" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">③ Entra OBO Write-Back Approval Gate</text>
+  <text x="752" y="420" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Enforces territory &amp; dollar approval ceilings</text>
+  <text x="752" y="438" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Full before/after audit snapshot logging</text>
+  <text x="752" y="454" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Entra OBO RLS across Exact 38,000 Users</text>
+
+  <text x="742" y="520" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">→ 4ms Latency · +$31.80M Saved</text>
+
+  <!-- Step 4 -->
+  <rect x="1064" y="128" width="312" height="430" rx="12" fill="url(#cardGreen305)" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1082" y="158" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">4. CRM Commit &amp; TCO (4ms)</text>
+  <text x="1082" y="182" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">16ms (4²ms) E2E · -$729,420/mo (-97.3%)</text>
+
+  <rect x="1080" y="198" width="280" height="82" rx="8" fill="#042019" stroke="#059669"/>
+  <text x="1092" y="220" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Closed-Loop CRM/ERP Dispatch</text>
+  <text x="1092" y="240" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Idempotent SAP / Salesforce / D365 Sync</text>
+  <text x="1092" y="258" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 1GB Free Fabric SQL Translytical Audit</text>
+
+  <rect x="1080" y="292" width="280" height="92" rx="8" fill="#042019" stroke="#059669"/>
+  <text x="1092" y="314" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">5-Cloud Monthly TCO Comparison</text>
+  <text x="1092" y="336" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Fabric F64 (10×2¹¹): $20,480/mo</text>
+  <text x="1092" y="356" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Stitched Reverse-ETL Stack: $749,900/mo</text>
+  <text x="1092" y="374" fill="#FDE047" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Net Savings: -$729,420/mo (-97.3%)</text>
+
+  <rect x="1080" y="396" width="280" height="86" rx="8" fill="#042019" stroke="#059669"/>
+  <text x="1092" y="418" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Exact 38,000 Users ($0 Viewer Tax)</text>
+  <text x="1092" y="438" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 31,140 Active Viewers Save $311.4K/mo</text>
+  <text x="1092" y="456" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Protects $106.80M Operational SLA</text>
+
+  <text x="1082" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">→ 4+4+4+4 = 16ms (4²ms) E2E</text>
+
+  <!-- Bottom Benchmark Table -->
+  <rect x="24" y="574" width="1352" height="224" rx="12" fill="#091526" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="44" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">
+    5-Cloud Enterprise Reverse ETL &amp; Translytical Write-Back Decision Matrix (Sealed R297 · 779/780 = 99.87% · 96.2ms Route · 86.71ms 191st Sim)
+  </text>
+  <text x="44" y="634" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Platform Architecture</text>
+  <text x="370" y="634" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">In-Report Write-Back &amp; Reverse ETL</text>
+  <text x="690" y="634" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1.165B Outbox/API Vector Cost</text>
+  <text x="980" y="634" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Exact 38K Users BI Tax</text>
+  <text x="1170" y="634" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Monthly TCO</text>
+
+  <line x1="44" y1="644" x2="1356" y2="644" stroke="#1E3A5F" stroke-width="1"/>
+
+  <text x="44" y="670" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">🏆 Microsoft Fabric (Translytical F64)</text>
+  <text x="370" y="670" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Power BI + UDF + Fabric SQL DB ($0 Tax)</text>
+  <text x="690" y="670" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">$5,560/mo (SSD DiskANN)</text>
+  <text x="980" y="670" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">$0 (Included in F64)</text>
+  <text x="1170" y="670" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">$20,480/mo (-97.3%)</text>
+
+  <text x="44" y="700" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Snowflake + Hightouch / Census</text>
+  <text x="370" y="700" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13">Per-Row Reverse ETL MAR + Streamlit</text>
+  <text x="690" y="700" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$142,200/mo (9.95TB DRAM)</text>
+  <text x="980" y="700" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$311,400/mo (External BI)</text>
+  <text x="1170" y="700" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$749,900/mo</text>
+
+  <text x="44" y="730" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Azure Databricks Lakebase + Apps</text>
+  <text x="370" y="730" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13">Lakebase DBUs + Custom Python Apps</text>
+  <text x="690" y="730" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$142,200/mo (Mosaic RAM)</text>
+  <text x="980" y="730" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$311,400/mo (BI + SQL DBU)</text>
+  <text x="1170" y="730" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$726,000/mo</text>
+
+  <text x="44" y="760" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">AWS Redshift + AppFlow + QuickSight</text>
+  <text x="370" y="760" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13">AppFlow Per-Run Fee + External RDS</text>
+  <text x="690" y="760" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$142,200/mo (OpenSearch RAM)</text>
+  <text x="980" y="760" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$311,400/mo (QuickSight)</text>
+  <text x="1170" y="760" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$760,000/mo</text>
+
+  <text x="44" y="786" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">GCP BigQuery + Looker Action Hub</text>
+  <text x="370" y="786" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="13">Looker Webhooks + Cloud SQL Sync</text>
+  <text x="690" y="786" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$142,200/mo (Vertex RAM)</text>
+  <text x="980" y="786" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$311,400/mo (Looker Seats)</text>
+  <text x="1170" y="786" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13">$734,000/mo</text>
+</svg>
