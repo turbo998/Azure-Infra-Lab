@@ -3509,6 +3509,24 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_banking_payments_realtime_fraud_ring_synthetic_identity_aml_graph_sar_rag_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_banking_payments_realtime_fraud_ring_synthetic_identity_aml_graph_sar_rag_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["global_bank_accounts_millions"], 210)
+        self.assertEqual(sim["telemetry"]["fraud_ring_and_aml_mule_waves_flagged_count"], 1225)
+        self.assertEqual(sim["telemetry"]["iso20022_fednow_rtp_card_and_biometric_stream_eps"], 1920000)
+        self.assertEqual(sim["telemetry"]["fincen_sar_ubo_filing_and_ce30_dispute_vectors_count"], 1270000000)
+        self.assertEqual(sim["telemetry"]["standalone_graph_db_kafka_and_core_cdc_tax_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_fincrime_aml_monthly_tco_usd"], 20900)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_fincrime_aml_tco_saved_usd"], 817200)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_fincrime_aml_tco_savings_pct"], 97.5)
+        self.assertTrue(sim["foundry_iq_guardrail"]["ofac_50pct_10hop_wire_freeze_and_sr117_ecoa_explainability_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["fincen_sar_anti_tipping_off_wall_and_glba_pii_masking_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 115200000)
+
+
     def test_global_industrial_manufacturing_automotive_tier1_digital_thread_bom_oee_predictive_maintenance_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_industrial_manufacturing_automotive_tier1_digital_thread_bom_oee_predictive_maintenance_vs_4clouds")
         self.assertEqual(sim["telemetry"]["global_smart_factories_and_cnc_robotics_thousands"], 450)
@@ -3527,16 +3545,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114800000)
 
 
-    def test_scenario_matrix_426_cases_and_explicit_miss(self) -> None:
+    def test_scenario_matrix_428_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 860)
-        self.assertEqual(matrix["passed_scenarios"], 859)
+        self.assertEqual(matrix["total_scenarios"], 864)
+        self.assertEqual(matrix["passed_scenarios"], 863)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.88, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 87.6)
+        self.assertEqual(matrix["avg_latency_ms"], 87.2)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_banking_payments_fraud_aml_graph_sar_rag_r318_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1313", "DL-1314", "DL-1315", "DL-1316"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("1,225=35^2=T_49 Waves", by_id["DL-1313"]["expected"])
+        self.assertIn("1,270M = 1.27B", by_id["DL-1314"]["expected"])
+        self.assertIn("-$817,200/mo", by_id["DL-1315"]["expected"])
+        self.assertIn("785-OFAC50PctRule", by_id["DL-1316"]["expected"])
 
 
     def test_industrial_manufacturing_auto_tier1_digital_thread_r317_scenarios(self) -> None:
@@ -5983,11 +6013,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 859)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 860)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 87.6)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 211)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 80.01)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 863)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 864)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 87.2)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 212)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 79.71)
 
 
 if __name__ == "__main__":
