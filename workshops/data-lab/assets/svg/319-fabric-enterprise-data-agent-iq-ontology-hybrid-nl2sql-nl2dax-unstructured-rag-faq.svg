@@ -1,0 +1,280 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820">
+  <defs>
+    <linearGradient id="bg319" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="hdr319" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="card319" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="820" fill="url(#bg319)"/>
+  <rect x="20" y="18" width="1360" height="92" rx="14" fill="url(#hdr319)" opacity="0.95"/>
+  <text x="45" y="52" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="20.5" font-weight="700">
+    #319 · Enterprise Data Agent, Fabric IQ Ontology (TMDL) &amp; Hybrid NL2SQL/NL2DAX + Unstructured RAG (Twin-Prime R311 · Scenario LF)
+  </text>
+  <text x="45" y="80" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">
+    🏆 Twin-Prime R311 Milestone! · Historic Exact 90.0ms Integer Routing Mean (75,272/836)! · Historic First Sub-82.00ms Sim at 81.88ms (205th Sim)! · Prime 199 FAQs!
+  </text>
+  <text x="45" y="100" fill="#E0E7FF" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    720 Domains (54K Certified KPIs) · 1,850K (1.85M) EPS Query Stream · 4-Modal NL2DAX/SQL/KQL/GQL · 1.235B TMDL/Doc SSD DiskANN ($5,840/mo) · $112.40M SLA · 414 Tests
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="25" y="128" width="320" height="430" rx="12" fill="url(#card319)" stroke="#38BDF8" stroke-width="2"/>
+  <rect x="25" y="128" width="320" height="40" rx="12" fill="#0284C7"/>
+  <text x="40" y="154" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="700">
+    ① Work IQ + TMDL Router (4 ms)
+  </text>
+  <text x="40" y="190" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">
+    1,850K (1.85M) EPS Conversational BI
+  </text>
+  <text x="40" y="214" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • 720 business domains &amp; 54,000 certified KPIs
+  </text>
+  <text x="40" y="236" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Reuses Power BI Direct Lake TMDL measures
+  </text>
+  <text x="40" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Work IQ context compression (-80% tokens)
+  </text>
+  <text x="40" y="280" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • 4-modal: NL2DAX / NL2SQL / NL2KQL / NL2GQL
+  </text>
+  <rect x="40" y="302" width="290" height="68" rx="8" fill="#0C4A6E" stroke="#38BDF8" stroke-width="1"/>
+  <text x="52" y="325" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">
+    ⚡ 1,190 Query &amp; Drift Waves in 4ms
+  </text>
+  <text x="52" y="346" fill="#BAE6FD" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    0.00% metric drift across board &amp; ops KPIs
+  </text>
+  <text x="52" y="364" fill="#BAE6FD" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    $0 Headless BI, graph DB &amp; token tax!
+  </text>
+  <rect x="40" y="384" width="290" height="156" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="52" y="408" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    Eliminates $313,000/mo Stitched Tax:
+  </text>
+  <text x="52" y="430" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✗ Cube / AtScale standalone semantic servers
+  </text>
+  <text x="52" y="450" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✗ External Neo4j / Neptune schema graphs
+  </text>
+  <text x="52" y="470" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✗ Raw DDL prompt-stuffing token surcharges
+  </text>
+  <text x="52" y="498" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    ✓ +65.2% Query Accuracy &amp; Adoption Lift
+  </text>
+  <text x="52" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✓ DL-1285 Verified (Act automatically)
+  </text>
+
+  <!-- Step 2 -->
+  <rect x="368" y="128" width="320" height="430" rx="12" fill="url(#card319)" stroke="#A855F7" stroke-width="2"/>
+  <rect x="368" y="128" width="320" height="40" rx="12" fill="#7E22CE"/>
+  <text x="383" y="154" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="700">
+    ② 8-Hop Graph + 1.235B DiskANN (4 ms)
+  </text>
+  <text x="383" y="190" fill="#D8B4FE" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">
+    ISO GQL + 1.235B SSD DiskANN + Foundry IQ
+  </text>
+  <text x="383" y="214" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • 8-Hop: KPI→Measure→Fact→Customer→Contract
+  </text>
+  <text x="383" y="236" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    →Supplier→Plant→Shipment causal graph
+  </text>
+  <text x="383" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • 1,235,000,000 (1.235B!) TMDL measure,
+  </text>
+  <text x="383" y="280" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    golden SQL/DAX &amp; 10-K/contract vectors
+  </text>
+  <rect x="383" y="302" width="290" height="68" rx="8" fill="#4C1D95" stroke="#A855F7" stroke-width="1"/>
+  <text x="395" y="325" fill="#E9D5FF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">
+    🏆 $5,840/mo SSD DiskANN (-92% RAM)
+  </text>
+  <text x="395" y="346" fill="#DDD6FE" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    Replaces $150,600/mo 10.65 TB DRAM Cluster
+  </text>
+  <text x="395" y="364" fill="#DDD6FE" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    Saves $144,760/mo on Vector Memory Alone!
+  </text>
+  <rect x="383" y="384" width="290" height="156" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="395" y="408" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    4ms Hybrid Structured + Document RAG:
+  </text>
+  <text x="395" y="430" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Joins exact DAX KPI variance with PDF text
+  </text>
+  <text x="395" y="450" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Foundry IQ +36% multi-hop RRF relevance
+  </text>
+  <text x="395" y="470" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Eliminates Chasm &amp; Fan-Out join traps
+  </text>
+  <text x="395" y="498" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    ✓ Captures Prime +$161.0M/yr Value!
+  </text>
+  <text x="395" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✓ DL-1286 Verified (Act automatically)
+  </text>
+
+  <!-- Step 3 -->
+  <rect x="711" y="128" width="320" height="430" rx="12" fill="url(#card319)" stroke="#F43F5E" stroke-width="2"/>
+  <rect x="711" y="128" width="320" height="40" rx="12" fill="#BE123C"/>
+  <text x="726" y="154" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="700">
+    ③ Foundry IQ 750-Block Gate (4 ms)
+  </text>
+  <text x="726" y="190" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">
+    Policy: DATA-AGENT-ONTOLOGY-RAG-SOP-319
+  </text>
+  <text x="726" y="214" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Gate 1: Mandatory TMDL certified formula
+  </text>
+  <text x="726" y="236" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    routing (0.00% raw-table SUM hallucination)
+  </text>
+  <text x="726" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Gate 2: Dual-stack Entra ID OBO trimming
+  </text>
+  <text x="726" y="280" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    across OneLake RLS/CLS &amp; Purview PDF ACLs
+  </text>
+  <rect x="726" y="302" width="290" height="68" rx="8" fill="#881337" stroke="#F43F5E" stroke-width="1"/>
+  <text x="738" y="325" fill="#FFE4E6" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">
+    🛡️ Round-Fifty 750 Violations Blocked
+  </text>
+  <text x="738" y="346" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    Protects +$34.60M in financial misreporting,
+  </text>
+  <text x="738" y="364" fill="#FECDD3" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    MNPI/PII leaks &amp; runaway Cartesian queries!
+  </text>
+  <rect x="726" y="384" width="290" height="156" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="738" y="408" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    Gate 3: AST Cost &amp; Join Circuit Breaker:
+  </text>
+  <text x="738" y="430" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Blocks unpartitioned full-table cross-joins
+  </text>
+  <text x="738" y="450" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Verifies Purview sensitivity label inheritance
+  </text>
+  <text x="738" y="470" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Governs 40,800 concurrent enterprise users
+  </text>
+  <text x="738" y="498" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    ✓ 33,660 Active Viewers at $0 BI Seat Cost
+  </text>
+  <text x="738" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✓ DL-1288 Verified (Confirm · 0.99)
+  </text>
+
+  <!-- Step 4 -->
+  <rect x="1055" y="128" width="320" height="430" rx="12" fill="url(#card319)" stroke="#10B981" stroke-width="2"/>
+  <rect x="1055" y="128" width="320" height="40" rx="12" fill="#047857"/>
+  <text x="1070" y="154" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="700">
+    ④ Cited Answer + 1GB SQL (4 ms)
+  </text>
+  <text x="1070" y="190" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">
+    16ms (4²ms) Executive BI &amp; Action Loop
+  </text>
+  <text x="1070" y="214" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Renders certified Direct Lake visual card
+  </text>
+  <text x="1070" y="236" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Highlights exact PDF contract page &amp; clause
+  </text>
+  <text x="1070" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Triggers Translytical workflow write-back
+  </text>
+  <text x="1070" y="280" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Commits query lineage to 1GB Free SQL
+  </text>
+  <rect x="1070" y="302" width="290" height="68" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1"/>
+  <text x="1082" y="325" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">
+    🏆 Saves -$787,940/mo (-97.4% TCO!)
+  </text>
+  <text x="1082" y="346" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    Fabric Pooled F64: $20,760/mo vs.
+  </text>
+  <text x="1082" y="364" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    $808,700/mo Stitched 5-Cloud / DIY Stack
+  </text>
+  <rect x="1070" y="384" width="290" height="156" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1082" y="408" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    Sealed Twin-Prime R311 Milestones:
+  </text>
+  <text x="1082" y="430" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • 835 / 836 (99.88%) · Exact 90.0ms Route!
+  </text>
+  <text x="1082" y="450" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • First Sub-82ms Sim: 81.88ms (205th Sim!)
+  </text>
+  <text x="1082" y="470" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Prime 199 FAQs (398 Docs) · 319 SVG!
+  </text>
+  <text x="1082" y="498" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    ✓ Protects $112.40M SLA · 414 Unit Tests
+  </text>
+  <text x="1082" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✓ DL-1287 Verified (Act automatically)
+  </text>
+
+  <!-- Bottom 5-Cloud Comparison Bar -->
+  <rect x="25" y="576" width="1350" height="222" rx="12" fill="#0F172A" stroke="#334155" stroke-width="2"/>
+  <text x="45" y="608" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">
+    5-Cloud &amp; DIY Data Agent Monthly TCO Comparison (720 Domains · 54K KPIs · 1.85M EPS · 1.235B Vectors · 40,800 Users)
+  </text>
+
+  <rect x="45" y="624" width="250" height="156" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="2"/>
+  <text x="60" y="650" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">✅ Fabric Data Agent + IQ</text>
+  <text x="60" y="676" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">$20,760 / mo</text>
+  <text x="60" y="700" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $0 Semantic / Graph / Token Tax</text>
+  <text x="60" y="720" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $5,840/mo 1.235B SSD DiskANN</text>
+  <text x="60" y="740" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $0 Viewer Seats (40,800 Users)</text>
+  <text x="60" y="762" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Saves -$787,940/mo (-97.4%!)</text>
+
+  <rect x="310" y="624" width="250" height="156" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="325" y="650" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Stitched 5-Cloud / DIY</text>
+  <text x="325" y="676" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">$808,700 / mo</text>
+  <text x="325" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $313.0K/mo Cube/Neptune/Tokens</text>
+  <text x="325" y="720" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $150.6K/mo 10.65TB DRAM Vector</text>
+  <text x="325" y="740" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $163.9K/mo BI Viewer Seats</text>
+  <text x="325" y="762" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">38.9× Higher Monthly Cost</text>
+
+  <rect x="575" y="624" width="250" height="156" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="590" y="650" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Snowflake Cortex Stack</text>
+  <text x="590" y="676" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">$814,000 / mo</text>
+  <text x="590" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Cortex Analyst Semantic YAML</text>
+  <text x="590" y="720" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• High Cortex Search RAM Credits</text>
+  <text x="590" y="740" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Separate BI viewer licensing</text>
+  <text x="590" y="762" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">→ Mount via OneLake Iceberg</text>
+
+  <rect x="840" y="624" width="250" height="156" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="855" y="650" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">GCP BigQuery + Looker</text>
+  <text x="855" y="676" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">$801,000 / mo</text>
+  <text x="855" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• LookML Semantic Modeling</text>
+  <text x="855" y="720" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $151.4K/mo 10.65TB RAM Vector</text>
+  <text x="855" y="740" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Per-user Looker seat fees</text>
+  <text x="855" y="762" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">→ Zero-Copy Shortcut to OneLake</text>
+
+  <rect x="1105" y="624" width="250" height="156" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="1120" y="650" fill="#FDBA74" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Databricks AI/BI Genie</text>
+  <text x="1120" y="676" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">$790,000 / mo</text>
+  <text x="1120" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Great for Data Team SQL/Notebooks</text>
+  <text x="1120" y="720" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $150.6K/mo Mosaic Vector RAM</text>
+  <text x="1120" y="740" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• SQL Warehouse DBU spikes</text>
+  <text x="1120" y="762" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">→ Bind Mirrored UC to Power BI TMDL</text>
+</svg>
