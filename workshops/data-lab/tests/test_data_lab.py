@@ -3509,6 +3509,24 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_enterprise_data_governance_onelake_security_purview_obo_rls_cls_vs_unity_horizon_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_enterprise_data_governance_onelake_security_purview_obo_rls_cls_vs_unity_horizon_4clouds")
+        self.assertEqual(sim["telemetry"]["enterprise_business_domains_count"], 3200)
+        self.assertEqual(sim["telemetry"]["acl_drift_and_pii_exfil_waves_flagged_count"], 1255)
+        self.assertEqual(sim["telemetry"]["purview_audit_and_obo_access_stream_eps"], 1980000)
+        self.assertEqual(sim["telemetry"]["purview_sensitivity_lineage_and_gdpr_vectors_count"], 1300000000)
+        self.assertEqual(sim["telemetry"]["third_party_policy_proxy_and_audit_stream_tax_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_onelake_purview_monthly_tco_usd"], 21020)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_governance_catalog_tco_saved_usd"], 842280)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_governance_catalog_tco_savings_pct"], 97.6)
+        self.assertTrue(sim["foundry_iq_guardrail"]["storage_layer_zero_bypass_rls_cls_and_entra_obo_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["purview_rms_export_encryption_and_sovereign_residency_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 117600000)
+
+
     def test_global_power_utilities_smart_grid_ami_derms_vpp_adms_flisr_etrm_trading_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_power_utilities_smart_grid_ami_derms_vpp_adms_flisr_etrm_trading_vs_4clouds")
         self.assertEqual(sim["telemetry"]["ami_smart_meters_millions"], 65)
@@ -3635,16 +3653,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114800000)
 
 
-    def test_scenario_matrix_438_cases_and_explicit_miss(self) -> None:
+    def test_scenario_matrix_440_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 884)
-        self.assertEqual(matrix["passed_scenarios"], 883)
+        self.assertEqual(matrix["total_scenarios"], 888)
+        self.assertEqual(matrix["passed_scenarios"], 887)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.89, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 85.4)
+        self.assertEqual(matrix["avg_latency_ms"], 85.0)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_enterprise_data_governance_onelake_purview_r324_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1337", "DL-1338", "DL-1339", "DL-1340"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("1,255 Waves", by_id["DL-1337"]["expected"])
+        self.assertIn("Historic 1,300M = 1.30B", by_id["DL-1338"]["expected"])
+        self.assertIn("-$842,280/mo", by_id["DL-1339"]["expected"])
+        self.assertIn("815-ZeroSparkBypass", by_id["DL-1340"]["expected"])
 
 
     def test_power_utilities_smart_grid_vpp_etrm_r323_scenarios(self) -> None:
@@ -6163,11 +6193,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 883)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 884)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 85.4)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 217)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 78.24)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 887)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 888)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 85.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 218)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 77.95)
 
 
 if __name__ == "__main__":
