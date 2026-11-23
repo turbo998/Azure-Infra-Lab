@@ -3509,6 +3509,24 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_five_cloud_medallion_lakehouse_kappa_open_table_gluten_finops_tco_playbook_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_five_cloud_medallion_lakehouse_kappa_open_table_gluten_finops_tco_playbook_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["production_medallion_pipelines_thousands"], 38)
+        self.assertEqual(sim["telemetry"]["schema_drift_and_partition_skew_waves_flagged_count"], 1235)
+        self.assertEqual(sim["telemetry"]["multi_cloud_cdc_iot_and_clickstream_eps"], 1940000)
+        self.assertEqual(sim["telemetry"]["ast_query_plan_lineage_and_osmos_vectors_count"], 1280000000)
+        self.assertEqual(sim["telemetry"]["dual_lambda_c_plus_plus_surcharge_and_egress_tax_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_kappa_medallion_monthly_tco_usd"], 20940)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_medallion_lakehouse_tco_saved_usd"], 825560)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_medallion_lakehouse_tco_savings_pct"], 97.5)
+        self.assertTrue(sim["foundry_iq_guardrail"]["silver_data_contract_quarantine_and_xtable_cache_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["burst_smoothing_24h_and_storage_layer_obo_rls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 116000000)
+
+
     def test_global_pharma_life_sciences_commercial_nba_specialty_patient_hub_sunshine_act_opdp_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_pharma_life_sciences_commercial_nba_specialty_patient_hub_sunshine_act_opdp_vs_4clouds")
         self.assertEqual(sim["telemetry"]["global_hcps_and_idns_thousands"], 2800)
@@ -3563,16 +3581,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114800000)
 
 
-    def test_scenario_matrix_430_cases_and_explicit_miss(self) -> None:
+    def test_scenario_matrix_432_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 868)
-        self.assertEqual(matrix["passed_scenarios"], 867)
+        self.assertEqual(matrix["total_scenarios"], 872)
+        self.assertEqual(matrix["passed_scenarios"], 871)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 99.88, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 86.9)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 99.89, places=2)
+        self.assertEqual(matrix["avg_latency_ms"], 86.5)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_five_cloud_medallion_lakehouse_kappa_playbook_r320_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1321", "DL-1322", "DL-1323", "DL-1324"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("1,235 Waves", by_id["DL-1321"]["expected"])
+        self.assertIn("1,280M = 1.28B = 2^7x10^7", by_id["DL-1322"]["expected"])
+        self.assertIn("-$825,560/mo", by_id["DL-1323"]["expected"])
+        self.assertIn("795-SilverQuarantine", by_id["DL-1324"]["expected"])
 
 
     def test_pharma_life_sciences_commercial_nba_patient_hub_r319_scenarios(self) -> None:
@@ -6043,11 +6073,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 867)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 868)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 86.9)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 213)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 79.41)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 871)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 872)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 86.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 214)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 79.11)
 
 
 if __name__ == "__main__":

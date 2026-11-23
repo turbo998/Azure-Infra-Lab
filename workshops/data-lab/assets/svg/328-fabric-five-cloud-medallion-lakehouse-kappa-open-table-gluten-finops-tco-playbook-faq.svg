@@ -1,0 +1,280 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820">
+  <defs>
+    <linearGradient id="bg328" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="hdr328" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1D4ED8"/>
+      <stop offset="50%" stop-color="#6D28D9"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="card328" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="820" fill="url(#bg328)"/>
+  <rect x="20" y="18" width="1360" height="92" rx="14" fill="url(#hdr328)" opacity="0.95"/>
+  <text x="45" y="52" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">
+    #328 · [R320 Milestone] 5-Cloud Data Platform Panorama, Medallion Kappa &amp; FinOps TCO Playbook (Scenario LO)
+  </text>
+  <text x="45" y="80" fill="#E0E7FF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">
+    🏆 Round-Ten R320 (5×2⁶!) · Power-of-Two 1.28B=2⁷×10⁷ Vectors · Historic Exact +$170.0M/yr Gained! · First &gt;-$825K/mo Saved (-$825,560/mo!)
+  </text>
+  <text x="45" y="100" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    38,000 Medallion Pipelines &amp; 220PB Multi-Cloud · 1,940K (1.94M) EPS · Kappa MLV + Gluten C++ ($0 Tax) · Exact $116.00M SLA · Three-Smooth 432=16×27 Tests
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="25" y="128" width="320" height="430" rx="12" fill="url(#card328)" stroke="#38BDF8" stroke-width="2"/>
+  <rect x="25" y="128" width="320" height="40" rx="12" fill="#0284C7"/>
+  <text x="40" y="154" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="700">
+    ① Kappa MLV + XTable + Cache (4 ms)
+  </text>
+  <text x="40" y="190" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">
+    1,940K (1.94M) EPS &amp; 220PB Zero-Copy
+  </text>
+  <text x="40" y="214" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • 38,000 production Bronze→Silver→Gold DAGs
+  </text>
+  <text x="40" y="236" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • OneLake XTable Delta ↔ Iceberg v3 interop
+  </text>
+  <text x="40" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • 24h Shortcut Cache ($0 S3/GCS hit egress)
+  </text>
+  <text x="40" y="280" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Spark Gluten + Velox C++ at $0 surcharge
+  </text>
+  <rect x="40" y="302" width="290" height="68" rx="8" fill="#0C4A6E" stroke="#38BDF8" stroke-width="1"/>
+  <text x="52" y="325" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">
+    ⚡ 1,235 Drift &amp; Skew Waves in 4ms
+  </text>
+  <text x="52" y="346" fill="#BAE6FD" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    Single Kappa codebase replaces dual Lambda
+  </text>
+  <text x="52" y="364" fill="#BAE6FD" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    $0 Lambda, Photon C++ &amp; cached egress tax!
+  </text>
+  <rect x="40" y="384" width="290" height="156" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="52" y="408" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    Eliminates $329,200/mo Stitched Tax:
+  </text>
+  <text x="52" y="430" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✗ Separate Flink/Kafka + batch Lambda DAGs
+  </text>
+  <text x="52" y="450" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✗ 2× DBU/Credit C++ engine surcharges
+  </text>
+  <text x="52" y="470" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✗ Cross-cloud S3/GCS Parquet copy egress
+  </text>
+  <text x="52" y="498" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    ✓ +68.8% Medallion ETL &amp; SQL Lift
+  </text>
+  <text x="52" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✓ DL-1321 Verified (Act automatically)
+  </text>
+
+  <!-- Step 2 -->
+  <rect x="368" y="128" width="320" height="430" rx="12" fill="url(#card328)" stroke="#A855F7" stroke-width="2"/>
+  <rect x="368" y="128" width="320" height="40" rx="12" fill="#7E22CE"/>
+  <text x="383" y="154" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="700">
+    ② 8-Hop Lineage + 1.28B DiskANN (4 ms)
+  </text>
+  <text x="383" y="190" fill="#D8B4FE" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">
+    ISO GQL + Power-of-Two 1.28B DiskANN
+  </text>
+  <text x="383" y="214" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • 8-Hop: Source→Stream→Bronze→Silver→Gold
+  </text>
+  <text x="383" y="236" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    →TMDL→DirectLake→Agent impact lineage
+  </text>
+  <text x="383" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Power-of-Two 1,280,000,000 (1.28B = 2⁷×10⁷!)
+  </text>
+  <text x="383" y="280" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    AST query plan, Osmos &amp; contract vectors
+  </text>
+  <rect x="383" y="302" width="290" height="68" rx="8" fill="#4C1D95" stroke="#A855F7" stroke-width="1"/>
+  <text x="395" y="325" fill="#E9D5FF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">
+    💾 $6,020/mo SSD DiskANN (-92% RAM)
+  </text>
+  <text x="395" y="346" fill="#DDD6FE" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    Saves $149,980/mo vs $156,000/mo for
+  </text>
+  <text x="395" y="364" fill="#DDD6FE" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    11.10 TB In-Memory HNSW Vector Clusters!
+  </text>
+  <rect x="383" y="384" width="290" height="156" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="395" y="408" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    4ms Osmos Autonomous Schema Healing:
+  </text>
+  <text x="395" y="430" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Auto-heals upstream column rename/type drift
+  </text>
+  <text x="395" y="450" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Optimizes V-Order &amp; Liquid Z-Order layout
+  </text>
+  <text x="395" y="470" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Eliminates small-file compaction bottlenecks
+  </text>
+  <text x="395" y="498" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    ✓ Captures Exact +$170.0M/yr (17×10⁷)!
+  </text>
+  <text x="395" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✓ DL-1322 Verified (Act automatically)
+  </text>
+
+  <!-- Step 3 -->
+  <rect x="711" y="128" width="320" height="430" rx="12" fill="url(#card328)" stroke="#F59E0B" stroke-width="2"/>
+  <rect x="711" y="128" width="320" height="40" rx="12" fill="#D97706"/>
+  <text x="726" y="154" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="700">
+    ③ Foundry IQ 795-Block Gate (4 ms)
+  </text>
+  <text x="726" y="190" fill="#FDE68A" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">
+    Policy: FIVE-CLOUD-MEDALLION-SOP-328
+  </text>
+  <text x="726" y="214" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Gate 1: Silver-layer data contract &amp; dirty
+  </text>
+  <text x="726" y="236" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    row quarantine before Gold V-Order swap
+  </text>
+  <text x="726" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Gate 2: Cross-cloud S3/GCS uncached full-scan
+  </text>
+  <text x="726" y="280" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    egress storm circuit-breaker
+  </text>
+  <rect x="726" y="302" width="290" height="68" rx="8" fill="#78350F" stroke="#F59E0B" stroke-width="1"/>
+  <text x="738" y="325" fill="#FEF3C7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">
+    🛡️ 795 Medallion &amp; FinOps Blocks
+  </text>
+  <text x="738" y="346" fill="#FDE68A" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    Protects +$36.40M in avoided egress bill
+  </text>
+  <text x="738" y="364" fill="#FDE68A" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    shocks, metric corruption &amp; BI throttling!
+  </text>
+  <rect x="726" y="384" width="290" height="156" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="738" y="408" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    Gate 3: 24h Burst Smoothing &amp; Entra OBO:
+  </text>
+  <text x="738" y="430" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Smooths batch Spark spikes over 24h window
+  </text>
+  <text x="738" y="450" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Enforces storage-layer RLS/CLS across clouds
+  </text>
+  <text x="738" y="470" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Serves 42,600 engineers, analysts &amp; execs
+  </text>
+  <text x="738" y="498" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    ✓ 35,280 Active Viewers at $0 BI Seat Cost
+  </text>
+  <text x="738" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✓ DL-1324 Verified (Confirm · 0.99)
+  </text>
+
+  <!-- Step 4 -->
+  <rect x="1055" y="128" width="320" height="430" rx="12" fill="url(#card328)" stroke="#10B981" stroke-width="2"/>
+  <rect x="1055" y="128" width="320" height="40" rx="12" fill="#047857"/>
+  <text x="1070" y="154" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="700">
+    ④ Atomic V-Order + FinOps (4 ms)
+  </text>
+  <text x="1070" y="190" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">
+    16ms (4²ms) Autonomous Medallion Loop
+  </text>
+  <text x="1070" y="214" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Atomically swaps V-Order Gold table pointer
+  </text>
+  <text x="1070" y="236" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Auto-heals drifted Silver DAG via Osmos
+  </text>
+  <text x="1070" y="258" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Serves 42,600 users via Direct Lake &amp; Teams
+  </text>
+  <text x="1070" y="280" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+    • Commits FOCUS FinOps ledger to 1GB Free SQL
+  </text>
+  <rect x="1070" y="302" width="290" height="68" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1"/>
+  <text x="1082" y="325" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">
+    🏆 First &gt;-$825K/mo Saved (-$825,560/mo!)
+  </text>
+  <text x="1082" y="346" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    Fabric Pooled F64: $20,940/mo (-97.5%!) vs.
+  </text>
+  <text x="1082" y="364" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    $846,500/mo Stitched 5-Cloud Lambda Stack
+  </text>
+  <rect x="1070" y="384" width="290" height="156" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1082" y="408" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    Sealed Round-Ten R320 Milestones:
+  </text>
+  <text x="1082" y="430" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • 871 / 872 (99.88%) · 86.5ms Route Mean
+  </text>
+  <text x="1082" y="450" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • 214th Sim 79.11ms · 208 FAQs (416 Docs)!
+  </text>
+  <text x="1082" y="470" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    • Exact $116.00M SLA · #328 SVG!
+  </text>
+  <text x="1082" y="498" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">
+    ✓ Three-Smooth 432=16×27 Unit Tests Pass!
+  </text>
+  <text x="1082" y="520" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+    ✓ DL-1323 Verified (Act automatically)
+  </text>
+
+  <!-- Bottom 5-Cloud Comparison Bar -->
+  <rect x="25" y="576" width="1350" height="222" rx="12" fill="#0F172A" stroke="#334155" stroke-width="2"/>
+  <text x="45" y="608" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">
+    5-Cloud Data Platform Panorama Monthly TCO Comparison (38,000 Pipelines · 220PB Estate · 1.94M EPS · 1.28B Vectors · 42,600 Users)
+  </text>
+
+  <rect x="45" y="624" width="250" height="156" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="2"/>
+  <text x="60" y="650" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">✅ Fabric Kappa Medallion</text>
+  <text x="60" y="676" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">$20,940 / mo</text>
+  <text x="60" y="700" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $0 Lambda / Gluten C++ / Egress Tax</text>
+  <text x="60" y="720" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $6,020/mo 1.28B SSD DiskANN</text>
+  <text x="60" y="740" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $0 Viewer Seats (42,600 Users)</text>
+  <text x="60" y="762" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Saves -$825,560/mo (-97.5%!)</text>
+
+  <rect x="310" y="624" width="250" height="156" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="325" y="650" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">AWS S3 Tables + Redshift</text>
+  <text x="325" y="676" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">$846,500 / mo</text>
+  <text x="325" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $329.2K/mo Lambda/Egress Tax</text>
+  <text x="325" y="720" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $156.0K/mo 11.10TB OpenSearch</text>
+  <text x="325" y="740" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $171.1K/mo QuickSight Seats</text>
+  <text x="325" y="762" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">+$825,560/mo Higher Cost</text>
+
+  <rect x="575" y="624" width="250" height="156" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="590" y="650" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Snowflake Polaris + Gen2</text>
+  <text x="590" y="676" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">$860,000 / mo</text>
+  <text x="590" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• High Dynamic Table Credits</text>
+  <text x="590" y="720" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $153.8K/mo Cortex RAM Vector</text>
+  <text x="590" y="740" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Separate BI Seat Licensing</text>
+  <text x="590" y="762" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">→ Mount via OneLake XTable</text>
+
+  <rect x="840" y="624" width="250" height="156" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="855" y="650" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">GCP BigLake + BigQuery</text>
+  <text x="855" y="676" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">$834,000 / mo</text>
+  <text x="855" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Separate Dataflow Stream Tax</text>
+  <text x="855" y="720" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $156.8K/mo 11.10TB RAM Vector</text>
+  <text x="855" y="740" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Looker per-user seat fees</text>
+  <text x="855" y="762" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">→ 24h Cached OneLake Shortcut</text>
+
+  <rect x="1105" y="624" width="250" height="156" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1.5"/>
+  <text x="1120" y="650" fill="#FDBA74" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Azure Databricks</text>
+  <text x="1120" y="676" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">$826,000 / mo</text>
+  <text x="1120" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Great Custom PySpark &amp; Ray ML</text>
+  <text x="1120" y="720" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 2× Photon DBU Tier Multiplier</text>
+  <text x="1120" y="740" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Saves 65%+ Paired with Fabric</text>
+  <text x="1120" y="762" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">→ Better Together via Mirrored UC</text>
+</svg>
