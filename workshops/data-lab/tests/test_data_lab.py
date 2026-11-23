@@ -3509,6 +3509,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_airline_aviation_ioc_irops_recovery_predictive_mro_aog_iata_ndc_crew_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_airline_aviation_ioc_irops_recovery_predictive_mro_aog_iata_ndc_crew_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["commercial_aircraft_and_fleet_tails_count"], 1450)
+        self.assertEqual(sim["telemetry"]["irops_aog_and_crew_timeout_waves_flagged_count"], 1300)
+        self.assertEqual(sim["telemetry"]["acars_qar_swim_and_iata_ndc_stream_eps"], 2070000)
+        self.assertEqual(sim["telemetry"]["fim_amm_techlog_and_ndc_tariff_vectors_count"], 1345000000)
+        self.assertEqual(sim["telemetry"]["aviation_stream_pss_mar_and_graph_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["otp_and_ndc_ancillary_yield_lift_pct"], 74.0)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_airline_ioc_monthly_tco_usd"], 21200)
+        self.assertEqual(sim["multi_agent_plan"]["competitor_stitched_airline_ioc_monthly_tco_usd"], 901100)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_airline_ioc_tco_saved_usd"], 879900)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_airline_ioc_tco_savings_pct"], 97.6)
+        self.assertTrue(sim["foundry_iq_guardrail"]["mel_etops_airworthiness_and_far117_crew_legality_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["dot_auto_refund_and_ec261_passenger_care_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 121600000)
+
+
     def test_global_hospitality_hotel_cruise_loyalty_dynamic_revpar_pricing_guest360_mice_rfp_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_hospitality_hotel_cruise_loyalty_dynamic_revpar_pricing_guest360_mice_rfp_vs_4clouds")
         self.assertEqual(sim["telemetry"]["hotels_resorts_and_cruise_vessels_count"], 11500)
@@ -3802,16 +3822,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114800000)
 
 
-    def test_scenario_matrix_456_cases_and_explicit_miss(self) -> None:
+    def test_scenario_matrix_458_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 920)
-        self.assertEqual(matrix["passed_scenarios"], 919)
+        self.assertEqual(matrix["total_scenarios"], 924)
+        self.assertEqual(matrix["passed_scenarios"], 923)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.89, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 82.2)
+        self.assertEqual(matrix["avg_latency_ms"], 81.8)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_airline_aviation_ioc_irops_mro_ndc_r333_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1373", "DL-1374", "DL-1375", "DL-1376"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("Historic Exact 1,300 Waves", by_id["DL-1373"]["expected"])
+        self.assertIn("$157,520/mo!", by_id["DL-1374"]["expected"])
+        self.assertIn("-$879,900/mo", by_id["DL-1375"]["expected"])
+        self.assertIn("860-MELSignOff", by_id["DL-1376"]["expected"])
 
 
     def test_hospitality_hotel_cruise_revpar_guest360_mice_r332_scenarios(self) -> None:
@@ -6438,11 +6470,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 919)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 920)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 82.2)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 226)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 75.76)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 923)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 924)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 81.8)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 227)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 75.5)
 
 
 if __name__ == "__main__":
