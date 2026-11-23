@@ -3509,6 +3509,25 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_hospitality_hotel_cruise_loyalty_dynamic_revpar_pricing_guest360_mice_rfp_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_hospitality_hotel_cruise_loyalty_dynamic_revpar_pricing_guest360_mice_rfp_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["hotels_resorts_and_cruise_vessels_count"], 11500)
+        self.assertEqual(sim["telemetry"]["demand_surge_parity_and_mice_waves_flagged_count"], 1295)
+        self.assertEqual(sim["telemetry"]["gds_opera_pms_pos_and_mice_stream_eps"], 2060000)
+        self.assertEqual(sim["telemetry"]["guest_preference_banquet_cad_and_rfp_vectors_count"], 1340000000)
+        self.assertEqual(sim["telemetry"]["saas_cdp_mtu_opera_mar_and_graph_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["concurrent_hotel_gms_revenue_and_mice_directors"], 45000)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_hospitality_revpar_monthly_tco_usd"], 21180)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_hospitality_revpar_tco_saved_usd"], 875720)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_hospitality_revpar_tco_savings_pct"], 97.6)
+        self.assertTrue(sim["foundry_iq_guardrail"]["ftc_allin_pricing_and_corporate_lra_cap_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["ada_accessible_room_lock_and_passport_privacy_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 121200000)
+
+
     def test_global_enterprise_omnichannel_ccaas_conversational_ai_realtime_agent_assist_wfm_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_enterprise_omnichannel_ccaas_conversational_ai_realtime_agent_assist_wfm_vs_4clouds")
         self.assertEqual(sim["telemetry"]["contact_center_seats_and_voice_channels_count"], 68000)
@@ -3783,16 +3802,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114800000)
 
 
-    def test_scenario_matrix_454_cases_and_explicit_miss(self) -> None:
+    def test_scenario_matrix_456_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 916)
-        self.assertEqual(matrix["passed_scenarios"], 915)
+        self.assertEqual(matrix["total_scenarios"], 920)
+        self.assertEqual(matrix["passed_scenarios"], 919)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.89, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 82.5)
+        self.assertEqual(matrix["avg_latency_ms"], 82.2)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_hospitality_hotel_cruise_revpar_guest360_mice_r332_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1369", "DL-1370", "DL-1371", "DL-1372"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("2,060K (2.06M) EPS", by_id["DL-1369"]["expected"])
+        self.assertIn("$156,940/mo!", by_id["DL-1370"]["expected"])
+        self.assertIn("-$875,720/mo", by_id["DL-1371"]["expected"])
+        self.assertIn("855-FTCAllIn", by_id["DL-1372"]["expected"])
 
 
     def test_enterprise_omnichannel_ccaas_agent_assist_r331_scenarios(self) -> None:
@@ -6407,11 +6438,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 915)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 916)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 82.5)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 225)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 76.03)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 919)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 920)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 82.2)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 226)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 75.76)
 
 
 if __name__ == "__main__":
