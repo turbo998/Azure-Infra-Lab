@@ -3509,6 +3509,25 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_hospital_idn_epic_fhir_icu_patient_flow_or_scheduling_rcm_denial_appeals_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_hospital_idn_epic_fhir_icu_patient_flow_or_scheduling_rcm_denial_appeals_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["hospitals_and_acute_care_facilities_count"], 950)
+        self.assertEqual(sim["telemetry"]["sepsis_ed_boarding_or_and_denial_waves_flagged_count"], 1270)
+        self.assertEqual(sim["telemetry"]["hl7_fhir_waveform_rtls_and_x12_stream_eps"], 2010000)
+        self.assertEqual(sim["telemetry"]["clinical_note_dicom_and_payer_lcd_vectors_count"], 1315000000)
+        self.assertEqual(sim["telemetry"]["fhir_api_epic_cdc_and_graph_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["concurrent_clinicians_nurses_or_and_rcm_coders"], 44000)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_hospital_idn_monthly_tco_usd"], 21080)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_hospital_idn_tco_saved_usd"], 854820)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_hospital_idn_tco_savings_pct"], 97.6)
+        self.assertTrue(sim["foundry_iq_guardrail"]["cms_attending_cosign_and_fca_verbatim_citation_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["hipaa_minimum_necessary_and_42cfr_part2_isolation_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 118800000)
+
+
     def test_global_grocery_supermarket_cpg_perishable_replenishment_esl_markdown_rmn_cleanroom_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_grocery_supermarket_cpg_perishable_replenishment_esl_markdown_rmn_cleanroom_vs_4clouds")
         self.assertEqual(sim["telemetry"]["grocery_stores_and_warehouse_clubs_count"], 14500)
@@ -3689,16 +3708,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114800000)
 
 
-    def test_scenario_matrix_444_cases_and_explicit_miss(self) -> None:
+    def test_scenario_matrix_446_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 896)
-        self.assertEqual(matrix["passed_scenarios"], 895)
+        self.assertEqual(matrix["total_scenarios"], 900)
+        self.assertEqual(matrix["passed_scenarios"], 899)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.89, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 84.3)
+        self.assertEqual(matrix["avg_latency_ms"], 83.9)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_hospital_idn_epic_fhir_icu_or_rcm_r327_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1349", "DL-1350", "DL-1351", "DL-1352"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("2,010K (2.01M) EPS", by_id["DL-1349"]["expected"])
+        self.assertIn("$154,040/mo!", by_id["DL-1350"]["expected"])
+        self.assertIn("-$854,820/mo", by_id["DL-1351"]["expected"])
+        self.assertIn("830-CMSCoSign", by_id["DL-1352"]["expected"])
 
 
     def test_grocery_cpg_perishable_esl_rmn_cleanroom_r326_scenarios(self) -> None:
@@ -6253,11 +6284,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 895)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 896)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 84.3)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 220)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 77.39)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 899)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 900)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 83.9)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 221)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 77.11)
 
 
 if __name__ == "__main__":
