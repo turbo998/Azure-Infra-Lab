@@ -3509,6 +3509,25 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_multitenant_b2b_saas_gaming_liveops_embedded_analytics_retention_attribution_finops_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_multitenant_b2b_saas_gaming_liveops_embedded_analytics_retention_attribution_finops_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["b2b_saas_tenants_and_game_realms_count"], 95000)
+        self.assertEqual(sim["telemetry"]["whale_churn_bot_ring_and_usage_drop_waves_flagged_count"], 1340)
+        self.assertEqual(sim["telemetry"]["combat_telemetry_api_metering_and_ua_stream_eps"], 2150000)
+        self.assertEqual(sim["telemetry"]["aimbot_kinematic_voice_and_tenant_doc_vectors_count"], 1385000000)
+        self.assertEqual(sim["telemetry"]["telemetry_copy_clickhouse_and_graph_sync_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["tenant_rls_coppa_minor_and_anticheat_blocks_count"], 900)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_saas_gaming_monthly_tco_usd"], 21360)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_saas_gaming_tco_saved_usd"], 913340)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_saas_gaming_tco_savings_pct"], 97.7)
+        self.assertTrue(sim["foundry_iq_guardrail"]["multitenant_rls_and_service_principal_isolation_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["ftc_coppa_minor_lootbox_and_dual_anticheat_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 124800000)
+
+
     def test_global_enterprise_microsoft_iq_work_fabric_foundry_web_iq_agent_365_control_plane_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_enterprise_microsoft_iq_work_fabric_foundry_web_iq_agent_365_control_plane_vs_4clouds")
         self.assertEqual(sim["telemetry"]["enterprise_production_ai_agents_count"], 3800)
@@ -3952,16 +3971,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114800000)
 
 
-    def test_scenario_matrix_472_cases_and_explicit_miss(self) -> None:
+    def test_scenario_matrix_474_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 952)
-        self.assertEqual(matrix["passed_scenarios"], 951)
+        self.assertEqual(matrix["total_scenarios"], 956)
+        self.assertEqual(matrix["passed_scenarios"], 955)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 99.89, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 79.6)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 99.90, places=2)
+        self.assertEqual(matrix["avg_latency_ms"], 79.2)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_multitenant_b2b_saas_gaming_liveops_embedded_analytics_r341_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1405", "DL-1406", "DL-1407", "DL-1408"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("2,150K (2.15M) EPS", by_id["DL-1405"]["expected"])
+        self.assertIn("$162,160/mo!", by_id["DL-1406"]["expected"])
+        self.assertIn("-$913,340/mo", by_id["DL-1407"]["expected"])
+        self.assertIn("900=30^2-TenantRLS", by_id["DL-1408"]["expected"])
 
 
     def test_enterprise_microsoft_iq_work_fabric_foundry_web_agent365_r340_scenarios(self) -> None:
@@ -6684,11 +6715,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 951)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 952)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 79.6)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 234)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 73.72)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 955)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 956)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 79.2)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 235)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 73.47)
 
 
 if __name__ == "__main__":
