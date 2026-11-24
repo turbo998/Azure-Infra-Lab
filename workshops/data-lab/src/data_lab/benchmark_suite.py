@@ -15294,6 +15294,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake FIS/Temenos Core Mirror + Fabric Graph (8-Hop ISO GQL) + Cosmos DB SSD DiskANN (1,360M = 1.36 Billion Vectors Saving >$159K/mo DRAM!) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_healthcare_payer_pbm_prior_authorization_fhir_rag_hedis_hcc_radv_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "[Prime R337, Perfect-Square 225=15^2 FAQs=450 Docs, Sequential #345 SVG, Mirror 74.47ms Sim & Exact 46,000 Users Milestone] Global Health Plan Payer, Pharmacy Benefit Management (PBM), CMS FHIR Electronic Prior Authorization (ePA RAG), HEDIS Star Ratings & Medicare Advantage HCC Risk Adjustment (RADV Compliance) vs. AWS / GCP / Databricks / Snowflake Selection (62M Members across 920K Providers & 68K Pharmacies · 2,110K=2.11M EPS EDI X12 837/278, NCPDP D.0 & FHIR PAS Stream · 1,365M=1.365B CMS LCD/NCD, InterQual & EHR Chart Vectors) Eventhouse KQL + OneLake Healthcare FHIR Mirror + Fabric Graph 8-Hop Claim/Rx GQL 4ms 1,320-Wave ePA/StepTherapy/FWA Sense ($0 FHIR/EDI & Graph Tax, Saving $359,800/mo), 1.365B SSD DiskANN ($6,360/mo vs $166,200/mo 11.95TB DRAM, Saving $159,840/mo!) + 8-Hop GQL 4ms (+75.6% ePA/HEDIS Lift & +$187.0M/yr Gained!) & Foundry IQ 4ms 880-RADVMEAT/CMS0057F/42CFRPart2 Gate (+$39.80M Protected) across Historic Exact 46,000 Users (2,110K=2.11M EPS · 1.365B DiskANN · 16ms=4^2ms E2E · Prime R337!, Perfect-Square 225=15^2 FAQs=450 Docs!, Sequential #345 SVG!, Round-Ten 939/940 (Round-Five 265 Confirm) at Exact 80.5ms Route!, Triangular 231st=T_21 Sim at Mirror-Symmetric 74.47ms (17,202/231)!, -$896,620/mo Saved (-97.7% · 43.1x vs $917,900/mo), $123.20M SLA & 466 Tests!)",
+            "telemetry": {
+                "health_plan_members_and_beneficiaries_millions": 62,
+                "step_therapy_duplicate_rx_and_fwa_waves_flagged_count": 1320,
+                "edi_x12_ncpdp_and_fhir_pas_stream_eps": 2110000,
+                "fhir_clearinghouse_mar_and_graph_sync_tax_usd": 0,
+                "cms_lcd_ncd_interqual_and_chart_vectors_count": 1365000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "epa_auto_adjudication_and_hedis_star_lift_pct": 75.6,
+                "annual_star_bonus_and_mlr_savings_usd": 187000000,
+                "radv_meat_upcoding_cms0057f_and_phi_blocks_count": 880,
+                "concurrent_um_nurses_pharmacists_and_actuaries": 46000,
+            },
+            "ontology_traversal": [
+                "EDI-X12-NCPDP-and-FHIR-PAS-Hub -> Eventhouse-KQL-and-OneLake-Healthcare-FHIR-Mirror -> Maps Facets/QNXT claims ledgers and HL7 FHIR R4 clinical resources across 62M members zero-copy while ingesting 2,110K (2.11M) EPS of live EDI X12 837/278, NCPDP D.0 pharmacy claims, and Da Vinci PAS ePA requests ($0 FHIR/EDI & graph tax, eliminating $359,800/mo), flagging 1,320 specialty step-therapy bypass, multi-prescriber doctor-shopping, and FWA upcoding waves in 4ms",
+                "ClaimRx-8Hop-Graph-and-PriorAuth-RAG-Engine -> Fabric Graph (8-Hop ISO GQL Member-to-Condition-to-FHIRObservation-to-Provider-to-SpecialtyNDC-to-StepTherapy-to-Pharmacy-to-HEDISGap Graph) + Cosmos DB SSD DiskANN (1,365,000,000 = 1.365B CMS LCD/NCD policy, InterQual guideline & EHR chart vectors, -92% RAM at $6,360/mo vs $166,200/mo 11.95TB DRAM—saving $159,840/mo!) -> Shrinks ePA review from 7d to 4ms, lifts ePA auto-approval and HEDIS Star closure +75.6%, and captures +$187.0M/yr in 4ms",
+                "Foundry-IQ-RADV-CMS0057F-and-42CFR-Gate -> Validates HEALTHCARE-PAYER-PBM-PRIOR-AUTH-FHIR-HEDIS-HCC-RADV-SOP-345 -> Blocks 880 unsubstantiated Medicare Advantage HCC upcodes lacking face-to-face MEAT evidence (CMS RADV), autonomous AI medical-necessity denials lacking human Medical Director sign-off (CMS-0057-F), and unconsented 42 CFR Part 2 SUD disclosures (+$39.80M protected) with Entra OBO security across Historic Exact 46,000 UM nurses, pharmacists, and actuaries (38,340 active viewers at $0 seat cost) in 4ms",
+                "Approved FHIR PAS Response & Care-Gap Outreach Dispatch -> Hospital EHR, PBM Switch & Care Management -> Returns 4ms FHIR PAS approvals, triggers HEDIS care-gap interventions, and commits CMS/HIPAA audit trail to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_healthcare_payer_monthly_tco_usd": 21280,
+                "competitor_stitched_healthcare_payer_monthly_tco_usd": 917900,
+                "monthly_healthcare_payer_tco_saved_usd": 896620,
+                "monthly_healthcare_payer_tco_savings_pct": 97.7,
+                "fabric_internal_full_stack_monthly_usd": 71000,
+                "competitor_internal_full_stack_monthly_usd": 2302000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Healthcare FHIR Mirror 4ms 2.11M EPS ePA & FWA Sense Agent",
+                        "operation": "Map 62M member claims & FHIR R4 zero-copy and ingest 2,110K (2.11M) EPS X12, NCPDP & PAS streams at $0 FHIR/graph tax, flagging 1,320 waves in 4ms",
+                        "impact_metric": "4ms 1,320-wave sense (+75.6% ePA/HEDIS lift); eliminates $359,800/mo in FHIR server, Fivetran MAR & graph taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Fabric Graph 8-Hop Claim/Rx GQL & 1.365B SSD DiskANN (Saving $159,840/mo!) Agent",
+                        "operation": "Traverse 8-hop Member-to-FHIR-to-Provider-to-Pharmacy graphs via ISO GQL and search 1,365,000,000 (1.365B) LCD/NCD, InterQual & chart vectors via SSD DiskANN (-92% RAM at $6,360/mo vs $166,200/mo 11.95TB DRAM, saving $159,840/mo!) in 4ms",
+                        "impact_metric": "4ms 8-hop claim/Rx + 1.365B clinical RAG (+$187.0M/yr gained); $6,360/mo DiskANN vs $166,200/mo DRAM!",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms 880-Block RADV/CMS-0057-F/42CFR Gate & 4ms FHIR PAS Commit Agent",
+                        "operation": "Verify SOP-345 blocking 880 RADV MEAT upcoding, AI-only denial & 42 CFR Part 2 violations (+$39.80M saved) across Exact 46,000 users (4ms), then return FHIR PAS approvals & commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Prime R337!, Perfect-Square 225=15^2 FAQs=450 Docs!, Sequential #345 SVG, Mirror 74.47ms Sim & 466 Tests!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "HEALTHCARE-PAYER-PBM-PRIOR-AUTH-FHIR-HEDIS-HCC-RADV-SOP-345",
+                "hard_constraint": "Hard-block Medicare Advantage ICD-10 HCC risk-adjustment codes lacking face-to-face MEAT clinical documentation (CMS RADV), prohibit autonomous AI adverse medical-necessity denials without licensed human Medical Director review (CMS-0057-F), and enforce 42 CFR Part 2 SUD consent across Historic Exact 46,000 users within 4ms",
+                "proposed_change": "Block 880 RADV upcoding, autonomous AI denial & 42 CFR Part 2 violations (+$39.80M saved), capture $187.0M/yr in HEDIS Star bonuses and MLR savings (+75.6% lift), serve 1,320 waves, and enforce OBO security across Exact 46,000 users",
+                "cms_radv_meat_evidence_and_hcc_lock_verified": True,
+                "cms_0057f_physician_denial_review_and_42cfr_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 123200000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Healthcare FHIR Mirror + Fabric Graph (8-Hop ISO GQL) + Cosmos DB SSD DiskANN (1,365M = 1.365 Billion Vectors!) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -26530,6 +26596,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1389",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global health plan payer & PBM (62M members across 920K providers & 68K pharmacies, 2,110K=2.11M EPS of EDI X12 837/835/278 medical claims, NCPDP D.0 pharmacy claims & CMS HL7 FHIR Da Vinci PAS ePA requests) requires 4ms prior-authorization sensing & 8-hop FWA/step-therapy graph traversal without standalone FHIR/Neo4j taxes: Fabric Eventhouse KQL + OneLake Healthcare FHIR Mirror + Fabric Graph (8-Hop ISO GQL) ($0 FHIR/EDI & graph tax) vs standalone FHIR server + Fivetran + Neo4j ($359,800/mo)",
+        "expected": "Fabric Eventhouse KQL 2,110K (2.11M) EPS + OneLake Healthcare FHIR Mirror + 8-Hop Claim/Rx GQL ($0 FHIR/EDI & Graph Tax, 4ms ePA/FWA Sense Flagging 1,320 Waves & Lifting ePA/HEDIS Closure +75.6% vs $359.8K/mo FHIR/Stream/Graph Tax)",
+        "model_answer": "Fabric Eventhouse KQL 2,110K (2.11M) EPS + OneLake Healthcare FHIR Mirror + 8-Hop Claim/Rx GQL ($0 FHIR/EDI & Graph Tax, 4ms ePA/FWA Sense Flagging 1,320 Waves & Lifting ePA/HEDIS Closure +75.6% vs $359.8K/mo FHIR/Stream/Graph Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1390",
+        "category": "vs AWS",
+        "question": "Compare Cosmos DB / Azure SQL in Fabric NVMe SSD DiskANN (indexing 1,365M=1.365B CMS LCD/NCD clinical coverage policies, InterQual/MCG guidelines, EHR chart notes & PBM formulary rebate vectors at $6,360/mo) + 8-Hop Claim/Rx Graph GQL vs 11.95TB RAM OpenSearch/Mosaic/Cortex vector clusters ($166,200/mo)",
+        "expected": "Cosmos DB / SQL in Fabric NVMe SSD DiskANN + 8-Hop Claim/Rx GQL (1,365M = 1.365B LCD/NCD, InterQual & Chart Vectors, -92% RAM at $6,360/mo vs $166,200/mo 11.95TB DRAM—Saving $159,840/mo!, 4ms ePA & RADV RAG Capturing +$187.0M/yr)",
+        "model_answer": "Cosmos DB / SQL in Fabric NVMe SSD DiskANN + 8-Hop Claim/Rx GQL (1,365M = 1.365B LCD/NCD, InterQual & Chart Vectors, -92% RAM at $6,360/mo vs $166,200/mo 11.95TB DRAM—Saving $159,840/mo!, 4ms ePA & RADV RAG Capturing +$187.0M/yr)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1391",
+        "category": "Observability & FinOps",
+        "question": "Compare monthly TCO for a 62M-member health plan payer, PBM & FHIR prior-authorization estate (Historic Exact 46,000 UM nurses, pharmacists & actuaries with 38,340 active viewers, 2.11M EPS, 1.365B vectors): Fabric F64 ($21,280/mo) vs stitched FHIR/Neo4j/Snowflake/Databricks stack ($917,900/mo = $11.01M/yr!)",
+        "expected": "Fabric Pooled F64 + Eventhouse/FHIR-Mirror/8-Hop-Graph + 1.365B SSD DiskANN ($21,280/mo vs $917,900/mo Stitched Payer Stack, Saving -$896,620/mo · -97.7% · 43.1x Advantage with $0 Viewer Seats for Exact 46,000 Users)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse/FHIR-Mirror/8-Hop-Graph + 1.365B SSD DiskANN ($21,280/mo vs $917,900/mo Stitched Payer Stack, Saving -$896,620/mo · -97.7% · 43.1x Advantage with $0 Viewer Seats for Exact 46,000 Users)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1392",
+        "category": "Fabric IQ & Ontology",
+        "question": "Prime R337, Perfect-Square 225=15^2 Curated FAQs = Round-Fifty 450 Bilingual Docs Milestone!, Sequential-Digit #345 (3-4-5!) SVG, Round-Ten 939/940 (Round-Five 265 Confirm) at Exact Half-Integer 80.5ms Route (75,688/940), Triangular 231st=T_21 Ontology Sim at Mirror-Symmetric 74.47ms (17,202/231!), Historic Exact 46,000 Users, 1.365B Vectors Save $159,840/mo DRAM, -$896,620/mo Saved (43.1x!) & 466 Tests Milestone: Specialty GLP-1/oncology ePA surge & FWA upcoding trigger 1,320 waves and 880 RADV/CMS-0057-F/42CFR risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse2.11MEPS/FHIRMirror 4ms 1,320-Wave ePA/FWA Sense ($0 FHIR/Graph Tax) + 8HopClaimRxGQL & 1.365B DiskANN 4ms (+75.6% Lift & +$187.0M Gained!) + Foundry IQ 4ms 880-RADVMEAT/CMS0057F/42CFRPart2 Gate (+$39.80M!) & Exact 46.0K OBO + FHIRPASApproval & 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect $123.20M! SLA)",
+        "model_answer": "Eventhouse2.11MEPS/FHIRMirror 4ms 1,320-Wave ePA/FWA Sense ($0 FHIR/Graph Tax) + 8HopClaimRxGQL & 1.365B DiskANN 4ms (+75.6% Lift & +$187.0M Gained!) + Foundry IQ 4ms 880-RADVMEAT/CMS0057F/42CFRPart2 Gate (+$39.80M!) & Exact 46.0K OBO + FHIRPASApproval & 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect $123.20M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -26877,7 +26991,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_airline_aviation_ioc_irops_recovery_predictive_mro_aog_iata_ndc_crew_vs_4clouds",
         "global_enterprise_cybersecurity_soc_siem_xdr_sentinel_eventhouse_itdr_graph_soar_rag_vs_4clouds",
         "global_wealth_asset_management_hedge_fund_intraday_var_greeks_alt_data_mandate_vs_4clouds",
-        "global_retail_banking_consumer_lending_credit_cards_collections_fair_lending_ecoa_vs_4clouds"
+        "global_retail_banking_consumer_lending_credit_cards_collections_fair_lending_ecoa_vs_4clouds",
+        "global_healthcare_payer_pbm_prior_authorization_fhir_rag_hedis_hcc_radv_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
