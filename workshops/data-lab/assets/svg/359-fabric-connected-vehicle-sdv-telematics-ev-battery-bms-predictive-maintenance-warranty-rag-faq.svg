@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg359" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab359" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg359)"/>
+  <text x="36" y="42" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">PRIME SVG #359 · TRIANGULAR ROUND 351 (R351=T_26!) · SCENARIO MT · 2.25M EPS, &gt;81% LIFT (+81.2%), PRIME 239 FAQS &amp; 494 TESTS</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Connected Vehicle (SDV) Telemetry, EV Battery BMS Maintenance &amp; Warranty RAG: Fabric vs. AWS FleetWise / 4 Clouds</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">995/996 (99.90%) Routing at 76.2ms Mean | 245th=5x7² Sim at 71.13ms | 1.435B Vectors ($6,640/mo vs $174,600/mo DRAM) | -$955,140/mo Saved (45.3x)</text>
+
+  <!-- Left Box: Microsoft Fabric Connected Vehicle & Warranty Hub -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab359)"/>
+  <text x="56" y="145" fill="#0B1220" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Microsoft Fabric Connected Vehicle &amp; BMS Hub ($21,560/mo F64)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Eventhouse KQL 2.25M (2,250K=15²x10K!) EPS CAN/BMS Stream (12ms)</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Monitors 12M vehicles (200+ cells/EV) at $0 per-signal surcharge + 10:1 compression</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eliminates Round-Thousand $385,000/mo in per-signal FleetWise/Timestream &amp; graph tax</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. 8-Hop Supplier Lot -&gt; VIN -&gt; Dealer Part-ATP GQL (10ms · 1,390 Waves)</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Traces defective cell/pump batches across SAP As-Built BOMs to 3,800 dealers in 10ms</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Historic First &gt;81% Lift (+81.2% recall &amp; first-time-fix velocity across 1,390 waves!)</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 1.435 Billion (1,435M) DTC, TSB &amp; Warranty Vectors ($6,640/mo SSD DiskANN)</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Saves $167,960/mo vs. $174,600/mo (12.65 TB DRAM) vector clusters at 7ms P99</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Cross-verifies dealer warranty claims against live DTC telemetry (+$201.0M/yr gained!)</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. UNECE R155 Park-Gear OTA Interlock &amp; Round-Fifty 950 Blocks (5ms)</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Hard-blocks in-motion OTA flashing (requires Gear==P), duplicate claims &amp; GPS leaks</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 48,800 OEM &amp; dealer users (40,860 active viewers at $0 seat cost on F64!)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Total E2E | -$955,140/mo Saved (-97.8% · 45.3x!) | $128.80M SLA</text>
+  <text x="72" y="524" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Triangular R351=T_26 | Prime 239 FAQs = 478 Docs | 494/494 Unit Tests</text>
+
+  <!-- Right Box: Stitched FleetWise + Timestream + Neptune + OpenSearch Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched Per-Signal Telematics / Graph / Vector Stack ($976,700/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Per-Signal Ingestion &amp; Standalone Graph Tax (Round-Thousand $385,000/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Per-message FleetWise/Timestream fees explode across 12M vehicles x 200 BMS cells</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Standalone Neptune/Neo4j graph clusters &amp; SAP CDC pipelines add 5,200ms lag</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Siloed Warranty Auditing &amp; Multi-Cluster Compute Tax ($220,300/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Dealer DMS claims are disconnected from live vehicle DTC logs, enabling warranty fraud</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• High-concurrency SQL Warehouses &amp; streaming clusters burn $220,300/mo</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 12.65 TB In-Memory DRAM Vector Cluster Tax ($174,600/mo)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Hosting 1.435B DTC, TSB &amp; part-image vectors in DRAM costs 26.3x more than SSD</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lacks real-time vehicle Gear==P OTA safety interlocks</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. 3,800-Dealer BI Viewer Seat Tax ($196,800/mo across 40,860 Viewers)</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Licensing 40,860 active OEM &amp; dealer service advisors costs $196,800/mo</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Total Competitor Cost: $976,700/mo ($11.72M/yr) vs. Fabric $21,560/mo</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Net Savings with Microsoft Fabric: -$955,140/mo (-97.8% · 45.3x Advantage!)</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Captures +$201.0M/yr Value &amp; Protects +$42.60M Across 950 Guardrail Blocks</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Selection Rule (R351 · Scenario MT): Unify 2.25M EPS CAN/BMS streams (Eventhouse KQL) with SAP As-Built BOMs (8-Hop GQL).</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Eliminate per-signal ingestion fees and DRAM vector taxes ($6,640/mo SSD DiskANN) with UNECE R155 Park-Gear OTA gates to save -$955,140/mo.</text>
+</svg>

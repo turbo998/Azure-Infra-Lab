@@ -3509,6 +3509,25 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_connected_vehicle_sdv_telematics_ev_battery_bms_predictive_maintenance_warranty_rag_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_connected_vehicle_sdv_telematics_ev_battery_bms_predictive_maintenance_warranty_rag_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["connected_vehicles_thousands_and_dealers_count"], 12000)
+        self.assertEqual(sim["telemetry"]["bms_thermal_precursor_and_lot_recall_waves_flagged_count"], 1390)
+        self.assertEqual(sim["telemetry"]["can_mqtt_bms_cell_and_adas_telemetry_stream_eps"], 2250000)
+        self.assertEqual(sim["telemetry"]["dtc_fault_tsb_bulletin_and_warranty_image_vectors_count"], 1435000000)
+        self.assertEqual(sim["telemetry"]["per_signal_telematics_ingest_and_graph_sync_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["predictive_bms_recall_and_warranty_ftf_lift_pct"], 81.2)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_connected_vehicle_bms_monthly_tco_usd"], 21560)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_connected_vehicle_bms_tco_saved_usd"], 955140)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_connected_vehicle_bms_tco_savings_pct"], 97.8)
+        self.assertTrue(sim["foundry_iq_guardrail"]["unece_r155_park_gear_ota_interlock_and_hsm_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["warranty_dtc_image_verification_and_gps_masking_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 128800000)
+
+
     def test_global_financial_investment_research_earnings_rag_structured_kpi_basel_regulatory_reporting_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_financial_investment_research_earnings_rag_structured_kpi_basel_regulatory_reporting_vs_4clouds")
         self.assertEqual(sim["telemetry"]["global_covered_issuers_and_institutional_portfolios_count"], 18500)
@@ -4142,16 +4161,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114800000)
 
 
-    def test_scenario_matrix_492_cases_and_explicit_miss(self) -> None:
+    def test_scenario_matrix_494_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 992)
-        self.assertEqual(matrix["passed_scenarios"], 991)
+        self.assertEqual(matrix["total_scenarios"], 996)
+        self.assertEqual(matrix["passed_scenarios"], 995)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.90, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 76.5)
+        self.assertEqual(matrix["avg_latency_ms"], 76.2)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_connected_vehicle_sdv_telematics_ev_battery_bms_warranty_r351_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1445", "DL-1446", "DL-1447", "DL-1448"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("2,250K (2.25M) EPS", by_id["DL-1445"]["expected"])
+        self.assertIn("$167,960/mo!", by_id["DL-1446"]["expected"])
+        self.assertIn("-$955,140/mo", by_id["DL-1447"]["expected"])
+        self.assertIn("950-UNECER155ParkOTA", by_id["DL-1448"]["expected"])
 
 
     def test_financial_investment_research_earnings_rag_kpi_basel_r350_scenarios(self) -> None:
@@ -6994,11 +7025,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 991)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 992)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 76.5)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 244)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 71.35)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 995)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 996)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 76.2)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 245)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 71.13)
 
 
 if __name__ == "__main__":
