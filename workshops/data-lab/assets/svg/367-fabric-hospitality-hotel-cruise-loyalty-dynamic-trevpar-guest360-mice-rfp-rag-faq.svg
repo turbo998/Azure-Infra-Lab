@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg367" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab367" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg367)"/>
+  <text x="36" y="42" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #367 (PRIME!) · PRIME ROUND 359 (R359 · SCENARIO NB) · FIRST &lt;74.0MS ROUTE (74.0MS!), 253RD=T_22 SIM (69.38MS), EXACT $132.00M SLA &amp; 510 TESTS</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Hospitality, Resort &amp; Cruise Guest 360, Dynamic TRevPAR, 8-Hop Suite Graph &amp; MICE RFP: Fabric vs. AWS / GCP / Databricks / Snowflake</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">1,027/1,028 (99.90% · 740 Auto) at First &lt;74.0ms Route (74.0ms!) | 253rd=T_22 Sim at 69.38ms | 1.475B Vectors ($6,800/mo Saving $172,600/mo DRAM) | -$988,580/mo Saved</text>
+
+  <!-- Left Box: Microsoft Fabric Hospitality Guest 360 & TRevPAR Hub -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab367)"/>
+  <text x="56" y="145" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Microsoft Fabric Hospitality &amp; TRevPAR Hub ($21,720/mo)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Eventhouse KQL 2.33M EPS (233=F_13!) OTA ARI, Digital Key &amp; POS (12ms)</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Captures concert/convention demand surges &amp; VIP arrivals, flagging 1,430 waves in 4ms</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Zero-copy Oracle Opera PMS / CRS mirroring eliminates $399,400/mo stream/graph tax</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. 8-Hop Guest -&gt; Folio -&gt; Virtual Suite -&gt; Housekeeping -&gt; F&amp;B GQL (10ms)</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Syncs physical connecting-room locks with live housekeeping queues &amp; dining slots</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lifts TRevPAR &amp; direct booking conversion +84.4% and captures +$209.0M/yr!</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 1.475B Property, LRA &amp; MICE RFP Vectors at Round-Hundred $6,800/mo</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Saves $172,600/mo vs. $179,400/mo (13.05 TB RAM) pure in-memory vector clusters</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Instant corporate travel LRA contract check &amp; 500-question MICE RFP auto-response</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Anti-Gouging Lock, Zero-Walk VIP Gate &amp; First &lt;74.0ms Route (74.0ms!)</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks Round-Ten 990 disaster price-gouging, VIP walk &amp; LRA breaches (+$44.20M)</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 50,400 GMs, revenue analysts &amp; owners (42,300 active viewers at $0 seat cost on F64!)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Total E2E | -$988,580/mo Saved (-97.8% · 46.5x!) | Exact $132.00M SLA!</text>
+  <text x="72" y="524" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• PRIME R359 &amp; PRIME #367 SVG | 253RD=T_22 SIM (69.38ms) | ROUND-TEN 510 TESTS!</text>
+
+  <!-- Right Box: Stitched 4-Cloud Hospitality RMS + RAM Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched ARI / Neptune / 13.05 TB DRAM Stack ($1,010,300/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. High-Frequency ARI Stream &amp; Standalone Graph Tax ($399,400/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Per-GB OTA rate-shopping streams + PMS CDC + standalone Neptune graph sync fees</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Overnight batch RMS sells out premium suites at base rates during event surges</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Virtual-Suite &amp; Loyalty Personalization Compute Burn ($228,300/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Multi-way SQL joins across PMS, housekeeping &amp; F&amp;B take 5,000ms+ at check-in peaks</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lacks inline state-of-emergency anti-gouging &amp; corporate LRA room locks</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 13.05 TB In-Memory HNSW Vector Cluster Tax ($179,400/mo)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Holding 1.475B property specs, LRA contracts &amp; MICE RFPs in RAM costs 26.4x SSD</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Separate vector cluster lacks OneLake VIP incognito folio column-level security</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. 42,300 Active Viewers BI Seat Tax ($203,200/mo across 50,400 Users)</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Licensing 42,300 hotel GMs, revenue analysts &amp; owners costs $203,200/mo ($2.44M/yr)</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Total Competitor Cost: $1,010,300/mo (&gt;$1.01M/mo!) vs. Fabric $21,720/mo</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Net Savings with Microsoft Fabric: -$988,580/mo (-97.8% · 46.5x Advantage!)</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• DL-1477..1480 Verified | First &lt;74.0ms Route (74.0ms) | 253rd Sim 69.38ms | 510 Tests!</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Selection Rule (R359 · Scenario NB): Connect live 2.33M EPS ARI/PMS streams to 8-hop room/housekeeping/F&amp;B graphs in OneLake.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Index 1.475B LRA/RFP vectors on $6,800/mo SSD DiskANN and serve 42,300 viewers at $0 seat tax to save -$988,580/mo (46.5x).</text>
+</svg>
