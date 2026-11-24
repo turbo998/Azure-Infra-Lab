@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg357" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab357" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg357)"/>
+  <text x="36" y="42" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #357 (3-5-7!) · PRIME ROUND 349 (R349) · SCENARIO MR · FIRST SUB-77MS ROUTE (76.8MS), 243=3⁵ SIMS, 45.0X TCO &amp; 490 TESTS</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Medallion Lakehouse (Bronze/Silver/Gold), MLV &amp; C++ Engine: Fabric Gluten/Velox vs. Databricks Photon / Snowflake Gen2</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">Fibonacci 987/988 (99.90% · 710 Auto + Prime 277 Confirm) at 76.8ms | 243rd=3⁵ Sim at 71.58ms | 1.425B Vectors ($6,600/mo) | -$946,780/mo Saved (Exact 45.0x)</text>
+
+  <!-- Left Box: Microsoft Fabric Medallion + MLV + Gluten/Velox C++ -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab357)"/>
+  <text x="56" y="145" fill="#0B1220" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Fabric Medallion: MLV + Free Gluten/Velox C++ + Direct Lake ($21,520/mo)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1"/>
+  <text x="72" y="198" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Bronze: $0 CU Mirroring + Eventhouse KQL Dual-Path (2.23M EPS · 12ms)</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Hot operational streams hit Eventhouse KQL in 12ms with auto OneLake Delta availability</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eliminates $381,400/mo in Lambda dual-codebase Flink/Kafka &amp; graph sync taxes</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="278" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Silver &amp; Gold: Materialized Lake Views (MLV) + Free Gluten/Velox C++ SIMD</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 2.5x–4.2x C++ AVX-512 speedup at $0 DBU multiplier surcharge (-60% CU consumption!)</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• V-Order Gold Star Schema serves Direct Lake in 18ms across 1,380 incremental waves</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 1.425 Billion (1,425M) Vector SSD DiskANN (Round-Hundred $6,600/mo)</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Saves $166,800/mo vs. $173,400/mo (600x17² · 12.55 TB DRAM) vector clusters!</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lifts pipeline &amp; analytics velocity +80.4% &amp; captures Prime +$199.0M/yr value!</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Perfect-Square 48,400=220² Users (40,500 Viewers at $0) &amp; 940 Quality Blocks</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks Round-Ten 940 join fan-outs, null-key &amp; full-refresh risks (+$42.20M protected)</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Historic First Sub-77.0ms Routing Mean at 76.8ms (Fibonacci 987=F_16 / 988!)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Total E2E | -$946,780/mo Saved (-97.8% · Exact 45.0x!) | $128.00M=2⁷M SLA</text>
+  <text x="72" y="524" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• 237 FAQs = 474 Docs | DL-1437..1440 (10x12²!) | Round-Ten 490/490 Unit Tests</text>
+
+  <!-- Right Box: Stitched Lambda / Photon Multiplier / Dynamic Table Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched Lambda / Photon Multiplier / DW Stack ($968,300/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Dual-Codebase Lambda Drift &amp; Kappa State Explosion ($381,400/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Separate Flink streaming &amp; Spark batch codebases cause &gt;18% month-end KPI drift</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Forcing 10-table ERP joins into 24x7 streaming state burns $381,400/mo</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. ~1.5x–2.0x C++ Engine Multiplier &amp; Post-Gold Warehouse Tax ($218,300/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Photon DBU multipliers &amp; continuous Dynamic Table refreshes inflate ETL bills</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Gold tables still require always-on SQL Warehouses or 60-min BI Import refreshes</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 12.55 TB In-Memory DRAM Vector Cluster Tax ($173,400/mo = 600x17²)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Hosting 1.425B Medallion lineage &amp; document vectors in RAM costs 26.3x more than SSD</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Disconnected from declarative Silver data-quality quarantine rules</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. 40,500 Active Viewers BI Seat Tax ($195,200/mo across 48,400=220² Users)</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Per-seat BI viewer licensing charges $195,200/mo on top of warehouse compute</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Total Competitor Cost: $968,300/mo ($11.62M/yr) vs. Fabric $21,520/mo</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Historic Exact 45.0x TCO Advantage with Microsoft Fabric!</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Net Savings: -$946,780/mo (-97.8% Record Rate · Exact $128.00M=2⁷M SLA Protected!)</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Selection Rule (R349 · Scenario MR): Unify hot streams (Eventhouse KQL) and warm Medallion DAGs (MLV + Free Gluten/Velox C++) on OneLake.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Serve V-Order Gold Star Schemas via zero-copy Direct Lake (18ms · $0 Viewer seats for 48,400=220² users) to save -$946,780/mo (Exact 45.0x).</text>
+</svg>
