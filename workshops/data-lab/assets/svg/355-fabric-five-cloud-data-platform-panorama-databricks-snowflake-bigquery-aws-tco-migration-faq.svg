@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg355" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab355" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg355)"/>
+  <text x="36" y="42" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #355 (5x71!) · PRIME ROUND 347 (R347) · SCENARIO MP · EXACT 48,000 USERS (&gt;40K VIEWERS!), 979/980 ROUTE &amp; 470 DOCS</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">5-Cloud Data + AI Platform Panorama, TCO Inflection &amp; Zero-Copy Coexistence: Fabric vs. Databricks / Snowflake / BigQuery / AWS</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">Round-Eighty 979/980 (99.90% · 275 Confirm) at 77.4ms | Prime 241st Sim at 72.04ms | Exact 48,000 Users (40,140 Viewers) | -$938,420/mo Saved (-97.8% · 44.7x)</text>
+
+  <!-- Left Box: Microsoft Fabric Center of Gravity + Zero-Copy Coexistence -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab355)"/>
+  <text x="56" y="145" fill="#0B1220" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Microsoft Fabric Unified Lakehouse &amp; Coexistence Hub ($21,480/mo)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. OneLake Zero-Copy Coexistence (Modes A/B/C/D · Delta ⇄ Iceberg)</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Mounts Databricks UC, Snowflake Iceberg, AWS S3 &amp; GCP GCS with $0 data duplication</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• OneLake Shortcut Caching + Eventhouse KQL (2.21M EPS) eliminates $377,800/mo sync tax</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Direct Lake (18ms) + Free Gluten/Velox C++ Spark + 8-Hop GQL (10ms)</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Offloads daytime BI concurrency so expensive DW SQL Warehouses can auto-suspend</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Osmos AI Agent automates Teradata/Oracle/Synapse migration across 1,370 waves</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 1.415 Billion (1,415M) Vector SSD DiskANN ($6,560/mo vs $172,200/mo DRAM)</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Saves $165,640/mo vs. 12.45 TB in-memory DRAM vector clusters across 5 clouds</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lifts cross-cloud analytics velocity +79.6% &amp; captures Twin-Prime +$197.0M/yr value!</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Historic Exact 48,000 Users (40,140 Active Viewers &gt;40K! at $0 Seat Tax)</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eliminates Perfect-Square $193,600/mo (440²!) in per-seat BI viewer licensing on F64+</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Agent 365 blocks Pronic 930=30x31 egress storms, RLS drift &amp; recon gaps (+$41.80M)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Total E2E | -$938,420/mo Saved (-97.8% · 44.7x!) | $127.20M SLA</text>
+  <text x="72" y="524" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Round-Five 235 FAQs = Round-Ten 470 Docs | DL-1429..1432 | 486/486 Unit Tests</text>
+
+  <!-- Right Box: Fragmented 4-Cloud Stitched Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched 4-Cloud Multi-Vendor Stack ($959,900/mo = $11.52M/yr!)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Cross-Cloud Egress, CDC Pipeline &amp; Graph Stitching Tax ($377,800/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Copying data across S3, GCS, Snowflake &amp; Neo4j incurs massive egress &amp; ELT MAR bills</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Divergent Delta vs. Iceberg metadata copies create governance &amp; permission drift</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Always-On BI SQL Warehouse &amp; Edition Multiplier Tax ($216,300/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• DirectQuery from 48,000 users forces multi-cluster XL/2XL Warehouses to run 24x7</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Snowflake Business Critical (~1.5x) &amp; Photon DBU multipliers compound compute burn</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. In-Memory DRAM Vector Cluster Tax ($172,200/mo · 12.45 TB RAM)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Pure-memory HNSW indexes across Mosaic/Cortex/OpenSearch cost 26.2x more than SSD</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Siloed from enterprise M365 Copilot &amp; Power BI semantic layer</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Perfect-Square $193,600/mo (440²!) Per-User BI Viewer Seat Tax</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• First time active viewer count breaks &gt;40,000 (40,140 viewers across 48,000 users!)</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Per-seat Looker / Tableau / QuickSight licensing penalizes enterprise-wide data democratization</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Stitched 4-Cloud Cost: $959,900/mo ($11.52M/yr) vs. Fabric $21,480/mo</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Net Savings with Microsoft Fabric: -$938,420/mo (-97.8% · 44.7x Advantage!)</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Selection Rule (R347 · Scenario MP): Standardize Greenfield on Fabric; embrace Brownfield via OneLake Zero-Copy Coexistence.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Mount Databricks UC, Snowflake Iceberg, S3 &amp; GCS zero-copy into OneLake to unlock Direct Lake ($0 seats for 48,000 users) and save -$938,420/mo.</text>
+</svg>
