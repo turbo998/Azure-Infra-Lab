@@ -3509,6 +3509,25 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_biopharma_life_sciences_omop_rwe_clinical_trials_specialty_patient_hub_opdp_gxp_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_biopharma_life_sciences_omop_rwe_clinical_trials_specialty_patient_hub_opdp_gxp_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["global_clinical_trials_and_specialty_brands_count"], 420)
+        self.assertEqual(sim["telemetry"]["biomarker_trial_match_sae_and_pa_drop_waves_flagged_count"], 1350)
+        self.assertEqual(sim["telemetry"]["ecoa_wearable_iqvia_and_specialty_hub_stream_eps"], 2170000)
+        self.assertEqual(sim["telemetry"]["clinical_protocol_medwatch_and_mlr_vectors_count"], 1395000000)
+        self.assertEqual(sim["telemetry"]["omop_rwe_copy_veeva_mar_and_graph_sync_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["trial_recruitment_and_specialty_rx_fill_lift_pct"], 78.0)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_biopharma_rwe_monthly_tco_usd"], 21400)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_biopharma_rwe_tco_saved_usd"], 921700)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_biopharma_rwe_tco_savings_pct"], 97.7)
+        self.assertTrue(sim["foundry_iq_guardrail"]["fda_opdp_onlabel_mlr_and_msl_routing_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["aks_federal_copay_block_and_part11_esig_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 125600000)
+
+
     def test_global_banking_iso20022_fednow_realtime_payments_mule_ring_aml_graph_sar_rag_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_banking_iso20022_fednow_realtime_payments_mule_ring_aml_graph_sar_rag_vs_4clouds")
         self.assertEqual(sim["telemetry"]["corporate_and_retail_bank_accounts_millions"], 195)
@@ -3990,16 +4009,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114800000)
 
 
-    def test_scenario_matrix_476_cases_and_explicit_miss(self) -> None:
+    def test_scenario_matrix_478_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 960)
-        self.assertEqual(matrix["passed_scenarios"], 959)
+        self.assertEqual(matrix["total_scenarios"], 964)
+        self.assertEqual(matrix["passed_scenarios"], 963)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.90, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 78.9)
+        self.assertEqual(matrix["avg_latency_ms"], 78.6)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_biopharma_life_sciences_omop_rwe_clinical_patient_hub_r343_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1413", "DL-1414", "DL-1415", "DL-1416"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("2,170K (2.17M) EPS", by_id["DL-1413"]["expected"])
+        self.assertIn("$163,320/mo!", by_id["DL-1414"]["expected"])
+        self.assertIn("-$921,700/mo", by_id["DL-1415"]["expected"])
+        self.assertIn("910-FDAOPDP", by_id["DL-1416"]["expected"])
 
 
     def test_banking_iso20022_fednow_realtime_payments_aml_sar_r342_scenarios(self) -> None:
@@ -6746,11 +6777,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 959)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 960)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 78.9)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 236)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 73.23)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 963)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 964)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 78.6)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 237)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 72.99)
 
 
 if __name__ == "__main__":
