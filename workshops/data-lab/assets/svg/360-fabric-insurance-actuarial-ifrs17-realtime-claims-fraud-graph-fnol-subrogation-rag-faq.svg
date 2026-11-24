@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg360" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab360" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg360)"/>
+  <text x="36" y="42" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">FULL-CIRCLE SVG #360 (360°!) · ROUND 352 (R352) · HISTORIC 1,000=10³ SCENARIOS (999/1,000=99.9000%!), 75.9MS ROUTE &amp; 70.90MS SIM</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Insurance Actuarial (IFRS 17), Real-Time SIU Claims Fraud Graph &amp; FNOL/Subrogation RAG: Fabric vs. 4 Clouds</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">Historic 999/1,000 (99.9000%) at 75.9ms Route | 246th Sim First Sub-71.00ms at 70.90ms | 1.44B=12²x10M Vectors ($6,660/mo) | -$959,320/mo Saved (45.5x)</text>
+
+  <!-- Left Box: Microsoft Fabric Insurance Actuarial & SIU Claims Hub -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab360)"/>
+  <text x="56" y="145" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Microsoft Fabric Insurance Actuarial, SIU &amp; Claims Hub ($21,580/mo)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. $0 CU Guidewire/Duck Creek Mirroring + Eventhouse 2.26M EPS (12ms)</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Correlates UBI crash G-force &amp; H3 weather radar streams with Policy/ClaimCenter zero-copy</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eliminates $386,800/mo in Fivetran MAR, telematics stream &amp; external graph taxes</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. 8-Hop SIU Collusion Ring GQL (10ms) + Free Gluten C++ IFRS 17 CSM</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Traces Claimant -&gt; Device -&gt; IBAN -&gt; BodyShop -&gt; Clinic -&gt; FraudRing in 10ms (1,395 waves)</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Incremental MLV + free Gluten C++ cuts quarter-end IFRS 17 CSM CU burn by -60%</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. Gross-Billion 1.44B (12²x10M) Vectors at Triple-Six $6,660/mo SSD DiskANN</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Historic First &gt;$168,000/mo DRAM Saved ($168,540/mo vs $175,200/mo 12.70 TB DRAM!)</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Automates subrogation recovery &amp; exclusion matching (+81.6% lift · Palindrome +$202.0M/yr!)</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. NAIC Good-Faith Denial Gate, 49,000=70²x10 Users &amp; 1,000th Scenario!</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks 955 fraud rings, redlining proxies &amp; unreviewed AI denials (+$42.80M protected)</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Historic 999/1,000 (Exact 99.9000%!) at First Sub-76.0ms Route (75.9ms) &amp; 70.90ms Sim!</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Total E2E | -$959,320/mo Saved (-97.8% · 45.5x!) | $129.20M SLA</text>
+  <text x="72" y="524" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Full-Circle #360 SVG | 240 FAQs = 480 Docs | Perfect Number 496/496 Unit Tests!</text>
+
+  <!-- Right Box: Stitched 4-Cloud Insurance Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched Insurance DW / Neptune / Vector Stack ($980,900/mo &gt;$980K!)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Standalone Graph DB, Guidewire MAR &amp; UBI Stream Tax ($386,800/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Single-claim SQL rules miss &gt;45% of 8-hop body-shop/clinic collusion rings</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• External Neo4j/Neptune clusters &amp; Fivetran MAR sync cost $386,800/mo</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Quarter-End IFRS 17 CSM Full-Refresh Compute Spikes ($221,300/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Recomputing all policy cohorts on 1.5x–2.0x multiplier clusters inflates actuarial bills</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 4,900ms+ cross-service latency misses 60-second Fast-Track payout SLA</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 12.70 TB In-Memory DRAM Vector Cluster Tax ($175,200/mo)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Holding 1.44B policy endorsement, ICD-10 &amp; claim vectors in RAM costs 26.3x more</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Disconnected from NAIC anti-redlining &amp; human-denial governance gates</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. 41,040 Active Viewers (&gt;41K!) BI Seat Tax ($197,600/mo)</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Per-seat BI licensing across 49,000=70²x10 users adds $197,600/mo in fixed seat tax</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Competitor stack breaks &gt;$980,000/mo for the first time ($980,900/mo = $11.77M/yr!)</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Net Savings with Microsoft Fabric: -$959,320/mo (-97.8% · 45.5x Advantage!)</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Historic 1,000th Scenario (DL-1452) | 75.9ms Route | 70.90ms Sim | 496 Tests</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#FBBF24" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Selection Rule (Historic 1,000-Scenario R352 · Scenario MU): Unify SIU 8-Hop Fraud GQL, 1.44B FNOL DiskANN &amp; IFRS 17 on OneLake.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Screen Fast-Track payouts in 52ms, enforce NAIC human-confirm on denials, and serve 49,000=70²x10 users at $0 viewer seats to save -$959,320/mo.</text>
+</svg>

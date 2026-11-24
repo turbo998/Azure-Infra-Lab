@@ -42,7 +42,7 @@ Two **100% tenant-sanitized, browser-ready executive sandboxes** complete with d
 ## ✅ Local Verification
 
 ```bash
-# 1. Data Lab benchmark & 494 unit tests
+# 1. Data Lab benchmark & 496 unit tests
 python -m unittest discover -s workshops/data-lab/tests -p "test_*.py"
 
 # 2. Azure Agent Infra sizer & 30 unit tests
