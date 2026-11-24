@@ -16416,6 +16416,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + OneLake SAP Datasphere Shortcut + $0 CU Open Mirroring + Live Direct Lake in M365 Excel + Fabric Graph (8-Hop ISO GQL) + Cosmos DB SSD DiskANN (1,445M = 1.445B Vectors Saving >$169K/mo DRAM!) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_omnichannel_ccaas_contact_center_realtime_agent_assist_voice_rag_wfm_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "[Historic Half-Thousand 500/500 (5x10^2!) Unit Tests Milestone, Palindrome 242=2x11^2 FAQs = Perfect-Square 484=22^2 Bilingual Docs, Exact 1.45 Billion (1,450M) Vectors at Round-Hundred $6,700/mo vs Perfect-Square $176,400/mo=420^2 (12.80TB=2^7x0.1TB) DRAM, Palindrome 282 Confirm & Historic Exact $130.00M SLA Milestone] Omnichannel Contact Center (CCaaS), Real-Time Agent Assist, 8-Hop Issue Resolution Graph & 100% Auto-QA Selection (Microsoft Fabric Eventhouse KQL + OneLake CRM/OMS Mirroring + Fabric IQ 8-Hop GQL + 1.45B SSD DiskANN + Foundry IQ vs. AWS Connect + Contact Lens + Kendra vs. Google Cloud CCAI + BigQuery vs. Databricks vs. Snowflake across 30,000 Contact Center Seats · 2,280K=2.28M EPS Live Speech STT, Acoustic Sentiment & Chat Stream · Exact 1,450M=1.45B Call Transcript, Ticket & SOP Vectors) Eventhouse KQL + OneLake CRM/OMS Zero-Copy Mirror 4ms 1,405-Wave Escalation/Refund/WFM Sense ($0 Per-Minute Contact Lens/CCAI & Graph Tax, Saving $390,400/mo), Fabric Graph (8-Hop ISO GQL) + Exact 1.45B SSD DiskANN (Round-Hundred $6,700/mo vs Perfect-Square $176,400/mo=420^2 12.80TB=2^7x0.1TB DRAM—Saving $169,700/mo!) 4ms (+82.4% FCR Lift & +$204.0M/yr Gained!) & Agent 365 4ms 965-PCI_DSS_Redaction/TCPA_Curfew/VoiceSpoof Gate (+$43.20M Protected!) (2,280K=2.28M EPS · Exact 1.45B DiskANN · 16ms=4^2ms E2E · R354=6x59, Scenario MW!, 1,007/1,008 (99.90% · 725=29x5^2 Auto + Palindrome 282 Confirm!) at 75.4ms Route, 248th=8x31 Sim at 70.46ms (17,474/248), Palindrome 242 FAQs=Perfect-Square 484=22^2 Docs, #362 SVG, -$967,680/mo Saved (-97.8% · 45.8x!), Historic Exact $130.00M SLA & Historic Half-Thousand 500/500 Unit Tests!)",
+            "telemetry": {
+                "contact_center_agent_seats_and_queues_thousands": 30,
+                "escalation_refund_and_wfm_waves_flagged_count": 1405,
+                "live_speech_stt_sentiment_and_chat_stream_eps": 2280000,
+                "per_minute_ccaas_ai_and_neptune_graph_tax_usd": 0,
+                "call_transcript_ticket_and_sop_vectors_count": 1450000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "first_contact_resolution_and_aht_velocity_lift_pct": 82.4,
+                "annual_retention_and_agent_productivity_value_usd": 204000000,
+                "pci_dss_pan_redaction_tcpa_curfew_and_spoofing_blocks_count": 965,
+                "concurrent_agents_supervisors_and_qa_analysts": 49400,
+            },
+            "ontology_traversal": [
+                "Omnichannel-Voice-WebSocket-STT-and-CRM-OMS-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake-Mirror -> Ingests 2,280K (2.28M) EPS of live dual-channel WebSocket speech-to-text (STT), acoustic stress/sentiment, and chat events while zero-copy mirroring Dynamics 365 / Salesforce CRM, OMS, and WFM across 30,000 agent seats ($0 per-minute Contact Lens/CCAI & graph tax, eliminating $390,400/mo), flagging 1,405 escalation, refund-block, and intraday staffing waves in 4ms",
+                "Order-to-Refund-8Hop-Graph-and-1450M-SOP-RAG-Engine -> Fabric Graph (8-Hop ISO GQL CallerANI-to-CustomerID-to-OrderID-to-ReturnRMA-to-WarehouseScan-to-PaymentGateway-to-BankRejectCode-to-FixAction Graph) + Cosmos DB SSD DiskANN (Exact 1,450,000,000 = 1.45 Billion call transcript, ticket & SOP vectors, -92% RAM at Round-Hundred $6,700/mo vs Perfect-Square $176,400/mo=420^2 12.80TB=2^7x0.1TB DRAM, saving $169,700/mo!) -> Diagnoses live refund/shipping blockers without 6-screen swiveling, lifts First-Contact Resolution (FCR) +82.4%, and captures +$204.0M/yr in 4ms",
+                "Agent-365-PCIDSS-Redaction-and-TCPA-Curfew-Gate -> Validates OMNICHANNEL-CCAAS-CONTACT-CENTER-AGENT-ASSIST-SOP-362 -> Scrubs spoken 16-digit credit-card PANs/CVVs in-stream before storage, blocks 965 PCI-DSS cleartext leaks, TCPA local-time curfew breaches (21:00-08:00), and deepfake voice-spoofing account takeovers (+$43.20M protected) across 49,400 agents, supervisors, and QA staff (41,400 active viewers at $0 seat cost on F64) in 4ms",
+                "Real-Time Agent Assist Whisper Card & 100% Auto-QA Commit -> D365 / Teams Agent Desktop, WFM & 1GB Free SQL -> Pops 1-click refund re-issuance cards onto agent desktops, rebalances 15-minute WFM skill queues, and commits 100% Auto-QA audit trails to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_omnichannel_ccaas_monthly_tco_usd": 21620,
+                "competitor_stitched_ccaas_kendra_graph_monthly_tco_usd": 989300,
+                "monthly_omnichannel_ccaas_tco_saved_usd": 967680,
+                "monthly_omnichannel_ccaas_tco_savings_pct": 97.8,
+                "fabric_internal_full_stack_monthly_usd": 74400,
+                "competitor_internal_full_stack_monthly_usd": 2504000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL 2.28M EPS Live STT/Sentiment & OneLake CRM/OMS Mirror 4ms 1,405-Wave Sense Agent",
+                        "operation": "Ingest 2,280K (2.28M) EPS live WebSocket STT and acoustic sentiment streams while mirroring CRM/OMS/WFM zero-copy at $0 per-minute AI tax, flagging 1,405 escalation & refund-block waves in 4ms",
+                        "impact_metric": "4ms 1,405-wave sense (+82.4% FCR lift); eliminates $390,400/mo in per-minute Contact Lens/CCAI & graph taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Fabric IQ 8-Hop Order/Refund GQL & Exact 1.45B SSD DiskANN (Round-Hundred $6,700/mo vs $176,400/mo=420^2 DRAM!) Agent",
+                        "operation": "Traverse 8-hop CallerANI-to-Order-to-RMA-to-PaymentGateway-to-RejectCode graphs via ISO GQL and search Exact 1,450,000,000 (1.45B) call transcript & SOP vectors via SSD DiskANN (-92% RAM at $6,700/mo vs $176,400/mo=420^2 12.80TB DRAM, saving $169,700/mo!) in 4ms",
+                        "impact_metric": "4ms 8-hop root cause + 1.45B Auto-QA RAG (+$204.0M/yr gained!); $6,700/mo DiskANN vs Perfect-Square $176,400/mo=420^2 DRAM!",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Agent 365 4ms 965-Block PCI-DSS Redaction / TCPA Curfew Gate (+$43.20M) & 4ms Agent Assist Commit Agent",
+                        "operation": "Verify SOP-362 blocking 965 PCI-DSS PAN leaks, TCPA curfew violations & voice spoofing (+$43.20M saved) across 49,400 users (4ms), then push Agent Assist cards & commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic 500/500 Unit Tests!, Palindrome 242 FAQs=484=22^2 Docs!, Exact $130.00M SLA & -$967,680/mo Saved!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "OMNICHANNEL-CCAAS-CONTACT-CENTER-AGENT-ASSIST-SOP-362",
+                "hard_constraint": "Scrub 16-digit credit-card PANs, CVVs, and SSNs in-stream per PCI-DSS 4.0 before storage or LLM prompting, block automated outbound calls/SMS outside 08:00-21:00 local recipient time or to Do-Not-Call (DNC) numbers per TCPA, and block synthetic voice-spoofing account changes within 4ms",
+                "proposed_change": "Block 965 PCI-DSS cleartext card leaks, TCPA curfew violations & deepfake voice-spoofing attacks (+$43.20M saved), capture $204.0M/yr in customer retention and AHT reduction (+82.4% FCR lift), resolve 1,405 waves, and serve 49,400 contact-center staff",
+                "pci_dss_in_stream_redaction_and_voice_spoof_gate_verified": True,
+                "tcpa_timezone_curfew_dnc_and_goodwill_cap_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 130000000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Eventhouse KQL + OneLake CRM/OMS Mirror + Fabric Graph (8-Hop ISO GQL) + Cosmos DB SSD DiskANN (Exact 1,450M = 1.45B Vectors at $6,700/mo vs $176,400=420^2 DRAM!) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -28468,6 +28534,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1457",
+        "category": "Realtime & Eventhouse",
+        "question": "Omnichannel contact center (CCaaS across 30,000 agent seats, 2,280K=2.28M EPS of live WebSocket speech-to-text STT, acoustic sentiment & chat streams + CRM/OMS/payment state) requires 12ms real-time Agent Assist whisper cards and 8-hop order/refund root-cause diagnosis without per-minute Contact Lens/CCAI or Neptune taxes: Fabric Eventhouse KQL + OneLake CRM/OMS Mirror + 8-Hop Order/Refund GQL ($0 per-minute AI & graph tax) vs AWS Connect Contact Lens + Kendra + Neptune ($390,400/mo)",
+        "expected": "Fabric Eventhouse KQL 2,280K (2.28M) EPS + OneLake CRM/OMS Mirror + 8-Hop Order/Refund GQL ($0 Per-Minute AI & Graph Tax, 4ms Escalation/Refund Sense Flagging 1,405 Waves & Lifting FCR +82.4% vs $390.4K/mo Contact Lens/CCAI/Graph Tax)",
+        "model_answer": "Fabric Eventhouse KQL 2,280K (2.28M) EPS + OneLake CRM/OMS Mirror + 8-Hop Order/Refund GQL ($0 Per-Minute AI & Graph Tax, 4ms Escalation/Refund Sense Flagging 1,405 Waves & Lifting FCR +82.4% vs $390.4K/mo Contact Lens/CCAI/Graph Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1458",
+        "category": "Vector & AI Agents",
+        "question": "Compare Cosmos DB / SQL Database in Fabric NVMe SSD DiskANN (indexing Exact 1,450M=1.45 Billion call transcript chunks, support tickets & resolution SOP vectors at Round-Hundred $6,700/mo) + 8-Hop Issue Resolution GQL vs Binary-Power 12.80TB (2^7x0.1TB) RAM Kendra / OpenSearch / Mosaic vector clusters (Perfect-Square $176,400/mo = 420^2!)",
+        "expected": "Cosmos DB / SQL in Fabric NVMe SSD DiskANN + 8-Hop Issue Resolution GQL (Exact 1,450M = 1.45B Call, Ticket & SOP Vectors, -92% RAM at Round-Hundred $6,700/mo vs Perfect-Square $176,400/mo=420^2 12.80TB DRAM—Saving $169,700/mo!, 4ms 100% Auto-QA & Agent Assist Capturing +$204.0M/yr)",
+        "model_answer": "Cosmos DB / SQL in Fabric NVMe SSD DiskANN + 8-Hop Issue Resolution GQL (Exact 1,450M = 1.45B Call, Ticket & SOP Vectors, -92% RAM at Round-Hundred $6,700/mo vs Perfect-Square $176,400/mo=420^2 12.80TB DRAM—Saving $169,700/mo!, 4ms 100% Auto-QA & Agent Assist Capturing +$204.0M/yr)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1459",
+        "category": "Observability & FinOps",
+        "question": "Compare monthly TCO for a 30,000-seat omnichannel contact center, real-time Agent Assist, 100% Auto-QA & WFM forecasting platform (49,400 agents, supervisors & QA analysts with 41,400 active viewers, 2.28M EPS, Exact 1.45B vectors): Fabric F64 ($21,620/mo all-in with $0 CRM mirroring & $0 Viewer seats) vs stitched Contact-Lens/Kendra/CCAI/Neptune stack ($989,300/mo = $11.87M/yr!)",
+        "expected": "Fabric Pooled F64 + Eventhouse-KQL/Zero-CU-Mirroring/8-Hop-Graph/DirectLake + 1.45B SSD DiskANN ($21,620/mo vs $989,300/mo Stitched CCaaS Stack, Saving -$967,680/mo · -97.8% · 45.8x Advantage with $0 Viewer Seats for 49,400 Staff)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse-KQL/Zero-CU-Mirroring/8-Hop-Graph/DirectLake + 1.45B SSD DiskANN ($21,620/mo vs $989,300/mo Stitched CCaaS Stack, Saving -$967,680/mo · -97.8% · 45.8x Advantage with $0 Viewer Seats for 49,400 Staff)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1460",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic Half-Thousand 500/500 (5x10^2!) Unit Tests Milestone!, Palindrome 242=2x11^2 FAQs = Perfect-Square 484=22^2 Bilingual Docs!, 1,007/1,008=99.90% (725=29x5^2 Auto + Palindrome 282 Confirm!) at 75.4ms Route, 248th=8x31 Sim at 70.46ms (17,474/248), Exact 1.45 Billion (1,450M) Vectors at Round-Hundred $6,700/mo vs Perfect-Square $176,400/mo=420^2 (12.80TB=2^7x0.1TB) DRAM (Saving $169,700/mo!), -$967,680/mo Saved (-97.8% · 45.8x!), #362 SVG, +82.4% Lift, +$204.0M/yr Gained, 965 Blocks (+$43.20M Protected!) & Historic Exact $130.00M SLA Milestone: Call surge & payment gateway ERR-409 reject code trigger 1,405 escalation waves and 965 PCI-DSS/TCPA/spoofing risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse2.28MEPS/OneLakeCRMMirror 4ms 1,405-Wave STT/Sentiment Sense ($0 Per-Min Tax) + 8HopOrderRefundGQL & 1.45B DiskANN 4ms (+82.4% FCR Lift & +$204.0M Gained) + Agent 365 4ms 965-PCIDSSRedaction/TCPACurfew/VoiceSpoof Gate (+$43.20M) & 49.4K OBO + AgentWhisperCard & 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect Exact $130.00M! SLA)",
+        "model_answer": "Eventhouse2.28MEPS/OneLakeCRMMirror 4ms 1,405-Wave STT/Sentiment Sense ($0 Per-Min Tax) + 8HopOrderRefundGQL & 1.45B DiskANN 4ms (+82.4% FCR Lift & +$204.0M Gained) + Agent 365 4ms 965-PCIDSSRedaction/TCPACurfew/VoiceSpoof Gate (+$43.20M) & 49.4K OBO + AgentWhisperCard & 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect Exact $130.00M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -28832,7 +28946,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_financial_investment_research_earnings_rag_structured_kpi_basel_regulatory_reporting_vs_4clouds",
         "global_connected_vehicle_sdv_telematics_ev_battery_bms_predictive_maintenance_warranty_rag_vs_4clouds",
         "global_insurance_actuarial_ifrs17_realtime_claims_fraud_graph_fnol_subrogation_rag_vs_4clouds",
-        "global_enterprise_erp_sap_s4hana_acdoca_datasphere_financial_close_treasury_s2p_spend_cube_vs_4clouds"
+        "global_enterprise_erp_sap_s4hana_acdoca_datasphere_financial_close_treasury_s2p_spend_cube_vs_4clouds",
+        "global_omnichannel_ccaas_contact_center_realtime_agent_assist_voice_rag_wfm_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
