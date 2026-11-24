@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg361" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab361" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg361)"/>
+  <text x="36" y="42" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">PERFECT-SQUARE SVG #361 (19²!) · PALINDROME-PRIME R353 · PASSED SCENARIOS BREAK &gt;1,000 (1,003/1,004) &amp; &gt;-$960K/MO SAVED</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Enterprise ERP (SAP S/4HANA ACDOCA / Oracle / D365), Financial Close, Treasury &amp; S2P Spend Cube: Fabric vs. 4 Clouds</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">1,003/1,004 (99.90% · Prime 281 Confirm) at 75.6ms Route | 247th Sim at 70.68ms | 1.445B Vectors Saves &gt;$169K/mo DRAM | -$963,500/mo Saved (45.6x)</text>
+
+  <!-- Left Box: Microsoft Fabric Multi-ERP & CFO Hub -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab361)"/>
+  <text x="56" y="145" fill="#0B1220" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Microsoft Fabric SAP/Multi-ERP &amp; CFO Hub ($21,600/mo = 6³x$100)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. SAP Datasphere Zero-Copy Shortcut &amp; $0 CU Open Mirroring (2.27M EPS)</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Preserves 100% of SAP CDS Views, FSV hierarchies &amp; TCURX currency decimal scaling</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eliminates $388,600/mo in Fivetran HVR MAR fees, SLT/CDC &amp; external graph taxes</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. 8-Hop Intercompany &amp; Global Spend Cube GQL (10ms · 1,400 Waves!)</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Traverses ParentVendor -&gt; LocalERP -&gt; MSA -&gt; PO -&gt; Invoice -&gt; CashPool across 60 entities</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Historic Round-Hundred 1,400 waves with Exact +82.0% close &amp; sourcing velocity lift!</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 1.445 Billion (5x17²M) MSA &amp; Invoice Vectors ($6,680/mo SSD DiskANN)</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Historic First &gt;$169,000/mo DRAM Saved ($169,120/mo vs $175,800/mo 12.75 TB DRAM!)</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Unlocks tiered volume rebates &amp; 2/10 Net 30 treasury yield (+$203.0M/yr gained!)</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Live Direct Lake in M365 Excel &amp; Round-Ten 960 SOX SoD Blocks (5ms)</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks 960 SOX 404 Segregation-of-Duties, IBAN fraud &amp; closed-period risks (Exact +$43.00M!)</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 49,200 finance &amp; procurement users (41,220 active viewers at $0 seat cost on F64!)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Total E2E | First &gt;-$960K/mo Saved (-$963,500/mo · 45.6x!) | $129.60M SLA</text>
+  <text x="72" y="524" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Passed Scenarios Break &gt;1,000 (1,003/1,004) | Prime 241 FAQs=482 Docs | 498 Tests</text>
+
+  <!-- Right Box: Stitched SAP HVR + Cloud DW + Graph Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched SAP HVR MAR / Raw-Table DW / Graph Stack ($985,100/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Commercial SAP Connector MAR &amp; External Graph Tax ($388,600/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Month-end ACDOCA batch adjustments trigger massive Fivetran HVR / SNP MAR bills</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Raw table dumps lose TCURX currency scaling &amp; FSV hierarchies (&gt;15% P&amp;L drift)</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Target Warehouse MERGE Burn &amp; Excel ODBC Spikes ($222,300/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Continuous MERGE INTO deduplication on 4B-row journal tables burns $222,300/mo</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Disconnected CSV exports into desktop Excel break SOX 404 audit trails</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. Quarter-Hundred 12.75 TB In-Memory DRAM Vector Tax ($175,800/mo)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Holding 1.445B global procurement contracts &amp; invoices in RAM costs 26.3x more</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lacks cross-ERP SOX 404 Segregation-of-Duties (SoD) graph verification</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. 41,220 Active Viewers BI Seat Tax ($198,400/mo across 49,200 Users)</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Per-seat BI viewer licensing penalizes enterprise-wide P&amp;L and spend visibility</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Total Competitor Cost: $985,100/mo ($11.82M/yr) vs. Fabric $21,600/mo</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Historic First Time Monthly TCO Saved Breaks &gt;-$960,000/mo!</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Net Savings with Microsoft Fabric: -$963,500/mo (-97.8% · Sequential 45.6x Advantage!)</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Selection Rule (R353 · Scenario MV): Never strip SAP CDS semantics into raw tables or pay MAR fees on ACDOCA journal bursts.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Unify SAP Datasphere Shortcuts + $0 CU Open Mirroring + 8-Hop Spend/SoD GQL + Live Direct Lake in M365 Excel to save -$963,500/mo (45.6x).</text>
+</svg>

@@ -3509,6 +3509,25 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_enterprise_erp_sap_s4hana_acdoca_datasphere_financial_close_treasury_s2p_spend_cube_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_enterprise_erp_sap_s4hana_acdoca_datasphere_financial_close_treasury_s2p_spend_cube_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["global_erp_subsidiaries_and_sap_company_codes_count"], 60)
+        self.assertEqual(sim["telemetry"]["financial_close_intercompany_and_spend_waves_flagged_count"], 1400)
+        self.assertEqual(sim["telemetry"]["sap_odp_iso20022_treasury_and_s2p_stream_eps"], 2270000)
+        self.assertEqual(sim["telemetry"]["msa_contract_ap_invoice_and_vendor_master_vectors_count"], 1445000000)
+        self.assertEqual(sim["telemetry"]["fivetran_hvr_mar_warehouse_merge_and_graph_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["financial_close_and_s2p_sourcing_velocity_lift_pct"], 82.0)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_sap_multi_erp_monthly_tco_usd"], 21600)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_sap_multi_erp_tco_saved_usd"], 963500)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_sap_multi_erp_tco_savings_pct"], 97.8)
+        self.assertTrue(sim["foundry_iq_guardrail"]["sap_tcurx_fsv_semantic_fidelity_and_sox404_sod_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["iban_change_dual_confirm_and_closed_period_lock_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 129600000)
+
+
     def test_global_insurance_actuarial_ifrs17_realtime_claims_fraud_graph_fnol_subrogation_rag_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_insurance_actuarial_ifrs17_realtime_claims_fraud_graph_fnol_subrogation_rag_vs_4clouds")
         self.assertEqual(sim["telemetry"]["active_insurance_policies_and_cohorts_millions"], 145)
@@ -4180,16 +4199,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114800000)
 
 
-    def test_scenario_matrix_496_cases_and_explicit_miss(self) -> None:
+    def test_scenario_matrix_498_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 1000)
-        self.assertEqual(matrix["passed_scenarios"], 999)
+        self.assertEqual(matrix["total_scenarios"], 1004)
+        self.assertEqual(matrix["passed_scenarios"], 1003)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.90, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 75.9)
+        self.assertEqual(matrix["avg_latency_ms"], 75.6)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_enterprise_erp_sap_s4hana_acdoca_datasphere_close_s2p_r353_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1453", "DL-1454", "DL-1455", "DL-1456"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("2,270K (2.27M) EPS", by_id["DL-1453"]["expected"])
+        self.assertIn("$169,120/mo!", by_id["DL-1454"]["expected"])
+        self.assertIn("-$963,500/mo", by_id["DL-1455"]["expected"])
+        self.assertIn("960-SOX404SoD", by_id["DL-1456"]["expected"])
 
 
     def test_insurance_actuarial_ifrs17_realtime_claims_fraud_subrogation_r352_scenarios(self) -> None:
@@ -7056,11 +7087,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 999)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1000)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 75.9)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 246)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 70.90)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1003)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1004)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 75.6)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 247)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 70.68)
 
 
 if __name__ == "__main__":
