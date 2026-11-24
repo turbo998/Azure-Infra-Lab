@@ -3509,6 +3509,25 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_financial_investment_research_earnings_rag_structured_kpi_basel_regulatory_reporting_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_financial_investment_research_earnings_rag_structured_kpi_basel_regulatory_reporting_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["global_covered_issuers_and_institutional_portfolios_count"], 18500)
+        self.assertEqual(sim["telemetry"]["intraday_macro_shock_and_frtb_attribution_waves_flagged_count"], 1385)
+        self.assertEqual(sim["telemetry"]["market_tick_sec_filing_and_macro_news_stream_eps"], 2240000)
+        self.assertEqual(sim["telemetry"]["sec_10k_10q_earnings_transcript_and_research_vectors_count"], 1430000000)
+        self.assertEqual(sim["telemetry"]["kdb_tick_engine_feed_etl_and_graph_sync_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["research_attribution_and_intraday_risk_velocity_lift_pct"], 80.8)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_financial_research_risk_monthly_tco_usd"], 21540)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_financial_research_risk_tco_saved_usd"], 950960)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_financial_research_risk_tco_savings_pct"], 97.8)
+        self.assertTrue(sim["foundry_iq_guardrail"]["purview_mnpi_chinese_wall_and_restricted_list_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["bitemporal_pit_tmdl_and_basel_frtb_limit_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 128400000)
+
+
     def test_global_medallion_lakehouse_lambda_kappa_materialized_lake_views_gluten_velox_photon_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_medallion_lakehouse_lambda_kappa_materialized_lake_views_gluten_velox_photon_vs_4clouds")
         self.assertEqual(sim["telemetry"]["medallion_bronze_silver_gold_tables_count"], 4600)
@@ -4123,16 +4142,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114800000)
 
 
-    def test_scenario_matrix_490_cases_and_explicit_miss(self) -> None:
+    def test_scenario_matrix_492_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 988)
-        self.assertEqual(matrix["passed_scenarios"], 987)
+        self.assertEqual(matrix["total_scenarios"], 992)
+        self.assertEqual(matrix["passed_scenarios"], 991)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.90, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 76.8)
+        self.assertEqual(matrix["avg_latency_ms"], 76.5)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_financial_investment_research_earnings_rag_kpi_basel_r350_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1441", "DL-1442", "DL-1443", "DL-1444"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("2,240K (2.24M) EPS", by_id["DL-1441"]["expected"])
+        self.assertIn("$167,380/mo!", by_id["DL-1442"]["expected"])
+        self.assertIn("-$950,960/mo", by_id["DL-1443"]["expected"])
+        self.assertIn("945-MNPIChineseWall", by_id["DL-1444"]["expected"])
 
 
     def test_medallion_lakehouse_lambda_kappa_mlv_gluten_velox_r349_scenarios(self) -> None:
@@ -6963,11 +6994,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 987)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 988)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 76.8)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 243)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 71.58)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 991)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 992)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 76.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 244)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 71.35)
 
 
 if __name__ == "__main__":

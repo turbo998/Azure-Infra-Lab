@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg358" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab358" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg358)"/>
+  <text x="36" y="42" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #358 · HISTORIC ROUND 350 (R350=7x50!) · SCENARIO MS · EXACT +$200.0M/YR ($0.20B!), &gt;-$950K/MO SAVED &amp; DL-1444=38²</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Financial Investment Research (10-K RAG + Structured KPI), Intraday Risk &amp; Basel/MiFID Reporting: Fabric vs. 4 Clouds</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">Prime 991/992=31x32 (99.90%) at Exact 76.5ms Route | 244th Sim at 71.35ms | 1.43B Vectors Saves &gt;$167K/mo DRAM | -$950,960/mo Saved (-97.8% · 45.2x)</text>
+
+  <!-- Left Box: Microsoft Fabric Institutional Research & Risk Hub -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab358)"/>
+  <text x="56" y="145" fill="#0B1220" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Microsoft Fabric Institutional Research &amp; Risk Hub ($21,540/mo)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Eventhouse KQL Tick Stream (2.24M EPS · 12ms) + Bitemporal PIT TMDL</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Native KQL asof join on 2,240K EPS ticks + audited DAX valuation ratios (0 math drift)</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eliminates $383,200/mo in standalone KDB+/OneTick, feed ETL &amp; graph cluster taxes</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. 8-Hop Supply-Chain &amp; ETF Look-Through GQL (10ms · 1,385 Waves)</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Traces Commodity -&gt; Tier-2 Supplier -&gt; Issuer -&gt; ETF -&gt; Fund VaR exposure in 10ms</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Palindrome +80.8% research &amp; intraday risk attribution lift across 1,385 waves</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 1.43 Billion (1,430M) 10-K/Earnings Vectors on SSD DiskANN ($6,620/mo)</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Historic First &gt;$167,000/mo DRAM Saved ($167,380/mo vs Round-Thousand $174,000/mo DRAM!)</text>
+  <text x="72" y="395" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Captures Historic Exact +$200.0M/yr ($0.20 Billion/yr!) in alpha &amp; risk value!</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. MNPI Chinese Wall, Excel RMS Encryption &amp; 945 Compliance Blocks (5ms)</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks 945 IBD-to-Research MNPI leaks, Non-GAAP unit errors &amp; FRTB breaches (+$42.40M)</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 48,600 users (40,680 viewers at $0 vs Round-Thousand $196,000/mo=10x140² seat tax!)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Total E2E | First &gt;-$950K/mo Saved (-$950,960/mo · 45.2x!) | $128.40M SLA</text>
+  <text x="72" y="524" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Historic R350 | DL-1444=38² | 238 FAQs = 476 Docs | 492/492 Unit Tests</text>
+
+  <!-- Right Box: Stitched 4-Cloud Financial Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched KDB+ / DW / Neptune / Pure-RAM Vector Stack ($972,500/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Siloed Tick Engine, Feed ETL &amp; External Graph Tax ($383,200/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Requires separate KDB+/Timestream for ticks + Neo4j/Neptune for supply-chain graphs</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 4,800ms+ cross-system latency misses intraday FOMC &amp; earnings hedging windows</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. ~1.5x Business Critical Multiplier &amp; 32% PDF Table Math Drift ($219,300/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Naive PDF chunking confuses $M vs $B headers &amp; mixes GAAP/Non-GAAP restatements</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Multi-cluster SQL Warehouse &amp; edition multipliers burn $219,300/mo</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. Round-Thousand $174,000/mo In-Memory DRAM Vector Tax (12.60 TB RAM)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Holding 1.43B 10-K, transcript &amp; broker research vectors in RAM costs 26.3x more</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lacks native Purview Information Barriers &amp; exported Excel RMS protection</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Round-Thousand $196,000/mo (10x140²!) Per-User BI Viewer Seat Tax</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 40,680 active viewers across 48,600 users incur $196,000/mo in per-seat BI licenses</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Total Competitor Cost: $972,500/mo ($11.67M/yr) vs. Fabric $21,540/mo</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Historic First Time Monthly TCO Saved Breaks &gt;-$950,000/mo!</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Net Savings with Microsoft Fabric: -$950,960/mo (-97.8% · 45.2x Advantage!)</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#FBBF24" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Selection Rule (Historic R350 · Scenario MS): Route quantitative PIT ratios to TMDL DAX; route 10-K narrative to 1.43B SSD DiskANN.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Unify 2.24M EPS ticks (Eventhouse), 8-hop look-through (Fabric IQ GQL) &amp; Purview MNPI Chinese Walls to capture +$200.0M/yr &amp; save -$950,960/mo.</text>
+</svg>
