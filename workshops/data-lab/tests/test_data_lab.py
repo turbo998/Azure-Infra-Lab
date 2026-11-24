@@ -3509,6 +3509,25 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_logistics_3pl_cold_chain_fleet_routing_otif_customs_tariff_rag_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_logistics_3pl_cold_chain_fleet_routing_otif_customs_tariff_rag_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["global_reefer_containers_and_fleet_trucks_thousands"], 85)
+        self.assertEqual(sim["telemetry"]["multimodal_otif_delay_and_mkt_waves_flagged_count"], 1410)
+        self.assertEqual(sim["telemetry"]["reefer_eld_ocean_ais_and_wms_stream_eps"], 2290000)
+        self.assertEqual(sim["telemetry"]["customs_hs_tariff_bol_and_carrier_contract_vectors_count"], 1455000000)
+        self.assertEqual(sim["telemetry"]["per_message_iot_stream_and_neptune_graph_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["otif_on_time_delivery_and_fleet_utilization_lift_pct"], 82.8)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_global_logistics_control_tower_monthly_tco_usd"], 21640)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_global_logistics_tco_saved_usd"], 971860)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_global_logistics_tco_savings_pct"], 97.8)
+        self.assertTrue(sim["foundry_iq_guardrail"]["eu_gdp_fda_mkt_quarantine_and_fmcsa_hos_limit_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["ofac_dark_vessel_and_wco_hs_tariff_confidence_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 130400000)
+
+
     def test_global_omnichannel_ccaas_contact_center_realtime_agent_assist_voice_rag_wfm_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_omnichannel_ccaas_contact_center_realtime_agent_assist_voice_rag_wfm_vs_4clouds")
         self.assertEqual(sim["telemetry"]["contact_center_agent_seats_and_queues_thousands"], 30)
@@ -4220,14 +4239,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
 
     def test_scenario_matrix_498_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 1008)
-        self.assertEqual(matrix["passed_scenarios"], 1007)
+        self.assertEqual(matrix["total_scenarios"], 1012)
+        self.assertEqual(matrix["passed_scenarios"], 1011)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.90, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 75.4)
+        self.assertEqual(matrix["avg_latency_ms"], 75.1)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_global_logistics_3pl_cold_chain_fleet_routing_otif_customs_r355_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1461", "DL-1462", "DL-1463", "DL-1464"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("2,290K (2.29M) EPS", by_id["DL-1461"]["expected"])
+        self.assertIn("$170,280/mo!", by_id["DL-1462"]["expected"])
+        self.assertIn("-$971,860/mo", by_id["DL-1463"]["expected"])
+        self.assertIn("970-GDPMKTQuarantine", by_id["DL-1464"]["expected"])
 
 
     def test_omnichannel_ccaas_contact_center_realtime_agent_assist_r354_scenarios(self) -> None:
@@ -7118,11 +7149,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1007)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1008)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 75.4)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 248)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 70.46)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1011)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1012)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 75.1)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 249)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 70.24)
 
 
 if __name__ == "__main__":
