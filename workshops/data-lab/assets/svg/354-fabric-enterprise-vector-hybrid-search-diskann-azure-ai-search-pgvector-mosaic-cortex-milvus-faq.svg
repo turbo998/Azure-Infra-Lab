@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg354" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab354" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg354)"/>
+  <text x="36" y="42" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #354 · ROUND 346 (R346) · SCENARIO MO · RECORD -97.8% SAVINGS, TRIPLE-SEVEN 77.7MS ROUTE, 240TH SIM &amp; 484=22² TESTS</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Enterprise Vector &amp; Hybrid Search: Fabric/Cosmos SSD DiskANN + Foundry IQ vs. pgvector / Mosaic / Cortex / Milvus</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">975/976 (99.90% · Prime 701 Auto) at 77.7ms Route | 240th Sim at Exact 72.2750ms (72.28ms) | 1.41B Vectors Saves &gt;$165K/mo DRAM | -$934,240/mo (-97.8%!)</text>
+
+  <!-- Left Box: Microsoft SSD DiskANN + Foundry IQ + Fabric IQ GraphRAG -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab354)"/>
+  <text x="56" y="145" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Fabric / Cosmos SSD DiskANN + Foundry IQ + 8-Hop GQL ($21,460/mo)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="198" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. NVMe SSD Quantized DiskANN (1.41 Billion Vectors at $6,540/mo · 7ms P99)</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Vamana graph on NVMe SSD + PQ compressed coordinates in RAM (-92% memory footprint)</text>
+  <text x="72" y="235" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Historic First &gt;$165,000/mo DRAM Saved ($165,060/mo vs $171,600/mo 12.40 TB RAM!)</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="278" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. 3-Stage Hybrid Search: BM25 + Vector + RRF + L2 Semantic Ranker (+36%)</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Combines exact SKU/clause/contract-ID lexical match with deep cross-encoder reranking</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Zero-copy OneLake &amp; SharePoint indexing at 2,200K (2.20M) EPS ($0 sync pipeline tax)</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="358" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. Native Enterprise GraphRAG: Fabric IQ 8-Hop GQL (10ms) + Direct Lake (18ms)</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Links retrieved contract chunks to Supplier -&gt; BOM -&gt; Lot -&gt; Order -&gt; Financial Exposure</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eliminates isolated-chunk context loss across 1,365 attribution waves (+79.2% lift)</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Filtered DiskANN In-Index Entra OBO ACL Trimming (5ms · 925 Blocks)</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Enforces document ACLs &amp; OneLake RLS inside graph traversal (zero post-filter empty traps)</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks 925 unauthorized ACL &amp; stale-tombstone leaks (+$41.60M protected across 47,800 users)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Total E2E | Perfect-Square +$196.0M/yr (14²M!) | Record -97.8% Savings!</text>
+  <text x="72" y="524" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• $126.80M SLA Protected | Sequential 234 FAQs=468 Docs | Perfect-Square 484=22² Tests!</text>
+
+  <!-- Right Box: In-Memory HNSW & Stitched 4-Cloud Vector Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Pure-RAM HNSW / Milvus / Mosaic / Cortex / pgvector ($955,700/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. The 12.40 TB In-Memory HNSW DRAM Tax ($171,600/mo = $2.06M/yr!)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Holding 1.41B float32 vectors + HNSW graph pointers in DRAM costs 26.2x more than SSD</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• pgvector HNSW suffers 4,500ms+ random disk page I/O cliff once index exceeds RAM</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Dense-Only Lexical Blindness &amp; Custom GPU Reranker Sprawl ($215,300/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Pure dense embeddings miss exact contract IDs, part SKUs &amp; regulatory clause numbers</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• High-concurrency search warehouse &amp; external GPU reranker compute: $215,300/mo</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. Disconnected Vector Sync &amp; External Graph Tax (Round-Thousand $376,000/mo)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Requires custom Kafka/Spark embedding pipelines + external Neo4j/Neptune graph clusters</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Orphaned text chunks lack 8-hop supply-chain and financial ledger lineage</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. HNSW Filter Disconnection &amp; $192,800/mo BI Viewer Seat Tax</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• High-selectivity ACL filters break HNSW graph connectivity or return zero post-filter hits</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 39,960 active viewers incur $192,800/mo in per-seat BI viewer licenses</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Total Competitor Cost: $955,700/mo ($11.47M/yr) vs. Fabric $21,460/mo</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Historic New Record -97.8% TCO Savings Rate: -$934,240/mo Saved (44.5x Advantage!)</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Selection Rule (R346 · Scenario MO): Below 10M vectors use pgvector; above 100M–1.41B+ vectors eliminate the $171.6K/mo DRAM Tax.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Combine Cosmos DB / SQL SSD DiskANN ($6,540/mo) + Foundry IQ (BM25 + L2 Semantic Ranker) + Fabric IQ 8-Hop GQL to save -$934,240/mo (-97.8%).</text>
+</svg>
