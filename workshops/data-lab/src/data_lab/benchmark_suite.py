@@ -16812,6 +16812,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Eventhouse KQL (2.33M EPS) + OneLake Opera PMS/CRS Mirror + Fabric Graph (8-Hop ISO GQL) + Cosmos DB SSD DiskANN (1,475M = 1.475B Vectors at Round-Hundred $6,800/mo!) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_cybersecurity_secops_siem_xdr_sentinel_security_lake_itdr_blast_radius_soar_rag_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "[Historic Full-Circle Round 360 (R360=360°=6^2x10!) Milestone, Historic Binary-Power & Perfect-Cube 512=2^9=8^3 Unit Tests Milestone, Historic First -97.9% All-Time Record TCO Savings Rate (First >-$990,000/mo Saved at -$992,760/mo · 46.7x!), Historic Exact $180,000/mo (360/2x$1K!) DRAM Replaced (First >$173,000/mo DRAM Saved at $173,180/mo!), Historic First Sub-74.0ms & Palindrome 73.7ms Routing Mean across Twin-Prime 1,031/1,032=99.90% (Prime 743 Auto + Double-Square 288=2x12^2 Confirm!) & Euclidean Perfect Number 496=2^4x31 Bilingual Docs (248 FAQs) Milestone] Enterprise Cybersecurity SecOps, SIEM/XDR Security Data Lake (Microsoft Sentinel × Fabric Eventhouse KQL), 8-Hop ITDR Blast-Radius Graph & SOAR Playbook RAG Selection (Microsoft Sentinel × Fabric Eventhouse KQL + OneLake Security Lake + Fabric IQ 8-Hop ITDR GQL + 1.48B SSD DiskANN + Agent 365 vs. Splunk / AWS Security Lake vs. Google SecOps Chronicle + BigQuery vs. Databricks vs. Snowflake across 450,000 Endpoints & Cloud Workloads · Sequential 2,340K=2.34M EPS Defender XDR, Entra ID, VPC Flow & DNS Stream · 1,480M=1.48B CVE, MITRE ATT&CK, CTI & SOAR Playbook Vectors) Eventhouse KQL + OneLake Security Lake Zero-Copy Mirror 4ms 1,435-Wave TokenReplay/LateralMovement/C2 Sense ($0 Per-GB SIEM & Graph Tax, Saving $401,200/mo), Fabric Graph (8-Hop ISO GQL) + 1.48B SSD DiskANN ($6,820/mo vs Historic Exact $180,000/mo 13.10TB DRAM—First >$173K/mo Saved at $173,180/mo!) 4ms (Palindrome +84.8% Lift & Round-Ten +$210.0M/yr=T_20 Gained!) & Agent 365 4ms 995-Tier0_QuarantineLock/InStream_SecretScrub/WORM_CLS Gate (Repdigit +$44.40M Protected!) (Sequential 2,340K=2.34M EPS · 1.48B DiskANN · 16ms=4^2ms E2E · Full-Circle R360 (360°!), Scenario NC!, Twin-Prime 1,031/1,032=99.90% (Prime 743 Auto + 288=2x12^2 Confirm) at First Sub-74.0ms & Palindrome 73.7ms Route (76,056/1,032)!, 254th=2x127 Sim at 69.17ms (17,570/254)!, 248 FAQs=Perfect Number 496 Docs, #368 SVG, -$992,760/mo Saved (Record -97.9% · 46.7x!), $132.40M SLA & 512=2^9=8^3 Tests!)",
+            "telemetry": {
+                "monitored_endpoints_cloud_workloads_and_identities_thousands": 450,
+                "lateral_movement_token_replay_and_c2_waves_flagged_count": 1435,
+                "defender_xdr_entra_vpc_flow_and_dns_stream_eps": 2340000,
+                "per_gb_siem_ingestion_and_neptune_graph_tax_usd": 0,
+                "cve_mitre_attack_cti_and_soar_playbook_vectors_count": 1480000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "mttd_mttr_hunting_and_containment_velocity_lift_pct": 84.8,
+                "annual_avoided_ransomware_downtime_and_breach_value_usd": 210000000,
+                "tier0_quarantine_lock_secret_scrub_and_gdpr_blocks_count": 995,
+                "concurrent_soc_analysts_devsecops_and_auditors": 50600,
+            },
+            "ontology_traversal": [
+                "Defender-XDR-EntraID-VPC-DNS-and-CMDB-Purview-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake-SecurityLake -> Ingests Sequential 2,340K (2.34M) EPS of live Defender XDR process trees, Entra ID sign-ins, VPC Flow, and DNS logs while zero-copy mirroring ServiceNow CMDB asset criticality and Purview Crown-Jewel sensitivity labels across 450,000 workloads ($0 per-GB SIEM & graph tax, eliminating $401,200/mo), flagging 1,435 token-replay, lateral-movement, and C2 exfiltration waves in 4ms",
+                "Identity-to-CrownJewel-8Hop-ITDR-Graph-and-1480M-SOAR-RAG-Engine -> Fabric Graph (8-Hop ISO GQL CompromisedUser-to-OAuthToken-to-JumpBoxVM-to-K8sPod-to-ManagedIdentity-to-KeyVaultSecret-to-ProductionDB_PurviewTopSecret-to-ExfilC2IP Blast-Radius Graph) + Cosmos DB SSD DiskANN (1,480,000,000 = 1.48B CVE, MITRE ATT&CK, CTI & SOAR playbook vectors, -92% RAM at $6,820/mo vs Historic Exact $180,000/mo=360/2x$1K 13.10TB DRAM—First >$173K/mo Saved at $173,180/mo!) -> Computes live multi-hop blast radius in 10ms, accelerates MTTD/MTTR by Palindrome +84.8%, and captures Round-Ten +$210.0M/yr (210=T_20!) in 4ms",
+                "Agent-365-Tier0-QuarantineLock-SecretScrub-and-WORM-Gate -> Validates CYBERSECURITY-SECOPS-SIEM-XDR-SENTINEL-ITDR-SOAR-SOP-368 -> Blocks 995 operational and compliance breaches (Repdigit +$44.40M protected!): hard-locking Tier-0 domain controllers and production gateways against autonomous quarantine, scrubbing cleartext JWT/API keys in-stream, and enforcing WORM forensic immutability across 50,600 users (42,480 active viewers at $0 seat cost) in 4ms",
+                "Scoped Token Revocation, Pod Isolation & 1GB SQL Commit -> Microsoft Sentinel / Defender XDR & 1GB Free SQL -> Revokes compromised OAuth sessions, isolates rogue K8s pods, and commits immutable forensic trails to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_sentinel_secops_lakehouse_monthly_tco_usd": 21740,
+                "competitor_stitched_siem_neptune_dw_monthly_tco_usd": 1014500,
+                "monthly_sentinel_secops_lakehouse_tco_saved_usd": 992760,
+                "monthly_sentinel_secops_lakehouse_tco_savings_pct": 97.9,
+                "fabric_internal_full_stack_monthly_usd": 75600,
+                "competitor_internal_full_stack_monthly_usd": 2564000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL Sequential 2.34M EPS Telemetry & OneLake CMDB/Purview Mirror 4ms 1,435-Wave Sense Agent",
+                        "operation": "Ingest 2,340K (2.34M) EPS Defender XDR, Entra ID, VPC Flow and DNS streams while mirroring CMDB and Purview sensitivity labels zero-copy at $0 per-GB SIEM tax, flagging 1,435 lateral-movement & C2 waves in 4ms",
+                        "impact_metric": "4ms 1,435-wave sense (Palindrome +84.8% MTTD/MTTR lift!); eliminates $401,200/mo in per-GB SIEM & Neptune graph taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Fabric IQ 8-Hop ITDR Blast-Radius GQL & 1.48B SSD DiskANN (Replacing Exact $180,000/mo DRAM!) Agent",
+                        "operation": "Traverse 8-hop User-to-OAuth-to-VM-to-K8s-to-Role-to-KeyVault-to-CrownJewelDB graphs via ISO GQL and search 1,480,000,000 (1.48B) CVE, ATT&CK & SOAR vectors via SSD DiskANN (-92% RAM at $6,820/mo vs Exact $180,000/mo 13.10TB DRAM, saving $173,180/mo!) in 4ms",
+                        "impact_metric": "4ms 8-hop blast radius + 1.48B SOAR RAG (Round-Ten +$210.0M/yr=T_20 gained!); $6,820/mo DiskANN vs Exact $180,000/mo DRAM!",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Agent 365 4ms 995-Block Tier-0 Lock/Secret-Scrub Gate (+$44.40M!) & 4ms Sentinel SOAR Commit Agent",
+                        "operation": "Verify SOP-368 blocking 995 Tier-0 self-outages, cleartext log tokens & GDPR leaks (Repdigit +$44.40M saved!) across 50,600 users (4ms), then revoke tokens & commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Full-Circle R360 (360°!), 512=2^9=8^3 Tests!, Record -97.9% Savings (-$992,760/mo) & First <74.0ms Route (73.7ms)!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "CYBERSECURITY-SECOPS-SIEM-XDR-SENTINEL-ITDR-SOAR-SOP-368",
+                "hard_constraint": "Hard-block autonomous host isolation or firewall blackholing on CMDB Tier-0 production assets without human SOC Commander confirmation, scrub cleartext JWT/OAuth tokens and private keys in-stream before storage, and enforce WORM forensic immutability within 4ms",
+                "proposed_change": "Block 995 Tier-0 self-isolation, cleartext credential leak & GDPR violations (Repdigit +$44.40M saved!), capture Round-Ten $210.0M/yr (210=T_20) in avoided ransomware downtime and breach costs (Palindrome +84.8% lift), resolve 1,435 waves, and serve 50,600 users",
+                "tier0_production_quarantine_lock_and_secret_scrub_verified": True,
+                "worm_forensic_chain_and_regional_gdpr_cls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 132400000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Sentinel × Eventhouse KQL (2.34M EPS) + OneLake Security Lake + Fabric Graph (8-Hop ITDR GQL) + Cosmos DB SSD DiskANN (1,480M = 1.48B Vectors Replacing Exact $180,000/mo DRAM!) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -29152,6 +29218,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1481",
+        "category": "Realtime & Eventhouse",
+        "question": "Enterprise cybersecurity SOC & SIEM/XDR security data lake (450,000 endpoints & cloud workloads, Sequential 2,340K=2.34M EPS of Defender XDR process trees, Entra ID sign-ins, VPC Flow & DNS streams) requires 12ms KQL threat hunting and 8-hop identity-to-Crown-Jewel blast-radius calculation without punitive per-GB SIEM or Neptune taxes: Microsoft Sentinel × Fabric Eventhouse KQL + OneLake Security Lake + 8-Hop ITDR GQL ($0 per-GB SIEM & graph tax) vs Splunk / OpenSearch + Neptune ($401,200/mo)",
+        "expected": "Microsoft Sentinel × Fabric Eventhouse KQL Sequential 2,340K (2.34M) EPS + OneLake Security Lake + 8-Hop ITDR GQL ($0 Per-GB SIEM & Graph Tax, 4ms Lateral-Movement/C2 Sense Flagging 1,435 Waves & Accelerating MTTD/MTTR by Palindrome +84.8% vs $401.2K/mo SIEM/Graph Tax)",
+        "model_answer": "Microsoft Sentinel × Fabric Eventhouse KQL Sequential 2,340K (2.34M) EPS + OneLake Security Lake + 8-Hop ITDR GQL ($0 Per-GB SIEM & Graph Tax, 4ms Lateral-Movement/C2 Sense Flagging 1,435 Waves & Accelerating MTTD/MTTR by Palindrome +84.8% vs $401.2K/mo SIEM/Graph Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1482",
+        "category": "Vector & AI Agents",
+        "question": "Compare Cosmos DB / SQL Database in Fabric NVMe SSD DiskANN (indexing 1,480M=1.48B CVE advisories, MITRE ATT&CK TTPs, CTI IOCs & SOAR remediation playbooks at $6,820/mo) + 8-Hop ITDR Attack-Path GQL vs 13.10TB RAM OpenSearch / Splunk / Vertex vector clusters (Historic Exact $180,000/mo = 360/2x$1,000!)",
+        "expected": "Cosmos DB / SQL in Fabric NVMe SSD DiskANN + 8-Hop ITDR Attack-Path GQL (1,480M = 1.48B CVE, ATT&CK, CTI & SOAR Vectors, -92% RAM at $6,820/mo vs Historic Exact $180,000/mo=360/2x$1K 13.10TB DRAM—First >$173K/mo Saved at $173,180/mo!, 4ms Playbook RAG Capturing Round-Ten +$210.0M/yr=T_20)",
+        "model_answer": "Cosmos DB / SQL in Fabric NVMe SSD DiskANN + 8-Hop ITDR Attack-Path GQL (1,480M = 1.48B CVE, ATT&CK, CTI & SOAR Vectors, -92% RAM at $6,820/mo vs Historic Exact $180,000/mo=360/2x$1K 13.10TB DRAM—First >$173K/mo Saved at $173,180/mo!, 4ms Playbook RAG Capturing Round-Ten +$210.0M/yr=T_20)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1483",
+        "category": "Observability & FinOps",
+        "question": "Compare monthly TCO for a 450,000-workload enterprise SOC, SIEM/XDR security lakehouse, 8-hop ITDR graph & SOAR platform (50,600 SOC analysts, DevSecOps engineers & auditors with 42,480 active viewers, 2.34M EPS, 1.48B vectors): Fabric F64 ($21,740/mo all-in with $0 CMDB/Purview mirroring & $0 Viewer seats) vs stitched SIEM/Neptune/Databricks/Snowflake stack ($1,014,500/mo = $12.17M/yr!)",
+        "expected": "Fabric Pooled F64 + Sentinel-Eventhouse-KQL/OneLake-SecurityLake/8-Hop-ITDR-Graph/DirectLake + 1.48B SSD DiskANN ($21,740/mo vs $1,014,500/mo Stitched SIEM Stack, Historic First >-$990,000/mo Saved at -$992,760/mo · New Record -97.9% Savings Rate · 46.7x Advantage with $0 Viewer Seats for 50,600 Staff)",
+        "model_answer": "Fabric Pooled F64 + Sentinel-Eventhouse-KQL/OneLake-SecurityLake/8-Hop-ITDR-Graph/DirectLake + 1.48B SSD DiskANN ($21,740/mo vs $1,014,500/mo Stitched SIEM Stack, Historic First >-$990,000/mo Saved at -$992,760/mo · New Record -97.9% Savings Rate · 46.7x Advantage with $0 Viewer Seats for 50,600 Staff)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1484",
+        "category": "Fabric IQ & Ontology",
+        "question": "HISTORIC FULL-CIRCLE ROUND 360 (R360=360°=6^2x10!) MILESTONE!, Historic Binary-Power & Perfect-Cube 512=2^9=8^3 Unit Tests Milestone!, Historic First -97.9% All-Time Record TCO Savings Rate (First >-$990,000/mo Saved at -$992,760/mo · 46.7x vs $1,014,500/mo!)!, Historic Exact $180,000/mo (360/2x$1K!) DRAM Replaced ($6,820/mo Saving First >$173K/mo at $173,180/mo!)!, Historic First Sub-74.0ms & Palindrome 73.7ms Routing Mean across Twin-Prime 1,031/1,032=99.90% (Prime 743 Auto + Double-Square 288=2x12^2 Confirm!)!, 254th=2x127 Sim at 69.17ms (17,570/254)!, Euclidean Perfect Number 496=2^4x31 Bilingual Docs (248 FAQs)!, Sequential 2,340K=2.34M EPS, Palindrome +84.8% Lift, Round-Ten +$210.0M/yr=T_20 Gained, 995 Blocks (Repdigit +$44.40M!) & #368 SVG Milestone: Phished OAuth token & K8s pod role-chaining trigger 1,435 waves and 995 Tier-0/secret/GDPR risks; resolve in 16ms (4^2ms)",
+        "expected": "SentinelEventhouse2.34MEPS/OneLakeSecurity 4ms 1,435-Wave ITDR/C2 Sense ($0 SIEM/Graph Tax) + 8HopBlastRadiusGQL & 1.48B DiskANN 4ms (Palindrome +84.8% Lift & Round-Ten +$210.0M=T_20 Gained!) + Agent 365 4ms 995-Tier0QuarantineLock/SecretScrub/WORM Gate (Repdigit +$44.40M!) & 50.6K OBO + ScopedTokenRevoke & 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect $132.40M! SLA)",
+        "model_answer": "SentinelEventhouse2.34MEPS/OneLakeSecurity 4ms 1,435-Wave ITDR/C2 Sense ($0 SIEM/Graph Tax) + 8HopBlastRadiusGQL & 1.48B DiskANN 4ms (Palindrome +84.8% Lift & Round-Ten +$210.0M=T_20 Gained!) + Agent 365 4ms 995-Tier0QuarantineLock/SecretScrub/WORM Gate (Repdigit +$44.40M!) & 50.6K OBO + ScopedTokenRevoke & 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect $132.40M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -29522,7 +29636,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_telecom_5g_ran_core_aiops_subscriber_qoe_churn_roaming_fraud_graph_b2b_sla_vs_4clouds",
         "global_power_utilities_smart_grid_ami_derms_vpp_oms_outage_graph_etrm_vs_4clouds",
         "global_airline_aviation_ioc_irops_recovery_predictive_mro_aog_crew_graph_iata_ndc_vs_4clouds",
-        "global_hospitality_hotel_cruise_loyalty_dynamic_trevpar_guest360_mice_rfp_rag_vs_4clouds"
+        "global_hospitality_hotel_cruise_loyalty_dynamic_trevpar_guest360_mice_rfp_rag_vs_4clouds",
+        "global_cybersecurity_secops_siem_xdr_sentinel_security_lake_itdr_blast_radius_soar_rag_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()

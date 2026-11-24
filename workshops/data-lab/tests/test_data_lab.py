@@ -3509,6 +3509,25 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_cybersecurity_secops_siem_xdr_sentinel_security_lake_itdr_blast_radius_soar_rag_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_cybersecurity_secops_siem_xdr_sentinel_security_lake_itdr_blast_radius_soar_rag_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["monitored_endpoints_cloud_workloads_and_identities_thousands"], 450)
+        self.assertEqual(sim["telemetry"]["lateral_movement_token_replay_and_c2_waves_flagged_count"], 1435)
+        self.assertEqual(sim["telemetry"]["defender_xdr_entra_vpc_flow_and_dns_stream_eps"], 2340000)
+        self.assertEqual(sim["telemetry"]["cve_mitre_attack_cti_and_soar_playbook_vectors_count"], 1480000000)
+        self.assertEqual(sim["telemetry"]["per_gb_siem_ingestion_and_neptune_graph_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["mttd_mttr_hunting_and_containment_velocity_lift_pct"], 84.8)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_sentinel_secops_lakehouse_monthly_tco_usd"], 21740)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_sentinel_secops_lakehouse_tco_saved_usd"], 992760)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_sentinel_secops_lakehouse_tco_savings_pct"], 97.9)
+        self.assertTrue(sim["foundry_iq_guardrail"]["tier0_production_quarantine_lock_and_secret_scrub_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["worm_forensic_chain_and_regional_gdpr_cls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 132400000)
+
+
     def test_global_hospitality_hotel_cruise_loyalty_dynamic_trevpar_guest360_mice_rfp_rag_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_hospitality_hotel_cruise_loyalty_dynamic_trevpar_guest360_mice_rfp_rag_vs_4clouds")
         self.assertEqual(sim["telemetry"]["global_hotel_resort_and_cruise_properties_count"], 8500)
@@ -4316,14 +4335,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
 
     def test_scenario_matrix_498_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 1028)
-        self.assertEqual(matrix["passed_scenarios"], 1027)
+        self.assertEqual(matrix["total_scenarios"], 1032)
+        self.assertEqual(matrix["passed_scenarios"], 1031)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.90, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 74.0)
+        self.assertEqual(matrix["avg_latency_ms"], 73.7)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_cybersecurity_secops_siem_xdr_sentinel_itdr_soar_r360_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1481", "DL-1482", "DL-1483", "DL-1484"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("2,340K (2.34M) EPS", by_id["DL-1481"]["expected"])
+        self.assertIn("$173,180/mo!", by_id["DL-1482"]["expected"])
+        self.assertIn("-$992,760/mo", by_id["DL-1483"]["expected"])
+        self.assertIn("995-Tier0QuarantineLock", by_id["DL-1484"]["expected"])
 
 
     def test_hospitality_hotel_cruise_loyalty_dynamic_trevpar_rfp_r359_scenarios(self) -> None:
@@ -7274,11 +7305,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1027)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1028)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 74.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 253)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 69.38)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1031)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1032)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 73.7)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 254)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 69.17)
 
 
 if __name__ == "__main__":
