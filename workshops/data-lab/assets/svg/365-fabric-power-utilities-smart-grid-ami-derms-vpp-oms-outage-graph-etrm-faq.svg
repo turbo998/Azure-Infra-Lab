@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg365" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab365" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg365)"/>
+  <text x="36" y="42" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #365 (365-DAY FULL YEAR!) · R357 (SCENARIO MZ!) · FIRST &lt;70.00MS SIM (69.81MS), PEERS BREAK &gt;$1.00M/MO ($1,001,900/MO) &amp; EXACT 50,000 USERS!</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Power &amp; Utilities Smart Grid AMI, DERMS/VPP Dispatch, 8-Hop OMS Graph &amp; ETRM: Fabric vs. AWS / GCP / Databricks / Snowflake</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">Prime 1,019/1,020 (99.90%) at Exact 74.5ms Route | Prime 251st Sim at 69.81ms (&lt;70ms!) | 245 FAQs = 490 Docs | -$980,220/mo Saved (46.2x) | Exact 50,000 Users</text>
+
+  <!-- Left Box: Microsoft Fabric Smart Grid, DERMS/VPP & OMS Hub -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab365)"/>
+  <text x="56" y="145" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Microsoft Fabric Smart Grid, VPP &amp; OMS Hub ($21,680/mo)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Eventhouse KQL 2.31M EPS AMI, PMU &amp; LMP Stream (12ms · $0 Tag Tax)</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Ingests 50M-meter Last-Gasp, IEEE 2030.5 DER &amp; LMP streams, flagging 1,420 waves in 4ms</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Zero-copy SAP IS-U &amp; GIS mirroring eliminates $395,800/mo historian &amp; graph taxes</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. 8-Hop IEC CIM Substation -&gt; Feeder -&gt; Transformer -&gt; Meter GQL (10ms)</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Pinpoints blown lateral fuses via Lowest Common Ancestor (LCA) &amp; checks kVA headroom</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lifts FLISR self-healing &amp; VPP arbitrage +83.6% and captures +$207.0M/yr!</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 1.465B DGA, Switching &amp; PPA Vectors at Square-Prefix $6,760/mo (26²×$10)</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Saves $171,440/mo (&gt;$171K/mo!) vs. $178,200/mo (12.95 TB RAM) pure DRAM clusters</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Instant transformer dissolved-gas (DGA) fault diagnosis &amp; NERC switching RAG</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Life-Support Lock, NERC-CIP Gate &amp; Historic Exact 50,000 Users!</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks Round-Ten 980=20×7² Life-Support disconnects, kVA overloads &amp; NERC risks (+$43.80M)</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Historic Exact 50,000=5×10⁴ users (41,940 active viewers at $0 seat cost on F64!)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Total E2E | First &gt;-$980K/mo Saved (-$980,220/mo · 46.2x!) | $131.20M SLA</text>
+  <text x="72" y="524" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• FIRST &lt;70.00ms SIM (69.81ms!) | COMPLETE MA..MZ SERIES | FULL-YEAR #365 SVG!</text>
+
+  <!-- Right Box: Stitched 4-Cloud Historian + Graph + RAM Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched Historian / Neptune / DRAM Stack (FIRST &gt;$1.00M at $1,001,900/mo!)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Per-Tag Historian &amp; Standalone Graph Sync Tax ($395,800/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Legacy per-tag historian licensing + IoT SiteWise/Timestream + Neptune graph fees</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Disconnected GIS &amp; CIS leave operators blind to Life-Support patients during storms</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Storm Last-Gasp &amp; Power-Flow Warehouse Compute Burn ($226,300/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 8-level radial feeder recursive SQL joins take 4,900ms+ under storm outage surges</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Price-only VPP dispatch risks overloading neighborhood padmount transformers</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 12.95 TB In-Memory HNSW Vector Cluster Tax ($178,200/mo)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Holding 1.465B DGA fault curves, switching orders &amp; PPAs in RAM costs 26.4x SSD</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Separate vector cluster lacks NERC-CIP critical infrastructure access controls</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. 41,940 Active Viewers BI Seat Tax ($201,600/mo across Exact 50,000 Staff!)</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Per-user BI seats for 41,940 operators, linemen &amp; traders cost $201,600/mo ($2.42M/yr)</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Competitor TCO Breaks &gt;$1,000,000/mo at $1,001,900/mo ($12.02M/yr) vs. $21,680/mo</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Net Savings with Microsoft Fabric: -$980,220/mo (First &gt;-$980K/mo · 46.2x!)</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• DL-1469..1472 Verified | Exact 74.5ms Route | First &lt;70ms Sim (69.81ms) | 506 Tests!</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Selection Rule (R357 · Scenario MZ): Join 2.31M EPS AMI/PMU streams with 8-hop IEC CIM feeder-to-meter graphs in OneLake.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Index 1.465B DGA/PPA vectors on $6,760/mo SSD DiskANN and serve Exact 50,000 users at $0 viewer tax to save -$980,220/mo (46.2x).</text>
+</svg>

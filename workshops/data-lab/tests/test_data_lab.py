@@ -3509,6 +3509,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_power_utilities_smart_grid_ami_derms_vpp_oms_outage_graph_etrm_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_power_utilities_smart_grid_ami_derms_vpp_oms_outage_graph_etrm_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["smart_meters_ami_millions_and_substations_thousands"], 50)
+        self.assertEqual(sim["telemetry"]["flisr_outage_transformer_overload_and_vpp_waves_flagged_count"], 1420)
+        self.assertEqual(sim["telemetry"]["ami_last_gasp_pmu_synchrophasor_and_lmp_stream_eps"], 2310000)
+        self.assertEqual(sim["telemetry"]["transformer_dga_switching_order_and_ppa_vectors_count"], 1465000000)
+        self.assertEqual(sim["telemetry"]["per_tag_historian_license_and_neptune_graph_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["flisr_self_healing_and_vpp_arbitrage_velocity_lift_pct"], 83.6)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_smart_grid_vpp_oms_monthly_tco_usd"], 21680)
+        self.assertEqual(sim["multi_agent_plan"]["competitor_stitched_historian_neptune_dw_monthly_tco_usd"], 1001900)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_smart_grid_vpp_oms_tco_saved_usd"], 980220)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_smart_grid_vpp_oms_tco_savings_pct"], 97.8)
+        self.assertTrue(sim["foundry_iq_guardrail"]["life_support_medical_baseline_and_transformer_kva_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["nerc_cip_dmz_confirm_and_etrm_var_limit_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 131200000)
+
+
     def test_global_telecom_5g_ran_core_aiops_subscriber_qoe_churn_roaming_fraud_graph_b2b_sla_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_telecom_5g_ran_core_aiops_subscriber_qoe_churn_roaming_fraud_graph_b2b_sla_vs_4clouds")
         self.assertEqual(sim["telemetry"]["mobile_5g_and_ftth_broadband_subscribers_millions"], 180)
@@ -4258,14 +4278,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
 
     def test_scenario_matrix_498_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 1016)
-        self.assertEqual(matrix["passed_scenarios"], 1015)
+        self.assertEqual(matrix["total_scenarios"], 1020)
+        self.assertEqual(matrix["passed_scenarios"], 1019)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.90, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 74.8)
+        self.assertEqual(matrix["avg_latency_ms"], 74.5)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_power_utilities_smart_grid_ami_derms_vpp_oms_etrm_r357_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1469", "DL-1470", "DL-1471", "DL-1472"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("2,310K (2.31M) EPS", by_id["DL-1469"]["expected"])
+        self.assertIn("$171,440/mo!", by_id["DL-1470"]["expected"])
+        self.assertIn("-$980,220/mo", by_id["DL-1471"]["expected"])
+        self.assertIn("980-LifeSupportLock", by_id["DL-1472"]["expected"])
 
 
     def test_telecom_5g_ran_core_aiops_qoe_churn_roaming_fraud_r356_scenarios(self) -> None:
@@ -7180,11 +7212,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1015)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1016)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 74.8)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 250)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 70.02)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1019)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1020)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 74.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 251)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 69.81)
 
 
 if __name__ == "__main__":
