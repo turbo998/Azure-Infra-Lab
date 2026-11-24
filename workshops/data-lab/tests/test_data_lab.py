@@ -3509,6 +3509,24 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_omnichannel_retail_ecommerce_composable_cdp_shopping_agent_rmn_cleanroom_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_omnichannel_retail_ecommerce_composable_cdp_shopping_agent_rmn_cleanroom_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["omnichannel_shoppers_and_loyalty_members_millions"], 340)
+        self.assertEqual(sim["telemetry"]["cart_abandonment_stockout_and_price_waves_flagged_count"], 1330)
+        self.assertEqual(sim["telemetry"]["clickstream_pos_rfid_and_oms_atp_stream_eps"], 2130000)
+        self.assertEqual(sim["telemetry"]["multimodal_product_review_and_promo_vectors_count"], 1375000000)
+        self.assertEqual(sim["telemetry"]["saas_cdp_mtu_reverse_etl_and_graph_sync_tax_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_omnichannel_retail_monthly_tco_usd"], 21320)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_omnichannel_retail_tco_saved_usd"], 904980)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_omnichannel_retail_tco_savings_pct"], 97.7)
+        self.assertTrue(sim["foundry_iq_guardrail"]["map_margin_floor_and_atp_inventory_lock_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["rmn_cleanroom_k50_privacy_and_gdpr_ccpa_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 124000000)
+
+
     def test_global_manufacturing_automotive_mes_opcua_supply_chain_bom_atp_predictive_maintenance_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_manufacturing_automotive_mes_opcua_supply_chain_bom_atp_predictive_maintenance_vs_4clouds")
         self.assertEqual(sim["telemetry"]["smart_factories_and_assembly_plants_count"], 520)
@@ -3915,16 +3933,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114800000)
 
 
-    def test_scenario_matrix_468_cases_and_explicit_miss(self) -> None:
+    def test_scenario_matrix_470_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 944)
-        self.assertEqual(matrix["passed_scenarios"], 943)
+        self.assertEqual(matrix["total_scenarios"], 948)
+        self.assertEqual(matrix["passed_scenarios"], 947)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.89, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 80.2)
+        self.assertEqual(matrix["avg_latency_ms"], 79.9)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_omnichannel_retail_ecommerce_composable_cdp_rmn_r339_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1397", "DL-1398", "DL-1399", "DL-1400"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("2,130K (2.13M) EPS", by_id["DL-1397"]["expected"])
+        self.assertIn("$161,000/mo Saved!", by_id["DL-1398"]["expected"])
+        self.assertIn("-$904,980/mo", by_id["DL-1399"]["expected"])
+        self.assertIn("890-MAPMargin", by_id["DL-1400"]["expected"])
 
 
     def test_manufacturing_automotive_mes_opcua_bom_atp_pdm_r338_scenarios(self) -> None:
@@ -6623,11 +6653,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 943)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 944)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 80.2)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 232)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 74.22)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 947)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 948)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 79.9)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 233)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 73.97)
 
 
 if __name__ == "__main__":
