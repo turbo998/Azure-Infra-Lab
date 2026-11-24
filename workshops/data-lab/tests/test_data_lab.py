@@ -3509,6 +3509,25 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_retail_banking_consumer_lending_credit_cards_collections_fair_lending_ecoa_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_retail_banking_consumer_lending_credit_cards_collections_fair_lending_ecoa_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["retail_borrowers_and_cardholders_millions"], 145)
+        self.assertEqual(sim["telemetry"]["payroll_disruption_stacking_and_bustout_waves_flagged_count"], 1315)
+        self.assertEqual(sim["telemetry"]["iso8583_card_bureau_and_core_servicing_stream_eps"], 2100000)
+        self.assertEqual(sim["telemetry"]["ecoa_reason_pacer_bankruptcy_and_call_vectors_count"], 1360000000)
+        self.assertEqual(sim["telemetry"]["core_servicing_cdc_mar_and_graph_sync_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["credit_yield_and_early_cure_rate_lift_pct"], 75.2)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_retail_credit_monthly_tco_usd"], 21260)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_retail_credit_tco_saved_usd"], 892440)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_retail_credit_tco_savings_pct"], 97.7)
+        self.assertTrue(sim["foundry_iq_guardrail"]["ecoa_reg_b_fair_lending_and_adverse_action_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["fdcpa_7in7_call_cap_and_bankruptcy_stay_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 122800000)
+
+
     def test_global_wealth_asset_management_hedge_fund_intraday_var_greeks_alt_data_mandate_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_wealth_asset_management_hedge_fund_intraday_var_greeks_alt_data_mandate_vs_4clouds")
         self.assertEqual(sim["telemetry"]["institutional_portfolios_funds_and_smas_count"], 4800)
@@ -3858,16 +3877,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114800000)
 
 
-    def test_scenario_matrix_462_cases_and_explicit_miss(self) -> None:
+    def test_scenario_matrix_464_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 932)
-        self.assertEqual(matrix["passed_scenarios"], 931)
+        self.assertEqual(matrix["total_scenarios"], 936)
+        self.assertEqual(matrix["passed_scenarios"], 935)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.89, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 81.2)
+        self.assertEqual(matrix["avg_latency_ms"], 80.8)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_retail_banking_consumer_lending_credit_cards_collections_ecoa_r336_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1385", "DL-1386", "DL-1387", "DL-1388"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("2,100K (2.10M) EPS", by_id["DL-1385"]["expected"])
+        self.assertIn("$159,260/mo!", by_id["DL-1386"]["expected"])
+        self.assertIn("-$892,440/mo", by_id["DL-1387"]["expected"])
+        self.assertIn("875-ECOARegB", by_id["DL-1388"]["expected"])
 
 
     def test_wealth_asset_management_hedge_fund_intraday_var_ima_r335_scenarios(self) -> None:
@@ -6530,11 +6561,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 931)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 932)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 81.2)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 229)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 74.98)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 935)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 936)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 80.8)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 230)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 74.72)
 
 
 if __name__ == "__main__":
