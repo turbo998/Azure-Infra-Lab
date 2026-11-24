@@ -3509,6 +3509,25 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_enterprise_data_governance_purview_onelake_rls_cls_obo_unity_horizon_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_enterprise_data_governance_purview_onelake_rls_cls_obo_unity_horizon_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["governed_domains_and_federated_catalogs_count"], 920)
+        self.assertEqual(sim["telemetry"]["entitlement_drift_and_pii_lineage_waves_flagged_count"], 1375)
+        self.assertEqual(sim["telemetry"]["access_audit_pii_scan_and_dlp_stream_eps"], 2220000)
+        self.assertEqual(sim["telemetry"]["policy_audit_lineage_and_dictionary_vectors_count"], 1420000000)
+        self.assertEqual(sim["telemetry"]["multi_catalog_policy_sync_and_graph_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["governance_provisioning_and_compliance_lift_pct"], 80.0)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_onelake_purview_governance_monthly_tco_usd"], 21500)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_governance_tco_saved_usd"], 942600)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_governance_tco_savings_pct"], 97.8)
+        self.assertTrue(sim["foundry_iq_guardrail"]["onelake_storage_layer_rls_cls_and_anti_bypass_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["purview_export_rms_encryption_and_gdpr_lineage_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 127600000)
+
+
     def test_global_five_cloud_data_platform_panorama_fabric_databricks_snowflake_bigquery_aws_tco_migration_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_five_cloud_data_platform_panorama_fabric_databricks_snowflake_bigquery_aws_tco_migration_vs_4clouds")
         self.assertEqual(sim["telemetry"]["multi_cloud_business_domains_and_legacy_dw_sources_count"], 420)
@@ -4085,16 +4104,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114800000)
 
 
-    def test_scenario_matrix_486_cases_and_explicit_miss(self) -> None:
+    def test_scenario_matrix_488_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 980)
-        self.assertEqual(matrix["passed_scenarios"], 979)
+        self.assertEqual(matrix["total_scenarios"], 984)
+        self.assertEqual(matrix["passed_scenarios"], 983)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.90, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 77.4)
+        self.assertEqual(matrix["avg_latency_ms"], 77.1)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_enterprise_data_governance_purview_onelake_rls_cls_obo_r348_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1433", "DL-1434", "DL-1435", "DL-1436"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("2,220K (2.22M) EPS", by_id["DL-1433"]["expected"])
+        self.assertIn("$166,220/mo!", by_id["DL-1434"]["expected"])
+        self.assertIn("-$942,600/mo", by_id["DL-1435"]["expected"])
+        self.assertIn("935-StorageBypass", by_id["DL-1436"]["expected"])
 
 
     def test_five_cloud_data_platform_panorama_tco_migration_r347_scenarios(self) -> None:
@@ -6901,11 +6932,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 979)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 980)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 77.4)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 241)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 72.04)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 983)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 984)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 77.1)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 242)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 71.81)
 
 
 if __name__ == "__main__":

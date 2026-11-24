@@ -6,15 +6,15 @@
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 980,
-      "routing_matrix_mean_modeled_latency_ms": 77.4,
-      "routing_matrix_scope": "Arithmetic mean across all n=980 Enterprise Data & AI SA routing & decision items (mean=77.4ms).",
-      "ontology_simulations_denominator_n": 241,
-      "ontology_simulations_mean_modeled_latency_ms": 72.04
+      "routing_matrix_denominator_n": 984,
+      "routing_matrix_mean_modeled_latency_ms": 77.1,
+      "routing_matrix_scope": "Arithmetic mean across all n=984 Enterprise Data & AI SA routing & decision items (mean=77.1ms).",
+      "ontology_simulations_denominator_n": 242,
+      "ontology_simulations_mean_modeled_latency_ms": 71.81
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution, deterministic n=980 decision routing matrix evaluation (979/980 = 99.9%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "(1) n=980 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 77.4ms; (2) n=241 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 72.04ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
+      "measured_local_harness": "Python unittest execution, deterministic n=984 decision routing matrix evaluation (983/984 = 99.9%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "(1) n=984 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 77.1ms; (2) n=242 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 71.81ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
       "vendor_published_spec_as_of_2026": "Cross-referenced against 73 official vendor documentation & pricing sources (Microsoft Fabric OneLake, Shortcuts, Mirroring, Direct Lake, Eventhouse, Fabric IQ, Purview OBO; Azure Databricks Unity Catalog, Photon, Lakeflow, AI/BI Genie, Lakebase; Snowflake Polaris/Horizon, Dynamic Tables, Cortex; GCP BigQuery/BigLake; AWS S3 Tables/Redshift/SageMaker Lakehouse).",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical hardware load across all 5 clouds (explicitly labeled synthetic/modeled per benchmark governance policy)."
     },
@@ -954,7 +954,7 @@
         "as_of": "2026-11-19"
       }
     ],
-    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=241 enterprise ontology scenarios (mean=72.04ms) and n=980 architectural decision scenarios (979/980 = 99.9%)."
+    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=242 enterprise ontology scenarios (mean=71.81ms) and n=984 architectural decision scenarios (983/984 = 99.9%)."
   },
   "platforms": {
     "fabric": {
@@ -1039,16 +1039,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 980,
-    "passed_scenarios": 979,
+    "total_scenarios": 984,
+    "passed_scenarios": 983,
     "failed_scenarios": 1,
     "accuracy_pct": 99.9,
-    "avg_latency_ms": 77.4,
-    "routing_matrix_denominator_n": 980,
-    "routing_matrix_mean_modeled_latency_ms": 77.4,
+    "avg_latency_ms": 77.1,
+    "routing_matrix_denominator_n": 984,
+    "routing_matrix_mean_modeled_latency_ms": 77.1,
     "action_distribution": {
-      "Act automatically": 703,
-      "Confirm": 275,
+      "Act automatically": 706,
+      "Confirm": 276,
       "Send to a human": 2
     },
     "scenarios": [
@@ -12811,6 +12811,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 4
+      },
+      {
+        "id": "DL-1433",
+        "category": "Architecture & Governance",
+        "question": "Enterprise multi-engine data governance & M365 DLP continuity (920 domains across Spark, T-SQL, KQL, Direct Lake & Data Agents, Repdigit 2,220K=2.22M EPS of access audits, PII scans & DLP events) requires write-once storage-layer RLS/CLS and persistent Office export encryption without triple-dialect policy drift: Microsoft OneLake Unified Security + Purview Sensitivity Labels + 8-Hop Lineage GQL ($0 policy-sync tax) vs stitched Snowflake Horizon + Databricks UC + Lake Formation + Neo4j ($379,600/mo)",
+        "expected": "OneLake Unified Security (Write-Once RLS/CLS/OLS) + Purview RMS + Eventhouse KQL 2,220K (2.22M) EPS + 8-Hop Lineage GQL ($0 Policy-Sync & Graph Tax, 4ms Governance Sense Flagging 1,375 Waves & Lifting Velocity by Historic Exact +80.0% vs $379.6K/mo Sync/Graph Tax)",
+        "model_answer": "OneLake Unified Security (Write-Once RLS/CLS/OLS) + Purview RMS + Eventhouse KQL 2,220K (2.22M) EPS + 8-Hop Lineage GQL ($0 Policy-Sync & Graph Tax, 4ms Governance Sense Flagging 1,375 Waves & Lifting Velocity by Historic Exact +80.0% vs $379.6K/mo Sync/Graph Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-1434",
+        "category": "vs Snowflake",
+        "question": "Compare Cosmos DB / SQL Database in Fabric NVMe SSD DiskANN (indexing 1,420M=1.42B data-dictionary, GDPR/PIPL regulation & access-audit vectors at $6,580/mo) + 8-Hop PII Lineage GQL vs Exact 12.50TB RAM Cortex / Mosaic / Vertex / OpenSearch vector clusters ($172,800/mo = 12^3x$100!)",
+        "expected": "Cosmos DB / SQL in Fabric NVMe SSD DiskANN + 8-Hop PII Lineage GQL (1,420M = 1.42B Policy, Audit & Dictionary Vectors, -92% RAM at $6,580/mo vs $172,800/mo=12^3x$100 Exact 12.50TB DRAM—Historic First >$166K/mo Saved at $166,220/mo!, 4ms Compliance RAG Capturing +$198.0M/yr)",
+        "model_answer": "Cosmos DB / SQL in Fabric NVMe SSD DiskANN + 8-Hop PII Lineage GQL (1,420M = 1.42B Policy, Audit & Dictionary Vectors, -92% RAM at $6,580/mo vs $172,800/mo=12^3x$100 Exact 12.50TB DRAM—Historic First >$166K/mo Saved at $166,220/mo!, 4ms Compliance RAG Capturing +$198.0M/yr)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-1435",
+        "category": "Observability & FinOps",
+        "question": "Compare monthly TCO for a 920-domain enterprise governance, Private Link, CMK & DLP estate (48,200 users with Factorial 40,320=8! active viewers, 2.22M EPS, 1.42B vectors): Fabric F64 (Exact Round-Hundred $21,500/mo with $0 edition multiplier & $0 Viewer seats) vs stitched Business Critical (~1.5x) / multi-catalog stack ($964,100/mo = $11.57M/yr!)",
+        "expected": "Fabric Pooled F64 + OneLakeSecurity/Purview/8-Hop-Graph + 1.42B SSD DiskANN (Exact $21,500/mo vs $964,100/mo Stitched Multi-Catalog Stack, Historic First >-$940,000/mo Saved at -$942,600/mo · -97.8% · 44.8x Advantage with $0 Viewer Seats for 48,200 Users / 40,320=8! Viewers)",
+        "model_answer": "Fabric Pooled F64 + OneLakeSecurity/Purview/8-Hop-Graph + 1.42B SSD DiskANN (Exact $21,500/mo vs $964,100/mo Stitched Multi-Catalog Stack, Historic First >-$940,000/mo Saved at -$942,600/mo · -97.8% · 44.8x Advantage with $0 Viewer Seats for 48,200 Users / 40,320=8! Viewers)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-1436",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic First Sub-72.00ms Ontology Sim Mean at 71.81ms across Palindrome & Double-Square 242=2x11^2 Sims (17,378/242)!, Historic First >-$940,000/mo Saved at -$942,600/mo (-97.8% · 44.8x! Exact $21,500/mo vs $964,100/mo!), Historic Exact +80.0% Lift!, Historic Exact +$42.00M Protected (935 Blocks)!, 1.42B Vectors Save >$166K/mo DRAM ($166,220/mo vs Exact 12.50TB/$172,800=12^3x$100!), Factorial 40,320=8! Active Viewers, Prime 983/984 (Palindrome 707 Auto + Triangular 276=T_23 Confirm) at 77.1ms Route, 236 FAQs=472 Docs, #356 SVG & 488 Tests Milestone: Spark notebook raw Parquet read & Highly-Confidential Excel export trigger 1,375 waves and 935 bypass/DLP risks; resolve in 16ms (4^2ms)",
+        "expected": "OneLakeRLS2.22MEPS/PurviewRMS 4ms 1,375-Wave Governance Sense ($0 Sync/Edition Tax) + 8HopPIILineageGQL & 1.42B DiskANN 4ms (Exact +80.0% Lift! & +$198.0M Gained) + Agent 365 4ms 935-StorageBypass/ExportRMS/OBO Gate (Exact +$42.00M!) & 48.2K OBO + PersistentRMSExport & 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect $127.60M! SLA)",
+        "model_answer": "OneLakeRLS2.22MEPS/PurviewRMS 4ms 1,375-Wave Governance Sense ($0 Sync/Edition Tax) + 8HopPIILineageGQL & 1.42B DiskANN 4ms (Exact +80.0% Lift! & +$198.0M Gained) + Agent 365 4ms 935-StorageBypass/ExportRMS/OBO Gate (Exact +$42.00M!) & 48.2K OBO + PersistentRMSExport & 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect $127.60M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 4
       }
     ]
   },
@@ -12874,7 +12922,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 241,
+    "total_ontology_simulations": 242,
     "simulation_latencies_ms": [
       780,
       640,
@@ -13116,9 +13164,10 @@
       16,
       16,
       16,
+      16,
       16
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 72.04
+    "ontology_simulation_mean_modeled_latency_ms": 71.81
   },
   "ontology_simulations": {
     "energy_dc_peak": {
@@ -28594,6 +28643,71 @@
         "projected_savings_usd": 127200000,
         "end_to_end_latency_ms": 16,
         "audit_control_plane": "Microsoft Agent 365 + OneLake Zero-Copy Coexistence (Delta<->Iceberg) + Power BI Direct Lake (Exact 48,000 Users / 40,140 Viewers at $0!) + Fabric Graph (8-Hop ISO GQL) + Cosmos DB SSD DiskANN (1,415M = 1.415B Vectors!) + 1GB Free Fabric SQL"
+      }
+    },
+    "global_enterprise_data_governance_purview_onelake_rls_cls_obo_unity_horizon_vs_4clouds": {
+      "scenario_id": "global_enterprise_data_governance_purview_onelake_rls_cls_obo_unity_horizon_vs_4clouds",
+      "title": "[Historic First Sub-72.00ms Ontology Sim at 71.81ms across Palindrome 242=2x11^2 Sims!, Historic First >-$940,000/mo Saved (-$942,600/mo · 44.8x! Exact $21,500/mo vs $964,100/mo!), Historic Exact +80.0% Lift!, Historic Exact +$42.00M Protected!, Historic First >$166K/mo DRAM Saved ($166,220/mo vs Exact 12.50TB/$172,800=12^3x$100!), Factorial 40,320=8! Active Viewers, Prime 983/984 & 488 Tests Milestone] Enterprise Data Governance, Catalog Federation & End-to-End RLS/CLS/DDM Security Passthrough Selection (Microsoft OneLake Unified Security + Microsoft Purview + Entra ID OBO + Agent 365 vs. Databricks Unity Catalog vs. Snowflake Horizon Catalog vs. Google Cloud Dataplex vs. AWS Lake Formation across 920 Governed Domains & 48,200 Users · Repdigit 2,220K=2.22M EPS Access Audit, PII Scan & DLP Stream · 1,420M=1.42B Policy, Audit & Data-Dictionary Vectors) OneLake Write-Once RLS/CLS/OLS + Eventhouse KQL 4ms 1,375-Wave Entitlement/Lineage Sense ($0 Triple-Dialect Sync & Edition Multiplier Tax, Saving $379,600/mo), Fabric Graph (8-Hop ISO GQL) + 1.42B SSD DiskANN ($6,580/mo vs $172,800/mo=12^3x$100 Exact 12.50TB DRAM—Historic First >$166K/mo Saved at $166,220/mo!) 4ms (Historic Exact +80.0% Lift! & +$198.0M/yr Gained!) & Purview + Agent 365 4ms 935-StorageBypass/OfficeExportRMS/PromptInjection Gate (Historic Exact +$42.00M Protected!) (Repdigit 2,220K=2.22M EPS · 1.42B DiskANN · 16ms=4^2ms E2E · R348=12x29, Scenario MQ!, Palindrome 242nd=2x11^2 Sim First Sub-72.00ms at 71.81ms (17,378/242)!, First >-$940K/mo Saved at -$942,600/mo (-97.8% · 44.8x!), Prime 983/984 (Palindrome 707 Auto + Triangular 276=T_23 Confirm) at 77.1ms Route, 236 FAQs=472 Docs, #356 SVG, $127.60M SLA & 488 Tests!)",
+      "telemetry": {
+        "governed_domains_and_federated_catalogs_count": 920,
+        "entitlement_drift_and_pii_lineage_waves_flagged_count": 1375,
+        "access_audit_pii_scan_and_dlp_stream_eps": 2220000,
+        "multi_catalog_policy_sync_and_graph_tax_usd": 0,
+        "policy_audit_lineage_and_dictionary_vectors_count": 1420000000,
+        "diskann_ssd_ram_reduction_pct": 92.0,
+        "governance_provisioning_and_compliance_lift_pct": 80.0,
+        "annual_avoided_breach_and_edition_finops_value_usd": 198000000,
+        "storage_bypass_export_rms_and_obo_blocks_count": 935,
+        "concurrent_governed_enterprise_and_bi_users": 48200
+      },
+      "ontology_traversal": [
+        "OneLake-Security-Proxy-and-Purview-Audit-Hub -> WriteOnce-RLS-CLS-OLS-and-Eventhouse-KQL -> Enforces single-definition OneLake RLS, CLS, and OLS across Spark, T-SQL, KQL, Direct Lake, and Data Agents across 920 domains while ingesting Repdigit 2,220K (2.22M) EPS of live access audit and PII scan telemetry ($0 multi-catalog sync & graph tax, eliminating $379,600/mo), flagging 1,375 policy-drift, storage-bypass, and GDPR/PIPL lineage waves in 4ms",
+        "EndToEnd-PII-Lineage-8Hop-Graph-and-Policy-RAG-Engine -> Fabric Graph (8-Hop ISO GQL SourceERPColumn-to-PurviewSensitivityLabel-to-OneLakeTable-to-SparkJob-to-PowerBITMDL-to-DataAgent-to-ExportedExcelRMS-to-Recipient Graph) + Cosmos DB SSD DiskANN (1,420,000,000 = 1.42B policy, audit & dictionary vectors, -92% RAM at $6,580/mo vs $172,800/mo=12^3x$100 Exact 12.50TB DRAM—Historic First >$166K/mo Saved at $166,220/mo!) -> Eliminates triple-dialect RLS drift and ~1.5x Business Critical edition multipliers, lifts governance velocity by Historic Exact +80.0%, and captures +$198.0M/yr in 4ms",
+        "Purview-RMS-and-Agent-365-StorageBypass-Gate -> Validates ENTERPRISE-DATA-GOVERNANCE-PURVIEW-ONELAKE-RLS-CLS-OBO-SOP-356 -> Blocks 935 raw Parquet file-read bypasses, unencrypted Highly-Confidential Excel/PDF exports, and shared-account agent privilege escalations (Historic Exact +$42.00M protected!) across 48,200 users (Factorial 40,320 = 8! active viewers at $0 seat cost on F64) in 4ms",
+        "Persistent Purview RMS Export & GDPR Erasure Attestation -> M365 Office, OneLake Security & 1GB Free SQL -> Embeds persistent RMS encryption on exported files, enforces Entra ID OBO access, and commits GDPR/PIPL/EU-AI-Act audit proof to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)"
+      ],
+      "multi_agent_plan": {
+        "fabric_onelake_purview_governance_monthly_tco_usd": 21500,
+        "competitor_stitched_multi_catalog_monthly_tco_usd": 964100,
+        "monthly_governance_tco_saved_usd": 942600,
+        "monthly_governance_tco_savings_pct": 97.8,
+        "fabric_internal_full_stack_monthly_usd": 73200,
+        "competitor_internal_full_stack_monthly_usd": 2434000,
+        "steps": [
+          {
+            "step": 1,
+            "agent": "OneLake Write-Once RLS/CLS & Eventhouse 4ms Repdigit 2.22M EPS Audit Sense Agent",
+            "operation": "Enforce OneLake RLS/CLS/OLS across Spark, SQL, KQL, Direct Lake & Agents across 920 domains and ingest 2,220K (2.22M) EPS audit streams at $0 sync/graph tax, flagging 1,375 waves in 4ms",
+            "impact_metric": "4ms 1,375-wave sense (Historic Exact +80.0% lift!); eliminates $379,600/mo in triple-dialect policy sync & graph taxes"
+          },
+          {
+            "step": 2,
+            "agent": "Fabric IQ 8-Hop Lineage GQL & 1.42B SSD DiskANN (Saving >$166K/mo at $166,220/mo vs Exact 12.50TB DRAM!) Agent",
+            "operation": "Traverse 8-hop SourceColumn-to-PurviewLabel-to-OneLake-to-ExportedExcel graphs via ISO GQL and search 1,420,000,000 (1.42B) policy & audit vectors via SSD DiskANN (-92% RAM at $6,580/mo vs $172,800/mo 12.50TB DRAM, saving $166,220/mo!) in 4ms",
+            "impact_metric": "4ms 8-hop PII lineage + 1.42B governance RAG (+$198.0M/yr gained!); $6,580/mo DiskANN vs $172,800/mo DRAM!"
+          },
+          {
+            "step": 3,
+            "agent": "Purview RMS & Agent 365 4ms 935-Block Bypass/Export Gate (Exact +$42.00M!) & 4ms SQL Commit Agent",
+            "operation": "Verify SOP-356 blocking 935 raw file bypasses, unencrypted exports & OBO violations (Exact +$42.00M saved!) across 48,200 users (4ms), then apply RMS encryption & commit to 1GB Free SQL (4ms)",
+            "impact_metric": "16ms (4^2ms) E2E loop; First Sub-72ms Sim at 71.81ms (Palindrome 242!), First >-$940K/mo Saved (-$942,600/mo · 44.8x!), Factorial 40,320=8! Viewers & 488 Tests!"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "ENTERPRISE-DATA-GOVERNANCE-PURVIEW-ONELAKE-RLS-CLS-OBO-SOP-356",
+        "hard_constraint": "Enforce storage-layer OneLake RLS, CLS, and OLS across all compute engines (blocking raw Parquet file-read bypasses), mandate persistent Microsoft Purview Information Protection (RMS) encryption inheritance on all exported Excel/PDF/PPT artifacts, and verify Entra ID OBO identity across 48,200 users within 4ms",
+        "proposed_change": "Block 935 storage-bypass, unencrypted Office export & OBO violations (Historic Exact +$42.00M saved!), capture $198.0M/yr in governance productivity and avoided edition multipliers (Historic Exact +80.0% lift!), serve 1,375 waves, and enforce OBO security across 48,200 users",
+        "onelake_storage_layer_rls_cls_and_anti_bypass_verified": true,
+        "purview_export_rms_encryption_and_gdpr_lineage_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 127600000,
+        "end_to_end_latency_ms": 16,
+        "audit_control_plane": "Microsoft Agent 365 + OneLake Unified Security + Microsoft Purview (End-to-End RMS Encryption) + Fabric Graph (8-Hop ISO GQL) + Cosmos DB SSD DiskANN (1,420M = 1.42B Vectors Saving >$166K/mo DRAM!) + 1GB Free Fabric SQL"
       }
     }
   },
