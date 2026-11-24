@@ -3509,6 +3509,25 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_banking_iso20022_fednow_realtime_payments_mule_ring_aml_graph_sar_rag_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_banking_iso20022_fednow_realtime_payments_mule_ring_aml_graph_sar_rag_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["corporate_and_retail_bank_accounts_millions"], 195)
+        self.assertEqual(sim["telemetry"]["app_scam_mule_smurfing_and_structuring_waves_flagged_count"], 1345)
+        self.assertEqual(sim["telemetry"]["iso20022_fednow_rtp_and_swift_gpi_stream_eps"], 2160000)
+        self.assertEqual(sim["telemetry"]["ofac_sanctions_fincen_sar_and_ubo_vectors_count"], 1390000000)
+        self.assertEqual(sim["telemetry"]["xml_parsing_kafka_and_graph_sync_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["concurrent_aml_investigators_and_treasury_officers"], 47000)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_banking_payments_monthly_tco_usd"], 21380)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_banking_payments_tco_saved_usd"], 917520)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_banking_payments_tco_savings_pct"], 97.7)
+        self.assertTrue(sim["foundry_iq_guardrail"]["ofac_sdn_50pct_rule_pre_settlement_freeze_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["bsa_sar_anti_tipping_off_and_5w_grounding_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 125200000)
+
+
     def test_global_multitenant_b2b_saas_gaming_liveops_embedded_analytics_retention_attribution_finops_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_multitenant_b2b_saas_gaming_liveops_embedded_analytics_retention_attribution_finops_vs_4clouds")
         self.assertEqual(sim["telemetry"]["b2b_saas_tenants_and_game_realms_count"], 95000)
@@ -3971,16 +3990,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114800000)
 
 
-    def test_scenario_matrix_474_cases_and_explicit_miss(self) -> None:
+    def test_scenario_matrix_476_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 956)
-        self.assertEqual(matrix["passed_scenarios"], 955)
+        self.assertEqual(matrix["total_scenarios"], 960)
+        self.assertEqual(matrix["passed_scenarios"], 959)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.90, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 79.2)
+        self.assertEqual(matrix["avg_latency_ms"], 78.9)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_banking_iso20022_fednow_realtime_payments_aml_sar_r342_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1409", "DL-1410", "DL-1411", "DL-1412"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("2,160K (2.16M) EPS", by_id["DL-1409"]["expected"])
+        self.assertIn("$162,740/mo!", by_id["DL-1410"]["expected"])
+        self.assertIn("-$917,520/mo", by_id["DL-1411"]["expected"])
+        self.assertIn("905-OFAC50Pct", by_id["DL-1412"]["expected"])
 
 
     def test_multitenant_b2b_saas_gaming_liveops_embedded_analytics_r341_scenarios(self) -> None:
@@ -6715,11 +6746,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 955)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 956)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 79.2)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 235)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 73.47)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 959)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 960)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 78.9)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 236)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 73.23)
 
 
 if __name__ == "__main__":
