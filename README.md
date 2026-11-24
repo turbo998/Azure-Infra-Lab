@@ -42,7 +42,7 @@
 ## ✅ 本地一键验证（Repository Verification）
 
 ```bash
-# 1. 验证 Data Lab 基准评测与 478 项单元测试
+# 1. 验证 Data Lab 基准评测与 480 项单元测试
 python -m unittest discover -s workshops/data-lab/tests -p "test_*.py"
 
 # 2. 验证 Azure Agent Infra 容量测算器与 30 项单元测试

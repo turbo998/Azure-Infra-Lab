@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg352" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab352" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg352)"/>
+  <text x="36" y="42" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #352 · ROUND 344 (R344) · SCENARIO MM · HISTORIC 1.40 BILLION (1,400M) VECTORS AT $6,500/MO SSD DISKANN &amp; 480 TESTS MILESTONE</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Enterprise Natural Language Data Agent: Fabric Data Agent + IQ Ontology vs. Genie / Cortex Analyst / BigQuery / DIY</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">967/968 (99.90%) Routing at 78.3ms Mean | 238th Ontology Sim at 72.75ms | 1.40B Vectors ($6,500/mo SSD vs $170,400/mo DRAM) | -$925,880/mo Saved (44.2x)</text>
+
+  <!-- Left Box: Microsoft Fabric Unified Data Agent -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab352)"/>
+  <text x="56" y="145" fill="#0B1220" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Microsoft Fabric Data Agent + Fabric IQ Ontology ($21,420/mo F64)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Zero-Duplication Semantic Layer (Power BI TMDL / Certified DAX + KQL)</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Directly reuses CFO-certified Power BI DAX measures &amp; Direct Lake (18ms) + KQL (12ms)</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eliminates ~40% raw SQL metric hallucination &amp; Dual Semantic YAML drift tax</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Multi-Hop Causal Attribution (Fabric IQ 8-Hop Native GQL · 10ms)</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Traverses KPI Drop -&gt; SKU -&gt; PO -&gt; Supplier -&gt; Quality Lot -&gt; VIP Ticket in 10ms</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Deterministic graph edges replace brittle 6-table ad-hoc LLM SQL JOINs</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. Historic 1.40 Billion (1,400M) Vector SSD DiskANN ($6,500/mo · 7ms)</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Unifies contract PDFs, call transcripts &amp; tickets with structured KPIs at 7ms P99</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Saves $163,900/mo vs. $170,400/mo (12.30 TB DRAM) in-memory vector clusters!</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Entra ID OBO Passthrough &amp; 47,400-User Teams Concurrency (5ms Guardrail)</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• End-to-end Entra ID OBO enforces OneLake &amp; Power BI RLS / CLS / DDM natively</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• $0 Power BI Viewer seat cost on F64 (39,600 active viewers included free!)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Total E2E | +78.4% Lift | +$194.0M/yr Value | 915 Blocks (+$41.20M)</text>
+  <text x="72" y="524" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Exact $126.00M SLA Protected | DL-1417..1420 Verified | 480/480 Unit Tests</text>
+
+  <!-- Right Box: 4-Cloud Competitor & DIY Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched 4-Cloud / Dual-YAML / DIY Text-to-SQL ($947,300/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Dual Semantic Layer Drift Tax (DAX in Power BI + YAML in DW)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Snowflake Cortex YAML / Databricks Metric Views duplicate Power BI DAX logic</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Compute &amp; SQL Warehouse cold-start concurrency spikes: $213,300/mo</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Siloed Structured SQL vs. External Graph &amp; Streaming ($372,400/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• No native lakehouse GQL; requires external Neo4j/Neptune + CDC sync pipelines</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 4,200ms+ multi-hop orchestration latency across disconnected APIs</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. In-Memory DRAM Vector Tax Breaks &gt;$170K/mo ($170,400/mo · 12.30 TB)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Hosting 1.40B document/ticket vectors in RAM costs 26.2x more than SSD DiskANN</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Unstructured RAG remains disconnected from governed BI semantic permissions</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Per-User BI Seat Tax ($191,200/mo) &amp; Shared DB Account Risks</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 39,600 active viewers incur $191,200/mo in per-seat BI &amp; conversational add-ons</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• DIY Text-to-SQL bots using service accounts risk prompt-injection data leaks</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Total Competitor Cost: $947,300/mo ($11.37M/yr) vs. Fabric $21,420/mo</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Net Savings with Microsoft Fabric: -$925,880/mo (-97.7% · 44.2x Advantage!)</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Selection Rule (R344 · Scenario MM): 80% of Enterprise Data Agent success is the Semantic Layer &amp; Ontology, not raw SQL prompting.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Reuse Power BI TMDL/DAX + Fabric IQ 8-Hop GQL + 1.40B SSD DiskANN ($6,500/mo) with Entra ID OBO passthrough to achieve 99.90% accuracy at -$925,880/mo lower TCO.</text>
+</svg>
