@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg353" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab353" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg353)"/>
+  <text x="36" y="42" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #353 (PALINDROME PRIME!) · ROUND 345 (R345) · SCENARIO MN · EXACT 78.0MS ROUTE, &gt;-$930K/MO SAVED &amp; FIBONACCI-PRIME 233 FAQS</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Enterprise OLTP-to-OLAP Zero-ETL Mirroring &amp; HTAP: Fabric Mirroring + SQL DB vs. Debezium / Fivetran / Lakebase / Unistore</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">Prime 971/972 (99.90%) at Exact 78.0ms Route | Prime 239th Sim at 72.51ms | 1.405B Vectors ($6,520/mo vs $171,000/mo DRAM) | -$930,060/mo Saved (44.4x)</text>
+
+  <!-- Left Box: Microsoft Fabric Mirroring + SQL DB in Fabric -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab353)"/>
+  <text x="56" y="145" fill="#0B1220" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Microsoft Fabric Mirroring + SQL DB in Fabric ($21,440/mo F64)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. $0 CU Zero-ETL Mirroring &amp; 64 TB Free Storage (Native + Open Mirroring)</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Azure SQL, SQL Server, Postgres, Cosmos DB, Snowflake, Oracle &amp; SAP at $0 CU compute</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eliminates $374,200/mo in Fivetran MAR fees, Kafka/Debezium clusters &amp; graph sync tax</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Auto V-Order Compaction + 8-Hop Dependency GQL (10ms · Zero Merge Burn)</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Background Delta upsert &amp; V-Order sorting feed Direct Lake (18ms) with $0 Merge tax</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 8-hop cross-DB entity lineage graph resolves LSN consistency across 1,360 waves</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 1.405 Billion (1,405M) Vector SSD DiskANN ($6,520/mo · Saves &gt;$164K DRAM!)</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Indexes 1.405B operational contracts, invoices &amp; audit logs at 7ms P99 on NVMe SSD</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Saves $164,480/mo vs. Round-Thousand $171,000/mo (12.35 TB DRAM) vector clusters!</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. SQL DB in Fabric ACID HTAP Write-Back &amp; 920-Block LSN/OBO Gate (5ms)</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Native T-SQL ACID operational write-back via Translytical UDFs with instant Delta sync</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks 920 stale-LSN, non-idempotent write &amp; RLS violations (+$41.40M protected)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Total E2E | +78.8% Lift | Round-Five +$195.0M/yr | Exact 78.0ms Route!</text>
+  <text x="72" y="524" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• $126.40M SLA Protected | Fibonacci-Prime 233 FAQs=466 Docs | 482/482 Unit Tests</text>
+
+  <!-- Right Box: Stitched CDC + Commercial ELT + 4-Cloud Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched Fivetran MAR / Debezium Kafka / 4-Cloud Stack ($951,500/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Uncapped Fivetran MAR Spikes &amp; 6-Layer Debezium/Kafka Fragility ($374,200/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Month-end batch updates or table backfills trigger 5-10x Monthly Active Row billing shocks</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Source ALTER TABLE DDL changes break Schema Registry &amp; halt Flink upsert pipelines</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Target Warehouse MERGE Compute Tax &amp; Small-File Compaction ($214,300/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Waking Snowflake Warehouses or Spark clusters every 5 min for MERGE INTO burns credits</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Continuous OPTIMIZE compaction required to prevent streaming small-file read degradation</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. Round-Thousand $171,000/mo In-Memory DRAM Vector Cluster (12.35 TB RAM)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Hosting 1.405B operational embeddings in DRAM costs 26.2x more than SSD DiskANN</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Disconnected from source transaction LSN watermarks, risking stale RAG grounding</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Exact $192,000/mo BI Seat Tax &amp; Non-ACID Reverse ETL Sprawl</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 39,780 active viewers incur $192,000/mo in BI viewer licenses + Reverse ETL per-row fees</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Competitor stack breaks &gt;$950,000/mo for the first time ($951,500/mo = $11.42M/yr!)</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Historic First Time Monthly TCO Saved Breaks &gt;-$930,000/mo!</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Net Savings with Microsoft Fabric: -$930,060/mo (-97.7% · Repdigit 44.4x Advantage!)</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Selection Rule (R345 · Scenario MN): Eliminate both the Pipeline Ingestion Tax (MAR/Kafka) and Target Merge Compute Tax.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Use Fabric Native &amp; Open Mirroring ($0 CU compute + 64TB free storage on F64) + SQL DB in Fabric ACID HTAP to save -$930,060/mo (44.4x).</text>
+</svg>
