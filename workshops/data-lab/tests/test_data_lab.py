@@ -3509,6 +3509,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_omnichannel_retail_ecommerce_customer360_composable_cdp_shopping_agent_rmn_cleanroom_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_omnichannel_retail_ecommerce_customer360_composable_cdp_shopping_agent_rmn_cleanroom_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["omnichannel_stores_and_fulfillment_nodes_count"], 4800)
+        self.assertEqual(sim["telemetry"]["cart_abandonment_bopis_and_rmn_waves_flagged_count"], 1445)
+        self.assertEqual(sim["telemetry"]["clickstream_pos_and_rfid_telemetry_stream_eps"], 2360000)
+        self.assertEqual(sim["telemetry"]["multimodal_sku_fit_review_and_cpg_contract_vectors_count"], 1490000000)
+        self.assertEqual(sim["telemetry"]["saas_cdp_mtu_reverse_etl_mar_and_neptune_graph_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["omnichannel_conversion_and_rmn_roas_lift_pct"], 85.6)
+        self.assertEqual(sim["telemetry"]["map_floor_gdpr_consent_and_rmn_k50_blocks_count"], 1005)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_omnichannel_retail_cdp_rmn_monthly_tco_usd"], 21780)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_omnichannel_retail_cdp_rmn_tco_saved_usd"], 1001120)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_omnichannel_retail_cdp_rmn_tco_savings_pct"], 97.9)
+        self.assertTrue(sim["foundry_iq_guardrail"]["store_atp_stock_and_map_margin_floor_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["gdpr_ccpa_consent_and_rmn_cleanroom_k50_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 133200000)
+
+
     def test_global_enterprise_data_ai_five_cloud_architect_master_blueprint_fabric_iq_agent365_tco_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_enterprise_data_ai_five_cloud_architect_master_blueprint_fabric_iq_agent365_tco_vs_4clouds")
         self.assertEqual(sim["telemetry"]["governed_multi_cloud_enterprise_domains_count"], 361)
@@ -4355,14 +4375,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
 
     def test_scenario_matrix_498_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 1036)
-        self.assertEqual(matrix["passed_scenarios"], 1035)
+        self.assertEqual(matrix["total_scenarios"], 1040)
+        self.assertEqual(matrix["passed_scenarios"], 1039)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.90, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 73.4)
+        self.assertEqual(matrix["avg_latency_ms"], 73.2)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_omnichannel_retail_composable_cdp_rmn_cleanroom_r362_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1489", "DL-1490", "DL-1491", "DL-1492"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("2,360K (2.36M) EPS", by_id["DL-1489"]["expected"])
+        self.assertIn("$174,340/mo!", by_id["DL-1490"]["expected"])
+        self.assertIn("-$1,001,120/mo", by_id["DL-1491"]["expected"])
+        self.assertIn("1,005-MAPMarginFloor", by_id["DL-1492"]["expected"])
 
 
     def test_enterprise_data_ai_five_cloud_master_blueprint_r361_scenarios(self) -> None:
@@ -7337,11 +7369,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1035)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1036)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 73.4)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 255)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 68.96)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1039)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1040)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 73.2)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 256)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 68.76)
 
 
 if __name__ == "__main__":

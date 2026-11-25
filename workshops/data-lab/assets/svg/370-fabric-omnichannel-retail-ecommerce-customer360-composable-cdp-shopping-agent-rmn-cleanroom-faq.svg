@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg370" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab370" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg370)"/>
+  <text x="36" y="42" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #370 (ROUND-TEN!) · ROUND 362 (R362=2×181!) · HISTORIC FIRST &gt;-$1,000,000/MO SAVED (-$1,001,120/MO!), 256TH=2⁸=16² SIM (68.76MS) &amp; 500 DOCS!</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Omnichannel Retail Customer 360 Composable CDP, Shopping Agent &amp; RMN Clean Room: Fabric vs. Databricks / Snowflake / GCP / AWS</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">Prime 1,039/1,040 (99.90% · 749 Auto + 290 Confirm) at 73.2ms | 256th=2⁸ Sim at 68.76ms | -$1,001,120/mo Saved (&gt;-$1M/mo! · 47.0x) | 250 FAQs=500 Docs | 516 Tests</text>
+
+  <!-- Left Box: Microsoft Fabric Omnichannel Retail & RMN Hub -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab370)"/>
+  <text x="56" y="145" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Microsoft Fabric Composable CDP &amp; RMN Hub ($21,780/mo All-In)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Eventhouse KQL 2.36M EPS Clickstream/POS + $0 MTU Golden Profiles (12ms)</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Ingests 2,360K (2.36M) EPS app clickstream, store POS &amp; UHF RFID with $0 MTU profile tax</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Flags 1,445=5×17² cart-abandon &amp; BOPIS waves in 4ms, eliminating $404,800/mo CDP/graph taxes</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Fabric IQ 8-Hop Identity-to-Inventory GQL + OneLake RMN Clean Rooms</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Resolves anonymous-to-known Household IDs, store safety stock &amp; CPG RMN ROAS in 10ms</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lifts conversion &amp; RMN yield by +85.6% &amp; captures +$212.0M/yr incremental GMV!</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 1.49 Billion (1,490M) Multimodal SKU &amp; Style Vectors at $6,860/mo=20×7³</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Saves First &gt;$174K/mo ($174,340/mo!) vs. $181,200/mo (13.20 TB RAM) vector clusters</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Powers 7ms visual styling, fit reviews &amp; CPG trade-promo contract RAG</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. HISTORIC FIRST &gt;-$1,000,000/MO SAVED (-$1,001,120/MO!) &amp; 256TH=2⁸ SIM!</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Agent 365 blocks 1,005 margin-floor, GDPR/CCPA consent &amp; RMN k-anonymity risks (+$44.80M!)</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Round-Hundred 51,000 users (42,840 active viewers at $0 BI seat tax on F64!)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Total E2E | -$1,001,120/mo Saved (&gt;-$1.00M/mo! · -97.9% · 47.0x!) | $133.20M SLA</text>
+  <text x="72" y="524" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• 256TH=2⁸=16² SIM AT 68.76MS | 250 FAQS = 500 DOCS | PRIME 1,039/1,040 | 516 TESTS!</text>
+
+  <!-- Right Box: Stitched SaaS CDP + Neptune + 13.20 TB DRAM Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched SaaS CDP / Reverse-ETL / DRAM Stack ($1,022,900/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. SaaS CDP Per-MTU Tax, Reverse-ETL MAR &amp; Graph Tax ($404,800/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Packaged CDP MTU tiers + Hightouch/Census Reverse-ETL MAR burn $404.8K/mo</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 15–60 min batch sync misses 90% of live 30-second mobile cart abandonment</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Peak Black Friday Warehouse &amp; Clean-Room Compute Tax ($231,240/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Separate merchandising warehouses, Photon surcharges &amp; RMN clean-room egress</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Uncertified Text-to-SQL agents confuse Gross vs. Net GMV &amp; stack promo codes</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 13.20 TB In-Memory HNSW Vector Cluster Tax ($181,200/mo)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Indexing 1.49B multimodal SKU images, reviews &amp; CPG contracts in RAM costs 26.4x SSD</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Disconnected from live store inventory, recommending out-of-stock sizes</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Per-User Store Manager &amp; Buyer BI Seat Tax ($205,660/mo)</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Licensing 42,840 store managers, buyers &amp; CPG partners across 51,000 users costs $205,660/mo</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Total Competitor Cost: $1,022,900/mo ($12.27M/yr) vs. Fabric $21,780/mo</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• HISTORIC FIRST &gt;-$1.00M/MO SAVED: -$1,001,120/mo (-97.9% · Exact 47.0x Advantage!)</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• DL-1489..1492 Verified | 73.2ms Route | 256th=2⁸ Sim 68.76ms | 500 Docs | 516 Tests!</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Retail Golden Rule (R362 · Scenario NE): Replace per-MTU SaaS CDPs &amp; Reverse-ETL with Lakehouse-Native Composable CDP.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Unify 2.36M EPS KQL, 8-hop Identity/Inventory GQL, 1.49B SSD DiskANN ($6,860/mo) &amp; RMN Clean Rooms to save -$1,001,120/mo (&gt;-$1M/mo!).</text>
+</svg>
