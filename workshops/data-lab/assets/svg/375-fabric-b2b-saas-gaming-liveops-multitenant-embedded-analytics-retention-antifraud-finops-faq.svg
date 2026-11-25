@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg375" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab375" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg375)"/>
+  <text x="36" y="42" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #375 (3×5³ CUBE-FACTOR!) · PRIME ROUND 367 (R367!) · FIRST &lt;72.0MS ROUTE (71.9MS), 52,000 USERS, 255=2⁸-1 FAQS &amp; EXACT $135.00M SLA!</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Multi-Tenant B2B SaaS &amp; Gaming LiveOps: Embedded Analytics, Real-Time Retention, Bot Graph &amp; FinOps: Fabric vs. 4 Clouds</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">1,059/1,060 (99.91%!) at First &lt;72.0ms (71.9ms) | 261st Sim Exact 67.75ms | 1.515B Vectors ($6,960/mo Saving $177.2K/mo) | -$1,022,020/mo Saved | 526 Tests</text>
+
+  <!-- Left Box: Microsoft Fabric B2B SaaS & Gaming LiveOps Hub -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab375)"/>
+  <text x="56" y="145" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Microsoft Fabric SaaS &amp; Gaming LiveOps Hub ($21,880/mo All-In)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Eventhouse KQL 2.41M EPS Telemetry/Metering + Postgres/Cosmos Mirror</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Ingests 2,410K (2.41M) EPS SaaS API usage events, feature flags &amp; 120Hz match streams (12ms)</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Flags 1,470=30×7² churn-drop, bot-farm &amp; quota waves in 4ms, saving $413,800/mo</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Power BI Embedded Direct Lake + Fabric IQ 8-Hop Bot/Churn GQL (10ms)</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Enforces Tenant_ID OBO RLS while tracing Account → Device → BotRing → EconomySink in 10ms</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lifts Net Dollar Retention (NDR) &amp; D30 player LTV by +87.4% (+$217.0M/yr gained!)</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 1.515 Billion (1-5-1-5!) Support Ticket, API Doc &amp; Replay Vectors ($6,960/mo)</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Saves First &gt;$177K/mo ($177,240/mo!) vs. $184,200/mo (13.45 TB RAM) vector clusters</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Grounds tenant-isolated customer-success Copilot &amp; anti-cheat replay matching in 7ms</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. FIRST &lt;72.0MS ROUTE (71.9MS), 52,000 USERS &amp; ALL-ONES 255=2⁸-1 FAQS!</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Agent 365 blocks 1,030 cross-tenant leaks, predatory loot-box &amp; noisy-neighbor risks (+$45.80M!)</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Historic Round-Thousand 52,000 users (43,740=60×3⁶ $0 embedded/internal viewers on F64!)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms LiveOps Loop | -$1,022,020/mo Saved (-97.9% · 47.7x!) | Exact $135.00M SLA</text>
+  <text x="72" y="524" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• PRIME R367 | 261ST SIM EXACT 67.75MS | 255 FAQS=510 DOCS | #375 SVG | 526 TESTS!</text>
+
+  <!-- Right Box: Stitched ClickHouse + Neptune + Embedded BI Tax Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched ClickHouse / Neptune / Embedded BI Stack ($1,043,900/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Kafka/ClickHouse Cluster, Postgres CDC &amp; Neptune Tax ($413,800/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Operating separate Kafka + ClickHouse + Fivetran + Neptune burns $413.8K/mo</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Batch attribution misses rage-quit churn moments &amp; real-money trading (RMT) bot rings</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Multi-Tenant Warehouse Contention &amp; Photon Tax ($235,940/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• One noisy enterprise tenant refreshing dashboards starves all other tenants' queries</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Disconnected Stripe/metering pipelines cause revenue leakage on usage-based billing</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 13.45 TB In-Memory HNSW Tenant KB &amp; Replay Vector Tax ($184,200/mo)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Holding 1.515B tenant tickets, code docs &amp; telemetry vectors in RAM costs 26.5x SSD</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Shared vector indices without storage-layer OBO RLS risk catastrophic cross-tenant leaks</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Per-Tenant Embedded Viewer &amp; CSM Seat Tax ($209,960/mo)</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• External embedded BI per-viewer/session pricing across 43,740 users costs $210.0K/mo</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Total Competitor Cost: $1,043,900/mo ($12.53M/yr) vs. Fabric $21,880/mo</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Net Savings with Microsoft Fabric: -$1,022,020/mo (-97.9% · 47.7x Advantage!)</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• DL-1509..1512 Verified | First &lt;72.0ms Route (71.9ms) | 261st Sim 67.75ms | 526 Tests!</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA B2B SaaS &amp; Gaming Rule (R367 · Scenario NJ): Serve multi-tenant embedded analytics via Direct Lake + Surge Protection.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Unify 2.41M EPS KQL, 8-hop Bot/Churn GQL, 1.515B SSD DiskANN ($6,960/mo) &amp; Tenant OBO RLS to save -$1,022,020/mo.</text>
+</svg>
