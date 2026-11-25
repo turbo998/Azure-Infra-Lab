@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg385" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab385" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg385)"/>
+  <text x="36" y="42" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #385 (5×7×11!) · FIBONACCI R377=F₁₄ (SCENARIO NT) · HISTORIC 1,100 SCENARIOS, FIRST &lt;66.00MS SIM (65.84MS) &amp; FIRST &gt;-$1.06M/MO SAVED!</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Power &amp; Utilities Smart Grid AMI, DERMS Virtual Power Plant (VPP), 8-Hop OMS Outage Graph &amp; Wholesale ETRM vs. 4 Clouds</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">1,099/1,100 (99.91% · Prime 307 Confirm!) at 69.4ms | Prime 271st Sim First &lt;66.00ms at 65.84ms | -$1,063,820/mo Saved (49.2x) | Exact 54,000 Users</text>
+
+  <!-- Left Box: Microsoft Fabric Smart Grid AMI, DERMS/VPP & OMS Hub -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab385)"/>
+  <text x="56" y="145" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Fabric Smart Grid AMI, VPP &amp; OMS Outage Hub ($22,080/mo All-In)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Eventhouse KQL 2.51M EPS Smart Meter AMI, PMU &amp; DERMS Stream (12ms)</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Ingests 2,510K (2.51M) EPS of 15-min/1-sec AMI intervals, EV/BESS inverters &amp; LMP ticks</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Flags Round-Ten 1,520=19×80 feeder-overload &amp; LMP-spike waves in 4ms ($0 historian tag tax)</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Fabric IQ 8-Hop IEC CIM Feeder-to-Transformer-to-Meter Outage Graph (10ms)</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 8-hop ISO GQL across Substation -&gt; Feeder -&gt; Recloser -&gt; PadmountTX -&gt; AMI_Meter -&gt; EV_VPP</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lifts SAIDI/SAIFI outage recovery &amp; VPP dispatch +91.2% (Prime +$227.0M/yr gained!)</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 1.565 Billion (1,565M) Transformer DGA, LiDAR &amp; PPA Vectors ($7,160/mo)</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Historic First &gt;$183K/mo DRAM Saved at $183,040/mo vs. First &gt;$190K/mo ($190,200/mo) DRAM!</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Matches dissolved-gas analysis (DGA) fault patterns, LiDAR vegetation &amp; FERC tariffs in 7ms</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Agent 365 NERC-CIP / Medical Baseline Guardrails + Exact 54,000 Users!</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks 1,080=3×360° NERC-CIP breaches, life-support disconnects &amp; TX overloads (+$47.80M!)</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Historic Exact 54,000 grid operators, traders &amp; crews (45,540 $0 viewers on F64!)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Grid/VPP Loop | -$1,063,820/mo Saved (-98.0% · 49.2x!) | Exact $139.00M SLA</text>
+  <text x="72" y="524" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• FIBONACCI R377=F₁₄ | 1,100 SCENARIOS | FIRST &lt;66.00MS SIM (65.84MS) | 530 DOCS | 546 TESTS!</text>
+
+  <!-- Right Box: Stitched Per-Tag Historian + Neptune + 13.95 TB DRAM Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched Per-Tag Historian / Neptune / DRAM Stack ($1,085,900/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Per-Tag SCADA Historian, SAP IS-U CDC &amp; Neptune Tax ($431,800/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Licensing 50M+ AMI/SCADA tags + SAP IS-U replication + Neptune costs $431.8K/mo</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Historian silos cannot join meter voltage sags with downstream EV charger phase loads</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Batch Load-Flow &amp; VPP Settlement Compute Tax ($245,340/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Running IEEE 2030.5 DERMS aggregations &amp; ETRM VaR on Photon/Credits burns $245.3K/mo</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 15-minute batch lag misses 5-minute ISO real-time LMP negative-price curtailment windows</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 13.95 TB In-Memory HNSW DGA &amp; LiDAR Vector Tax ($190,200/mo &gt;$190K!)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Competitor DRAM breaks &gt;$190K/mo ($190,200/mo) for 1.565B DGA, LiDAR &amp; tariff vectors</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Distribution transformers suffer catastrophic arc-flash failures due to T+1 DGA lab lag</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Per-User Control Room, Field Crew &amp; ETRM BI Seat Tax ($218,560/mo)</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Licensing 45,540 grid engineers &amp; linemen across Exact 54,000 users costs $218,560/mo</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Total Competitor Cost: $1,085,900/mo ($13.03M/yr &gt;$13M!) vs. Fabric $22,080/mo</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Net Savings with Microsoft Fabric: -$1,063,820/mo (-98.0% · 49.2x Advantage!)</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• DL-1549..1552 Verified | 1,100 Scenarios | Prime 271st Sim 65.84ms | 546 Tests!</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Smart Grid &amp; VPP Rule (R377 · Scenario NT): Unify 2.51M EPS AMI/PMU + 8-Hop IEC CIM GQL + 1.565B DiskANN.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Break the &lt;66.00ms Sim Barrier (65.84ms across Prime 271 Sims!) &amp; reach 1,100 Scenarios while saving -$1,063,820/mo.</text>
+</svg>
