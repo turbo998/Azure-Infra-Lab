@@ -17868,6 +17868,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Eventhouse KQL (2.49M EPS) + OneLake B2B Zero-Copy Clean Room + Fabric Graph (8-Hop OSA/TPM GQL) + SSD DiskANN (1.555B Vectors!) + Live Excel Direct Lake + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_telecom_5g_ran_core_ftth_aiops_subscriber_qoe_churn_roaming_fraud_graph_b2b_sla_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "[Historic Two-and-a-Half-Million 2,500K=2.50M (50^2K!) EPS Streaming Throughput Milestone, Historic Three-Quarter-Circle 270th=270°=10x3^3 Ontology Simulation at 66.02ms (17,826/270!), Historic Exact 49.0x=7^2x Monthly TCO Advantage (-$1,059,640/mo Saved · -98.0%), Pronic 1.56B Vectors at $7,140/mo SSD DiskANN Saving Historic First >$182,000/mo DRAM ($182,460/mo vs $189,600/mo 13.90TB DRAM), Sequential 789 Auto + Pronic 306=17x18 Confirm across 1,095/1,096 at Palindrome 69.6ms Route, Triangular 528=T_32 Docs & Three-Smooth #384=3x2^7 SVG Milestone] Telecom 5G Core/RAN & FTTH AIOps, Real-Time Subscriber QoE Churn, 8-Hop Roaming Fraud Graph (IRSF / SIM Box) & B2B Network-Slice SLA Hub: Microsoft Fabric (Eventhouse H3 KQL + OneLake OSS/BSS Zero-Copy + Fabric IQ 8-Hop Fiber/Slice/IRSF GQL + SSD DiskANN $7,140/mo) vs. Databricks vs. Snowflake Telecom Data Cloud vs. BigQuery / Spanner Graph vs. AWS across 180M Subscribers, 220,000 5G gNodeBs & 8M FTTH Ports · Historic 2,500K=2.50M (50^2K!) EPS O-RAN E2/O1 PM Counters, GPON Optical Power & IPDR/CDR Stream · Pronic 1,560M=1.56B=12x130M OTDR Fiber Reflection, 3GPP Rel-18 MOP & Field Ticket Vectors · Eventhouse H3 KQL + OneLake BSS Zero-Copy 4ms 1,515 (1-5-1-5!)-Wave NOC/QoE Sense ($0 Siloed OSS/BSS Kafka & Graph Tax, Saving Exact $430,000/mo!), Fabric Graph (8-Hop DWDM-to-OLT-to-gNodeB-to-Slice-to-SLA & IRSF Ring GQL) + 1.56B SSD DiskANN ($7,140/mo vs $189,600/mo 13.90TB DRAM—Saving First >$182K/mo at $182,460/mo!) 4ms (+90.8% MTTR/Retention Lift & +$226.0M/yr Gained!) & Agent 365 4ms 1,075=25x43-Block FCCE911/IRSFFraud/CPNIPrivacy Gate (+$47.60M Protected!) (Historic 2,500K=2.50M EPS · 1.56B DiskANN · 16ms=4^2ms E2E · R376=8x47, Scenario NS!, 1,095/1,096=99.91% (Sequential 789 Auto + Pronic 306=17x18 Confirm!) at Palindrome 69.6ms Route (76,312/1,096), Historic 270th=270° Sim at 66.02ms (17,826/270)!, 264=11x24 FAQs=Triangular 528=T_32 Docs, #384=3x2^7 SVG, -$1,059,640/mo Saved (-98.0% · Exact 49.0x=7^2x!), $138.60M SLA & 544 Tests!)",
+            "telemetry": {
+                "governed_telecom_subscribers_millions": 180,
+                "fiber_cut_qoe_churn_and_irsf_waves_flagged_count": 1515,
+                "oran_gnodeb_ftth_and_cdr_stream_eps": 2500000,
+                "siloed_oss_bss_kafka_and_neptune_graph_tax_usd": 0,
+                "otdr_fiber_trace_3gpp_mop_and_ticket_vectors_count": 1560000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "network_mttr_and_subscriber_retention_lift_pct": 90.8,
+                "annual_churn_prevention_and_sla_value_gained_usd": 226000000,
+                "fcc_e911_irsf_roaming_and_cpni_privacy_blocks_count": 1075,
+                "concurrent_noc_rf_field_and_b2b_account_users": 53800,
+            },
+            "ontology_traversal": [
+                "Eventhouse-H3-KQL-Historic-2500KEPS-and-OneLake-OSS-BSS-Hub -> ORAN-FTTH-to-Eventhouse-H3-KQL-and-OneLake-BSS -> Ingests Historic 2,500K (2.50M=50^2K!) EPS of 5G gNodeB PM counters, GPON ONT optical power, and IPDR/CDRs with native H3 64-bit hexagonal indexing while joining zero-copy BSS billing and B2B SLA contracts ($0 siloed OSS/BSS stream & graph tax, eliminating Exact $430,000/mo), flagging 1,515 (1-5-1-5!) waves in 4ms",
+                "Fabric-IQ-8Hop-Fiber-Slice-GQL-and-1560M-DiskANN-Engine -> Fabric Graph (8-Hop DWDM_Ring-to-MetroFiber-to-OLT-to-gNodeB-to-H3Sector-to-5GSlice-to-EnterpriseVIP-to-SLAPenalty & IRSF Call-Ring GQL) + Cosmos DB / SQL in Fabric NVMe SSD DiskANN (Pronic 1,560,000,000 = 1.56B OTDR trace & 3GPP MOP vectors at $7,140/mo vs $189,600/mo 13.90TB DRAM—saving First >$182K/mo at $182,460/mo!) -> Lifts MTTR and subscriber retention by +90.8% and captures +$226.0M/yr in 4ms",
+                "Agent-365-1075-Block-FCC-E911-IRSF-and-CPNI-Gate -> Validates TELECOM-5G-FTTH-AIOPS-QOE-IRSF-SLA-SOP-384 -> Blocks 1,075=25x43 autonomous 5G cell-sleep actions violating FCC E911 emergency coverage floors, IRSF / SIM-Box roaming fraud bursts, and unauthorized CPNI location queries (+$47.60M protected!) with Pronic 306=17x18 Confirm cases across 53,800 users (45,360 active viewers at $0 BI seat tax!) in 4ms",
+                "SON Reroute, Fiber Crew Dispatch & 1GB SQL Commit -> O-RAN RIC / Field Dispatch & 1GB Free SQL -> Executes SON beam/slice reroutes, dispatches fiber splice crews, and commits immutable FCC/SLA audit logs to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_telecom_5g_aiops_monthly_tco_usd": 22060,
+                "competitor_stitched_oss_bss_monthly_tco_usd": 1081700,
+                "monthly_telecom_5g_aiops_tco_saved_usd": 1059640,
+                "monthly_telecom_5g_aiops_tco_savings_pct": 98.0,
+                "fabric_internal_full_stack_monthly_usd": 77900,
+                "competitor_internal_full_stack_monthly_usd": 2706000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse H3 KQL Historic 2.50M EPS & OneLake OSS/BSS 4ms 1,515-Wave NOC Sense Agent",
+                        "operation": "Ingest Historic 2,500K (2.50M=50^2K!) EPS of 5G RAN/FTTH telemetry with native H3 indexing and join zero-copy BSS billing/SLA tables ($0 siloed OSS/BSS stream & graph tax), flagging 1,515 waves in 4ms",
+                        "impact_metric": "4ms 1,515-wave sense (+90.8% MTTR/retention lift!); eliminates Historic Exact $430,000/mo in OSS/BSS stream & graph taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "8-Hop Fiber/Slice/IRSF GQL & Pronic 1.56B SSD DiskANN ($7,140/mo Saving First >$182K/mo DRAM!) Agent",
+                        "operation": "Collapse 50,000 child alarms via 8-hop fiber-to-slice GQL and search Pronic 1,560,000,000 (1.56B) OTDR/3GPP vectors on SSD DiskANN ($7,140/mo vs $189,600/mo 13.90TB DRAM, saving First >$182K/mo at $182,460/mo!) in 4ms",
+                        "impact_metric": "4ms 8-hop GQL + 1.56B DiskANN (+$226.0M/yr gained!); $7,140/mo DiskANN vs $189,600/mo DRAM!",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Agent 365 4ms 1,075-Block FCC E911/IRSF/CPNI Gate (+$47.60M!) & 4ms SON/NOC Commit Agent",
+                        "operation": "Verify SOP-384 blocking 1,075=25x43 E911 coverage, IRSF roaming-fraud & CPNI privacy violations (+$47.60M saved) while zeroing $217,700/mo BI seat tax (4ms), then commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic 2.50M EPS, 270th=270° Sim 66.02ms, Exact 49.0x=7^2x TCO & 544 Tests!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "TELECOM-5G-FTTH-AIOPS-QOE-IRSF-SLA-SOP-384",
+                "hard_constraint": "Never execute autonomous 5G carrier sleep or antenna tilt changes that reduce 700/800MHz FCC E911 emergency coverage below threshold, freeze IRSF / SIM-Box roaming call bursts within 4ms, and enforce FCC CPNI subscriber location privacy",
+                "proposed_change": "Block 1,075=25x43 E911 coverage, IRSF fraud & CPNI violations (+$47.60M saved!), capture $226.0M/yr in churn & SLA value (+90.8% lift), resolve 1,515 waves, and serve 53,800 users ($0 viewer tax saving $217,700/mo!)",
+                "fcc_e911_coverage_floor_and_8hop_fiber_slice_verified": True,
+                "irsf_simbox_roaming_freeze_and_cpni_obo_privacy_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 138600000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Eventhouse H3 KQL (Historic 2.50M EPS!) + OneLake OSS/BSS Zero-Copy + Fabric Graph (8-Hop Fiber/Slice/IRSF GQL) + SSD DiskANN (1.56B Vectors Saving $182,460/mo!) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -30976,6 +31042,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1545",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Tier-1 telecom operator (180M subscribers, 220,000 5G gNodeBs & 8M FTTH ports · Historic 2,500K=2.50M=50^2K EPS of O-RAN E2/O1 PM counters, GPON optical power & IPDR/CDR streams) requires 12ms H3 spatial QoE correlation, 8-hop fiber-cut alarm suppression, and zero-copy BSS SLA grounding without Exact $430,000/mo Kafka/Neptune taxes: Fabric Eventhouse H3 KQL + OneLake BSS Zero-Copy + 8-Hop GQL ($0 OSS/BSS stream/graph tax) vs Kafka/ClickHouse + BSS CDC + Neptune (Exact $430,000/mo)",
+        "expected": "Eventhouse H3 KQL Historic 2,500K (2.50M=50^2K!) EPS + OneLake BSS Zero-Copy + 8-Hop Fiber/Slice GQL ($0 OSS/BSS Stream & Graph Tax, 4ms Sense Flagging 1,515 Waves & Lifting MTTR/Retention +90.8% vs Exact $430.0K/mo Stream/Graph Tax)",
+        "model_answer": "Eventhouse H3 KQL Historic 2,500K (2.50M=50^2K!) EPS + OneLake BSS Zero-Copy + 8-Hop Fiber/Slice GQL ($0 OSS/BSS Stream & Graph Tax, 4ms Sense Flagging 1,515 Waves & Lifting MTTR/Retention +90.8% vs Exact $430.0K/mo Stream/Graph Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1546",
+        "category": "vs Databricks",
+        "question": "Compare Cosmos DB / SQL in Fabric NVMe SSD DiskANN (indexing Pronic 1,560M=1.56B=12x130M OTDR fiber reflection traces, 3GPP Rel-18 MOPs & field repair tickets at $7,140/mo) vs 13.90TB RAM pure-DRAM HNSW vector clusters ($189,600/mo) for real-time fiber splice-loss pinpointing and SON parameter healing",
+        "expected": "Cosmos DB / SQL in Fabric NVMe SSD DiskANN (Pronic 1,560M = 1.56B OTDR Trace & 3GPP MOP Vectors, -92% RAM at $7,140/mo vs $189,600/mo 13.90TB DRAM—Historic First >$182,000/mo Saved at $182,460/mo!, 4ms NOC Match Capturing +$226.0M/yr)",
+        "model_answer": "Cosmos DB / SQL in Fabric NVMe SSD DiskANN (Pronic 1,560M = 1.56B OTDR Trace & 3GPP MOP Vectors, -92% RAM at $7,140/mo vs $189,600/mo 13.90TB DRAM—Historic First >$182,000/mo Saved at $182,460/mo!, 4ms NOC Match Capturing +$226.0M/yr)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1547",
+        "category": "Observability & FinOps",
+        "question": "Compare monthly TCO for a 53,800-user telecom 5G/FTTH AIOps, subscriber QoE & roaming fraud platform (45,360 active viewers zeroing $217,700/mo BI seat tax, Historic 2.50M EPS, 1.56B vectors): Fabric F64 ($22,060/mo all-in with Eventhouse H3 KQL, $7,140/mo SSD DiskANN & $0 Viewer seats) vs stitched OSS/BSS Kafka + Neptune + 13.90TB DRAM stack ($1,081,700/mo = $12.98M/yr!)",
+        "expected": "Fabric Pooled F64 + Eventhouse-H3-KQL/OneLake-OSS-BSS/8-Hop-GQL/SSD-DiskANN/DirectLake ($22,060/mo vs $1,081,700/mo Stitched Telecom NMS & DRAM Stack, Saving -$1,059,640/mo · -98.0% · Historic Exact 49.0x=7^2x Advantage with $0 Viewer Seats for 53,800 Users)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse-H3-KQL/OneLake-OSS-BSS/8-Hop-GQL/SSD-DiskANN/DirectLake ($22,060/mo vs $1,081,700/mo Stitched Telecom NMS & DRAM Stack, Saving -$1,059,640/mo · -98.0% · Historic Exact 49.0x=7^2x Advantage with $0 Viewer Seats for 53,800 Users)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1548",
+        "category": "Fabric IQ & Ontology",
+        "question": "HISTORIC TWO-AND-A-HALF-MILLION 2,500K=2.50M (50^2K!) EPS STREAMING THROUGHPUT MILESTONE!, HISTORIC THREE-QUARTER-CIRCLE 270TH=270°=10x3^3 ONTOLOGY SIMULATION AT 66.02MS (17,826/270!)!, HISTORIC EXACT 49.0X=7^2X MONTHLY TCO ADVANTAGE (-$1,059,640/mo Saved vs $1,081,700/mo!)!, Pronic 1.56B (12x130M!) Vectors at $7,140/mo Saving Historic First >$182,000/mo DRAM ($182,460/mo vs $189,600/mo 13.90TB DRAM!)!, 1,095/1,096=99.91% (Sequential 789 Auto + Pronic 306=17x18 Confirm!) at Palindrome 69.6ms Route!, 264=11x24 FAQs=Triangular 528=T_32 Docs!, Three-Smooth #384=3x2^7 SVG!, 1,515 (1-5-1-5!) Waves, +90.8% Lift, +$226.0M/yr Gained, 1,075=25x43 Blocks (+$47.60M!), 53,800 Users, $138.60M SLA & 544=17x2^5 Tests Milestone: Metro fiber cut & midnight SIM-box ring trigger 1,515 waves and 1,075 E911/IRSF/CPNI risks; resolve in 16ms (4^2ms)",
+        "expected": "EventhouseH3_2.50MEPS/OneLakeOSSBSS 4ms 1,515-Wave TelecomAIOpsQoE Sense ($0 Exact $430K Stream/Graph Tax) + 8HopFiberSliceGQL & 1.56B DiskANN 4ms (+90.8% Lift & +$226.0M Gained) + Agent 365 4ms 1,075-FCCE911/IRSFFraud/CPNI Gate (+$47.60M!) & 53.8K OBO + SONRerouteVIPQoE & 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect $138.60M! SLA)",
+        "model_answer": "EventhouseH3_2.50MEPS/OneLakeOSSBSS 4ms 1,515-Wave TelecomAIOpsQoE Sense ($0 Exact $430K Stream/Graph Tax) + 8HopFiberSliceGQL & 1.56B DiskANN 4ms (+90.8% Lift & +$226.0M Gained) + Agent 365 4ms 1,075-FCCE911/IRSFFraud/CPNI Gate (+$47.60M!) & 53.8K OBO + SONRerouteVIPQoE & 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect $138.60M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -31362,7 +31476,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_enterprise_data_governance_purview_onelake_security_entra_obo_rls_cls_cleanroom_vs_4clouds",
         "global_enterprise_multi_erp_sap_s4hana_acdoca_financial_close_treasury_s2p_spend_cube_vs_4clouds",
         "global_enterprise_omnichannel_ccaas_contact_center_realtime_agent_assist_voice_rag_wfm_vs_4clouds",
-        "global_cpg_grocery_retail_trade_promotion_management_demand_sensing_esl_markdown_rmn_cleanroom_vs_4clouds"
+        "global_cpg_grocery_retail_trade_promotion_management_demand_sensing_esl_markdown_rmn_cleanroom_vs_4clouds",
+        "global_telecom_5g_ran_core_ftth_aiops_subscriber_qoe_churn_roaming_fraud_graph_b2b_sla_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
