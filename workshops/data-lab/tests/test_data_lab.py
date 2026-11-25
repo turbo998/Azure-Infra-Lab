@@ -3509,6 +3509,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_healthcare_hospital_payer_biopharma_fhir_epa_omop_rwe_claims_denial_hipaa_opdp_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_healthcare_hospital_payer_biopharma_fhir_epa_omop_rwe_claims_denial_hipaa_opdp_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["governed_hospitals_and_idn_facilities_count"], 68)
+        self.assertEqual(sim["telemetry"]["sepsis_epa_care_gap_and_denial_waves_flagged_count"], 1460)
+        self.assertEqual(sim["telemetry"]["hl7_fhir_epa_and_edi837_telemetry_stream_eps"], 2390000)
+        self.assertEqual(sim["telemetry"]["clinical_notes_payer_lcd_and_fda_label_vectors_count"], 1505000000)
+        self.assertEqual(sim["telemetry"]["proprietary_fhir_store_epic_cdc_and_neptune_graph_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["epa_approval_rcm_recovery_and_trial_match_velocity_lift_pct"], 86.8)
+        self.assertEqual(sim["telemetry"]["hipaa_safe_harbor_42cfr_and_fda_opdp_blocks_count"], 1020)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_healthcare_biopharma_monthly_tco_usd"], 21840)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_healthcare_biopharma_tco_saved_usd"], 1013660)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_healthcare_biopharma_tco_savings_pct"], 97.9)
+        self.assertTrue(sim["foundry_iq_guardrail"]["hipaa_safe_harbor_18_id_and_42cfr_part2_cls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["fda_opdp_on_label_fair_balance_and_cms_0057_epa_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 134400000)
+
+
     def test_global_smart_manufacturing_automotive_sdv_opcua_oee_bom_atp_graph_battery_warranty_rag_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_smart_manufacturing_automotive_sdv_opcua_oee_bom_atp_graph_battery_warranty_rag_vs_4clouds")
         self.assertEqual(sim["telemetry"]["smart_plants_and_gigafactories_count"], 320)
@@ -4415,14 +4435,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
 
     def test_scenario_matrix_498_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 1048)
-        self.assertEqual(matrix["passed_scenarios"], 1047)
+        self.assertEqual(matrix["total_scenarios"], 1052)
+        self.assertEqual(matrix["passed_scenarios"], 1051)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.90, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 72.6)
+        self.assertEqual(matrix["avg_latency_ms"], 72.4)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_healthcare_hospital_payer_biopharma_fhir_omop_r365_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1501", "DL-1502", "DL-1503", "DL-1504"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("2,390K (2.39M) EPS", by_id["DL-1501"]["expected"])
+        self.assertIn("$176,080/mo!", by_id["DL-1502"]["expected"])
+        self.assertIn("-$1,013,660/mo", by_id["DL-1503"]["expected"])
+        self.assertIn("1,020-HIPAASafeHarbor", by_id["DL-1504"]["expected"])
 
 
     def test_smart_manufacturing_automotive_sdv_bom_warranty_r364_scenarios(self) -> None:
@@ -7433,11 +7465,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1047)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1048)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 72.6)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 258)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 68.35)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1051)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1052)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 72.4)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 259)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 68.15)
 
 
 if __name__ == "__main__":
