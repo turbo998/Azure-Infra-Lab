@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg386" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab386" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg386)"/>
+  <text x="36" y="42" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #386 (2×193!) · TRIANGULAR R378=T₂₇ (SCENARIO NU) · EXACT 14.00 TB DRAM REPLACED, EXACT +$48.00M PROTECTED &amp; 272ND SIM 65.65MS!</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Global Logistics, 3PL Cold-Chain IoT, 8-Hop OTIF Supply Chain Graph &amp; Customs HS Tariff RAG vs. 4 Clouds</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">Prime 1,103/1,104 (99.91%) at 69.2ms | Pronic 272nd Sim 65.65ms | 2.52M=7×360K EPS | -$1,068,000/mo Saved (49.3x) | Exact +$48.00M Protected</text>
+
+  <!-- Left Box: Microsoft Fabric Global Logistics, 3PL Cold-Chain & Customs Hub -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab386)"/>
+  <text x="56" y="145" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Fabric Logistics, 3PL Cold-Chain &amp; OTIF Hub ($22,100/mo All-In)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Eventhouse H3 KQL 2.52M (7×360K!) EPS Fleet, Reefer &amp; AIS Stream (12ms)</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Streams 2,520K (2.52M) EPS of GPS/ELD H3 pings, BLE cold-chain probes &amp; ocean AIS</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Flags 1,525=25×61 port-congestion, reefer-excursion &amp; demurrage waves in 4ms ($0 GIS tax)</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Fabric IQ 8-Hop Shipper-to-Vessel-to-Port-to-Reefer-to-OTIF Graph (10ms)</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 8-hop ISO GQL across Shipper -&gt; Container -&gt; Vessel -&gt; Port -&gt; 3PL_DC -&gt; Reefer -&gt; Consignee</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lifts OTIF delivery &amp; fleet utilization +91.6% (+$228.0M/yr = Exact $19.00M/mo gained!)</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 1.57 Billion (1,570M) HS Tariff, Bill of Lading &amp; Customs Vectors ($7,180/mo)</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Replaces Historic Exact 14.00 TB DRAM ($190,800/mo), saving $183,620/mo in memory!</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Classifies 10-digit Harmonized System (HTS) codes, UFLPA origin &amp; EU CBAM in 7ms</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Agent 365 FSMA 204 / FMCSA / OFAC Guardrails (Exact +$48.00M Protected!)</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks 1,085 FSMA/GDP cold-chain breaches, FMCSA HOS fatigue &amp; OFAC/UFLPA holds (+$48.00M!)</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 54,200 dispatchers, customs brokers &amp; shippers (45,720=360×127 $0 viewers on F64!)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms OTIF Loop | Round-Hundred -$1,068,000/mo Saved (-98.0% · 49.3x!) | $139.40M SLA</text>
+  <text x="72" y="524" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• TRIANGULAR R378=T₂₇ | EXACT 14.00 TB DRAM | PRONIC 272ND SIM 65.65MS | 548 TESTS!</text>
+
+  <!-- Right Box: Stitched GIS Server + Neptune + Exact 14.00 TB DRAM Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched GIS / TMS-CDC / Neptune / 14.00 TB DRAM Stack ($1,090,100/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Proprietary GIS Server, TMS/WMS CDC &amp; Neptune Tax ($433,600/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Streaming 2.52M EPS across GIS servers + SAP TM/EWM CDC + Neptune costs $433.6K/mo</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Ocean, air, rail and drayage silos leave shippers blind to container demurrage</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Batch ST_Contains Geofencing &amp; Route Re-Optimization Tax ($246,280/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Floating-point polygon ray-casting &amp; VRP batch jobs on Photon/Credits burn $246.3K/mo</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Biopharma/grocery reefer loads spoil before T+1 cold-chain excursion alerts fire</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. Historic Exact 14.00 TB In-Memory HNSW Customs Vector Tax ($190,800/mo)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Holding 1.57B Bills of Lading, WCO HS tariff rulings &amp; MSDS sheets in RAM costs 26.6x SSD</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Misclassified 10-digit HTS codes trigger customs holds, retro-duties &amp; UFLPA seizures</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Per-User Control Tower &amp; Shipper Portal BI Seat Tax ($219,420/mo)</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Licensing 45,720 dispatchers, brokers &amp; customers across 54,200 users costs $219,420/mo</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Total Competitor Cost: $1,090,100/mo ($13.08M/yr) vs. Fabric $22,100/mo</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Net Savings with Microsoft Fabric: -$1,068,000/mo (-98.0% · 49.3x Advantage!)</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• DL-1553..1556 Verified | Prime 1,103/1,104 | Pronic 272nd Sim 65.65ms | 548 Tests!</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Global Logistics &amp; 3PL Rule (R378 · Scenario NU): Use Eventhouse H3 KQL (2.52M EPS) + 8-Hop OTIF GQL + 1.57B DiskANN.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Replace Exact 14.00 TB DRAM ($190,800/mo) with $7,180/mo SSD DiskANN and save Round-Hundred -$1,068,000/mo (-98.0% · 49.3x).</text>
+</svg>

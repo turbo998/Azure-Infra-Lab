@@ -3509,6 +3509,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_enterprise_logistics_3pl_cold_chain_fleet_routing_otif_graph_customs_tariff_rag_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_enterprise_logistics_3pl_cold_chain_fleet_routing_otif_graph_customs_tariff_rag_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["governed_fleet_trucks_and_automated_dcs_count"], 120850)
+        self.assertEqual(sim["telemetry"]["port_demurrage_reefer_and_otif_waves_flagged_count"], 1525)
+        self.assertEqual(sim["telemetry"]["fleet_eld_ais_ble_coldchain_and_wms_stream_eps"], 2520000)
+        self.assertEqual(sim["telemetry"]["hs_tariff_bill_of_lading_and_msds_vectors_count"], 1570000000)
+        self.assertEqual(sim["telemetry"]["proprietary_gis_tms_cdc_and_neptune_graph_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["otif_delivery_and_customs_clearance_velocity_lift_pct"], 91.6)
+        self.assertEqual(sim["telemetry"]["fsma204_fmcsa_hos_and_ofac_uflpa_blocks_count"], 1085)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_logistics_3pl_monthly_tco_usd"], 22100)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_logistics_3pl_tco_saved_usd"], 1068000)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_logistics_3pl_tco_savings_pct"], 98.0)
+        self.assertTrue(sim["foundry_iq_guardrail"]["h3_geofence_8hop_otif_and_fsma204_coldchain_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["fmcsa_hos_fatigue_and_10digit_hts_uflpa_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 139400000)
+
+
     def test_global_enterprise_power_utilities_smart_grid_ami_derms_vpp_oms_flisr_etrm_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_enterprise_power_utilities_smart_grid_ami_derms_vpp_oms_flisr_etrm_vs_4clouds")
         self.assertEqual(sim["telemetry"]["governed_smart_meters_millions"], 45)
@@ -4675,14 +4695,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
 
     def test_scenario_matrix_498_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 1100)
-        self.assertEqual(matrix["passed_scenarios"], 1099)
+        self.assertEqual(matrix["total_scenarios"], 1104)
+        self.assertEqual(matrix["passed_scenarios"], 1103)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.91, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 69.4)
+        self.assertEqual(matrix["avg_latency_ms"], 69.2)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_enterprise_logistics_3pl_cold_chain_otif_customs_r378_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1553", "DL-1554", "DL-1555", "DL-1556"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("2,520K (2.52M=7x360K!) EPS", by_id["DL-1553"]["expected"])
+        self.assertIn("Historic Exact 14.00TB DRAM", by_id["DL-1554"]["expected"])
+        self.assertIn("Round-Hundred -$1,068,000/mo", by_id["DL-1555"]["expected"])
+        self.assertIn("Exact +$48.00M!", by_id["DL-1556"]["expected"])
 
 
     def test_power_utilities_smart_grid_ami_vpp_oms_r377_scenarios(self) -> None:
@@ -7849,11 +7881,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1099)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1100)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 69.4)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 271)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 65.84)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1103)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1104)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 69.2)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 272)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 65.65)
 
 
 if __name__ == "__main__":
