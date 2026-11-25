@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg372" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab372" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg372)"/>
+  <text x="36" y="42" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #372 · ROUND 364 (R364=52×7!) · HISTORIC 1.50 BILLION (1,500M!) VECTORS, DL-1500 SCENARIO, FIRST &gt;$175K DRAM SAVED &amp; 520 TESTS!</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Smart Manufacturing &amp; Automotive SDV: OPC UA OEE, 8-Hop BOM/ATP Graph, Battery Twin &amp; Warranty RAG: Fabric vs. 4 Clouds</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">1,047/1,048 (99.90% · DL-1500!) at 72.6ms | 258th Sim 68.35ms | Historic 1.50B Vectors ($6,900/mo Saving $175.5K/mo DRAM) | -$1,009,480/mo Saved | 520 Tests</text>
+
+  <!-- Left Box: Microsoft Fabric Smart Manufacturing & Automotive SDV Hub -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab372)"/>
+  <text x="56" y="145" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Microsoft Fabric IT/OT &amp; SDV Digital Thread Hub ($21,820/mo)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Eventhouse KQL 2.38M EPS OPC UA / CAN-Bus + $0 Historian Tag Tax (12ms)</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Ingests 2,380K (2.38M) EPS shop-floor CNC/PLC, EV battery BMS &amp; SDV streams at $0 tag tax</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Flags 1,455 micro-stoppage, Tier-N shortage &amp; thermal waves in 4ms, saving $408,400/mo</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Fabric IQ 8-Hop Multi-Tier BOM, Clear-to-Build ATP &amp; VIN Recall GQL</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Links Tier-3 Sub-Lot → Tier-1 Module → SAP PP Order → Plant Line → VIN → Dealer in 10ms</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lifts OEE, OTIF &amp; surgical recall precision by +86.4% (+$214.0M/yr gained!)</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. HISTORIC 1.50 BILLION (1,500M!) CAD, FMEA &amp; Warranty Vectors ($6,900/mo)</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Saves First &gt;$175K/mo ($175,500/mo!) vs. $182,400/mo (13.30 TB RAM) vector clusters</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Grounds 8D root-cause analysis, dealer warranty claims &amp; ISO 26262 SOPs in 7ms</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. HISTORIC 1.50B VECTORS, DL-1500 SCENARIO &amp; 520=52×10 UNIT TESTS!</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Agent 365 blocks 1,015 IATF 16949 PPAP, ISO 26262 &amp; warranty fraud risks (+$45.20M!)</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 51,400 engineers, plant managers &amp; dealer staff (43,200=30×12² $0 viewers on F64!)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Closed Loop | -$1,009,480/mo Saved (-97.9% · 47.3x!) | Exact $134.00M SLA</text>
+  <text x="72" y="524" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• 258TH SIM 68.35MS | 252 FAQS = 504=7×8×9 DOCS | DL-1500 | 520 UNIT TESTS!</text>
+
+  <!-- Right Box: Stitched Historian + Neptune + 13.30 TB DRAM Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched Historian / Neptune / 13.30 TB DRAM Stack ($1,031,300/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Per-Tag Historian, SAP CDC MAR &amp; Neptune Graph Tax ($408,400/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Legacy PI/SiteWise per-tag fees + Fivetran SAP CDC + Neptune burn $408.4K/mo</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Disconnected IT (SAP ERP) and OT (MES/SCADA) delay shortage alerts by 24–48 hours</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Multi-Cluster MRP Batch &amp; Fleet Telemetry Compute Tax ($233,120/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Overnight SQL BOM explosions, Photon surcharges &amp; separate ADAS curation clusters</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Without 8-hop lot-to-VIN graphs, OEMs recall 100,000 vehicles instead of 420 exact VINs</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 13.30 TB In-Memory HNSW Vector Cluster Tax ($182,400/mo)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Holding Historic 1.50B CAD drawings, DFMEAs &amp; warranty claims in RAM costs 26.4x SSD</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Strips Teamcenter/Windchill PLM ITAR/IP access controls when exported</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Per-User Plant, Supply-Chain &amp; Dealer BI Seat Tax ($207,380/mo)</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Licensing 43,200=30×12² plant engineers, buyers &amp; dealers across 51,400 users costs $207.4K/mo</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Total Competitor Cost: $1,031,300/mo ($12.38M/yr) vs. Fabric $21,820/mo</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Net Savings with Microsoft Fabric: -$1,009,480/mo (-97.9% · 47.3x Advantage!)</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• DL-1497..1500 Verified | 72.6ms Route | 258th Sim 68.35ms | 1.50B Vectors | 520 Tests!</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Manufacturing &amp; Auto Rule (R364=52×7 · Scenario NG): Converge IT (SAP/PLM) &amp; OT (OPC UA/SDV) on OneLake.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Unify 2.38M EPS KQL, 8-hop BOM/VIN GQL, Historic 1.50B SSD DiskANN ($6,900/mo) &amp; 43,200 $0 viewers to save -$1,009,480/mo.</text>
+</svg>
