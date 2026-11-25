@@ -3509,6 +3509,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_cpg_grocery_retail_trade_promotion_management_demand_sensing_esl_markdown_rmn_cleanroom_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_cpg_grocery_retail_trade_promotion_management_demand_sensing_esl_markdown_rmn_cleanroom_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["governed_retail_doors_and_supercenters_thousands"], 250)
+        self.assertEqual(sim["telemetry"]["phantom_stockout_fefo_and_promo_waves_flagged_count"], 1510)
+        self.assertEqual(sim["telemetry"]["edi852_pos_esl_coldchain_and_rmn_stream_eps"], 2490000)
+        self.assertEqual(sim["telemetry"]["planogram_photo_tpm_contract_and_edi812_vectors_count"], 1555000000)
+        self.assertEqual(sim["telemetry"]["cross_cloud_pos_replication_and_neptune_graph_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["promo_roi_and_perishable_sell_through_lift_pct"], 90.4)
+        self.assertEqual(sim["telemetry"]["oos_ad_pause_invalid_deduction_and_rp_blocks_count"], 1070)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_cpg_grocery_tpm_monthly_tco_usd"], 22040)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_cpg_grocery_tpm_tco_saved_usd"], 1055460)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_cpg_grocery_tpm_tco_savings_pct"], 98.0)
+        self.assertTrue(sim["foundry_iq_guardrail"]["zero_copy_b2b_cleanroom_and_8hop_osa_halo_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["oos_rmn_ad_pause_and_edi812_planogram_audit_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 138200000)
+
+
     def test_global_enterprise_omnichannel_ccaas_contact_center_realtime_agent_assist_voice_rag_wfm_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_enterprise_omnichannel_ccaas_contact_center_realtime_agent_assist_voice_rag_wfm_vs_4clouds")
         self.assertEqual(sim["telemetry"]["governed_omnichannel_contact_center_agents_count"], 32000)
@@ -4615,14 +4635,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
 
     def test_scenario_matrix_498_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 1088)
-        self.assertEqual(matrix["passed_scenarios"], 1087)
+        self.assertEqual(matrix["total_scenarios"], 1092)
+        self.assertEqual(matrix["passed_scenarios"], 1091)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.91, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 70.1)
+        self.assertEqual(matrix["avg_latency_ms"], 69.9)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_cpg_grocery_retail_tpm_esl_rmn_cleanroom_r375_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1541", "DL-1542", "DL-1543", "DL-1544"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("Round-Ten 1,510=10x151 Waves", by_id["DL-1541"]["expected"])
+        self.assertIn("Perfect-Square +$225.0M/yr=15^2M", by_id["DL-1542"]["expected"])
+        self.assertIn("-$1,055,460/mo", by_id["DL-1543"]["expected"])
+        self.assertIn("Round-Ten 1,070-OOSAdPause", by_id["DL-1544"]["expected"])
 
 
     def test_enterprise_omnichannel_ccaas_agent_assist_wfm_r374_scenarios(self) -> None:
@@ -7753,11 +7785,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1087)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1088)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 70.1)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 268)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 66.4)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1091)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1092)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 69.9)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 269)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 66.21)
 
 
 if __name__ == "__main__":

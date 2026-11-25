@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg383" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab383" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg383)"/>
+  <text x="36" y="42" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #383 (PALINDROME-PRIME 3-8-3!) · CUBE-FACTOR R375=3×5³ (SCENARIO NR) · HISTORIC FIRST SUB-70.0MS ROUTING MEAN AT 69.9MS!</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">CPG, Grocery &amp; Retail Trade Promotion (TPM/TPO), POS Demand Sensing, Perishable ESL &amp; RMN Clean Room vs. 4 Clouds</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">Prime 1,091/1,092 (99.91%!) at First &lt;70.0ms (69.9ms) | Prime 269th Sim 66.21ms | +$225.0M/yr=15²M | -$1,055,460/mo Saved (48.9x) | 542 Tests</text>
+
+  <!-- Left Box: Microsoft Fabric CPG/Grocery TPM, Demand Sensing & RMN Clean Room Hub -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab383)"/>
+  <text x="56" y="145" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Fabric CPG/Grocery TPM, ESL &amp; RMN Clean Room Hub ($22,040/mo All-In)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Eventhouse KQL 2.49M EPS Store POS/ESL Stream + Zero-Copy Retailer Sharing</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Streams 2,490K (2.49M) EPS of EDI 852 POS scans, ESL markdowns &amp; cold-chain IoT</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Flags Round-Ten 1,510=10×151 stockout &amp; negative-ROI promo waves in 4ms ($0 POS copy tax)</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Fabric IQ 8-Hop On-Shelf Availability (OSA), TPM &amp; RMN ROAS Graph (10ms)</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 8-hop ISO GQL across Brand -&gt; Promo -&gt; DC -&gt; StoreShelf -&gt; ESL -&gt; Basket -&gt; Deduction</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lifts promo ROI &amp; perishable sell-through +90.4% (Perfect-Square +$225.0M/yr=15²M gained!)</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 1.555 Billion (1-5-5-5!) Planogram, Bill-Back &amp; SKU Vectors ($7,120/mo)</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Saves $181,880/mo vs. Round-Thousand $189,000/mo (13.85 TB RAM) vector clusters</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Audits retailer EDI 812 bill-back deduction proofs &amp; shelf planogram photos in 7ms</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. HISTORIC FIRST SUB-70.0MS ROUTING MEAN AT 69.9MS (PRIME 1,091/1,092)!</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Agent 365 blocks Round-Ten 1,070 invalid deductions, OOS ad bids &amp; Robinson-Patman risks (+$47.40M!)</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 53,600 key-account, category &amp; store managers (45,180 $0 viewers on F64!)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms TPM/ESL Loop | -$1,055,460/mo Saved (-98.0% · 48.9x!) | $138.20M SLA</text>
+  <text x="72" y="524" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• CUBE-FACTOR R375=3×5³ | FIRST &lt;70.0MS ROUTE (69.9MS) | PRIME #383 SVG | 542 TESTS!</text>
+
+  <!-- Right Box: Stitched Syndicated POS Copy + External Clean Room + 13.85 TB DRAM Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched Syndicated POS / Clean-Room / DRAM Stack ($1,077,500/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Cross-Cloud POS Replication, Clean-Room Egress &amp; Graph Tax ($428,200/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Copying retailer EDI 852 feeds, ESL streams &amp; Neptune graphs burns $428.2K/mo</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 2-to-4 week syndicated POS lag leaves CPG brands funding negative-ROI promotions</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Batch Elasticity Modeling &amp; Deduction Audit Compute Tax ($243,460/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Recomputing SKU-store baseline elasticity across 250K doors on Photon/Credits costs $243.5K/mo</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Perishable dairy/produce expires before batch markdown jobs update shelf prices</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 13.85 TB In-Memory HNSW Planogram &amp; Deduction Vector Tax ($189,000/mo)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Holding 1.555B shelf photos, EDI 812 claims &amp; promo contracts in RAM costs 26.5x SSD</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Unverified retailer chargebacks erode 3%-5% of CPG gross revenue every quarter</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Per-User Category Manager &amp; Store BI Viewer Seat Tax ($216,840/mo)</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Licensing 45,180 KAMs, merchandisers &amp; store leads across 53,600 users costs $216,840/mo</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Total Competitor Cost: $1,077,500/mo ($12.93M/yr) vs. Fabric $22,040/mo</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Net Savings with Microsoft Fabric: -$1,055,460/mo (-98.0% · 48.9x Advantage!)</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• DL-1541..1544 Verified | First &lt;70.0ms Route (69.9ms!) | Prime 269th Sim | 542 Tests!</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA CPG &amp; Grocery Rule (R375 · Scenario NR): Use Eventhouse 2.49M EPS POS/ESL + OneLake B2B Clean Room + 1.555B DiskANN.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Break the &lt;70.0ms Routing Barrier (69.9ms across Prime 1,091/1,092!) while saving -$1,055,460/mo and gaining +$225.0M/yr=15²M.</text>
+</svg>

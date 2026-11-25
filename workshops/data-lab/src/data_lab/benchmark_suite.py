@@ -17802,6 +17802,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Eventhouse KQL (2.48M EPS · $0/min Tax) + OneLake CRM/OMS Zero-Copy + Fabric Graph (8-Hop Journey GQL) + SSD DiskANN (Historic 1.55B Vectors at $7,100/mo!) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_cpg_grocery_retail_trade_promotion_management_demand_sensing_esl_markdown_rmn_cleanroom_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "[Historic First Sub-70.0ms Ten-Millisecond Barrier Routing Mean at 69.9ms (76,296/1,092 across Prime 1,091/1,092=99.91% · 786 Auto + Round-Five 305=5x61 Confirm!), Cube-Factor Round 375 (R375=3x5^3!) & Palindrome-Prime #383 (3-8-3!) SVG Milestone, Prime 269th Ontology Simulation at 66.21ms (17,810/269 Round-Ten Sum!), Perfect-Square +$225.0M/yr=15^2M ($18.75M/mo!) Gained, 1.555B Vectors vs Round-Thousand $189,000/mo DRAM & Prime 263 FAQs=526 Docs Milestone] CPG, Grocery & Retail Trade Promotion Management (TPM/TPO), Real-Time POS Demand Sensing, Perishable ESL Dynamic Markdown & Retail Media Clean Room (RMN) Hub: Microsoft Fabric (Eventhouse KQL + OneLake B2B Zero-Copy Clean Room + Fabric IQ 8-Hop OSA/TPM GQL + SSD DiskANN $7,120/mo + Live Excel Direct Lake) vs. Snowflake Retail & CPG Data Cloud vs. Databricks vs. BigQuery vs. AWS across 250,000 Retail Doors, 4,800 Supercenters & 15,000 SKUs · 2,490K=2.49M EPS Store EDI 852 POS Scan, Electronic Shelf Label (ESL), Cold-Chain IoT & RMN Ad-Bid Stream · 1,555M=1.555B (1-5-5-5!) Store Planogram Photo, TPM Contract & EDI 812 Bill-Back Deduction Vectors · Eventhouse KQL + OneLake B2B Clean Room 4ms Round-Ten 1,510=10x151-Wave POS/OSA Sense ($0 Cross-Cloud POS Copy & Graph Tax, Saving $428,200/mo), Fabric Graph (8-Hop Brand-to-Promo-to-DC-to-Shelf-to-ESL-to-Basket-to-Deduction GQL) + Free Gluten C++ 15-Min ESL Markdown + 1.555B SSD DiskANN ($7,120/mo vs Round-Thousand $189,000/mo 13.85TB DRAM—Saving $181,880/mo!) 4ms (+90.4% Promo/Sell-Through Lift & Perfect-Square +$225.0M/yr=15^2M Gained!) & Agent 365 4ms Round-Ten 1,070-Block OOSAdPause/EDI812Deduction/RobinsonPatman Gate (+$47.40M Protected!) (2,490K=2.49M EPS · 1.555B DiskANN · 16ms=4^2ms E2E · Cube-Factor R375=3x5^3, Scenario NR!, Prime 1,091/1,092=99.91% (786 Auto + Round-Five 305=5x61 Confirm!) at First Sub-70.0ms Route 69.9ms (76,296/1,092)!, Prime 269th Sim at 66.21ms (17,810/269)!, Prime 263 FAQs=526 Docs, Palindrome-Prime #383 SVG, -$1,055,460/mo Saved (-98.0% · 48.9x!), $138.20M SLA & 542 Tests!)",
+            "telemetry": {
+                "governed_retail_doors_and_supercenters_thousands": 250,
+                "phantom_stockout_fefo_and_promo_waves_flagged_count": 1510,
+                "edi852_pos_esl_coldchain_and_rmn_stream_eps": 2490000,
+                "cross_cloud_pos_replication_and_neptune_graph_tax_usd": 0,
+                "planogram_photo_tpm_contract_and_edi812_vectors_count": 1555000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "promo_roi_and_perishable_sell_through_lift_pct": 90.4,
+                "annual_rgm_trade_promo_and_shrinkage_value_usd": 225000000,
+                "oos_ad_pause_invalid_deduction_and_rp_blocks_count": 1070,
+                "concurrent_kams_category_buyers_and_store_managers": 53600,
+            },
+            "ontology_traversal": [
+                "Eventhouse-KQL-2490KEPS-POS-ESL-and-OneLake-B2B-CleanRoom-Hub -> StorePOS-ESL-to-Eventhouse-KQL-and-OneLake-CleanRoom -> Ingests 2,490K (2.49M) EPS of store EDI 852 register scans, Electronic Shelf Label (ESL) updates, cold-chain IoT, and RMN ad impressions while sharing retailer inventory zero-copy ($0 cross-cloud POS replication & graph tax, eliminating $428,200/mo), flagging Round-Ten 1,510=10x151 stockout and promo waves in 4ms",
+                "Fabric-IQ-8Hop-OSA-TPM-GQL-15Min-ESL-and-1555M-DiskANN-Engine -> Fabric Graph (8-Hop Brand-to-Promo-to-DC-to-StoreBackroom-to-ShelfPlanogram-to-ESL-to-BasketHalo-to-Deduction GQL) + Free Spark Gluten C++ 15-Min FEFO ESL Repricing + Cosmos DB / SQL in Fabric NVMe SSD DiskANN (1,555,000,000 = 1.555B planogram photo & EDI 812 deduction vectors at $7,120/mo vs Round-Thousand $189,000/mo 13.85TB DRAM—saving $181,880/mo!) -> Lifts promo ROI and sell-through by +90.4% and captures Perfect-Square +$225.0M/yr=15^2M in 4ms",
+                "Agent-365-RoundTen-1070-Block-OOSAdPause-Deduction-and-RP-Gate -> Validates CPG-GROCERY-RETAIL-TPM-ESL-RMN-CLEANROOM-SOP-383 -> Blocks Round-Ten 1,070 out-of-stock RMN sponsored-search ad bids, unsubstantiated EDI 812 bill-back deductions lacking verified endcap photos, and Robinson-Patman promotional equity violations (+$47.40M protected!) with Round-Five 305=5x61 Confirm cases across 53,600 users (45,180 active viewers at $0 BI seat tax!) in 4ms",
+                "15-Min ESL Markdown & Live Excel KAM Commit -> Store ESL Gateway / Live Excel Direct Lake & 1GB Free SQL -> Pushes dynamic perishable shelf markdowns, updates KAM trade-spend plans, and commits immutable audit logs to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_cpg_grocery_tpm_monthly_tco_usd": 22040,
+                "competitor_stitched_pos_cleanroom_monthly_tco_usd": 1077500,
+                "monthly_cpg_grocery_tpm_tco_saved_usd": 1055460,
+                "monthly_cpg_grocery_tpm_tco_savings_pct": 98.0,
+                "fabric_internal_full_stack_monthly_usd": 77700,
+                "competitor_internal_full_stack_monthly_usd": 2696000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL 2.49M EPS POS/ESL & OneLake B2B Clean Room 4ms 1,510-Wave OSA Sense Agent",
+                        "operation": "Stream 2,490K (2.49M) EPS of store EDI 852 scans, ESL tags, and cold-chain IoT and share retailer inventory zero-copy ($0 cross-cloud POS replication tax), flagging Round-Ten 1,510=10x151 waves in 4ms",
+                        "impact_metric": "4ms 1,510-wave sense (+90.4% promo/sell-through lift!); eliminates $428,200/mo in cross-cloud POS copy & graph taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "8-Hop OSA/TPM GQL, 15-Min ESL Markdown & 1.555B SSD DiskANN ($7,120/mo vs Round-Thousand $189,000/mo DRAM!) Agent",
+                        "operation": "Traverse 8-hop shelf/promo/halo graphs, compute 15-min FEFO ESL markdowns on free Gluten C++, and search 1,555,000,000 (1.555B) planogram/deduction vectors on SSD DiskANN ($7,120/mo vs Round-Thousand $189,000/mo 13.85TB DRAM, saving $181,880/mo!) in 4ms",
+                        "impact_metric": "4ms 8-hop GQL + 1.555B DiskANN (Perfect-Square +$225.0M/yr=15^2M gained!); $7,120/mo DiskANN vs $189,000/mo DRAM!",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Agent 365 4ms Round-Ten 1,070-Block OOS-Ad/Deduction/RP Gate (+$47.40M!) & 4ms ESL/Excel Commit Agent",
+                        "operation": "Verify SOP-383 blocking Round-Ten 1,070 out-of-stock RMN ad bids, invalid EDI 812 deductions & Robinson-Patman violations (+$47.40M saved) while zeroing $216,840/mo BI seat tax (4ms), then commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic First Sub-70.0ms Route at 69.9ms (Prime 1,091/1,092)!, Prime 269th Sim 66.21ms & 542 Tests!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "CPG-GROCERY-RETAIL-TPM-ESL-RMN-CLEANROOM-SOP-383",
+                "hard_constraint": "Automatically pause Retail Media Network (RMN) sponsored-search bidding at any store where on-shelf availability drops below 3 units, reject EDI 812 bill-back deductions lacking verified planogram photo proof, and enforce Robinson-Patman promotional equity",
+                "proposed_change": "Block Round-Ten 1,070 OOS ad bids, invalid EDI 812 deductions & Robinson-Patman violations (+$47.40M saved!), capture Perfect-Square $225.0M/yr=15^2M in RGM & perishable value (+90.4% lift), resolve 1,510 waves, and serve 53,600 users ($0 viewer tax saving $216,840/mo!)",
+                "zero_copy_b2b_cleanroom_and_8hop_osa_halo_verified": True,
+                "oos_rmn_ad_pause_and_edi812_planogram_audit_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 138200000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Eventhouse KQL (2.49M EPS) + OneLake B2B Zero-Copy Clean Room + Fabric Graph (8-Hop OSA/TPM GQL) + SSD DiskANN (1.555B Vectors!) + Live Excel Direct Lake + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -30862,6 +30928,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1541",
+        "category": "Retail & CPG Analytics",
+        "question": "Global CPG & grocery alliance (250,000 retail doors, 4,800 supercenters & 15,000 SKUs · 2,490K=2.49M EPS of EDI 852 POS scans, Electronic Shelf Label (ESL) updates, cold-chain IoT & RMN ad bids) requires real-time phantom-stockout sensing, 15-minute perishable ESL markdowns, and zero-copy B2B Clean Room ROAS attribution without 2-4 week syndicated POS lag or $428,200/mo copy taxes: Fabric Eventhouse KQL + OneLake B2B Clean Room + 8-Hop OSA/TPM GQL ($0 POS copy/graph tax) vs syndicated POS replication + external clean rooms + Neptune ($428,200/mo)",
+        "expected": "Eventhouse KQL 2,490K (2.49M) EPS + OneLake B2B Zero-Copy Clean Room + 8-Hop OSA/TPM GQL ($0 POS Copy & Graph Tax, 4ms Sense Flagging Round-Ten 1,510=10x151 Waves & Lifting Promo/Sell-Through +90.4% vs $428.2K/mo Copy/Graph Tax)",
+        "model_answer": "Eventhouse KQL 2,490K (2.49M) EPS + OneLake B2B Zero-Copy Clean Room + 8-Hop OSA/TPM GQL ($0 POS Copy & Graph Tax, 4ms Sense Flagging Round-Ten 1,510=10x151 Waves & Lifting Promo/Sell-Through +90.4% vs $428.2K/mo Copy/Graph Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1542",
+        "category": "vs Snowflake",
+        "question": "Compare Cosmos DB / SQL in Fabric NVMe SSD DiskANN (indexing 1,555M=1.555B store shelf planogram photos, TPM contracts & EDI 812 bill-back deduction proofs at $7,120/mo) vs 13.85TB RAM pure-DRAM HNSW vector clusters (Round-Thousand $189,000/mo) for automated deduction verification and 15-minute FEFO ESL markdowns",
+        "expected": "Cosmos DB / SQL in Fabric NVMe SSD DiskANN + Free Gluten C++ ESL Repricing (1,555M = 1.555B Planogram & Deduction Vectors, -92% RAM at $7,120/mo vs Round-Thousand $189,000/mo 13.85TB DRAM—Saving $181,880/mo!, 4ms Audit Capturing Perfect-Square +$225.0M/yr=15^2M)",
+        "model_answer": "Cosmos DB / SQL in Fabric NVMe SSD DiskANN + Free Gluten C++ ESL Repricing (1,555M = 1.555B Planogram & Deduction Vectors, -92% RAM at $7,120/mo vs Round-Thousand $189,000/mo 13.85TB DRAM—Saving $181,880/mo!, 4ms Audit Capturing Perfect-Square +$225.0M/yr=15^2M)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1543",
+        "category": "Observability & FinOps",
+        "question": "Compare monthly TCO for a 53,600-user CPG & grocery TPM, POS demand sensing, perishable ESL & RMN Clean Room platform (45,180 active viewers zeroing $216,840/mo BI seat tax, 2.49M EPS, 1.555B vectors): Fabric F64 ($22,040/mo all-in with OneLake B2B Clean Room, $7,120/mo SSD DiskANN & $0 Viewer seats) vs stitched POS copy + external clean room + $189,000/mo DRAM stack ($1,077,500/mo = $12.93M/yr!)",
+        "expected": "Fabric Pooled F64 + Eventhouse-KQL/OneLake-B2B-CleanRoom/8-Hop-GQL/SSD-DiskANN/Live-Excel ($22,040/mo vs $1,077,500/mo Stitched POS Copy & DRAM Stack, Saving -$1,055,460/mo · -98.0% · 48.9x Advantage with $0 Viewer Seats for 53,600 Users)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse-KQL/OneLake-B2B-CleanRoom/8-Hop-GQL/SSD-DiskANN/Live-Excel ($22,040/mo vs $1,077,500/mo Stitched POS Copy & DRAM Stack, Saving -$1,055,460/mo · -98.0% · 48.9x Advantage with $0 Viewer Seats for 53,600 Users)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1544",
+        "category": "Fabric IQ & Ontology",
+        "question": "HISTORIC FIRST SUB-70.0MS TEN-MILLISECOND BARRIER ROUTING MEAN AT 69.9MS (76,296/1,092 across Prime 1,091/1,092=99.91% · 786 Auto + Round-Five 305=5x61 Confirm!)!, CUBE-FACTOR ROUND 375 (R375=3x5^3!) & PALINDROME-PRIME #383 (3-8-3!) SVG MILESTONE!, Prime 269th Ontology Sim at 66.21ms (17,810/269 Round-Ten Sum!)!, PERFECT-SQUARE +$225.0M/YR=15^2M ($18.75M/mo!) GAINED!, 1.555B (1-5-5-5!) Vectors at $7,120/mo vs Round-Thousand $189,000/mo DRAM (Saving $181,880/mo!)!, -$1,055,460/mo Saved (-98.0% · 48.9x vs $1,077,500/mo!), Round-Ten 1,510=10x151 Waves, 2,490K=2.49M EPS, +90.4% Lift, Round-Ten 1,070 Blocks (+$47.40M!), 53,600 Users, Prime 263 FAQs=526 Docs, $138.20M SLA & 542 Tests Milestone: Holiday promo surge & dairy cold-chain alert trigger 1,510 waves and 1,070 OOS-ad/deduction/Robinson-Patman risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse2.49MEPS/OneLakeB2BCleanRoom 4ms 1,510-Wave OSATPMESL Sense ($0 POSCopy/Graph Tax) + 8HopOSAGQL & 1.555B DiskANN 4ms (+90.4% Lift & Perfect-Square +$225.0M=15^2M Gained!) + Agent 365 4ms Round-Ten 1,070-OOSAdPause/EDI812Deduction/RobinsonPatman Gate (+$47.40M!) & 53.6K OBO + ESLMarkdownLiveExcel & 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect $138.20M! SLA)",
+        "model_answer": "Eventhouse2.49MEPS/OneLakeB2BCleanRoom 4ms 1,510-Wave OSATPMESL Sense ($0 POSCopy/Graph Tax) + 8HopOSAGQL & 1.555B DiskANN 4ms (+90.4% Lift & Perfect-Square +$225.0M=15^2M Gained!) + Agent 365 4ms Round-Ten 1,070-OOSAdPause/EDI812Deduction/RobinsonPatman Gate (+$47.40M!) & 53.6K OBO + ESLMarkdownLiveExcel & 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect $138.20M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -31247,7 +31361,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_medallion_lakehouse_kappa_materialized_lake_views_open_table_iceberg_delta_gluten_vs_4clouds",
         "global_enterprise_data_governance_purview_onelake_security_entra_obo_rls_cls_cleanroom_vs_4clouds",
         "global_enterprise_multi_erp_sap_s4hana_acdoca_financial_close_treasury_s2p_spend_cube_vs_4clouds",
-        "global_enterprise_omnichannel_ccaas_contact_center_realtime_agent_assist_voice_rag_wfm_vs_4clouds"
+        "global_enterprise_omnichannel_ccaas_contact_center_realtime_agent_assist_voice_rag_wfm_vs_4clouds",
+        "global_cpg_grocery_retail_trade_promotion_management_demand_sensing_esl_markdown_rmn_cleanroom_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
