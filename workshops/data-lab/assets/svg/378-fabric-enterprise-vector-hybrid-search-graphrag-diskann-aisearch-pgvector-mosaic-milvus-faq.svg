@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg378" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab378" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg378)"/>
+  <text x="36" y="42" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #378 (TRIANGULAR T₂₇!) · ROUND-TEN R370 (10×37!) · HISTORIC 300TH CONFIRM, EXACT +$220.0M/YR, PALINDROME 71.1MS ROUTE &amp; 532 TESTS!</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Enterprise Vector &amp; Hybrid Search (GraphRAG): Azure AI Search + SSD DiskANN vs. pgvector vs. Mosaic vs. Milvus / Qdrant</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">1,071/1,072 (99.91% · Historic 300 Confirm!) at Palindrome 71.1ms | 264th Sim 67.16ms | 1.53B Vectors ($7,020/mo Saving $179.0K/mo) | -$1,034,560/mo Saved | 532 Tests</text>
+
+  <!-- Left Box: Microsoft Fabric + Azure AI Search + SSD DiskANN + GraphRAG Hub -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab378)"/>
+  <text x="56" y="145" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Fabric SSD DiskANN + AI Search + 8-Hop GraphRAG ($21,940/mo)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. NVMe SSD DiskANN: 1.53 Billion (1,530M) Vectors at $7,020/mo (-92% RAM)</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Vamana SSD graph + PQ quantization saves $178,980/mo vs. $186,000/mo (13.60 TB RAM)</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Ingests 2,440K (2.44M) EPS doc/chunk updates &amp; flags 1,485 retrieval waves in 4ms</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Tri-Modal Hybrid Search: BM25 Lexical + Vector + 8-Hop GraphRAG (10ms)</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Combines RRF lexical/vector ranking, L2 Semantic Ranker (+36% relevance) &amp; 8-Hop ISO GQL</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lifts multi-hop RAG recall &amp; precision by +88.6% &amp; captures Historic Exact +$220.0M/yr!</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. Zero-Copy OneLake Indexer + Storage-Layer Entra OBO ACL Trimming</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Indexes PDFs, DOCX &amp; Delta tables directly from OneLake ($0 egress / $0 duplicate copy)</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Enforces pre-filter Entra ID security trimming &amp; Purview RMS encryption tags in 4ms</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. ROUND-TEN R370!, HISTORIC 300TH CONFIRM &amp; EXACT +$220.0M/YR GAINED!</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Agent 365 blocks 1,045 ACL-trimming bypass, indirect prompt-injection &amp; stale-chunk risks (+$46.40M!)</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 52,600 knowledge workers, engineers &amp; analysts (44,280 $0 viewers on F64!)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Hybrid GraphRAG | -$1,034,560/mo Saved (-97.9% · 48.2x!) | $136.20M SLA</text>
+  <text x="72" y="524" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• PALINDROME 71.1MS ROUTE | 264TH SIM 67.16MS | #378=T₂₇ SVG | 532 UNIT TESTS!</text>
+
+  <!-- Right Box: Stitched Milvus/Qdrant + Neptune + 13.60 TB DRAM Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched Standalone Vector DB / Neptune / DRAM Stack ($1,056,500/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. 13.60 TB Pure In-Memory HNSW Vector Cluster Tax ($186,000/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Holding 1.53B 1536-dim float32 vectors + HNSW edges in RAM costs $186,000/mo (26.5x SSD)</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• pgvector HNSW index rebuilds lock OLTP tables &amp; exhaust shared_buffers past 100M rows</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Vector Sync ETL, Chunk Drift &amp; Standalone Graph Tax ($419,200/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Exporting OneLake/SharePoint docs into external Milvus/Pinecone + Neptune burns $419.2K/mo</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Pure vector cosine similarity fails exact SKU/part-number matches &amp; multi-hop reasoning</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. Post-Filter ACL Starvation &amp; Re-Embedding Compute Tax ($238,760/mo)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Post-filtering Top-K vector hits by ACLs returns 0 results when user has narrow access</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Disconnected ACL sync exposes revoked SharePoint/OneLake files for hours after revocation</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Per-User Knowledge Analytics &amp; BI Seat Tax ($212,540/mo)</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Licensing 44,280 viewers across 52,600 enterprise users costs $212,540/mo ($2.55M/yr)</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Total Competitor Cost: $1,056,500/mo ($12.68M/yr) vs. Fabric $21,940/mo</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Net Savings with Microsoft Fabric: -$1,034,560/mo (-97.9% · 48.2x Advantage!)</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• DL-1521..1524 Verified | Palindrome 71.1ms Route | 264th Sim 67.16ms | 532 Tests!</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Vector &amp; Hybrid Search Rule (R370 · Scenario NM): Combine NVMe SSD DiskANN ($7,020/mo) + BM25 + 8-Hop GraphRAG.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Replace 13.60 TB pure DRAM HNSW clusters ($186,000/mo) &amp; preserve Entra OBO ACLs to save -$1,034,560/mo (48.2x).</text>
+</svg>

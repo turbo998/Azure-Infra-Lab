@@ -3509,6 +3509,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_enterprise_vector_hybrid_search_graphrag_diskann_aisearch_pgvector_mosaic_milvus_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_enterprise_vector_hybrid_search_graphrag_diskann_aisearch_pgvector_mosaic_milvus_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["governed_multimodal_enterprise_documents_millions"], 120)
+        self.assertEqual(sim["telemetry"]["hybrid_graphrag_and_acl_sync_waves_flagged_count"], 1485)
+        self.assertEqual(sim["telemetry"]["doc_chunking_embedding_and_hybrid_query_stream_eps"], 2440000)
+        self.assertEqual(sim["telemetry"]["multimodal_document_cad_and_ticket_vectors_count"], 1530000000)
+        self.assertEqual(sim["telemetry"]["external_vector_sync_etl_and_neptune_graph_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["multihop_rag_recall_and_engineering_velocity_lift_pct"], 88.6)
+        self.assertEqual(sim["telemetry"]["pre_filter_obo_prompt_injection_and_stale_doc_blocks_count"], 1045)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_vector_graphrag_monthly_tco_usd"], 21940)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_vector_graphrag_tco_saved_usd"], 1034560)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_vector_graphrag_tco_savings_pct"], 97.9)
+        self.assertTrue(sim["foundry_iq_guardrail"]["pre_filter_entra_obo_acl_and_trimodal_graphrag_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["indirect_prompt_injection_scrub_and_effective_version_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 136200000)
+
+
     def test_global_oltp_to_olap_zero_etl_mirroring_htap_sql_cosmos_postgres_debezium_fivetran_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_oltp_to_olap_zero_etl_mirroring_htap_sql_cosmos_postgres_debezium_fivetran_vs_4clouds")
         self.assertEqual(sim["telemetry"]["governed_operational_oltp_databases_count"], 650)
@@ -4515,14 +4535,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
 
     def test_scenario_matrix_498_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 1068)
-        self.assertEqual(matrix["passed_scenarios"], 1067)
+        self.assertEqual(matrix["total_scenarios"], 1072)
+        self.assertEqual(matrix["passed_scenarios"], 1071)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.91, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 71.3)
+        self.assertEqual(matrix["avg_latency_ms"], 71.1)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_enterprise_vector_hybrid_search_graphrag_diskann_r370_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1521", "DL-1522", "DL-1523", "DL-1524"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("2,440K (2.44M) EPS", by_id["DL-1521"]["expected"])
+        self.assertIn("$178,980/mo!", by_id["DL-1522"]["expected"])
+        self.assertIn("-$1,034,560/mo", by_id["DL-1523"]["expected"])
+        self.assertIn("Historic 300 Confirm", by_id["DL-1524"]["expected"])
 
 
     def test_oltp_to_olap_zero_etl_mirroring_htap_r369_scenarios(self) -> None:
@@ -7593,11 +7625,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1067)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1068)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 71.3)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 263)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 67.35)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1071)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1072)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 71.1)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 264)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 67.16)
 
 
 if __name__ == "__main__":
