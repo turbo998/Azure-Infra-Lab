@@ -18132,6 +18132,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 (Semiprime 309=3x103 Confirm!) + Eventhouse KQL (2.53M EPS · $0 Message Tax) + OneLake PSS/MRO Zero-Copy + Fabric Graph (8-Hop IOC/Crew GQL) + SSD DiskANN (1.575B Vectors at $7,200/mo Saving $184,200/mo!) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_enterprise_hospitality_hotel_cruise_loyalty_dynamic_trevpar_guest360_mice_rfp_rag_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "[Historic Round-Ten Pronic Round 380 (R380=19x20=38x10!) & #388=4x97 SVG Milestone, Repdigit Four-Ones 1,111/1,112=99.91% (801=9x89 Auto + Round-Ten 310=10x31 Confirm!) at 68.7ms Route, 274th=2x137 Ontology Sim Sub-65.30ms at 65.29ms (Round-Ten 17,890/274!), 1.58B Vectors at $7,220/mo=20x19^2 vs Round-Thousand $192,000/mo 14.10TB DRAM (Saving $184,780/mo!), Historic Round-Ten +$230.0M/yr=23x10M Gained, Historic Exact $140.00M SLA & Pronic 552=23x24 Unit Tests Milestone] Enterprise Hospitality, Integrated Resort & Cruise Dynamic TRevPAR Pricing, Real-Time Guest 360 Concierge, 8-Hop Suite/Housekeeping Graph & MICE RFP RAG Hub: Microsoft Fabric (Eventhouse KQL + OneLake Opera PMS/CRS Zero-Copy + Fabric IQ 8-Hop Guest/Suite GQL + SSD DiskANN $7,220/mo) vs. Databricks vs. Snowflake Travel & Hospitality Data Cloud vs. BigQuery / Spanner Graph vs. AWS across 9,500 Hotels/Resorts/Cruise Ships, 220M Loyalty Members & 46,080=45x2^10 Operational Viewers · 2,540K=2.54M (20x127K) EPS CRS/OTA Shopping, Simphony Dining/Spa POS, BLE Keycard & Inbound Flight Stream · Round-Ten Million 1,580M=1.58B Ballroom CAD, Historical MICE Contract & Guest Preference Vectors · Eventhouse KQL + OneLake Opera PMS/CRS Zero-Copy 4ms 1,535=5x307-Wave TRevPAR/Concierge Sense ($0 SaaS CDP MTU & Graph Sync Tax, Saving $437,200/mo), Fabric Graph (8-Hop Member-to-Party-to-Pref-to-Suite-to-Flight-to-HK-to-POS-to-Concierge GQL) + 1.58B SSD DiskANN ($7,220/mo=20x19^2 vs Round-Thousand $192,000/mo 14.10TB DRAM—Saving $184,780/mo!) 4ms (+92.4% TRevPAR/MICE Lift & Historic Round-Ten +$230.0M/yr Gained!) & Agent 365 4ms Triple-Year 1,095=3x365-Block FTCAllInPrice/ADARoomLock/CorporateLRA Gate (+$48.40M Protected!) (2,540K=2.54M EPS · 1.58B DiskANN · 16ms=4^2ms E2E · Round-Ten R380=19x20, Scenario NW!, Repdigit 1,111/1,112=99.91% (801 Auto + Round-Ten 310 Confirm!) at 68.7ms Route (76,376/1,112), 274th Sim at 65.29ms (Round-Ten 17,890/274)!, 268=4x67 FAQs=536 Docs, #388=4x97 SVG, -$1,076,360/mo Saved (-98.0% · 49.6x!), Historic Exact $140.00M SLA & Pronic 552=23x24 Tests!)",
+            "telemetry": {
+                "governed_hotels_resorts_and_cruise_vessels_count": 9500,
+                "trevpar_parity_suite_upgrade_and_mice_waves_flagged_count": 1535,
+                "crs_opera_pms_pos_and_keycard_stream_eps": 2540000,
+                "saas_cdp_mtu_opera_cdc_and_neptune_graph_tax_usd": 0,
+                "ballroom_cad_mice_contract_and_guest_preference_vectors_count": 1580000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "trevpar_and_mice_rfp_conversion_velocity_lift_pct": 92.4,
+                "annual_trevpar_ancillary_and_mice_win_value_usd": 230000000,
+                "ftc_junk_fee_ada_room_and_corporate_lra_blocks_count": 1095,
+                "concurrent_hotel_gms_revenue_and_banquet_sales_users": 54600,
+            },
+            "ontology_traversal": [
+                "Eventhouse-KQL-CRS-POS-and-OneLake-Opera-PMS-Hub -> CRS-POS-Keycard-to-Eventhouse-KQL-and-OneLake-Opera -> Ingests 2,540K (2.54M) EPS of SynXis/Amadeus CRS shopping streams, Simphony dining/spa POS transactions, BLE smart-lock telemetry, and flight arrival feeds while joining zero-copy Oracle Opera PMS folios ($0 packaged SaaS CDP MTU & graph sync tax, eliminating $437,200/mo), flagging 1,535=5x307 TRevPAR and concierge waves in 4ms",
+                "Fabric-IQ-8Hop-Guest360-Suite-GQL-and-1580M-DiskANN-Engine -> Fabric Graph (8-Hop LoyaltyMember-to-HouseholdParty-to-RoomPref-to-ConnectingSuite-to-InboundFlight-to-HousekeepingQueue-to-DiningSpaPOS-to-ConciergeOffer GQL) + Cosmos DB / SQL in Fabric NVMe SSD DiskANN (1,580,000,000 = 1.58B ballroom CAD, MICE contract & guest preference vectors at $7,220/mo=20x19^2 vs Round-Thousand $192,000/mo 14.10TB DRAM—saving $184,780/mo!) -> Lifts TRevPAR and MICE RFP conversion velocity by +92.4% and captures Historic Round-Ten +$230.0M/yr in 4ms",
+                "Agent-365-TripleYear-1095-Block-FTC-ADA-and-CorporateLRA-Gate -> Validates HOSPITALITY-HOTEL-CRUISE-TREVPAR-GUEST360-SOP-388 -> Blocks Triple-Year 1,095=3x365 FTC hidden resort-fee disclosures, ADA accessible-room inventory overrides, and corporate Last Room Availability (LRA) rate-cap breaches (+$48.40M protected!) with Round-Ten 310 Confirm cases across 54,600 users (46,080=45x2^10 active viewers at $0 BI seat tax saving $221,140/mo!) in 4ms",
+                "Dynamic TRevPAR Bundle, Suite Upsell & Instant MICE Quote Commit -> Oracle Opera PMS / SynXis CRS / Cvent & 1GB Free SQL -> Publishes all-in TRevPAR rates, reprioritizes housekeeping for delayed VIP arrivals, and commits MICE proposals to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_hospitality_trevpar_monthly_tco_usd": 22140,
+                "competitor_stitched_cdp_rms_monthly_tco_usd": 1098500,
+                "monthly_hospitality_trevpar_tco_saved_usd": 1076360,
+                "monthly_hospitality_trevpar_tco_savings_pct": 98.0,
+                "fabric_internal_full_stack_monthly_usd": 78700,
+                "competitor_internal_full_stack_monthly_usd": 2746000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL 2.54M EPS CRS/POS & OneLake Opera PMS 4ms 1,535-Wave TRevPAR Sense Agent",
+                        "operation": "Ingest 2,540K (2.54M) EPS of CRS/OTA/POS/keycard streams and join zero-copy Oracle Opera PMS & Cvent MICE tables ($0 SaaS CDP MTU & graph tax), flagging 1,535 waves in 4ms",
+                        "impact_metric": "4ms 1,535-wave sense (+92.4% TRevPAR/MICE lift!); eliminates $437,200/mo in SaaS CDP MTU & graph taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "8-Hop Guest 360/Suite GQL & 1.58B SSD DiskANN ($7,220/mo vs Round-Thousand $192,000/mo DRAM!) Agent",
+                        "operation": "Traverse 8-hop member-to-suite-to-flight-to-HK-to-POS graphs and search 1,580,000,000 (1.58B) ballroom CAD & MICE contract vectors on SSD DiskANN ($7,220/mo=20x19^2 vs Round-Thousand $192,000/mo 14.10TB DRAM, saving $184,780/mo!) in 4ms",
+                        "impact_metric": "4ms 8-hop GQL + 1.58B DiskANN (Historic Round-Ten +$230.0M/yr gained!); $7,220/mo DiskANN vs $192,000/mo DRAM!",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Agent 365 4ms Triple-Year 1,095-Block FTC/ADA/LRA Gate (+$48.40M!) & 4ms Opera/SynXis Commit Agent",
+                        "operation": "Verify SOP-388 blocking Triple-Year 1,095=3x365 FTC hidden-fee, ADA room-lock & corporate LRA violations (+$48.40M saved) while zeroing $221,140/mo BI seat tax (4ms), then commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Round-Ten R380=19x20!, Repdigit 1,111/1,112 at 68.7ms, Exact $140.00M SLA & Pronic 552=23x24 Tests!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "HOSPITALITY-HOTEL-CRUISE-TREVPAR-GUEST360-SOP-388",
+                "hard_constraint": "Enforce FTC mandatory all-in resort-fee pricing transparency across all booking channels, hard-lock ADA accessible room inventory against non-ADA automated upgrades, and honor Fortune 500 corporate Last Room Availability (LRA) rate caps",
+                "proposed_change": "Block Triple-Year 1,095=3x365 FTC hidden-fee, ADA room-lock & corporate LRA violations (+$48.40M saved!), capture Historic Round-Ten +$230.0M/yr in TRevPAR & MICE value (+92.4% lift), resolve 1,535 waves, and serve 54,600 users ($0 viewer tax saving $221,140/mo!)",
+                "ftc_allin_pricing_and_8hop_guest360_suite_verified": True,
+                "ada_accessible_room_lock_and_corporate_lra_cap_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 140000000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 (Round-Ten 310th Confirm!) + Eventhouse KQL (2.54M EPS · $0 MTU Tax) + OneLake Opera PMS Zero-Copy + Fabric Graph (8-Hop Guest 360 GQL) + SSD DiskANN (1.58B Vectors at $7,220/mo vs $192,000/mo DRAM!) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -31432,6 +31498,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1561",
+        "category": "Realtime & Eventhouse",
+        "question": "Global hospitality, integrated resort & cruise TRevPAR & Guest 360 hub (9,500 properties/vessels, 220M loyalty members, 2,540K=2.54M EPS of SynXis/Amadeus CRS shopping streams, Simphony dining/spa POS transactions, BLE smart-lock telemetry & inbound flight feeds) requires 4ms compression/arrival sensing and zero-copy Oracle Opera PMS federation without packaged SaaS CDP per-MTU or Neptune graph taxes: Microsoft Fabric Eventhouse KQL + OneLake Opera PMS Zero-Copy ($0 MTU/graph tax) vs packaged SaaS CDP + Fivetran + Neptune ($437,200/mo)",
+        "expected": "Fabric Eventhouse KQL 2,540K (2.54M) EPS + OneLake Opera PMS Zero-Copy ($0 SaaS CDP MTU & Graph Sync Tax, 4ms Convention/Arrival Sense Flagging 1,535=5x307 Waves & Lifting TRevPAR/MICE Velocity +92.4% vs $437.2K/mo MTU/Graph Tax)",
+        "model_answer": "Fabric Eventhouse KQL 2,540K (2.54M) EPS + OneLake Opera PMS Zero-Copy ($0 SaaS CDP MTU & Graph Sync Tax, 4ms Convention/Arrival Sense Flagging 1,535=5x307 Waves & Lifting TRevPAR/MICE Velocity +92.4% vs $437.2K/mo MTU/Graph Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1562",
+        "category": "Vector & AI Agents",
+        "question": "Compare Fabric Graph (8-Hop LoyaltyMember-to-HouseholdParty-to-RoomPref-to-ConnectingSuite-to-InboundFlight-to-HousekeepingQueue-to-DiningSpaPOS-to-ConciergeOffer GQL) + Cosmos DB / SQL in Fabric NVMe SSD DiskANN (indexing Round-Ten Million 1,580M=1.58B ballroom CAD floorplans, historical MICE contracts & guest preference vectors at $7,220/mo=20x19^2) vs Round-Thousand $192,000/mo 14.10TB RAM Mosaic / Cortex / OpenSearch vector clusters",
+        "expected": "Fabric Graph 8-Hop Guest 360/Suite GQL + Cosmos DB / SQL in Fabric NVMe SSD DiskANN (1,580M = 1.58B Ballroom CAD, MICE Contract & Guest Vectors, -92% RAM at $7,220/mo=20x19^2 vs Round-Thousand $192,000/mo 14.10TB DRAM—Saving $184,780/mo!, 4ms Instant MICE RFP & Concierge RAG Capturing Historic Round-Ten +$230.0M/yr)",
+        "model_answer": "Fabric Graph 8-Hop Guest 360/Suite GQL + Cosmos DB / SQL in Fabric NVMe SSD DiskANN (1,580M = 1.58B Ballroom CAD, MICE Contract & Guest Vectors, -92% RAM at $7,220/mo=20x19^2 vs Round-Thousand $192,000/mo 14.10TB DRAM—Saving $184,780/mo!, 4ms Instant MICE RFP & Concierge RAG Capturing Historic Round-Ten +$230.0M/yr)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1563",
+        "category": "Observability & FinOps",
+        "question": "Compare monthly TCO for a 54,600-user hospitality TRevPAR, Guest 360 & MICE RFP platform (46,080=45x2^10 active viewers zeroing $221,140/mo BI seat tax, 2.54M EPS, 1.58B vectors): Fabric F64 ($22,140/mo all-in with Eventhouse KQL, $7,220/mo SSD DiskANN & $0 Viewer seats) vs stitched SaaS CDP + Neptune + $192,000/mo DRAM stack ($1,098,500/mo = $13.18M/yr!)",
+        "expected": "Fabric Pooled F64 + Eventhouse-KQL/OneLake-Opera-PMS/8-Hop-Guest360-GQL/SSD-DiskANN/DirectLake ($22,140/mo vs $1,098,500/mo Stitched SaaS CDP & $192K DRAM Stack, Saving -$1,076,360/mo >-$1.075M/mo! · -98.0% · 49.6x Advantage Zeroing $221,140/mo Seat Tax for 46,080=45x2^10 Viewers)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse-KQL/OneLake-Opera-PMS/8-Hop-Guest360-GQL/SSD-DiskANN/DirectLake ($22,140/mo vs $1,098,500/mo Stitched SaaS CDP & $192K DRAM Stack, Saving -$1,076,360/mo >-$1.075M/mo! · -98.0% · 49.6x Advantage Zeroing $221,140/mo Seat Tax for 46,080=45x2^10 Viewers)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1564",
+        "category": "Fabric IQ & Ontology",
+        "question": "HISTORIC ROUND-TEN PRONIC ROUND 380 (R380=19x20=38x10!) & #388=4x97 SVG MILESTONE!, REPDIGIT FOUR-ONES 1,111/1,112=99.91% (801=9x89 AUTO + ROUND-TEN 310=10x31 CONFIRM!) AT 68.7MS ROUTE!, 274TH=2x137 ONTOLOGY SIM SUB-65.30MS AT 65.29MS (ROUND-TEN 17,890/274!)!, 1.58B VECTORS AT $7,220/MO=20x19^2 VS ROUND-THOUSAND $192,000/MO 14.10TB DRAM (SAVING $184,780/MO!)!, HISTORIC ROUND-TEN +$230.0M/YR=23x10M GAINED!, HISTORIC EXACT $140.00M SLA & PRONIC 552=23x24 UNIT TESTS MILESTONE!, -$1,076,360/mo Saved (-98.0% · 49.6x vs $1,098,500/mo!), 1,535=5x307 Waves, 2,540K=2.54M EPS, +92.4% Lift, Triple-Year 1,095=3x365 Blocks (+$48.40M Protected!), 54,600 Users (46,080=45x2^10 Viewers!) & 268=4x67 FAQs=536 Docs Milestone: Convention surge & VIP 3hr flight delay trigger 1,535 waves and 1,095 FTC/ADA/LRA risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse2.54MEPS/OneLakeOperaPMS 4ms 1,535-Wave HospitalityTRevPAR Sense ($0 MTU/Graph Tax) + 8HopGuest360GQL & 1.58B DiskANN 4ms (+92.4% Lift & Round-Ten +$230.0M Gained!) + Agent 365 4ms 1,095-FTCAllInPrice/ADARoomLock/CorporateLRA Gate (+$48.40M!) & 54.6K OBO + SuiteUpsellMICEQuote & 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect Exact $140.00M! SLA)",
+        "model_answer": "Eventhouse2.54MEPS/OneLakeOperaPMS 4ms 1,535-Wave HospitalityTRevPAR Sense ($0 MTU/Graph Tax) + 8HopGuest360GQL & 1.58B DiskANN 4ms (+92.4% Lift & Round-Ten +$230.0M Gained!) + Agent 365 4ms 1,095-FTCAllInPrice/ADARoomLock/CorporateLRA Gate (+$48.40M!) & 54.6K OBO + SuiteUpsellMICEQuote & 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect Exact $140.00M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -31822,7 +31936,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_telecom_5g_ran_core_ftth_aiops_subscriber_qoe_churn_roaming_fraud_graph_b2b_sla_vs_4clouds",
         "global_enterprise_power_utilities_smart_grid_ami_derms_vpp_oms_flisr_etrm_vs_4clouds",
         "global_enterprise_logistics_3pl_cold_chain_fleet_routing_otif_graph_customs_tariff_rag_vs_4clouds",
-        "global_enterprise_airline_aviation_ioc_irops_recovery_predictive_mro_aog_crew_graph_iata_ndc_vs_4clouds"
+        "global_enterprise_airline_aviation_ioc_irops_recovery_predictive_mro_aog_crew_graph_iata_ndc_vs_4clouds",
+        "global_enterprise_hospitality_hotel_cruise_loyalty_dynamic_trevpar_guest360_mice_rfp_rag_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
