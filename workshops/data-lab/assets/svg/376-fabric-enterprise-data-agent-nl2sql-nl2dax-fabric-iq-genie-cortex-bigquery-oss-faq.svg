@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg376" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab376" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg376)"/>
+  <text x="36" y="42" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #376 · ROUND 368 (R368=16×23!) · HISTORIC 256=2⁸=16²=4⁴ FAQS (512=2⁹=8³ CUBE DOCS!), PRIME 1,063/1,064, PALINDROME 262ND SIM &amp; T_32=528 TESTS!</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Enterprise Natural Language Data Agent: Fabric Data Agent + Microsoft IQ vs. Databricks Genie vs. Snowflake Cortex vs. OSS</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">Prime 1,063/1,064 (99.91%!) at 71.6ms | Palindrome 262nd Sim 67.55ms | 256=2⁸ FAQs = 512=2⁹=8³ Docs! | -$1,026,200/mo Saved (47.9x) | 528=T_32 Tests</text>
+
+  <!-- Left Box: Microsoft Fabric Data Agent + Microsoft IQ Hub -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab376)"/>
+  <text x="56" y="145" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Fabric Data Agent + Microsoft IQ Hub (Round-Hundred $21,900/mo)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Multi-Modal NL2DAX + NL2SQL + NL2KQL + NL2GQL Router (12ms)</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Routes Palindrome 2,420K (2.42M) EPS queries across TMDL, Warehouse, KQL &amp; 8-Hop GQL</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Work IQ cuts prompt token bloat by -80% while flagging 1,475=25×59 semantic waves in 4ms</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Certified Power BI TMDL + Fabric IQ 8-Hop Ontology Grounding (10ms)</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eliminates raw-SQL join hallucinations by binding agents to certified DAX measures &amp; GQL edges</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lifts self-service BI accuracy &amp; executive decision velocity by Palindrome +87.8% (+$218.0M/yr!)</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 1.52 Billion (1,520M) Schema, Glossary &amp; Policy Vectors ($6,980/mo)</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Saves $177,820/mo vs. $184,800/mo (Exact 13.50 TB RAM!) pure in-memory vector clusters</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Foundry IQ boosts unstructured document + structured KPI hybrid relevance by +36%</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. HISTORIC 256=2⁸=16² FAQS (512=2⁹=8³ DOCS!) &amp; EXACT +$46.00M PROTECTED!</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Agent 365 blocks 1,035 uncertified SQL joins, OBO RLS bypasses &amp; cartesian bombs (Exact +$46.00M!)</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 52,200 business users, analysts &amp; builders (43,920 $0 viewers on F64!)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Grounded Answer | -$1,026,200/mo Saved (-97.9% · 47.9x!) | $135.40M SLA</text>
+  <text x="72" y="524" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• PRIME 1,063/1,064 | PALINDROME 262ND SIM 67.55MS | 512=8³ DOCS | 528=T_32 TESTS!</text>
+
+  <!-- Right Box: Stitched DIY Text-to-SQL + 13.50 TB DRAM Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched DIY Text-to-SQL / Semantic Sync / DRAM Stack ($1,048,100/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Semantic Sync, Cube/AtScale Middleware &amp; Graph Tax ($415,600/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Maintaining duplicate YAML/LookML semantic definitions + Neptune burns $415.6K/mo</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• DIY LangChain Text-to-SQL agents hit &lt;55% accuracy on 200+ table enterprise schemas</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Unbounded LLM SQL Scan &amp; Token Bloat Compute Tax ($236,880/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Hallucinated cross-joins trigger full-table warehouse scans &amp; 5x prompt token burn</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• BI dashboards and AI chatbots return conflicting numbers for the same revenue question</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. Exact 13.50 TB In-Memory HNSW Vector Cluster Tax ($184,800/mo)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Holding 1.52B schema cards, few-shot SQL examples &amp; docs in RAM costs 26.5x SSD</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Shared service-principal connections bypass caller Entra ID row/column permissions</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Per-User Conversational BI &amp; Viewer Seat Tax ($210,820/mo)</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Licensing 43,920 business viewers across 52,200 users costs $210,820/mo ($2.53M/yr)</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Total Competitor Cost: $1,048,100/mo ($12.58M/yr) vs. Fabric $21,900/mo</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Net Savings with Microsoft Fabric: -$1,026,200/mo (-97.9% · 47.9x Advantage!)</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• DL-1513..1516 Verified | 71.6ms Route | 262nd Sim 67.55ms | 512=8³ Docs | 528 Tests!</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Data Agent Golden Rule (R368 · Scenario NK): Ground natural-language Q&amp;A on Power BI TMDL &amp; Fabric IQ Ontology.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Unify NL2DAX/SQL/KQL/GQL, Work IQ (-80% tokens) &amp; 1.52B SSD DiskANN ($6,980/mo) to reach 256=2⁸ FAQs (512=8³ Docs!).</text>
+</svg>
