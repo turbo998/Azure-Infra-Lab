@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg374" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab374" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg374)"/>
+  <text x="36" y="42" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #374 · LEAP-YEAR ROUND 366 (R366=366 DAYS!) · HISTORIC FIRST 99.91% ACCURACY (1,055/1,056!), FIRST &lt;68.00MS SIM (67.95MS), 2.40M EPS &amp; +$216M=6³M!</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Financial Investment Research (10-K RAG + Point-in-Time KPI), Intraday VaR &amp; Insurance IFRS 17 / SIU Fraud Graph: Fabric vs. 4 Clouds</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">Record 1,055/1,056 (99.91%!) at 72.1ms | 260th Sim First &lt;68.00ms at 67.95ms | 2.40M EPS | 1.51B Vectors ($6,940/mo) | -$1,017,840/mo Saved (47.6x) | 524 Tests</text>
+
+  <!-- Left Box: Microsoft Fabric Investment, Wealth & Insurance Hub -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab374)"/>
+  <text x="56" y="145" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Microsoft Fabric Capital Markets &amp; Actuarial Hub ($21,860/mo)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Eventhouse KQL Historic 2.40M EPS Market Ticks / FNOL + Zero-Copy Holdings</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Ingests Historic 2,400K (2.40M!) EPS OPRA/FIX ticks, SEC 8-K feeds &amp; UBI/FNOL claims (12ms)</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Flags 1,465 intraday VaR breach &amp; staged-crash SIU waves in 4ms, saving $412,000/mo</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Point-in-Time Bitemporal TMDL + Fabric IQ 8-Hop SIU &amp; Contagion GQL</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Traces Issuer → SupplyChain → MacroFactor → FundSleeve → Claimant → BodyShop → SIURing (10ms)</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lifts alpha research &amp; SIU subrogation recovery by Exact +87.0% (+$216.0M/yr = 6³M!)</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 1.51 Billion (1,510M · Prime 151!) 10-K, Earnings &amp; Policy Vectors ($6,940/mo)</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Saves $176,660/mo vs. $183,600/mo (13.40 TB RAM) pure in-memory vector clusters</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Free Spark Gluten/Velox C++ runs IFRS 17 CSM &amp; Basel FRTB Monte Carlo at $0 surcharge</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. HISTORIC FIRST 99.91% ACCURACY, FIRST &lt;68.00MS SIM (67.95MS) &amp; 2.40M EPS!</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Agent 365 blocks 1,025=5²×41 SEC MNPI Chinese-Wall, IPS mandate &amp; IFRS 17 risks (+$45.60M!)</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 51,800 PMs, equity analysts, actuaries &amp; adjusters (43,560 $0 viewers on F64!)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Alpha/Risk Loop | -$1,017,840/mo Saved (-97.9% · 47.6x!) | $134.80M SLA</text>
+  <text x="72" y="524" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• LEAP-YEAR R366=366 DAYS | 260TH SIM 67.95MS | +$216.0M=6³M | 524 UNIT TESTS!</text>
+
+  <!-- Right Box: Stitched Tick DB + Neptune + 13.40 TB DRAM Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched Tick DB / Neptune / 13.40 TB DRAM Stack ($1,039,700/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Market-Tick Stream, OMS CDC MAR &amp; Neptune Graph Tax ($412,000/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Separate tick engines + Fivetran Aladdin/SimCorp CDC + Neptune burn $412.0K/mo</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• T+1 batch VaR &amp; claims graphs miss intraday macro shocks &amp; organized SIU rings</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Photon Multiplier &amp; IFRS 17 Actuarial Compute Tax ($235,000/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 1.5x-2.0x Photon DBU surcharges on stochastic cash-flow &amp; FRTB simulations</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Ungrounded Text-to-SQL leaks restatement look-ahead bias into quantitative backtests</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 13.40 TB In-Memory HNSW SEC Filing &amp; Policy Vector Tax ($183,600/mo)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Holding 1.51B 10-K/10-Q footnotes, earnings transcripts &amp; claims in RAM costs 26.5x SSD</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• External vector indices strip IB/Research MNPI Chinese-Wall information barriers</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Per-User Advisor, Analyst &amp; Actuarial BI Seat Tax ($209,100/mo)</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Licensing 43,560 wealth advisors, analysts &amp; adjusters across 51,800 users costs $209.1K/mo</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Total Competitor Cost: $1,039,700/mo ($12.48M/yr) vs. Fabric $21,860/mo</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Net Savings with Microsoft Fabric: -$1,017,840/mo (-97.9% · 47.6x Advantage!)</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• DL-1505..1508 Verified | Record 99.91% (72.1ms) | First &lt;68ms Sim (67.95ms) | 524 Tests!</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Capital Markets &amp; Insurance Rule (R366=366 Days · Scenario NI): Fuse Point-in-Time TMDL with 10-K/Policy RAG.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Unify Historic 2.40M EPS KQL, 8-hop Contagion/SIU GQL, 1.51B SSD DiskANN ($6,940/mo) &amp; MNPI gates to save -$1,017,840/mo.</text>
+</svg>

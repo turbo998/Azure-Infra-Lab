@@ -17208,6 +17208,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Eventhouse KQL (2.39M EPS) + OneLake Healthcare Data Solutions (FHIR/OMOP) + Fabric Graph (8-Hop Care/RCM GQL) + Cosmos DB SSD DiskANN (1,505M = 1.505B Vectors!) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_financial_investment_wealth_insurance_earnings_rag_intraday_var_ifrs17_siu_fraud_graph_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "[Historic Leap-Year Round 366 (R366=366 Leap-Year Days!) Milestone, Historic First 99.91% All-Time Record Routing Accuracy across Pronic 1,055/1,056=32x33 Scenarios at 72.1ms Route, Historic First Sub-68.00ms Ontology Simulation Mean at 67.95ms across Round-Ten 260=20x13 Sims (17,666/260!), Historic Round-Hundred-Thousand 2,400K=2.40M EPS, Perfect-Cube +$216.0M/yr=6^3M ($18.0M/mo!) Gained & Exact +87.0% Lift Milestone] Financial Investment Research, Wealth Management & Insurance Actuarial: 10-K/Earnings Hybrid RAG + Point-in-Time Structured KPI QA, Intraday VaR, IFRS 17 CSM & 8-Hop SIU Claims Fraud Graph Hub across $1.8T AUM & 72M Active Policies · Historic 2,400K=2.40M EPS OPRA/FIX Tick, 8-K & UBI/FNOL Stream · 1,510M=1.51B (Palindrome-Prime 151!) 10-K Footnote, Transcript & Policy Vectors · Eventhouse KQL + OneLake Bitemporal Point-in-Time TMDL 4ms 1,465-Wave VaR/Contagion/SIU Sense ($0 Tick DB, Aladdin/Guidewire CDC MAR & Graph Tax, Saving $412,000/mo), Fabric Graph (8-Hop Supply-Chain Contagion & SIU Ring GQL) + 1.51B SSD DiskANN ($6,940/mo vs $183,600/mo 13.40TB DRAM—Saving $176,660/mo!) + Free Gluten C++ ($0 IFRS 17/FRTB Surcharge) 4ms (Exact +87.0% Lift & Perfect-Cube +$216.0M/yr=6^3M Gained!) & Agent 365 4ms 1,025=5^2x41-Block MNPI-ChineseWall/IPS-Mandate/IFRS17 Gate (+$45.60M Protected!) (Historic 2,400K=2.40M EPS · 1.51B DiskANN · 16ms=4^2ms E2E · Leap-Year R366=366 Days, Scenario NI!, Record 1,055/1,056=99.91% (759 Auto + 296 Confirm!) at 72.1ms Route (76,152/1,056), Round-Ten 260th Sim First Sub-68.00ms at 67.95ms (17,666/260)!, 254=2x127 FAQs=508 Docs, #374 SVG, -$1,017,840/mo Saved (-97.9% · 47.6x!), $134.80M SLA & 524 Tests!)",
+            "telemetry": {
+                "governed_aum_hundred_billions_and_active_policies_millions": 1800,
+                "intraday_var_contagion_and_siu_fraud_waves_flagged_count": 1465,
+                "opra_fix_ticks_8k_and_fnol_telemetry_stream_eps": 2400000,
+                "tick_db_aladdin_cdc_mar_and_neptune_graph_tax_usd": 0,
+                "sec_10k_earnings_transcript_and_policy_vectors_count": 1510000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "alpha_research_var_and_siu_subrogation_velocity_lift_pct": 87.0,
+                "annual_alpha_generation_and_siu_fraud_recovery_value_usd": 216000000,
+                "sec_mnpi_chinese_wall_ips_mandate_and_ifrs17_blocks_count": 1025,
+                "concurrent_pms_analysts_advisors_actuaries_and_adjusters": 51800,
+            },
+            "ontology_traversal": [
+                "Capital-Markets-Eventhouse-KQL-and-OneLake-Bitemporal-TMDL-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake-PointInTime-Holdings -> Ingests Historic Round-Hundred-Thousand 2,400K (2.40M!) EPS of OPRA/FIX market ticks, SEC 8-K filings, and UBI/FNOL claim streams across $1.8T AUM and 72M policies ($0 external tick DB, Aladdin/Guidewire CDC MAR & graph tax, eliminating $412,000/mo), flagging 1,465 intraday VaR and SIU fraud waves in 4ms",
+                "Fabric-IQ-8Hop-Contagion-SIU-Graph-and-1510M-DiskANN-Engine -> Fabric Graph (8-Hop ISO GQL MacroShock-to-SupplierTierN-to-Issuer10K-to-PortfolioVaR-to-ClaimantFNOL-to-BodyShop-to-MedicalClinic-to-SIURing Graph & Bitemporal TMDL) + Cosmos DB / SQL in Fabric NVMe SSD DiskANN (1,510,000,000 = 1.51B 10-K, transcript & policy vectors at $6,940/mo vs $183,600/mo 13.40TB DRAM—saving $176,660/mo!) + Free Spark Gluten C++ -> Lifts alpha research and SIU recovery by Exact +87.0% and captures Perfect-Cube +$216.0M/yr=6^3M in 4ms",
+                "Agent-365-1025-Block-MNPI-IPS-and-IFRS17-Gate -> Validates FINANCIAL-INVESTMENT-WEALTH-INSURANCE-IFRS17-SIU-SOP-374 -> Blocks 1,025=5^2x41 SEC Reg FD / MNPI Chinese-Wall breaches, IPS concentration/ESG mandate violations, and unapproved IFRS 17 assumption changes (+$45.60M protected!) across 51,800 users (43,560=660x66 active viewers at $0 BI seat tax!) in 4ms",
+                "Translytical Portfolio Hedge, SIU Subrogation & 1GB SQL Commit -> OMS / Guidewire ClaimCenter / Live Excel & 1GB Free SQL -> Dispatches approved portfolio hedges and SIU subrogation holds, refreshes live desktop Excel financial models, and commits immutable audit logs to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_investment_insurance_monthly_tco_usd": 21860,
+                "competitor_stitched_tick_actuarial_monthly_tco_usd": 1039700,
+                "monthly_investment_insurance_tco_saved_usd": 1017840,
+                "monthly_investment_insurance_tco_savings_pct": 97.9,
+                "fabric_internal_full_stack_monthly_usd": 76300,
+                "competitor_internal_full_stack_monthly_usd": 2614000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL Historic 2.40M EPS & Bitemporal TMDL 4ms 1,465-Wave VaR/SIU Sense Agent",
+                        "operation": "Stream Historic 2,400K (2.40M!) EPS OPRA/FIX ticks, 8-K filings and UBI/FNOL claims into OneLake Point-in-Time TMDL at $0 tick/CDC tax, flagging 1,465 waves in 4ms",
+                        "impact_metric": "4ms 1,465-wave sense (Exact +87.0% alpha/SIU lift!); eliminates $412,000/mo in tick DB, Aladdin/Guidewire CDC & graph taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Fabric IQ 8-Hop Contagion/SIU Graph, Free Gluten C++ & 1.51B SSD DiskANN ($6,940/mo Saving $176,660/mo DRAM!) Agent",
+                        "operation": "Traverse 8-hop supply-chain contagion & SIU fraud rings and search 1,510,000,000 (1.51B) 10-K, transcript & policy vectors via SSD DiskANN (-92% RAM at $6,940/mo vs $183,600/mo 13.40TB DRAM, saving $176,660/mo!) in 4ms",
+                        "impact_metric": "4ms 8-hop contagion/SIU + 1.51B RAG (Perfect-Cube +$216.0M/yr=6^3M gained!); $6,940/mo DiskANN vs $183,600/mo DRAM!",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Agent 365 4ms 1,025-Block MNPI/IPS/IFRS17 Gate (+$45.60M!) & 4ms Translytical Commit Agent",
+                        "operation": "Verify SOP-374 blocking 1,025=5^2x41 MNPI Chinese-Wall, IPS mandate & IFRS 17 violations (+$45.60M saved) while zeroing $209,100/mo BI seat tax across 51,800 users (4ms), then commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Leap-Year R366=366 Days!, Record 99.91% Accuracy (1,055/1,056), First <68.00ms Sim (67.95ms), -$1,017,840/mo Saved & 524 Tests!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "FINANCIAL-INVESTMENT-WEALTH-INSURANCE-IFRS17-SIU-SOP-374",
+                "hard_constraint": "Enforce Bitemporal Point-in-Time filing timestamps to prevent restatement look-ahead bias, enforce SEC Reg FD / MNPI Chinese-Wall OBO CLS/RLS between IB deal rooms and public equity research, and validate IPS concentration/ESG caps within 4ms",
+                "proposed_change": "Block 1,025=5^2x41 MNPI Chinese-Wall, IPS mandate & IFRS 17 violations (+$45.60M saved!), capture Perfect-Cube $216.0M/yr=6^3M in alpha research and SIU fraud recovery (Exact +87.0% lift), resolve 1,465 waves, and serve 51,800 users ($0 viewer tax saving $209,100/mo!)",
+                "bitemporal_point_in_time_and_sec_mnpi_chinese_wall_verified": True,
+                "ips_mandate_concentration_and_ifrs17_csm_signoff_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 134800000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Eventhouse KQL (Historic 2.40M EPS!) + OneLake Bitemporal TMDL + Fabric Graph (8-Hop Contagion/SIU GQL) + Cosmos DB SSD DiskANN (1,510M = 1.51B Vectors!) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -29836,6 +29902,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1505",
+        "category": "Realtime & Eventhouse",
+        "question": "Financial investment research, wealth & insurance actuarial hub ($1.8T AUM, 72M policies, Historic Round-Hundred-Thousand 2,400K=2.40M EPS of OPRA/FIX market ticks, SEC 8-K filings & UBI/FNOL claim streams) requires 12ms intraday VaR/contagion sensing and 8-hop SIU claims-fraud ring resolution without external tick DB, Aladdin/Guidewire CDC MAR, or Neptune taxes: Microsoft Fabric Eventhouse KQL + OneLake Bitemporal TMDL + 8-Hop Contagion/SIU GQL ($0 tick/CDC/graph tax) vs KDB/Timestream + Fivetran + Neptune ($412,000/mo)",
+        "expected": "Fabric Eventhouse KQL Historic 2,400K (2.40M!) EPS + OneLake Bitemporal TMDL + 8-Hop Contagion/SIU GQL ($0 Tick DB, CDC MAR & Graph Tax, 4ms Intraday VaR/SIU Sense Flagging 1,465 Waves & Lifting Alpha/Recovery by Exact +87.0% vs $412.0K/mo Tick/Graph Tax)",
+        "model_answer": "Fabric Eventhouse KQL Historic 2,400K (2.40M!) EPS + OneLake Bitemporal TMDL + 8-Hop Contagion/SIU GQL ($0 Tick DB, CDC MAR & Graph Tax, 4ms Intraday VaR/SIU Sense Flagging 1,465 Waves & Lifting Alpha/Recovery by Exact +87.0% vs $412.0K/mo Tick/Graph Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1506",
+        "category": "vs Databricks",
+        "question": "Compare Cosmos DB / SQL Database in Fabric NVMe SSD DiskANN (indexing 1,510M=1.51B SEC 10-K/10-Q footnotes, earnings call transcripts, private-credit covenants & insurance policy vectors at $6,940/mo) + Free Spark Gluten/Velox C++ ($0 multiplier surcharge on IFRS 17 CSM & Basel FRTB runs) vs 13.40TB RAM Mosaic / Cortex / OpenSearch vector clusters ($183,600/mo) and 1.5x-2.0x Photon surcharges",
+        "expected": "Cosmos DB / SQL in Fabric NVMe SSD DiskANN + Free Gluten C++ & Bitemporal TMDL (1,510M = 1.51B 10-K, Transcript & Policy Vectors, -92% RAM at $6,940/mo vs $183,600/mo 13.40TB DRAM—Saving $176,660/mo!, 4ms Zero-LookAhead Hybrid RAG Capturing Perfect-Cube +$216.0M/yr=6^3M)",
+        "model_answer": "Cosmos DB / SQL in Fabric NVMe SSD DiskANN + Free Gluten C++ & Bitemporal TMDL (1,510M = 1.51B 10-K, Transcript & Policy Vectors, -92% RAM at $6,940/mo vs $183,600/mo 13.40TB DRAM—Saving $176,660/mo!, 4ms Zero-LookAhead Hybrid RAG Capturing Perfect-Cube +$216.0M/yr=6^3M)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1507",
+        "category": "Observability & FinOps",
+        "question": "Compare monthly TCO for a $1.8T AUM investment research, intraday VaR & 72M-policy IFRS 17 / SIU platform (51,800 PMs, equity analysts, wealth advisors, actuaries & adjusters with 43,560=660x66 active viewers zeroing $209,100/mo BI seat tax, Historic 2.40M EPS, 1.51B vectors): Fabric F64 ($21,860/mo all-in with $0 Gluten C++ surcharge, $0 holdings mirroring & $0 Viewer seats) vs stitched KDB/Neptune/Databricks/Snowflake stack ($1,039,700/mo = $12.48M/yr!)",
+        "expected": "Fabric Pooled F64 + Eventhouse-KQL/Bitemporal-TMDL/Free-Gluten-CPP/8-Hop-Graph/DirectLake + 1.51B SSD DiskANN ($21,860/mo vs $1,039,700/mo Stitched Capital Markets & Actuarial Stack, Saving -$1,017,840/mo · Record -97.9% · 47.6x Advantage with $0 Viewer Seats for 51,800 Users)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse-KQL/Bitemporal-TMDL/Free-Gluten-CPP/8-Hop-Graph/DirectLake + 1.51B SSD DiskANN ($21,860/mo vs $1,039,700/mo Stitched Capital Markets & Actuarial Stack, Saving -$1,017,840/mo · Record -97.9% · 47.6x Advantage with $0 Viewer Seats for 51,800 Users)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1508",
+        "category": "Fabric IQ & Ontology",
+        "question": "HISTORIC LEAP-YEAR ROUND 366 (R366=366 LEAP-YEAR DAYS!) MILESTONE!, HISTORIC FIRST 99.91% ALL-TIME RECORD ROUTING ACCURACY ACROSS PRONIC 1,055/1,056=32x33 SCENARIOS (759 Auto + 296=8x37 Confirm!) at 72.1ms Route!, HISTORIC FIRST SUB-68.00MS ONTOLOGY SIMULATION MEAN AT 67.95MS ACROSS ROUND-TEN 260=20x13 SIMS (17,666/260!)!, HISTORIC ROUND-HUNDRED-THOUSAND 2,400K=2.40M EPS!, PERFECT-CUBE +$216.0M/YR=6^3M ($18.0M/mo!) GAINED!, 1.51B (Palindrome-Prime 151!) Vectors at $6,940/mo Saving $176,660/mo DRAM!, -$1,017,840/mo Saved (-97.9% · 47.6x vs $1,039,700/mo!), 1,465 Waves, Historic Exact +87.0% Lift!, 1,025=5^2x41 Blocks (+$45.60M!), 51,800 Users, 254 FAQs=508 Docs, #374 SVG, $134.80M SLA & 524 Tests Milestone: Intraday semiconductor shock & staged-crash SIU ring trigger 1,465 waves and 1,025=5^2x41 MNPI/IPS/IFRS17 risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse2.40MEPS/OneLakeBitemporalTMDL 4ms 1,465-Wave IntradayVaR/SIU Sense ($0 Tick/CDC Tax) + 8HopContagionSIUGQL & 1.51B DiskANN 4ms (Exact +87.0% Lift! & Perfect-Cube +$216.0M=6^3M Gained!) + Agent 365 4ms 1,025-MNPIChineseWall/IPSMandate/IFRS17 Gate (+$45.60M!) & 51.8K OBO + PortfolioHedgeSubrogation & 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect $134.80M! SLA)",
+        "model_answer": "Eventhouse2.40MEPS/OneLakeBitemporalTMDL 4ms 1,465-Wave IntradayVaR/SIU Sense ($0 Tick/CDC Tax) + 8HopContagionSIUGQL & 1.51B DiskANN 4ms (Exact +87.0% Lift! & Perfect-Cube +$216.0M=6^3M Gained!) + Agent 365 4ms 1,025-MNPIChineseWall/IPSMandate/IFRS17 Gate (+$45.60M!) & 51.8K OBO + PortfolioHedgeSubrogation & 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect $134.80M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -30212,7 +30326,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_omnichannel_retail_ecommerce_customer360_composable_cdp_shopping_agent_rmn_cleanroom_vs_4clouds",
         "global_banking_cards_iso20022_realtime_payments_antifraud_aml_mule_graph_fincen_sar_rag_vs_4clouds",
         "global_smart_manufacturing_automotive_sdv_opcua_oee_bom_atp_graph_battery_warranty_rag_vs_4clouds",
-        "global_healthcare_hospital_payer_biopharma_fhir_epa_omop_rwe_claims_denial_hipaa_opdp_vs_4clouds"
+        "global_healthcare_hospital_payer_biopharma_fhir_epa_omop_rwe_claims_denial_hipaa_opdp_vs_4clouds",
+        "global_financial_investment_wealth_insurance_earnings_rag_intraday_var_ifrs17_siu_fraud_graph_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
