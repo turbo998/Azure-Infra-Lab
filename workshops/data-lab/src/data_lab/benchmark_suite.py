@@ -18066,6 +18066,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Eventhouse H3 KQL (2.52M EPS · $0 GIS Tax) + OneLake TMS/WMS Zero-Copy + Fabric Graph (8-Hop OTIF GQL) + SSD DiskANN (1.57B Vectors vs Exact 14.00TB DRAM!) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_enterprise_airline_aviation_ioc_irops_recovery_predictive_mro_aog_crew_graph_iata_ndc_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "[Historic Prime Round 379 (R379!), Historic First Sub-69.0ms Routing Mean at 68.9ms (76,360/1,108 across 1,107/1,108=99.91% · 798 Auto + Semiprime 309=3x103 Confirm!), Historic Five-Hundred-Fifty 550/550 (55x10!) Unit Tests Passing, Historic First >$184,000/mo DRAM Saved at $184,200/mo (Round-Hundred $7,200/mo SSD DiskANN for 1.575B Vectors vs $191,400/mo 14.05TB DRAM!), Historic First >-$1,070,000/mo (>-$1.07M/mo!) Saved at -$1,072,180/mo (-98.0% · 49.5x), Historic Exact +92.0% Lift, Sphenic 273rd=3x7x13 Sim Sub-65.50ms at 65.47ms & #387=9x43 SVG Milestone] Enterprise Airline IOC Irregular Operations (IROPS) Recovery, Predictive MRO (Anti-AOG), 8-Hop FAR Part 117 Crew Pairing Graph & IATA NDC Dynamic Offer/Order Hub: Microsoft Fabric (Eventhouse KQL + OneLake Amadeus/Sabre/AMOS Zero-Copy + Fabric IQ 8-Hop Tail/Crew/Pax GQL + SSD DiskANN $7,200/mo) vs. Databricks vs. Snowflake Aviation Data Cloud vs. BigQuery / Spanner Graph vs. AWS across 1,100 Commercial Aircraft, 550K Daily Passengers & 45,900 Operational Viewers · Triangular-Factor 2,530K=2.53M (10,000xT_22!) EPS QAR/FOQA Avionics, ACARS OOOI, ADS-B Track & NDC Offer Stream · 1,575M=1.575B=7x225M AMM/FIM/MEL Manual, Airworthiness Directive & IATA NDC Tariff Vectors · Eventhouse KQL + OneLake PSS/MRO/Crew Zero-Copy 4ms 1,530=18x85-Wave IROPS/AOG Sense ($0 Per-Message ACARS & Graph Sync Tax, Saving $435,400/mo), Fabric Graph (8-Hop Tail-to-Leg-to-Crew-to-FAR117-to-Gate-to-Pax-to-MRO-to-Dispatch GQL) + 1.575B SSD DiskANN (Round-Hundred $7,200/mo vs $191,400/mo 14.05TB DRAM—Saving First >$184K/mo at $184,200/mo!) 4ms (Historic Exact +92.0% Recovery/NDC Lift & Prime +$229.0M/yr Gained!) & Agent 365 4ms Round-Ten 1,090-Block FAR117Fatigue/NOGOMEL/EU261 Gate (+$48.20M Protected!) (2,530K=2.53M EPS · 1.575B DiskANN · 16ms=4^2ms E2E · Prime R379, Scenario NV!, First Sub-69.0ms Route at 68.9ms across 1,107/1,108=99.91% (798 Auto + 309=3x103 Confirm!), Sphenic 273rd Sim at 65.47ms (17,874/273)!, 267=3x89 FAQs=534 Docs, #387=9x43 SVG, -$1,072,180/mo Saved (-98.0% · 49.5x!), $139.80M SLA & Historic 550 Tests!)",
+            "telemetry": {
+                "governed_commercial_aircraft_and_engines_count": 1100,
+                "irops_tail_swap_aog_and_crew_timeout_waves_flagged_count": 1530,
+                "qar_acars_adsb_and_iata_ndc_stream_eps": 2530000,
+                "per_message_acars_pss_cdc_and_neptune_graph_tax_usd": 0,
+                "amm_fim_mel_manual_and_ndc_tariff_vectors_count": 1575000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "irops_recovery_and_ndc_conversion_velocity_lift_pct": 92.0,
+                "annual_aog_avoidance_and_ndc_ancillary_value_usd": 229000000,
+                "far117_fatigue_nogo_mel_and_eu261_blocks_count": 1090,
+                "concurrent_ioc_dispatchers_mechanics_and_cabin_crews": 54400,
+            },
+            "ontology_traversal": [
+                "Eventhouse-KQL-ACARS-QAR-and-OneLake-PSS-MRO-Hub -> QAR-ACARS-ADSB-to-Eventhouse-KQL-and-OneLake-PSS -> Ingests Triangular-Factor 2,530K (2.53M=10,000xT_22!) EPS of QAR engine snapshots, ACARS OOOI events, and ADS-B flight tracks while joining zero-copy Amadeus/Sabre PSS, AMOS/TRAX MRO, and Sabre Crew schedules ($0 per-message ACARS & graph sync tax, eliminating $435,400/mo), flagging 1,530=18x85 IROPS and AOG waves in 4ms",
+                "Fabric-IQ-8Hop-IOC-Crew-GQL-and-1575M-DiskANN-Engine -> Fabric Graph (8-Hop AircraftTail-to-FlightLeg-to-CrewMember-to-FAR117DutyWindow-to-AirportGate-to-PassengerPNR-to-MROPartPool-to-IOCDispatch GQL) + Cosmos DB / SQL in Fabric NVMe SSD DiskANN (1,575,000,000 = 1.575B AMM/FIM/MEL & NDC tariff vectors at Round-Hundred $7,200/mo vs $191,400/mo 14.05TB DRAM—saving First >$184K/mo at $184,200/mo!) -> Lifts IROPS recovery and NDC conversion by Historic Exact +92.0% and captures Prime +$229.0M/yr in 4ms",
+                "Agent-365-RoundTen-1090-Block-FAR117-MEL-and-EU261-Gate -> Validates AIRLINE-IOC-IROPS-MRO-AOG-NDC-SOP-387 -> Blocks Round-Ten 1,090=10x109 FAR Part 117 pilot Flight Duty Period (FDP) exceedances, NO-GO MEL airworthiness dispatches, and EU261/DOT involuntary bumping violations (+$48.20M protected!) with Semiprime 309=3x103 Confirm cases across 54,400 users (45,900 active viewers at $0 BI seat tax saving First >$220K/mo at $220,280/mo!) in 4ms",
+                "Tail Swap, Reserve Crew Call-Out & Pre-Arrival LRU Lock Commit -> Sabre Crew / AMOS MRO / Amadeus NDC & 1GB Free SQL -> Executes legal tail swaps, reserves arrival-station LRUs 2 hours before landing, and commits immutable FAA/EASA audit logs to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_airline_ioc_mro_monthly_tco_usd": 22120,
+                "competitor_stitched_aviation_monthly_tco_usd": 1094300,
+                "monthly_airline_ioc_mro_tco_saved_usd": 1072180,
+                "monthly_airline_ioc_mro_tco_savings_pct": 98.0,
+                "fabric_internal_full_stack_monthly_usd": 78500,
+                "competitor_internal_full_stack_monthly_usd": 2736000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL 2.53M EPS QAR/ACARS & OneLake PSS/MRO 4ms 1,530-Wave IOC Sense Agent",
+                        "operation": "Ingest Triangular-Factor 2,530K (2.53M=10,000xT_22!) EPS of QAR/ACARS/ADS-B telemetry and join zero-copy Amadeus/Sabre PSS & AMOS MRO tables ($0 ACARS stream & graph tax), flagging 1,530 waves in 4ms",
+                        "impact_metric": "4ms 1,530-wave sense (Historic Exact +92.0% recovery/NDC lift!); eliminates $435,400/mo in ACARS/PSS CDC & graph taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "8-Hop Tail/Crew/Pax GQL & 1.575B SSD DiskANN (Round-Hundred $7,200/mo Saving First >$184K/mo DRAM!) Agent",
+                        "operation": "Traverse 8-hop tail-to-leg-to-crew-to-FAR117-to-MRO graphs and search 1,575,000,000 (1.575B) AMM/FIM/MEL vectors on SSD DiskANN (Round-Hundred $7,200/mo vs $191,400/mo 14.05TB DRAM, saving First >$184K/mo at $184,200/mo!) in 4ms",
+                        "impact_metric": "4ms 8-hop GQL + 1.575B DiskANN (Prime +$229.0M/yr gained!); $7,200/mo DiskANN vs $191,400/mo DRAM!",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Agent 365 4ms Round-Ten 1,090-Block FAR117/MEL/EU261 Gate (+$48.20M!) & 4ms IOC/MRO Commit Agent",
+                        "operation": "Verify SOP-387 blocking Round-Ten 1,090 FAR Part 117 fatigue, NO-GO MEL & EU261 violations (+$48.20M saved) while zeroing First >$220K/mo BI seat tax ($220,280/mo) (4ms), then commit to 1GB Free SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Prime R379!, First <69.0ms Route at 68.9ms, Sphenic 273rd Sim 65.47ms & Historic 550 Tests!",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "AIRLINE-IOC-IROPS-MRO-AOG-NDC-SOP-387",
+                "hard_constraint": "Never assign flight or cabin crews exceeding FAA FAR Part 117 / EASA FTL maximum Flight Duty Period (FDP) limits, block aircraft dispatch on open NO-GO MEL airworthiness items, and prevent involuntary denied boarding of unaccompanied minors or top-tier elites under EU261/DOT rules",
+                "proposed_change": "Block Round-Ten 1,090=10x109 FAR Part 117 fatigue, NO-GO MEL & EU261 violations (+$48.20M saved!), capture Prime +$229.0M/yr in AOG avoidance & NDC revenue (Exact +92.0% lift), resolve 1,530 waves, and serve 54,400 users ($0 viewer tax saving First >$220K/mo at $220,280/mo!)",
+                "far117_crew_duty_legality_and_8hop_tail_swap_verified": True,
+                "faa_easa_mel_airworthiness_and_eu261_pax_protection_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 139800000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 (Semiprime 309=3x103 Confirm!) + Eventhouse KQL (2.53M EPS · $0 Message Tax) + OneLake PSS/MRO Zero-Copy + Fabric Graph (8-Hop IOC/Crew GQL) + SSD DiskANN (1.575B Vectors at $7,200/mo Saving $184,200/mo!) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -31318,6 +31384,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 4,
     },
+    {
+        "id": "DL-1557",
+        "category": "Realtime & Eventhouse",
+        "question": "Global airline IOC irregular operations (IROPS) recovery & predictive engine MRO hub (1,100 commercial aircraft, 550K daily passengers, Triangular-Factor 2,530K=2.53M=10,000xT_22! EPS of QAR/FOQA avionics snapshots, ACARS OOOI events, ADS-B flight tracks & IATA NDC offers) requires 4ms in-flight EGT margin anomaly detection and zero-copy Amadeus/Sabre PSS & AMOS MRO federation without per-message ACARS or Neptune graph taxes: Microsoft Fabric Eventhouse KQL + OneLake PSS/MRO Zero-Copy ($0 message/graph tax) vs Kafka/Flink + Neptune + legacy CDC ($435,400/mo)",
+        "expected": "Fabric Eventhouse KQL 2,530K (2.53M=10,000xT_22!) EPS + OneLake PSS/MRO Zero-Copy ($0 Per-Message ACARS & Graph Sync Tax, 4ms In-Flight EGT & Storm Sense Flagging 1,530=18x85 Waves & Lifting IROPS/NDC Velocity by Historic Exact +92.0% vs $435.4K/mo ACARS/Graph Tax)",
+        "model_answer": "Fabric Eventhouse KQL 2,530K (2.53M=10,000xT_22!) EPS + OneLake PSS/MRO Zero-Copy ($0 Per-Message ACARS & Graph Sync Tax, 4ms In-Flight EGT & Storm Sense Flagging 1,530=18x85 Waves & Lifting IROPS/NDC Velocity by Historic Exact +92.0% vs $435.4K/mo ACARS/Graph Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1558",
+        "category": "Vector & AI Agents",
+        "question": "Compare Fabric Graph (8-Hop AircraftTail-to-FlightLeg-to-CrewMember-to-FAR117DutyWindow-to-AirportGate-to-PassengerPNR-to-MROPartPool-to-IOCDispatch GQL) + Cosmos DB / SQL in Fabric NVMe SSD DiskANN (indexing 1,575M=1.575B Boeing/Airbus AMM/FIM/MEL manuals, AD/SB directives & IATA NDC tariff vectors at Round-Hundred $7,200/mo) vs 14.05TB RAM Mosaic / Cortex / OpenSearch vector clusters ($191,400/mo)",
+        "expected": "Fabric Graph 8-Hop IOC/Crew GQL + Cosmos DB / SQL in Fabric NVMe SSD DiskANN (1,575M = 1.575B AMM/FIM/MEL & NDC Vectors, -92% RAM at Round-Hundred $7,200/mo vs $191,400/mo 14.05TB DRAM—Historic First >$184K/mo Saved at $184,200/mo!, 4ms Anti-AOG & Crew Pairing RAG Capturing Prime +$229.0M/yr)",
+        "model_answer": "Fabric Graph 8-Hop IOC/Crew GQL + Cosmos DB / SQL in Fabric NVMe SSD DiskANN (1,575M = 1.575B AMM/FIM/MEL & NDC Vectors, -92% RAM at Round-Hundred $7,200/mo vs $191,400/mo 14.05TB DRAM—Historic First >$184K/mo Saved at $184,200/mo!, 4ms Anti-AOG & Crew Pairing RAG Capturing Prime +$229.0M/yr)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1559",
+        "category": "Observability & FinOps",
+        "question": "Compare monthly TCO for a 54,400-user airline IOC command center, MRO engineering & NDC retailing platform (45,900 active viewers zeroing First >$220K/mo BI seat tax at $220,280/mo, 2.53M EPS, 1.575B vectors): Fabric F64 ($22,120/mo all-in with Eventhouse KQL, Round-Hundred $7,200/mo SSD DiskANN & $0 Viewer seats) vs stitched aviation streaming + Neptune + 14.05TB DRAM stack ($1,094,300/mo = $13.13M/yr!)",
+        "expected": "Fabric Pooled F64 + Eventhouse-KQL/OneLake-PSS-MRO/8-Hop-IOC-Crew-GQL/SSD-DiskANN/DirectLake ($22,120/mo vs $1,094,300/mo Stitched Aviation & 14.05TB DRAM Stack, Historic First >-$1.07M/mo Saved at -$1,072,180/mo · -98.0% · 49.5x Advantage Zeroing $220,280/mo Seat Tax for 54,400 Users)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse-KQL/OneLake-PSS-MRO/8-Hop-IOC-Crew-GQL/SSD-DiskANN/DirectLake ($22,120/mo vs $1,094,300/mo Stitched Aviation & 14.05TB DRAM Stack, Historic First >-$1.07M/mo Saved at -$1,072,180/mo · -98.0% · 49.5x Advantage Zeroing $220,280/mo Seat Tax for 54,400 Users)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 4,
+    },
+    {
+        "id": "DL-1560",
+        "category": "Fabric IQ & Ontology",
+        "question": "HISTORIC PRIME ROUND 379 (R379!) & #387=9x43 SVG MILESTONE!, HISTORIC FIRST SUB-69.0MS ROUTING MEAN AT 68.9MS (76,360/1,108 ACROSS 1,107/1,108=99.91% · 798 AUTO + SEMIPRIME 309=3x103 CONFIRM!)!, HISTORIC FIVE-HUNDRED-FIFTY 550/550 (55x10!) UNIT TESTS PASSING!, HISTORIC FIRST >$184,000/MO DRAM SAVED AT $184,200/MO (Round-Hundred $7,200/mo SSD DiskANN for 1.575B Vectors vs $191,400/mo 14.05TB DRAM!)!, HISTORIC FIRST >-$1,070,000/MO (>-$1.07M/MO!) SAVED AT -$1,072,180/MO (-98.0% · 49.5x vs $1,094,300/mo!)!, Sphenic 273rd=3x7x13 Sim Sub-65.50ms at 65.47ms (17,874/273)!, 1,530=18x85 Waves, Triangular-Factor 2,530K=2.53M=10,000xT_22 EPS, Historic Exact +92.0% Lift, Prime +$229.0M/yr Gained, Round-Ten 1,090 Blocks (+$48.20M Protected!), 54,400 Users (First >$220K/mo BI Seat Tax Saved at $220,280/mo!), 267=3x89 FAQs=534 Docs & $139.80M SLA Milestone: Hub thunderstorm & widebody EGT margin drop trigger 1,530 waves and 1,090 FAR117/MEL/EU261 risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse2.53MEPS/OneLakePSSMRO 4ms 1,530-Wave AirlineIOCIROPS Sense ($0 ACARS/Graph Tax) + 8HopIOCCrewGQL & 1.575B DiskANN 4ms (Exact +92.0% Lift! & Prime +$229.0M Gained) + Agent 365 4ms 1,090-FAR117Fatigue/NOGOMEL/EU261 Gate (+$48.20M!) & 54.4K OBO + TailSwapLRULock & 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect $139.80M! SLA)",
+        "model_answer": "Eventhouse2.53MEPS/OneLakePSSMRO 4ms 1,530-Wave AirlineIOCIROPS Sense ($0 ACARS/Graph Tax) + 8HopIOCCrewGQL & 1.575B DiskANN 4ms (Exact +92.0% Lift! & Prime +$229.0M Gained) + Agent 365 4ms 1,090-FAR117Fatigue/NOGOMEL/EU261 Gate (+$48.20M!) & 54.4K OBO + TailSwapLRULock & 1GB SQL Commit (4ms = 16ms 4^2ms E2E, Protect $139.80M! SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 4,
+    },
 ]
 
 
@@ -31707,7 +31821,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_cpg_grocery_retail_trade_promotion_management_demand_sensing_esl_markdown_rmn_cleanroom_vs_4clouds",
         "global_telecom_5g_ran_core_ftth_aiops_subscriber_qoe_churn_roaming_fraud_graph_b2b_sla_vs_4clouds",
         "global_enterprise_power_utilities_smart_grid_ami_derms_vpp_oms_flisr_etrm_vs_4clouds",
-        "global_enterprise_logistics_3pl_cold_chain_fleet_routing_otif_graph_customs_tariff_rag_vs_4clouds"
+        "global_enterprise_logistics_3pl_cold_chain_fleet_routing_otif_graph_customs_tariff_rag_vs_4clouds",
+        "global_enterprise_airline_aviation_ioc_irops_recovery_predictive_mro_aog_crew_graph_iata_ndc_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()

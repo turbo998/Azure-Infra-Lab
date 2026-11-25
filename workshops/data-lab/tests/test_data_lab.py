@@ -3509,6 +3509,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 114400000)
 
 
+    def test_global_enterprise_airline_aviation_ioc_irops_recovery_predictive_mro_aog_crew_graph_iata_ndc_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_enterprise_airline_aviation_ioc_irops_recovery_predictive_mro_aog_crew_graph_iata_ndc_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["governed_commercial_aircraft_and_engines_count"], 1100)
+        self.assertEqual(sim["telemetry"]["irops_tail_swap_aog_and_crew_timeout_waves_flagged_count"], 1530)
+        self.assertEqual(sim["telemetry"]["qar_acars_adsb_and_iata_ndc_stream_eps"], 2530000)
+        self.assertEqual(sim["telemetry"]["amm_fim_mel_manual_and_ndc_tariff_vectors_count"], 1575000000)
+        self.assertEqual(sim["telemetry"]["per_message_acars_pss_cdc_and_neptune_graph_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["irops_recovery_and_ndc_conversion_velocity_lift_pct"], 92.0)
+        self.assertEqual(sim["telemetry"]["far117_fatigue_nogo_mel_and_eu261_blocks_count"], 1090)
+        self.assertEqual(sim["multi_agent_plan"]["fabric_airline_ioc_mro_monthly_tco_usd"], 22120)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_airline_ioc_mro_tco_saved_usd"], 1072180)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_airline_ioc_mro_tco_savings_pct"], 98.0)
+        self.assertTrue(sim["foundry_iq_guardrail"]["far117_crew_duty_legality_and_8hop_tail_swap_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["faa_easa_mel_airworthiness_and_eu261_pax_protection_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 139800000)
+
+
     def test_global_enterprise_logistics_3pl_cold_chain_fleet_routing_otif_graph_customs_tariff_rag_vs_4clouds_ontology_simulation(self) -> None:
         sim = simulate_ontology_incident("global_enterprise_logistics_3pl_cold_chain_fleet_routing_otif_graph_customs_tariff_rag_vs_4clouds")
         self.assertEqual(sim["telemetry"]["governed_fleet_trucks_and_automated_dcs_count"], 120850)
@@ -4695,14 +4715,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
 
     def test_scenario_matrix_498_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 1104)
-        self.assertEqual(matrix["passed_scenarios"], 1103)
+        self.assertEqual(matrix["total_scenarios"], 1108)
+        self.assertEqual(matrix["passed_scenarios"], 1107)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.91, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 69.2)
+        self.assertEqual(matrix["avg_latency_ms"], 68.9)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
+
+
+    def test_enterprise_airline_aviation_ioc_irops_mro_aog_ndc_r379_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-1557", "DL-1558", "DL-1559", "DL-1560"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("Historic Exact +92.0%", by_id["DL-1557"]["expected"])
+        self.assertIn("$184,200/mo!", by_id["DL-1558"]["expected"])
+        self.assertIn("-$1,072,180/mo", by_id["DL-1559"]["expected"])
+        self.assertIn("Protect $139.80M! SLA", by_id["DL-1560"]["expected"])
 
 
     def test_enterprise_logistics_3pl_cold_chain_otif_customs_r378_scenarios(self) -> None:
@@ -7881,11 +7913,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1103)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1104)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 69.2)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 272)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 65.65)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 1107)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 1108)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 68.9)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 273)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 65.47)
 
 
 if __name__ == "__main__":

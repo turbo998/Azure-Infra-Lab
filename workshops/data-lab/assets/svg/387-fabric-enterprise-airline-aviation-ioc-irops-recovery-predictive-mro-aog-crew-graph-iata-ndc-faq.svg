@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" width="1280" height="760" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <linearGradient id="bg387" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="50%" stop-color="#0C172C"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent387" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="cardHdr387" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="760" fill="url(#bg387)"/>
+  <rect x="0" y="0" width="1280" height="6" fill="url(#accent387)"/>
+
+  <!-- Header -->
+  <rect x="24" y="18" width="1232" height="90" rx="12" fill="#0F172A" stroke="#1E3A8A" stroke-width="1.5"/>
+  <rect x="40" y="30" width="236" height="24" rx="12" fill="#065F46" stroke="#10B981" stroke-width="1"/>
+  <text x="158" y="46" fill="#A7F3D0" font-size="11" font-weight="800" text-anchor="middle">PRIME R379 · SCENARIO NV · #387 SVG</text>
+  <text x="290" y="47" fill="#F8FAFC" font-size="17.5" font-weight="800">民航运控（IOC IROPS 延误恢复）、发动机预测性维修（MRO 防 AOG）、8 跳机组排班图谱与 IATA NDC 动态定价选型</text>
+  <text x="40" y="72" fill="#93C5FD" font-size="12.5" font-weight="700">Airline IOC IROPS Recovery, Predictive MRO (Anti-AOG), 8-Hop FAR Part 117 Crew Graph &amp; IATA NDC Offer/Order Selection: Fabric vs. 4 Clouds</text>
+  <text x="40" y="94" fill="#34D399" font-size="11.5" font-weight="700">🏆 路由均值历史首次跌破 &lt;69.0ms 达 68.9ms (1,107/1,108=99.91% · 798 自动 + 309 复核)! · 第 273=3×7×13 项仿真破 &lt;65.50ms 达 65.47ms! · 首次省破 &gt;$184K DRAM ($184,200/月) · 首次净省破 &gt;-$1.07M/月 (-$1,072,180/月 · 49.5×) · 历史性 550 单测!</text>
+
+  <!-- Left Column: Business Pain & 4-Step 16ms=4^2ms Loop -->
+  <rect x="24" y="122" width="400" height="446" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <rect x="24" y="122" width="400" height="36" rx="12" fill="url(#cardHdr387)"/>
+  <text x="40" y="145" fill="#FFFFFF" font-size="13.5" font-weight="800">✈️ 航司 IOC/MRO/NDC 痛点 vs. 16ms (4²ms) 闭环</text>
+
+  <!-- Step 1 -->
+  <rect x="38" y="170" width="372" height="84" rx="8" fill="#1E293B" stroke="#0284C7" stroke-width="1.2"/>
+  <text x="50" y="190" fill="#38BDF8" font-size="12" font-weight="800">① Eventhouse KQL 2.53M EPS 航班/发动机流 + PSS/MRO 零拷贝 (4ms)</text>
+  <text x="50" y="208" fill="#E2E8F0" font-size="11">• 1,100 架客机 × 三角数因子 2,530K (2.53M=10K×T₂₂!) EPS QAR/ACARS/ADS-B</text>
+  <text x="50" y="224" fill="#E2E8F0" font-size="11">• 零拷贝挂载 Amadeus/Sabre PSS、AMOS/TRAX MRO 与 Sabre 机组排班</text>
+  <text x="50" y="240" fill="#34D399" font-size="11" font-weight="700">• 4ms 锁定 1,530=18×85 个雷暴/AOG/超售波次（省 $435,400/月 CDC 与图税）</text>
+
+  <!-- Step 2 -->
+  <rect x="38" y="264" width="372" height="90" rx="8" fill="#1E293B" stroke="#8B5CF6" stroke-width="1.2"/>
+  <text x="50" y="284" fill="#C4B5FD" font-size="12" font-weight="800">② 8 跳飞机/机组/旅客 GQL + 1.575B SSD DiskANN (4ms)</text>
+  <text x="50" y="302" fill="#E2E8F0" font-size="11">• 8 跳 GQL: 执飞尾号→航段→机长/乘务组→FAR117执勤上限→登机口→中转→MRO→签派</text>
+  <text x="50" y="318" fill="#E2E8F0" font-size="11">• 15.75 亿 (1.575B) AMM/FIM 排故手册、MEL 最低设备清单与 NDC 运价规则向量</text>
+  <text x="50" y="334" fill="#34D399" font-size="11" font-weight="700">• 整百 $7,200/月 SSD DiskANN 替代 $191,400/月 14.05TB DRAM（首次省 &gt;$184K!）</text>
+  <text x="50" y="348" fill="#A7F3D0" font-size="10.5" font-weight="700">• 历史性精确 +92.0% 恢复/转化率提升 · 年创收素数 +$229.0M/年!</text>
+
+  <!-- Step 3 -->
+  <rect x="38" y="364" width="372" height="90" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="50" y="384" fill="#FCD34D" font-size="12" font-weight="800">③ Agent 365 整十 1,090 次 FAR 117/MEL/EU261 护栏 (4ms)</text>
+  <text x="50" y="402" fill="#E2E8F0" font-size="11">• 强制执行《AIRLINE-IOC-IROPS-MRO-AOG-NDC-SOP-387》硬门禁：</text>
+  <text x="50" y="418" fill="#E2E8F0" font-size="11">  (1) 严禁超出 FAR Part 117 飞行执勤期(FDP)上限，(2) 拦截 NO-GO MEL 放行</text>
+  <text x="50" y="434" fill="#E2E8F0" font-size="11">  (3) 严禁违规拒载高价值金卡/无成人陪伴儿童触发 EU261/DOT 巨额罚款</text>
+  <text x="50" y="448" fill="#34D399" font-size="11" font-weight="700">• 拦截整十 1,090=10×109 次违规 · 守护 +$48.20M · 309=3×103 项 Confirm</text>
+
+  <!-- Step 4 -->
+  <rect x="38" y="464" width="372" height="90" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="50" y="484" fill="#6EE7B7" font-size="12" font-weight="800">④ 换机/备份机组调配、航材 AOG 急调与 54,400 名员工 ($0 席位税) (4ms)</text>
+  <text x="50" y="502" fill="#E2E8F0" font-size="11">• 1GB Free Fabric SQL 事务回写飞机尾号调换、备份机组唤醒与 NDC 个性化升舱</text>
+  <text x="50" y="518" fill="#E2E8F0" font-size="11">• 赋能 54,400 名签派员/机务/乘务长/收益分析师（45,900 活跃 Viewer $0 席位税）</text>
+  <text x="50" y="534" fill="#34D399" font-size="11" font-weight="700">• 首次省破 &gt;$220K/月 BI 席位税 ($220,280/月!) · 16ms=4²ms 闭环守护 $139.80M SLA</text>
+
+  <!-- Center Column: 8-Hop Airline IOC/MRO/Crew Graph & 5-Cloud Matrix -->
+  <rect x="440" y="122" width="460" height="446" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <rect x="440" y="122" width="460" height="36" rx="12" fill="url(#cardHdr387)"/>
+  <text x="456" y="145" fill="#FFFFFF" font-size="13.5" font-weight="800">🕸️ 8 跳飞机/机组/旅客/航材图谱 &amp; 五云架构横向选型矩阵</text>
+
+  <!-- 8-Hop Graph Visual -->
+  <rect x="454" y="168" width="432" height="114" rx="8" fill="#090D16" stroke="#3B82F6" stroke-width="1"/>
+  <text x="466" y="186" fill="#60A5FA" font-size="11.5" font-weight="800">Fabric Graph 8-Hop IROPS Crew/Tail/MRO GQL ($0 独立图数据库税 · 4ms):</text>
+  <text x="466" y="205" fill="#E2E8F0" font-size="10.8" font-family="Consolas, monospace">[1:AircraftTail]─▶[2:FlightLeg]─▶[3:CockpitCabinCrew]─▶[4:FAR117DutyLimit]</text>
+  <text x="466" y="223" fill="#E2E8F0" font-size="10.8" font-family="Consolas, monospace">  ─▶[5:AirportGate]─▶[6:PaxConnection]─▶[7:MROPartPool]─▶[8:IOCDispatch]</text>
+  <text x="466" y="244" fill="#FCD34D" font-size="11" font-weight="700">⚡ 发动机 EGT 裕度衰减 + 枢纽雷暴：8 跳联合计算飞机旋转、FAR 117 剩余执勤分钟数</text>
+  <text x="466" y="262" fill="#34D399" font-size="11" font-weight="700">✓ 自动匹配同机型热备机 + 备份机组 + MEL 放行条款，避免连环取消与千万美元 AOG 损失</text>
+
+  <!-- 5-Cloud Matrix Table -->
+  <rect x="454" y="292" width="432" height="262" rx="8" fill="#111827" stroke="#374151" stroke-width="1"/>
+  <text x="466" y="312" fill="#93C5FD" font-size="12" font-weight="800">五云民航 IOC 运控、MRO 预测维修与 NDC 平台对比 (650 架客机 · 54,400 用户):</text>
+  <line x1="454" y1="320" x2="886" y2="320" stroke="#374151" stroke-width="1"/>
+  <text x="464" y="336" fill="#9CA3AF" font-size="10.5" font-weight="700">架构维度</text>
+  <text x="588" y="336" fill="#38BDF8" font-size="10.5" font-weight="700">Microsoft Fabric</text>
+  <text x="720" y="336" fill="#F87171" font-size="10.5" font-weight="700">Databricks/Snowflake/GCP/AWS</text>
+  <line x1="454" y1="342" x2="886" y2="342" stroke="#1F2937" stroke-width="1"/>
+
+  <text x="464" y="360" fill="#E5E7EB" font-size="10.5" font-weight="700">QAR/ACARS 流</text>
+  <text x="588" y="360" fill="#34D399" font-size="10.5" font-weight="700">Eventhouse 2.53M EPS ($0税)</text>
+  <text x="720" y="360" fill="#FCA5A5" font-size="10.5">Kafka + Flink/Snowpipe ($435K/月)</text>
+
+  <text x="464" y="382" fill="#E5E7EB" font-size="10.5" font-weight="700">8跳机组/飞机构型</text>
+  <text x="588" y="382" fill="#34D399" font-size="10.5" font-weight="700">原生 ISO GQL 4ms ($0 搬运)</text>
+  <text x="720" y="382" fill="#FCA5A5" font-size="10.5">外挂 Neo4j/Neptune 同步延迟高</text>
+
+  <text x="464" y="404" fill="#E5E7EB" font-size="10.5" font-weight="700">1.575B AMM/MEL</text>
+  <text x="588" y="404" fill="#34D399" font-size="10.5" font-weight="700">$7,200/月 SSD DiskANN</text>
+  <text x="720" y="404" fill="#FCA5A5" font-size="10.5">$191,400/月 (14.05TB DRAM!)</text>
+
+  <text x="464" y="426" fill="#E5E7EB" font-size="10.5" font-weight="700">FAR 117/MEL 护栏</text>
+  <text x="588" y="426" fill="#34D399" font-size="10.5" font-weight="700">Agent 365 4ms 拦截 1,090 次</text>
+  <text x="720" y="426" fill="#FCA5A5" font-size="10.5">缺乏执勤期/适航状态回写联锁</text>
+
+  <text x="464" y="448" fill="#E5E7EB" font-size="10.5" font-weight="700">45,900 运控/机务</text>
+  <text x="588" y="448" fill="#34D399" font-size="10.5" font-weight="700">F64 全免 Viewer ($0 席位税)</text>
+  <text x="720" y="448" fill="#FCA5A5" font-size="10.5">$220,280/月 (&gt;$220K BI 席位税!)</text>
+
+  <text x="464" y="470" fill="#E5E7EB" font-size="10.5" font-weight="700">月度总 TCO</text>
+  <text x="588" y="470" fill="#34D399" font-size="11" font-weight="800">$22,120/月 (省 98.0%!)</text>
+  <text x="720" y="470" fill="#EF4444" font-size="11" font-weight="800">$1,094,300/月 (49.5× 昂贵!)</text>
+
+  <rect x="464" y="486" width="412" height="58" rx="6" fill="#064E3B" stroke="#10B981" stroke-width="1"/>
+  <text x="476" y="505" fill="#A7F3D0" font-size="11" font-weight="800">💡 SA 选型圭臬：机队 &gt;80 架或日客流 &gt;5 万人次时，严禁购买按席位收费的运控看板与</text>
+  <text x="476" y="522" fill="#A7F3D0" font-size="11" font-weight="800">14.05TB 纯内存向量库！Fabric Eventhouse + 8跳 GQL + DiskANN 单月净省 -$1,072,180！</text>
+  <text x="476" y="538" fill="#6EE7B7" font-size="10.5">Provenance: synthetic_scenario_model · DL-1557..1560 · 550/550 unit tests passing</text>
+
+  <!-- Right Column: Historic R379 Milestone Scorecard -->
+  <rect x="916" y="122" width="340" height="446" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <rect x="916" y="122" width="340" height="36" rx="12" fill="url(#cardHdr387)"/>
+  <text x="932" y="145" fill="#FFFFFF" font-size="13.5" font-weight="800">🏆 素数 R379 · Scenario NV 里程碑记分卡</text>
+
+  <rect x="930" y="168" width="312" height="58" rx="8" fill="#172554" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="942" y="186" fill="#93C5FD" font-size="11" font-weight="700">路由均值历史首次跌破 &lt;69.0ms (n = 1,108)</text>
+  <text x="942" y="208" fill="#60A5FA" font-size="19" font-weight="800">1,107 / 1,108 · 68.9 ms!</text>
+  <text x="942" y="221" fill="#34D399" font-size="10.5" font-weight="700">798 自动 + 半素数 309=3×103 复核 · 整十 76,360ms 总和</text>
+
+  <rect x="930" y="234" width="312" height="58" rx="8" fill="#1E1B4B" stroke="#8B5CF6" stroke-width="1.2"/>
+  <text x="942" y="252" fill="#C4B5FD" font-size="11" font-weight="700">第 273=3×7×13 项仿真破 &lt;65.50ms</text>
+  <text x="942" y="274" fill="#A78BFA" font-size="19" font-weight="800">65.47 ms (n = 273!)</text>
+  <text x="942" y="287" fill="#34D399" font-size="10.5" font-weight="700">17,874 / 273 楔形数 · 本轮端到端 16ms = 4²ms</text>
+
+  <rect x="930" y="300" width="312" height="58" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="942" y="318" fill="#A7F3D0" font-size="11" font-weight="700">首次省破 &gt;$184K/月 DRAM (1.575B 向量)</text>
+  <text x="942" y="340" fill="#34D399" font-size="18.5" font-weight="800">省 $184,200/月 ($7,200 SSD!)</text>
+  <text x="942" y="353" fill="#6EE7B7" font-size="10.5" font-weight="700">整百 $7,200/月 DiskANN 替代 $191,400/月 14.05TB DRAM</text>
+
+  <rect x="930" y="366" width="312" height="58" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="942" y="384" fill="#A7F3D0" font-size="11" font-weight="700">首次单月净省突破 &gt;-$1.07M/月 (-98.0% · 49.5×)</text>
+  <text x="942" y="406" fill="#34D399" font-size="18.5" font-weight="800">-$1,072,180/月 ($22,120 All-In)</text>
+  <text x="942" y="419" fill="#6EE7B7" font-size="10.5" font-weight="700">对比竞品 $1,094,300/月 ($13.13M/年 · 49.5× 优势!)</text>
+
+  <rect x="930" y="432" width="312" height="60" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="942" y="450" fill="#FDE68A" font-size="11" font-weight="700">精确 +92.0% 提升、素数 +$229M/年 &amp; 1,090 拦截</text>
+  <text x="942" y="472" fill="#FBBF24" font-size="17.5" font-weight="800">+92.0% · +$229.0M/yr · +$48.20M</text>
+  <text x="942" y="486" fill="#E2E8F0" font-size="10.5">2.53M EPS · 1,530 波次 · 守护 $139.80M SLA</text>
+
+  <rect x="930" y="500" width="312" height="56" rx="8" fill="#1E293B" stroke="#60A5FA" stroke-width="1.2"/>
+  <text x="942" y="518" fill="#93C5FD" font-size="11" font-weight="700">双语资产与单测验证 (Historic 550 Tests!)</text>
+  <text x="942" y="538" fill="#F8FAFC" font-size="15.5" font-weight="800">267 FAQ = 534 文档 · #387 SVG · 550 单测</text>
+  <text x="942" y="551" fill="#34D399" font-size="10" font-weight="700">54,400 用户 (45,900 Viewer 首次省 &gt;$220K/月!)</text>
+
+  <!-- Bottom Architecture Flow Strip -->
+  <rect x="24" y="582" width="1232" height="156" rx="12" fill="#0F172A" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="42" y="606" fill="#60A5FA" font-size="13.5" font-weight="800">🏗️ 端到端民航运控（IOC）、预测性机务（MRO）与 IATA NDC 动态定价数据流 (DL-1557..1560 · 16ms = 4²ms E2E)</text>
+
+  <rect x="42" y="620" width="222" height="102" rx="8" fill="#1E293B" stroke="#0284C7" stroke-width="1"/>
+  <text x="54" y="640" fill="#38BDF8" font-size="11.5" font-weight="800">1. 机队/机务/PSS 零拷贝摄取</text>
+  <text x="54" y="658" fill="#CBD5E1" font-size="10.5">• QAR/ACARS 发动机遥测 + ADS-B</text>
+  <text x="54" y="674" fill="#CBD5E1" font-size="10.5">• Amadeus/Sabre PSS + AMOS MRO</text>
+  <text x="54" y="690" fill="#CBD5E1" font-size="10.5">• Sabre Crew + 气象雷达流</text>
+  <text x="54" y="708" fill="#34D399" font-size="10.5" font-weight="700">2.53M EPS · $0 按消息/CDC 税</text>
+
+  <text x="271" y="672" fill="#60A5FA" font-size="18" font-weight="800">➔</text>
+
+  <rect x="290" y="620" width="228" height="102" rx="8" fill="#1E293B" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="302" y="640" fill="#C4B5FD" font-size="11.5" font-weight="800">2. Eventhouse + 8 跳 IOC/机组 GQL</text>
+  <text x="302" y="658" fill="#CBD5E1" font-size="10.5">• KQL 毫秒级计算 EGT 裕度与延误</text>
+  <text x="302" y="674" fill="#CBD5E1" font-size="10.5">• 8 跳 GQL 联合推演换机与机组资质</text>
+  <text x="302" y="690" fill="#CBD5E1" font-size="10.5">• 1,530 个雷暴/AOG/超售波次定位</text>
+  <text x="302" y="708" fill="#34D399" font-size="10.5" font-weight="700">4ms 拓扑收敛 · 省 $435.4K/月</text>
+
+  <text x="525" y="672" fill="#A78BFA" font-size="18" font-weight="800">➔</text>
+
+  <rect x="544" y="620" width="234" height="102" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1"/>
+  <text x="556" y="640" fill="#6EE7B7" font-size="11.5" font-weight="800">3. 1.575B AMM/MEL/NDC DiskANN</text>
+  <text x="556" y="658" fill="#CBD5E1" font-size="10.5">• 波音/空客 AMM/FIM 排故与 MEL</text>
+  <text x="556" y="674" fill="#CBD5E1" font-size="10.5">• IATA NDC 动态辅营打包与改签条款</text>
+  <text x="556" y="690" fill="#CBD5E1" font-size="10.5">• 整百 $7,200/月 NVMe SSD DiskANN</text>
+  <text x="556" y="708" fill="#34D399" font-size="10.5" font-weight="700">首次省破 &gt;$184K ($184,200/月 DRAM!)</text>
+
+  <text x="785" y="672" fill="#34D399" font-size="18" font-weight="800">➔</text>
+
+  <rect x="804" y="620" width="214" height="102" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1"/>
+  <text x="816" y="640" fill="#FCD34D" font-size="11.5" font-weight="800">4. Agent 365 FAR 117/MEL 护栏</text>
+  <text x="816" y="658" fill="#CBD5E1" font-size="10.5">• FAR Part 117 飞行执勤期硬门禁</text>
+  <text x="816" y="674" fill="#CBD5E1" font-size="10.5">• NO-GO MEL 适航缺陷物理阻断</text>
+  <text x="816" y="690" fill="#CBD5E1" font-size="10.5">• EU261/DOT 高价值旅客保护</text>
+  <text x="816" y="708" fill="#34D399" font-size="10.5" font-weight="700">阻断 1,090 次 · 守护 +$48.20M</text>
+
+  <text x="1025" y="672" fill="#FBBF24" font-size="18" font-weight="800">➔</text>
+
+  <rect x="1044" y="620" width="194" height="102" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1056" y="640" fill="#A7F3D0" font-size="11.5" font-weight="800">5. 16ms 换机恢复与全员看板</text>
+  <text x="1056" y="658" fill="#E2E8F0" font-size="10.5">• 1GB Free SQL 回写尾号/机组调配</text>
+  <text x="1056" y="674" fill="#E2E8F0" font-size="10.5">• 45,900 名运控/机务 $0 席位税</text>
+  <text x="1056" y="690" fill="#E2E8F0" font-size="10.5">• 历史性精确 +92.0% 提升</text>
+  <text x="1056" y="708" fill="#34D399" font-size="10.5" font-weight="800">+$229.0M/年 · 守护 $139.80M SLA</text>
+</svg>
