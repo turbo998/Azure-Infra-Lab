@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg371" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab371" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg371)"/>
+  <text x="36" y="42" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #371 · PALINDROME ROUND 363 (R363=3×11²!) · FIRST &lt;73.0MS ROUTE (72.9MS), FERMAT-PRIME 257TH=2⁸+1 SIM (68.55MS) &amp; 51,200=50×2¹⁰ USERS!</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Banking &amp; Cards ISO 20022 Real-Time Payments Anti-Fraud, 8-Hop AML Mule Graph &amp; FinCEN SAR RAG: Fabric vs. 4 Clouds</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">1,043/1,044 (99.90% · Round-Fifty 750 Auto + Prime 293 Confirm) at First &lt;73.0ms (72.9ms) | 257th=F₃ Sim 68.55ms | -$1,005,300/mo Saved (47.1x) | 518 Tests</text>
+
+  <!-- Left Box: Microsoft Fabric Banking Payments & AML Hub -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab371)"/>
+  <text x="56" y="145" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Microsoft Fabric ISO 20022 &amp; AML Graph Hub ($21,800/mo All-In)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Eventhouse KQL 2.37M EPS ISO 20022 / FedNow / EMV 3DS + $0 Mirror (12ms)</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Ingests 2,370K (2.37M) EPS pacs.008 instant wires, card auths &amp; device telemetry at $0 CDC tax</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Flags Round-Fifty 1,450 APP scam &amp; mule-funnel waves in 4ms, saving $406,600/mo stream/graph tax</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Fabric IQ 8-Hop Money-Mule &amp; Synthetic-Identity GQL (10ms)</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Traces Sender → DeviceIMEI → IP_ASN → MuleAccount → ShellLLC → UBO → CryptoRamp in 10ms</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lifts fraud interdiction &amp; false-positive reduction by Exact +86.0% (+$213.0M/yr saved!)</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 1.495 Billion (1,495M) Sanctions, PEP &amp; FinCEN SAR Vectors at $6,880/mo</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Saves $174,920/mo vs. $181,800/mo (13.25 TB RAM) pure in-memory vector clusters</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Grounds FinCEN SAR narrative generation on OFAC/FATF typologies in 7ms</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. FIRST &lt;73.0MS ROUTE (72.9MS), 257TH=F₃ SIM &amp; EXACT +$45.00M PROTECTED!</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Agent 365 blocks 1,010 ECOA fair-lending, OFAC &amp; SAR tipping-off risks (Exact +$45.00M!)</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Binary-Power 51,200=50×2¹⁰ users (43,020 active viewers at $0 BI seat tax on F64!)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Pre-Settlement Hold | -$1,005,300/mo Saved (-97.9% · 47.1x!) | $133.60M SLA</text>
+  <text x="72" y="524" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• ROUND-FIFTY 750 AUTO + PRIME 293 CONFIRM | PRIME 251 FAQS=502 DOCS | 518 TESTS!</text>
+
+  <!-- Right Box: Stitched Flink + Neptune + 13.25 TB DRAM Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched Kafka / Neptune / 13.25 TB DRAM Stack ($1,027,100/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Core Banking CDC MAR, Kafka &amp; Neptune Graph Tax ($406,600/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Replicating ISO 20022 XML trees across Kafka, Flink &amp; Neptune burns $406.6K/mo</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• T+1 batch AML graph sync fails before irrevocable 10-second FedNow/RTP settlement</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Peak Holiday Card-Auth Compute &amp; Model Endpoint Tax ($232,180/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Separate SQL warehouses, Photon surcharges &amp; idle fraud model endpoints</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Static rule engines generate 92%+ false positives that alienate legitimate cardholders</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 13.25 TB In-Memory HNSW Sanctions &amp; SAR Vector Tax ($181,800/mo)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Holding 1.495B sanctions, PEP dossiers &amp; wire remittances in RAM costs 26.4x SSD</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• External vector indices risk leaking strictly confidential BSA/AML SAR status</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Per-User AML Investigator &amp; Branch Officer BI Seat Tax ($206,520/mo)</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Licensing 43,020 AML analysts, risk officers &amp; branch leads across 51,200 users costs $206,520/mo</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Total Competitor Cost: $1,027,100/mo ($12.33M/yr) vs. Fabric $21,800/mo</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Net Savings with Microsoft Fabric: -$1,005,300/mo (-97.9% · 47.1x Advantage!)</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• DL-1493..1496 Verified | First &lt;73.0ms Route (72.9ms) | 257th Sim 68.55ms | 518 Tests!</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Banking Golden Rule (R363=3×11² · Scenario NF): Interdict instant payment fraud before irrevocable settlement.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Unify 2.37M EPS ISO 20022 KQL, 8-hop AML Mule GQL, 1.495B SSD DiskANN ($6,880/mo) &amp; ECOA/SAR gates to save -$1,005,300/mo.</text>
+</svg>
