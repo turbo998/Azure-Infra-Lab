@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bg380" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111C33"/>
+    </linearGradient>
+    <linearGradient id="fab380" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg380)"/>
+  <text x="36" y="42" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">SVG #380 (ROUND-TEN 20×19!) · ROUND 372 (SCENARIO NO) · 1,080=3×360° SCENARIOS (777 AUTO &amp; EXACT 70.6000MS ROUTE) &amp; FIRST &gt;$180K DRAM SAVED!</text>
+  <text x="36" y="72" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Enterprise Multi-Cloud Data Governance: OneLake Security + Purview + Entra OBO RLS/CLS &amp; Clean Room vs. 4 Clouds</text>
+  <text x="36" y="96" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13">1,079/1,080 (99.91% · Repdigit 777 Auto!) at Exact 70.6ms | 266th Sim 66.77ms | 1.54B Vectors Saving $180,140/mo | -$1,042,920/mo Saved (48.4x) | 536 Tests</text>
+
+  <!-- Left Box: Microsoft Fabric OneLake Security + Purview + Entra OBO Hub -->
+  <rect x="36" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#22C55E" stroke-width="2"/>
+  <rect x="36" y="118" width="555" height="42" rx="14" fill="url(#fab380)"/>
+  <text x="56" y="145" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">🏆 Fabric OneLake Security, Purview &amp; Entra OBO Hub ($21,980/mo All-In)</text>
+
+  <rect x="56" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="72" y="198" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. Define-Once Storage-Layer RLS / CLS / OLS + Entra ID OBO Passthrough</text>
+  <text x="72" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Single OneLake Security policy enforced across Spark, SQL, KQL, Direct Lake &amp; Data Agent</text>
+  <text x="72" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eventhouse KQL ingests 2,460K (2.46M) EPS audit streams; flags 1,495 waves in 4ms ($0 sync tax)</text>
+
+  <rect x="56" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1"/>
+  <text x="72" y="278" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Microsoft Purview Sensitivity Inheritance + OneLake B2B Clean Room</text>
+  <text x="72" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• End-to-end sensitivity labels from OneLake Parquet to Power BI &amp; exported Excel/PDF</text>
+  <text x="72" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 8-hop lineage/entitlement GQL (10ms) lifts compliance velocity +89.4% (+$222.0M/yr=2-2-2!)</text>
+
+  <rect x="56" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1"/>
+  <text x="72" y="358" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 1.54 Billion (1,540M) PII/Policy/Audit Vectors on SSD DiskANN ($7,060/mo)</text>
+  <text x="72" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Historic First &gt;$180K/mo DRAM Saved at $180,140/mo vs. $187,200/mo (13.70 TB RAM) clusters!</text>
+  <text x="72" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Classifies GDPR/HIPAA/CCPA PII, data contracts &amp; cross-border sovereignty rules in 7ms</text>
+
+  <rect x="56" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="72" y="440" fill="#22C55E" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Agent 365 Guardrails + Round-Thousand 53,000 Users ($0 Viewer Tax!)</text>
+  <text x="72" y="462" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks 1,055 service-principal OBO bypass, cross-region PII egress &amp; k&lt;50 clean-room leaks (+$46.80M!)</text>
+  <text x="72" y="482" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 53,000 governed users (44,640=360×124 $0 viewers on F64 saving $214,260/mo!)</text>
+  <text x="72" y="502" fill="#4ADE80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• 52ms Governance Loop | -$1,042,920/mo Saved (-97.9% · 48.4x!) | Exact $137.00M SLA</text>
+  <text x="72" y="524" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• 1,080 SCENARIOS (777 AUTO!) | EXACT 70.6000MS ROUTE | 260 FAQS=520 DOCS | 536 TESTS!</text>
+
+  <!-- Right Box: Stitched Multi-Engine Policy-Sync + ABAC + 13.70 TB DRAM Stack -->
+  <rect x="609" y="118" width="555" height="440" rx="14" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+  <rect x="609" y="118" width="555" height="42" rx="14" fill="#7F1D1D"/>
+  <text x="629" y="145" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">⚠️ Stitched Multi-Catalog / Policy-Sync / DRAM Stack ($1,064,900/mo)</text>
+
+  <rect x="629" y="176" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="198" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. 5x Duplicate Policy Sync (Immuta/Privacera) &amp; Lineage Graph Tax ($422,800/mo)</text>
+  <text x="645" y="218" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Rewriting RLS/CLS across Unity Catalog, Horizon, Lake Formation &amp; BI costs $422.8K/mo</text>
+  <text x="645" y="235" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Shared service accounts strip caller identity when BI or AI agents query the lakehouse</text>
+
+  <rect x="629" y="256" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="278" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. Runtime SQL View &amp; UDF Masking Compute Tax ($240,640/mo)</text>
+  <text x="645" y="298" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Evaluating complex SQL row-filter views &amp; Python masking UDFs burns $240.6K/mo</text>
+  <text x="645" y="315" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Sensitivity labels disappear the moment analysts export data to Excel or PDF</text>
+
+  <rect x="629" y="336" width="515" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="645" y="358" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 13.70 TB In-Memory HNSW PII/Classifier Vector Tax ($187,200/mo)</text>
+  <text x="645" y="378" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Holding 1.54B PII classifiers, audit embeddings &amp; policy vectors in RAM costs 26.5x SSD</text>
+  <text x="645" y="395" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">• External clean-room copy pipelines duplicate regulated datasets across clouds</text>
+
+  <rect x="629" y="416" width="515" height="124" rx="8" fill="#0B1220" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="645" y="440" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. Per-User BI Viewer &amp; Governance Portal Seat Tax ($214,260/mo)</text>
+  <text x="645" y="462" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Licensing 44,640 governed viewers across 53,000 users costs $214,260/mo ($2.57M/yr)</text>
+  <text x="645" y="482" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Total Competitor Cost: $1,064,900/mo ($12.78M/yr) vs. Fabric $21,980/mo</text>
+  <text x="645" y="505" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">• Net Savings with Microsoft Fabric: -$1,042,920/mo (-97.9% · 48.4x Advantage!)</text>
+  <text x="645" y="526" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• DL-1529..1532 Verified | 1,080 Scenarios (Exact 70.6ms) | 266th Sim 66.77ms | 536 Tests!</text>
+
+  <!-- Bottom Banner -->
+  <rect x="36" y="576" width="1128" height="74" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="56" y="604" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SA Data Governance Rule (R372 · Scenario NO): Define RLS/CLS/OLS Once in OneLake Security + Purview + Entra OBO.</text>
+  <text x="56" y="628" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Eliminate 5x policy rewrites, service-account leaks &amp; $180,140/mo DRAM waste while saving -$1,042,920/mo (-97.9% · 48.4x).</text>
+</svg>
